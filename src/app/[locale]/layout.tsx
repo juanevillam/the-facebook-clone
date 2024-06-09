@@ -4,6 +4,8 @@ import { LayoutProps } from '@/assets/types';
 import { poppins } from '@/assets/ui/fonts';
 import { locales } from '@/i18n/config';
 
+import '@/assets/ui/styles/globals.css';
+
 export const generateStaticParams = () => locales.map((locale) => ({ locale }));
 
 export async function generateMetadata({
