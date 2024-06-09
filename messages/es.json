@@ -1,0 +1,9 @@
+{
+  "metadata": {
+    "title": "El clon de Facebook • Por {author}",
+    "description": "Un clon (con fines educativos) del sitio web de Facebook construido con Next.js y Tailwind CSS"
+  },
+  "home": {
+    "title": "Bienvenido al clon de Facebook"
+  }
+}

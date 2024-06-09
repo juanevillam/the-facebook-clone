@@ -1,0 +1,9 @@
+{
+  "metadata": {
+    "title": "The Facebook Clone • By {author}",
+    "description": "A (for educational purposes) clone of Facebook's website built with Next.js and Tailwind CSS"
+  },
+  "home": {
+    "title": "Welcome to the Facebook Clone"
+  }
+}
