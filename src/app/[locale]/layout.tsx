@@ -1,7 +1,10 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { LayoutProps } from '@/assets/types';
+import { poppins } from '@/assets/ui/fonts';
 import { locales } from '@/i18n/config';
+
+import '@/assets/ui/styles/globals.css';
 
 export const generateStaticParams = () => locales.map((locale) => ({ locale }));
 
@@ -26,7 +29,7 @@ export default function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body>{children}</body>
+      <body className={`${poppins.className} antialiased`}>{children}</body>
     </html>
   );
 }
