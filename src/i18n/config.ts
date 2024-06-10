@@ -6,6 +6,10 @@ const locales = ['en', 'es'] as const;
 
 const pathnames = {
   '/': '/',
+  '/auth': {
+    en: '/auth',
+    es: '/autenticacion',
+  },
   '/home': {
     en: '/home',
     es: '/inicio',
