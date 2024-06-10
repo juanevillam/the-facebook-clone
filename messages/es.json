@@ -1,7 +1,18 @@
 {
   "metadata": {
     "title": "El clon de Facebook • Por {author}",
-    "description": "Un clon (con fines educativos) del sitio web de Facebook construido con Next.js y Tailwind CSS"
+    "description": "Un clon del sitio web de Facebook construido con Next.js y Tailwind CSS"
+  },
+  "auth": {
+    "header": {
+      "title": "El clon de Facebook te conecta con amigos y el mundo que te rodea."
+    },
+    "footer": {
+      "locale-switcher": {
+        "label": "Cambiar idioma",
+        "locale": "{locale, select, es {Español} en {Inglés} other {Desconocido}}"
+      }
+    }
   },
   "home": {
     "title": "Bienvenido al clon de Facebook"

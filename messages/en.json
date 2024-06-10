@@ -1,7 +1,18 @@
 {
   "metadata": {
     "title": "The Facebook Clone • By {author}",
-    "description": "A (for educational purposes) clone of Facebook's website built with Next.js and Tailwind CSS"
+    "description": "A clone of Facebook's website built with Next.js and Tailwind CSS"
+  },
+  "auth": {
+    "header": {
+      "title": "The Facebook Clone connects you with friends and the world around you."
+    },
+    "footer": {
+      "locale-switcher": {
+        "label": "Change language",
+        "locale": "{locale, select, es {Spanish} en {English} other {Unknown}}"
+      }
+    }
   },
   "home": {
     "title": "Welcome to the Facebook Clone"
