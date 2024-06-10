@@ -6,6 +6,12 @@
   "auth": {
     "header": {
       "title": "El clon de Facebook te conecta con amigos y el mundo que te rodea."
+    },
+    "footer": {
+      "locale-switcher": {
+        "label": "Cambiar idioma",
+        "locale": "{locale, select, es {Español} en {Inglés} other {Desconocido}}"
+      }
     }
   },
   "home": {

@@ -6,6 +6,12 @@
   "auth": {
     "header": {
       "title": "The Facebook Clone connects you with friends and the world around you."
+    },
+    "footer": {
+      "locale-switcher": {
+        "label": "Change language",
+        "locale": "{locale, select, es {Spanish} en {English} other {Unknown}}"
+      }
     }
   },
   "home": {
