@@ -8,14 +8,15 @@ const config: Config = {
         error: {
           100: '#F02849',
         },
+        overlay: {
+          100: 'rgba(0, 0, 0, 0.65)',
+        },
         primary: {
           100: '#2C64F6',
           200: '#1E52E4',
         },
         smoke: {
           100: '#F0F2F5',
-          200: '#737373',
-          300: '#DDDFE2',
         },
         success: {
           100: '#42B72A',

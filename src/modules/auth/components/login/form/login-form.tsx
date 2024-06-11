@@ -4,9 +4,12 @@ import React, { useTransition } from 'react';
 
 import { Formik, Form } from 'formik';
 import { useTranslations } from 'next-intl';
+import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/ui';
+import { useAppDispatch } from '@/lib/store/hooks';
+import { toggleSignUpOpenable } from '@/lib/store/reducers/auth-reducer';
 import { AuthLink, AuthTextInput } from '@/modules/auth/components/ui';
 import {
   loginFormSchema,
@@ -15,7 +18,9 @@ import {
 
 export const LoginForm = () => {
   const [isPending, startTransition] = useTransition();
+
   const t = useTranslations();
+  const dispatch = useAppDispatch();
 
   const handleValidateForm = (values: loginFormValuesType) => {
     try {
@@ -30,8 +35,11 @@ export const LoginForm = () => {
   const handleSubmit = (values: loginFormValuesType) => {
     startTransition(() => {
       console.log(values);
+      showToast.error(t('toast-messages.error.invalid-fields'));
     });
   };
+
+  const handleToggleSignUpOpenable = () => dispatch(toggleSignUpOpenable());
 
   return (
     <Formik
@@ -77,7 +85,7 @@ export const LoginForm = () => {
         <Button
           disabled={isPending}
           label={t('auth.login.form.secondary-button')}
-          onClick={() => {}}
+          onClick={handleToggleSignUpOpenable}
           type="button"
           size="md"
           variant="secondary"

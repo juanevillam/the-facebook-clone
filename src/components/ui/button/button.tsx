@@ -41,7 +41,7 @@ export const Button = ({
   }[size];
 
   const variantStyles = {
-    auth: 'bg-transparent border border-smoke-200 hover:bg-gray-100 py-3.5',
+    auth: 'bg-transparent border border-gray-500 hover:bg-gray-100 py-3.5',
     primary:
       'bg-primary-100 hover:bg-primary-200 disabled:hover:bg-primary-100',
     secondary:

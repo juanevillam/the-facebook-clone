@@ -22,6 +22,46 @@
         "link": "Forgot password?",
         "secondary-button": "Create new account"
       }
+    },
+    "sign-up": {
+      "modal": {
+        "title": "Create a new account",
+        "subtitle": "It's quick and easy."
+      },
+      "form": {
+        "button": {
+          "label": "Sign up",
+          "loading-label": "Signing up"
+        }
+      },
+      "dialog": {
+        "0-step": {
+          "description": "Create a new account",
+          "title": "Join The Facebook Clone",
+          "subtitle": "We'll help you create a new account in a few easy steps."
+        },
+        "1-step": {
+          "description": "Name",
+          "title": "What's your name?",
+          "subtitle": "Enter the name you use in real life."
+        },
+        "2-step": {
+          "description": "Email Address",
+          "title": "What's your email address?",
+          "subtitle": "Enter the email where you can be reached."
+        },
+        "3-step": {
+          "description": "Password",
+          "title": "Create a password",
+          "subtitle": "Enter a password with at leat 8 characters."
+        },
+        "4-step": {
+          "description": "Gender",
+          "title": "What's your gender?",
+          "subtitle": "You can change who sees this later."
+        },
+        "next": "Next"
+      }
     }
   },
   "home": {
@@ -30,14 +70,38 @@
   "form": {
     "fields": {
       "email-address": "Email address",
-      "password": "Password"
+      "password": "Password",
+      "name": "Full name",
+      "gender": {
+        "label": "Gender",
+        "male": "Male",
+        "female": "Female"
+      }
     },
     "validations": {
       "email-address": "Must be a valid email",
-      "required": "Required"
+      "required": "Required",
+      "min": "Must be at least {min} characters long",
+      "password": {
+        "lowercase": "Must contain at least one lowercase letter",
+        "uppercase": "Must contain at least one uppercase letter",
+        "number": "Must contain at least one number"
+      }
     }
   },
   "images": {
     "alert-triangle": "Alert icon"
+  },
+  "toast-messages": {
+    "error": {
+      "invalid-fields": "Invalid fields"
+    },
+    "success": {
+      "confirmation-email-sent": "Confirmation email sent"
+    }
+  },
+  "icon-buttons": {
+    "close": "Close",
+    "back": "Back"
   }
 }

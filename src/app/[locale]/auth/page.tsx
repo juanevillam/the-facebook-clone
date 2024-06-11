@@ -4,6 +4,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@/assets/types';
 import { LoginForm } from '@/modules/auth/components/login';
+import { SignUpDialog, SignUpModal } from '@/modules/auth/components/sign-up';
 import { AuthCard } from '@/modules/auth/components/ui';
 
 export default function AuthPage({ params: { locale } }: PageProps) {
@@ -13,11 +14,21 @@ export default function AuthPage({ params: { locale } }: PageProps) {
 
   return (
     <NextIntlClientProvider
-      messages={pick(messages, 'auth.login.form', 'form', 'images')}
+      messages={pick(
+        messages,
+        'auth.login.form',
+        'auth.sign-up',
+        'form',
+        'images',
+        'toast-messages',
+        'icon-buttons'
+      )}
     >
       <AuthCard>
         <LoginForm />
       </AuthCard>
+      <SignUpDialog />
+      <SignUpModal />
     </NextIntlClientProvider>
   );
 }

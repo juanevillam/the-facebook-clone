@@ -22,6 +22,46 @@
         "link": "¿Olvidaste tu contraseña?",
         "secondary-button": "Crear nueva cuenta"
       }
+    },
+    "sign-up": {
+      "modal": {
+        "title": "Crear una nueva cuenta",
+        "subtitle": "Es rápido y fácil."
+      },
+      "form": {
+        "button": {
+          "label": "Registrarse",
+          "loading-label": "Registrándose"
+        }
+      },
+      "dialog": {
+        "0-step": {
+          "description": "Crear una nueva cuenta",
+          "title": "Únete al clon de Facebook",
+          "subtitle": "Te ayudaremos a crear una nueva cuenta en unos pocos pasos fáciles."
+        },
+        "1-step": {
+          "description": "Nombre",
+          "title": "¿Cuál es tu nombre?",
+          "subtitle": "Introduce el nombre que usas en la vida real."
+        },
+        "2-step": {
+          "description": "Dirección de correo electrónico",
+          "title": "¿Cuál es tu dirección de correo electrónico?",
+          "subtitle": "Introduce el correo electrónico donde se te puede contactar."
+        },
+        "3-step": {
+          "description": "Contraseña",
+          "title": "Crea una contraseña",
+          "subtitle": "Introduce una contraseña con al menos 8 caracteres."
+        },
+        "4-step": {
+          "description": "Género",
+          "title": "¿Cuál es tu género?",
+          "subtitle": "Puedes cambiar quién ve esto más tarde."
+        },
+        "next": "Siguiente"
+      }
     }
   },
   "home": {
@@ -30,14 +70,38 @@
   "form": {
     "fields": {
       "email-address": "Dirección de correo electrónico",
-      "password": "Contraseña"
+      "password": "Contraseña",
+      "name": "Nombre completo",
+      "gender": {
+        "label": "Género",
+        "male": "Masculino",
+        "female": "Femenino"
+      }
     },
     "validations": {
       "email-address": "Debe ser un correo electrónico válido",
-      "required": "Requerido"
+      "required": "Requerido",
+      "min": "Debe tener al menos {min} caracteres",
+      "password": {
+        "lowercase": "Debe contener al menos una letra minúscula",
+        "uppercase": "Debe contener al menos una letra mayúscula",
+        "number": "Debe contener al menos un número"
+      }
     }
   },
   "images": {
     "alert-triangle": "Ícono de alerta"
+  },
+  "toast-messages": {
+    "error": {
+      "invalid-fields": "Campos inválidos"
+    },
+    "success": {
+      "confirmation-email-sent": "Correo electrónico de confirmación enviado"
+    }
+  },
+  "icon-buttons": {
+    "close": "Cerrar",
+    "back": "Atrás"
   }
 }
