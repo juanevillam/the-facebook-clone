@@ -52,6 +52,11 @@ export const LoginForm = () => {
       login(values)
         .then((data) => {
           if (data.type === 'success') {
+            if (data?.message === 'confirmation-email-sent') {
+              showToast.success(t(`toast-messages.success.${data?.message}`));
+              return;
+            }
+
             router.push(`/${locale}${getRedirectPath(locale as localeType)}`);
             showToast.success(t(`toast-messages.success.${data.message}`));
           } else showToast.error(t(`toast-messages.error.${data.message}`));

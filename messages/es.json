@@ -104,7 +104,8 @@
       "invalid-fields": "Campos inválidos",
       "email-already-in-use": "Correo electrónico ya en uso",
       "something-went-wrong": "Algo salió mal",
-      "invalid-credentials": "Credenciales inválidas"
+      "invalid-credentials": "Credenciales inválidas",
+      "account-does-not-exist": "La cuenta no existe"
     },
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",

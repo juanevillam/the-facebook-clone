@@ -3,6 +3,9 @@
 import { AuthError } from 'next-auth';
 
 import { signIn } from '@/auth';
+import { getUserByEmail } from '@/data/user';
+import { sendVerificationEmail } from '@/lib/mail';
+import { generateEmailVerificationToken } from '@/lib/tokens';
 
 import { loginFormSchema, loginFormValuesType } from '../schemas/loginSchema';
 
@@ -13,6 +16,24 @@ export const login = async (values: loginFormValuesType) => {
     return { message: 'invalid-fields', type: 'error' };
 
   const { email, password } = validatedFields.data;
+
+  const existingUser = await getUserByEmail(email);
+
+  if (!existingUser || !existingUser.email || !existingUser.password)
+    return { message: 'account-does-not-exist', type: 'error' };
+
+  if (!existingUser.emailVerified) {
+    const verificationToken = await generateEmailVerificationToken(
+      existingUser.email
+    );
+
+    await sendVerificationEmail(
+      verificationToken.email,
+      verificationToken.token
+    );
+
+    return { message: 'confirmation-email-sent', type: 'success' };
+  }
 
   try {
     await signIn('credentials', {

@@ -4,6 +4,8 @@ import { hash } from 'bcryptjs';
 
 import { getUserByEmail } from '@/data/user';
 import { db } from '@/lib/database';
+import { sendVerificationEmail } from '@/lib/mail';
+import { generateEmailVerificationToken } from '@/lib/tokens';
 
 import {
   signUpFormSchema,
@@ -31,6 +33,10 @@ export const signUp = async (values: signUpFormValuesType) => {
       gender,
     },
   });
+
+  const verificationToken = await generateEmailVerificationToken(email);
+
+  await sendVerificationEmail(verificationToken.email, verificationToken.token);
 
   return { message: 'confirmation-email-sent', type: 'success' };
 };

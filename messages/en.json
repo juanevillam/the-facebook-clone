@@ -105,7 +105,8 @@
       "email-already-in-use": "Email already in use",
       "something-went-wrong": "Something went wrong",
       "invalid-credentials": "Invalid credentials",
-      "oauth-account-not-linked": "Email already in use with a different provider"
+      "oauth-account-not-linked": "Email already in use with a different provider",
+      "account-does-not-exist": "Account does not exist"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",
