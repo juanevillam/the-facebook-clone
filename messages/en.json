@@ -62,6 +62,16 @@
         },
         "next": "Next"
       }
+    },
+    "social": {
+      "label": "or continue with"
+    },
+    "error": {
+      "title": "Error",
+      "description": "An error occurred while trying to authenticate. Please try again later."
+    },
+    "card": {
+      "link": "Go back to log in"
     }
   },
   "form": {
@@ -94,7 +104,8 @@
       "invalid-fields": "Invalid fields",
       "email-already-in-use": "Email already in use",
       "something-went-wrong": "Something went wrong",
-      "invalid-credentials": "Invalid credentials"
+      "invalid-credentials": "Invalid credentials",
+      "oauth-account-not-linked": "Email already in use with a different provider"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",

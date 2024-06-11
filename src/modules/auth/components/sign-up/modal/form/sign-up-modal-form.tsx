@@ -12,7 +12,7 @@ import {
   signUpFormValuesType,
 } from '@/modules/auth/schemas/signUpSchema';
 
-import { AuthRadioInput, AuthTextInput } from '../../../ui';
+import { AuthRadioInput, AuthSocial, AuthTextInput } from '../../../ui';
 
 interface SignUpModalFormProps {
   handleToggleSignUpOpenable: () => void;
@@ -50,71 +50,74 @@ export const SignUpModalForm = ({
   };
 
   return (
-    <Formik
-      initialValues={{
-        name: '',
-        email: '',
-        password: '',
-        gender: '',
-      }}
-      onSubmit={handleSubmit}
-      validate={handleValidateForm}
-    >
-      <Form>
-        <AuthTextInput
-          disabled={isPending}
-          name="name"
-          placeholder={t('form.fields.name')}
-          type="text"
-          variant="outlined"
-          varianttype="secondary"
-        />
-        <AuthTextInput
-          disabled={isPending}
-          name="email"
-          placeholder={t('form.fields.email-address')}
-          type="email"
-          variant="outlined"
-          varianttype="secondary"
-        />
-        <AuthTextInput
-          disabled={isPending}
-          minLength={8}
-          name="password"
-          placeholder={t('form.fields.password')}
-          type="password"
-          variant="outlined"
-          varianttype="secondary"
-        />
-        <p className="mb-1 text-gray-700 text-xs" id="gender-label">
-          {t('form.fields.gender.label')}
-        </p>
-        <div
-          aria-labelledby="gender-label"
-          className="flex space-x-3"
-          role="group"
-        >
-          <AuthRadioInput
-            label={t('form.fields.gender.male')}
-            name="gender"
-            value="male"
+    <div className="px-1 space-y-4">
+      <AuthSocial />
+      <Formik
+        initialValues={{
+          name: '',
+          email: '',
+          password: '',
+          gender: '',
+        }}
+        onSubmit={handleSubmit}
+        validate={handleValidateForm}
+      >
+        <Form>
+          <AuthTextInput
+            disabled={isPending}
+            name="name"
+            placeholder={t('form.fields.name')}
+            type="text"
+            variant="outlined"
+            varianttype="secondary"
           />
-          <AuthRadioInput
-            label={t('form.fields.gender.female')}
-            name="gender"
-            value="female"
+          <AuthTextInput
+            disabled={isPending}
+            name="email"
+            placeholder={t('form.fields.email-address')}
+            type="email"
+            variant="outlined"
+            varianttype="secondary"
           />
-        </div>
-        <Button
-          fullWidth
-          disabled={isPending}
-          label={t('auth.sign-up.form.button.label')}
-          loading={isPending}
-          loadingLabel={t('auth.sign-up.form.button.loading-label')}
-          type="submit"
-          variant="secondary"
-        />
-      </Form>
-    </Formik>
+          <AuthTextInput
+            disabled={isPending}
+            minLength={8}
+            name="password"
+            placeholder={t('form.fields.password')}
+            type="password"
+            variant="outlined"
+            varianttype="secondary"
+          />
+          <p className="mb-1 text-gray-700 text-xs" id="gender-label">
+            {t('form.fields.gender.label')}
+          </p>
+          <div
+            aria-labelledby="gender-label"
+            className="flex space-x-3"
+            role="group"
+          >
+            <AuthRadioInput
+              label={t('form.fields.gender.male')}
+              name="gender"
+              value="male"
+            />
+            <AuthRadioInput
+              label={t('form.fields.gender.female')}
+              name="gender"
+              value="female"
+            />
+          </div>
+          <Button
+            fullWidth
+            disabled={isPending}
+            label={t('auth.sign-up.form.button.label')}
+            loading={isPending}
+            loadingLabel={t('auth.sign-up.form.button.loading-label')}
+            type="submit"
+            variant="secondary"
+          />
+        </Form>
+      </Formik>
+    </div>
   );
 };

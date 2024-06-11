@@ -31,5 +31,19 @@ export const {
       return token;
     },
   },
+  events: {
+    async linkAccount({ user }) {
+      await db.user.update({
+        where: { id: user.id },
+        data: {
+          emailVerified: new Date(),
+        },
+      });
+    },
+  },
+  pages: {
+    signIn: '/en/auth',
+    error: '/en/auth/error',
+  },
   ...authConfig,
 });

@@ -10,7 +10,12 @@ const publicRoutes = ['/', '/api/auth'];
  * These routes will redirect logged in users to the home page.
  * @type {string[]}
  */
-const authRoutes = ['/auth', '/autenticacion'];
+const authRoutes = [
+  '/auth',
+  '/autenticacion',
+  '/auth/error',
+  '/autenticacion/error',
+];
 
 /**
  * The prefix for API authentication routes.

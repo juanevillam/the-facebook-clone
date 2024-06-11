@@ -21,7 +21,8 @@ export default function AuthPage({ params: { locale } }: PageProps) {
         'form',
         'images',
         'toast-messages',
-        'icon-buttons'
+        'icon-buttons',
+        'auth.social'
       )}
     >
       <AuthCard>

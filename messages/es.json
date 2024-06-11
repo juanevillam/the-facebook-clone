@@ -62,6 +62,16 @@
         },
         "next": "Siguiente"
       }
+    },
+    "social": {
+      "label": "o continuar con"
+    },
+    "error": {
+      "title": "Error",
+      "description": "Ocurrió un error al intentar verificar tu correo electrónico. Por favor, contacta al soporte."
+    },
+    "card": {
+      "link": "Volver a iniciar sesión"
     }
   },
   "form": {
