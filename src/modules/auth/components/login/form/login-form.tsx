@@ -8,7 +8,7 @@ import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/ui';
-import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import { useAppDispatch } from '@/lib/store/hooks';
 import { toggleSignUpOpenable } from '@/lib/store/reducers/auth-reducer';
 import { AuthLink, AuthTextInput } from '@/modules/auth/components/ui';
 import {
@@ -21,7 +21,6 @@ export const LoginForm = () => {
 
   const t = useTranslations();
   const dispatch = useAppDispatch();
-  const { signUpOpenableOpen } = useAppSelector((store) => store.authReducer);
 
   const handleValidateForm = (values: loginFormValuesType) => {
     try {
@@ -40,7 +39,7 @@ export const LoginForm = () => {
     });
   };
 
-  console.log(signUpOpenableOpen);
+  const handleToggleSignUpOpenable = () => dispatch(toggleSignUpOpenable());
 
   return (
     <Formik
@@ -86,7 +85,7 @@ export const LoginForm = () => {
         <Button
           disabled={isPending}
           label={t('auth.login.form.secondary-button')}
-          onClick={() => dispatch(toggleSignUpOpenable())}
+          onClick={handleToggleSignUpOpenable}
           type="button"
           size="md"
           variant="secondary"
