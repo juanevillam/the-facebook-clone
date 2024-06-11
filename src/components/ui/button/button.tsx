@@ -55,18 +55,22 @@ export const Button = ({
   return (
     <div className={`flex justify-center w-full ${className}`}>
       <button
+        aria-busy={loading}
+        aria-live="polite"
         className={`${baseStyles} ${fullWidthStyles} ${sizeStyles} ${variantStyles} ${disabledStyles}`}
         disabled={disabled}
         onClick={onClick}
         type={type}
-        aria-busy={loading}
-        aria-live="polite"
       >
         {children}
         {loading ? (
           <>
             {loadingLabel}
-            <MoonLoader className="ml-2" color="#FFFFFF" size={22} />
+            {size == 'sm' ? (
+              <MoonLoader className="ml-2" color="#FFFFFF" size={18} />
+            ) : (
+              <MoonLoader className="ml-2" color="#FFFFFF" size={22} />
+            )}
           </>
         ) : (
           label

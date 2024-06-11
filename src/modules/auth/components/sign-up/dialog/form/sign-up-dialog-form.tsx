@@ -2,9 +2,11 @@ import { useTransition } from 'react';
 
 import { Form, Formik } from 'formik';
 import { useTranslations } from 'next-intl';
+import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/ui';
+import { signUp } from '@/modules/auth/api/sign-up';
 import {
   signUpDialogFormSchema,
   signUpFormValuesType,
@@ -42,7 +44,22 @@ export const SignUpDialogForm = ({ nextStep, step }: SignUpDialogFormProps) => {
       onSubmit={(values: signUpFormValuesType) => {
         step === 4
           ? startTransition(() => {
-              console.log(values);
+              signUp(values)
+                .then((data) => {
+                  if (data.type === 'success') {
+                    showToast.success(
+                      t(`toast-messages.success.${data.message}`)
+                    );
+
+                    nextStep();
+                  } else
+                    showToast.error(t(`toast-messages.error.${data.message}`));
+                })
+                .catch(() =>
+                  showToast.error(
+                    t('toast-messages.error.something-went-wrong')
+                  )
+                );
             })
           : nextStep();
       }}

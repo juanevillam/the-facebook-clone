@@ -94,7 +94,9 @@
   },
   "toast-messages": {
     "error": {
-      "invalid-fields": "Invalid fields"
+      "invalid-fields": "Invalid fields",
+      "email-already-in-use": "Email already in use",
+      "something-went-wrong": "Something went wrong"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent"
