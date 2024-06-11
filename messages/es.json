@@ -39,5 +39,13 @@
   },
   "images": {
     "alert-triangle": "Ícono de alerta"
+  },
+  "toast-messages": {
+    "error": {
+      "invalid-fields": "Campos inválidos"
+    },
+    "success": {
+      "confirmation-email-sent": "Correo electrónico de confirmación enviado"
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { Toaster } from 'react-hot-toast';
 
 import { LayoutProps } from '@/assets/types';
 import { poppins } from '@/assets/ui/fonts';
@@ -29,7 +30,10 @@ export default function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+      <body className={`${poppins.className} antialiased`}>
+        <Toaster position="bottom-center" />
+        {children}
+      </body>
     </html>
   );
 }

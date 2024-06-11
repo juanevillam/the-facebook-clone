@@ -4,6 +4,7 @@ import React, { useTransition } from 'react';
 
 import { Formik, Form } from 'formik';
 import { useTranslations } from 'next-intl';
+import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/ui';
@@ -30,6 +31,7 @@ export const LoginForm = () => {
   const handleSubmit = (values: loginFormValuesType) => {
     startTransition(() => {
       console.log(values);
+      showToast.error(t('toast-messages.error.invalid-fields'));
     });
   };
 
@@ -77,7 +79,11 @@ export const LoginForm = () => {
         <Button
           disabled={isPending}
           label={t('auth.login.form.secondary-button')}
-          onClick={() => {}}
+          onClick={() =>
+            showToast.success(
+              t('toast-messages.success.confirmation-email-sent')
+            )
+          }
           type="button"
           size="md"
           variant="secondary"

@@ -13,7 +13,13 @@ export default function AuthPage({ params: { locale } }: PageProps) {
 
   return (
     <NextIntlClientProvider
-      messages={pick(messages, 'auth.login.form', 'form', 'images')}
+      messages={pick(
+        messages,
+        'auth.login.form',
+        'form',
+        'images',
+        'toast-messages'
+      )}
     >
       <AuthCard>
         <LoginForm />
