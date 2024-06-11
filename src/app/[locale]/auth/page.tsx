@@ -1,17 +1,23 @@
+import { pick } from 'lodash';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@/assets/types';
+import { LoginForm } from '@/modules/auth/components/login';
+import { AuthCard } from '@/modules/auth/components/ui';
 
 export default function AuthPage({ params: { locale } }: PageProps) {
   unstable_setRequestLocale(locale);
 
+  const messages = useMessages();
+
   return (
-    <main className="w-full md:w-5/12">
-      <section className="bg-white md:rounded-lg md:shadow-lg">
-        <div className="p-4">
-          <h1 className="font-bold text-blue-600 text-2xl">AuthPage</h1>
-        </div>
-      </section>
-    </main>
+    <NextIntlClientProvider
+      messages={pick(messages, 'auth.login.form', 'form')}
+    >
+      <AuthCard>
+        <LoginForm />
+      </AuthCard>
+    </NextIntlClientProvider>
   );
 }

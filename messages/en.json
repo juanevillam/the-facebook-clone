@@ -12,9 +12,29 @@
         "label": "Change language",
         "locale": "{locale, select, es {Spanish} en {English} other {Unknown}}"
       }
+    },
+    "login": {
+      "form": {
+        "primary-button": {
+          "label": "Log in",
+          "loading-label": "Logging in"
+        },
+        "link": "Forgot password?",
+        "secondary-button": "Create new account"
+      }
     }
   },
   "home": {
     "title": "Welcome to the Facebook Clone"
+  },
+  "form": {
+    "fields": {
+      "email-address": "Email address",
+      "password": "Password"
+    },
+    "validations": {
+      "email-address": "Must be a valid email",
+      "required": "Required"
+    }
   }
 }
