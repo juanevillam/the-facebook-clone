@@ -12,9 +12,29 @@
         "label": "Cambiar idioma",
         "locale": "{locale, select, es {Español} en {Inglés} other {Desconocido}}"
       }
+    },
+    "login": {
+      "form": {
+        "primary-button": {
+          "label": "Iniciar sesión",
+          "loading-label": "Iniciando sesión"
+        },
+        "link": "¿Olvidaste tu contraseña?",
+        "secondary-button": "Crear nueva cuenta"
+      }
     }
   },
   "home": {
     "title": "Bienvenido al clon de Facebook"
+  },
+  "form": {
+    "fields": {
+      "email-address": "Dirección de correo electrónico",
+      "password": "Contraseña"
+    },
+    "validations": {
+      "email-address": "Debe ser un correo electrónico válido",
+      "required": "Requerido"
+    }
   }
 }
