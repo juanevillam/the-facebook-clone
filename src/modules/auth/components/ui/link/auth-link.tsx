@@ -7,14 +7,11 @@ interface AuthLinkProps {
 
 export const AuthLink = ({ label, navigateTo }: AuthLinkProps) => {
   return (
-    <strong>
-      <Link
-        className="hover:text-primary-200 hover:underline text-primary-100 text-sm"
-        href={`/${navigateTo}`}
-        tabIndex={0}
-      >
-        {label}
-      </Link>
-    </strong>
+    <Link
+      className="font-semibold hover:text-primary-200 hover:underline text-primary-100 text-sm"
+      href={`/${navigateTo}`}
+    >
+      {label}
+    </Link>
   );
 };
