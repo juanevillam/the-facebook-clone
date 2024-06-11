@@ -4,7 +4,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@/assets/types';
 import { LoginForm } from '@/modules/auth/components/login';
-import { SignUpModal } from '@/modules/auth/components/sign-up';
+import { SignUpDialog, SignUpModal } from '@/modules/auth/components/sign-up';
 import { AuthCard } from '@/modules/auth/components/ui';
 
 export default function AuthPage({ params: { locale } }: PageProps) {
@@ -25,6 +25,7 @@ export default function AuthPage({ params: { locale } }: PageProps) {
       <AuthCard>
         <LoginForm />
       </AuthCard>
+      <SignUpDialog />
       <SignUpModal />
     </NextIntlClientProvider>
   );
