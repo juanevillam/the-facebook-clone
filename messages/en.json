@@ -36,5 +36,8 @@
       "email-address": "Must be a valid email",
       "required": "Required"
     }
+  },
+  "images": {
+    "alert-triangle": "Alert icon"
   }
 }

@@ -36,5 +36,8 @@
       "email-address": "Debe ser un correo electrónico válido",
       "required": "Requerido"
     }
+  },
+  "images": {
+    "alert-triangle": "Ícono de alerta"
   }
 }

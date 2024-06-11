@@ -3,6 +3,8 @@
 import { Field, useField } from 'formik';
 import { useTranslations } from 'next-intl';
 
+import { AlertTriangleImage } from '@/components/ui';
+
 interface AuthTextInputProps {
   disabled: boolean;
   minLength?: number;
@@ -14,9 +16,8 @@ interface AuthTextInputProps {
   [x: string]: any;
 }
 
-export const AuthTextInput = ({ ...props }: AuthTextInputProps) => {
+export const AuthTextInput = (props: AuthTextInputProps) => {
   const { minLength, placeholder, variant, varianttype = 'standard' } = props;
-
   const [field, meta] = useField(props);
   const t = useTranslations();
 
@@ -25,7 +26,7 @@ export const AuthTextInput = ({ ...props }: AuthTextInputProps) => {
       {variant === 'outlined' && (
         <Field
           autoComplete="on"
-          aria-describedby="error-message"
+          aria-describedby={`${props.name}-error`}
           aria-invalid={meta.error && meta.touched ? 'true' : 'false'}
           aria-label={placeholder}
           className={`border border-smoke-300 duration-150 focus:border-transparent focus:outline-none focus:ring-primary-100 focus:ring-2 placeholder-gray-500 px-4 py-3.5 rounded-md transition w-full ${
@@ -41,21 +42,19 @@ export const AuthTextInput = ({ ...props }: AuthTextInputProps) => {
           {...props}
         />
       )}
-      <div
-        className={`${variant === 'standard' && 'mb-[22px]'}`}
-        aria-live="assertive"
-      >
-        {meta.touched && meta.error && (
-          <div className="flex items-center px-1.5 py-1.5 space-x-1.5 md:py-0.5 md:space-x-1">
-            <label
-              className="font-medium text-error-100 text-sm"
-              id="error-message"
-            >
-              {t(meta.error[0], { min: minLength })}
-            </label>
-          </div>
-        )}
-      </div>
+      {meta.touched && meta.error && (
+        <div
+          aria-live="assertive"
+          className="flex items-center px-1.5 py-1.5 space-x-1.5 md:py-0.5 md:space-x-1"
+          id={`${props.name}-error`}
+          role="alert"
+        >
+          <AlertTriangleImage size={16} />
+          <label className="font-medium text-error-100 text-sm">
+            {t(meta.error[0], { min: minLength })}
+          </label>
+        </div>
+      )}
     </div>
   );
 };
