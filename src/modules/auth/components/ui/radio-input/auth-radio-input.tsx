@@ -15,7 +15,7 @@ export const AuthRadioInput = (props: AuthRadioInputProps) => {
 
   return (
     <label
-      className={`border border-smoke-300 cursor-pointer flex items-center justify-between mb-4 px-4 py-3.5 rounded-md w-full ${
+      className={`border border-gray-200 cursor-pointer flex items-center justify-between mb-4 px-4 py-3.5 rounded-md w-full ${
         meta.touched && meta.error && 'ring-error-100 ring-2'
       }`}
       htmlFor={`${name}-${value}`}

@@ -9,7 +9,7 @@ interface IconButtonProps {
   icon: {
     className: string;
     Component: React.FC<SharedSvgProps>;
-    name: 'close';
+    name: 'close' | 'back';
   };
   onClick: () => void;
 }

@@ -33,6 +33,34 @@
           "label": "Sign up",
           "loading-label": "Signing up"
         }
+      },
+      "dialog": {
+        "0-step": {
+          "description": "Create a new account",
+          "title": "Join The Facebook Clone",
+          "subtitle": "We'll help you create a new account in a few easy steps."
+        },
+        "1-step": {
+          "description": "Name",
+          "title": "What's your name?",
+          "subtitle": "Enter the name you use in real life."
+        },
+        "2-step": {
+          "description": "Email Address",
+          "title": "What's your email address?",
+          "subtitle": "Enter the email where you can be reached."
+        },
+        "3-step": {
+          "description": "Password",
+          "title": "Create a password",
+          "subtitle": "Enter a password with at leat 8 characters."
+        },
+        "4-step": {
+          "description": "Gender",
+          "title": "What's your gender?",
+          "subtitle": "You can change who sees this later."
+        },
+        "next": "Next"
       }
     }
   },
@@ -73,6 +101,7 @@
     }
   },
   "icon-buttons": {
-    "close": "Close"
+    "close": "Close",
+    "back": "Back"
   }
 }

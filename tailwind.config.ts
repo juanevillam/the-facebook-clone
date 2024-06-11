@@ -17,8 +17,6 @@ const config: Config = {
         },
         smoke: {
           100: '#F0F2F5',
-          200: '#737373',
-          300: '#DDDFE2',
         },
         success: {
           100: '#42B72A',

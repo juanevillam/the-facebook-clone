@@ -36,7 +36,7 @@ export const AuthFooterLocaleSwitcherSelect = ({
 
   return (
     <label
-      className={`relative text-sm text-smoke-200 ${isPending && 'transition-opacity [&:disabled]:opacity-30'}`}
+      className={`relative text-sm text-gray-500 ${isPending && 'transition-opacity [&:disabled]:opacity-30'}`}
       htmlFor="locale-select"
     >
       <p className="sr-only">{label}</p>

@@ -11,11 +11,28 @@ const passwordValidation = z
   .regex(/[A-Z]/, 'form.validations.password.uppercase')
   .regex(/[0-9]/, 'form.validations.password.number');
 
-export const signUpFormSchema = z.object({
+const signUpFormSchema = z.object({
   name: minLengthValidation,
   email: emailValidation,
   password: passwordValidation,
   gender: minLengthValidation,
 });
+
+const signUpDialogFormSchema = {
+  step1: z.object({
+    name: minLengthValidation,
+  }),
+  step2: z.object({
+    email: emailValidation,
+  }),
+  step3: z.object({
+    password: passwordValidation,
+  }),
+  step4: z.object({
+    gender: minLengthValidation,
+  }),
+};
+
+export { signUpFormSchema, signUpDialogFormSchema };
 
 export type signUpFormValuesType = z.infer<typeof signUpFormSchema>;
