@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import { LayoutProps } from '@/assets/types';
 import { poppins } from '@/assets/ui/fonts';
 import { locales } from '@/i18n/config';
+import ReduxProvider from '@/lib/store/ReduxProvider';
 
 import '@/assets/ui/styles/globals.css';
 
@@ -32,7 +33,7 @@ export default function LocaleLayout({
     <html lang={locale}>
       <body className={`${poppins.className} antialiased`}>
         <Toaster position="bottom-center" />
-        {children}
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );

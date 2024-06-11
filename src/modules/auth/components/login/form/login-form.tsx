@@ -8,6 +8,8 @@ import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/ui';
+import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import { toggleSignUpOpenable } from '@/lib/store/reducers/auth-reducer';
 import { AuthLink, AuthTextInput } from '@/modules/auth/components/ui';
 import {
   loginFormSchema,
@@ -16,7 +18,10 @@ import {
 
 export const LoginForm = () => {
   const [isPending, startTransition] = useTransition();
+
   const t = useTranslations();
+  const dispatch = useAppDispatch();
+  const { signUpOpenableOpen } = useAppSelector((store) => store.authReducer);
 
   const handleValidateForm = (values: loginFormValuesType) => {
     try {
@@ -34,6 +39,8 @@ export const LoginForm = () => {
       showToast.error(t('toast-messages.error.invalid-fields'));
     });
   };
+
+  console.log(signUpOpenableOpen);
 
   return (
     <Formik
@@ -79,11 +86,7 @@ export const LoginForm = () => {
         <Button
           disabled={isPending}
           label={t('auth.login.form.secondary-button')}
-          onClick={() =>
-            showToast.success(
-              t('toast-messages.success.confirmation-email-sent')
-            )
-          }
+          onClick={() => dispatch(toggleSignUpOpenable())}
           type="button"
           size="md"
           variant="secondary"
