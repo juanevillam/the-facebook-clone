@@ -64,9 +64,6 @@
       }
     }
   },
-  "home": {
-    "title": "Welcome to the Facebook Clone"
-  },
   "form": {
     "fields": {
       "email-address": "Email address",
@@ -96,10 +93,12 @@
     "error": {
       "invalid-fields": "Invalid fields",
       "email-already-in-use": "Email already in use",
-      "something-went-wrong": "Something went wrong"
+      "something-went-wrong": "Something went wrong",
+      "invalid-credentials": "Invalid credentials"
     },
     "success": {
-      "confirmation-email-sent": "Confirmation email sent"
+      "confirmation-email-sent": "Confirmation email sent",
+      "welcome-to-the-facebook-clone": "Welcome to The Facebook Clone"
     }
   },
   "icon-buttons": {

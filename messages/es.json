@@ -64,9 +64,6 @@
       }
     }
   },
-  "home": {
-    "title": "Bienvenido al clon de Facebook"
-  },
   "form": {
     "fields": {
       "email-address": "Dirección de correo electrónico",
@@ -96,10 +93,12 @@
     "error": {
       "invalid-fields": "Campos inválidos",
       "email-already-in-use": "Correo electrónico ya en uso",
-      "something-went-wrong": "Algo salió mal"
+      "something-went-wrong": "Algo salió mal",
+      "invalid-credentials": "Credenciales inválidas"
     },
     "success": {
-      "confirmation-email-sent": "Correo electrónico de confirmación enviado"
+      "confirmation-email-sent": "Correo electrónico de confirmación enviado",
+      "welcome-to-the-facebook-clone": "Bienvenido al clon de Facebook"
     }
   },
   "icon-buttons": {

@@ -24,6 +24,21 @@ export const SignUpModalForm = ({
   const [isPending, startTransition] = useTransition();
   const t = useTranslations();
 
+  const handleSubmit = (values: signUpFormValuesType) => {
+    startTransition(() => {
+      signUp(values)
+        .then((data) => {
+          if (data.type === 'success') {
+            showToast.success(t(`toast-messages.success.${data.message}`));
+            handleToggleSignUpOpenable();
+          } else showToast.error(t(`toast-messages.error.${data.message}`));
+        })
+        .catch(() =>
+          showToast.error(t('toast-messages.error.something-went-wrong'))
+        );
+    });
+  };
+
   const handleValidateForm = (values: signUpFormValuesType) => {
     try {
       signUpFormSchema.parse(values);
@@ -42,20 +57,7 @@ export const SignUpModalForm = ({
         password: '',
         gender: '',
       }}
-      onSubmit={(values: signUpFormValuesType) => {
-        startTransition(() => {
-          signUp(values)
-            .then((data) => {
-              if (data.type === 'success') {
-                showToast.success(t(`toast-messages.success.${data.message}`));
-                handleToggleSignUpOpenable();
-              } else showToast.error(t(`toast-messages.error.${data.message}`));
-            })
-            .catch(() =>
-              showToast.error(t('toast-messages.error.something-went-wrong'))
-            );
-        });
-      }}
+      onSubmit={handleSubmit}
       validate={handleValidateForm}
     >
       <Form>

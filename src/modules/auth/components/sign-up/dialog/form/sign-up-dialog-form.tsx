@@ -23,6 +23,23 @@ export const SignUpDialogForm = ({ nextStep, step }: SignUpDialogFormProps) => {
   const [isPending, startTransition] = useTransition();
   const t = useTranslations();
 
+  const handleSubmit = (values: signUpFormValuesType) => {
+    step === 4
+      ? startTransition(() => {
+          signUp(values)
+            .then((data) => {
+              if (data.type === 'success') {
+                showToast.success(t(`toast-messages.success.${data.message}`));
+                nextStep();
+              } else showToast.error(t(`toast-messages.error.${data.message}`));
+            })
+            .catch(() =>
+              showToast.error(t('toast-messages.error.something-went-wrong'))
+            );
+        })
+      : nextStep();
+  };
+
   const handleValidateForm = (values: signUpFormValuesType) => {
     try {
       (signUpDialogFormSchema as any)[`step${step}`].parse(values);
@@ -41,28 +58,7 @@ export const SignUpDialogForm = ({ nextStep, step }: SignUpDialogFormProps) => {
         password: '',
         gender: '',
       }}
-      onSubmit={(values: signUpFormValuesType) => {
-        step === 4
-          ? startTransition(() => {
-              signUp(values)
-                .then((data) => {
-                  if (data.type === 'success') {
-                    showToast.success(
-                      t(`toast-messages.success.${data.message}`)
-                    );
-
-                    nextStep();
-                  } else
-                    showToast.error(t(`toast-messages.error.${data.message}`));
-                })
-                .catch(() =>
-                  showToast.error(
-                    t('toast-messages.error.something-went-wrong')
-                  )
-                );
-            })
-          : nextStep();
-      }}
+      onSubmit={handleSubmit}
       validate={handleValidateForm}
     >
       <Form>
