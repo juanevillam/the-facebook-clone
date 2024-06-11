@@ -10,14 +10,12 @@ export default function AuthLayout({
   unstable_setRequestLocale(locale);
 
   return (
-    <main className="bg-white md:bg-smoke-100">
-      <div className="h-screen flex flex-col justify-between">
-        <section className="h-5/6 z-10 md:flex md:items-center md:max-w-4xl md:mx-auto md:px-6 md:space-x-12 md:w-full lg:max-w-5xl">
-          <AuthHeader />
-          {children}
-        </section>
-        <AuthFooter />
-      </div>
+    <main className="flex flex-col h-screen justify-between md:bg-smoke-100">
+      <section className="z-10 md:h-5/6 md:flex md:flex-row md:items-center md:max-w-4xl md:mx-auto md:px-6 md:space-x-12 lg:max-w-5xl">
+        <AuthHeader />
+        {children}
+      </section>
+      <AuthFooter />
     </main>
   );
 }
