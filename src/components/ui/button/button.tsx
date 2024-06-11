@@ -30,7 +30,7 @@ export const Button = ({
   return (
     <div className="flex justify-center w-full">
       <button
-        className={`bg-primary-400 cursor-pointer disabled:cursor-not-allowed disabled:hover:bg-primary-400 disabled:opacity-80 duration-150 flex items-center justify-center px-5 rounded-md text-white transition ${
+        className={`bg-primary-100 cursor-pointer disabled:cursor-not-allowed disabled:hover:bg-primary-100 disabled:opacity-80 duration-150 flex items-center justify-center px-5 rounded-md text-white transition ${
           fullWidth && 'w-full'
         } ${
           variant === 'auth' &&

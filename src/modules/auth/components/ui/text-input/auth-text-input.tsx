@@ -28,7 +28,7 @@ export const AuthTextInput = ({ ...props }: AuthTextInputProps) => {
           aria-describedby="error-message"
           aria-invalid={meta.error && meta.touched ? 'true' : 'false'}
           aria-label={placeholder}
-          className={`border border-smoke-300 duration-150 focus:border-transparent focus:outline-none focus:ring-primary-200 focus:ring-2 placeholder-gray-500 px-4 py-3.5 rounded-md transition w-full ${
+          className={`border border-smoke-300 duration-150 focus:border-transparent focus:outline-none focus:ring-primary-100 focus:ring-2 placeholder-gray-500 px-4 py-3.5 rounded-md transition w-full ${
             varianttype === 'standard'
               ? 'bg-white hover:bg-gray-100'
               : 'bg-gray-100 hover:bg-gray-200'
