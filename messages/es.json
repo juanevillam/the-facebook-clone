@@ -22,6 +22,18 @@
         "link": "¿Olvidaste tu contraseña?",
         "secondary-button": "Crear nueva cuenta"
       }
+    },
+    "sign-up": {
+      "modal": {
+        "title": "Crear una nueva cuenta",
+        "subtitle": "Es rápido y fácil."
+      },
+      "form": {
+        "button": {
+          "label": "Registrarse",
+          "loading-label": "Registrándose"
+        }
+      }
     }
   },
   "home": {
@@ -30,11 +42,23 @@
   "form": {
     "fields": {
       "email-address": "Dirección de correo electrónico",
-      "password": "Contraseña"
+      "password": "Contraseña",
+      "name": "Nombre completo",
+      "gender": {
+        "label": "Género",
+        "male": "Masculino",
+        "female": "Femenino"
+      }
     },
     "validations": {
       "email-address": "Debe ser un correo electrónico válido",
-      "required": "Requerido"
+      "required": "Requerido",
+      "min": "Debe tener al menos {min} caracteres",
+      "password": {
+        "lowercase": "Debe contener al menos una letra minúscula",
+        "uppercase": "Debe contener al menos una letra mayúscula",
+        "number": "Debe contener al menos un número"
+      }
     }
   },
   "images": {
@@ -47,5 +71,8 @@
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado"
     }
+  },
+  "icon-buttons": {
+    "close": "Cerrar"
   }
 }

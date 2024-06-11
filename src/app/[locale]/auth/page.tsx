@@ -17,9 +17,11 @@ export default function AuthPage({ params: { locale } }: PageProps) {
       messages={pick(
         messages,
         'auth.login.form',
+        'auth.sign-up',
         'form',
         'images',
-        'toast-messages'
+        'toast-messages',
+        'icon-buttons'
       )}
     >
       <AuthCard>
