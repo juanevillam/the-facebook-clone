@@ -62,10 +62,17 @@
         },
         "next": "Siguiente"
       }
+    },
+    "social": {
+      "label": "o continuar con"
+    },
+    "error": {
+      "title": "Error",
+      "description": "Ocurrió un error al intentar verificar tu correo electrónico. Por favor, contacta al soporte."
+    },
+    "card": {
+      "link": "Volver a iniciar sesión"
     }
-  },
-  "home": {
-    "title": "Bienvenido al clon de Facebook"
   },
   "form": {
     "fields": {
@@ -94,10 +101,14 @@
   },
   "toast-messages": {
     "error": {
-      "invalid-fields": "Campos inválidos"
+      "invalid-fields": "Campos inválidos",
+      "email-already-in-use": "Correo electrónico ya en uso",
+      "something-went-wrong": "Algo salió mal",
+      "invalid-credentials": "Credenciales inválidas"
     },
     "success": {
-      "confirmation-email-sent": "Correo electrónico de confirmación enviado"
+      "confirmation-email-sent": "Correo electrónico de confirmación enviado",
+      "welcome-to-the-facebook-clone": "Bienvenido al clon de Facebook"
     }
   },
   "icon-buttons": {

@@ -54,7 +54,9 @@ export const SignUpModal = () => {
               onClick={handleToggleSignUpOpenable}
             />
           </div>
-          <SignUpModalForm />
+          <SignUpModalForm
+            handleToggleSignUpOpenable={handleToggleSignUpOpenable}
+          />
         </div>
       </Fade>
     </Modal>

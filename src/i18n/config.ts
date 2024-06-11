@@ -10,6 +10,10 @@ const pathnames = {
     en: '/auth',
     es: '/autenticacion',
   },
+  '/auth/error': {
+    en: '/auth/error',
+    es: '/autenticacion/error',
+  },
   '/home': {
     en: '/home',
     es: '/inicio',
