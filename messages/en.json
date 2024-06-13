@@ -1,9 +1,163 @@
 {
   "metadata": {
     "title": "The Facebook Clone • By {author}",
-    "description": "A (for educational purposes) clone of Facebook's website built with Next.js and Tailwind CSS"
+    "description": "A clone of Facebook's website built with Next.js and Tailwind CSS"
   },
-  "home": {
-    "title": "Welcome to the Facebook Clone"
+  "auth": {
+    "header": {
+      "title": "The Facebook Clone connects you with friends and the world around you."
+    },
+    "footer": {
+      "locale-switcher": {
+        "label": "Change language",
+        "locale": "{locale, select, es {Spanish} en {English} other {Unknown}}"
+      }
+    },
+    "login": {
+      "form": {
+        "primary-button": {
+          "label": "Log in",
+          "loading-label": "Logging in",
+          "2fa-label": "Confirm"
+        },
+        "link": "Forgot password?",
+        "secondary-button": "Create new account"
+      }
+    },
+    "sign-up": {
+      "modal": {
+        "title": "Create a new account",
+        "subtitle": "It's quick and easy."
+      },
+      "form": {
+        "button": {
+          "label": "Sign up",
+          "loading-label": "Signing up"
+        }
+      },
+      "dialog": {
+        "0-step": {
+          "description": "Create a new account",
+          "title": "Join The Facebook Clone",
+          "subtitle": "We'll help you create a new account in a few easy steps."
+        },
+        "1-step": {
+          "description": "Name",
+          "title": "What's your name?",
+          "subtitle": "Enter the name you use in real life."
+        },
+        "2-step": {
+          "description": "Email Address",
+          "title": "What's your email address?",
+          "subtitle": "Enter the email where you can be reached."
+        },
+        "3-step": {
+          "description": "Password",
+          "title": "Create a password",
+          "subtitle": "Enter a password with at leat 8 characters."
+        },
+        "4-step": {
+          "description": "Gender",
+          "title": "What's your gender?",
+          "subtitle": "You can change who sees this later."
+        },
+        "next": "Next"
+      }
+    },
+    "social": {
+      "label": "or continue with"
+    },
+    "error": {
+      "title": "Error",
+      "description": "An error occurred while trying to authenticate. Please try again later."
+    },
+    "card": {
+      "link": "Go back to log in"
+    },
+    "verify-email": {
+      "loading": {
+        "title": "Verifying email",
+        "description": "Please wait while we verify your email. This may take a few seconds."
+      },
+      "success": {
+        "title": "Email verified",
+        "description": "Your email has been verified. You can now log in."
+      },
+      "error": {
+        "title": "Error",
+        "description": "An error occurred while trying to verify your email. Please contact support."
+      }
+    },
+    "forgot-password": {
+      "title": "Forgot password",
+      "description": "Enter your email address and we'll send you a link to reset your password.",
+      "form": {
+        "primary-button": {
+          "label": "Send link",
+          "loading-label": "Sending link"
+        }
+      }
+    },
+    "reset-password": {
+      "title": "Reset password",
+      "description": "Enter a new password for your account.",
+      "form": {
+        "primary-button": {
+          "label": "Reset password",
+          "loading-label": "Resetting password"
+        }
+      }
+    }
+  },
+  "form": {
+    "fields": {
+      "email-address": "Email address",
+      "password": "Password",
+      "name": "Full name",
+      "gender": {
+        "label": "Gender",
+        "male": "Male",
+        "female": "Female"
+      }
+    },
+    "validations": {
+      "email-address": "Must be a valid email",
+      "required": "Required",
+      "min": "Must be at least {min} characters long",
+      "password": {
+        "lowercase": "Must contain at least one lowercase letter",
+        "uppercase": "Must contain at least one uppercase letter",
+        "number": "Must contain at least one number"
+      }
+    }
+  },
+  "images": {
+    "alert-triangle": "Alert icon"
+  },
+  "toast-messages": {
+    "error": {
+      "invalid-fields": "Invalid fields",
+      "email-already-in-use": "Email already in use",
+      "something-went-wrong": "Something went wrong",
+      "invalid-credentials": "Invalid credentials",
+      "oauth-account-not-linked": "Email already in use with a different provider",
+      "account-does-not-exist": "Account does not exist",
+      "missing-token": "Missing token",
+      "token-does-not-exist": "Token does not exist",
+      "token-has-expired": "Token has expired",
+      "invalid-2fa-code": "Invalid 2FA code",
+      "2fa-code-has-expired": "2FA code has expired"
+    },
+    "success": {
+      "confirmation-email-sent": "Confirmation email sent",
+      "welcome-to-the-facebook-clone": "Welcome to The Facebook Clone",
+      "email-verified": "Email verified",
+      "reset-email-sent": "Reset email sent",
+      "password-updated": "Password updated"
+    }
+  },
+  "icon-buttons": {
+    "close": "Close",
+    "back": "Back"
   }
 }

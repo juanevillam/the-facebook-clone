@@ -1,9 +1,163 @@
 {
   "metadata": {
     "title": "El clon de Facebook • Por {author}",
-    "description": "Un clon (con fines educativos) del sitio web de Facebook construido con Next.js y Tailwind CSS"
+    "description": "Un clon del sitio web de Facebook construido con Next.js y Tailwind CSS"
   },
-  "home": {
-    "title": "Bienvenido al clon de Facebook"
+  "auth": {
+    "header": {
+      "title": "El clon de Facebook te conecta con amigos y el mundo que te rodea."
+    },
+    "footer": {
+      "locale-switcher": {
+        "label": "Cambiar idioma",
+        "locale": "{locale, select, es {Español} en {Inglés} other {Desconocido}}"
+      }
+    },
+    "login": {
+      "form": {
+        "primary-button": {
+          "label": "Iniciar sesión",
+          "loading-label": "Iniciando sesión",
+          "2fa-label": "Confirmar"
+        },
+        "link": "¿Olvidaste tu contraseña?",
+        "secondary-button": "Crear nueva cuenta"
+      }
+    },
+    "sign-up": {
+      "modal": {
+        "title": "Crear una nueva cuenta",
+        "subtitle": "Es rápido y fácil."
+      },
+      "form": {
+        "button": {
+          "label": "Registrarse",
+          "loading-label": "Registrándose"
+        }
+      },
+      "dialog": {
+        "0-step": {
+          "description": "Crear una nueva cuenta",
+          "title": "Únete al clon de Facebook",
+          "subtitle": "Te ayudaremos a crear una nueva cuenta en unos pocos pasos fáciles."
+        },
+        "1-step": {
+          "description": "Nombre",
+          "title": "¿Cuál es tu nombre?",
+          "subtitle": "Introduce el nombre que usas en la vida real."
+        },
+        "2-step": {
+          "description": "Dirección de correo electrónico",
+          "title": "¿Cuál es tu dirección de correo electrónico?",
+          "subtitle": "Introduce el correo electrónico donde se te puede contactar."
+        },
+        "3-step": {
+          "description": "Contraseña",
+          "title": "Crea una contraseña",
+          "subtitle": "Introduce una contraseña con al menos 8 caracteres."
+        },
+        "4-step": {
+          "description": "Género",
+          "title": "¿Cuál es tu género?",
+          "subtitle": "Puedes cambiar quién ve esto más tarde."
+        },
+        "next": "Siguiente"
+      }
+    },
+    "social": {
+      "label": "o continuar con"
+    },
+    "error": {
+      "title": "Error",
+      "description": "Ocurrió un error al intentar verificar tu correo electrónico. Por favor, contacta al soporte."
+    },
+    "card": {
+      "link": "Volver a iniciar sesión"
+    },
+    "verify-email": {
+      "loading": {
+        "title": "Verificando correo electrónico",
+        "description": "Por favor, espera mientras verificamos tu correo electrónico. Esto puede tardar unos segundos."
+      },
+      "success": {
+        "title": "Correo electrónico verificado",
+        "description": "Tu correo electrónico ha sido verificado. Ahora puedes iniciar sesión."
+      },
+      "error": {
+        "title": "Error",
+        "description": "Ocurrió un error al intentar verificar tu correo electrónico. Por favor, contacta al soporte."
+      }
+    },
+    "forgot-password": {
+      "title": "Olvidé mi contraseña",
+      "description": "Introduce tu dirección de correo electrónico y te enviaremos un enlace para restablecer tu contraseña.",
+      "form": {
+        "primary-button": {
+          "label": "Enviar enlace",
+          "loading-label": "Enviando enlace"
+        }
+      }
+    },
+    "reset-password": {
+      "title": "Restablecer contraseña",
+      "description": "Introduce una nueva contraseña para tu cuenta.",
+      "form": {
+        "primary-button": {
+          "label": "Restablecer contraseña",
+          "loading-label": "Restableciendo contraseña"
+        }
+      }
+    }
+  },
+  "form": {
+    "fields": {
+      "email-address": "Dirección de correo electrónico",
+      "password": "Contraseña",
+      "name": "Nombre completo",
+      "gender": {
+        "label": "Género",
+        "male": "Masculino",
+        "female": "Femenino"
+      }
+    },
+    "validations": {
+      "email-address": "Debe ser un correo electrónico válido",
+      "required": "Requerido",
+      "min": "Debe tener al menos {min} caracteres",
+      "password": {
+        "lowercase": "Debe contener al menos una letra minúscula",
+        "uppercase": "Debe contener al menos una letra mayúscula",
+        "number": "Debe contener al menos un número"
+      }
+    }
+  },
+  "images": {
+    "alert-triangle": "Ícono de alerta"
+  },
+  "toast-messages": {
+    "error": {
+      "invalid-fields": "Campos inválidos",
+      "email-already-in-use": "Correo electrónico ya en uso",
+      "something-went-wrong": "Algo salió mal",
+      "invalid-credentials": "Credenciales inválidas",
+      "oauth-account-not-linked": "Correo electrónico ya en uso con un proveedor diferente",
+      "account-does-not-exist": "La cuenta no existe",
+      "missing-token": "Falta el token",
+      "token-does-not-exist": "El token no existe",
+      "token-has-expired": "El token ha expirado",
+      "invalid-2fa-code": "Código 2FA inválido",
+      "2fa-code-has-expired": "El código 2FA ha expirado"
+    },
+    "success": {
+      "confirmation-email-sent": "Correo electrónico de confirmación enviado",
+      "welcome-to-the-facebook-clone": "Bienvenido al clon de Facebook",
+      "email-verified": "Correo electrónico verificado",
+      "reset-email-sent": "Correo electrónico de restablecimiento enviado",
+      "password-updated": "Contraseña actualizada"
+    }
+  },
+  "icon-buttons": {
+    "close": "Cerrar",
+    "back": "Atrás"
   }
 }
