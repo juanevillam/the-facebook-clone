@@ -52,8 +52,8 @@ export const LoginForm = () => {
       login(values)
         .then((data) => {
           if (data.type === 'success') {
-            if (data?.message === 'confirmation-email-sent') {
-              showToast.success(t(`toast-messages.success.${data?.message}`));
+            if (data.message === 'confirmation-email-sent') {
+              showToast.success(t(`toast-messages.success.${data.message}`));
               return;
             }
 

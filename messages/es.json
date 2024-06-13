@@ -86,6 +86,16 @@
         "title": "Error",
         "description": "Ocurrió un error al intentar verificar tu correo electrónico. Por favor, contacta al soporte."
       }
+    },
+    "forgot-password": {
+      "title": "Olvidé mi contraseña",
+      "description": "Introduce tu dirección de correo electrónico y te enviaremos un enlace para restablecer tu contraseña.",
+      "form": {
+        "primary-button": {
+          "label": "Enviar enlace",
+          "loading-label": "Enviando enlace"
+        }
+      }
     }
   },
   "form": {

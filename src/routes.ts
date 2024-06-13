@@ -20,6 +20,8 @@ const authRoutes = [
   '/autenticacion',
   '/auth/error',
   '/autenticacion/error',
+  '/auth/forgot-password',
+  '/autenticacion/olvide-contrasena',
 ];
 
 /**
