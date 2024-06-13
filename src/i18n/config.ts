@@ -14,6 +14,18 @@ const pathnames = {
     en: '/auth/error',
     es: '/autenticacion/error',
   },
+  '/auth/verify-email': {
+    en: '/auth/verify-email',
+    es: '/autenticacion/verificar-email',
+  },
+  '/auth/forgot-password': {
+    en: '/auth/forgot-password',
+    es: '/autenticacion/olvide-contrasena',
+  },
+  '/auth/reset-password': {
+    en: '/auth/reset-password',
+    es: '/autenticacion/restablecer-contrasena',
+  },
   '/home': {
     en: '/home',
     es: '/inicio',
