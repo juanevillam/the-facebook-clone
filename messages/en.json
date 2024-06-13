@@ -17,7 +17,8 @@
       "form": {
         "primary-button": {
           "label": "Log in",
-          "loading-label": "Logging in"
+          "loading-label": "Logging in",
+          "2fa-label": "Confirm"
         },
         "link": "Forgot password?",
         "secondary-button": "Create new account"
@@ -140,7 +141,12 @@
       "something-went-wrong": "Something went wrong",
       "invalid-credentials": "Invalid credentials",
       "oauth-account-not-linked": "Email already in use with a different provider",
-      "account-does-not-exist": "Account does not exist"
+      "account-does-not-exist": "Account does not exist",
+      "missing-token": "Missing token",
+      "token-does-not-exist": "Token does not exist",
+      "token-has-expired": "Token has expired",
+      "invalid-2fa-code": "Invalid 2FA code",
+      "2fa-code-has-expired": "2FA code has expired"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",

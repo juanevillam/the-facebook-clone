@@ -17,7 +17,8 @@
       "form": {
         "primary-button": {
           "label": "Iniciar sesión",
-          "loading-label": "Iniciando sesión"
+          "loading-label": "Iniciando sesión",
+          "2fa-label": "Confirmar"
         },
         "link": "¿Olvidaste tu contraseña?",
         "secondary-button": "Crear nueva cuenta"
@@ -139,7 +140,13 @@
       "email-already-in-use": "Correo electrónico ya en uso",
       "something-went-wrong": "Algo salió mal",
       "invalid-credentials": "Credenciales inválidas",
-      "account-does-not-exist": "La cuenta no existe"
+      "oauth-account-not-linked": "Correo electrónico ya en uso con un proveedor diferente",
+      "account-does-not-exist": "La cuenta no existe",
+      "missing-token": "Falta el token",
+      "token-does-not-exist": "El token no existe",
+      "token-has-expired": "El token ha expirado",
+      "invalid-2fa-code": "Código 2FA inválido",
+      "2fa-code-has-expired": "El código 2FA ha expirado"
     },
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",
