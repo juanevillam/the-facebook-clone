@@ -96,6 +96,16 @@
           "loading-label": "Sending link"
         }
       }
+    },
+    "reset-password": {
+      "title": "Reset password",
+      "description": "Enter a new password for your account.",
+      "form": {
+        "primary-button": {
+          "label": "Reset password",
+          "loading-label": "Resetting password"
+        }
+      }
     }
   },
   "form": {
@@ -134,7 +144,10 @@
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",
-      "welcome-to-the-facebook-clone": "Welcome to The Facebook Clone"
+      "welcome-to-the-facebook-clone": "Welcome to The Facebook Clone",
+      "email-verified": "Email verified",
+      "reset-email-sent": "Reset email sent",
+      "password-updated": "Password updated"
     }
   },
   "icon-buttons": {

@@ -22,6 +22,10 @@ const pathnames = {
     en: '/auth/forgot-password',
     es: '/autenticacion/olvide-contrasena',
   },
+  '/auth/reset-password': {
+    en: '/auth/reset-password',
+    es: '/autenticacion/restablecer-contrasena',
+  },
   '/home': {
     en: '/home',
     es: '/inicio',

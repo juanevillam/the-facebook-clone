@@ -96,6 +96,16 @@
           "loading-label": "Enviando enlace"
         }
       }
+    },
+    "reset-password": {
+      "title": "Restablecer contraseña",
+      "description": "Introduce una nueva contraseña para tu cuenta.",
+      "form": {
+        "primary-button": {
+          "label": "Restablecer contraseña",
+          "loading-label": "Restableciendo contraseña"
+        }
+      }
     }
   },
   "form": {
@@ -133,7 +143,10 @@
     },
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",
-      "welcome-to-the-facebook-clone": "Bienvenido al clon de Facebook"
+      "welcome-to-the-facebook-clone": "Bienvenido al clon de Facebook",
+      "email-verified": "Correo electrónico verificado",
+      "reset-email-sent": "Correo electrónico de restablecimiento enviado",
+      "password-updated": "Contraseña actualizada"
     }
   },
   "icon-buttons": {

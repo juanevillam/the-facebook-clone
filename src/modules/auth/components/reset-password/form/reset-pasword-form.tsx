@@ -3,27 +3,34 @@
 import { useTransition } from 'react';
 
 import { Formik, Form } from 'formik';
+import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/ui';
-import { forgotPassword } from '@/modules/auth/api/forgot-password';
+import { resetPassword } from '@/modules/auth/api/reset-password';
 import {
-  forgotPasswordFormSchema,
-  forgotPasswordFormValuesType,
-} from '@/modules/auth/schemas/forgotPasswordSchema';
+  resetPasswordFormSchema,
+  resetPasswordFormValuesType,
+} from '@/modules/auth/schemas/resetPasswordSchema';
 
 import { AuthTextInput } from '../../ui';
 
-export const ForgotPasswordForm = () => {
+export const ResetPasswordForm = () => {
   const [isPending, startTransition] = useTransition();
-
+  const searchParams = useSearchParams();
+  const token = searchParams.get('token');
   const t = useTranslations();
 
-  const handleSubmit = (values: forgotPasswordFormValuesType) => {
+  const handleSubmit = (values: resetPasswordFormValuesType) => {
     startTransition(() => {
-      forgotPassword(values)
+      if (!token) {
+        showToast.error(t('toast-messages.error.missing-token'));
+        return;
+      }
+
+      resetPassword(values, token)
         .then((data) => {
           if (data.type === 'success') {
             showToast.success(t(`toast-messages.success.${data.message}`));
@@ -35,9 +42,9 @@ export const ForgotPasswordForm = () => {
     });
   };
 
-  const handleValidateForm = (values: forgotPasswordFormValuesType) => {
+  const handleValidateForm = (values: resetPasswordFormValuesType) => {
     try {
-      forgotPasswordFormSchema.parse(values);
+      resetPasswordFormSchema.parse(values);
     } catch (error) {
       if (error instanceof z.ZodError) {
         return error.formErrors.fieldErrors;
@@ -48,7 +55,7 @@ export const ForgotPasswordForm = () => {
   return (
     <Formik
       initialValues={{
-        email: '',
+        password: '',
       }}
       onSubmit={handleSubmit}
       validate={handleValidateForm}
@@ -56,18 +63,19 @@ export const ForgotPasswordForm = () => {
       <Form className="pt-2">
         <AuthTextInput
           disabled={isPending}
-          name="email"
-          placeholder={t('form.fields.email-address')}
-          type="email"
+          minLength={8}
+          name="password"
+          placeholder={t('form.fields.password')}
+          type="password"
           variant="outlined"
         />
         <Button
           disabled={isPending}
           fullWidth
-          label={t('auth.forgot-password.form.primary-button.label')}
+          label={t('auth.reset-password.form.primary-button.label')}
           loading={isPending}
           loadingLabel={t(
-            'auth.forgot-password.form.primary-button.loading-label'
+            'auth.reset-password.form.primary-button.loading-label'
           )}
           type="submit"
           variant="primary"

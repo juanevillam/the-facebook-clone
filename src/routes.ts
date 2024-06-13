@@ -22,6 +22,8 @@ const authRoutes = [
   '/autenticacion/error',
   '/auth/forgot-password',
   '/autenticacion/olvide-contrasena',
+  '/auth/reset-password',
+  '/autenticacion/restablecer-contrasena',
 ];
 
 /**
