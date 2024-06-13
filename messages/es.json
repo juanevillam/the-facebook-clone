@@ -72,6 +72,20 @@
     },
     "card": {
       "link": "Volver a iniciar sesión"
+    },
+    "verify-email": {
+      "loading": {
+        "title": "Verificando correo electrónico",
+        "description": "Por favor, espera mientras verificamos tu correo electrónico. Esto puede tardar unos segundos."
+      },
+      "success": {
+        "title": "Correo electrónico verificado",
+        "description": "Tu correo electrónico ha sido verificado. Ahora puedes iniciar sesión."
+      },
+      "error": {
+        "title": "Error",
+        "description": "Ocurrió un error al intentar verificar tu correo electrónico. Por favor, contacta al soporte."
+      }
     }
   },
   "form": {

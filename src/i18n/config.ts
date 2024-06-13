@@ -14,6 +14,10 @@ const pathnames = {
     en: '/auth/error',
     es: '/autenticacion/error',
   },
+  '/auth/verify-email': {
+    en: '/auth/verify-email',
+    es: '/autenticacion/verificar-email',
+  },
   '/home': {
     en: '/home',
     es: '/inicio',

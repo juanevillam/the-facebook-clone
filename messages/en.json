@@ -72,6 +72,20 @@
     },
     "card": {
       "link": "Go back to log in"
+    },
+    "verify-email": {
+      "loading": {
+        "title": "Verifying email",
+        "description": "Please wait while we verify your email. This may take a few seconds."
+      },
+      "success": {
+        "title": "Email verified",
+        "description": "Your email has been verified. You can now log in."
+      },
+      "error": {
+        "title": "Error",
+        "description": "An error occurred while trying to verify your email. Please contact support."
+      }
     }
   },
   "form": {

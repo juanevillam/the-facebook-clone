@@ -3,7 +3,12 @@
  * These routes do not require authentication.
  * @type {string[]}
  */
-const publicRoutes = ['/', '/api/auth'];
+const publicRoutes = [
+  '/',
+  '/api/auth',
+  '/auth/verify-email',
+  '/autenticacion/verificar-email',
+];
 
 /**
  * An array of routes that are used for authentication.
