@@ -146,7 +146,8 @@
       "token-does-not-exist": "Token does not exist",
       "token-has-expired": "Token has expired",
       "invalid-2fa-code": "Invalid 2FA code",
-      "2fa-code-has-expired": "2FA code has expired"
+      "2fa-code-has-expired": "2FA code has expired",
+      "social-auth-is-currently-unavailable-in-production": "Social auth is currently unavailable in production"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",
