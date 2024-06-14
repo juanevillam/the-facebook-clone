@@ -5,7 +5,7 @@ import { useEffect, useState, useTransition } from 'react';
 import { Formik, Form } from 'formik';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
-import showToaster from 'react-hot-toast';
+import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/ui';
@@ -41,7 +41,7 @@ export const LoginForm = () => {
         .then((data) => {
           if (data.type === 'success') {
             if (data.message === 'confirmation-email-sent') {
-              showToaster.success(t(`toast-messages.success.${data.message}`));
+              showToast.success(t(`toast-messages.success.${data.message}`));
               return;
             }
 
@@ -51,12 +51,12 @@ export const LoginForm = () => {
             }
 
             router.push(`/${locale}${getRedirectPath(locale as localeType)}`);
-            showToaster.success(t(`toast-messages.success.${data.message}`));
+            showToast.success(t(`toast-messages.success.${data.message}`));
           } else if (data.message)
-            showToaster.error(t(`toast-messages.error.${data.message}`));
+            showToast.error(t(`toast-messages.error.${data.message}`));
         })
         .catch(() =>
-          showToaster.error(t('toast-messages.error.something-went-wrong'))
+          showToast.error(t('toast-messages.error.something-went-wrong'))
         );
     });
   };
@@ -75,7 +75,7 @@ export const LoginForm = () => {
 
   useEffect(() => {
     if (urlError)
-      showToaster.error(t(`toast-messages.error.${urlError}`), {
+      showToast.error(t(`toast-messages.error.${urlError}`), {
         id: 'oauth-account-not-linked',
       });
 

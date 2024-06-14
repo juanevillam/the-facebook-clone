@@ -21,7 +21,7 @@ const authMiddleware = auth((req) => {
     if (isAuthPage) {
       return NextResponse.redirect(
         new URL(
-          `http://localhost:3000/home?callbackUrl=${encodeURIComponent(
+          `${process.env.NEXT_PUBLIC_APP_URL}/home?callbackUrl=${encodeURIComponent(
             reqUrlPathname
           )}`,
           req.url
@@ -37,7 +37,7 @@ const authMiddleware = auth((req) => {
 
     return NextResponse.redirect(
       new URL(
-        `http://localhost:3000/auth?callbackUrl=${encodeURIComponent(
+        `${process.env.NEXT_PUBLIC_APP_URL}/auth?callbackUrl=${encodeURIComponent(
           reqUrlPathname
         )}`,
         req.url
