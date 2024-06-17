@@ -109,6 +109,12 @@
       }
     }
   },
+  "navbar": {
+    "main-navigation": "Navegación principal",
+    "home": "Inicio",
+    "search": "Buscar",
+    "mobile-navigation": "Navegación móvil"
+  },
   "form": {
     "fields": {
       "email-address": "Dirección de correo electrónico",

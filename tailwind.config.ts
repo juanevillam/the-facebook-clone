@@ -5,6 +5,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        dark: {
+          50: '#393A3B',
+          100: '#242526',
+          200: '#3A3B3C',
+          300: '#8D8D91',
+          400: '#18191A',
+        },
         error: {
           100: '#F02849',
         },
@@ -17,6 +24,8 @@ const config: Config = {
         },
         smoke: {
           100: '#F0F2F5',
+          200: '#65676B',
+          300: '#B1B3B8',
         },
         success: {
           100: '#42B72A',
