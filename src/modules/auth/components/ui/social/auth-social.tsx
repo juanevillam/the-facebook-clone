@@ -2,7 +2,7 @@ import { signIn } from 'next-auth/react';
 import { useLocale, useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
-import { GithubIcon, GoogleIcon } from '@/assets/ui/svgs/social';
+import { GithubIcon, GoogleIcon } from '@/assets/ui/icons/social';
 import { getRedirectPath } from '@/modules/auth/utils';
 import { localeType } from '@/modules/auth/utils/getRedirectPath';
 

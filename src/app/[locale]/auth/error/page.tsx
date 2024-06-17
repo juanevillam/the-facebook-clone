@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@/assets/types';
-import { AlertTriangleImage } from '@/components/ui';
+import { AlertTriangleImage } from '@/components/images';
 import { AuthCard } from '@/modules/auth/components/ui';
 
 export default function ErrorPage({ params: { locale } }: PageProps) {

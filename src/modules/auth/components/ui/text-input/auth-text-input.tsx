@@ -3,8 +3,9 @@
 import { Field, useField, useFormikContext } from 'formik';
 import { useTranslations } from 'next-intl';
 
-import { CloseIcon } from '@/assets/ui/svgs';
-import { AlertTriangleImage, IconButton } from '@/components/ui';
+import { CloseIcon } from '@/assets/ui/icons';
+import { IconButton } from '@/components/buttons';
+import { AlertTriangleImage } from '@/components/images';
 
 interface AuthTextInputProps {
   disabled: boolean;

@@ -8,7 +8,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
-import { Button } from '@/components/ui';
+import { Button } from '@/components/buttons';
 import { useAppDispatch } from '@/lib/store/hooks';
 import { toggleSignUpOpenable } from '@/lib/store/reducers/auth-reducer';
 import { login } from '@/modules/auth/api/login';

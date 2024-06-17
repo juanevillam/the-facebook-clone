@@ -1,5 +1,5 @@
-import { SharedSvgProps } from '@/assets/ui/svgs/types';
-import { Button } from '@/components/ui';
+import { SharedSvgProps } from '@/assets/ui/icons/types';
+import { Button } from '@/components/buttons';
 
 interface AuthSocialButtonProps {
   Icon: React.FC<SharedSvgProps>;

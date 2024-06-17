@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
-import { Button } from '@/components/ui';
+import { Button } from '@/components/buttons';
 import { resetPassword } from '@/modules/auth/api/reset-password';
 import {
   resetPasswordFormSchema,

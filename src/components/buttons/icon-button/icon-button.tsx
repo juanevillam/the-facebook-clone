@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useTranslations } from 'next-intl';
 
-import { SharedSvgProps } from '@/assets/ui/svgs/types';
+import { SharedSvgProps } from '@/assets/ui/icons/types';
 
 interface IconButtonProps {
   className: string;

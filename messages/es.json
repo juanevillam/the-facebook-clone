@@ -109,6 +109,25 @@
       }
     }
   },
+  "navbar": {
+    "main-navigation": "Navegación principal",
+    "home": "Inicio",
+    "search": "Buscar",
+    "mobile-navigation": "Navegación móvil",
+    "links": {
+      "home": "Inicio",
+      "friends": "Amigos",
+      "watch": "Ver",
+      "marketplace": "Mercado",
+      "groups": "Grupos"
+    },
+    "drop-downs": {
+      "menu": "Menú",
+      "messenger": "Messenger",
+      "notifications": "Notificaciones",
+      "search": "Buscar"
+    }
+  },
   "form": {
     "fields": {
       "email-address": "Dirección de correo electrónico",

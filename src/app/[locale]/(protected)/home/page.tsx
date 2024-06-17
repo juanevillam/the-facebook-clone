@@ -15,8 +15,47 @@ const HomePage = ({ params: { locale } }: PageProps) => {
           await signOut();
         }}
       >
-        <button type="submit">Sign out</button>
+        <button className="text-black text-2xl dark:text-white" type="submit">
+          Sign out
+        </button>
       </form>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
     </div>
   );
 };
