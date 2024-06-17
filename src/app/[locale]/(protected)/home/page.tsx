@@ -15,7 +15,9 @@ const HomePage = ({ params: { locale } }: PageProps) => {
           await signOut();
         }}
       >
-        <button type="submit">Sign out</button>
+        <button className="text-black text-2xl dark:text-white" type="submit">
+          Sign out
+        </button>
       </form>
     </div>
   );

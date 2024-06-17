@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { SearchIcon } from '@/assets/ui/icons';
 import { FacebookLogoMark, FacebookLogoType } from '@/assets/ui/icons/brand';
 
+import { NavbarDropDowns } from './drop-downs/drop-downs';
 import { NavbarLinks } from './links/navbar-links';
 
 export const Navbar = () => {
@@ -43,11 +44,12 @@ export const Navbar = () => {
             <NavbarLinks />
           </div>
           <div className="flex items-center space-x-2" />
+          <NavbarDropDowns />
         </nav>
       </header>
       <nav
         aria-label={t('mobile-navigation')}
-        className={`bg-white dark:bg-dark-100 duration-150 flex sticky top-[47.9px] z-10 md:hidden dark:border-b dark:border-dark-500`}
+        className={`bg-white dark:bg-dark-100 duration-150 flex sticky top-14 z-10 md:hidden dark:border-b dark:border-dark-500`}
       >
         <NavbarLinks />
       </nav>

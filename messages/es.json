@@ -120,6 +120,12 @@
       "watch": "Ver",
       "marketplace": "Mercado",
       "groups": "Grupos"
+    },
+    "drop-downs": {
+      "menu": "Menú",
+      "messenger": "Messenger",
+      "notifications": "Notificaciones",
+      "search": "Buscar"
     }
   },
   "form": {

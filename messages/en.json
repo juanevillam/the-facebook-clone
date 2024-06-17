@@ -120,6 +120,12 @@
       "watch": "Watch",
       "marketplace": "Marketplace",
       "groups": "Groups"
+    },
+    "drop-downs": {
+      "menu": "Menu",
+      "messenger": "Messenger",
+      "notifications": "Notifications",
+      "search": "Search"
     }
   },
   "form": {
