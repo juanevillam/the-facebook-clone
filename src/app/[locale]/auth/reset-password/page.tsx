@@ -9,7 +9,7 @@ import {
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@/assets/types';
-import { SuspenseLoader } from '@/components/ui';
+import { SuspenseLoader } from '@/components';
 import { ResetPasswordForm } from '@/modules/auth/components/reset-password';
 import { AuthCard } from '@/modules/auth/components/ui';
 

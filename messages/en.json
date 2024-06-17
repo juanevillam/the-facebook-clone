@@ -113,7 +113,14 @@
     "main-navigation": "Main navigation",
     "home": "Home",
     "search": "Search",
-    "mobile-navigation": "Mobile navigation"
+    "mobile-navigation": "Mobile navigation",
+    "links": {
+      "home": "Home",
+      "friends": "Friends",
+      "watch": "Watch",
+      "marketplace": "Marketplace",
+      "groups": "Groups"
+    }
   },
   "form": {
     "fields": {

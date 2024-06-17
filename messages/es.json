@@ -113,7 +113,14 @@
     "main-navigation": "Navegación principal",
     "home": "Inicio",
     "search": "Buscar",
-    "mobile-navigation": "Navegación móvil"
+    "mobile-navigation": "Navegación móvil",
+    "links": {
+      "home": "Inicio",
+      "friends": "Amigos",
+      "watch": "Ver",
+      "marketplace": "Mercado",
+      "groups": "Grupos"
+    }
   },
   "form": {
     "fields": {

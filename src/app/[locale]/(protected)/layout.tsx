@@ -1,7 +1,7 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { LayoutProps } from '@/assets/types';
-import { LayoutWrapper } from '@/components/ui/layout';
+import { LayoutWrapper } from '@/components/layout';
 
 export default async function ProtectedLayout({
   params: { locale },

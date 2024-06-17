@@ -5,7 +5,7 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@/assets/types';
-import { SuspenseLoader } from '@/components/ui';
+import { SuspenseLoader } from '@/components';
 import { LoginForm } from '@/modules/auth/components/login';
 import { SignUpDialog, SignUpModal } from '@/modules/auth/components/sign-up';
 import { AuthCard } from '@/modules/auth/components/ui';

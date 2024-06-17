@@ -5,7 +5,7 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@/assets/types';
-import { SuspenseLoader } from '@/components/ui';
+import { SuspenseLoader } from '@/components';
 import { VerifyEmailForm } from '@/modules/auth/components/verify-email';
 
 export default function VerifyEmailPage({ params: { locale } }: PageProps) {

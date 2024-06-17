@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 import { BeatLoader } from 'react-spinners';
 
-import { AlertTriangleImage } from '@/components/ui';
+import { AlertTriangleImage } from '@/components/images';
 import { verifyEmail } from '@/modules/auth/api/verify-email';
 
 import { AuthCard } from '../../ui';
