@@ -19,6 +19,43 @@ const HomePage = ({ params: { locale } }: PageProps) => {
           Sign out
         </button>
       </form>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
+      <h1 className="text-black text-2xl dark:text-white">Home</h1>
     </div>
   );
 };

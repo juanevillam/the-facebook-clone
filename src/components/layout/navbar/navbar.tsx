@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 
 import { SearchIcon } from '@/assets/ui/icons';
 import { FacebookLogoMark, FacebookLogoType } from '@/assets/ui/icons/brand';
+import { useScrollDirection } from '@/hooks';
 
 import { NavbarDropDowns } from './drop-downs/drop-downs';
 import { NavbarLinks } from './links/navbar-links';
@@ -12,10 +13,14 @@ import { NavbarLinks } from './links/navbar-links';
 export const Navbar = () => {
   const t = useTranslations('navbar');
 
+  const scrollDirection = useScrollDirection();
+
   return (
     <>
       <header
-        className={`bg-white duration-150 sticky top-0 z-10 md:dark:border-b dark:bg-dark-100 dark:border-dark-50`}
+        className={`bg-white duration-150 sticky top-0 transform transition-transform z-10 md:transform-none md:dark:border-b dark:bg-dark-100 dark:border-dark-50 ${
+          scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
+        }`}
       >
         <nav
           aria-label={t('main-navigation')}
@@ -49,7 +54,9 @@ export const Navbar = () => {
       </header>
       <nav
         aria-label={t('mobile-navigation')}
-        className={`bg-white dark:bg-dark-100 duration-150 flex sticky top-14 z-10 md:hidden dark:border-b dark:border-dark-500`}
+        className={`bg-white dark:bg-dark-100 duration-150 flex sticky top-14 transform transition-transform z-10 md:hidden dark:border-b dark:border-dark-500 ${
+          scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
+        }`}
       >
         <NavbarLinks />
       </nav>

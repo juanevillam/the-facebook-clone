@@ -21,7 +21,7 @@ export const NavbarLink = ({ Icon, label }: NavbarLinkProps) => {
   return (
     <Tooltip label={t(label)} position="-bottom-10">
       <Link
-        className={`cursor-pointer duration-150 flex h-12 items-center justify-center peer transition md:px-8 md:rounded-lg md:w-max lg:px-10 xl:px-12 ${
+        className={`cursor-pointer duration-150 flex h-14 items-center justify-center peer transition md:h-12 md:px-8 md:rounded-lg md:w-max lg:px-10 xl:px-12 ${
           isActive ? 'relative' : 'hover:bg-smoke-600 dark:hover:bg-dark-200'
         }`}
         href={`/${label}`}
