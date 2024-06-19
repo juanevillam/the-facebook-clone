@@ -9,4 +9,9 @@ interface PageProps {
   };
 }
 
-export type { LayoutProps, PageProps };
+type imageType = {
+  alt: string;
+  src: string;
+};
+
+export type { LayoutProps, PageProps, imageType };

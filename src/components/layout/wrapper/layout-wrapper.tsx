@@ -20,7 +20,7 @@ export const LayoutWrapper = ({
       <div className="max-w-screen-2xl mx-auto">
         <NextIntlClientProvider
           locale={locale}
-          messages={pick(messages, 'navbar')}
+          messages={pick(messages, 'navbar', 'images')}
         >
           <Navbar />
         </NextIntlClientProvider>

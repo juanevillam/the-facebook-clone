@@ -54,7 +54,7 @@ export const Navbar = () => {
       </header>
       <nav
         aria-label={t('mobile-navigation')}
-        className={`bg-white dark:bg-dark-100 duration-150 flex sticky top-14 transform transition-transform z-10 md:hidden dark:border-b dark:border-dark-500 ${
+        className={`bg-white border-b dark:bg-dark-100 duration-150 flex sticky top-14 transform transition-transform z-10 md:hidden dark:border-dark-500 ${
           scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
         }`}
       >

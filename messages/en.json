@@ -128,6 +128,30 @@
       "search": "Search"
     }
   },
+  "posts": {
+    "create": {
+      "thoughts-placeholder": "What's on your mind?",
+      "actions": {
+        "live-video": {
+          "desktop": "Live video",
+          "mobile": "Live"
+        },
+        "photo-video": {
+          "desktop": "Photo/video",
+          "mobile": "Photo"
+        },
+        "feeling-activity": {
+          "desktop": "Feeling/activity",
+          "mobile": "Feeling"
+        }
+      },
+      "header": {
+        "default": {
+          "title": "Create post"
+        }
+      }
+    }
+  },
   "form": {
     "fields": {
       "email-address": "Email address",
@@ -151,7 +175,8 @@
     }
   },
   "images": {
-    "alert-triangle": "Alert icon"
+    "alert-triangle": "Alert icon",
+    "no-profile-pic": "No profile pic image"
   },
   "toast-messages": {
     "error": {

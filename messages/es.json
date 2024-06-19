@@ -128,6 +128,30 @@
       "search": "Buscar"
     }
   },
+  "posts": {
+    "create": {
+      "thoughts-placeholder": "¿Qué estás pensando?",
+      "actions": {
+        "live-video": {
+          "desktop": "Video en vivo",
+          "mobile": "Video"
+        },
+        "photo-video": {
+          "desktop": "Foto/video",
+          "mobile": "Foto"
+        },
+        "feeling-activity": {
+          "desktop": "Sentimiento/actividad",
+          "mobile": "Sentimiento"
+        }
+      },
+      "header": {
+        "default": {
+          "title": "Crear publicación"
+        }
+      }
+    }
+  },
   "form": {
     "fields": {
       "email-address": "Dirección de correo electrónico",
@@ -151,7 +175,8 @@
     }
   },
   "images": {
-    "alert-triangle": "Ícono de alerta"
+    "alert-triangle": "Ícono de alerta",
+    "no-profile-pic": "Imagen de sin foto de perfil"
   },
   "toast-messages": {
     "error": {
