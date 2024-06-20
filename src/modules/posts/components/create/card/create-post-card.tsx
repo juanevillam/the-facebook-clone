@@ -47,11 +47,11 @@ export const CreatePostCard = () => {
         <div className="flex items-center pb-3 px-4 space-x-2">
           <NoProfilePicImage />
           <button
-            className="bg-transparent border duration-150 flex flex-grow hover:bg-smoke-1000 overflow-hidden px-3 py-2 rounded-full transition md:bg-gray-100 md:border-none md:dark:bg-dark-200 md:dark:hover:bg-dark-600 dark:border-dark-50 dark:hover:bg-dark-200"
+            className="bg-transparent border duration-150 flex flex-grow hover:bg-gray-200 overflow-hidden px-3 py-2 rounded-full transition md:bg-gray-100 md:border-none md:dark:bg-dark-200 md:dark:hover:bg-dark-500 dark:border-dark-50 dark:hover:bg-dark-200"
             onClick={handleToggleCreatePostOpenable}
             type="button"
           >
-            <p className="text-smoke-700 whitespace-nowrap dark:text-smoke-300">
+            <p className="text-gray-600 whitespace-nowrap dark:text-gray-400">
               {t('thoughts-placeholder')}
             </p>
           </button>

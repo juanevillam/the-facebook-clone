@@ -12,7 +12,7 @@ const HomePage = ({ params: { locale } }: PageProps) => {
   const messages = useMessages();
 
   return (
-    <div className="max-w-lg mx-auto lg:max-w-2xl md:max-w-lg md:pt-4">
+    <div className="max-w-3xl mx-auto md:max-w-xl md:pt-4 lg:max-w-2xl">
       <NextIntlClientProvider
         messages={pick(
           messages,

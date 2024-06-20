@@ -20,8 +20,8 @@ export const CreatePostCardAction = ({
 }: CreatePostCardActionProps) => {
   return (
     <button
-      className={`duration-150 flex hover:bg-smoke-600 items-center justify-center p-3 space-x-2 transition w-full md:p-2 md:rounded-lg dark:hover:bg-dark-200 ${
-        active && 'bg-smoke-1300 dark:bg-dark-400'
+      className={`duration-150 flex hover:bg-gray-100 items-center justify-center p-3 space-x-2 transition w-full md:p-2 md:rounded-lg dark:hover:bg-dark-200 ${
+        active && 'bg-gray-200 dark:bg-dark-400'
       }`}
       onClick={onClick}
       type="button"
@@ -35,10 +35,10 @@ export const CreatePostCardAction = ({
           src={`/images/${image.src}-icon.png`}
         />
       </div>
-      <p className="font-medium hidden text-smoke-700 text-sm md:block dark:text-smoke-300">
+      <p className="font-medium hidden text-gray-600 text-sm md:block dark:text-gray-400">
         {label.desktop}
       </p>
-      <p className="text-smoke-700 text-sm md:hidden dark:text-smoke-300">
+      <p className="text-gray-600 text-sm md:hidden dark:text-gray-400">
         {label.mobile}
       </p>
     </button>

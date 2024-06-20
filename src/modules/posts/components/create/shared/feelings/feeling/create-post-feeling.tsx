@@ -22,12 +22,12 @@ export const CreatePostFeeling = ({
 
   return (
     <button
-      className={`duration-150 flex hover:bg-gray-200 items-center p-2 rounded-lg space-x-2.5 transition w-full dark:hover:bg-dark-700 ${
+      className={`duration-150 flex hover:bg-gray-200 items-center p-2 rounded-lg space-x-2.5 transition w-full dark:hover:bg-dark-600 ${
         selected && 'bg-gray-300 dark:bg-dark-400'
       }`}
       onClick={selectFeeling}
     >
-      <div className="bg-gray-200 duration-150 p-2 rounded-full transition dark:bg-dark-700">
+      <div className="bg-gray-200 duration-150 p-2 rounded-full transition dark:bg-dark-600">
         <Image
           alt={t(name)}
           height={20}
@@ -36,7 +36,7 @@ export const CreatePostFeeling = ({
           width={20}
         />
       </div>
-      <span className="dark:text-smoke-1000">{t(name)}</span>
+      <span className="dark:text-gray-200">{t(name)}</span>
     </button>
   );
 };

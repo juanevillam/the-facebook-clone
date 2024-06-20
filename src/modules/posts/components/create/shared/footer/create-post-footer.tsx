@@ -17,9 +17,9 @@ export const CreatePostFooter = () => {
   const openFeelingsStep = () => dispatch(setStep('feelings'));
 
   return (
-    <div className="border-t w-full md:border-none md:mb-4 md:pt-1.5 md:px-4 dark:border-dark-500">
-      <div className="flex items-center justify-between pl-4 pr-3 py-2 md:border md:rounded-lg dark:border-dark-500">
-        <h1 className="font-medium text-sm md:font-semibold dark:text-smoke-600">
+    <div className="border-t w-full md:border-none md:mb-4 md:pt-1.5 md:px-4 dark:border-dark-50">
+      <div className="flex items-center justify-between pl-4 pr-3 py-2 md:border md:rounded-lg dark:border-dark-50">
+        <h1 className="font-medium text-sm md:font-semibold dark:text-gray-100">
           {t('footer.title')}
         </h1>
         <div className="flex space-x-1">

@@ -12,9 +12,9 @@ export const CreatePostUserInfo = () => {
     <div className="flex items-center p-3 md:p-4">
       <NoProfilePicImage />
       <div className="flex ml-2 md:ml-3">
-        <p className="font-semibold dark:text-smoke-1000">Juan Villa</p>
+        <p className="font-semibold dark:text-gray-200">Juan Villa</p>
         {activeFeeling && (
-          <div className="flex items-center dark:text-smoke-1000">
+          <div className="flex items-center dark:text-gray-200">
             <span>&nbsp;{t('user-info.is-feeling')}&nbsp;</span>
             <Image
               alt={t(`feelings.${activeFeeling}`)}

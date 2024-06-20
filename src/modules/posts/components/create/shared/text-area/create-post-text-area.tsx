@@ -15,7 +15,7 @@ export const CreatePostTextArea = () => {
 
   return (
     <textarea
-      className="bg-transparent focus:outline-none h-full placeholder:text-smoke-200 pb-2 px-4 resize-none text-xl w-full md:h-40 md:text-2xl md:pb-0 dark:placeholder:text-smoke-300 dark:text-smoke-1000"
+      className="bg-transparent focus:outline-none h-full placeholder:text-gray-500 pb-2 px-4 resize-none text-xl w-full md:h-40 md:text-2xl md:pb-0 dark:placeholder:text-gray-400 dark:text-gray-200"
       onChange={handleSetThoughts}
       placeholder={t('thoughts-placeholder')}
       value={thoughts}

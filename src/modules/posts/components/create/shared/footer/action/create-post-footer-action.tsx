@@ -21,7 +21,7 @@ export const CreatePostFooterAction = ({
     <Tooltip label={t(`${image.src}.desktop`)} position="-top-9">
       <button
         className={`duration-150 flex hover:bg-gray-200 items-center peer justify-center relative rounded-full size-9 transition dark:hover:bg-dark-200 ${
-          active && 'bg-smoke-100 dark:bg-dark-400'
+          active && 'bg-gray-100 dark:bg-dark-400'
         }`}
         onClick={onClick}
         type="button"
