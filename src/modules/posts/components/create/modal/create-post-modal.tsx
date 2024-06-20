@@ -3,7 +3,11 @@ import { Backdrop, Fade, Modal } from '@mui/material';
 import { CloseIcon } from '@/assets/ui/icons';
 import { useAppSelector } from '@/lib/store/hooks';
 
-import { CreatePostHeader } from '../shared';
+import {
+  CreatePostHeader,
+  CreatePostTextArea,
+  CreatePostUserInfo,
+} from '../shared';
 
 interface CreatePostModalProps {
   handleStep: () => void;
@@ -14,7 +18,7 @@ export const CreatePostModal = ({
   handleStep,
   handleToggleCreatePostOpenable,
 }: CreatePostModalProps) => {
-  const { createPostOpenableOpen } = useAppSelector(
+  const { createPostOpenableOpen, step } = useAppSelector(
     (store) => store.postsReducer
   );
 
@@ -40,6 +44,12 @@ export const CreatePostModal = ({
               onClick: handleStep,
             }}
           />
+          {step === 'default' && (
+            <>
+              <CreatePostUserInfo />
+              <CreatePostTextArea />
+            </>
+          )}
           CreatePostModal
         </div>
       </Fade>
