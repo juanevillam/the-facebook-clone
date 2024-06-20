@@ -143,12 +143,27 @@
         "feeling-activity": {
           "desktop": "Sentimiento/actividad",
           "mobile": "Sentimiento"
+        },
+        "tag-people": {
+          "desktop": "Etiquetar personas",
+          "mobile": "Etiquetar"
+        },
+        "check-in": {
+          "desktop": "Ubicación",
+          "mobile": "Ubicación"
+        },
+        "gif": {
+          "desktop": "GIF",
+          "mobile": "GIF"
         }
       },
       "header": {
         "default": {
           "title": "Crear publicación"
         }
+      },
+      "footer": {
+        "title": "Agrega a tu publicación"
       }
     }
   },

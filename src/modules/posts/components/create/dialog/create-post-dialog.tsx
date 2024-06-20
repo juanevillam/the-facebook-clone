@@ -3,6 +3,7 @@ import { MobileDialog } from '@/components/mobile';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import {
+  CreatePostFooter,
   CreatePostHeader,
   CreatePostTextArea,
   CreatePostUserInfo,
@@ -31,9 +32,9 @@ export const CreatePostDialog = ({ handleStep }: CreatePostDialogProps) => {
           <div className="flex flex-col flex-grow">
             <CreatePostUserInfo />
             <CreatePostTextArea />
+            <CreatePostFooter />
           </div>
         )}
-        CreatePostDialog
       </div>
     </MobileDialog>
   );

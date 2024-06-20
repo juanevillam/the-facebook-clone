@@ -4,6 +4,7 @@ import { CloseIcon } from '@/assets/ui/icons';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import {
+  CreatePostFooter,
   CreatePostHeader,
   CreatePostTextArea,
   CreatePostUserInfo,
@@ -48,9 +49,9 @@ export const CreatePostModal = ({
             <>
               <CreatePostUserInfo />
               <CreatePostTextArea />
+              <CreatePostFooter />
             </>
           )}
-          CreatePostModal
         </div>
       </Fade>
     </Modal>

@@ -143,12 +143,27 @@
         "feeling-activity": {
           "desktop": "Feeling/activity",
           "mobile": "Feeling"
+        },
+        "tag-people": {
+          "desktop": "Tag people",
+          "mobile": "Tag"
+        },
+        "check-in": {
+          "desktop": "Check in",
+          "mobile": "Check in"
+        },
+        "gif": {
+          "desktop": "GIF",
+          "mobile": "GIF"
         }
       },
       "header": {
         "default": {
           "title": "Create post"
         }
+      },
+      "footer": {
+        "title": "Add to your post"
       }
     }
   },
