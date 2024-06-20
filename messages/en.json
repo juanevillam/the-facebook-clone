@@ -128,6 +128,109 @@
       "search": "Search"
     }
   },
+  "posts": {
+    "create": {
+      "thoughts-placeholder": "What's on your mind?",
+      "actions": {
+        "live-video": {
+          "desktop": "Live video",
+          "mobile": "Live"
+        },
+        "photo-video": {
+          "desktop": "Photo/video",
+          "mobile": "Photo"
+        },
+        "feeling-activity": {
+          "desktop": "Feeling/activity",
+          "mobile": "Feeling"
+        },
+        "tag-people": {
+          "desktop": "Tag people",
+          "mobile": "Tag"
+        },
+        "check-in": {
+          "desktop": "Check in",
+          "mobile": "Check in"
+        },
+        "gif": {
+          "desktop": "GIF",
+          "mobile": "GIF"
+        }
+      },
+      "header": {
+        "default": {
+          "title": "Create post"
+        },
+        "media": {
+          "title": "Select media"
+        },
+        "feelings": {
+          "title": "How are you feeling?"
+        }
+      },
+      "footer": {
+        "title": "Add to your post"
+      },
+      "media-container": {
+        "title": "Add photos/videos"
+      },
+      "feelings": {
+        "happy": "happy",
+        "blessed": "blessed",
+        "loved": "loved",
+        "sad": "sad",
+        "excited": "excited",
+        "crazy": "crazy",
+        "grateful": "grateful",
+        "silly": "silly",
+        "relaxed": "relaxed",
+        "motivated": "motivated",
+        "alone": "alone",
+        "ok": "ok",
+        "nostalgic": "nostalgic",
+        "emotional": "emotional",
+        "determined": "determined",
+        "exhausted": "exhausted",
+        "lucky": "lucky",
+        "heartbroken": "heartbroken",
+        "bored": "bored",
+        "hungry": "hungry",
+        "pained": "pained",
+        "cold": "cold",
+        "cute": "cute",
+        "sorry": "sorry",
+        "super": "super",
+        "worried": "worried",
+        "funny": "funny",
+        "inspired": "inspired",
+        "confused": "confused",
+        "jolly": "jolly",
+        "broken": "broken",
+        "irritated": "irritated",
+        "incomplete": "incomplete",
+        "puzzled": "puzzled",
+        "furious": "furious",
+        "surprised": "surprised",
+        "meh": "meh",
+        "lost": "lost",
+        "rough": "rough",
+        "strange": "strange",
+        "awful": "awful",
+        "drunk": "drunk",
+        "blue": "blue",
+        "naked": "naked",
+        "dirty": "dirty",
+        "small": "small",
+        "privileged": "privileged",
+        "trapped": "trapped",
+        "afraid": "afraid",
+        "broke": "broke"
+      },
+      "user-info": {
+        "is-feeling": "is feeling"
+      }
+    }
+  },
   "form": {
     "fields": {
       "email-address": "Email address",
@@ -151,7 +254,8 @@
     }
   },
   "images": {
-    "alert-triangle": "Alert icon"
+    "alert-triangle": "Alert icon",
+    "no-profile-pic": "No profile pic image"
   },
   "toast-messages": {
     "error": {

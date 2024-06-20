@@ -45,7 +45,7 @@ export const SignUpModal = () => {
               </p>
             </div>
             <IconButton
-              className="-mr-1 size-9 rounded-full"
+              className="-mr-1 size-9"
               icon={{
                 className: 'size-full stroke-2 text-gray-500',
                 Component: CloseIcon,

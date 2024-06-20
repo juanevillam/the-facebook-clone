@@ -31,8 +31,8 @@ export const Navbar = () => {
               <FacebookLogoMark className="size-10 hidden md:block" />
               <FacebookLogoType className="fill-primary-100 h-6 md:hidden dark:fill-white" />
             </Link>
-            <div className="bg-smoke-100 duration-150 hidden md:flex items-center h-10 ml-2 p-3 rounded-full transition w-max xl:w-60 dark:bg-dark-200">
-              <SearchIcon className="fill-smoke-200 size-4 dark:fill-smoke-300" />
+            <div className="bg-gray-100 duration-150 hidden md:flex items-center h-10 ml-2 p-3 rounded-full transition w-max xl:w-60 dark:bg-dark-200">
+              <SearchIcon className="fill-gray-500 size-4 dark:fill-gray-400" />
               <label className="sr-only" htmlFor="search">
                 {t('search')}
               </label>
@@ -41,7 +41,7 @@ export const Navbar = () => {
                 id="search"
                 type="text"
                 placeholder={t('search')}
-                className="bg-transparent duration-150 font-light flex-shrink placeholder-smoke-200 text-smoke-200 hidden ml-2 outline-none transition xl:inline-flex dark:text-smoke-300 dark:placeholder-dark-300"
+                className="bg-transparent duration-150 font-light flex-shrink placeholder-gray-500 text-gray-500 hidden ml-2 outline-none transition xl:inline-flex dark:text-gray-400 dark:placeholder-dark-300"
               />
             </div>
           </div>
@@ -54,7 +54,7 @@ export const Navbar = () => {
       </header>
       <nav
         aria-label={t('mobile-navigation')}
-        className={`bg-white dark:bg-dark-100 duration-150 flex sticky top-14 transform transition-transform z-10 md:hidden dark:border-b dark:border-dark-500 ${
+        className={`bg-white border-b dark:bg-dark-100 duration-150 flex sticky top-14 transform transition-transform z-10 md:hidden dark:border-dark-50 ${
           scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
         }`}
       >

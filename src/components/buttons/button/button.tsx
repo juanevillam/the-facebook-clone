@@ -2,6 +2,8 @@ import React from 'react';
 
 import { MoonLoader } from 'react-spinners';
 
+import { voidFunctionType } from '@/assets/types';
+
 interface ButtonProps {
   className?: string;
   disabled?: boolean;
@@ -9,7 +11,7 @@ interface ButtonProps {
   label?: string;
   loadingLabel?: string;
   loading?: boolean;
-  onClick?: () => void;
+  onClick?: voidFunctionType;
   size?: 'sm' | 'md' | 'lg';
   type: 'button' | 'submit';
   variant: 'auth' | 'primary' | 'secondary';

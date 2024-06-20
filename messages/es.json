@@ -128,6 +128,109 @@
       "search": "Buscar"
     }
   },
+  "posts": {
+    "create": {
+      "thoughts-placeholder": "¿Qué estás pensando?",
+      "actions": {
+        "live-video": {
+          "desktop": "Video en vivo",
+          "mobile": "Video"
+        },
+        "photo-video": {
+          "desktop": "Foto/video",
+          "mobile": "Foto"
+        },
+        "feeling-activity": {
+          "desktop": "Sentimiento/actividad",
+          "mobile": "Sentimiento"
+        },
+        "tag-people": {
+          "desktop": "Etiquetar personas",
+          "mobile": "Etiquetar"
+        },
+        "check-in": {
+          "desktop": "Ubicación",
+          "mobile": "Ubicación"
+        },
+        "gif": {
+          "desktop": "GIF",
+          "mobile": "GIF"
+        }
+      },
+      "header": {
+        "default": {
+          "title": "Crear publicación"
+        },
+        "media": {
+          "title": "Seleccionar multimedia"
+        },
+        "feelings": {
+          "title": "¿Cómo te sientes?"
+        }
+      },
+      "footer": {
+        "title": "Agrega a tu publicación"
+      },
+      "media-container": {
+        "title": "Agrega fotos/videos"
+      },
+      "feelings": {
+        "happy": "feliz",
+        "blessed": "bendecido",
+        "loved": "amado",
+        "sad": "triste",
+        "excited": "emocionado",
+        "crazy": "loco",
+        "grateful": "agradecido",
+        "silly": "tonto",
+        "relaxed": "relajado",
+        "motivated": "motivado",
+        "alone": "solo",
+        "ok": "ok",
+        "nostalgic": "nostálgico",
+        "emotional": "emocional",
+        "determined": "determinado",
+        "exhausted": "agotado",
+        "lucky": "afortunado",
+        "heartbroken": "desconsolado",
+        "bored": "aburrido",
+        "hungry": "hambriento",
+        "pained": "dolorido",
+        "cold": "frío",
+        "cute": "lindo",
+        "sorry": "lo siento",
+        "super": "super",
+        "worried": "preocupado",
+        "funny": "divertido",
+        "inspired": "inspirado",
+        "confused": "confundido",
+        "jolly": "alegre",
+        "broken": "roto",
+        "irritated": "irritado",
+        "incomplete": "incompleto",
+        "puzzled": "perplejo",
+        "furious": "furioso",
+        "surprised": "sorprendido",
+        "meh": "meh",
+        "lost": "perdido",
+        "rough": "áspero",
+        "strange": "extraño",
+        "awful": "horrible",
+        "drunk": "borracho",
+        "blue": "triste",
+        "naked": "desnudo",
+        "dirty": "sucio",
+        "small": "pequeño",
+        "privileged": "privilegiado",
+        "trapped": "atrapado",
+        "afraid": "asustado",
+        "broke": "pobre"
+      },
+      "user-info": {
+        "is-feeling": "se siente"
+      }
+    }
+  },
   "form": {
     "fields": {
       "email-address": "Dirección de correo electrónico",
@@ -151,7 +254,8 @@
     }
   },
   "images": {
-    "alert-triangle": "Ícono de alerta"
+    "alert-triangle": "Ícono de alerta",
+    "no-profile-pic": "Imagen de sin foto de perfil"
   },
   "toast-messages": {
     "error": {
