@@ -23,7 +23,7 @@ export const MobileDialog = ({
         }`}
       />
       <div
-        className={`bottom-0 duration-500 fixed h-full left-0 right-0 transition-transform z-10 dark:bg-dark-200 ${
+        className={`bottom-0 duration-500 fixed h-full left-0 right-0 transition-transform z-10 dark:bg-dark-100 ${
           open ? translateOpenClass : translateClass
         }`}
       >

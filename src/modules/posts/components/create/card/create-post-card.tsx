@@ -7,6 +7,7 @@ import { useAppDispatch } from '@/lib/store/hooks';
 import { toggleCreatePostOpenable } from '@/lib/store/reducers/posts-reducer';
 
 import { CreatePostCardAction } from './action/create-post-card-action';
+import { CreatePostDialog } from '../dialog/create-post-dialog';
 import { CreatePostModal } from '../modal/create-post-modal';
 
 export const CreatePostCard = () => {
@@ -79,6 +80,7 @@ export const CreatePostCard = () => {
           />
         </div>
       </div>
+      <CreatePostDialog />
       <CreatePostModal
         handleToggleCreatePostOpenable={handleToggleCreatePostOpenable}
       />
