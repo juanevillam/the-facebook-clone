@@ -38,6 +38,7 @@ const config: Config = {
           900: '#E1E9F1',
           1000: '#E4E6EA',
           1100: '#D8DAD6',
+          1200: '#A8ABAF',
         },
         success: {
           100: '#42B72A',

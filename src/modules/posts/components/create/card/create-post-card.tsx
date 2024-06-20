@@ -3,8 +3,11 @@
 import { useTranslations } from 'next-intl';
 
 import { NoProfilePicImage } from '@/components/images';
-import { useAppDispatch } from '@/lib/store/hooks';
-import { toggleCreatePostOpenable } from '@/lib/store/reducers/posts-reducer';
+import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import {
+  setStep,
+  toggleCreatePostOpenable,
+} from '@/lib/store/reducers/posts-reducer';
 
 import { CreatePostCardAction } from './action/create-post-card-action';
 import { CreatePostDialog } from '../dialog/create-post-dialog';
@@ -13,9 +16,15 @@ import { CreatePostModal } from '../modal/create-post-modal';
 export const CreatePostCard = () => {
   const t = useTranslations('posts.create');
   const dispatch = useAppDispatch();
+  const { step } = useAppSelector((store) => store.postsReducer);
 
   const handleToggleCreatePostOpenable = () =>
     dispatch(toggleCreatePostOpenable());
+
+  const handleStep = () =>
+    step === 'default'
+      ? handleToggleCreatePostOpenable()
+      : dispatch(setStep('default'));
 
   return (
     <>
@@ -80,8 +89,9 @@ export const CreatePostCard = () => {
           />
         </div>
       </div>
-      <CreatePostDialog />
+      <CreatePostDialog handleStep={handleStep} />
       <CreatePostModal
+        handleStep={handleStep}
         handleToggleCreatePostOpenable={handleToggleCreatePostOpenable}
       />
     </>
