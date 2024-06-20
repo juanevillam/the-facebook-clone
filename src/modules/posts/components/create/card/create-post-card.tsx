@@ -19,7 +19,7 @@ export const CreatePostCard = () => {
   const filePicker = useRef<HTMLInputElement>(null);
   const t = useTranslations('posts.create');
   const dispatch = useAppDispatch();
-  const { activeFeeling, media, step } = useAppSelector(
+  const { activeFeeling, media, step, thoughts } = useAppSelector(
     (store) => store.postsReducer
   );
 
@@ -52,7 +52,7 @@ export const CreatePostCard = () => {
             type="button"
           >
             <p className="text-gray-600 whitespace-nowrap dark:text-gray-400">
-              {t('thoughts-placeholder')}
+              {thoughts ? thoughts : t('thoughts-placeholder')}
             </p>
           </button>
         </div>
