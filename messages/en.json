@@ -166,6 +166,9 @@
         },
         "feelings": {
           "title": "How are you feeling?"
+        },
+        "check-in": {
+          "title": "Search for location"
         }
       },
       "footer": {
@@ -227,7 +230,12 @@
         "broke": "broke"
       },
       "user-info": {
-        "is-feeling": "is feeling"
+        "is-feeling": "is feeling",
+        "in": "in",
+        "is": "is"
+      },
+      "check-in": {
+        "title": "Search for a place, city, or address"
       }
     }
   },
@@ -283,5 +291,9 @@
   "icon-buttons": {
     "close": "Close",
     "back": "Back"
+  },
+  "search-input": {
+    "search": "Where are you?",
+    "where-are-you": "Where are you?"
   }
 }

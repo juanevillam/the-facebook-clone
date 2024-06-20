@@ -19,7 +19,8 @@ const HomePage = ({ params: { locale } }: PageProps) => {
           'posts.create',
           'images',
           'toast-messages.error',
-          'icon-buttons'
+          'icon-buttons',
+          'search-input'
         )}
       >
         <CreatePostCard />

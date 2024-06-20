@@ -1,8 +1,9 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
+import { locationType } from '@/modules/posts/components/create/shared/check-in/item/create-post-check-in-item';
 import { feelings } from '@/modules/posts/components/create/shared/feelings/create-post-feelings';
 
-type stepType = 'default' | 'feelings' | 'media' | 'gif';
+type stepType = 'default' | 'feelings' | 'media' | 'gif' | 'check-in';
 
 type mediaType = {
   file: string | ArrayBuffer | null;
@@ -18,6 +19,11 @@ interface initialState {
   thoughts: string;
   media: mediaType;
   activeFeeling: fellingType | null;
+  checkIn: {
+    activeLocation: locationType | null;
+    searchInputValue: string;
+    locations: locationType[];
+  };
 }
 
 const initialState: initialState = {
@@ -30,6 +36,11 @@ const initialState: initialState = {
     type: null,
   },
   activeFeeling: null,
+  checkIn: {
+    activeLocation: null,
+    searchInputValue: '',
+    locations: [],
+  },
 };
 
 export const posts = createSlice({
@@ -51,6 +62,15 @@ export const posts = createSlice({
     setActiveFeeling(state, action: PayloadAction<fellingType | null>) {
       state.activeFeeling = action.payload;
     },
+    setLocations(state, action: PayloadAction<locationType[]>) {
+      state.checkIn.locations = action.payload;
+    },
+    setCheckInSeachInputValue(state, action: PayloadAction<string>) {
+      state.checkIn.searchInputValue = action.payload;
+    },
+    setActiveLocation(state, action: PayloadAction<locationType | null>) {
+      state.checkIn.activeLocation = action.payload;
+    },
   },
 });
 
@@ -60,5 +80,8 @@ export const {
   setThoughts,
   setMedia,
   setActiveFeeling,
+  setLocations,
+  setCheckInSeachInputValue,
+  setActiveLocation,
 } = posts.actions;
 export default posts.reducer;

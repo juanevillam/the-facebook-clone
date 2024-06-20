@@ -22,6 +22,8 @@ type voidFunctionType = () => void;
 
 type sharedSvgType = React.FC<SharedSvgProps>;
 
+type inputEventType = React.ChangeEvent<HTMLInputElement>;
+
 export type {
   LayoutProps,
   PageProps,
@@ -29,4 +31,5 @@ export type {
   filePickerType,
   voidFunctionType,
   sharedSvgType,
+  inputEventType,
 };

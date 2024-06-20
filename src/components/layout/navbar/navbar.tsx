@@ -31,17 +31,17 @@ export const Navbar = () => {
               <FacebookLogoMark className="size-10 hidden md:block" />
               <FacebookLogoType className="fill-primary-100 h-6 md:hidden dark:fill-white" />
             </Link>
-            <div className="bg-gray-100 duration-150 hidden md:flex items-center h-10 ml-2 p-3 rounded-full transition w-max xl:w-60 dark:bg-dark-200">
+            <div className="bg-gray-100 duration-150 hidden h-10 items-center ml-2 p-3 rounded-full transition w-max md:flex xl:w-60 dark:bg-dark-200">
               <SearchIcon className="fill-gray-500 size-4 dark:fill-gray-400" />
               <label className="sr-only" htmlFor="search">
                 {t('search')}
               </label>
               <input
                 aria-label={t('search')}
-                id="search"
-                type="text"
-                placeholder={t('search')}
                 className="bg-transparent duration-150 font-light flex-shrink placeholder-gray-500 text-gray-500 hidden ml-2 outline-none transition xl:inline-flex dark:text-gray-400 dark:placeholder-dark-300"
+                id="search"
+                placeholder={t('search')}
+                type="text"
               />
             </div>
           </div>

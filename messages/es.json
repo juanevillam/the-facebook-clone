@@ -166,6 +166,9 @@
         },
         "feelings": {
           "title": "¿Cómo te sientes?"
+        },
+        "check-in": {
+          "title": "Buscar ubicación"
         }
       },
       "footer": {
@@ -227,7 +230,12 @@
         "broke": "pobre"
       },
       "user-info": {
-        "is-feeling": "se siente"
+        "is-feeling": "se siente",
+        "in": "en",
+        "is": "está"
+      },
+      "check-in": {
+        "title": "Busca un lugar, ciudad o dirección"
       }
     }
   },
@@ -283,5 +291,8 @@
   "icon-buttons": {
     "close": "Cerrar",
     "back": "Atrás"
+  },
+  "search-input": {
+    "where-are-you": "¿Dónde estás?"
   }
 }

@@ -8,13 +8,15 @@ import { CreatePostFooterAction } from './action/create-post-footer-action';
 export const CreatePostFooter = () => {
   const t = useTranslations('posts.create');
   const dispatch = useAppDispatch();
-  const { activeFeeling, media } = useAppSelector(
+  const { activeFeeling, checkIn, media } = useAppSelector(
     (store) => store.postsReducer
   );
 
   const openMediaStep = () => dispatch(setStep('media'));
 
   const openFeelingsStep = () => dispatch(setStep('feelings'));
+
+  const openCheckInStep = () => dispatch(setStep('check-in'));
 
   return (
     <div className="border-t w-full md:border-none md:mb-4 md:pt-1.5 md:px-4 dark:border-dark-50">
@@ -50,14 +52,12 @@ export const CreatePostFooter = () => {
             onClick={openFeelingsStep}
           />
           <CreatePostFooterAction
-            active={false}
+            active={checkIn.activeLocation ? true : false}
             image={{
               alt: t('actions.check-in.desktop'),
               src: 'check-in',
             }}
-            onClick={() => {
-              console.log('Check in');
-            }}
+            onClick={openCheckInStep}
           />
           <CreatePostFooterAction
             active={false}
