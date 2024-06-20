@@ -1,5 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
+import { feelings } from '@/modules/posts/components/create/shared/feelings/create-post-feelings';
+
 type stepType = 'default' | 'feelings' | 'media' | 'gif';
 
 type mediaType = {
@@ -8,11 +10,14 @@ type mediaType = {
   type: string | null;
 };
 
+type fellingType = (typeof feelings)[number];
+
 interface initialState {
   createPostOpenableOpen: boolean;
   step: stepType;
   thoughts: string;
   media: mediaType;
+  activeFeeling: fellingType | null;
 }
 
 const initialState: initialState = {
@@ -24,6 +29,7 @@ const initialState: initialState = {
     playing: false,
     type: null,
   },
+  activeFeeling: null,
 };
 
 export const posts = createSlice({
@@ -42,9 +48,17 @@ export const posts = createSlice({
     setMedia(state, action: PayloadAction<mediaType>) {
       state.media = action.payload;
     },
+    setActiveFeeling(state, action: PayloadAction<fellingType | null>) {
+      state.activeFeeling = action.payload;
+    },
   },
 });
 
-export const { toggleCreatePostOpenable, setStep, setThoughts, setMedia } =
-  posts.actions;
+export const {
+  toggleCreatePostOpenable,
+  setStep,
+  setThoughts,
+  setMedia,
+  setActiveFeeling,
+} = posts.actions;
 export default posts.reducer;

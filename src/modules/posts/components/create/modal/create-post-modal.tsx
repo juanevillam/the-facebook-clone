@@ -5,6 +5,7 @@ import { ArrowLeftIcon, CloseIcon } from '@/assets/ui/icons';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import {
+  CreatePostFeelings,
   CreatePostFooter,
   CreatePostHeader,
   CreatePostMedia,
@@ -57,6 +58,7 @@ export const CreatePostModal = ({
             </>
           )}
           {step === 'media' && <CreatePostMedia filePicker={filePicker} />}
+          {step === 'feelings' && <CreatePostFeelings />}
         </div>
       </Fade>
     </Modal>

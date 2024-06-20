@@ -163,6 +163,9 @@
         },
         "media": {
           "title": "Seleccionar multimedia"
+        },
+        "feelings": {
+          "title": "¿Cómo te sientes?"
         }
       },
       "footer": {
@@ -170,6 +173,61 @@
       },
       "media-container": {
         "title": "Agrega fotos/videos"
+      },
+      "feelings": {
+        "happy": "feliz",
+        "blessed": "bendecido",
+        "loved": "amado",
+        "sad": "triste",
+        "excited": "emocionado",
+        "crazy": "loco",
+        "grateful": "agradecido",
+        "silly": "tonto",
+        "relaxed": "relajado",
+        "motivated": "motivado",
+        "alone": "solo",
+        "ok": "ok",
+        "nostalgic": "nostálgico",
+        "emotional": "emocional",
+        "determined": "determinado",
+        "exhausted": "agotado",
+        "lucky": "afortunado",
+        "heartbroken": "desconsolado",
+        "bored": "aburrido",
+        "hungry": "hambriento",
+        "pained": "dolorido",
+        "cold": "frío",
+        "cute": "lindo",
+        "sorry": "lo siento",
+        "super": "super",
+        "worried": "preocupado",
+        "funny": "divertido",
+        "inspired": "inspirado",
+        "confused": "confundido",
+        "jolly": "alegre",
+        "broken": "roto",
+        "irritated": "irritado",
+        "incomplete": "incompleto",
+        "puzzled": "perplejo",
+        "furious": "furioso",
+        "surprised": "sorprendido",
+        "meh": "meh",
+        "lost": "perdido",
+        "rough": "áspero",
+        "strange": "extraño",
+        "awful": "horrible",
+        "drunk": "borracho",
+        "blue": "triste",
+        "naked": "desnudo",
+        "dirty": "sucio",
+        "small": "pequeño",
+        "privileged": "privilegiado",
+        "trapped": "atrapado",
+        "afraid": "asustado",
+        "broke": "pobre"
+      },
+      "user-info": {
+        "is-feeling": "se siente"
       }
     }
   },

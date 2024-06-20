@@ -4,6 +4,7 @@ import { MobileDialog } from '@/components/mobile';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import {
+  CreatePostFeelings,
   CreatePostFooter,
   CreatePostHeader,
   CreatePostMedia,
@@ -42,6 +43,7 @@ export const CreatePostDialog = ({
           </div>
         )}
         {step === 'media' && <CreatePostMedia filePicker={filePicker} />}
+        {step === 'feelings' && <CreatePostFeelings />}
       </div>
     </MobileDialog>
   );
