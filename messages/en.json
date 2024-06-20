@@ -160,10 +160,16 @@
       "header": {
         "default": {
           "title": "Create post"
+        },
+        "media": {
+          "title": "Select media"
         }
       },
       "footer": {
         "title": "Add to your post"
+      },
+      "media-container": {
+        "title": "Add photos/videos"
       }
     }
   },

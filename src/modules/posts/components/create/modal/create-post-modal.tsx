@@ -1,21 +1,25 @@
 import { Backdrop, Fade, Modal } from '@mui/material';
 
-import { CloseIcon } from '@/assets/ui/icons';
+import { filePickerType, voidFunctionType } from '@/assets/types';
+import { ArrowLeftIcon, CloseIcon } from '@/assets/ui/icons';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import {
   CreatePostFooter,
   CreatePostHeader,
+  CreatePostMedia,
   CreatePostTextArea,
   CreatePostUserInfo,
 } from '../shared';
 
 interface CreatePostModalProps {
-  handleStep: () => void;
-  handleToggleCreatePostOpenable: () => void;
+  filePicker: filePickerType;
+  handleStep: voidFunctionType;
+  handleToggleCreatePostOpenable: voidFunctionType;
 }
 
 export const CreatePostModal = ({
+  filePicker,
   handleStep,
   handleToggleCreatePostOpenable,
 }: CreatePostModalProps) => {
@@ -40,8 +44,8 @@ export const CreatePostModal = ({
         <div className="absolute bg-white left-1/2 max-w-lg outline-none top-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-lg w-full dark:bg-dark-100">
           <CreatePostHeader
             icon={{
-              Component: CloseIcon,
-              name: 'close',
+              Component: step === 'default' ? CloseIcon : ArrowLeftIcon,
+              name: step === 'default' ? 'close' : 'back',
               onClick: handleStep,
             }}
           />
@@ -52,6 +56,7 @@ export const CreatePostModal = ({
               <CreatePostFooter />
             </>
           )}
+          {step === 'media' && <CreatePostMedia filePicker={filePicker} />}
         </div>
       </Fade>
     </Modal>

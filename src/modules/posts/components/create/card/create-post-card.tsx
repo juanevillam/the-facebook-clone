@@ -1,5 +1,7 @@
 'use client';
 
+import { useRef } from 'react';
+
 import { useTranslations } from 'next-intl';
 
 import { NoProfilePicImage } from '@/components/images';
@@ -14,9 +16,10 @@ import { CreatePostDialog } from '../dialog/create-post-dialog';
 import { CreatePostModal } from '../modal/create-post-modal';
 
 export const CreatePostCard = () => {
+  const filePicker = useRef<HTMLInputElement>(null);
   const t = useTranslations('posts.create');
   const dispatch = useAppDispatch();
-  const { step } = useAppSelector((store) => store.postsReducer);
+  const { step, media } = useAppSelector((store) => store.postsReducer);
 
   const handleToggleCreatePostOpenable = () =>
     dispatch(toggleCreatePostOpenable());
@@ -26,13 +29,18 @@ export const CreatePostCard = () => {
       ? handleToggleCreatePostOpenable()
       : dispatch(setStep('default'));
 
+  const openMediaStep = () => {
+    handleToggleCreatePostOpenable();
+    dispatch(setStep('media'));
+  };
+
   return (
     <>
       <div className="bg-white mb-2 pt-3 md:mb-4 md:pb-2.5 md:rounded-lg dark:bg-dark-100">
         <div className="flex items-center pb-3 px-4 space-x-2">
           <NoProfilePicImage />
           <button
-            className="bg-transparent border cursor-pointer duration-150 flex flex-grow hover:bg-smoke-1000 overflow-hidden px-3 py-2 rounded-full transition md:bg-gray-100 md:border-none md:dark:bg-dark-200 md:dark:hover:bg-dark-600 dark:border-dark-50 dark:hover:bg-dark-200"
+            className="bg-transparent border duration-150 flex flex-grow hover:bg-smoke-1000 overflow-hidden px-3 py-2 rounded-full transition md:bg-gray-100 md:border-none md:dark:bg-dark-200 md:dark:hover:bg-dark-600 dark:border-dark-50 dark:hover:bg-dark-200"
             onClick={handleToggleCreatePostOpenable}
             type="button"
           >
@@ -58,7 +66,7 @@ export const CreatePostCard = () => {
             }}
           />
           <CreatePostCardAction
-            active={false}
+            active={media.file ? true : false}
             image={{
               alt: t('actions.photo-video.desktop'),
               src: 'photo-video',
@@ -67,10 +75,7 @@ export const CreatePostCard = () => {
               desktop: t('actions.photo-video.desktop'),
               mobile: t('actions.photo-video.mobile'),
             }}
-            onClick={() => {
-              handleToggleCreatePostOpenable();
-              console.log('Photo video');
-            }}
+            onClick={openMediaStep}
           />
           <CreatePostCardAction
             active={false}
@@ -89,8 +94,9 @@ export const CreatePostCard = () => {
           />
         </div>
       </div>
-      <CreatePostDialog handleStep={handleStep} />
+      <CreatePostDialog filePicker={filePicker} handleStep={handleStep} />
       <CreatePostModal
+        filePicker={filePicker}
         handleStep={handleStep}
         handleToggleCreatePostOpenable={handleToggleCreatePostOpenable}
       />

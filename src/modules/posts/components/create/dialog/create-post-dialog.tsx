@@ -1,3 +1,4 @@
+import { filePickerType, voidFunctionType } from '@/assets/types';
 import { ArrowLeftIcon } from '@/assets/ui/icons';
 import { MobileDialog } from '@/components/mobile';
 import { useAppSelector } from '@/lib/store/hooks';
@@ -5,15 +6,20 @@ import { useAppSelector } from '@/lib/store/hooks';
 import {
   CreatePostFooter,
   CreatePostHeader,
+  CreatePostMedia,
   CreatePostTextArea,
   CreatePostUserInfo,
 } from '../shared';
 
 interface CreatePostDialogProps {
-  handleStep: () => void;
+  filePicker: filePickerType;
+  handleStep: voidFunctionType;
 }
 
-export const CreatePostDialog = ({ handleStep }: CreatePostDialogProps) => {
+export const CreatePostDialog = ({
+  filePicker,
+  handleStep,
+}: CreatePostDialogProps) => {
   const { createPostOpenableOpen, step } = useAppSelector(
     (store) => store.postsReducer
   );
@@ -35,6 +41,7 @@ export const CreatePostDialog = ({ handleStep }: CreatePostDialogProps) => {
             <CreatePostFooter />
           </div>
         )}
+        {step === 'media' && <CreatePostMedia filePicker={filePicker} />}
       </div>
     </MobileDialog>
   );

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { imageType } from '@/assets/types';
+import { imageType, voidFunctionType } from '@/assets/types';
 
 interface CreatePostCardActionProps {
   active: boolean;
@@ -9,7 +9,7 @@ interface CreatePostCardActionProps {
     mobile: string;
     desktop: string;
   };
-  onClick: () => void;
+  onClick: voidFunctionType;
 }
 
 export const CreatePostCardAction = ({
@@ -20,8 +20,8 @@ export const CreatePostCardAction = ({
 }: CreatePostCardActionProps) => {
   return (
     <button
-      className={`cursor-pointer duration-150 flex hover:bg-smoke-600 items-center justify-center p-3 space-x-2 transition w-full md:p-2 md:rounded-lg dark:hover:bg-dark-200 ${
-        active && 'dark:bg-dark-400'
+      className={`duration-150 flex hover:bg-smoke-600 items-center justify-center p-3 space-x-2 transition w-full md:p-2 md:rounded-lg dark:hover:bg-dark-200 ${
+        active && 'bg-smoke-1300 dark:bg-dark-400'
       }`}
       onClick={onClick}
       type="button"

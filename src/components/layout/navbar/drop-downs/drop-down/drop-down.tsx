@@ -1,11 +1,11 @@
 import { useTranslations } from 'next-intl';
 
-import { SharedSvgProps } from '@/assets/ui/icons/types';
+import { sharedSvgType } from '@/assets/types';
 import { Tooltip } from '@/components/tooltip/tooltip';
 
 interface DropDownProps {
   className?: string;
-  Icon: React.FC<SharedSvgProps>;
+  Icon: sharedSvgType;
   isActive?: boolean;
   label: string;
 }

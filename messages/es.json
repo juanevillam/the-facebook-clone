@@ -160,10 +160,16 @@
       "header": {
         "default": {
           "title": "Crear publicación"
+        },
+        "media": {
+          "title": "Seleccionar multimedia"
         }
       },
       "footer": {
         "title": "Agrega a tu publicación"
+      },
+      "media-container": {
+        "title": "Agrega fotos/videos"
       }
     }
   },

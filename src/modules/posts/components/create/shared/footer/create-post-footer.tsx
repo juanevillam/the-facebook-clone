@@ -1,9 +1,16 @@
 import { useTranslations } from 'next-intl';
 
+import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import { setStep } from '@/lib/store/reducers/posts-reducer';
+
 import { CreatePostFooterAction } from './action/create-post-footer-action';
 
 export const CreatePostFooter = () => {
   const t = useTranslations('posts.create');
+  const dispatch = useAppDispatch();
+  const { media } = useAppSelector((store) => store.postsReducer);
+
+  const openMediaStep = () => dispatch(setStep('media'));
 
   return (
     <div className="border-t w-full md:border-none md:mb-4 md:pt-1.5 md:px-4 dark:border-dark-500">
@@ -13,14 +20,12 @@ export const CreatePostFooter = () => {
         </h1>
         <div className="flex space-x-1">
           <CreatePostFooterAction
-            active={false}
+            active={media.file ? true : false}
             image={{
               alt: t('actions.photo-video.desktop'),
               src: 'photo-video',
             }}
-            onClick={() => {
-              console.log('Photo video');
-            }}
+            onClick={openMediaStep}
           />
           <CreatePostFooterAction
             active={false}

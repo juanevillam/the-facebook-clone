@@ -1,15 +1,15 @@
 import { useTranslations } from 'next-intl';
 
-import { SharedSvgProps } from '@/assets/ui/icons/types';
+import { sharedSvgType, voidFunctionType } from '@/assets/types';
 import { IconButton } from '@/components/buttons';
 import { iconButtonName } from '@/components/buttons/icon-button/icon-button';
 import { useAppSelector } from '@/lib/store/hooks';
 
 interface CreatePostHeaderProps {
   icon: {
-    Component: React.FC<SharedSvgProps>;
+    Component: sharedSvgType;
     name: iconButtonName;
-    onClick: () => void;
+    onClick: voidFunctionType;
   };
 }
 
