@@ -20,7 +20,7 @@ export const CreatePostFooterAction = ({
   return (
     <Tooltip label={t(`${image.src}.desktop`)} position="-top-9">
       <button
-        className={`duration-150 flex hover:bg-gray-200 items-center peer justify-center relative rounded-full size-9 transition dark:hover:bg-dark-200 ${
+        className={`border-b duration-150 flex hover:bg-gray-200 items-center peer px-4 py-3 relative transition w-full md:border-none md:justify-center md:p-0 md:rounded-full md:size-9 dark:border-dark-50 dark:hover:bg-dark-200 ${
           active && 'bg-gray-100 dark:bg-dark-400'
         }`}
         onClick={onClick}
@@ -33,6 +33,7 @@ export const CreatePostFooterAction = ({
           src={`/images/${image.src}-icon.png`}
           width={24}
         />
+        <p className="md:hidden ml-3 dark:text-gray-100">{image.alt}</p>
       </button>
     </Tooltip>
   );

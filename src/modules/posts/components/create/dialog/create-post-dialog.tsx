@@ -37,11 +37,11 @@ export const CreatePostDialog = ({
           }}
         />
         {step === 'default' && (
-          <div className="flex flex-col flex-grow">
+          <>
             <CreatePostUserInfo />
             <CreatePostTextArea />
             <CreatePostFooter />
-          </div>
+          </>
         )}
         {step === 'media' && <CreatePostMedia filePicker={filePicker} />}
         {step === 'feelings' && <CreatePostFeelings />}

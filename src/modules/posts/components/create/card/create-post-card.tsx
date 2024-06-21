@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 
 import { useTranslations } from 'next-intl';
+import showToast from 'react-hot-toast';
 
 import { NoProfilePicImage } from '@/components/images';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
@@ -17,7 +18,7 @@ import { CreatePostModal } from '../modal/create-post-modal';
 
 export const CreatePostCard = () => {
   const filePicker = useRef<HTMLInputElement>(null);
-  const t = useTranslations('posts.create');
+  const t = useTranslations();
   const dispatch = useAppDispatch();
   const { feelings, media, step, thoughts } = useAppSelector(
     (store) => store.postsReducer
@@ -30,6 +31,9 @@ export const CreatePostCard = () => {
     step === 'default'
       ? handleToggleCreatePostOpenable()
       : dispatch(setStep('default'));
+
+  const openLiveVideoStep = () =>
+    showToast.error(t('toast-messages.error.feature-under-development'));
 
   const openMediaStep = () => {
     handleToggleCreatePostOpenable();
@@ -52,7 +56,7 @@ export const CreatePostCard = () => {
             type="button"
           >
             <p className="text-gray-600 whitespace-nowrap dark:text-gray-400">
-              {thoughts ? thoughts : t('thoughts-placeholder')}
+              {thoughts ? thoughts : t('posts.create.thoughts-placeholder')}
             </p>
           </button>
         </div>
@@ -60,39 +64,36 @@ export const CreatePostCard = () => {
           <CreatePostCardAction
             active={false}
             image={{
-              alt: t('actions.live-video.desktop'),
+              alt: t('posts.create.actions.live-video.desktop'),
               src: 'live-video',
             }}
             label={{
-              desktop: t('actions.live-video.desktop'),
-              mobile: t('actions.live-video.mobile'),
+              desktop: t('posts.create.actions.live-video.desktop'),
+              mobile: t('posts.create.actions.live-video.mobile'),
             }}
-            onClick={() => {
-              handleToggleCreatePostOpenable();
-              console.log('Live video');
-            }}
+            onClick={openLiveVideoStep}
           />
           <CreatePostCardAction
             active={media.file ? true : false}
             image={{
-              alt: t('actions.photo-video.desktop'),
+              alt: t('posts.create.actions.photo-video.desktop'),
               src: 'photo-video',
             }}
             label={{
-              desktop: t('actions.photo-video.desktop'),
-              mobile: t('actions.photo-video.mobile'),
+              desktop: t('posts.create.actions.photo-video.desktop'),
+              mobile: t('posts.create.actions.photo-video.mobile'),
             }}
             onClick={openMediaStep}
           />
           <CreatePostCardAction
             active={feelings.activeFeeling ? true : false}
             image={{
-              alt: t('actions.feeling-activity.desktop'),
+              alt: t('posts.create.actions.feeling-activity.desktop'),
               src: 'feeling-activity',
             }}
             label={{
-              desktop: t('actions.feeling-activity.desktop'),
-              mobile: t('actions.feeling-activity.mobile'),
+              desktop: t('posts.create.actions.feeling-activity.desktop'),
+              mobile: t('posts.create.actions.feeling-activity.mobile'),
             }}
             onClick={openFeelingsStep}
           />
