@@ -19,7 +19,7 @@ export const CreatePostCard = () => {
   const filePicker = useRef<HTMLInputElement>(null);
   const t = useTranslations('posts.create');
   const dispatch = useAppDispatch();
-  const { activeFeeling, media, step, thoughts } = useAppSelector(
+  const { feelings, media, step, thoughts } = useAppSelector(
     (store) => store.postsReducer
   );
 
@@ -85,7 +85,7 @@ export const CreatePostCard = () => {
             onClick={openMediaStep}
           />
           <CreatePostCardAction
-            active={activeFeeling ? true : false}
+            active={feelings.activeFeeling ? true : false}
             image={{
               alt: t('actions.feeling-activity.desktop'),
               src: 'feeling-activity',

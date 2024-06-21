@@ -8,7 +8,7 @@ import { CreatePostFooterAction } from './action/create-post-footer-action';
 export const CreatePostFooter = () => {
   const t = useTranslations('posts.create');
   const dispatch = useAppDispatch();
-  const { activeFeeling, checkIn, media } = useAppSelector(
+  const { checkIn, feelings, media } = useAppSelector(
     (store) => store.postsReducer
   );
 
@@ -44,7 +44,7 @@ export const CreatePostFooter = () => {
             }}
           />
           <CreatePostFooterAction
-            active={activeFeeling ? true : false}
+            active={feelings.activeFeeling ? true : false}
             image={{
               alt: t('actions.feeling-activity.desktop'),
               src: 'feeling-activity',

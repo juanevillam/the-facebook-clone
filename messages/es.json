@@ -227,7 +227,8 @@
         "privileged": "privilegiado",
         "trapped": "atrapado",
         "afraid": "asustado",
-        "broke": "pobre"
+        "broke": "pobre",
+        "not-found": "Sentimiento no encontrado"
       },
       "user-info": {
         "is-feeling": "se siente",
@@ -235,7 +236,7 @@
         "is": "está"
       },
       "check-in": {
-        "title": "Busca un lugar, ciudad o dirección"
+        "title": "Intenta buscar un lugar, ciudad o dirección"
       }
     }
   },
@@ -293,6 +294,7 @@
     "back": "Atrás"
   },
   "search-input": {
+    "search": "Buscar",
     "where-are-you": "¿Dónde estás?"
   }
 }

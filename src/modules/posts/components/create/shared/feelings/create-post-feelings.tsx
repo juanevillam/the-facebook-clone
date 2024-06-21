@@ -1,7 +1,19 @@
-import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { setActiveFeeling, setStep } from '@/lib/store/reducers/posts-reducer';
+import { useTranslations } from 'next-intl';
 
-import { CreatePostFeeling, fellingType } from './feeling/create-post-feeling';
+import { inputEventType } from '@/assets/types';
+import { FaceFrowIcon } from '@/assets/ui/icons';
+import { SearchInput } from '@/components/inputs';
+import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import {
+  setActiveFeeling,
+  setStep,
+  setFeelingsSearchInputValue,
+} from '@/lib/store/reducers/posts-reducer';
+
+import {
+  CreatePostFeelingsItem,
+  feelingType,
+} from './item/create-post-feelings-item';
 
 export const feelings = [
   'happy',
@@ -58,25 +70,56 @@ export const feelings = [
 
 export const CreatePostFeelings = () => {
   const dispatch = useAppDispatch();
-  const { activeFeeling } = useAppSelector((store) => store.postsReducer);
+  const { feelings } = useAppSelector((store) => store.postsReducer);
+  const t = useTranslations('posts.create.feelings');
 
-  const handleSetActiveFeeling = (feeling: fellingType) => {
-    dispatch(setActiveFeeling(activeFeeling === feeling ? null : feeling));
+  const handleSetActiveFeeling = (feeling: feelingType) => {
+    dispatch(
+      setActiveFeeling(feelings.activeFeeling === feeling ? null : feeling)
+    );
+
     dispatch(setStep('default'));
   };
 
+  const handleSearchChange = (event: inputEventType) =>
+    dispatch(setFeelingsSearchInputValue(event.target.value));
+
+  const filteredFeelings = feelings.feelings.filter((feeling) =>
+    feeling.toLowerCase().includes(feelings.searchInputValue.toLowerCase())
+  );
+
   return (
-    <div className="h-full overflow-y-auto md:h-96">
-      <div className="grid grid-cols-2 p-3 md:p-4">
-        {feelings.map((feeling) => (
-          <CreatePostFeeling
-            key={feeling}
-            name={feeling}
-            selected={activeFeeling === feeling}
-            onClick={handleSetActiveFeeling}
-          />
-        ))}
+    <>
+      <div className="p-3 md:p-4">
+        <SearchInput
+          label="search"
+          onChange={handleSearchChange}
+          value={feelings.searchInputValue}
+        />
       </div>
-    </div>
+      <div className="h-full overflow-y-auto md:h-80">
+        {filteredFeelings.length === 0 ? (
+          <div className="flex flex-col h-full items-center justify-center">
+            <div className="mb-1 p-3 rounded-full md:bg-gray-200 md:mb-2 md:p-2.5 md:dark:bg-dark-700">
+              <FaceFrowIcon className="size-10 md:size-6 dark:text-gray-200" />
+            </div>
+            <h1 className="font-medium md:text-sm dark:text-gray-200">
+              {t('not-found')}
+            </h1>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 p-3 pt-0 md:p-4 md:pt-0">
+            {filteredFeelings.map((feeling) => (
+              <CreatePostFeelingsItem
+                key={feeling}
+                name={feeling}
+                selected={feelings.activeFeeling === feeling}
+                onClick={handleSetActiveFeeling}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </>
   );
 };

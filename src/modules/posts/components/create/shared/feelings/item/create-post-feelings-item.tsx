@@ -3,19 +3,19 @@ import { useTranslations } from 'next-intl';
 
 import { feelings } from '../create-post-feelings';
 
-export type fellingType = (typeof feelings)[number];
+export type feelingType = (typeof feelings)[number];
 
-interface CreatePostFeelingProps {
-  name: fellingType;
+interface CreatePostFeelingsItemProps {
+  name: feelingType;
   selected: boolean;
-  onClick: (feeling: fellingType) => void;
+  onClick: (feeling: feelingType) => void;
 }
 
-export const CreatePostFeeling = ({
+export const CreatePostFeelingsItem = ({
   name,
   selected,
   onClick,
-}: CreatePostFeelingProps) => {
+}: CreatePostFeelingsItemProps) => {
   const t = useTranslations('posts.create.feelings');
 
   const selectFeeling = () => onClick(name);
