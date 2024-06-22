@@ -2,7 +2,6 @@ import { useRef, useTransition } from 'react';
 
 import axios from 'axios';
 import { useTranslations } from 'next-intl';
-import { BeatLoader } from 'react-spinners';
 
 import { InputEvent } from '@/assets/types';
 import { ExclamationCircleIcon, GifIcon } from '@/assets/ui/icons';
@@ -17,6 +16,7 @@ import {
 import { setStep } from '@/modules/posts/create/reducers/postSlice';
 
 import { CreatePostGifsItem } from './item/CreatePostGifsItem';
+import { StepLoader, StepMessage } from '../shared';
 
 export const CreatePostGifs = () => {
   const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -78,8 +78,6 @@ export const CreatePostGifs = () => {
     dispatch(setStep('default'));
   };
 
-  console.log(error);
-
   return (
     <>
       <div className="p-3 md:p-4">
@@ -91,27 +89,11 @@ export const CreatePostGifs = () => {
       </div>
       <div className="h-full overflow-y-auto md:h-80">
         {error ? (
-          <div className="flex flex-col h-full items-center justify-center">
-            <div className="mb-1 p-3 rounded-full md:bg-gray-200 md:mb-2 md:p-2.5 md:dark:bg-dark-700">
-              <ExclamationCircleIcon className="size-10 dark:text-gray-200 md:size-6" />
-            </div>
-            <h1 className="font-medium dark:text-gray-200 md:text-sm">
-              {t('error')}
-            </h1>
-          </div>
+          <StepMessage Icon={ExclamationCircleIcon} message={t('error')} />
         ) : isPending ? (
-          <div className="flex h-full items-center justify-center w-full">
-            <BeatLoader color="#2C64F6" size={16} />
-          </div>
+          <StepLoader />
         ) : gifs.length === 0 ? (
-          <div className="flex flex-col h-full items-center justify-center">
-            <div className="mb-1 p-3 rounded-full md:bg-gray-200 md:mb-2 md:p-2.5 md:dark:bg-dark-700">
-              <GifIcon className="size-10 dark:text-gray-200 md:size-6" />
-            </div>
-            <h1 className="font-medium dark:text-gray-200 md:text-sm">
-              {t('info')}
-            </h1>
-          </div>
+          <StepMessage Icon={GifIcon} message={t('info')} />
         ) : (
           <div className="gap-3 grid grid-cols-2 p-3 pt-0 md:gap-4 md:p-4 md:pt-0">
             <div className="grid gap-3 md:gap-4">
