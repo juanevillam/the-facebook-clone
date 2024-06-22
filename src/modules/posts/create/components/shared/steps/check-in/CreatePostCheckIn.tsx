@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { BeatLoader } from 'react-spinners';
 
 import { InputEvent } from '@/assets/types';
-import { MapIcon } from '@/assets/ui/icons';
+import { ExclamationCircleIcon, MapIcon } from '@/assets/ui/icons';
 import { SearchInput } from '@/components/inputs';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { Location } from '@/modules/posts/create/assets/types';
@@ -23,9 +23,9 @@ export const CreatePostCheckIn = () => {
     useRef<google.maps.places.AutocompleteService | null>(null);
 
   const [isPending, startTransition] = useTransition();
-  const t = useTranslations('posts.create.check-in');
+  const t = useTranslations('posts.create.check-in.title');
   const dispatch = useAppDispatch();
-  const { activeLocation, searchInputValue, locations } = useAppSelector(
+  const { activeLocation, searchInputValue, locations, error } = useAppSelector(
     (store) => store.posts.create.checkIn
   );
 
@@ -34,19 +34,32 @@ export const CreatePostCheckIn = () => {
 
     dispatch(setCheckInSearchInputValue(value));
 
+    if (value.length === 0) {
+      dispatch(setLocations({ locations: [], error: false }));
+      return;
+    }
+
     const autoCompleteService = autocompleteService.current;
 
-    if (value.length > 0 && autoCompleteService) {
+    if (autoCompleteService) {
       startTransition(() => {
-        autoCompleteService.getPlacePredictions(
-          {
-            input: value,
-          },
-          (placePredictions) => dispatch(setLocations(placePredictions || []))
-        );
+        try {
+          autoCompleteService.getPlacePredictions(
+            {
+              input: value,
+            },
+            (placePredictions) =>
+              dispatch(
+                setLocations({
+                  locations: placePredictions || [],
+                  error: false,
+                })
+              )
+          );
+        } catch (error) {
+          dispatch(setLocations({ locations: [], error: true }));
+        }
       });
-    } else {
-      dispatch(setLocations([]));
     }
   };
 
@@ -79,7 +92,16 @@ export const CreatePostCheckIn = () => {
         />
       </div>
       <div className="h-full overflow-y-auto md:h-80">
-        {isPending ? (
+        {error ? (
+          <div className="flex flex-col h-full items-center justify-center">
+            <div className="mb-1 p-3 rounded-full md:bg-gray-200 md:mb-2 md:p-2.5 md:dark:bg-dark-700">
+              <ExclamationCircleIcon className="size-10 dark:text-gray-200 md:size-6" />
+            </div>
+            <h1 className="font-medium dark:text-gray-200 md:text-sm">
+              {t('error')}
+            </h1>
+          </div>
+        ) : isPending ? (
           <div className="flex h-full items-center justify-center w-full">
             <BeatLoader color="#2C64F6" size={16} />
           </div>
@@ -89,7 +111,7 @@ export const CreatePostCheckIn = () => {
               <MapIcon className="size-10 dark:text-gray-200 md:size-6" />
             </div>
             <h1 className="font-medium dark:text-gray-200 md:text-sm">
-              {t('title')}
+              {t('info')}
             </h1>
           </div>
         ) : (

@@ -240,10 +240,16 @@
         "is": "está"
       },
       "check-in": {
-        "title": "Intenta buscar un lugar, ciudad o dirección"
+        "title": {
+          "info": "Intenta buscar un lugar, ciudad o dirección",
+          "error": "Algo salió mal mientras se buscaba la ubicación"
+        }
       },
       "gifs": {
-        "title": "Intenta buscar un GIF"
+        "title": {
+          "info": "Intenta buscar un GIF",
+          "error": "Algo salió mal mientras se buscaba un GIF"
+        }
       }
     }
   },

@@ -6,20 +6,23 @@ interface GifsState {
   activeGif: GIF | null;
   searchInputValue: string;
   gifs: GIF[];
+  error: boolean;
 }
 
 const initialState: GifsState = {
   activeGif: null,
   searchInputValue: '',
   gifs: [],
+  error: false,
 };
 
 const gifsSlice = createSlice({
   name: 'gifs',
   initialState,
   reducers: {
-    setGifs(state, action: PayloadAction<GIF[]>) {
-      state.gifs = action.payload;
+    setGifs(state, action: PayloadAction<{ gifs: GIF[]; error: boolean }>) {
+      state.gifs = action.payload.gifs;
+      state.error = action.payload.error;
     },
     setGifsSearchInputValue(state, action: PayloadAction<string>) {
       state.searchInputValue = action.payload;

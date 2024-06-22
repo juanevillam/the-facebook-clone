@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { BeatLoader } from 'react-spinners';
 
 import { InputEvent } from '@/assets/types';
-import { GifIcon } from '@/assets/ui/icons';
+import { ExclamationCircleIcon, GifIcon } from '@/assets/ui/icons';
 import { SearchInput } from '@/components/inputs';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { GIF, unparsedGIF } from '@/modules/posts/create/assets/types';
@@ -21,9 +21,9 @@ import { CreatePostGifsItem } from './item/CreatePostGifsItem';
 export const CreatePostGifs = () => {
   const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
   const [isPending, startTransition] = useTransition();
-  const t = useTranslations('posts.create.gifs');
+  const t = useTranslations('posts.create.gifs.title');
   const dispatch = useAppDispatch();
-  const { activeGif, searchInputValue, gifs } = useAppSelector(
+  const { activeGif, searchInputValue, gifs, error } = useAppSelector(
     (store) => store.posts.create.gifs
   );
 
@@ -49,9 +49,9 @@ export const CreatePostGifs = () => {
           width: item.images.fixed_height.width,
         }));
 
-        dispatch(setGifs(parsedGifs));
+        dispatch(setGifs({ gifs: parsedGifs, error: false }));
       } catch (error) {
-        dispatch(setGifs([]));
+        dispatch(setGifs({ gifs: [], error: true }));
       }
     });
   };
@@ -60,6 +60,11 @@ export const CreatePostGifs = () => {
     const { value } = event.target;
 
     dispatch(setGifsSearchInputValue(value));
+
+    if (value.length === 0) {
+      dispatch(setGifs({ gifs: [], error: false }));
+      return;
+    }
 
     if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
 
@@ -73,6 +78,8 @@ export const CreatePostGifs = () => {
     dispatch(setStep('default'));
   };
 
+  console.log(error);
+
   return (
     <>
       <div className="p-3 md:p-4">
@@ -83,7 +90,16 @@ export const CreatePostGifs = () => {
         />
       </div>
       <div className="h-full overflow-y-auto md:h-80">
-        {isPending ? (
+        {error ? (
+          <div className="flex flex-col h-full items-center justify-center">
+            <div className="mb-1 p-3 rounded-full md:bg-gray-200 md:mb-2 md:p-2.5 md:dark:bg-dark-700">
+              <ExclamationCircleIcon className="size-10 dark:text-gray-200 md:size-6" />
+            </div>
+            <h1 className="font-medium dark:text-gray-200 md:text-sm">
+              {t('error')}
+            </h1>
+          </div>
+        ) : isPending ? (
           <div className="flex h-full items-center justify-center w-full">
             <BeatLoader color="#2C64F6" size={16} />
           </div>
@@ -93,7 +109,7 @@ export const CreatePostGifs = () => {
               <GifIcon className="size-10 dark:text-gray-200 md:size-6" />
             </div>
             <h1 className="font-medium dark:text-gray-200 md:text-sm">
-              {t('title')}
+              {t('info')}
             </h1>
           </div>
         ) : (
