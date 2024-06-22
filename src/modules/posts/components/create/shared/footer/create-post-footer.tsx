@@ -33,6 +33,7 @@ export const CreatePostFooter = () => {
         <div className="w-full md:flex md:space-x-1 md:w-max">
           <CreatePostFooterAction
             active={media.file ? true : false}
+            disabled={gifs.activeGif ? true : false}
             image={{
               alt: t('posts.create.actions.photo-video.desktop'),
               src: 'photo-video',
@@ -65,6 +66,7 @@ export const CreatePostFooter = () => {
           />
           <CreatePostFooterAction
             active={gifs.activeGif ? true : false}
+            disabled={media.file ? true : false}
             image={{
               alt: t('posts.create.actions.gif.desktop'),
               src: 'gif',

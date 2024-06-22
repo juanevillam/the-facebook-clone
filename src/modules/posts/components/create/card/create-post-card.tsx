@@ -20,7 +20,7 @@ export const CreatePostCard = () => {
   const filePicker = useRef<HTMLInputElement>(null);
   const t = useTranslations();
   const dispatch = useAppDispatch();
-  const { feelings, media, step, thoughts } = useAppSelector(
+  const { feelings, gifs, media, step, thoughts } = useAppSelector(
     (store) => store.postsReducer
   );
 
@@ -36,8 +36,16 @@ export const CreatePostCard = () => {
     showToast.error(t('toast-messages.error.feature-under-development'));
 
   const openMediaStep = () => {
-    handleToggleCreatePostOpenable();
-    dispatch(setStep('media'));
+    if (gifs.activeGif) {
+      showToast.error(
+        t.rich('posts.create.actions.disabled', {
+          br: () => null,
+        }) as string
+      );
+    } else {
+      handleToggleCreatePostOpenable();
+      dispatch(setStep('media'));
+    }
   };
 
   const openFeelingsStep = () => {
@@ -75,6 +83,7 @@ export const CreatePostCard = () => {
           />
           <CreatePostCardAction
             active={media.file ? true : false}
+            disabled={gifs.activeGif ? true : false}
             image={{
               alt: t('posts.create.actions.photo-video.desktop'),
               src: 'photo-video',

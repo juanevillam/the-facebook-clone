@@ -155,7 +155,8 @@
         "gif": {
           "desktop": "GIF",
           "mobile": "GIF"
-        }
+        },
+        "disabled": "Esto no se puede combinar con lo que ya has<br></br>agregado a tu publicación"
       },
       "header": {
         "default": {

@@ -155,7 +155,8 @@
         "gif": {
           "desktop": "GIF",
           "mobile": "GIF"
-        }
+        },
+        "disabled": "This can't be combined with what you've already<br></br>added to your post"
       },
       "header": {
         "default": {

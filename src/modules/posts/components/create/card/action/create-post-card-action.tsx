@@ -4,6 +4,7 @@ import { imageType, voidFunctionType } from '@/assets/types';
 
 interface CreatePostCardActionProps {
   active: boolean;
+  disabled?: boolean;
   image: imageType;
   label: {
     mobile: string;
@@ -14,6 +15,7 @@ interface CreatePostCardActionProps {
 
 export const CreatePostCardAction = ({
   active,
+  disabled,
   image,
   label,
   onClick,
@@ -22,7 +24,7 @@ export const CreatePostCardAction = ({
     <button
       className={`duration-150 flex hover:bg-gray-100 items-center justify-center p-3 space-x-2 transition w-full md:p-2 md:rounded-lg dark:hover:bg-dark-200 ${
         active && 'bg-gray-200 dark:bg-dark-400'
-      }`}
+      } ${disabled && 'opacity-50'}`}
       onClick={onClick}
       type="button"
     >
