@@ -11,25 +11,25 @@ interface PageProps {
   };
 }
 
-type imageType = {
+type ImageType = {
   alt: string;
   src: string;
 };
 
-type filePickerType = React.MutableRefObject<HTMLInputElement | null>;
+type FileInputRef = React.MutableRefObject<HTMLInputElement | null>;
 
-type voidFunctionType = () => void;
+type VoidFunction = () => void;
 
-type sharedSvgType = React.FC<SharedSvgProps>;
+type SharedSvg = React.FC<SharedSvgProps>;
 
-type inputEventType = React.ChangeEvent<HTMLInputElement>;
+type InputEvent = React.ChangeEvent<HTMLInputElement>;
 
 export type {
   LayoutProps,
   PageProps,
-  imageType,
-  filePickerType,
-  voidFunctionType,
-  sharedSvgType,
-  inputEventType,
+  ImageType,
+  FileInputRef,
+  VoidFunction,
+  SharedSvg,
+  InputEvent,
 };

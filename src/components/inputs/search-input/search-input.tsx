@@ -2,12 +2,12 @@ import { useId } from 'react';
 
 import { useTranslations } from 'next-intl';
 
-import { inputEventType } from '@/assets/types';
+import { InputEvent } from '@/assets/types';
 import { SearchIcon } from '@/assets/ui/icons';
 
 interface SearchInputProps {
   label: 'search' | 'where-are-you';
-  onChange: (event: inputEventType) => void;
+  onChange: (event: InputEvent) => void;
   value: string;
 }
 
@@ -23,7 +23,7 @@ export const SearchInput = ({ label, onChange, value }: SearchInputProps) => {
       </label>
       <input
         aria-label={t(label)}
-        className="bg-transparent duration-150 font-light inline-flex placeholder-gray-500 text-gray-500 ml-2 outline-none transition w-full dark:text-gray-400 dark:placeholder-dark-300"
+        className="bg-transparent duration-150 font-light inline-flex placeholder-gray-500 text-gray-700 ml-2 outline-none transition w-full dark:text-gray-300 dark:placeholder-gray-400"
         id={id}
         onChange={onChange}
         placeholder={t(label)}

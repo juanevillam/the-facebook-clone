@@ -1,9 +1,9 @@
-import { sharedSvgType, voidFunctionType } from '@/assets/types';
+import { SharedSvg, VoidFunction } from '@/assets/types';
 import { Button } from '@/components/buttons';
 
 interface AuthSocialButtonProps {
-  Icon: sharedSvgType;
-  onClick: voidFunctionType;
+  Icon: SharedSvg;
+  onClick: VoidFunction;
 }
 
 export const AuthSocialButton = ({ Icon, onClick }: AuthSocialButtonProps) => {

@@ -4,7 +4,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@/assets/types';
 import { signOut } from '@/auth';
-import { CreatePostCard } from '@/modules/posts/components/create';
+import { CreatePostCard } from '@/modules/posts/create/components';
 
 const HomePage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
