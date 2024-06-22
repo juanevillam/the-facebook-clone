@@ -73,6 +73,13 @@ export const CreatePostFeelings = () => {
   const { feelings } = useAppSelector((store) => store.postsReducer);
   const t = useTranslations('posts.create.feelings');
 
+  const handleSearchChange = (event: inputEventType) =>
+    dispatch(setFeelingsSearchInputValue(event.target.value));
+
+  const filteredFeelings = feelings.feelings.filter((feeling) =>
+    feeling.toLowerCase().includes(feelings.searchInputValue.toLowerCase())
+  );
+
   const handleSetActiveFeeling = (feeling: feelingType) => {
     dispatch(
       setActiveFeeling(feelings.activeFeeling === feeling ? null : feeling)
@@ -80,13 +87,6 @@ export const CreatePostFeelings = () => {
 
     dispatch(setStep('default'));
   };
-
-  const handleSearchChange = (event: inputEventType) =>
-    dispatch(setFeelingsSearchInputValue(event.target.value));
-
-  const filteredFeelings = feelings.feelings.filter((feeling) =>
-    feeling.toLowerCase().includes(feelings.searchInputValue.toLowerCase())
-  );
 
   return (
     <>
@@ -113,8 +113,8 @@ export const CreatePostFeelings = () => {
               <CreatePostFeelingsItem
                 key={feeling}
                 name={feeling}
-                selected={feelings.activeFeeling === feeling}
                 onClick={handleSetActiveFeeling}
+                selected={feelings.activeFeeling === feeling}
               />
             ))}
           </div>

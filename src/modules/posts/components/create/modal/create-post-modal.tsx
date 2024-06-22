@@ -8,6 +8,7 @@ import {
   CreatePostCheckIn,
   CreatePostFeelings,
   CreatePostFooter,
+  CreatePostGifs,
   CreatePostHeader,
   CreatePostMedia,
   CreatePostTextArea,
@@ -61,6 +62,7 @@ export const CreatePostModal = ({
           {step === 'media' && <CreatePostMedia filePicker={filePicker} />}
           {step === 'feelings' && <CreatePostFeelings />}
           {step === 'check-in' && <CreatePostCheckIn />}
+          {step === 'gifs' && <CreatePostGifs />}
         </div>
       </Fade>
     </Modal>

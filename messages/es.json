@@ -169,6 +169,9 @@
         },
         "check-in": {
           "title": "Buscar ubicación"
+        },
+        "gifs": {
+          "title": "Buscar GIF"
         }
       },
       "footer": {
@@ -237,6 +240,9 @@
       },
       "check-in": {
         "title": "Intenta buscar un lugar, ciudad o dirección"
+      },
+      "gifs": {
+        "title": "Intenta buscar un GIF"
       }
     }
   },

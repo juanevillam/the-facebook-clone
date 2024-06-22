@@ -168,7 +168,10 @@
           "title": "How are you feeling?"
         },
         "check-in": {
-          "title": "Search for location"
+          "title": "Search location"
+        },
+        "gifs": {
+          "title": "Search GIF"
         }
       },
       "footer": {
@@ -237,6 +240,9 @@
       },
       "check-in": {
         "title": "Try searching for a place, city, or address"
+      },
+      "gifs": {
+        "title": "Try searching for a GIF"
       }
     }
   },

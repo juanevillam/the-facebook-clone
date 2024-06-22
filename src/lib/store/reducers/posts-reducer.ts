@@ -3,8 +3,9 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { locationType } from '@/modules/posts/components/create/shared/check-in/item/create-post-check-in-item';
 import { feelings } from '@/modules/posts/components/create/shared/feelings/create-post-feelings';
 import { feelingType } from '@/modules/posts/components/create/shared/feelings/item/create-post-feelings-item';
+import { gifType } from '@/modules/posts/components/create/shared/gifs/item/create-post-gifs-item';
 
-type stepType = 'default' | 'feelings' | 'media' | 'gif' | 'check-in';
+type stepType = 'default' | 'feelings' | 'media' | 'gif' | 'check-in' | 'gifs';
 
 type mediaType = {
   file: string | ArrayBuffer | null;
@@ -27,6 +28,11 @@ interface initialState {
     searchInputValue: string;
     locations: locationType[];
   };
+  gifs: {
+    activeGif: gifType | null;
+    searchInputValue: string;
+    gifs: gifType[];
+  };
 }
 
 const initialState: initialState = {
@@ -47,6 +53,11 @@ const initialState: initialState = {
     activeLocation: null,
     searchInputValue: '',
     locations: [],
+  },
+  gifs: {
+    activeGif: null,
+    searchInputValue: '',
+    gifs: [],
   },
 };
 
@@ -84,6 +95,15 @@ export const posts = createSlice({
     setActiveLocation(state, action: PayloadAction<locationType | null>) {
       state.checkIn.activeLocation = action.payload;
     },
+    setGifs(state, action: PayloadAction<gifType[]>) {
+      state.gifs.gifs = action.payload;
+    },
+    setGifsSearchInputValue(state, action: PayloadAction<string>) {
+      state.gifs.searchInputValue = action.payload;
+    },
+    setActiveGif(state, action: PayloadAction<gifType | null>) {
+      state.gifs.activeGif = action.payload;
+    },
   },
 });
 
@@ -98,5 +118,8 @@ export const {
   setLocations,
   setCheckInSeachInputValue,
   setActiveLocation,
+  setGifs,
+  setGifsSearchInputValue,
+  setActiveGif,
 } = posts.actions;
 export default posts.reducer;

@@ -9,7 +9,7 @@ import { CreatePostFooterAction } from './action/create-post-footer-action';
 export const CreatePostFooter = () => {
   const t = useTranslations();
   const dispatch = useAppDispatch();
-  const { checkIn, feelings, media } = useAppSelector(
+  const { checkIn, feelings, gifs, media } = useAppSelector(
     (store) => store.postsReducer
   );
 
@@ -22,8 +22,7 @@ export const CreatePostFooter = () => {
 
   const openCheckInStep = () => dispatch(setStep('check-in'));
 
-  const openGifStep = () =>
-    showToast.error(t('toast-messages.error.feature-under-development'));
+  const openGifStep = () => dispatch(setStep('gifs'));
 
   return (
     <div className="border-t w-full md:border-none md:mb-4 md:pt-1.5 md:px-4 dark:border-dark-50">
@@ -65,7 +64,7 @@ export const CreatePostFooter = () => {
             onClick={openCheckInStep}
           />
           <CreatePostFooterAction
-            active={false}
+            active={gifs.activeGif ? true : false}
             image={{
               alt: t('posts.create.actions.gif.desktop'),
               src: 'gif',

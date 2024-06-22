@@ -7,14 +7,14 @@ export type feelingType = (typeof feelings)[number];
 
 interface CreatePostFeelingsItemProps {
   name: feelingType;
-  selected: boolean;
   onClick: (feeling: feelingType) => void;
+  selected: boolean;
 }
 
 export const CreatePostFeelingsItem = ({
   name,
-  selected,
   onClick,
+  selected,
 }: CreatePostFeelingsItemProps) => {
   const t = useTranslations('posts.create.feelings');
 
