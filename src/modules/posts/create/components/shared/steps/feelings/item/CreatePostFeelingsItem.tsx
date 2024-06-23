@@ -2,30 +2,31 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
+import { POSTS_CREATE_STEPS_FEELINGS_PATH } from '@/modules/posts/create/assets/translations';
 import { Feeling } from '@/modules/posts/create/assets/types';
 
 interface CreatePostFeelingsItemProps {
+  active: boolean;
   name: Feeling;
   onClick: (feeling: Feeling) => void;
-  selected: boolean;
 }
 
 export const CreatePostFeelingsItem = ({
+  active,
   name,
   onClick,
-  selected,
 }: CreatePostFeelingsItemProps) => {
-  const t = useTranslations('posts.create.feelings');
+  const t = useTranslations(`${POSTS_CREATE_STEPS_FEELINGS_PATH}.list`);
 
   const handleSelect = () => onClick(name);
 
   return (
     <button
-      aria-pressed={selected}
+      aria-pressed={active}
       className={classNames(
         'duration-150 flex hover:bg-gray-200 items-center p-2 rounded-lg space-x-2.5 transition w-full dark:hover:bg-dark-600',
         {
-          'bg-gray-300 dark:bg-dark-400': selected,
+          'bg-gray-300 dark:bg-dark-400': active,
         }
       )}
       onClick={handleSelect}

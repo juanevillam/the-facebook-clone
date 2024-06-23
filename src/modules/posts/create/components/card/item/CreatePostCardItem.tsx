@@ -1,26 +1,18 @@
 import classNames from 'classnames';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
-import { ImageType, VoidFunction } from '@/assets/types';
-
-interface CreatePostCardItemProps {
-  active: boolean;
-  disabled?: boolean;
-  image: ImageType;
-  label: {
-    mobile: string;
-    desktop: string;
-  };
-  onClick: VoidFunction;
-}
+import { POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH } from '../../../assets/translations';
+import { CardItem } from '../../../assets/types';
 
 export const CreatePostCardItem = ({
   active,
   disabled,
-  image,
-  label,
+  name,
   onClick,
-}: CreatePostCardItemProps) => {
+}: CardItem) => {
+  const t = useTranslations(`${POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH}.${name}`);
+
   return (
     <button
       aria-disabled={disabled}
@@ -36,18 +28,18 @@ export const CreatePostCardItem = ({
     >
       <div className="relative size-5 md:size-6">
         <Image
-          alt={image.alt}
+          alt={t('detailed')}
           fill
           loading="eager"
           sizes="1.5rem"
-          src={`/images/${image.src}-icon.png`}
+          src={`/images/${name}-icon.png`}
         />
       </div>
       <p className="font-medium hidden text-gray-600 text-sm dark:text-gray-400 md:block">
-        {label.desktop}
+        {t('detailed')}
       </p>
       <p className="text-gray-600 text-sm dark:text-gray-400 md:hidden">
-        {label.mobile}
+        {t('short')}
       </p>
     </button>
   );

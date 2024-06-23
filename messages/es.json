@@ -130,123 +130,115 @@
   },
   "posts": {
     "create": {
-      "thoughts-placeholder": "¿Qué estás pensando?",
-      "actions": {
-        "live-video": {
-          "desktop": "Video en vivo",
-          "mobile": "Video"
+      "layout": {
+        "thoughts": "¿Qué estás pensando?",
+        "header": {
+          "steps": {
+            "default": "Crear publicación",
+            "media": "Seleccionar multimedia",
+            "feelings": "¿Cómo te sientes?",
+            "check-in": "Buscar ubicación",
+            "gifs": "Buscar GIF"
+          },
+          "user-info": {
+            "is-feeling": "se siente",
+            "in": "en",
+            "is": "está"
+          }
         },
-        "photo-video": {
-          "desktop": "Foto/video",
-          "mobile": "Foto"
-        },
-        "feeling-activity": {
-          "desktop": "Sentimiento/actividad",
-          "mobile": "Sentimiento"
-        },
-        "tag-people": {
-          "desktop": "Etiquetar personas",
-          "mobile": "Etiquetar"
-        },
-        "check-in": {
-          "desktop": "Ubicación",
-          "mobile": "Ubicación"
-        },
-        "gif": {
-          "desktop": "GIF",
-          "mobile": "GIF"
-        },
-        "disabled": "Esto no se puede combinar con lo que ya has<br></br>agregado a tu publicación"
-      },
-      "header": {
-        "default": {
-          "title": "Crear publicación"
-        },
-        "media": {
-          "title": "Seleccionar multimedia"
-        },
-        "feelings": {
-          "title": "¿Cómo te sientes?"
-        },
-        "check-in": {
-          "title": "Buscar ubicación"
-        },
-        "gifs": {
-          "title": "Buscar GIF"
+        "footer": {
+          "title": "Agrega a tu publicación",
+          "items": {
+            "live-video": {
+              "detailed": "Video en vivo",
+              "short": "Video"
+            },
+            "photo-video": {
+              "detailed": "Foto/video",
+              "short": "Foto"
+            },
+            "feeling-activity": {
+              "detailed": "Sentimiento/actividad",
+              "short": "Sentimiento"
+            },
+            "tag-people": {
+              "detailed": "Etiquetar personas",
+              "short": "Etiquetar"
+            },
+            "check-in": {
+              "detailed": "Ubicación",
+              "short": "Ubicación"
+            },
+            "gif": {
+              "detailed": "GIF",
+              "short": "GIF"
+            },
+            "disabled": "Esto no se puede combinar con lo que ya has<br></br>agregado a tu publicación"
+          }
         }
       },
-      "footer": {
-        "title": "Agrega a tu publicación"
-      },
-      "media-container": {
-        "title": "Agrega fotos/videos"
-      },
-      "feelings": {
-        "happy": "feliz",
-        "blessed": "bendecido",
-        "loved": "amado",
-        "sad": "triste",
-        "excited": "emocionado",
-        "crazy": "loco",
-        "grateful": "agradecido",
-        "silly": "tonto",
-        "relaxed": "relajado",
-        "motivated": "motivado",
-        "alone": "solo",
-        "ok": "ok",
-        "nostalgic": "nostálgico",
-        "emotional": "emocional",
-        "determined": "determinado",
-        "exhausted": "agotado",
-        "lucky": "afortunado",
-        "heartbroken": "desconsolado",
-        "bored": "aburrido",
-        "hungry": "hambriento",
-        "pained": "dolorido",
-        "cold": "frío",
-        "cute": "lindo",
-        "sorry": "lo siento",
-        "super": "super",
-        "worried": "preocupado",
-        "funny": "divertido",
-        "inspired": "inspirado",
-        "confused": "confundido",
-        "jolly": "alegre",
-        "broken": "roto",
-        "irritated": "irritado",
-        "incomplete": "incompleto",
-        "puzzled": "perplejo",
-        "furious": "furioso",
-        "surprised": "sorprendido",
-        "meh": "meh",
-        "lost": "perdido",
-        "rough": "áspero",
-        "strange": "extraño",
-        "awful": "horrible",
-        "drunk": "borracho",
-        "blue": "triste",
-        "naked": "desnudo",
-        "dirty": "sucio",
-        "small": "pequeño",
-        "privileged": "privilegiado",
-        "trapped": "atrapado",
-        "afraid": "asustado",
-        "broke": "pobre",
-        "not-found": "Sentimiento no encontrado"
-      },
-      "user-info": {
-        "is-feeling": "se siente",
-        "in": "en",
-        "is": "está"
-      },
-      "check-in": {
-        "title": {
+      "steps": {
+        "media": "Agrega fotos/videos",
+        "feelings": {
+          "error": "Sentimiento no encontrado",
+          "list": {
+            "happy": "feliz",
+            "blessed": "bendecido",
+            "loved": "amado",
+            "sad": "triste",
+            "excited": "emocionado",
+            "crazy": "loco",
+            "grateful": "agradecido",
+            "silly": "tonto",
+            "relaxed": "relajado",
+            "motivated": "motivado",
+            "alone": "solo",
+            "ok": "ok",
+            "nostalgic": "nostálgico",
+            "emotional": "emocional",
+            "determined": "determinado",
+            "exhausted": "agotado",
+            "lucky": "afortunado",
+            "heartbroken": "desconsolado",
+            "bored": "aburrido",
+            "hungry": "hambriento",
+            "pained": "dolorido",
+            "cold": "frío",
+            "cute": "lindo",
+            "sorry": "lo siento",
+            "super": "super",
+            "worried": "preocupado",
+            "funny": "divertido",
+            "inspired": "inspirado",
+            "confused": "confundido",
+            "jolly": "alegre",
+            "broken": "roto",
+            "irritated": "irritado",
+            "incomplete": "incompleto",
+            "puzzled": "perplejo",
+            "furious": "furioso",
+            "surprised": "sorprendido",
+            "meh": "meh",
+            "lost": "perdido",
+            "rough": "áspero",
+            "strange": "extraño",
+            "awful": "horrible",
+            "drunk": "borracho",
+            "blue": "triste",
+            "naked": "desnudo",
+            "dirty": "sucio",
+            "small": "pequeño",
+            "privileged": "privilegiado",
+            "trapped": "atrapado",
+            "afraid": "asustado",
+            "broke": "pobre"
+          }
+        },
+        "check-in": {
           "info": "Intenta buscar un lugar, ciudad o dirección",
           "error": "Algo salió mal mientras se buscaba la ubicación"
-        }
-      },
-      "gifs": {
-        "title": {
+        },
+        "gifs": {
           "info": "Intenta buscar un GIF",
           "error": "Algo salió mal mientras se buscaba un GIF"
         }

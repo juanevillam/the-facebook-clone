@@ -4,6 +4,7 @@ import { InputEvent } from '@/assets/types';
 import { FaceFrowIcon } from '@/assets/ui/icons';
 import { SearchInput } from '@/components/inputs';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import { POSTS_CREATE_STEPS_FEELINGS_PATH } from '@/modules/posts/create/assets/translations';
 import { Feeling } from '@/modules/posts/create/assets/types';
 import {
   setActiveFeeling,
@@ -15,7 +16,7 @@ import { CreatePostFeelingsItem } from './item/CreatePostFeelingsItem';
 import { StepMessage } from '../shared';
 
 export const CreatePostFeelings = () => {
-  const t = useTranslations('posts.create.feelings');
+  const t = useTranslations(POSTS_CREATE_STEPS_FEELINGS_PATH);
   const dispatch = useAppDispatch();
   const { feelings, searchInputValue, activeFeeling } = useAppSelector(
     (store) => store.posts.create.feelings
@@ -44,15 +45,15 @@ export const CreatePostFeelings = () => {
       </div>
       <div className="h-full overflow-y-auto md:h-80">
         {filteredFeelings.length === 0 ? (
-          <StepMessage Icon={FaceFrowIcon} message={t('not-found')} />
+          <StepMessage Icon={FaceFrowIcon} message={t('error')} />
         ) : (
           <div className="grid grid-cols-2 p-3 pt-0 md:p-4 md:pt-0">
             {filteredFeelings.map((feeling) => (
               <CreatePostFeelingsItem
+                active={activeFeeling === feeling}
                 key={feeling}
                 name={feeling}
                 onClick={handleSetActiveFeeling}
-                selected={activeFeeling === feeling}
               />
             ))}
           </div>

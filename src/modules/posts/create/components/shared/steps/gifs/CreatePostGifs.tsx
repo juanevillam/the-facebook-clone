@@ -7,6 +7,7 @@ import { InputEvent } from '@/assets/types';
 import { ExclamationCircleIcon, GifIcon } from '@/assets/ui/icons';
 import { SearchInput } from '@/components/inputs';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import { POSTS_CREATE_STEPS_PATH } from '@/modules/posts/create/assets/translations';
 import { GIF, unparsedGIF } from '@/modules/posts/create/assets/types';
 import {
   setActiveGif,
@@ -21,7 +22,7 @@ import { StepLoader, StepMessage } from '../shared';
 export const CreatePostGifs = () => {
   const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
   const [isPending, startTransition] = useTransition();
-  const t = useTranslations('posts.create.gifs.title');
+  const t = useTranslations(`${POSTS_CREATE_STEPS_PATH}.gifs`);
   const dispatch = useAppDispatch();
   const { activeGif, searchInputValue, gifs, error } = useAppSelector(
     (store) => store.posts.create.gifs

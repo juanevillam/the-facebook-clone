@@ -32,4 +32,17 @@ type unparsedGIF = {
   };
 };
 
-export type { Step, Media, Feeling, Location, GIF, unparsedGIF };
+type CardItem = {
+  active: boolean;
+  disabled?: boolean;
+  name:
+    | 'live-video'
+    | 'photo-video'
+    | 'feeling-activity'
+    | 'tag-people'
+    | 'check-in'
+    | 'gif';
+  onClick: VoidFunction;
+};
+
+export type { Step, Media, Feeling, Location, GIF, unparsedGIF, CardItem };

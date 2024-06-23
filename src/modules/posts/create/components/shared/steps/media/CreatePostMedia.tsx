@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import ReactPlayer from 'react-player';
@@ -65,16 +66,20 @@ export const CreatePostMedia = ({ fileInputRef }: CreatePostMediaProps) => {
           />
         )}
         <button
-          className={`duration-150 h-full relative transition w-full md:bg-gray-100 md:rounded-lg md:dark:bg-dark-600 ${
-            file ? 'bg-black' : 'hover:bg-gray-200 dark:hover:bg-dark-700'
-          }`}
+          className={classNames(
+            'duration-150 h-full relative transition w-full md:bg-gray-100 md:rounded-lg md:dark:bg-dark-600',
+            {
+              'bg-black': file,
+              'hover:bg-gray-200 dark:hover:bg-dark-200': !file,
+            }
+          )}
           onClick={handleOnClickMediaFile}
           type="button"
         >
           {file ? (
             type === 'image' ? (
               <Image
-                alt={t('actions.photo-video.desktop')}
+                alt={t('layout.footer.items.photo-video.detailed')}
                 className="object-contain rounded-lg"
                 fill
                 src={file as string}
@@ -93,7 +98,7 @@ export const CreatePostMedia = ({ fileInputRef }: CreatePostMediaProps) => {
                 <PhotoIcon className="size-10 dark:text-gray-200 md:size-6" />
               </div>
               <h1 className="font-medium dark:text-gray-200 md:text-sm">
-                {t('media-container.title')}
+                {t('steps.media')}
               </h1>
             </div>
           )}

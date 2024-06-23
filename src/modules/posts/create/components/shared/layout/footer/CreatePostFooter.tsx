@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import { CardItem } from '@/modules/posts/create/assets/types';
 import { setStep } from '@/modules/posts/create/reducers/postSlice';
 
 import { CreatePostFooterItem } from './item/CreatePostFooterItem';
@@ -16,6 +17,7 @@ export const CreatePostFooter = () => {
   const { activeFeeling } = useAppSelector(
     (store) => store.posts.create.feelings
   );
+
   const { activeLocation } = useAppSelector(
     (store) => store.posts.create.checkIn
   );
@@ -44,55 +46,46 @@ export const CreatePostFooter = () => {
     [dispatch]
   );
 
+  const cardItems: CardItem[] = [
+    {
+      active: !!file,
+      disabled: !!activeGif,
+      name: 'photo-video',
+      onClick: handleOpenMediaStep,
+    },
+    {
+      active: false,
+      name: 'tag-people',
+      onClick: handleOpenTagPeopleStep,
+    },
+    {
+      active: !!activeFeeling,
+      name: 'feeling-activity',
+      onClick: handleOpenFeelingsStep,
+    },
+    {
+      active: !!activeLocation,
+      name: 'check-in',
+      onClick: handleOpenCheckInStep,
+    },
+    {
+      active: !!activeGif,
+      disabled: !!file,
+      name: 'gif',
+      onClick: handleOpenGifStep,
+    },
+  ];
+
   return (
     <div className="border-t w-full dark:border-dark-50 md:border-none md:mb-4 md:pt-1.5 md:px-4">
       <div className="flex items-center justify-between dark:border-dark-50 md:border md:pl-4 md:pr-3 md:py-2 md:rounded-lg">
         <h1 className="font-medium hidden text-sm dark:text-gray-100 md:block md:font-semibold">
-          {t('posts.create.footer.title')}
+          {t('posts.create.layout.footer.title')}
         </h1>
         <div className="w-full md:flex md:space-x-1 md:w-max">
-          <CreatePostFooterItem
-            active={!!file}
-            disabled={!!activeGif}
-            image={{
-              alt: t('posts.create.actions.photo-video.desktop'),
-              src: 'photo-video',
-            }}
-            onClick={handleOpenMediaStep}
-          />
-          <CreatePostFooterItem
-            active={false}
-            image={{
-              alt: t('posts.create.actions.tag-people.desktop'),
-              src: 'tag-people',
-            }}
-            onClick={handleOpenTagPeopleStep}
-          />
-          <CreatePostFooterItem
-            active={!!activeFeeling}
-            image={{
-              alt: t('posts.create.actions.feeling-activity.desktop'),
-              src: 'feeling-activity',
-            }}
-            onClick={handleOpenFeelingsStep}
-          />
-          <CreatePostFooterItem
-            active={!!activeLocation}
-            image={{
-              alt: t('posts.create.actions.check-in.desktop'),
-              src: 'check-in',
-            }}
-            onClick={handleOpenCheckInStep}
-          />
-          <CreatePostFooterItem
-            active={!!activeGif}
-            disabled={!!file}
-            image={{
-              alt: t('posts.create.actions.gif.desktop'),
-              src: 'gif',
-            }}
-            onClick={handleOpenGifStep}
-          />
+          {cardItems.map((item) => (
+            <CreatePostFooterItem key={item.name} {...item} />
+          ))}
         </div>
       </div>
     </div>

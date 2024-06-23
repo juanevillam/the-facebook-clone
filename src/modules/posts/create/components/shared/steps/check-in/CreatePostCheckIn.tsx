@@ -7,6 +7,7 @@ import { InputEvent } from '@/assets/types';
 import { ExclamationCircleIcon, MapIcon } from '@/assets/ui/icons';
 import { SearchInput } from '@/components/inputs';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import { POSTS_CREATE_STEPS_PATH } from '@/modules/posts/create/assets/translations';
 import { Location } from '@/modules/posts/create/assets/types';
 import {
   setActiveLocation,
@@ -23,7 +24,7 @@ export const CreatePostCheckIn = () => {
     useRef<google.maps.places.AutocompleteService | null>(null);
 
   const [isPending, startTransition] = useTransition();
-  const t = useTranslations('posts.create.check-in.title');
+  const t = useTranslations(`${POSTS_CREATE_STEPS_PATH}.check-in`);
   const dispatch = useAppDispatch();
   const { activeLocation, searchInputValue, locations, error } = useAppSelector(
     (store) => store.posts.create.checkIn
@@ -102,10 +103,10 @@ export const CreatePostCheckIn = () => {
           <div className="p-3 pt-0 md:p-4 md:pt-0">
             {locations.map((location) => (
               <CreatePostCheckInItem
+                active={activeLocation === location}
                 key={location.place_id}
                 location={location}
                 onClick={handleSetLocation}
-                selected={activeLocation === location}
               />
             ))}
           </div>

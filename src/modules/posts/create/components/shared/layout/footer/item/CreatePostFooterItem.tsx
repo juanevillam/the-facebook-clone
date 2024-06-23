@@ -2,27 +2,24 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { ImageType, VoidFunction } from '@/assets/types';
 import { Tooltip } from '@/components';
-
-interface CreatePostFooterItemProps {
-  active: boolean;
-  disabled?: boolean;
-  image: ImageType;
-  onClick: VoidFunction;
-}
+import { POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH } from '@/modules/posts/create/assets/translations';
+import { CardItem } from '@/modules/posts/create/assets/types';
 
 export const CreatePostFooterItem = ({
   active,
   disabled,
-  image,
+  name,
   onClick,
-}: CreatePostFooterItemProps) => {
-  const t = useTranslations('posts.create.actions');
+}: CardItem) => {
+  const tItems = useTranslations(POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH);
+  const tItem = useTranslations(
+    `${POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH}.${name}`
+  );
 
   const tooltipLabel = disabled
-    ? (t.rich('disabled', { br: () => <br /> }) as string)
-    : t(`${image.src}.desktop`);
+    ? (tItems.rich('disabled', { br: () => <br /> }) as string)
+    : tItem('detailed');
 
   return (
     <Tooltip label={tooltipLabel} position="bottom-9">
@@ -43,13 +40,13 @@ export const CreatePostFooterItem = ({
         type="button"
       >
         <Image
-          alt={image.alt}
+          alt={tItem('detailed')}
           height={24}
           loading="eager"
-          src={`/images/${image.src}-icon.png`}
+          src={`/images/${name}-icon.png`}
           width={24}
         />
-        <p className="ml-3 dark:text-gray-100 md:hidden">{image.alt}</p>
+        <p className="ml-3 dark:text-gray-100 md:hidden">{tItem('detailed')}</p>
       </button>
     </Tooltip>
   );
