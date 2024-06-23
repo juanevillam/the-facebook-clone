@@ -30,6 +30,11 @@ export const CreatePostCheckIn = () => {
     (store) => store.posts.create.checkIn
   );
 
+  const handleClearSearch = () => {
+    dispatch(setCheckInSearchInputValue(''));
+    dispatch(setLocations({ locations: [], error: false }));
+  };
+
   const handleSearchChange = (event: InputEvent) => {
     const { value } = event.target;
 
@@ -88,6 +93,7 @@ export const CreatePostCheckIn = () => {
       <div className="p-3 md:p-4">
         <SearchInput
           label="where-are-you"
+          handleClear={handleClearSearch}
           onChange={handleSearchChange}
           value={searchInputValue}
         />

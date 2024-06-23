@@ -70,6 +70,12 @@ export const CreatePostGifs = () => {
     }
   };
 
+  const handleClearSearch = () => {
+    dispatch(setGifsSearchInputValue(''));
+    dispatch(setGifs({ gifs: [], error: false }));
+    setOffset(0);
+  };
+
   const handleSearchChange = (event: InputEvent) => {
     const { value } = event.target;
 
@@ -104,6 +110,7 @@ export const CreatePostGifs = () => {
       <div className="p-3 md:p-4">
         <SearchInput
           label="search"
+          handleClear={handleClearSearch}
           onChange={handleSearchChange}
           value={searchInputValue}
         />

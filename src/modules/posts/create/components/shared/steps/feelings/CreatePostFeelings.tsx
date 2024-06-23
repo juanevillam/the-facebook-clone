@@ -22,6 +22,8 @@ export const CreatePostFeelings = () => {
     (store) => store.posts.create.feelings
   );
 
+  const handleClearSearch = () => dispatch(setFeelingsSearchInputValue(''));
+
   const handleSearchChange = (event: InputEvent) =>
     dispatch(setFeelingsSearchInputValue(event.target.value));
 
@@ -39,6 +41,7 @@ export const CreatePostFeelings = () => {
       <div className="p-3 md:p-4">
         <SearchInput
           label="search"
+          handleClear={handleClearSearch}
           onChange={handleSearchChange}
           value={searchInputValue}
         />
