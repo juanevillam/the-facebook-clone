@@ -25,7 +25,10 @@ export const CreatePostCard = () => {
   const tLayout = useTranslations(POSTS_CREATE_LAYOUT_PATH);
   const dispatch = useAppDispatch();
 
-  const { step, thoughts } = useAppSelector((store) => store.posts.create.post);
+  const { step, thoughts, posting } = useAppSelector(
+    (store) => store.posts.create.post
+  );
+
   const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
   const { file } = useAppSelector((store) => store.posts.create.media);
   const { activeFeeling } = useAppSelector(
@@ -33,8 +36,8 @@ export const CreatePostCard = () => {
   );
 
   const handleToggleOpenable = useCallback(() => {
-    dispatch(toggleOpenable());
-  }, [dispatch]);
+    !posting && dispatch(toggleOpenable());
+  }, [dispatch, posting]);
 
   const handleStep = useCallback(() => {
     step === 'default' ? handleToggleOpenable() : dispatch(setStep('default'));

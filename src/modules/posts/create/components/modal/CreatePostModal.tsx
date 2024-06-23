@@ -5,8 +5,10 @@ import { ArrowLeftIcon, CloseIcon } from '@/assets/ui/icons';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import {
+  CreatePostButton,
   CreatePostFooter,
   CreatePostHeader,
+  CreatePostLoader,
   CreatePostTextArea,
   CreatePostUserInfo,
 } from '../shared/layout';
@@ -49,6 +51,8 @@ export const CreatePostModal = ({
             <CreatePostUserInfo />
             <CreatePostTextArea />
             <CreatePostFooter />
+            <CreatePostButton />
+            <CreatePostLoader />
           </>
         );
     }

@@ -175,7 +175,9 @@
             },
             "disabled": "Esto no se puede combinar con lo que ya has<br></br>agregado a tu publicación"
           }
-        }
+        },
+        "button": "Publicar",
+        "loader": "Publicando"
       },
       "steps": {
         "media": "Agrega fotos/videos",

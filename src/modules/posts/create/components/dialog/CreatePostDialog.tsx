@@ -6,6 +6,7 @@ import { useAppSelector } from '@/lib/store/hooks';
 import {
   CreatePostFooter,
   CreatePostHeader,
+  CreatePostLoader,
   CreatePostTextArea,
   CreatePostUserInfo,
 } from '../shared/layout';
@@ -46,6 +47,7 @@ export const CreatePostDialog = ({
             <CreatePostUserInfo />
             <CreatePostTextArea />
             <CreatePostFooter />
+            <CreatePostLoader />
           </>
         );
     }

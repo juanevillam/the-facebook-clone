@@ -6,12 +6,14 @@ interface PostState {
   isOpenableOpen: boolean;
   step: Step;
   thoughts: string;
+  posting: boolean;
 }
 
 const initialState: PostState = {
   isOpenableOpen: false,
   step: 'default',
   thoughts: '',
+  posting: false,
 };
 
 const postSlice = createSlice({
@@ -27,8 +29,12 @@ const postSlice = createSlice({
     setThoughts(state, action: PayloadAction<string>) {
       state.thoughts = action.payload;
     },
+    togglePosting(state) {
+      state.posting = !state.posting;
+    },
   },
 });
 
-export const { toggleOpenable, setStep, setThoughts } = postSlice.actions;
+export const { toggleOpenable, setStep, setThoughts, togglePosting } =
+  postSlice.actions;
 export default postSlice.reducer;
