@@ -2,18 +2,18 @@ import React from 'react';
 
 import { useTranslations } from 'next-intl';
 
-import { sharedSvgType, voidFunctionType } from '@/assets/types';
+import { SharedSvg, VoidFunction } from '@/assets/types';
 
-export type iconButtonName = 'close' | 'back';
+export type IconButtonName = 'close' | 'back';
 
 interface IconButtonProps {
   className: string;
   icon: {
     className: string;
-    Component: sharedSvgType;
-    name: iconButtonName;
+    Component: SharedSvg;
+    name: IconButtonName;
   };
-  onClick: voidFunctionType;
+  onClick: VoidFunction;
 }
 
 export const IconButton = ({ className, icon, onClick }: IconButtonProps) => {

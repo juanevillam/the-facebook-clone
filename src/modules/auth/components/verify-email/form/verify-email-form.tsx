@@ -69,7 +69,7 @@ export const VerifyEmailForm = () => {
     >
       {status === 'loading' && (
         <div className="flex py-1.5">
-          <BeatLoader color="#0866FF" size={16} />
+          <BeatLoader color="#2C64F6" size={16} />
         </div>
       )}
       {status === 'error' && <AlertTriangleImage size={32} />}

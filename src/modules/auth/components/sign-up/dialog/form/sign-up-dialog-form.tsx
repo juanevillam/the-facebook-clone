@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
-import { voidFunctionType } from '@/assets/types';
+import { VoidFunction } from '@/assets/types';
 import { Button } from '@/components/buttons';
 import { signUp } from '@/modules/auth/api/sign-up';
 import {
@@ -16,7 +16,7 @@ import {
 import { AuthRadioInput, AuthTextInput } from '../../../ui';
 
 interface SignUpDialogFormProps {
-  nextStep: voidFunctionType;
+  nextStep: VoidFunction;
   step: number;
 }
 

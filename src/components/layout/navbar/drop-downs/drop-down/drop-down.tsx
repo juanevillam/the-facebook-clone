@@ -1,11 +1,11 @@
 import { useTranslations } from 'next-intl';
 
-import { sharedSvgType } from '@/assets/types';
+import { SharedSvg } from '@/assets/types';
 import { Tooltip } from '@/components/tooltip/tooltip';
 
 interface DropDownProps {
   className?: string;
-  Icon: sharedSvgType;
+  Icon: SharedSvg;
   isActive?: boolean;
   label: string;
 }
