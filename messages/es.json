@@ -240,7 +240,11 @@
         },
         "gifs": {
           "info": "Intenta buscar un GIF",
-          "error": "Algo salió mal mientras se buscaba un GIF"
+          "error": "Algo salió mal mientras se buscaba un GIF",
+          "button": {
+            "label": "Cargar más",
+            "loading-label": "Cargando más"
+          }
         }
       }
     }

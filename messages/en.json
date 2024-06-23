@@ -240,7 +240,11 @@
         },
         "gifs": {
           "info": "Try searching for a GIF",
-          "error": "Something went wrong while searching for a GIF"
+          "error": "Something went wrong while searching for a GIF",
+          "button": {
+            "label": "Load more",
+            "loading-label": "Loading more"
+          }
         }
       }
     }
