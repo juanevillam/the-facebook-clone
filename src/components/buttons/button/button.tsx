@@ -38,11 +38,11 @@ export const Button = ({
         aria-busy={loading}
         aria-live="polite"
         className={classNames(
-          'duration-150 flex items-center justify-center px-5 rounded-md text-white transition',
+          'duration-150 flex items-center justify-center px-3.5 rounded-md text-white transition md:px-5',
           {
             'w-full': fullWidth,
             'w-max': !fullWidth,
-            'font-semibold py-2 uppercase md:normal-case md:text-sm':
+            'font-medium p-1.5 text-lg uppercase md:font-semibold md:normal-case md:py-2 md:text-sm':
               size === 'xs',
             'font-medium py-2.5': size === 'sm',
             'font-semibold py-3 text-base': size === 'md',
@@ -54,7 +54,7 @@ export const Button = ({
             'bg-success-100 hover:bg-success-200 disabled:hover:bg-success-100':
               variant === 'secondary',
             'cursor-not-allowed opacity-80': disabled,
-            'text-opacity-80 dark:bg-dark-800 dark:disabled:hover:bg-dark-800 dark:text-opacity-50':
+            'text-opacity-80 dark:bg-dark-900 dark:disabled:hover:bg-dark-900 dark:text-opacity-40 md:dark:bg-dark-800 md:dark:disabled:hover:bg-dark-800':
               disabled && variant === 'tertiary',
           }
         )}

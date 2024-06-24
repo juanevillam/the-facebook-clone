@@ -98,6 +98,15 @@ export const CreatePostCheckIn = () => {
           value={searchInputValue}
         />
       </div>
+      {activeLocation && (
+        <div className="md:pb-4 md:px-4">
+          <CreatePostCheckInItem
+            active
+            location={activeLocation}
+            onClick={handleSetLocation}
+          />
+        </div>
+      )}
       <div className="h-full overflow-y-auto md:h-80">
         {error ? (
           <StepMessage Icon={ExclamationCircleIcon} message={t('error')} />
@@ -106,7 +115,7 @@ export const CreatePostCheckIn = () => {
         ) : locations.length === 0 ? (
           <StepMessage Icon={MapIcon} message={t('info')} />
         ) : (
-          <div className="p-3 pt-0 md:p-4 md:pt-0">
+          <div className="md:p-4 md:pt-0">
             {locations.map((location) => (
               <CreatePostCheckInItem
                 active={activeLocation === location}

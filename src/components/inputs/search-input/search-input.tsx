@@ -24,13 +24,13 @@ export const SearchInput = ({
 
   return (
     <div className="bg-gray-100 duration-150 flex items-center pl-3 pr-12 py-2.5 relative rounded-full transition w-full dark:bg-dark-200">
-      <SearchIcon className="fill-gray-500 size-4 dark:fill-gray-400" />
+      <SearchIcon className="fill-gray-500 size-4 dark:fill-gray-300 md:dark:fill-gray-400" />
       <label className="sr-only" htmlFor={id}>
         {t(label)}
       </label>
       <input
         aria-label={t(label)}
-        className="bg-transparent duration-150 font-light inline-flex placeholder-gray-500 text-gray-700 ml-2 outline-none transition w-full dark:text-gray-300 dark:placeholder-gray-400"
+        className="bg-transparent duration-150 font-light inline-flex placeholder-gray-500 text-gray-700 ml-2 outline-none transition w-full dark:text-gray-300 dark:placeholder-gray-300 md:dark:placeholder-gray-400"
         id={id}
         onChange={onChange}
         placeholder={t(label)}
@@ -42,7 +42,7 @@ export const SearchInput = ({
           className="absolute right-0 size-10 top-0.5 z-10 dark:hover:bg-dark-500"
           icon={{
             className:
-              'stroke-gray-500 size-full stroke-2 dark:stroke-gray-400',
+              'stroke-gray-500 size-full stroke-2 dark:stroke-gray-300 md:dark:stroke-gray-400',
             Component: CloseIcon,
             name: 'close',
           }}

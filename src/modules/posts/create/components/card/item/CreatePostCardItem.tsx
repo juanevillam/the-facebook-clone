@@ -26,19 +26,19 @@ export const CreatePostCardItem = ({
       onClick={onClick}
       type="button"
     >
-      <div className="relative size-5 md:size-6">
-        <Image
-          alt={t('detailed')}
-          fill
-          loading="eager"
-          sizes="1.5rem"
-          src={`/images/${name}-icon.png`}
-        />
-      </div>
-      <p className="font-medium hidden text-gray-600 text-sm dark:text-gray-400 md:block">
+      <Image
+        alt={t('detailed')}
+        className="size-5 md:size-6"
+        height={72}
+        loading="eager"
+        src={`/images/${name}-icon.png`}
+        quality={100}
+        width={72}
+      />
+      <p className="font-medium hidden text-gray-600 text-sm dark:text-gray-300 md:block md:dark:text-gray-400">
         {t('detailed')}
       </p>
-      <p className="text-gray-600 text-sm dark:text-gray-400 md:hidden">
+      <p className="text-gray-600 text-sm dark:text-gray-300 md:hidden md:dark:text-gray-400">
         {t('short')}
       </p>
     </button>

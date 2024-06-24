@@ -31,7 +31,7 @@ export const CreatePostUserInfo = () => {
   return (
     <div className="flex items-center justify-between p-3 md:p-4">
       <div
-        className={classNames('flex items-center', {
+        className={classNames('flex items-center text-lg md:text-base', {
           'w-3/4': activeGif,
         })}
       >

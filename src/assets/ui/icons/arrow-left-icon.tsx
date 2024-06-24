@@ -2,7 +2,7 @@ import { SharedSvgProps } from './types';
 
 export const ArrowLeftIcon = ({ className }: SharedSvgProps) => {
   return (
-    <svg className={className} fill="none" strokeWidth={2} viewBox="0 0 24 24">
+    <svg className={className} fill="none" viewBox="0 0 24 24">
       <path
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -87,15 +87,15 @@ export const CreatePostCard = () => {
   return (
     <>
       <div className="bg-white mb-2 pt-3 dark:bg-dark-100 md:mb-4 md:pb-2.5 md:rounded-lg">
-        <div className="flex items-center pb-3 px-4 space-x-2">
+        <div className="flex items-center pb-3 px-3 space-x-2 md:px-4">
           <NoProfilePicImage />
           <button
             aria-label={thoughts || tLayout('thoughts')}
-            className="bg-transparent border duration-150 flex flex-grow hover:bg-gray-200 overflow-hidden px-3 py-2 rounded-full transition dark:border-dark-50 dark:hover:bg-dark-200 md:bg-gray-100 md:border-none md:dark:bg-dark-200 md:dark:hover:bg-dark-500"
+            className="bg-transparent border duration-150 flex flex-grow hover:bg-gray-200 overflow-hidden px-4 py-2.5 rounded-full transition dark:border-dark-50 dark:hover:bg-dark-200 md:bg-gray-100 md:border-none md:px-3 md:py-2 md:dark:bg-dark-200 md:dark:hover:bg-dark-500"
             onClick={handleToggleOpenable}
             type="button"
           >
-            <p className="text-gray-600 whitespace-nowrap dark:text-gray-400">
+            <p className="text-gray-600 whitespace-nowrap dark:text-gray-300 md:dark:text-gray-400">
               {thoughts || tLayout('thoughts')}
             </p>
           </button>

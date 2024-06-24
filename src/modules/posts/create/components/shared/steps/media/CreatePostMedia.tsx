@@ -58,7 +58,7 @@ export const CreatePostMedia = ({ fileInputRef }: CreatePostMediaProps) => {
             className="absolute bg-white border border-gray-200 hover:bg-gray-200 right-2 size-10 text-gray-500 top-2 z-10 dark:bg-dark-200 dark:border-none dark:hover:bg-dark-700 dark:shadow-sm dark:text-gray-400 md:right-4 md:size-9 md:top-4"
             icon={{
               className:
-                'size-full stroke-black stroke-2 dark:stroke-gray-400 md:stroke-gray-500',
+                'size-full stroke-black stroke-2 dark:stroke-gray-300 md:stroke-gray-500 md:dark-stroke-gray-400',
               Component: CloseIcon,
               name: 'close',
             }}

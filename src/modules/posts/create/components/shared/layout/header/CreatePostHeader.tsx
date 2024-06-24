@@ -22,7 +22,7 @@ export const CreatePostHeader = ({ icon }: CreatePostHeaderProps) => {
   const { step } = useAppSelector((store) => store.posts.create.post);
 
   return (
-    <div className="border-b border-gray-300 flex items-center justify-between p-1.5 pr-3 dark:border-dark-50 md:justify-center md:p-3.5">
+    <div className="border-b border-gray-300 flex items-center justify-between p-1.5 dark:border-dark-50 md:justify-center md:p-3.5">
       <div className="flex items-center space-x-1.5">
         <IconButton
           className={classNames(
@@ -34,7 +34,7 @@ export const CreatePostHeader = ({ icon }: CreatePostHeaderProps) => {
           )}
           icon={{
             className:
-              'size-full stroke-black stroke-2 dark:stroke-gray-400 md:stroke-gray-500',
+              'size-full stroke-black stroke-[3] dark:stroke-white md:stroke-gray-500 md:stroke-2',
             Component: icon.Component,
             name: icon.name,
           }}
