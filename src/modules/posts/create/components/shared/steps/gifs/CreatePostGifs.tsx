@@ -25,24 +25,27 @@ export const CreatePostGifs = () => {
   const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
-
   const t = useTranslations(`${POSTS_CREATE_STEPS_PATH}.gifs`);
   const dispatch = useAppDispatch();
   const { activeGif, searchInputValue, gifs, error } = useAppSelector(
     (store) => store.posts.create.gifs
   );
 
-  const handleGetGifs = async (query: string, append: boolean = false) => {
+  const handleGetGifs = async (
+    query: string,
+    append: boolean = false,
+    newOffset: number = 0
+  ) => {
     setLoading(true);
 
     try {
       const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_GIPHY_API_URL}/${query ? 'search' : 'trending'}`,
+        `${process.env.NEXT_PUBLIC_GIPHY_API_URL}/search`,
         {
           params: {
             api_key: process.env.NEXT_PUBLIC_GIPHY_API_KEY,
-            limit: 20,
-            offset,
+            limit: 10,
+            offset: newOffset,
             q: query,
           },
         }
@@ -90,7 +93,7 @@ export const CreatePostGifs = () => {
     if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
 
     debounceTimeout.current = setTimeout(() => {
-      handleGetGifs(value);
+      handleGetGifs(value, false, 0);
     }, 300);
   };
 
@@ -100,9 +103,11 @@ export const CreatePostGifs = () => {
   };
 
   const handleLoadMore = () => {
+    const newOffset = offset + 10;
+
+    setOffset(newOffset);
     setLoadingMore(true);
-    setOffset((prevOffset) => prevOffset + 20);
-    handleGetGifs(searchInputValue, true);
+    handleGetGifs(searchInputValue, true, newOffset);
   };
 
   return (
