@@ -30,7 +30,7 @@ export const SearchInput = ({
       </label>
       <input
         aria-label={t(label)}
-        className="bg-transparent duration-150 font-light inline-flex placeholder-gray-500 text-gray-700 ml-2 outline-none transition w-full dark:text-gray-300 dark:placeholder-gray-300 md:dark:placeholder-gray-400"
+        className="bg-transparent duration-150 font-light inline-flex placeholder-gray-500 text-gray-700 ml-2 outline-none transition w-full dark:text-gray-300 dark:placeholder-gray-300 md:font-normal md:dark:placeholder-gray-400"
         id={id}
         onChange={onChange}
         placeholder={t(label)}

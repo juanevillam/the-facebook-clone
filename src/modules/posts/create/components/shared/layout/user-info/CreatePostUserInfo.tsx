@@ -31,8 +31,8 @@ export const CreatePostUserInfo = () => {
   return (
     <div className="flex items-center justify-between p-3 md:p-4">
       <div
-        className={classNames('flex items-center text-lg md:text-base', {
-          'w-3/4': activeGif,
+        className={classNames('flex items-center', {
+          'md:w-3/4': activeGif,
         })}
       >
         <NoProfilePicImage />
@@ -71,7 +71,7 @@ export const CreatePostUserInfo = () => {
         </div>
       </div>
       {activeGif && (
-        <div className="size-10">
+        <div className="hidden size-10 md:block">
           <CreatePostGifsItem gif={activeGif} onClick={handleRemoveActiveGif} />
         </div>
       )}

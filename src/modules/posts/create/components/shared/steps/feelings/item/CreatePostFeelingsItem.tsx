@@ -28,9 +28,9 @@ export const CreatePostFeelingsItem = ({
     <div
       aria-pressed={active}
       className={classNames(
-        'border-t duration-150 flex hover:bg-gray-200 items-center justify-between p-3 transition w-full dark:border-dark-50 dark:hover:bg-dark-600 md:border-none md:p-2 md:rounded-lg',
+        'border-b duration-150 flex hover:bg-gray-200 items-center justify-between p-3 transition w-full dark:border-dark-50 dark:hover:bg-dark-600 md:border-none md:p-2 md:rounded-lg',
         {
-          'bg-gray-300 dark:bg-dark-400': active,
+          'bg-gray-100 dark:bg-dark-400 md:bg-gray-300': active,
           'border-r': isEven,
         }
       )}
@@ -57,7 +57,7 @@ export const CreatePostFeelingsItem = ({
       </div>
       {active && (
         <IconButton
-          className="p-px size-6 dark:hover:bg-dark-500"
+          className="hover:bg-gray-300 p-px size-6 dark:hover:bg-dark-500"
           icon={{
             className:
               'stroke-gray-500 size-full stroke-2 dark:stroke-gray-300 md:dark:stroke-gray-400',

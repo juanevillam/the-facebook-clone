@@ -112,7 +112,7 @@ export const CreatePostGifs = () => {
 
   return (
     <>
-      <div className="p-3 md:p-4">
+      <div className="border-b p-3 dark:border-dark-50 md:p-4">
         <SearchInput
           label="search"
           handleClear={handleClearSearch}
@@ -129,12 +129,13 @@ export const CreatePostGifs = () => {
           <StepMessage Icon={GifIcon} message={t('info')} />
         ) : (
           <>
-            <div className="gap-3 grid grid-cols-2 p-3 pt-0 md:gap-4 md:p-4 md:pt-0">
+            <div className="gap-3 grid grid-cols-2 p-3 md:gap-4 md:p-4">
               <div className="grid gap-3 md:gap-4">
                 {gifs
                   .filter((_, index) => index % 2 === 0)
                   .map((gif: GIF) => (
                     <CreatePostGifsItem
+                      active={activeGif === gif}
                       gif={gif}
                       key={gif.id}
                       onClick={handleSetActiveGif}
@@ -146,6 +147,7 @@ export const CreatePostGifs = () => {
                   .filter((_, index) => index % 2 === 1)
                   .map((gif: GIF) => (
                     <CreatePostGifsItem
+                      active={activeGif === gif}
                       gif={gif}
                       key={gif.id}
                       onClick={handleSetActiveGif}

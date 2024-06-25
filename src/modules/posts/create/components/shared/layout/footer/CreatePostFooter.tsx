@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 
+import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
@@ -82,7 +83,11 @@ export const CreatePostFooter = () => {
         <h1 className="font-medium hidden text-sm dark:text-gray-100 md:block md:font-semibold">
           {t('posts.create.layout.footer.title')}
         </h1>
-        <div className="w-full md:flex md:space-x-1 md:w-max">
+        <div
+          className={classNames('w-full md:flex md:space-x-1 md:w-max', {
+            flex: activeGif,
+          })}
+        >
           {cardItems.map((item) => (
             <CreatePostFooterItem key={item.name} {...item} />
           ))}

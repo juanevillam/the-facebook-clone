@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import { Tooltip } from '@/components';
+import { useAppSelector } from '@/lib/store/hooks';
 import { POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH } from '@/modules/posts/create/assets/translations';
 import { CardItem } from '@/modules/posts/create/assets/types';
 
@@ -16,6 +17,8 @@ export const CreatePostFooterItem = ({
   const tItem = useTranslations(
     `${POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH}.${name}`
   );
+
+  const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
 
   const tooltipLabel = disabled
     ? (tItems.rich('disabled', { br: () => <br /> }) as string)
@@ -33,6 +36,7 @@ export const CreatePostFooterItem = ({
             'cursor-not-allowed opacity-50 hover:bg-transparent dark:hover:bg-transparent':
               disabled,
             peer: !disabled,
+            'justify-center': activeGif,
           }
         )}
         disabled={disabled}
@@ -48,7 +52,11 @@ export const CreatePostFooterItem = ({
           quality={100}
           width={72}
         />
-        <p className="ml-3 text-lg dark:text-gray-100 md:text-base md:hidden">
+        <p
+          className={classNames('ml-3 text-lg dark:text-gray-100 md:hidden', {
+            hidden: activeGif,
+          })}
+        >
           {tItem('detailed')}
         </p>
       </button>

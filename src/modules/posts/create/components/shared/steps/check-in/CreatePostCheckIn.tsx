@@ -90,7 +90,7 @@ export const CreatePostCheckIn = () => {
 
   return (
     <>
-      <div className="p-3 md:p-4">
+      <div className="border-b p-3 dark:border-dark-50 md:p-4">
         <SearchInput
           label="where-are-you"
           handleClear={handleClearSearch}
@@ -99,7 +99,7 @@ export const CreatePostCheckIn = () => {
         />
       </div>
       {activeLocation && (
-        <div className="md:pb-4 md:px-4">
+        <div className="md:border-b md:dark:border-dark-50 md:p-4">
           <CreatePostCheckInItem
             active
             location={activeLocation}
@@ -115,7 +115,7 @@ export const CreatePostCheckIn = () => {
         ) : locations.length === 0 ? (
           <StepMessage Icon={MapIcon} message={t('info')} />
         ) : (
-          <div className="md:p-4 md:pt-0">
+          <div className="md:p-4">
             {locations.map((location) => (
               <CreatePostCheckInItem
                 active={activeLocation === location}
