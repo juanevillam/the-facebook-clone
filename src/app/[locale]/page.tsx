@@ -1,13 +1,9 @@
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { redirect } from 'next/navigation';
 
 import { PageProps } from '@/assets/types';
+import { getRedirectPath } from '@/utils';
+import { localeType } from '@/utils/getRedirectPath';
 
-export default function Root({ params: { locale } }: PageProps) {
-  unstable_setRequestLocale(locale);
-
-  return (
-    <main>
-      <h1 className="font-bold text-blue-600 text-2xl">Root</h1>
-    </main>
-  );
+export default async function RootPage({ params: { locale } }: PageProps) {
+  redirect(`/${locale}${getRedirectPath(locale as localeType)}`);
 }

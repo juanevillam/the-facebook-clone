@@ -16,8 +16,8 @@ import {
   loginFormSchema,
   loginFormValuesType,
 } from '@/modules/auth/schemas/loginSchema';
-import { getRedirectPath } from '@/modules/auth/utils';
-import { localeType } from '@/modules/auth/utils/getRedirectPath';
+import { getRedirectPath } from '@/utils';
+import { localeType } from '@/utils/getRedirectPath';
 
 import { AuthLink, AuthSocial, AuthTextInput } from '../../ui';
 
