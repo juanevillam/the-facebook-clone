@@ -26,7 +26,7 @@ export const CreatePostTextArea = () => {
   return (
     <textarea
       aria-label={t('thoughts')}
-      className="bg-transparent focus:outline-none h-full placeholder:text-gray-500 pb-2 px-4 resize-none text-xl w-full dark:placeholder:text-gray-400 dark:text-gray-200 md:h-40 md:text-2xl md:pb-0"
+      className="bg-transparent focus:outline-none font-light h-full placeholder:text-gray-500 pb-2 px-4 resize-none text-2xl w-full dark:placeholder:text-dark-1000 dark:text-gray-200 md:font-normal md:h-40 md:pb-0 md:dark:placeholder:text-gray-400"
       onChange={handleSetThoughts}
       placeholder={t('thoughts')}
       value={localThoughts}

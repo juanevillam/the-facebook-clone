@@ -175,7 +175,9 @@
             },
             "disabled": "This can't be combined with what you've already<br></br>added to your post"
           }
-        }
+        },
+        "button": "Post",
+        "loader": "Posting"
       },
       "steps": {
         "media": "Add photos/videos",

@@ -7,12 +7,12 @@ export const NoProfilePicImage = () => {
   return (
     <Image
       alt={t('no-profile-pic')}
-      className="rounded-full"
-      height={40}
+      className="rounded-full size-10"
+      height={80}
       loading="eager"
-      priority
       src="/images/no-profile-pic.png"
-      width={40}
+      quality={100}
+      width={80}
     />
   );
 };

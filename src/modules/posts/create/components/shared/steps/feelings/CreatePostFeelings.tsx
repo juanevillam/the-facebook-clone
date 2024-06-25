@@ -38,7 +38,7 @@ export const CreatePostFeelings = () => {
 
   return (
     <>
-      <div className="p-3 md:p-4">
+      <div className="border-b p-3 dark:border-dark-50 md:p-4">
         <SearchInput
           label="search"
           handleClear={handleClearSearch}
@@ -46,14 +46,24 @@ export const CreatePostFeelings = () => {
           value={searchInputValue}
         />
       </div>
+      {activeFeeling && (
+        <div className="md:border-b md:dark:border-dark-50 md:p-4">
+          <CreatePostFeelingsItem
+            active
+            name={activeFeeling}
+            onClick={handleSetActiveFeeling}
+          />
+        </div>
+      )}
       <div className="h-full overflow-y-auto md:h-80">
         {filteredFeelings.length === 0 ? (
           <StepMessage Icon={FaceFrowIcon} message={t('error')} />
         ) : (
-          <div className="grid grid-cols-2 p-3 pt-0 md:p-4 md:pt-0">
-            {filteredFeelings.map((feeling) => (
+          <div className="grid grid-cols-2 md:p-4">
+            {filteredFeelings.map((feeling, index) => (
               <CreatePostFeelingsItem
                 active={activeFeeling === feeling}
+                isEven={index % 2 === 0}
                 key={feeling}
                 name={feeling}
                 onClick={handleSetActiveFeeling}

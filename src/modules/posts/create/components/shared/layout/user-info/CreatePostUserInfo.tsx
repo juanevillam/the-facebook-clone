@@ -32,11 +32,11 @@ export const CreatePostUserInfo = () => {
     <div className="flex items-center justify-between p-3 md:p-4">
       <div
         className={classNames('flex items-center', {
-          'w-3/4': activeGif,
+          'md:w-3/4': activeGif,
         })}
       >
         <NoProfilePicImage />
-        <div className="flex ml-2 md:ml-3 flex-wrap items-center">
+        <div className="flex flex-wrap items-center ml-2 md:ml-3">
           <p className="font-semibold dark:text-gray-200">Juan Villa</p>
           {activeFeeling && (
             <div className="flex items-center dark:text-gray-200">
@@ -71,7 +71,7 @@ export const CreatePostUserInfo = () => {
         </div>
       </div>
       {activeGif && (
-        <div className="size-10">
+        <div className="hidden md:block md:size-10">
           <CreatePostGifsItem gif={activeGif} onClick={handleRemoveActiveGif} />
         </div>
       )}

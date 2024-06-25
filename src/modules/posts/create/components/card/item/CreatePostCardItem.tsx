@@ -17,7 +17,7 @@ export const CreatePostCardItem = ({
     <button
       aria-disabled={disabled}
       className={classNames(
-        'duration-150 flex items-center justify-center p-3 space-x-2 transition w-full md:p-2 md:rounded-lg hover:bg-gray-100 dark:hover:bg-dark-200',
+        'duration-150 flex hover:bg-gray-100 items-center justify-center p-3 space-x-2 transition w-full dark:hover:bg-dark-200 md:p-2 md:rounded-lg',
         {
           'bg-gray-200 dark:bg-dark-400': active,
           'opacity-50': disabled,
@@ -26,19 +26,19 @@ export const CreatePostCardItem = ({
       onClick={onClick}
       type="button"
     >
-      <div className="relative size-5 md:size-6">
-        <Image
-          alt={t('detailed')}
-          fill
-          loading="eager"
-          sizes="1.5rem"
-          src={`/images/${name}-icon.png`}
-        />
-      </div>
-      <p className="font-medium hidden text-gray-600 text-sm dark:text-gray-400 md:block">
+      <Image
+        alt={t('detailed')}
+        className="size-5 md:size-6"
+        height={72}
+        loading="eager"
+        src={`/images/${name}-icon.png`}
+        quality={100}
+        width={72}
+      />
+      <p className="hidden md:block md:font-medium md:text-gray-600 md:text-sm md:dark:text-gray-400">
         {t('detailed')}
       </p>
-      <p className="text-gray-600 text-sm dark:text-gray-400 md:hidden">
+      <p className="text-gray-600 text-sm dark:text-gray-300 md:hidden">
         {t('short')}
       </p>
     </button>
