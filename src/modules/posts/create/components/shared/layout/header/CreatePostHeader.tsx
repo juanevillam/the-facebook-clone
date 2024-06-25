@@ -34,7 +34,7 @@ export const CreatePostHeader = ({ icon }: CreatePostHeaderProps) => {
           )}
           icon={{
             className:
-              'size-full stroke-black stroke-[3] dark:stroke-white md:stroke-gray-500 md:stroke-2',
+              'size-full stroke-black stroke-[3] dark:stroke-gray-100 md:stroke-gray-500 md:stroke-2',
             Component: icon.Component,
             name: icon.name,
           }}

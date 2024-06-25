@@ -29,7 +29,7 @@ export const CreatePostFooterItem = ({
       <button
         aria-disabled={disabled}
         className={classNames(
-          'border-b duration-150 flex items-center justify-start peer p-3 relative transition w-full dark:border-dark-50 md:border-none md:justify-center md:p-0 md:rounded-full md:size-9',
+          'border-b duration-150 flex items-center justify-start p-3 peer relative transition w-full dark:border-dark-50 md:border-none md:justify-center md:p-0 md:rounded-full md:size-9',
           {
             'bg-gray-100 dark:bg-dark-400': active,
             'hover:bg-gray-200 dark:hover:bg-dark-200': !disabled,

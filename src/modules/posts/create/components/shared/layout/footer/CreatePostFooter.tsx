@@ -78,9 +78,9 @@ export const CreatePostFooter = () => {
   ];
 
   return (
-    <div className="border-t w-full dark:border-dark-50 md:border-none md:mb-4 md:pt-1.5 md:px-4">
+    <div className="border-t w-full dark:border-dark-50 md:border-none md:p-4 md:pt-1.5">
       <div className="flex items-center justify-between dark:border-dark-50 md:border md:pl-4 md:pr-3 md:py-2 md:rounded-lg">
-        <h1 className="font-medium hidden text-sm dark:text-gray-100 md:block md:font-semibold">
+        <h1 className="hidden md:block md:font-semibold md:text-sm md:dark:text-gray-100">
           {t('posts.create.layout.footer.title')}
         </h1>
         <div
