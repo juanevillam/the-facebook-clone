@@ -28,6 +28,7 @@ export const signUp = async (values: signUpFormValuesType) => {
   await db.user.create({
     data: {
       name,
+      username: name.split(' ').join('').toLowerCase(),
       email,
       password: hashedPassword,
       gender,

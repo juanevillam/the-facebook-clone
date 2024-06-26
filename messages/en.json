@@ -275,7 +275,8 @@
   },
   "images": {
     "alert-triangle": "Alert icon",
-    "no-profile-pic": "No profile pic image"
+    "no-profile-pic": "No profile pic image",
+    "profile-pic": "Profile pic image"
   },
   "toast-messages": {
     "error": {

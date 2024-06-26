@@ -2,7 +2,8 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { NoProfilePicImage } from '@/components/images';
+import { ProfilePic } from '@/components';
+import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { POSTS_CREATE_LAYOUT_HEADER_PATH } from '@/modules/posts/create/assets/translations';
 import { setActiveGif } from '@/modules/posts/create/reducers/gifsSlice';
@@ -15,6 +16,8 @@ export const CreatePostUserInfo = () => {
   );
 
   const tFeelings = useTranslations('posts.create.steps.feelings.list');
+  const user = useCurrentUser();
+
   const dispatch = useAppDispatch();
   const { activeFeeling } = useAppSelector(
     (store) => store.posts.create.feelings
@@ -35,9 +38,9 @@ export const CreatePostUserInfo = () => {
           'md:w-3/4': activeGif,
         })}
       >
-        <NoProfilePicImage />
+        <ProfilePic />
         <div className="flex flex-wrap items-center ml-2 md:ml-3">
-          <p className="font-semibold dark:text-gray-200">Juan Villa</p>
+          <p className="font-semibold dark:text-gray-200">{user?.name}</p>
           {activeFeeling && (
             <div className="flex items-center dark:text-gray-200">
               <span className="whitespace-nowrap">

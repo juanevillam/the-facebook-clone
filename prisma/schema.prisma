@@ -10,14 +10,17 @@ datasource db {
 model User {
   id                    String                 @id @default(cuid())
   name                  String?
-  gender                String?
+  username              String?                @unique
   email                 String?                @unique
   emailVerified         DateTime?              @map("email_verified")
-  image                 String?
   password              String?
-  accounts              Account[]
+  image                 String?
+  gender                String?
+  bio                   String?
+  website               String?
   isTwoFactorEnabled    Boolean                @default(false)
   twoFactorConfirmation TwoFactorConfirmation?
+  accounts              Account[]
 
   @@map("users")
 }

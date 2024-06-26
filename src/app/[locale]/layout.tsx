@@ -1,8 +1,10 @@
+import { SessionProvider } from 'next-auth/react';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Toaster } from 'react-hot-toast';
 
 import { LayoutProps } from '@/assets/types';
 import { poppins } from '@/assets/ui/fonts';
+import { auth } from '@/auth';
 import { locales } from '@/i18n/config';
 import ReduxProvider from '@/lib/store/ReduxProvider';
 
@@ -23,18 +25,22 @@ export async function generateMetadata({
   };
 }
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   params: { locale },
   children,
 }: LayoutProps) {
   unstable_setRequestLocale(locale);
 
+  const session = await auth();
+
   return (
-    <html lang={locale}>
-      <body className={`${poppins.className} antialiased`}>
-        <Toaster position="bottom-center" />
-        <ReduxProvider>{children}</ReduxProvider>
-      </body>
-    </html>
+    <SessionProvider session={session}>
+      <html lang={locale}>
+        <body className={`${poppins.className} antialiased`}>
+          <Toaster position="bottom-center" />
+          <ReduxProvider>{children}</ReduxProvider>
+        </body>
+      </html>
+    </SessionProvider>
   );
 }

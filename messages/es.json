@@ -275,7 +275,8 @@
   },
   "images": {
     "alert-triangle": "Ícono de alerta",
-    "no-profile-pic": "Imagen de sin foto de perfil"
+    "no-profile-pic": "Imagen de sin foto de perfil",
+    "profile-pic": "Foto de perfil"
   },
   "toast-messages": {
     "error": {
