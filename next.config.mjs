@@ -5,12 +5,35 @@ const withNextIntl = createNextIntlPlugin('./src/i18n');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      'media0.giphy.com',
-      'media1.giphy.com',
-      'media2.giphy.com',
-      'media3.giphy.com',
-      'media4.giphy.com',
+    remotePatterns: [
+      {
+        hostname: 'media0.giphy.com',
+        protocol: 'https',
+      },
+      {
+        hostname: 'media1.giphy.com',
+        protocol: 'https',
+      },
+      {
+        hostname: 'media2.giphy.com',
+        protocol: 'https',
+      },
+      {
+        hostname: 'media3.giphy.com',
+        protocol: 'https',
+      },
+      {
+        hostname: 'media4.giphy.com',
+        protocol: 'https',
+      },
+      {
+        hostname: 'lh3.googleusercontent.com',
+        protocol: 'https',
+      },
+      {
+        hostname: 'avatars.githubusercontent.com',
+        protocol: 'https',
+      },
     ],
   },
 };
