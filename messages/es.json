@@ -296,7 +296,6 @@
     },
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",
-      "welcome-to-the-facebook-clone": "Bienvenido al clon de Facebook",
       "email-verified": "Correo electrónico verificado",
       "reset-email-sent": "Correo electrónico de restablecimiento enviado",
       "password-updated": "Contraseña actualizada"
