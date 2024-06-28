@@ -2,19 +2,22 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import { NoProfilePicImage } from '@/components/images';
-import { useCurrentUser } from '@/hooks';
 
-export const ProfilePic = () => {
+interface ProfilePicProps {
+  alt?: string;
+  image: string;
+}
+
+export const ProfilePic = ({ alt, image }: ProfilePicProps) => {
   const t = useTranslations('images');
-  const user = useCurrentUser();
 
-  return user?.image ? (
+  return image ? (
     <Image
-      alt={t('profile-pic')}
+      alt={alt ? alt : t('profile-pic')}
       className="rounded-full size-10"
       height={80}
       loading="eager"
-      src={user?.image}
+      src={image}
       quality={100}
       width={80}
     />

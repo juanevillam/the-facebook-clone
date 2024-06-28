@@ -67,7 +67,7 @@ export const Button = ({
           <>
             {loadingLabel}
             {size == 'xs' ? (
-              <MoonLoader className="ml-2" color="#FFFFFF" size={16} />
+              <MoonLoader className="ml-2" color="#FFFFFF" size={14} />
             ) : size == 'sm' ? (
               <MoonLoader className="ml-2" color="#FFFFFF" size={18} />
             ) : (

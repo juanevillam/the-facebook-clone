@@ -143,7 +143,13 @@
           "user-info": {
             "is-feeling": "is feeling",
             "in": "in",
-            "is": "is"
+            "is": "is",
+            "feeling": "feeling",
+            "profile-pic-alt": "{name}'s profile picture",
+            "feeling-icon-alt": "Feeling icon ({feeling})",
+            "timestamp": {
+              "just-now": "Just now"
+            }
           }
         },
         "footer": {
@@ -298,12 +304,14 @@
       "confirmation-email-sent": "Confirmation email sent",
       "email-verified": "Email verified",
       "reset-email-sent": "Reset email sent",
-      "password-updated": "Password updated"
+      "password-updated": "Password updated",
+      "post-created": "Post created"
     }
   },
   "icon-buttons": {
     "close": "Close",
-    "back": "Back"
+    "back": "Back",
+    "dots-horizontal": "More options"
   },
   "search-input": {
     "search": "Search",

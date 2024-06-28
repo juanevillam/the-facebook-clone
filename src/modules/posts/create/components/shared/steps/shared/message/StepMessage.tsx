@@ -11,7 +11,9 @@ export const StepMessage = ({ Icon, message }: StepMessageProps) => {
       <div className="mb-1 p-3 rounded-full md:bg-gray-200 md:mb-2 md:p-2.5 md:dark:bg-dark-700">
         <Icon className="size-10 dark:text-gray-200 md:size-6" />
       </div>
-      <h1 className="font-medium dark:text-gray-200 md:text-sm">{message}</h1>
+      <h1 className="font-medium w-10/12 text-center dark:text-gray-200 md:text-sm">
+        {message}
+      </h1>
     </div>
   );
 };

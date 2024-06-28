@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
 import { ProfilePic } from '@/components';
+import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostCardItem } from './item/CreatePostCardItem';
@@ -23,6 +24,7 @@ export const CreatePostCard = () => {
   const t = useTranslations();
   const tFooterItems = useTranslations(POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH);
   const tLayout = useTranslations(POSTS_CREATE_LAYOUT_PATH);
+  const user = useCurrentUser();
   const dispatch = useAppDispatch();
   const { step, thoughts, posting } = useAppSelector(
     (store) => store.posts.create.post
@@ -85,9 +87,9 @@ export const CreatePostCard = () => {
 
   return (
     <>
-      <div className="bg-white mb-2 pt-3 dark:bg-dark-100 md:mb-4 md:pb-2.5 md:rounded-lg">
+      <div className="bg-white duration-150 mb-1.5 pt-3 transition dark:bg-dark-100 md:mb-4 md:pb-2.5 md:rounded-lg">
         <div className="flex items-center pb-3 px-3 space-x-2 md:px-4">
-          <ProfilePic />
+          <ProfilePic image={user?.image as string} />
           <button
             aria-label={thoughts || tLayout('thoughts')}
             className="bg-transparent border duration-150 flex flex-grow hover:bg-gray-200 overflow-hidden px-4 py-2.5 rounded-full transition dark:border-dark-50 dark:hover:bg-dark-200 md:bg-gray-100 md:border-none md:px-3 md:py-2 md:dark:bg-dark-200 md:dark:hover:bg-dark-500"

@@ -1,5 +1,6 @@
 export { ArrowLeftIcon } from './arrow-left-icon';
 export { CloseIcon } from './close-icon';
+export { DotsHorizontalIcon } from './DotsHorizontalIcon';
 export { ExclamationCircleIcon } from './exclamation-circle-icon';
 export { FaceFrowIcon } from './face-frown-icon';
 export { GifIcon } from './gif-icon';

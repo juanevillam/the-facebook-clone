@@ -8,6 +8,7 @@ import { CloseIcon, PhotoIcon } from '@/assets/ui/icons';
 import { IconButton } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { setMedia } from '@/modules/posts/create/reducers/mediaSlice';
+import { setStep } from '@/modules/posts/create/reducers/postSlice';
 
 interface CreatePostMediaProps {
   fileInputRef: FileInputRef;
@@ -20,8 +21,10 @@ export const CreatePostMedia = ({ fileInputRef }: CreatePostMediaProps) => {
     (store) => store.posts.create.media
   );
 
-  const handleRemoveMedia = () =>
-    dispatch(setMedia({ file: '', playing: false, type: null }));
+  const handleRemoveMedia = () => {
+    dispatch(setMedia({ file: null, playing: false, type: null }));
+    dispatch(setStep('default'));
+  };
 
   const handleOnClickMediaFile = () => {
     if (type === 'video') dispatch(setMedia({ file, type, playing: !playing }));
@@ -36,12 +39,13 @@ export const CreatePostMedia = ({ fileInputRef }: CreatePostMediaProps) => {
       const fileType = file.type.split('/')[0];
 
       const reader = new FileReader();
+
       reader.onloadend = () => {
         dispatch(
           setMedia({
             file: reader.result as string,
             playing: false,
-            type: fileType,
+            type: fileType as 'image' | 'video',
           })
         );
       };

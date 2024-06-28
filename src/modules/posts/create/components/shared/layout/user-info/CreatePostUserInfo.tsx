@@ -38,7 +38,7 @@ export const CreatePostUserInfo = () => {
           'md:w-3/4': activeGif,
         })}
       >
-        <ProfilePic />
+        <ProfilePic image={user?.image as string} />
         <div className="flex flex-wrap items-center ml-2 md:ml-3">
           <p className="font-semibold dark:text-gray-200">{user?.name}</p>
           {activeFeeling && (

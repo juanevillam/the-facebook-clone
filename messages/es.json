@@ -143,7 +143,13 @@
           "user-info": {
             "is-feeling": "se siente",
             "in": "en",
-            "is": "está"
+            "is": "está",
+            "feeling": "sintiéndose",
+            "profile-pic-alt": "Foto de perfil de {name}",
+            "feeling-icon-alt": "Ícono de sentimiento ({feeling})",
+            "timestamp": {
+              "just-now": "Justo ahora"
+            }
           }
         },
         "footer": {
@@ -298,12 +304,14 @@
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",
       "email-verified": "Correo electrónico verificado",
       "reset-email-sent": "Correo electrónico de restablecimiento enviado",
-      "password-updated": "Contraseña actualizada"
+      "password-updated": "Contraseña actualizada",
+      "post-created": "Publicación creada"
     }
   },
   "icon-buttons": {
     "close": "Cerrar",
-    "back": "Atrás"
+    "back": "Atrás",
+    "dots-horizontal": "Más opciones"
   },
   "search-input": {
     "search": "Buscar",

@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 
 import { SharedSvg, VoidFunction } from '@/assets/types';
 
-export type IconButtonName = 'close' | 'back';
+export type IconButtonName = 'back' | 'close' | 'dots-horizontal';
 
 interface IconButtonProps {
   className: string;

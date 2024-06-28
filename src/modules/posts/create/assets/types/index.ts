@@ -3,9 +3,9 @@ import { feelings } from '../feelings';
 type Step = 'default' | 'feelings' | 'media' | 'gif' | 'check-in' | 'gifs';
 
 type Media = {
-  file: string | ArrayBuffer | null;
+  file: string | null;
   playing: boolean;
-  type: string | null;
+  type: 'image' | 'video' | null;
 };
 
 type Feeling = (typeof feelings)[number];

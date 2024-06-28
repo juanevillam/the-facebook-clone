@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Media } from '../assets/types';
 
 const initialState: Media = {
-  file: '',
+  file: null,
   playing: false,
   type: null,
 };
