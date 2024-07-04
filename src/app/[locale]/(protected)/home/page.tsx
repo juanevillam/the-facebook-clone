@@ -13,11 +13,11 @@ const HomePage = ({ params: { locale } }: PageProps) => {
   const messages = useMessages();
 
   return (
-    <div className="max-w-3xl mx-auto md:max-w-xl md:pt-4 lg:max-w-2xl">
+    <div className="max-w-3xl mx-auto space-y-1.5 md:max-w-xl md:pt-4 md:space-y-4 lg:max-w-2xl">
       <NextIntlClientProvider
         messages={pick(
           messages,
-          'posts.create',
+          'posts',
           'images',
           'toast-messages',
           'icon-buttons',

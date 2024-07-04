@@ -4,20 +4,14 @@ import { FileInputRef, VoidFunction } from '@/assets/types';
 import { ArrowLeftIcon, CloseIcon } from '@/assets/ui/icons';
 import { useAppSelector } from '@/lib/store/hooks';
 
+import { CreatePostHeader } from '../layout';
 import {
-  CreatePostButton,
-  CreatePostFooter,
-  CreatePostHeader,
-  CreatePostLoader,
-  CreatePostTextArea,
-  CreatePostUserInfo,
-} from '../shared/layout';
-import {
-  CreatePostCheckIn,
-  CreatePostFeelings,
-  CreatePostGifs,
-  CreatePostMedia,
-} from '../shared/steps';
+  CreatePostCheckInStep,
+  CreatePostDefaultStep,
+  CreatePostFeelingsStep,
+  CreatePostGifsStep,
+  CreatePostMediaStep,
+} from '../steps';
 
 interface CreatePostModalProps {
   fileInputRef: FileInputRef;
@@ -37,24 +31,16 @@ export const CreatePostModal = ({
   const renderStepContent = () => {
     switch (step) {
       case 'media':
-        return <CreatePostMedia fileInputRef={fileInputRef} />;
+        return <CreatePostMediaStep fileInputRef={fileInputRef} />;
       case 'feelings':
-        return <CreatePostFeelings />;
+        return <CreatePostFeelingsStep />;
       case 'check-in':
-        return <CreatePostCheckIn />;
+        return <CreatePostCheckInStep />;
       case 'gifs':
-        return <CreatePostGifs />;
+        return <CreatePostGifsStep />;
       case 'default':
       default:
-        return (
-          <>
-            <CreatePostUserInfo />
-            <CreatePostTextArea />
-            <CreatePostFooter />
-            <CreatePostButton />
-            <CreatePostLoader />
-          </>
-        );
+        return <CreatePostDefaultStep />;
     }
   };
 
@@ -72,7 +58,7 @@ export const CreatePostModal = ({
       }}
     >
       <Fade in={isOpenableOpen}>
-        <div className="absolute bg-white left-1/2 max-w-lg outline-none top-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg w-full dark:bg-dark-100">
+        <div className="card absolute left-1/2 max-w-lg outline-none top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
           <CreatePostHeader
             icon={{
               Component: step === 'default' ? CloseIcon : ArrowLeftIcon,

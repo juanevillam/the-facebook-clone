@@ -22,7 +22,7 @@ export const IconButton = ({ className, icon, onClick }: IconButtonProps) => {
   return (
     <button
       aria-label={t(icon.name)}
-      className={`duration-150 flex hover:bg-gray-200 items-center justify-center p-2 rounded-full transition ${className}`}
+      className={`flex-justify-center-center main-transition p-2 rounded-full ${className}`}
       onClick={onClick}
       type="button"
     >

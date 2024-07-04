@@ -18,7 +18,7 @@ const config: Config = {
           900: '#3B3E3C',
           1000: '#86888B',
           1100: '#050505',
-          1200: '#606266',
+          1200: '#B9BBBF',
         },
         error: {
           100: '#F02849',
@@ -36,7 +36,6 @@ const config: Config = {
         },
         smoke: {
           100: '#E4E6EA',
-          200: '#B1B3B8',
         },
         success: {
           100: '#42B72A',

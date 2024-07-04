@@ -1,4 +1,4 @@
-import { fetchPosts } from '../../lib/data';
+import { fetchPosts } from '../../api';
 import { Post } from '../post/Post';
 
 export const PostsList = async () => {

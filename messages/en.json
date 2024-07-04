@@ -139,53 +139,42 @@
             "feelings": "How are you feeling?",
             "check-in": "Search location",
             "gifs": "Search GIF"
-          },
-          "user-info": {
-            "is-feeling": "is feeling",
-            "in": "in",
-            "is": "is",
-            "feeling": "feeling",
-            "profile-pic-alt": "{name}'s profile picture",
-            "feeling-icon-alt": "Feeling icon ({feeling})",
-            "timestamp": {
-              "just-now": "Just now"
-            }
           }
         },
         "footer": {
-          "title": "Add to your post",
-          "items": {
-            "live-video": {
-              "detailed": "Live video",
-              "short": "Live"
-            },
-            "photo-video": {
-              "detailed": "Photo/video",
-              "short": "Photo"
-            },
-            "feeling-activity": {
-              "detailed": "Feeling/activity",
-              "short": "Feeling"
-            },
-            "tag-people": {
-              "detailed": "Tag people",
-              "short": "Tag"
-            },
-            "check-in": {
-              "detailed": "Check in",
-              "short": "Check in"
-            },
-            "gif": {
-              "detailed": "GIF",
-              "short": "GIF"
-            },
-            "disabled": "This can't be combined with what you've already<br></br>added to your post"
-          }
-        },
-        "button": "Post",
-        "loader": "Posting"
+          "live-video": {
+            "detailed": "Live video",
+            "short": "Live"
+          },
+          "photo-video": {
+            "detailed": "Photo/video",
+            "short": "Photo"
+          },
+          "feeling-activity": {
+            "detailed": "Feeling/activity",
+            "short": "Feeling"
+          },
+          "tag-people": {
+            "detailed": "Tag people",
+            "short": "Tag"
+          },
+          "check-in": {
+            "detailed": "Check in",
+            "short": "Check in"
+          },
+          "gif": {
+            "detailed": "GIF",
+            "short": "GIF"
+          },
+          "disabled": "This can't be combined with what you've already<br></br>added to your post"
+        }
       },
       "steps": {
+        "default": {
+          "footer": "Add to your post",
+          "button": "Post",
+          "loader": "Posting"
+        },
         "media": "Add photos/videos",
         "feelings": {
           "list": {
@@ -255,6 +244,15 @@
           }
         }
       }
+    },
+    "user-info": {
+      "in": "in",
+      "is": "is",
+      "feeling": "feeling",
+      "feeling-icon-alt": "Feeling icon ({feeling})",
+      "timestamp": {
+        "just-now": "Just now"
+      }
     }
   },
   "form": {
@@ -282,7 +280,7 @@
   "images": {
     "alert-triangle": "Alert icon",
     "no-profile-pic": "No profile pic image",
-    "profile-pic": "Profile pic image"
+    "profile-pic": "{name}'s profile picture"
   },
   "toast-messages": {
     "error": {

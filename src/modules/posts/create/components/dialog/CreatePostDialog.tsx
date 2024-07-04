@@ -1,23 +1,16 @@
 import { FileInputRef, VoidFunction } from '@/assets/types';
 import { ArrowLeftIcon } from '@/assets/ui/icons';
 import { MobileDialog } from '@/components/mobile';
-import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import { useAppSelector } from '@/lib/store/hooks';
 
-import { setActiveGif } from '../../reducers/gifsSlice';
+import { CreatePostHeader } from '../layout';
 import {
-  CreatePostFooter,
-  CreatePostHeader,
-  CreatePostLoader,
-  CreatePostTextArea,
-  CreatePostUserInfo,
-} from '../shared/layout';
-import {
-  CreatePostCheckIn,
-  CreatePostFeelings,
-  CreatePostGifs,
-  CreatePostMedia,
-} from '../shared/steps';
-import { CreatePostGifsItem } from '../shared/steps/gifs/item/CreatePostGifsItem';
+  CreatePostCheckInStep,
+  CreatePostDefaultStep,
+  CreatePostFeelingsStep,
+  CreatePostGifsStep,
+  CreatePostMediaStep,
+} from '../steps';
 
 interface CreatePostDialogProps {
   fileInputRef: FileInputRef;
@@ -28,46 +21,23 @@ export const CreatePostDialog = ({
   fileInputRef,
   handleStep,
 }: CreatePostDialogProps) => {
-  const dispatch = useAppDispatch();
   const { isOpenableOpen, step } = useAppSelector(
     (store) => store.posts.create.post
   );
 
-  const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
-
-  const handleRemoveActiveGif = () => dispatch(setActiveGif(null));
-
   const renderStepContent = () => {
     switch (step) {
       case 'media':
-        return <CreatePostMedia fileInputRef={fileInputRef} />;
+        return <CreatePostMediaStep fileInputRef={fileInputRef} />;
       case 'feelings':
-        return <CreatePostFeelings />;
+        return <CreatePostFeelingsStep />;
       case 'check-in':
-        return <CreatePostCheckIn />;
+        return <CreatePostCheckInStep />;
       case 'gifs':
-        return <CreatePostGifs />;
+        return <CreatePostGifsStep />;
       case 'default':
       default:
-        return (
-          <>
-            <CreatePostUserInfo />
-            <CreatePostTextArea />
-            {activeGif && (
-              <div className="p-3">
-                <div className="max-h-96 size-full">
-                  <CreatePostGifsItem
-                    active
-                    gif={activeGif}
-                    onClick={handleRemoveActiveGif}
-                  />
-                </div>
-              </div>
-            )}
-            <CreatePostFooter />
-            <CreatePostLoader />
-          </>
-        );
+        return <CreatePostDefaultStep />;
     }
   };
 

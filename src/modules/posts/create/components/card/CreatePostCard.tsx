@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
 import { ProfilePic } from '@/components';
-import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostCardItem } from './item/CreatePostCardItem';
@@ -24,7 +23,6 @@ export const CreatePostCard = () => {
   const t = useTranslations();
   const tFooterItems = useTranslations(POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH);
   const tLayout = useTranslations(POSTS_CREATE_LAYOUT_PATH);
-  const user = useCurrentUser();
   const dispatch = useAppDispatch();
   const { step, thoughts, posting } = useAppSelector(
     (store) => store.posts.create.post
@@ -74,7 +72,6 @@ export const CreatePostCard = () => {
     },
     {
       active: !!file,
-      disabled: !!activeGif,
       name: 'photo-video',
       onClick: handleOpenMediaStep,
     },
@@ -87,21 +84,21 @@ export const CreatePostCard = () => {
 
   return (
     <>
-      <div className="bg-white duration-150 mb-1.5 pt-3 transition dark:bg-dark-100 md:mb-4 md:pb-2.5 md:rounded-lg">
-        <div className="flex items-center pb-3 px-3 space-x-2 md:px-4">
-          <ProfilePic image={user?.image as string} />
+      <div className="card">
+        <div className="flex-center p-3 md:px-4 space-x-2">
+          <ProfilePic />
           <button
             aria-label={thoughts || tLayout('thoughts')}
-            className="bg-transparent border duration-150 flex flex-grow hover:bg-gray-200 overflow-hidden px-4 py-2.5 rounded-full transition dark:border-dark-50 dark:hover:bg-dark-200 md:bg-gray-100 md:border-none md:px-3 md:py-2 md:dark:bg-dark-200 md:dark:hover:bg-dark-500"
+            className="border main-border md:border-none main-transition flex-grow overflow-hidden px-4 md:px-3 py-2.5 md:py-2 rounded-full text-start md:main-bg hover:main-bg-hover"
             onClick={handleToggleOpenable}
             type="button"
           >
-            <p className="text-gray-600 whitespace-nowrap dark:text-gray-300 md:dark:text-gray-400">
+            <p className="text-gray-600 dark:text-neutral-100 md:text-neutral-500 md:dark:text-neutral-300 whitespace-nowrap">
               {thoughts || tLayout('thoughts')}
             </p>
           </button>
         </div>
-        <div className="border-t divide-x flex dark:border-dark-50 dark:divide-dark-50 md:divide-x-0 md:space-x-1 md:pt-2 md:mx-4">
+        <div className="flex border-t main-border divide-x main-divide md:divide-x-0 md:mx-4 md:py-2.5 md:space-x-1">
           {cardItems.map((item) => (
             <CreatePostCardItem key={item.name} {...item} />
           ))}

@@ -7,13 +7,11 @@ import { IconButton } from '@/components/buttons';
 
 export const PostHeaderOptions = () => {
   return (
-    <div className="-mt-2 md:mt-0">
+    <div className="-mt-2 md:mt-0 flex-shrink-0">
       <IconButton
-        className={classNames(
-          'size-9 dark:hover:bg-dark-900 md:hover:bg-gray-100'
-        )}
+        className={classNames('size-9 hover:main-bg-hover')}
         icon={{
-          className: 'size-full dark:fill-smoke-200 md:fill-dark-1200',
+          className: 'secondary-fill size-full',
           Component: DotsHorizontalIcon,
           name: 'dots-horizontal',
         }}

@@ -1,3 +1,104 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* Flexbox Utilities */
+  .flex-center {
+    @apply flex items-center;
+  }
+
+  .flex-justify-center-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-justify-between-center {
+    @apply flex justify-between items-center;
+  }
+
+  /* Border Utilities */
+  .main-border {
+    @apply border-gray-300 md:border-gray-200 dark:border-neutral-600 md:dark:border-neutral-700;
+  }
+
+  /* Divide Utilities */
+  .main-divide {
+    @apply divide-gray-300 md:divide-gray-200 dark:divide-neutral-600 md:dark:divide-neutral-700;
+  }
+
+  /* Background Utilities */
+  .main-bg {
+    @apply bg-gray-100 dark:bg-neutral-700;
+  }
+
+  .main-bg-hover {
+    @apply bg-gray-200 dark:bg-neutral-600;
+  }
+
+  .active-bg {
+    @apply bg-gray-200 dark:bg-neutral-900;
+  }
+
+  .active-bg-hover {
+    @apply bg-gray-100 dark:bg-neutral-700;
+  }
+
+  /* Text Utilities */
+  .main-text {
+    @apply text-neutral-900 dark:text-gray-100;
+  }
+
+  .main-text-dark {
+    @apply dark:text-gray-100;
+  }
+
+  .secondary-text {
+    @apply text-neutral-600 dark:text-neutral-400;
+  }
+
+  .tertiary-text {
+    @apply text-neutral-500 dark:text-neutral-400;
+  }
+
+  /* Placeholder Utilities */
+  .main-placeholder {
+    @apply placeholder-neutral-500 dark:placeholder-neutral-400;
+  }
+
+  /* Stroke Utilities */
+  .main-stroke {
+    @apply stroke-neutral-900 dark:stroke-gray-100;
+  }
+
+  .secondary-stroke {
+    @apply stroke-neutral-500 dark:stroke-neutral-400;
+  }
+
+  /* Fill Utilities */
+  .secondary-fill {
+    @apply fill-neutral-500 dark:fill-neutral-400;
+  }
+
+  /* Transition Utilities */
+  .main-transition {
+    @apply transition duration-150;
+  }
+
+  /* Card Utilities */
+  .card {
+    @apply bg-white dark:bg-neutral-800 md:rounded-lg;
+  }
+
+  /* Modal Utilities */
+  .modal-scrollable-area {
+    @apply h-full md:h-96 overflow-y-auto;
+  }
+
+  .create-post-modal-spacing-area {
+    @apply md:pb-3 md:px-3;
+  }
+
+  .create-post-modal-gif-size {
+    @apply max-h-96 md:max-h-72;
+  }
+}

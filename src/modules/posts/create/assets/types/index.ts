@@ -20,7 +20,7 @@ type GIF = {
   width: number;
 };
 
-type unparsedGIF = {
+type GIFUnparsed = {
   id: string;
   title: string;
   images: {
@@ -45,4 +45,4 @@ type CardItem = {
   onClick: VoidFunction;
 };
 
-export type { Step, Media, Feeling, Location, GIF, unparsedGIF, CardItem };
+export type { Step, Media, Feeling, Location, GIF, GIFUnparsed, CardItem };

@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 
 import { useTranslations } from 'next-intl';
 
-import { POSTS_CREATE_LAYOUT_HEADER_PATH } from '@/modules/posts/create/assets/translations';
-import { getRelativeTime } from '@/modules/posts/list/lib/utils';
+import { POSTS_USER_INFO_PATH } from '@/modules/posts/assets/translations';
+import { getRelativeTime } from '@/modules/posts/list/utils';
 
 interface PostHeaderUserInfoTimestampProps {
   date: Date;
@@ -15,9 +15,7 @@ export const PostHeaderUserInfoTimestamp = ({
   date,
 }: PostHeaderUserInfoTimestampProps) => {
   const [relativeTime, setRelativeTime] = useState(getRelativeTime(date));
-  const t = useTranslations(
-    `${POSTS_CREATE_LAYOUT_HEADER_PATH}.user-info.timestamp`
-  );
+  const t = useTranslations(`${POSTS_USER_INFO_PATH}.timestamp`);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -28,7 +26,7 @@ export const PostHeaderUserInfoTimestamp = ({
   }, [date]);
 
   return (
-    <span className="text-gray-600 text-sm dark:text-smoke-200  md:text-gray-500">
+    <span className="tertiary-text text-sm">
       {relativeTime === 'just-now' ? t('just-now') : relativeTime}
     </span>
   );
