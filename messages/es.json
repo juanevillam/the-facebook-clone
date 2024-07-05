@@ -142,33 +142,31 @@
           }
         },
         "footer": {
-          "footer": {
-            "live-video": {
-              "detailed": "Video en vivo",
-              "short": "Video"
-            },
-            "photo-video": {
-              "detailed": "Foto/video",
-              "short": "Foto"
-            },
-            "feeling-activity": {
-              "detailed": "Sentimiento/actividad",
-              "short": "Sentimiento"
-            },
-            "tag-people": {
-              "detailed": "Etiquetar personas",
-              "short": "Etiquetar"
-            },
-            "check-in": {
-              "detailed": "Ubicación",
-              "short": "Ubicación"
-            },
-            "gif": {
-              "detailed": "GIF",
-              "short": "GIF"
-            },
-            "disabled": "Esto no se puede combinar con lo que ya has<br></br>agregado a tu publicación"
-          }
+          "live-video": {
+            "detailed": "Video en vivo",
+            "short": "Video"
+          },
+          "photo-video": {
+            "detailed": "Foto/video",
+            "short": "Foto"
+          },
+          "feeling-activity": {
+            "detailed": "Sentimiento/actividad",
+            "short": "Sentimiento"
+          },
+          "tag-people": {
+            "detailed": "Etiquetar personas",
+            "short": "Etiquetar"
+          },
+          "check-in": {
+            "detailed": "Ubicación",
+            "short": "Ubicación"
+          },
+          "gif": {
+            "detailed": "GIF",
+            "short": "GIF"
+          },
+          "disabled": "Esto no se puede combinar con lo que ya has<br></br>agregado a tu publicación"
         }
       },
       "steps": {
@@ -253,7 +251,12 @@
       "feeling": "sintiéndose",
       "feeling-icon-alt": "Ícono de sentimiento ({feeling})",
       "timestamp": {
-        "just-now": "Justo ahora"
+        "just-now": "Justo ahora",
+        "minutes": "Hace {minutes} minutos",
+        "hours": "Hace {hours} horas",
+        "days": "Hace {days} días",
+        "date": "{date} a las {time}",
+        "full-date": "{dayName} {day} de {month} de {year} a las {time}"
       }
     }
   },

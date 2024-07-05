@@ -250,8 +250,14 @@
       "is": "is",
       "feeling": "feeling",
       "feeling-icon-alt": "Feeling icon ({feeling})",
+
       "timestamp": {
-        "just-now": "Just now"
+        "just-now": "Just now",
+        "minutes": "{minutes} minutes ago",
+        "hours": "{hours} hours ago",
+        "days": "{days} days ago",
+        "date": "{date} at {time}",
+        "full-date": "{dayName}, {day} {month} {year} at {time}"
       }
     }
   },
