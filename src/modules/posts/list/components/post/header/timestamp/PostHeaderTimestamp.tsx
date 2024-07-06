@@ -8,13 +8,11 @@ import { Tooltip } from '@/components';
 import { POSTS_USER_INFO_PATH } from '@/modules/posts/assets/translations';
 import { getRelativeTime } from '@/modules/posts/list/utils';
 
-interface PostHeaderUserInfoTimestampProps {
+interface PostHeaderTimestampProps {
   date: Date;
 }
 
-export const PostHeaderUserInfoTimestamp = ({
-  date,
-}: PostHeaderUserInfoTimestampProps) => {
+export const PostHeaderTimestamp = ({ date }: PostHeaderTimestampProps) => {
   const locale = useLocale();
   const t = useTranslations(`${POSTS_USER_INFO_PATH}.timestamp`);
   const [relativeTime, setRelativeTime] = useState(
@@ -58,7 +56,7 @@ export const PostHeaderUserInfoTimestamp = ({
   return (
     <div className="-mt-1">
       <Tooltip label={fullDateTime} position="-bottom-9">
-        <span className="tertiary-text peer cursor-pointer text-xs hover:underline">
+        <span className="tertiary-text peer md:cursor-pointer text-xs md:hover:underline">
           {renderTimestamp()}
         </span>
       </Tooltip>

@@ -21,7 +21,8 @@ const HomePage = ({ params: { locale } }: PageProps) => {
           'images',
           'toast-messages',
           'icon-buttons',
-          'search-input'
+          'search-input',
+          'action-loader'
         )}
       >
         <CreatePostCard />

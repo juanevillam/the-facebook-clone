@@ -1,48 +1,29 @@
-import { FileInputRef, VoidFunction } from '@/assets/types';
+import { VoidFunction } from '@/assets/types';
 import { ArrowLeftIcon } from '@/assets/ui/icons';
 import { MobileDialog } from '@/components/mobile';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostHeader } from '../layout';
-import {
-  CreatePostCheckInStep,
-  CreatePostDefaultStep,
-  CreatePostFeelingsStep,
-  CreatePostGifsStep,
-  CreatePostMediaStep,
-} from '../steps';
 
 interface CreatePostDialogProps {
-  fileInputRef: FileInputRef;
   handleStep: VoidFunction;
+  handleToggleOpenable: VoidFunction;
+  children: React.ReactNode;
 }
 
 export const CreatePostDialog = ({
-  fileInputRef,
   handleStep,
+  handleToggleOpenable,
+  children,
 }: CreatePostDialogProps) => {
-  const { isOpenableOpen, step } = useAppSelector(
-    (store) => store.posts.create.post
-  );
-
-  const renderStepContent = () => {
-    switch (step) {
-      case 'media':
-        return <CreatePostMediaStep fileInputRef={fileInputRef} />;
-      case 'feelings':
-        return <CreatePostFeelingsStep />;
-      case 'check-in':
-        return <CreatePostCheckInStep />;
-      case 'gifs':
-        return <CreatePostGifsStep />;
-      case 'default':
-      default:
-        return <CreatePostDefaultStep />;
-    }
-  };
+  const { isOpenableOpen } = useAppSelector((store) => store.posts.create.post);
 
   return (
-    <MobileDialog open={isOpenableOpen} translateFrom="y">
+    <MobileDialog
+      onDismiss={handleToggleOpenable}
+      open={isOpenableOpen}
+      translateFrom="y"
+    >
       <div className="flex flex-col h-full">
         <CreatePostHeader
           icon={{
@@ -51,7 +32,7 @@ export const CreatePostDialog = ({
             name: 'back',
           }}
         />
-        {renderStepContent()}
+        {children}
       </div>
     </MobileDialog>
   );

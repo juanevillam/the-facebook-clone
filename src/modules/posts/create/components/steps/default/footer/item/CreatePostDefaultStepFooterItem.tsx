@@ -52,7 +52,7 @@ export const CreatePostDefaultStepFooterItem = ({
           width={72}
         />
         <p
-          className={classNames('main-text ml-3 text-lg md:hidden', {
+          className={classNames('md:hidden main-text ml-3 text-lg', {
             hidden: activeGif,
           })}
         >

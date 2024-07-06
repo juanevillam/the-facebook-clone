@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @layer components {
+  /* Responsive Utilities */
+  .only-mobile {
+    @apply md:hidden;
+  }
+
+  .only-desktop {
+    @apply hidden md:block;
+  }
+
   /* Flexbox Utilities */
   .flex-center {
     @apply flex items-center;
@@ -18,29 +27,37 @@
 
   /* Border Utilities */
   .main-border {
-    @apply border-gray-300 md:border-gray-200 dark:border-neutral-600 md:dark:border-neutral-700;
+    @apply border-gray-300 md:border-gray-200 dark:border-zinc-600 md:dark:border-neutral-700;
   }
 
   /* Divide Utilities */
   .main-divide {
-    @apply divide-gray-300 md:divide-gray-200 dark:divide-neutral-600 md:dark:divide-neutral-700;
+    @apply divide-gray-300 md:divide-gray-200 dark:divide-zinc-600 md:dark:divide-neutral-700;
   }
 
   /* Background Utilities */
   .main-bg {
-    @apply bg-gray-100 dark:bg-neutral-700;
+    @apply bg-gray-100 dark:bg-zinc-700 md:dark:bg-neutral-700;
   }
 
   .main-bg-hover {
-    @apply bg-gray-200 dark:bg-neutral-600;
+    @apply bg-gray-200 dark:bg-zinc-600 md:dark:bg-neutral-600;
+  }
+
+  .main-bg-accent {
+    @apply bg-white dark:bg-zinc-700;
+  }
+
+  .main-bg-accent-hover {
+    @apply bg-gray-200 dark:bg-zinc-600 md:bg-gray-100 md:dark:bg-neutral-700;
   }
 
   .active-bg {
-    @apply bg-gray-200 dark:bg-neutral-900;
+    @apply bg-gray-200 dark:bg-zinc-900 md:dark:bg-neutral-900;
   }
 
   .active-bg-hover {
-    @apply bg-gray-100 dark:bg-neutral-700;
+    @apply bg-gray-100 dark:bg-zinc-700 md:dark:bg-neutral-700;
   }
 
   /* Text Utilities */
@@ -60,6 +77,10 @@
     @apply text-neutral-500 dark:text-neutral-400;
   }
 
+  .accent-text {
+    @apply text-neutral-700 dark:text-neutral-300;
+  }
+
   /* Placeholder Utilities */
   .main-placeholder {
     @apply placeholder-neutral-500 dark:placeholder-neutral-400;
@@ -75,6 +96,10 @@
   }
 
   /* Fill Utilities */
+  .main-fill {
+    @apply fill-neutral-900 dark:fill-gray-100;
+  }
+
   .secondary-fill {
     @apply fill-neutral-500 dark:fill-neutral-400;
   }
@@ -86,7 +111,7 @@
 
   /* Card Utilities */
   .card {
-    @apply bg-white dark:bg-neutral-800 md:rounded-lg;
+    @apply bg-white dark:bg-zinc-800 md:dark:bg-neutral-800 md:rounded-lg;
   }
 
   /* Modal Utilities */
@@ -100,5 +125,10 @@
 
   .create-post-modal-gif-size {
     @apply max-h-96 md:max-h-72;
+  }
+
+  /* Dialog Utilities */
+  .dialog-accent-content {
+    @apply bg-gray-100 dark:bg-zinc-800 p-4;
   }
 }

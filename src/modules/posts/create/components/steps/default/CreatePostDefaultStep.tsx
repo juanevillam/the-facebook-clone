@@ -1,8 +1,8 @@
+import { ActionLoader } from '@/components';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostDefaultStepButton } from './button/CreatePostDefaultStepButton';
 import { CreatePostDefaultStepFooter } from './footer/CreatePostDefaultStepFooter';
-import { CreatePostDefaultStepLoader } from './loader/CreatePostDefaultStepLoader';
 import { CreatePostDefaultStepTextArea } from './text-area/CreatePostDefaultStepTextArea';
 import { CreatePostDefaultStepUserInfo } from './user-info/CreatePostDefaultStepUserInfo';
 import { setActiveGif } from '../../../reducers/gifsSlice';
@@ -11,6 +11,7 @@ import { CreatePostGifsStepItem } from '../gifs/item/CreatePostGifsStepItem';
 export const CreatePostDefaultStep = () => {
   const dispatch = useAppDispatch();
   const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
+  const { posting } = useAppSelector((store) => store.posts.create.post);
 
   const handleRemoveActiveGif = () => dispatch(setActiveGif(null));
 
@@ -31,11 +32,15 @@ export const CreatePostDefaultStep = () => {
           </div>
         )}
         <CreatePostDefaultStepFooter />
-        <div className="hidden md:block">
+        <div className="only-desktop">
           <CreatePostDefaultStepButton />
         </div>
       </div>
-      <CreatePostDefaultStepLoader />
+      <ActionLoader
+        className="md:rounded-lg"
+        message="posting"
+        open={posting}
+      />
     </>
   );
 };

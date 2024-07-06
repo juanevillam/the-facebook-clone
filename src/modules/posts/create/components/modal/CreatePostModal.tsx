@@ -1,48 +1,25 @@
 import { Backdrop, Fade, Modal } from '@mui/material';
 
-import { FileInputRef, VoidFunction } from '@/assets/types';
+import { VoidFunction } from '@/assets/types';
 import { ArrowLeftIcon, CloseIcon } from '@/assets/ui/icons';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostHeader } from '../layout';
-import {
-  CreatePostCheckInStep,
-  CreatePostDefaultStep,
-  CreatePostFeelingsStep,
-  CreatePostGifsStep,
-  CreatePostMediaStep,
-} from '../steps';
 
 interface CreatePostModalProps {
-  fileInputRef: FileInputRef;
   handleStep: VoidFunction;
   handleToggleOpenable: VoidFunction;
+  children: React.ReactNode;
 }
 
 export const CreatePostModal = ({
-  fileInputRef,
   handleStep,
   handleToggleOpenable,
+  children,
 }: CreatePostModalProps) => {
   const { isOpenableOpen, step } = useAppSelector(
     (store) => store.posts.create.post
   );
-
-  const renderStepContent = () => {
-    switch (step) {
-      case 'media':
-        return <CreatePostMediaStep fileInputRef={fileInputRef} />;
-      case 'feelings':
-        return <CreatePostFeelingsStep />;
-      case 'check-in':
-        return <CreatePostCheckInStep />;
-      case 'gifs':
-        return <CreatePostGifsStep />;
-      case 'default':
-      default:
-        return <CreatePostDefaultStep />;
-    }
-  };
 
   return (
     <Modal
@@ -66,7 +43,7 @@ export const CreatePostModal = ({
               onClick: handleStep,
             }}
           />
-          {renderStepContent()}
+          {children}
         </div>
       </Fade>
     </Modal>

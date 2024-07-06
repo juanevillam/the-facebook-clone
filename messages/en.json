@@ -172,8 +172,7 @@
       "steps": {
         "default": {
           "footer": "Add to your post",
-          "button": "Post",
-          "loader": "Posting"
+          "button": "Post"
         },
         "media": "Add photos/videos",
         "feelings": {
@@ -250,7 +249,6 @@
       "is": "is",
       "feeling": "feeling",
       "feeling-icon-alt": "Feeling icon ({feeling})",
-
       "timestamp": {
         "just-now": "Just now",
         "minutes": "{minutes} minutes ago",
@@ -258,6 +256,26 @@
         "days": "{days} days ago",
         "date": "{date} at {time}",
         "full-date": "{dayName}, {day} {month} {year} at {time}"
+      }
+    },
+    "post": {
+      "header": {
+        "options": {
+          "save": {
+            "label": "Save post",
+            "description": "Add this to your saved items."
+          },
+          "edit": {
+            "label": "Edit post"
+          },
+          "delete": {
+            "label": "Delete post"
+          }
+        },
+        "bottom-sheet": {
+          "title": "Post options",
+          "description": "Here you can save a post, or edit/delete it if it's yours."
+        }
       }
     }
   },
@@ -309,7 +327,8 @@
       "email-verified": "Email verified",
       "reset-email-sent": "Reset email sent",
       "password-updated": "Password updated",
-      "post-created": "Post created"
+      "post-created": "Post created",
+      "post-deleted": "Post deleted"
     }
   },
   "icon-buttons": {
@@ -320,5 +339,9 @@
   "search-input": {
     "search": "Search",
     "where-are-you": "Where are you?"
+  },
+  "action-loader": {
+    "posting": "Posting",
+    "deleting-post": "Deleting post"
   }
 }

@@ -67,7 +67,6 @@ export const createPost = async ({
     });
 
     revalidatePath('/home');
-
     return { message: 'post-created', type: 'success' };
   } catch (error) {
     return new Error('something-went-wrong');

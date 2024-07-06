@@ -5,11 +5,11 @@ export const getRelativeTime = (date: Date, locale: string) => {
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
 
-  if (seconds < 60) {
+  if (seconds < 120) {
     return { type: 'just-now' };
   } else if (minutes < 60) {
     return { type: 'minutes', value: minutes };
-  } else if (hours < 24) {
+  } else if (hours < 48) {
     return { type: 'hours', value: hours };
   } else if (days < 7) {
     return { type: 'days', value: days };

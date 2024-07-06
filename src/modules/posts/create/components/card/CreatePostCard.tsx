@@ -5,7 +5,7 @@ import { useRef, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
-import { ProfilePic } from '@/components';
+import { ActionLoader, ProfilePic } from '@/components';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostCardItem } from './item/CreatePostCardItem';
@@ -17,6 +17,13 @@ import { CardItem } from '../../assets/types';
 import { setStep, toggleOpenable } from '../../reducers/postSlice';
 import { CreatePostDialog } from '../dialog/CreatePostDialog';
 import { CreatePostModal } from '../modal/CreatePostModal';
+import {
+  CreatePostCheckInStep,
+  CreatePostDefaultStep,
+  CreatePostFeelingsStep,
+  CreatePostGifsStep,
+  CreatePostMediaStep,
+} from '../steps';
 
 export const CreatePostCard = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -82,6 +89,22 @@ export const CreatePostCard = () => {
     },
   ];
 
+  const RenderStep = () => {
+    switch (step) {
+      case 'media':
+        return <CreatePostMediaStep fileInputRef={fileInputRef} />;
+      case 'feelings':
+        return <CreatePostFeelingsStep />;
+      case 'check-in':
+        return <CreatePostCheckInStep />;
+      case 'gifs':
+        return <CreatePostGifsStep />;
+      case 'default':
+      default:
+        return <CreatePostDefaultStep />;
+    }
+  };
+
   return (
     <>
       <div className="card">
@@ -104,12 +127,18 @@ export const CreatePostCard = () => {
           ))}
         </div>
       </div>
-      <CreatePostDialog fileInputRef={fileInputRef} handleStep={handleStep} />
-      <CreatePostModal
-        fileInputRef={fileInputRef}
+      <CreatePostDialog
         handleStep={handleStep}
         handleToggleOpenable={handleToggleOpenable}
-      />
+      >
+        <RenderStep />
+      </CreatePostDialog>
+      <CreatePostModal
+        handleStep={handleStep}
+        handleToggleOpenable={handleToggleOpenable}
+      >
+        <RenderStep />
+      </CreatePostModal>
     </>
   );
 };

@@ -3,16 +3,18 @@ import { useTranslations } from 'next-intl';
 
 import { POSTS_USER_INFO_PATH } from '@/modules/posts/assets/translations';
 import { POSTS_CREATE_STEPS_FEELINGS_LIST_PATH } from '@/modules/posts/create/assets/translations';
-import { Feeling, Location } from '@/modules/posts/create/assets/types';
+import { Feeling } from '@/modules/posts/create/assets/types';
 
 interface PostUserInfoProps {
   feeling?: Feeling;
+  hideFellingInfo?: boolean;
   location?: string;
   name: string;
 }
 
 export const PostUserInfo = ({
   feeling,
+  hideFellingInfo,
   location,
   name,
 }: PostUserInfoProps) => {
@@ -27,6 +29,9 @@ export const PostUserInfo = ({
       )}
       {feeling && (
         <span className="tertiary-text">
+          {!hideFellingInfo && (
+            <span className="md:hidden">&nbsp;{tUserInfo('feeling')}</span>
+          )}
           &nbsp;
           <Image
             alt={tUserInfo('feeling-icon-alt', { feeling })}
@@ -39,7 +44,9 @@ export const PostUserInfo = ({
           <span className="hidden md:inline-block">
             &nbsp;{tUserInfo('feeling')}
           </span>
-          <span>&nbsp;{tFeelings(feeling)}</span>
+          <span className={`md:inline-block ${hideFellingInfo && 'hidden'}`}>
+            &nbsp;{tFeelings(feeling)}
+          </span>
         </span>
       )}
       {location && (

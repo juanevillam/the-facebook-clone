@@ -18,7 +18,7 @@ export const Navbar = () => {
   return (
     <>
       <header
-        className={`bg-white duration-150 sticky top-0 transform transition-transform z-10 md:transform-none md:dark:border-b dark:bg-dark-100 dark:border-dark-50 ${
+        className={`bg-white duration-150 sticky top-0 transform transition-transform z-40 md:transform-none md:dark:border-b dark:bg-dark-100 dark:border-dark-50 ${
           scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
         }`}
       >
@@ -54,7 +54,7 @@ export const Navbar = () => {
       </header>
       <nav
         aria-label={t('mobile-navigation')}
-        className={`bg-white border-b dark:bg-dark-100 duration-150 flex sticky top-14 transform transition-transform z-10 md:hidden dark:border-dark-50 ${
+        className={`bg-white border-b dark:bg-dark-100 duration-150 flex sticky top-14 transform transition-transform z-40 md:hidden dark:border-dark-50 ${
           scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
         }`}
       >

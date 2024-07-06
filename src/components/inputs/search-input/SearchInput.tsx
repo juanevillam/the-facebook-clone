@@ -25,7 +25,7 @@ export const SearchInput = ({
   const id = useId();
 
   return (
-    <div className="flex-center main-transition bg-gray-100 dark:bg-neutral-700 p-2.5 pr-12 md:py-2 relative rounded-full w-full">
+    <div className="flex-center main-bg main-transition p-2.5 pr-12 md:py-2 relative rounded-full w-full">
       <SearchIcon className="secondary-fill size-4" />
       <label className="sr-only" htmlFor={id}>
         {t(label)}

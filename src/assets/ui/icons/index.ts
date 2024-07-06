@@ -1,9 +1,12 @@
 export { ArrowLeftIcon } from './arrow-left-icon';
+export { BookmarkIcon } from './BookmarkIcon';
 export { CloseIcon } from './close-icon';
 export { DotsHorizontalIcon } from './DotsHorizontalIcon';
 export { ExclamationCircleIcon } from './exclamation-circle-icon';
 export { FaceFrowIcon } from './face-frown-icon';
 export { GifIcon } from './gif-icon';
 export { MapIcon } from './map-icon';
+export { PencilIcon } from './PencilIcon';
 export { PhotoIcon } from './photo-icon';
 export { SearchIcon } from './search-icon';
+export { TrashIcon } from './TrashIcon';

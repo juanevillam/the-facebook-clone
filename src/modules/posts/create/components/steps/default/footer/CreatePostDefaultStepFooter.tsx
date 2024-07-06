@@ -96,7 +96,7 @@ export const CreatePostDefaultStepFooter = () => {
         }
       )}
     >
-      <h1 className="hidden md:block main-text font-semibold text-sm">
+      <h1 className="only-desktop main-text font-semibold text-sm">
         {t(`${POSTS_CREATE_STEPS_DEFAULT_PATH}.footer`)}
       </h1>
       <div

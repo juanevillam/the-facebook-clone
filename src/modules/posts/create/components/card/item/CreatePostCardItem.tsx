@@ -35,10 +35,10 @@ export const CreatePostCardItem = ({
         quality={100}
         width={72}
       />
-      <p className="hidden md:block font-medium text-gray-500 dark:text-gray-300 text-sm">
+      <p className="only-desktop font-medium text-gray-500 dark:text-gray-300 text-sm">
         {t('detailed')}
       </p>
-      <p className="md:hidden text-gray-600 dark:text-neutral-100 text-sm">
+      <p className="only-mobile text-gray-600 dark:text-neutral-100 text-sm">
         {t('short')}
       </p>
     </button>

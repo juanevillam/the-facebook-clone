@@ -172,8 +172,7 @@
       "steps": {
         "default": {
           "footer": "Agrega a tu publicación",
-          "button": "Publicar",
-          "loader": "Publicando"
+          "button": "Publicar"
         },
         "media": "Agrega fotos/videos",
         "feelings": {
@@ -258,6 +257,26 @@
         "date": "{date} a las {time}",
         "full-date": "{dayName} {day} de {month} de {year} a las {time}"
       }
+    },
+    "post": {
+      "header": {
+        "options": {
+          "save": {
+            "label": "Guardar publicación",
+            "description": "Agrega esto a tus elementos guardados."
+          },
+          "edit": {
+            "label": "Editar publicación"
+          },
+          "delete": {
+            "label": "Eliminar publicación"
+          }
+        },
+        "bottom-sheet": {
+          "title": "Opciones de la publicación",
+          "description": "Aquí puedes guardar una publicación, o editar/eliminar si es tuya."
+        }
+      }
     }
   },
   "form": {
@@ -308,7 +327,8 @@
       "email-verified": "Correo electrónico verificado",
       "reset-email-sent": "Correo electrónico de restablecimiento enviado",
       "password-updated": "Contraseña actualizada",
-      "post-created": "Publicación creada"
+      "post-created": "Publicación creada",
+      "post-deleted": "Publicación eliminada"
     }
   },
   "icon-buttons": {
@@ -319,5 +339,9 @@
   "search-input": {
     "search": "Buscar",
     "where-are-you": "¿Dónde estás?"
+  },
+  "action-loader": {
+    "posting": "Publicando",
+    "deleting-post": "Eliminando publicación"
   }
 }
