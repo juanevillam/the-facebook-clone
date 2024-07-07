@@ -4,7 +4,6 @@ type Step = 'default' | 'feelings' | 'media' | 'gif' | 'check-in' | 'gifs';
 
 type Media = {
   file: string | null;
-  playing: boolean;
   type: 'image' | 'video' | null;
 };
 

@@ -1,5 +1,3 @@
-import { ChangeEvent, useState, useEffect } from 'react';
-
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
@@ -11,23 +9,10 @@ export const CreatePostDefaultStepTextArea = () => {
   const t = useTranslations(POSTS_CREATE_LAYOUT_PATH);
   const dispatch = useAppDispatch();
   const { thoughts } = useAppSelector((store) => store.posts.create.post);
-  const [localThoughts, setLocalThoughts] = useState('');
   const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
 
-  useEffect(() => {
-    setLocalThoughts(thoughts);
-  }, [thoughts]);
-
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      dispatch(setThoughts(localThoughts));
-    }, 300);
-
-    return () => clearTimeout(handler);
-  }, [localThoughts, dispatch]);
-
-  const handleSetThoughts = (event: ChangeEvent<HTMLTextAreaElement>) =>
-    setLocalThoughts(event.target.value);
+  const handleSetThoughts = (event: React.ChangeEvent<HTMLTextAreaElement>) =>
+    dispatch(setThoughts(event.target.value));
 
   return (
     <textarea
@@ -41,7 +26,7 @@ export const CreatePostDefaultStepTextArea = () => {
       )}
       onChange={handleSetThoughts}
       placeholder={t('thoughts')}
-      value={localThoughts}
+      value={thoughts}
     />
   );
 };

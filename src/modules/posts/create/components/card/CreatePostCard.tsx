@@ -89,7 +89,7 @@ export const CreatePostCard = () => {
     },
   ];
 
-  const RenderStep = () => {
+  const renderStep = () => {
     switch (step) {
       case 'media':
         return <CreatePostMediaStep fileInputRef={fileInputRef} />;
@@ -131,13 +131,13 @@ export const CreatePostCard = () => {
         handleStep={handleStep}
         handleToggleOpenable={handleToggleOpenable}
       >
-        <RenderStep />
+        {renderStep()}
       </CreatePostDialog>
       <CreatePostModal
         handleStep={handleStep}
         handleToggleOpenable={handleToggleOpenable}
       >
-        <RenderStep />
+        {renderStep()}
       </CreatePostModal>
     </>
   );

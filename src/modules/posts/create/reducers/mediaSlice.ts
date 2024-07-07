@@ -4,7 +4,6 @@ import { Media } from '../assets/types';
 
 const initialState: Media = {
   file: null,
-  playing: false,
   type: null,
 };
 
@@ -14,7 +13,6 @@ const mediaSlice = createSlice({
   reducers: {
     setMedia(state, action: PayloadAction<Media>) {
       state.file = action.payload.file;
-      state.playing = action.payload.playing;
       state.type = action.payload.type;
     },
   },

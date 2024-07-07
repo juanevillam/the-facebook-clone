@@ -21,17 +21,15 @@ export const CreatePostMediaStep = ({
 }: CreatePostMediaStepProps) => {
   const t = useTranslations('posts.create');
   const dispatch = useAppDispatch();
-  const { file, playing, type } = useAppSelector(
-    (store) => store.posts.create.media
-  );
+  const { file, type } = useAppSelector((store) => store.posts.create.media);
 
   const handleRemoveMedia = () => {
-    dispatch(setMedia({ file: null, playing: false, type: null }));
+    dispatch(setMedia({ file: null, type: null }));
     dispatch(setStep('default'));
   };
 
   const handleOnClickMediaFile = () => {
-    if (type === 'video') dispatch(setMedia({ file, type, playing: !playing }));
+    if (type === 'video') dispatch(setMedia({ file, type }));
     else fileInputRef?.current?.click();
   };
 
@@ -48,7 +46,7 @@ export const CreatePostMediaStep = ({
         dispatch(
           setMedia({
             file: reader.result as string,
-            playing: false,
+
             type: fileType as 'image' | 'video',
           })
         );
@@ -59,7 +57,7 @@ export const CreatePostMediaStep = ({
   };
 
   return (
-    <div className="md:border main-border h-full relative md:h-96 md:m-3 md:rounded-lg">
+    <div className="md:border main-border h-full overflow-hidden relative md:h-96 md:m-3 md:rounded-lg">
       {file && (
         <IconButton
           className="absolute main-bg hover:main-bg-hover right-2 size-10 md:size-9 top-2 z-10"
@@ -73,7 +71,7 @@ export const CreatePostMediaStep = ({
       )}
       <button
         className={classNames(
-          'main-transition size-full relative md:rounded-lg',
+          'main-transition overflow-hidden relative size-full',
           {
             'bg-black': file,
             'hover:main-bg': !file,
@@ -85,15 +83,16 @@ export const CreatePostMediaStep = ({
         {file ? (
           type === 'image' ? (
             <Image
-              alt={t('layout.footer.items.photo-video.detailed')}
+              alt={t('layout.footer.photo-video.short')}
               className="object-contain rounded-lg"
               fill
               src={file as string}
             />
           ) : (
             <ReactPlayer
+              controls
               height="100%"
-              playing={playing}
+              loop
               url={file as string}
               width="100%"
             />

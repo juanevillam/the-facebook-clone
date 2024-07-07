@@ -50,7 +50,7 @@ export const CreatePostDefaultStepButton = () => {
         showToast.success(t(`toast-messages.success.${data.message}`));
         dispatch(toggleOpenable());
         dispatch(setThoughts(''));
-        dispatch(setMedia({ file: null, playing: false, type: null }));
+        dispatch(setMedia({ file: null, type: null }));
         dispatch(setActiveFeeling(null));
         dispatch(setActiveLocation(null));
         dispatch(setActiveGif(null));

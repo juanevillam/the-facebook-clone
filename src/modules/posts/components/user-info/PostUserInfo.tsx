@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
@@ -44,7 +45,11 @@ export const PostUserInfo = ({
           <span className="hidden md:inline-block">
             &nbsp;{tUserInfo('feeling')}
           </span>
-          <span className={`md:inline-block ${hideFellingInfo && 'hidden'}`}>
+          <span
+            className={classNames('md:inline-block', {
+              hidden: hideFellingInfo,
+            })}
+          >
             &nbsp;{tFeelings(feeling)}
           </span>
         </span>

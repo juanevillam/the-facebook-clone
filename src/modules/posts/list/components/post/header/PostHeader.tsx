@@ -30,7 +30,7 @@ export const PostHeader = ({
   const messages = useMessages();
 
   return (
-    <div className="flex items-start relative justify-between p-3 md:pl-4 pr-1 md:pr-3 space-x-2 md:items-center">
+    <div className="flex items-start justify-between p-3 pb-2.5 mb:pb-3 md:pl-4 pr-0 md:pr-3 md:relative space-x-2 md:items-center">
       <div className="flex w-full space-x-2">
         <ProfilePic image={image} name={name} />
         <div className="flex flex-col">
@@ -43,8 +43,7 @@ export const PostHeader = ({
           <NextIntlClientProvider
             messages={pick(messages, 'posts.user-info.timestamp')}
           >
-            {/*             <PostHeaderTimestamp date={createdAt} />
-             */}{' '}
+            <PostHeaderTimestamp date={createdAt} />
           </NextIntlClientProvider>
         </div>
       </div>

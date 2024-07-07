@@ -17,7 +17,7 @@ import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
 import { PostOptionsDialog } from './dialog/PostOptionsDialog';
-import { PostOptionsModal } from './modal/PostOptionsModal';
+import { PostOptionsDropDown } from './drop-down/PostOptionsDropDown';
 import { PostOption } from './option/PostOption';
 import { deletePost } from '../../../api/deletePost';
 import { toggleDeletingPost } from '../../../reducers/headerOptionsSlice';
@@ -85,7 +85,7 @@ export const PostOptions = ({ postId, userId }: PostOptionsProps) => {
   return (
     <>
       <IconButton
-        className="flex-shrink-0 -mt-2 size-9 z-20 hover:active-bg-hover"
+        className="flex-shrink-0 -mt-1.5 size-9 z-20 hover:active-bg-hover"
         icon={{
           className: 'secondary-fill size-full',
           Component: DotsHorizontalIcon,
@@ -96,9 +96,12 @@ export const PostOptions = ({ postId, userId }: PostOptionsProps) => {
       <PostOptionsDialog open={isOpenableOpen} onDismiss={handleToggleOpenable}>
         <RenderOptions />
       </PostOptionsDialog>
-      <PostOptionsModal open={isOpenableOpen} onDismiss={handleToggleOpenable}>
+      <PostOptionsDropDown
+        open={isOpenableOpen}
+        onDismiss={handleToggleOpenable}
+      >
         <RenderOptions />
-      </PostOptionsModal>
+      </PostOptionsDropDown>
     </>
   );
 };
