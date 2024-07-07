@@ -90,7 +90,7 @@ export const CreatePostDefaultStepFooter = () => {
   return (
     <div
       className={classNames(
-        'flex-justify-between-center main-border md:border md:p-3 md:pl-4 md:rounded-lg',
+        'flex-center-justify-between main-border md:border md:p-3 md:pl-4 md:rounded-lg',
         {
           'border-t': activeGif,
         }

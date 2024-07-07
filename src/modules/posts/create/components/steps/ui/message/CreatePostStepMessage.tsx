@@ -10,7 +10,7 @@ export const CreatePostStepMessage = ({
   message,
 }: CreatePostStepMessageProps) => {
   return (
-    <div className="flex-justify-center-center flex-col h-full">
+    <div className="flex-center-justify-center flex-col h-full">
       <div className="md:main-bg mb-1 md:mb-2 p-3 md:p-2.5 rounded-full">
         <Icon className="main-text size-10 md:size-6" />
       </div>

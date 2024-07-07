@@ -23,7 +23,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     return (
       <button
         aria-label={t(icon.name)}
-        className={`flex-justify-center-center main-transition p-2 rounded-full ${className}`}
+        className={`flex-center-justify-center main-transition p-2 rounded-full ${className}`}
         onClick={onClick}
         ref={ref}
         type="button"

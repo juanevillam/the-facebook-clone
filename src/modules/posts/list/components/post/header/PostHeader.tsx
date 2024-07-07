@@ -15,7 +15,7 @@ interface PostHeaderProps {
   location?: string;
   name: string;
   postId: string;
-  userId: string;
+  postUserId: string;
 }
 
 export const PostHeader = ({
@@ -25,7 +25,7 @@ export const PostHeader = ({
   location,
   name,
   postId,
-  userId,
+  postUserId,
 }: PostHeaderProps) => {
   const messages = useMessages();
 
@@ -47,7 +47,7 @@ export const PostHeader = ({
           </NextIntlClientProvider>
         </div>
       </div>
-      <PostOptions postId={postId} userId={userId} />
+      <PostOptions postId={postId} postUserId={postUserId} />
     </div>
   );
 };

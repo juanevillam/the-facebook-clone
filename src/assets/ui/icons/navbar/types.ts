@@ -1,4 +1,4 @@
 export interface NavbarIconProps {
-  className?: string;
-  isActive?: boolean;
+  className: string;
+  isActive: boolean;
 }

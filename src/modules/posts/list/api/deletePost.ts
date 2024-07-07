@@ -4,10 +4,10 @@ import { revalidatePath } from 'next/cache';
 
 import { db } from '@/lib/database';
 
-export const deletePost = async (id: string, userId: string) => {
+export const deletePost = async (postId: string, userId: string) => {
   const post = await db.post.findUnique({
     where: {
-      id,
+      id: postId,
       userId,
     },
   });
@@ -17,7 +17,7 @@ export const deletePost = async (id: string, userId: string) => {
   try {
     await db.post.delete({
       where: {
-        id,
+        id: postId,
       },
     });
 

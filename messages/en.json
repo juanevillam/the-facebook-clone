@@ -276,6 +276,20 @@
           "title": "Post options",
           "description": "Here you can save a post, or edit/delete it if it's yours."
         }
+      },
+      "footer": {
+        "actions": {
+          "like": "Like",
+          "comment": "Comment",
+          "share": "Share"
+        },
+        "likes": {
+          "you": "You",
+          "and": "and",
+          "person": "person",
+          "people": "people",
+          "more": "more"
+        }
       }
     }
   },
@@ -328,7 +342,8 @@
       "reset-email-sent": "Reset email sent",
       "password-updated": "Password updated",
       "post-created": "Post created",
-      "post-deleted": "Post deleted"
+      "post-deleted": "Post deleted",
+      "link-copied-to-clipboard": "Link copied to clipboard"
     }
   },
   "icon-buttons": {

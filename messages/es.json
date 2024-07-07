@@ -276,6 +276,20 @@
           "title": "Opciones de la publicación",
           "description": "Aquí puedes guardar una publicación, o editar/eliminar si es tuya."
         }
+      },
+      "footer": {
+        "actions": {
+          "like": "Me gusta",
+          "comment": "Comentar",
+          "share": "Compartir"
+        }
+      },
+      "likes": {
+        "you": "Tú",
+        "and": "y",
+        "person": "persona",
+        "people": "personas",
+        "more": "más"
       }
     }
   },
@@ -328,7 +342,8 @@
       "reset-email-sent": "Correo electrónico de restablecimiento enviado",
       "password-updated": "Contraseña actualizada",
       "post-created": "Publicación creada",
-      "post-deleted": "Publicación eliminada"
+      "post-deleted": "Publicación eliminada",
+      "link-copied-to-clipboard": "Enlace copiado al portapapeles"
     }
   },
   "icon-buttons": {

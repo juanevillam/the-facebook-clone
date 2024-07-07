@@ -22,7 +22,7 @@ export const CreatePostHeader = ({ icon }: CreatePostHeaderProps) => {
   const { step } = useAppSelector((store) => store.posts.create.post);
 
   return (
-    <div className="flex-justify-between-center border-b main-border p-1.5 md:p-4 md:justify-center">
+    <div className="flex-center-justify-between border-b main-border p-1.5 md:p-4 md:justify-center">
       <div className="flex-center space-x-1.5">
         <IconButton
           className={classNames(

@@ -1,10 +1,14 @@
 export { ArrowLeftIcon } from './arrow-left-icon';
+export { ShareIcon } from './ShareIcon';
 export { BookmarkIcon } from './BookmarkIcon';
+export { ChatBubbleOvalLeftIcon } from './ChatBubbleOvalLeftIcon';
 export { CloseIcon } from './close-icon';
 export { DotsHorizontalIcon } from './DotsHorizontalIcon';
 export { ExclamationCircleIcon } from './exclamation-circle-icon';
 export { FaceFrowIcon } from './face-frown-icon';
 export { GifIcon } from './gif-icon';
+export { HandThumbUpIcon } from './HandThumbUpIcon';
+export { LikeIcon } from './LikeIcon';
 export { MapIcon } from './map-icon';
 export { PencilIcon } from './PencilIcon';
 export { PhotoIcon } from './photo-icon';

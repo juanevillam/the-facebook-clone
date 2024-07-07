@@ -17,47 +17,47 @@
     @apply flex items-center;
   }
 
-  .flex-justify-center-center {
-    @apply flex justify-center items-center;
+  .flex-center-justify-center {
+    @apply flex items-center justify-center;
   }
 
-  .flex-justify-between-center {
-    @apply flex justify-between items-center;
+  .flex-center-justify-between {
+    @apply flex items-center justify-between;
   }
 
   /* Border Utilities */
   .main-border {
-    @apply border-gray-300 md:border-gray-200 dark:border-zinc-600 md:dark:border-neutral-700;
+    @apply border-gray-300 dark:border-neutral-700 md:border-gray-200;
   }
 
   /* Divide Utilities */
   .main-divide {
-    @apply divide-gray-300 md:divide-gray-200 dark:divide-zinc-600 md:dark:divide-neutral-700;
+    @apply divide-gray-300 dark:divide-neutral-700 md:divide-gray-200;
   }
 
   /* Background Utilities */
   .main-bg {
-    @apply bg-gray-100 dark:bg-zinc-700 md:dark:bg-neutral-700;
+    @apply bg-gray-100 dark:bg-neutral-700;
   }
 
   .main-bg-hover {
-    @apply bg-gray-200 dark:bg-zinc-600 md:dark:bg-neutral-600;
+    @apply bg-gray-200 dark:bg-neutral-600;
   }
 
   .main-bg-accent {
-    @apply bg-white dark:bg-zinc-700;
+    @apply bg-white dark:bg-neutral-700;
   }
 
   .main-bg-accent-hover {
-    @apply bg-gray-200 dark:bg-zinc-600 md:bg-gray-100 md:dark:bg-neutral-700;
+    @apply bg-gray-200 dark:bg-neutral-700 md:bg-gray-100;
   }
 
   .active-bg {
-    @apply bg-gray-200 dark:bg-zinc-900 md:dark:bg-neutral-900;
+    @apply bg-gray-200 dark:bg-neutral-900;
   }
 
   .active-bg-hover {
-    @apply bg-gray-100 dark:bg-zinc-700 md:dark:bg-neutral-700;
+    @apply bg-gray-100 dark:bg-neutral-700;
   }
 
   /* Text Utilities */
@@ -111,7 +111,7 @@
 
   /* Card Utilities */
   .card {
-    @apply bg-white dark:bg-zinc-800 md:dark:bg-neutral-800 md:rounded-lg;
+    @apply bg-white dark:bg-neutral-800 md:rounded-lg;
   }
 
   /* Modal Utilities */
@@ -129,6 +129,6 @@
 
   /* Dialog Utilities */
   .dialog-accent-content {
-    @apply bg-gray-100 dark:bg-zinc-800 p-4;
+    @apply bg-gray-100 dark:bg-neutral-800 p-4;
   }
 }

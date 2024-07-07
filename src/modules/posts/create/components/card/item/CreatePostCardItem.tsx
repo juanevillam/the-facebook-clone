@@ -17,7 +17,7 @@ export const CreatePostCardItem = ({
     <button
       aria-disabled={disabled}
       className={classNames(
-        'flex-justify-center-center main-transition px-4 md:px-3 py-2.5 md:py-2 space-x-2 w-full md:rounded-lg hover:main-bg-hover',
+        'flex-center-justify-center main-transition px-4 md:px-3 py-2.5 md:py-2 space-x-2 w-full md:rounded-lg hover:main-bg-hover',
         {
           'active-bg hover:active-bg-hover': active,
           'opacity-50': disabled,

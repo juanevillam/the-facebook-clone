@@ -15,7 +15,7 @@ export const PostBody = ({ media, mediaType, thoughts }: PostBodyProps) => {
     <>
       <p
         className={classNames('main-text mb-1.5 pl-3', {
-          'text-xl': !media,
+          'text-2xl': !media,
         })}
       >
         {thoughts}
