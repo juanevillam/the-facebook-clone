@@ -4,7 +4,7 @@ import { SharedSvgProps } from '@/assets/ui/icons/types';
 
 export type postOption = {
   IconComponent: React.FC<SharedSvgProps>;
-  name: 'delete' | 'save' | 'edit';
+  name: 'delete' | 'save' | 'edit' | 'unsave';
   showDescription?: boolean;
 };
 

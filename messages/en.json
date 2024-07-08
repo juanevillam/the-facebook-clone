@@ -272,6 +272,10 @@
         "delete": {
           "label": "Delete post"
         },
+        "unsave": {
+          "label": "Unsave post",
+          "description": "Remove this from your saved items."
+        },
         "bottom-sheet": {
           "title": "Post options",
           "description": "Here you can save a post, or edit/delete it if it's yours."
@@ -334,7 +338,9 @@
       "invalid-2fa-code": "Invalid 2FA code",
       "2fa-code-has-expired": "2FA code has expired",
       "social-auth-is-currently-unavailable-in-production": "Social auth is currently unavailable in production",
-      "feature-under-development": "Feature under development"
+      "feature-under-development": "Feature under development",
+      "failed-to-delete-post": "Failed to delete post",
+      "failed-to-unsave-post": "Failed to unsave post"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",
@@ -343,7 +349,9 @@
       "password-updated": "Password updated",
       "post-created": "Post created",
       "post-deleted": "Post deleted",
-      "link-copied-to-clipboard": "Link copied to clipboard"
+      "link-copied-to-clipboard": "Link copied to clipboard",
+      "post-saved": "Post saved",
+      "post-unsaved": "Post unsaved"
     }
   },
   "icon-buttons": {

@@ -1,13 +1,15 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useOptimistic, useState } from 'react';
 
+import { SavedPost } from '@prisma/client';
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 import { Drawer } from 'vaul';
 
 import {
   BookmarkIcon,
+  BookmarkSlashIcon,
   DotsHorizontalIcon,
   PencilIcon,
   TrashIcon,
@@ -20,20 +22,37 @@ import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { PostOptionsBottomSheet } from './bottom-sheet/PostOptionsBottomSheet';
 import { PostOptionsDropDown } from './drop-down/PostOptionsDropDown';
 import { PostOption } from './ui';
-import { deletePost } from '../../../api';
+import { deletePost, savePost } from '../../../api';
 import { toggleDeletingPost } from '../../../reducers/optionsSlice';
 
 interface PostOptionsProps {
   postId: string;
+  postSaves: SavedPost[];
   postUserId: string;
 }
 
-export const PostOptions = ({ postId, postUserId }: PostOptionsProps) => {
+export const PostOptions = ({
+  postId,
+  postSaves,
+  postUserId,
+}: PostOptionsProps) => {
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const user = useCurrentUser();
   const { deletingPost } = useAppSelector((store) => store.posts.post.options);
   const isPostMine = user?.id === postUserId;
+
+  const isMySave = (save: SavedPost) =>
+    save.userId === user?.id && save.postId === postId;
+
+  const [optimisticSaves, addOptimisticSave] = useOptimistic<SavedPost[]>(
+    postSaves,
+    // @ts-ignore
+    (saves: SavedPost[], newSave: SavedPost) =>
+      saves.some(isMySave)
+        ? saves.filter((save) => save.userId !== user?.id)
+        : [...saves, newSave]
+  );
 
   const openBottomSheet = () => setIsBottomSheetOpen(true);
 
@@ -50,7 +69,7 @@ export const PostOptions = ({ postId, postUserId }: PostOptionsProps) => {
     const handleDeletePost = () => {
       dispatch(toggleDeletingPost());
 
-      deletePost(postId, postUserId)
+      deletePost(postId, user?.id as string)
         .then((data) => {
           showToast.success(t(`success.${data.message}`));
           setIsBottomSheetOpen(false);
@@ -58,16 +77,35 @@ export const PostOptions = ({ postId, postUserId }: PostOptionsProps) => {
           dispatch(toggleDeletingPost());
         })
         .catch(() => {
-          showToast.error(t('error.something-went-wrong'));
+          showToast.error(t('error.failed-to-delete-post'));
           setIsBottomSheetOpen(false);
-          setIsBottomSheetOpen(false);
+          setIsDropDownOpen(false);
           dispatch(toggleDeletingPost());
         });
     };
 
+    const handleOptimisticSave = () => {
+      setIsBottomSheetOpen(false);
+      setIsDropDownOpen(false);
+
+      setTimeout(() => {
+        savePost(postId, user?.id as string)
+          .then((data) => showToast.success(t(`success.${data.message}`)))
+          .catch(() => showToast.error(t('error.failed-to-unsave-post')));
+      }, 1);
+    };
+
     return (
       <>
-        <PostOption IconComponent={BookmarkIcon} name="save" showDescription />
+        <form action={handleOptimisticSave}>
+          <PostOption
+            IconComponent={
+              optimisticSaves.some(isMySave) ? BookmarkSlashIcon : BookmarkIcon
+            }
+            name={optimisticSaves.some(isMySave) ? 'unsave' : 'save'}
+            showDescription
+          />
+        </form>
         {isPostMine && (
           <>
             <hr className="border-t my-1.5 md:my-2 primary-border" />

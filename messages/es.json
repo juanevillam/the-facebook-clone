@@ -272,6 +272,10 @@
         "delete": {
           "label": "Eliminar publicación"
         },
+        "unsave": {
+          "label": "Eliminar de guardados",
+          "description": "Eliminar de tus elementos guardados."
+        },
         "bottom-sheet": {
           "title": "Opciones de la publicación",
           "description": "Aquí puedes guardar una publicación, o editar/eliminar si es tuya."
@@ -334,7 +338,9 @@
       "invalid-2fa-code": "Código 2FA inválido",
       "2fa-code-has-expired": "El código 2FA ha expirado",
       "social-auth-is-currently-unavailable-in-production": "La autenticación social no está disponible actualmente en producción",
-      "feature-under-development": "Función en desarrollo"
+      "feature-under-development": "Función en desarrollo",
+      "failed-to-delete-post": "Error al eliminar la publicación",
+      "failed-to-unsave-post": "Error al eliminar la publicación de guardados"
     },
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",
@@ -343,7 +349,9 @@
       "password-updated": "Contraseña actualizada",
       "post-created": "Publicación creada",
       "post-deleted": "Publicación eliminada",
-      "link-copied-to-clipboard": "Enlace copiado al portapapeles"
+      "link-copied-to-clipboard": "Enlace copiado al portapapeles",
+      "post-saved": "Publicación guardada",
+      "post-unsaved": "Publicación elimininada de guardados"
     }
   },
   "icon-buttons": {

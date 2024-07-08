@@ -1,6 +1,7 @@
 export { ArrowLeftIcon } from './arrow-left-icon';
 export { ShareIcon } from './ShareIcon';
 export { BookmarkIcon } from './BookmarkIcon';
+export { BookmarkSlashIcon } from './BookmarkSlashIcon';
 export { ChatBubbleOvalLeftIcon } from './ChatBubbleOvalLeftIcon';
 export { CloseIcon } from './close-icon';
 export { DotsHorizontalIcon } from './DotsHorizontalIcon';

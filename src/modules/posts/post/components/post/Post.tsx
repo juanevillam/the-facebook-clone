@@ -16,6 +16,7 @@ export const Post = async ({ ...props }: post) => {
     media,
     mediaType,
     thoughts,
+    savedBy,
     user,
   } = props;
 
@@ -32,6 +33,7 @@ export const Post = async ({ ...props }: post) => {
         location={location as string}
         name={user.name as string}
         postId={id}
+        postSaves={savedBy}
         postUserId={user.id}
       />
       <PostBody

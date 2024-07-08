@@ -1,3 +1,5 @@
+import { SavedPost } from '@prisma/client';
+
 import { ProfilePic } from '@/components';
 import { PostUserInfo } from '@/modules/posts/components';
 import { Feeling } from '@/modules/posts/create/assets/types';
@@ -12,6 +14,7 @@ interface PostHeaderProps {
   location?: string;
   name: string;
   postId: string;
+  postSaves: SavedPost[];
   postUserId: string;
 }
 
@@ -22,6 +25,7 @@ export const PostHeader = ({
   location,
   name,
   postId,
+  postSaves,
   postUserId,
 }: PostHeaderProps) => {
   return (
@@ -38,7 +42,11 @@ export const PostHeader = ({
           <PostHeaderTimestamp date={createdAt} />
         </div>
       </div>
-      <PostOptions postId={postId} postUserId={postUserId} />
+      <PostOptions
+        postId={postId}
+        postSaves={postSaves}
+        postUserId={postUserId}
+      />
     </div>
   );
 };
