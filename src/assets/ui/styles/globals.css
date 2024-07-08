@@ -78,14 +78,22 @@
     @apply text-neutral-500 dark:text-neutral-400;
   }
 
+  /* Bottom sheet Utilities */
+  .bottom-sheet-content {
+    @apply bg-white dark:bg-neutral-800 bottom-0 fixed h-max left-0 pt-3 right-0 rounded-t-2xl z-40;
+  }
+
+  .bottom-sheet-handle {
+    @apply secondary-bg mb-2;
+  }
+
+  .bottom-sheet-overlay {
+    @apply bg-overlay-100 fixed inset-0 z-40;
+  }
+
   /* Card Utilities */
   .card {
     @apply bg-white dark:bg-neutral-800 md:rounded-lg;
-  }
-
-  /* Dialog Utilities */
-  .dialog-accent-content {
-    @apply bg-gray-100 dark:bg-neutral-800 p-4;
   }
 
   /* Flexbox Utilities */

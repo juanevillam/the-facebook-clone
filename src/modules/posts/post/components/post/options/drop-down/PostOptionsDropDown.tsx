@@ -22,7 +22,7 @@ export const PostOptionsDropDown = ({
         role="button"
         tabIndex={0}
       />
-      <div className="absolute card drop-shadow-2xl only-desktop p-2 primary-transition right-3 top-12 w-72 lg:w-80 z-10">
+      <div className="absolute card drop-shadow-2xl only-desktop p-2 primary-transition right-3 top-12 w-72 lg:w-80 z-30">
         {children}
       </div>
     </>

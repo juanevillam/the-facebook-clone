@@ -4,6 +4,7 @@ import { useCallback, useState } from 'react';
 
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
+import { Drawer } from 'vaul';
 
 import {
   BookmarkIcon,
@@ -16,7 +17,7 @@ import { IconButton } from '@/components/buttons';
 import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
-import { PostOptionsDialog } from './dialog/PostOptionsDialog';
+import { PostOptionsBottomSheet } from './bottom-sheet/PostOptionsBottomSheet';
 import { PostOptionsDropDown } from './drop-down/PostOptionsDropDown';
 import { PostOption } from './ui';
 import { deletePost } from '../../../api';
@@ -28,13 +29,18 @@ interface PostOptionsProps {
 }
 
 export const PostOptions = ({ postId, postUserId }: PostOptionsProps) => {
-  const [isOpenableOpen, setIsOpenableOpen] = useState(false);
+  const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const user = useCurrentUser();
   const { deletingPost } = useAppSelector((store) => store.posts.post.options);
   const isPostMine = user?.id === postUserId;
 
-  const handleToggleOpenable = useCallback(() => {
-    !deletingPost && setIsOpenableOpen((prev) => !prev);
+  const openBottomSheet = () => setIsBottomSheetOpen(true);
+
+  const closeBottomSheet = () => !deletingPost && setIsBottomSheetOpen(false);
+
+  const handleToggleDropDown = useCallback(() => {
+    !deletingPost && setIsDropDownOpen((prevState) => !prevState);
   }, [deletingPost]);
 
   const RenderOptions = () => {
@@ -47,12 +53,14 @@ export const PostOptions = ({ postId, postUserId }: PostOptionsProps) => {
       deletePost(postId, postUserId)
         .then((data) => {
           showToast.success(t(`success.${data.message}`));
-          handleToggleOpenable();
+          setIsBottomSheetOpen(false);
+          setIsDropDownOpen(false);
           dispatch(toggleDeletingPost());
         })
         .catch(() => {
           showToast.error(t('error.something-went-wrong'));
-          handleToggleOpenable();
+          setIsBottomSheetOpen(false);
+          setIsBottomSheetOpen(false);
           dispatch(toggleDeletingPost());
         });
     };
@@ -81,24 +89,41 @@ export const PostOptions = ({ postId, postUserId }: PostOptionsProps) => {
 
   return (
     <>
-      <IconButton
-        className="flex-shrink-0 -mt-1 size-9 z-20 hover:primary-bg"
-        icon={{
-          className: 'secondary-fill size-full',
-          Component: DotsHorizontalIcon,
-          name: 'dots-horizontal',
-        }}
-        onClick={handleToggleOpenable}
-      />
-      <PostOptionsDialog open={isOpenableOpen} onDismiss={handleToggleOpenable}>
-        <RenderOptions />
-      </PostOptionsDialog>
-      <PostOptionsDropDown
-        open={isOpenableOpen}
-        onDismiss={handleToggleOpenable}
-      >
-        <RenderOptions />
-      </PostOptionsDropDown>
+      <div className="only-mobile">
+        <Drawer.Root open={isBottomSheetOpen} onClose={closeBottomSheet}>
+          <Drawer.Trigger asChild>
+            <IconButton
+              className="-mt-1 size-9 hover:primary-bg"
+              icon={{
+                className: 'secondary-fill size-full',
+                Component: DotsHorizontalIcon,
+                name: 'dots-horizontal',
+              }}
+              onClick={openBottomSheet}
+            />
+          </Drawer.Trigger>
+          <PostOptionsBottomSheet onDismiss={closeBottomSheet}>
+            <RenderOptions />
+          </PostOptionsBottomSheet>
+        </Drawer.Root>
+      </div>
+      <div className="hidden md:flex">
+        <IconButton
+          className="-mt-1 size-9 z-20 hover:primary-bg"
+          icon={{
+            className: 'secondary-fill size-full',
+            Component: DotsHorizontalIcon,
+            name: 'dots-horizontal',
+          }}
+          onClick={handleToggleDropDown}
+        />
+        <PostOptionsDropDown
+          onDismiss={handleToggleDropDown}
+          open={isDropDownOpen}
+        >
+          <RenderOptions />
+        </PostOptionsDropDown>
+      </div>
     </>
   );
 };
