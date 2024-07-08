@@ -23,7 +23,7 @@ export const CreatePostModal = ({
 
   return (
     <Modal
-      className="hidden md:flex"
+      className="only-desktop"
       closeAfterTransition
       onClose={handleToggleOpenable}
       open={isOpenableOpen}
@@ -35,9 +35,9 @@ export const CreatePostModal = ({
       }}
     >
       <Fade in={isOpenableOpen}>
-        <div className="card absolute left-1/2 max-w-lg outline-none top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
+        <div className="absolute card left-1/2 max-w-lg outline-none top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
           <CreatePostHeader
-            icon={{
+            Icon={{
               Component: step === 'default' ? CloseIcon : ArrowLeftIcon,
               name: step === 'default' ? 'close' : 'back',
               onClick: handleStep,

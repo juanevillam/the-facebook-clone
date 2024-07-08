@@ -18,7 +18,7 @@ export const ActionLoader = ({
   return (
     <Backdrop className={`flex-col z-20 ${className}`} open={open}>
       <MoonLoader className="mb-2" color="#F3F4F6" size={28} />
-      <h1 className="main-text-dark text-xl">{t(message)}</h1>
+      <h1 className="primary-text-dark text-xl">{t(message)}</h1>
     </Backdrop>
   );
 };

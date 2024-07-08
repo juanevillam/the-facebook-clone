@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { POSTS_CREATE_STEPS_FEELINGS_PATH } from '@/modules/posts/create/assets/translations';
 import { Feeling } from '@/modules/posts/create/assets/types';
 
 import { CreatePostStepItem } from '../../ui';
@@ -19,7 +18,7 @@ export const CreatePostFeelingsStepItem = ({
   item,
   onClick,
 }: CreatePostFeelingsStepItemProps) => {
-  const t = useTranslations(`${POSTS_CREATE_STEPS_FEELINGS_PATH}.list`);
+  const t = useTranslations('posts.feelings');
 
   const handleSelect = () => onClick(item);
 
@@ -30,7 +29,7 @@ export const CreatePostFeelingsStepItem = ({
       isEven={isEven}
     >
       <div className="flex-center space-x-2">
-        <div className="md:main-bg main-transition relative rounded-full md:p-2">
+        <div className="relative rounded-full md:p-2 md:primary-bg md:primary-transition">
           <Image
             alt={t(item)}
             className="size-8 md:size-5"
@@ -41,7 +40,7 @@ export const CreatePostFeelingsStepItem = ({
             width={168}
           />
         </div>
-        <span className="main-text">{t(item)}</span>
+        <span className="primary-text">{t(item)}</span>
       </div>
     </CreatePostStepItem>
   );

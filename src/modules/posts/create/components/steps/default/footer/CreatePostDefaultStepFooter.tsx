@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { POSTS_CREATE_STEPS_DEFAULT_PATH } from '@/modules/posts/create/assets/translations';
 import { CardItem } from '@/modules/posts/create/assets/types';
 import { setStep } from '@/modules/posts/create/reducers/postSlice';
 
@@ -90,18 +89,18 @@ export const CreatePostDefaultStepFooter = () => {
   return (
     <div
       className={classNames(
-        'flex-center-justify-between main-border md:border md:p-3 md:pl-4 md:rounded-lg',
+        'flex-center-justify-between primary-border md:border md:p-3 md:rounded-lg',
         {
           'border-t': activeGif,
         }
       )}
     >
-      <h1 className="only-desktop main-text font-semibold text-sm">
-        {t(`${POSTS_CREATE_STEPS_DEFAULT_PATH}.footer`)}
+      <h1 className="font-semibold only-desktop primary-text text-sm">
+        {t('posts.create.steps.default.footer')}
       </h1>
       <div
         className={classNames('w-full md:w-max md:flex md:space-x-1', {
-          'flex divide-x main-divide md:divide-none': activeGif,
+          'divide-x md:divide-none flex primary-divide': activeGif,
         })}
       >
         {cardItems.map((item) => (

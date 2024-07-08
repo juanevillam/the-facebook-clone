@@ -176,58 +176,6 @@
         },
         "media": "Add photos/videos",
         "feelings": {
-          "list": {
-            "happy": "happy",
-            "blessed": "blessed",
-            "loved": "loved",
-            "sad": "sad",
-            "excited": "excited",
-            "crazy": "crazy",
-            "grateful": "grateful",
-            "silly": "silly",
-            "relaxed": "relaxed",
-            "motivated": "motivated",
-            "alone": "alone",
-            "ok": "ok",
-            "nostalgic": "nostalgic",
-            "emotional": "emotional",
-            "determined": "determined",
-            "exhausted": "exhausted",
-            "lucky": "lucky",
-            "heartbroken": "heartbroken",
-            "bored": "bored",
-            "hungry": "hungry",
-            "pained": "pained",
-            "cold": "cold",
-            "cute": "cute",
-            "sorry": "sorry",
-            "super": "super",
-            "worried": "worried",
-            "funny": "funny",
-            "inspired": "inspired",
-            "confused": "confused",
-            "jolly": "jolly",
-            "broken": "broken",
-            "irritated": "irritated",
-            "incomplete": "incomplete",
-            "puzzled": "puzzled",
-            "furious": "furious",
-            "surprised": "surprised",
-            "meh": "meh",
-            "lost": "lost",
-            "rough": "rough",
-            "strange": "strange",
-            "awful": "awful",
-            "drunk": "drunk",
-            "blue": "blue",
-            "naked": "naked",
-            "dirty": "dirty",
-            "small": "small",
-            "privileged": "privileged",
-            "trapped": "trapped",
-            "afraid": "afraid",
-            "broke": "broke"
-          },
           "error": "Feeling not found"
         },
         "check-in": {
@@ -244,37 +192,85 @@
         }
       }
     },
+    "feelings": {
+      "happy": "happy",
+      "blessed": "blessed",
+      "loved": "loved",
+      "sad": "sad",
+      "excited": "excited",
+      "crazy": "crazy",
+      "grateful": "grateful",
+      "silly": "silly",
+      "relaxed": "relaxed",
+      "motivated": "motivated",
+      "alone": "alone",
+      "ok": "ok",
+      "nostalgic": "nostalgic",
+      "emotional": "emotional",
+      "determined": "determined",
+      "exhausted": "exhausted",
+      "lucky": "lucky",
+      "heartbroken": "heartbroken",
+      "bored": "bored",
+      "hungry": "hungry",
+      "pained": "pained",
+      "cold": "cold",
+      "cute": "cute",
+      "sorry": "sorry",
+      "super": "super",
+      "worried": "worried",
+      "funny": "funny",
+      "inspired": "inspired",
+      "confused": "confused",
+      "jolly": "jolly",
+      "broken": "broken",
+      "irritated": "irritated",
+      "incomplete": "incomplete",
+      "puzzled": "puzzled",
+      "furious": "furious",
+      "surprised": "surprised",
+      "meh": "meh",
+      "lost": "lost",
+      "rough": "rough",
+      "strange": "strange",
+      "awful": "awful",
+      "drunk": "drunk",
+      "blue": "blue",
+      "naked": "naked",
+      "dirty": "dirty",
+      "small": "small",
+      "privileged": "privileged",
+      "trapped": "trapped",
+      "afraid": "afraid",
+      "broke": "broke"
+    },
     "user-info": {
       "in": "in",
       "is": "is",
       "feeling": "feeling",
-      "feeling-icon-alt": "Feeling icon ({feeling})",
-      "timestamp": {
-        "just-now": "Just now",
-        "minutes": "{minutes} minutes ago",
-        "hours": "{hours} hours ago",
-        "days": "{days} days ago",
-        "date": "{date} at {time}",
-        "full-date": "{dayName}, {day} {month} {year} at {time}"
-      }
+      "feeling-icon-alt": "Feeling icon ({feeling})"
     },
     "post": {
       "header": {
-        "options": {
-          "save": {
-            "label": "Save post",
-            "description": "Add this to your saved items."
-          },
-          "edit": {
-            "label": "Edit post"
-          },
-          "delete": {
-            "label": "Delete post"
-          }
+        "timestamp": {
+          "just-now": "Just now",
+          "minutes": "{minutes} minutes ago",
+          "hours": "{hours} hours ago",
+          "days": "{days} days ago",
+          "date": "{date} at {time}",
+          "full-date": "{dayName}, {day} {month} {year} at {time}"
+        }
+      },
+      "options": {
+        "save": {
+          "label": "Save post",
+          "description": "Add this to your saved items."
         },
-        "bottom-sheet": {
-          "title": "Post options",
-          "description": "Here you can save a post, or edit/delete it if it's yours."
+        "edit": {
+          "label": "Edit post"
+        },
+        "delete": {
+          "label": "Delete post"
         }
       },
       "footer": {

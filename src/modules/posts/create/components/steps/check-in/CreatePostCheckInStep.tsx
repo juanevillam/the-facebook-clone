@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl';
 import { InputEvent } from '@/assets/types';
 import { ExclamationCircleIcon, MapIcon } from '@/assets/ui/icons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { POSTS_CREATE_STEPS_PATH } from '@/modules/posts/create/assets/translations';
 import { Location } from '@/modules/posts/create/assets/types';
 import {
   setActiveLocation,
@@ -27,7 +26,7 @@ export const CreatePostCheckInStep = () => {
     useRef<google.maps.places.AutocompleteService | null>(null);
 
   const [isPending, startTransition] = useTransition();
-  const t = useTranslations(`${POSTS_CREATE_STEPS_PATH}.check-in`);
+  const t = useTranslations('posts.create.steps.check-in');
   const dispatch = useAppDispatch();
   const { activeLocation, searchInputValue, locations, error } = useAppSelector(
     (store) => store.posts.create.checkIn

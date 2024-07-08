@@ -176,59 +176,7 @@
         },
         "media": "Agrega fotos/videos",
         "feelings": {
-          "error": "Sentimiento no encontrado",
-          "list": {
-            "happy": "feliz",
-            "blessed": "bendecido",
-            "loved": "amado",
-            "sad": "triste",
-            "excited": "emocionado",
-            "crazy": "loco",
-            "grateful": "agradecido",
-            "silly": "tonto",
-            "relaxed": "relajado",
-            "motivated": "motivado",
-            "alone": "solo",
-            "ok": "ok",
-            "nostalgic": "nostálgico",
-            "emotional": "emocional",
-            "determined": "determinado",
-            "exhausted": "agotado",
-            "lucky": "afortunado",
-            "heartbroken": "desconsolado",
-            "bored": "aburrido",
-            "hungry": "hambriento",
-            "pained": "dolorido",
-            "cold": "frío",
-            "cute": "lindo",
-            "sorry": "lo siento",
-            "super": "super",
-            "worried": "preocupado",
-            "funny": "divertido",
-            "inspired": "inspirado",
-            "confused": "confundido",
-            "jolly": "alegre",
-            "broken": "roto",
-            "irritated": "irritado",
-            "incomplete": "incompleto",
-            "puzzled": "perplejo",
-            "furious": "furioso",
-            "surprised": "sorprendido",
-            "meh": "meh",
-            "lost": "perdido",
-            "rough": "áspero",
-            "strange": "extraño",
-            "awful": "horrible",
-            "drunk": "borracho",
-            "blue": "triste",
-            "naked": "desnudo",
-            "dirty": "sucio",
-            "small": "pequeño",
-            "privileged": "privilegiado",
-            "trapped": "atrapado",
-            "afraid": "asustado",
-            "broke": "pobre"
-          }
+          "error": "Sentimiento no encontrado"
         },
         "check-in": {
           "info": "Intenta buscar un lugar, ciudad o dirección",
@@ -244,37 +192,85 @@
         }
       }
     },
+    "feelings": {
+      "happy": "feliz",
+      "blessed": "bendecido",
+      "loved": "amado",
+      "sad": "triste",
+      "excited": "emocionado",
+      "crazy": "loco",
+      "grateful": "agradecido",
+      "silly": "tonto",
+      "relaxed": "relajado",
+      "motivated": "motivado",
+      "alone": "solo",
+      "ok": "ok",
+      "nostalgic": "nostálgico",
+      "emotional": "emocional",
+      "determined": "determinado",
+      "exhausted": "agotado",
+      "lucky": "afortunado",
+      "heartbroken": "desconsolado",
+      "bored": "aburrido",
+      "hungry": "hambriento",
+      "pained": "dolorido",
+      "cold": "frío",
+      "cute": "lindo",
+      "sorry": "lo siento",
+      "super": "super",
+      "worried": "preocupado",
+      "funny": "divertido",
+      "inspired": "inspirado",
+      "confused": "confundido",
+      "jolly": "alegre",
+      "broken": "roto",
+      "irritated": "irritado",
+      "incomplete": "incompleto",
+      "puzzled": "perplejo",
+      "furious": "furioso",
+      "surprised": "sorprendido",
+      "meh": "meh",
+      "lost": "perdido",
+      "rough": "áspero",
+      "strange": "extraño",
+      "awful": "horrible",
+      "drunk": "borracho",
+      "blue": "triste",
+      "naked": "desnudo",
+      "dirty": "sucio",
+      "small": "pequeño",
+      "privileged": "privilegiado",
+      "trapped": "atrapado",
+      "afraid": "asustado",
+      "broke": "pobre"
+    },
     "user-info": {
       "in": "en",
       "is": "está",
       "feeling": "sintiéndose",
-      "feeling-icon-alt": "Ícono de sentimiento ({feeling})",
-      "timestamp": {
-        "just-now": "Justo ahora",
-        "minutes": "Hace {minutes} minutos",
-        "hours": "Hace {hours} horas",
-        "days": "Hace {days} días",
-        "date": "{date} a las {time}",
-        "full-date": "{dayName} {day} de {month} de {year} a las {time}"
-      }
+      "feeling-icon-alt": "Ícono de sentimiento ({feeling})"
     },
     "post": {
       "header": {
-        "options": {
-          "save": {
-            "label": "Guardar publicación",
-            "description": "Agrega esto a tus elementos guardados."
-          },
-          "edit": {
-            "label": "Editar publicación"
-          },
-          "delete": {
-            "label": "Eliminar publicación"
-          }
+        "timestamp": {
+          "just-now": "Justo ahora",
+          "minutes": "Hace {minutes} minutos",
+          "hours": "Hace {hours} horas",
+          "days": "Hace {days} días",
+          "date": "{date} a las {time}",
+          "full-date": "{dayName} {day} de {month} de {year} a las {time}"
+        }
+      },
+      "options": {
+        "save": {
+          "label": "Guardar publicación",
+          "description": "Agrega esto a tus elementos guardados."
         },
-        "bottom-sheet": {
-          "title": "Opciones de la publicación",
-          "description": "Aquí puedes guardar una publicación, o editar/eliminar si es tuya."
+        "edit": {
+          "label": "Editar publicación"
+        },
+        "delete": {
+          "label": "Eliminar publicación"
         }
       },
       "footer": {

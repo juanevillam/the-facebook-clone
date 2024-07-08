@@ -26,7 +26,7 @@ export const CreatePostDialog = ({
     >
       <div className="flex flex-col h-full">
         <CreatePostHeader
-          icon={{
+          Icon={{
             Component: ArrowLeftIcon,
             onClick: handleStep,
             name: 'back',

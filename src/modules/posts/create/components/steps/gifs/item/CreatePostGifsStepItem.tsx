@@ -29,9 +29,9 @@ export const CreatePostGifsStepItem = ({
     >
       {active && (
         <IconButton
-          className="absolute main-bg hover:main-bg-hover right-2 size-8 top-2 z-10"
+          className="absolute primary-bg right-2 size-8 top-2 z-10 hover:secondary-bg"
           icon={{
-            className: 'stroke-2 main-stroke md:secondary-stroke size-full',
+            className: 'primary-stroke md:secondary-stroke size-full stroke-2',
             Component: CloseIcon,
             name: 'close',
           }}
@@ -40,7 +40,7 @@ export const CreatePostGifsStepItem = ({
       )}
       <Image
         alt={gif.title}
-        className="object-cover size-full transform transition-transform duration-150 ease-in-out group-hover:scale-110"
+        className="duration-150 ease-in-out group-hover:scale-110 object-cover size-full transform transition-transform"
         height={gif.height}
         src={gif.url}
         unoptimized

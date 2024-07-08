@@ -2,8 +2,6 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { POSTS_USER_INFO_PATH } from '@/modules/posts/assets/translations';
-import { POSTS_CREATE_STEPS_FEELINGS_LIST_PATH } from '@/modules/posts/create/assets/translations';
 import { Feeling } from '@/modules/posts/create/assets/types';
 
 interface PostUserInfoProps {
@@ -19,12 +17,12 @@ export const PostUserInfo = ({
   location,
   name,
 }: PostUserInfoProps) => {
-  const tUserInfo = useTranslations(POSTS_USER_INFO_PATH);
-  const tFeelings = useTranslations(POSTS_CREATE_STEPS_FEELINGS_LIST_PATH);
+  const tUserInfo = useTranslations('posts.user-info');
+  const tFeelings = useTranslations('posts.feelings');
 
   return (
     <p className="leading-tight">
-      <span className="main-text font-semibold">{name}</span>
+      <span className="font-semibold primary-text">{name}</span>
       {(feeling || location) && (
         <span className="tertiary-text">&nbsp;{tUserInfo('is')}</span>
       )}
@@ -57,7 +55,7 @@ export const PostUserInfo = ({
       {location && (
         <span>
           <span className="tertiary-text">&nbsp;{tUserInfo('in')}</span>
-          <span className="main-text font-semibold">&nbsp;{location}</span>
+          <span className="font-semibold primary-text">&nbsp;{location}</span>
         </span>
       )}
     </p>

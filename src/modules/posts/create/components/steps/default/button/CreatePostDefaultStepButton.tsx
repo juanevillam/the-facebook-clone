@@ -4,7 +4,6 @@ import showToast from 'react-hot-toast';
 import { Button } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { createPost } from '@/modules/posts/create/api';
-import { POSTS_CREATE_STEPS_DEFAULT_PATH } from '@/modules/posts/create/assets/translations';
 import { setActiveLocation } from '@/modules/posts/create/reducers/checkInSlice';
 import { setActiveFeeling } from '@/modules/posts/create/reducers/feelingsSlice';
 import { setActiveGif } from '@/modules/posts/create/reducers/gifsSlice';
@@ -66,7 +65,7 @@ export const CreatePostDefaultStepButton = () => {
     <Button
       disabled={(!thoughts && !media.file && !activeGif) || posting}
       fullWidth
-      label={t(`${POSTS_CREATE_STEPS_DEFAULT_PATH}.button`)}
+      label={t('posts.create.steps.default.button')}
       onClick={handleCreatePost}
       size="xs"
       type="button"

@@ -3,13 +3,89 @@
 @tailwind utilities;
 
 @layer components {
-  /* Responsive Utilities */
-  .only-mobile {
-    @apply md:hidden;
+  /* Background Utilities */
+  .accent-bg {
+    @apply bg-white dark:bg-neutral-700;
   }
 
-  .only-desktop {
-    @apply hidden md:block;
+  .active-bg {
+    @apply bg-gray-200 dark:bg-neutral-900;
+  }
+
+  .primary-bg {
+    @apply bg-gray-100 dark:bg-neutral-700;
+  }
+
+  .secondary-bg {
+    @apply bg-gray-200 dark:bg-neutral-600;
+  }
+
+  /* Border Utilities */
+  .primary-border {
+    @apply border-gray-300 dark:border-neutral-700 md:border-gray-200;
+  }
+
+  /* Divide Utilities */
+  .primary-divide {
+    @apply divide-gray-300 dark:divide-neutral-700 md:divide-gray-200;
+  }
+
+  /* Fill Utilities */
+  .primary-fill {
+    @apply fill-neutral-900 dark:fill-gray-100;
+  }
+
+  .secondary-fill {
+    @apply fill-neutral-600 dark:fill-neutral-400;
+  }
+
+  /* Placeholder Utilities */
+  .primary-placeholder {
+    @apply placeholder-neutral-500 dark:placeholder-neutral-400;
+  }
+
+  /* Stroke Utilities */
+  .accent-stroke {
+    @apply stroke-neutral-600 dark:stroke-neutral-300;
+  }
+
+  .primary-stroke {
+    @apply stroke-neutral-900 dark:stroke-gray-100;
+  }
+
+  .secondary-stroke {
+    @apply stroke-neutral-600 dark:stroke-neutral-400;
+  }
+
+  /* Text Utilities */
+  .accent-text {
+    @apply text-neutral-600 dark:text-neutral-300;
+  }
+
+  .primary-text {
+    @apply text-neutral-900 dark:text-gray-100;
+  }
+
+  .primary-text-dark {
+    @apply text-gray-100;
+  }
+
+  .secondary-text {
+    @apply text-neutral-600 dark:text-neutral-400;
+  }
+
+  .tertiary-text {
+    @apply text-neutral-500 dark:text-neutral-400;
+  }
+
+  /* Card Utilities */
+  .card {
+    @apply bg-white dark:bg-neutral-800 md:rounded-lg;
+  }
+
+  /* Dialog Utilities */
+  .dialog-accent-content {
+    @apply bg-gray-100 dark:bg-neutral-800 p-4;
   }
 
   /* Flexbox Utilities */
@@ -25,110 +101,30 @@
     @apply flex items-center justify-between;
   }
 
-  /* Border Utilities */
-  .main-border {
-    @apply border-gray-300 dark:border-neutral-700 md:border-gray-200;
-  }
-
-  /* Divide Utilities */
-  .main-divide {
-    @apply divide-gray-300 dark:divide-neutral-700 md:divide-gray-200;
-  }
-
-  /* Background Utilities */
-  .main-bg {
-    @apply bg-gray-100 dark:bg-neutral-700;
-  }
-
-  .main-bg-hover {
-    @apply bg-gray-200 dark:bg-neutral-600;
-  }
-
-  .main-bg-accent {
-    @apply bg-white dark:bg-neutral-700;
-  }
-
-  .main-bg-accent-hover {
-    @apply bg-gray-200 dark:bg-neutral-700 md:bg-gray-100;
-  }
-
-  .active-bg {
-    @apply bg-gray-200 dark:bg-neutral-900;
-  }
-
-  .active-bg-hover {
-    @apply bg-gray-100 dark:bg-neutral-700;
-  }
-
-  /* Text Utilities */
-  .main-text {
-    @apply text-neutral-900 dark:text-gray-100;
-  }
-
-  .main-text-dark {
-    @apply dark:text-gray-100;
-  }
-
-  .secondary-text {
-    @apply text-neutral-600 dark:text-neutral-400;
-  }
-
-  .tertiary-text {
-    @apply text-neutral-500 dark:text-neutral-400;
-  }
-
-  .accent-text {
-    @apply text-neutral-700 dark:text-neutral-300;
-  }
-
-  /* Placeholder Utilities */
-  .main-placeholder {
-    @apply placeholder-neutral-500 dark:placeholder-neutral-400;
-  }
-
-  /* Stroke Utilities */
-  .main-stroke {
-    @apply stroke-neutral-900 dark:stroke-gray-100;
-  }
-
-  .secondary-stroke {
-    @apply stroke-neutral-500 dark:stroke-neutral-400;
-  }
-
-  /* Fill Utilities */
-  .main-fill {
-    @apply fill-neutral-900 dark:fill-gray-100;
-  }
-
-  .secondary-fill {
-    @apply fill-neutral-500 dark:fill-neutral-400;
-  }
-
-  /* Transition Utilities */
-  .main-transition {
-    @apply transition duration-150;
-  }
-
-  /* Card Utilities */
-  .card {
-    @apply bg-white dark:bg-neutral-800 md:rounded-lg;
-  }
-
   /* Modal Utilities */
-  .modal-scrollable-area {
-    @apply h-full md:h-96 overflow-y-auto;
+  .create-post-modal-gif-size {
+    @apply max-h-96 md:max-h-72;
   }
 
   .create-post-modal-spacing-area {
     @apply md:pb-3 md:px-3;
   }
 
-  .create-post-modal-gif-size {
-    @apply max-h-96 md:max-h-72;
+  .modal-scrollable-area {
+    @apply h-full md:h-96 overflow-y-auto;
   }
 
-  /* Dialog Utilities */
-  .dialog-accent-content {
-    @apply bg-gray-100 dark:bg-neutral-800 p-4;
+  /* Responsive Utilities */
+  .only-mobile {
+    @apply md:hidden;
+  }
+
+  .only-desktop {
+    @apply hidden md:block;
+  }
+
+  /* Transition Utilities */
+  .primary-transition {
+    @apply duration-150 transition;
   }
 }

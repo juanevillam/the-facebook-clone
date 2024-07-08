@@ -11,10 +11,10 @@ export const CreatePostStepMessage = ({
 }: CreatePostStepMessageProps) => {
   return (
     <div className="flex-center-justify-center flex-col h-full">
-      <div className="md:main-bg mb-1 md:mb-2 p-3 md:p-2.5 rounded-full">
-        <Icon className="main-text size-10 md:size-6" />
+      <div className="mb-1 md:mb-2 p-1 md:p-2 rounded-full md:primary-bg">
+        <Icon className="primary-text size-10 md:size-6" />
       </div>
-      <h1 className="main-text font-medium text-center w-11/12 md:text-sm">
+      <h1 className="font-medium primary-text text-center w-11/12 md:text-sm">
         {message}
       </h1>
     </div>

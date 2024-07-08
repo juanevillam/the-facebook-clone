@@ -3,7 +3,6 @@ import { useTranslations } from 'next-intl';
 import { InputEvent } from '@/assets/types';
 import { FaceFrowIcon } from '@/assets/ui/icons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { POSTS_CREATE_STEPS_FEELINGS_PATH } from '@/modules/posts/create/assets/translations';
 import { Feeling } from '@/modules/posts/create/assets/types';
 import {
   setActiveFeeling,
@@ -15,7 +14,7 @@ import { CreatePostFeelingsStepItem } from './item/CreatePostFeelingsStepItem';
 import { CreatePostStepContainer, CreatePostStepMessage } from '../ui';
 
 export const CreatePostFeelingsStep = () => {
-  const t = useTranslations(POSTS_CREATE_STEPS_FEELINGS_PATH);
+  const t = useTranslations('posts.create.steps.feelings');
   const dispatch = useAppDispatch();
   const { feelings, searchInputValue, activeFeeling } = useAppSelector(
     (store) => store.posts.create.feelings

@@ -7,7 +7,6 @@ import { InputEvent } from '@/assets/types';
 import { ExclamationCircleIcon, GifIcon } from '@/assets/ui/icons';
 import { Button } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { POSTS_CREATE_STEPS_PATH } from '@/modules/posts/create/assets/translations';
 import { GIF, GIFUnparsed } from '@/modules/posts/create/assets/types';
 import {
   setActiveGif,
@@ -28,7 +27,7 @@ export const CreatePostGifsStep = () => {
   const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
-  const t = useTranslations(`${POSTS_CREATE_STEPS_PATH}.gifs`);
+  const t = useTranslations('posts.create.steps.gifs');
   const dispatch = useAppDispatch();
   const { activeGif, searchInputValue, gifs, error } = useAppSelector(
     (store) => store.posts.create.gifs
@@ -114,7 +113,7 @@ export const CreatePostGifsStep = () => {
   };
 
   const GifsColumn = ({ index }: { index: number }) => (
-    <div className="grid gap-3 md:gap-4">
+    <div className="gap-3 md:gap-4 grid">
       {gifs
         .filter((_, i) => i % 2 === index)
         .map((gif: GIF) => (
@@ -148,12 +147,12 @@ export const CreatePostGifsStep = () => {
         <CreatePostStepMessage Icon={GifIcon} message={t('info')} />
       ) : (
         <>
-          <div className="grid grid-cols-2 gap-3 md:gap-4 p-3 md:p-4 md:pt-0">
+          <div className="gap-3 md:gap-4 grid grid-cols-2 p-3 md:p-4 md:pt-0">
             <GifsColumn index={0} />
             <GifsColumn index={1} />
           </div>
           <Button
-            className="pb-3 px-3 md:pb-4 md:px-4"
+            className="pb-3 md:pb-4 px-3 md:px-4"
             disabled={loadingMore}
             fullWidth
             label={t('button.label')}

@@ -1,11 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import createReducer from '../create/reducers';
-import listReducer from '../list/reducers';
+import postReducer from '../post/reducers';
 
 const postsReducer = combineReducers({
   create: createReducer,
-  list: listReducer,
+  post: postReducer,
 });
 
 export default postsReducer;

@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl';
 
 import { Tooltip } from '@/components';
 import { useAppSelector } from '@/lib/store/hooks';
-import { POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH } from '@/modules/posts/create/assets/translations';
 import { CardItem } from '@/modules/posts/create/assets/types';
 
 export const CreatePostDefaultStepFooterItem = ({
@@ -13,13 +12,9 @@ export const CreatePostDefaultStepFooterItem = ({
   name,
   onClick,
 }: CardItem) => {
-  const tItems = useTranslations(POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH);
-  const tItem = useTranslations(
-    `${POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH}.${name}`
-  );
-
+  const tItems = useTranslations('posts.create.layout.footer');
+  const tItem = useTranslations(`posts.create.layout.footer.${name}`);
   const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
-
   const tooltipLabel = disabled
     ? (tItems.rich('disabled', { br: () => <br /> }) as string)
     : tItem('detailed');
@@ -29,13 +24,13 @@ export const CreatePostDefaultStepFooterItem = ({
       <button
         aria-disabled={disabled}
         className={classNames(
-          'flex-center main-border md:border-none main-transition peer justify-start md:justify-center p-3 md:p-0 relative w-full md:rounded-full md:size-9',
+          'flex-center justify-start md:justify-center p-3 md:p-0 peer relative w-full md:rounded-full md:size-9',
           {
-            'active-bg hover:active-bg-hover': active && !disabled,
+            'active-bg': active && !disabled,
             'cursor-not-allowed opacity-50': disabled,
-            'hover:main-bg-hover': !disabled,
+            'primary-transition hover:primary-bg': !disabled,
             'justify-center': activeGif,
-            'border-t': !activeGif,
+            'border-t md:border-none primary-border': !activeGif,
           }
         )}
         disabled={disabled}
@@ -52,7 +47,7 @@ export const CreatePostDefaultStepFooterItem = ({
           width={72}
         />
         <p
-          className={classNames('md:hidden main-text ml-3 text-lg', {
+          className={classNames('ml-3 only-mobile primary-text text-lg', {
             hidden: activeGif,
           })}
         >
