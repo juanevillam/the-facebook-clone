@@ -251,16 +251,6 @@
       "feeling-icon-alt": "Ícono de sentimiento ({feeling})"
     },
     "post": {
-      "header": {
-        "timestamp": {
-          "just-now": "Justo ahora",
-          "minutes": "Hace {minutes} minutos",
-          "hours": "Hace {hours} horas",
-          "days": "Hace {days} días",
-          "date": "{date} a las {time}",
-          "full-date": "{dayName} {day} de {month} de {year} a las {time}"
-        }
-      },
       "options": {
         "save": {
           "label": "Guardar publicación",
@@ -383,5 +373,13 @@
   "action-loader": {
     "posting": "Publicando",
     "deleting-post": "Eliminando publicación"
+  },
+  "timestamp": {
+    "just-now": "Justo ahora",
+    "minutes": "Hace {minutes} minutos",
+    "hours": "Hace {hours} horas",
+    "days": "Hace {days} días",
+    "date": "{date} a las {time}",
+    "full-date": "{dayName} {day} de {month} de {year} a las {time}"
   }
 }

@@ -7,13 +7,13 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Tooltip } from '@/components';
 import { getRelativeTime } from '@/modules/posts/post/utils';
 
-interface PostHeaderTimestampProps {
+interface TimestampProps {
   date: Date;
 }
 
-export const PostHeaderTimestamp = ({ date }: PostHeaderTimestampProps) => {
+export const Timestamp = ({ date }: TimestampProps) => {
   const locale = useLocale();
-  const t = useTranslations('posts.post.header.timestamp');
+  const t = useTranslations('timestamp');
   const [relativeTime, setRelativeTime] = useState(
     getRelativeTime(date, locale)
   );

@@ -1,6 +1,5 @@
 'use client';
 
-import { Like } from '@prisma/client';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
@@ -11,20 +10,23 @@ import {
   HandThumbUpIcon,
   ShareIcon,
 } from '@/assets/ui/icons';
+import { LikeExtended } from '@/modules/posts/post/assets/types';
 
 import { PostFooterActionsItem } from './item/PostFooterActionsItem';
 
 interface PostFooterActionsProps {
   handleOptimisticLike: VoidFunction;
-  isMyLike: (like: Like) => boolean;
+  isCommentsBottomSheetOpen: boolean;
+  isMyLike: (like: LikeExtended) => boolean;
   openCommentsBottomSheet: VoidFunction;
-  optimisticLikes: Like[];
+  optimisticLikes: LikeExtended[];
   postId: string;
   showBorderT: boolean;
 }
 
 export const PostFooterActions = ({
   handleOptimisticLike,
+  isCommentsBottomSheetOpen,
   isMyLike,
   openCommentsBottomSheet,
   optimisticLikes,
@@ -44,27 +46,23 @@ export const PostFooterActions = ({
         'md:border-t md:primary-border': showBorderT,
       })}
     >
-      <form action={handleOptimisticLike} className="w-full">
-        <PostFooterActionsItem
-          Icon={HandThumbUpIcon}
-          isActive={optimisticLikes.some(isMyLike)}
-          label="like"
-          type="submit"
-        />
-      </form>
+      <PostFooterActionsItem
+        Icon={HandThumbUpIcon}
+        isActive={optimisticLikes.some(isMyLike)}
+        label="like"
+        onClick={handleOptimisticLike}
+      />
       <PostFooterActionsItem
         Icon={ChatBubbleOvalLeftIcon}
-        isActive={false}
+        isActive={isCommentsBottomSheetOpen}
         label="comment"
         onClick={openCommentsBottomSheet}
-        type="button"
       />
       <PostFooterActionsItem
         Icon={ShareIcon}
         isActive={false}
         label="share"
         onClick={handleShare}
-        type="button"
       />
     </div>
   );

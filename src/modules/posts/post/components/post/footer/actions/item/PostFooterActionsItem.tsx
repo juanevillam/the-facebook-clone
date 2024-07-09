@@ -6,10 +6,9 @@ import { NavbarIconProps } from '@/assets/ui/icons/navbar/types';
 
 interface PostFooterActionsItemProps {
   Icon: React.FC<NavbarIconProps>;
-  isActive?: boolean;
+  isActive: boolean;
   label: 'comment' | 'like' | 'share';
-  onClick?: VoidFunction;
-  type: 'button' | 'submit';
+  onClick: VoidFunction;
 }
 
 export const PostFooterActionsItem = ({
@@ -17,7 +16,6 @@ export const PostFooterActionsItem = ({
   isActive,
   label,
   onClick,
-  type,
 }: PostFooterActionsItemProps) => {
   const t = useTranslations('posts.post.footer.actions');
 
@@ -26,7 +24,7 @@ export const PostFooterActionsItem = ({
       <button
         className="flex-center-justify-center primary-transition px-4 md:px-3 py-2.5 md:py-2 space-x-2 w-full md:rounded-lg hover:primary-bg"
         onClick={onClick}
-        type={type}
+        type="button"
       >
         <Icon
           className={classNames('size-5 stroke-[1.5] md:size-6', {

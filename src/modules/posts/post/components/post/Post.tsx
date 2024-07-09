@@ -4,9 +4,9 @@ import { Feeling } from '@/modules/posts/create/assets/types';
 import { PostBody } from './body/PostBody';
 import { PostFooter } from './footer/PostFooter';
 import { PostHeader } from './header/PostHeader';
-import { post } from '../../assets/types';
+import { PostExtended } from '../../assets/types';
 
-export const Post = async ({ ...props }: post) => {
+export const Post = async ({ ...props }: PostExtended) => {
   const {
     comments,
     createdAt,

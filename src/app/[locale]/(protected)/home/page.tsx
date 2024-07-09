@@ -5,7 +5,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import { PageProps } from '@/assets/types';
 import { signOut } from '@/auth';
 import { CreatePostCard } from '@/modules/posts/create/components';
-import { PostsList } from '@/modules/posts/post/components';
+import { Posts } from '@/modules/posts/post/components';
 
 const HomePage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
@@ -22,11 +22,12 @@ const HomePage = ({ params: { locale } }: PageProps) => {
           'toast-messages',
           'icon-buttons',
           'search-input',
-          'action-loader'
+          'action-loader',
+          'timestamp'
         )}
       >
         <CreatePostCard />
-        <PostsList />
+        <Posts />
       </NextIntlClientProvider>
       <form
         action={async () => {
