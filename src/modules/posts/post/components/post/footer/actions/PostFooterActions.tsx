@@ -5,38 +5,33 @@ import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
+import { VoidFunction } from '@/assets/types';
 import {
   ChatBubbleOvalLeftIcon,
   HandThumbUpIcon,
   ShareIcon,
 } from '@/assets/ui/icons';
-import { likePost } from '@/modules/posts/post/api';
 
 import { PostFooterActionsItem } from './item/PostFooterActionsItem';
 
 interface PostFooterActionsProps {
-  addOptimisticLike: (action: unknown) => void;
+  handleOptimisticLike: VoidFunction;
   isMyLike: (like: Like) => boolean;
+  openCommentsBottomSheet: VoidFunction;
   optimisticLikes: Like[];
   postId: string;
   showBorderT: boolean;
-  userId: string;
 }
 
 export const PostFooterActions = ({
-  addOptimisticLike,
+  handleOptimisticLike,
   isMyLike,
+  openCommentsBottomSheet,
   optimisticLikes,
   postId,
   showBorderT,
-  userId,
 }: PostFooterActionsProps) => {
   const t = useTranslations('toast-messages.success');
-
-  const handleOptimisticLike = async () => {
-    addOptimisticLike({ postId, userId });
-    await likePost(postId, userId);
-  };
 
   const handleShare = () => {
     navigator.clipboard.writeText(`${window.location.origin}/posts/${postId}`);
@@ -61,6 +56,7 @@ export const PostFooterActions = ({
         Icon={ChatBubbleOvalLeftIcon}
         isActive={false}
         label="comment"
+        onClick={openCommentsBottomSheet}
         type="button"
       />
       <PostFooterActionsItem

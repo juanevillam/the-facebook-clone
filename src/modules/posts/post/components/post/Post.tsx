@@ -8,6 +8,7 @@ import { post } from '../../assets/types';
 
 export const Post = async ({ ...props }: post) => {
   const {
+    comments,
     createdAt,
     feeling,
     id,
@@ -41,7 +42,12 @@ export const Post = async ({ ...props }: post) => {
         mediaType={mediaType as string}
         thoughts={thoughts as string}
       />
-      <PostFooter media={media as string} postLikes={likes} postId={id} />
+      <PostFooter
+        media={media as string}
+        postComments={comments}
+        postLikes={likes}
+        postId={id}
+      />
     </div>
   );
 };

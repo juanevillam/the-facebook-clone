@@ -30,7 +30,6 @@ export const SearchInput = ({
       <label className="sr-only" htmlFor={id}>
         {t(label)}
       </label>
-
       <input
         aria-label={t(label)}
         className="primary-placeholder primary-text primary-transition bg-transparent inline-flex ml-2 w-full focus:outline-none"

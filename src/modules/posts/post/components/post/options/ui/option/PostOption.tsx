@@ -25,7 +25,7 @@ export const PostOption = ({
         <span className="font-medium primary-text">{t(`${name}.label`)}</span>
       </div>
       {showDescription && (
-        <p className="accent-text md:secondary-text ml-7 text-sm">
+        <p className="accent-text md:secondary-text ml-7 text-left text-sm">
           {t(`${name}.description`)}
         </p>
       )}

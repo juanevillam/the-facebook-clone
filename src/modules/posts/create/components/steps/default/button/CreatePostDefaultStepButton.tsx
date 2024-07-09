@@ -55,8 +55,8 @@ export const CreatePostDefaultStepButton = () => {
         dispatch(setActiveGif(null));
         dispatch(togglePosting());
       })
-      .catch(() => {
-        showToast.error(t('toast-messages.error.something-went-wrong'));
+      .catch(({ message }) => {
+        showToast.error(t(`toast-messages.error.${message}`));
         dispatch(togglePosting());
       });
   };

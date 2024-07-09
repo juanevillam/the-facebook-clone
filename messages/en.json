@@ -293,6 +293,17 @@
           "person": "person",
           "people": "people",
           "more": "more"
+        },
+        "comments": {
+          "comment": "Comment",
+          "comments": "Comments"
+        }
+      },
+      "comments": {
+        "bottom-sheet": {
+          "title": "Write a comment",
+          "description": "Here you can write a comment in this post by adding text or a GIF.",
+          "no-comments-yet": "No comments yet"
         }
       }
     }
@@ -339,8 +350,14 @@
       "2fa-code-has-expired": "2FA code has expired",
       "social-auth-is-currently-unavailable-in-production": "Social auth is currently unavailable in production",
       "feature-under-development": "Feature under development",
+      "post-not-found": "Post not found",
+      "failed-to-create-post": "Failed to create post",
       "failed-to-delete-post": "Failed to delete post",
-      "failed-to-unsave-post": "Failed to unsave post"
+      "failed-to-save-post": "Failed to save post",
+      "failed-to-unsave-post": "Failed to unsave post",
+      "failed-to-like-post": "Failed to like post",
+      "failed-to-unlike-post": "Failed to unlike post",
+      "failed-to-post-comment": "Failed to post comment"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",

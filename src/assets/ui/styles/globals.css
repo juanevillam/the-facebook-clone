@@ -80,7 +80,7 @@
 
   /* Bottom sheet Utilities */
   .bottom-sheet-content {
-    @apply bg-white dark:bg-neutral-800 bottom-0 fixed h-max left-0 pt-3 right-0 rounded-t-2xl z-40;
+    @apply bg-white dark:bg-neutral-800 bottom-0 fixed left-0 pt-3 right-0 rounded-t-2xl z-40;
   }
 
   .bottom-sheet-handle {

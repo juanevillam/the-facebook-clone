@@ -108,7 +108,7 @@ export const CreatePostCard = () => {
           <ProfilePic />
           <button
             aria-label={thoughts || tLayout('thoughts')}
-            className="border md:border-none flex-grow overflow-hidden primary-border primary-text md:accent-text primary-transition px-4 md:px-3 py-2.5 md:py-2 rounded-full text-start md:primary-bg hover:secondary-bg"
+            className="border md:border-none flex-grow overflow-hidden primary-border primary-text md:accent-text primary-transition px-4 md:px-3 py-2.5 md:py-2 rounded-full text-start whitespace-nowrap md:primary-bg hover:secondary-bg"
             onClick={handleToggleOpenable}
             type="button"
           >

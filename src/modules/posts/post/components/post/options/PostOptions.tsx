@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useOptimistic, useState } from 'react';
+import { useCallback, useOptimistic, useState, useTransition } from 'react';
 
 import { SavedPost } from '@prisma/client';
 import { useTranslations } from 'next-intl';
@@ -38,6 +38,7 @@ export const PostOptions = ({
 }: PostOptionsProps) => {
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+  const [isPending, startTransition] = useTransition();
   const user = useCurrentUser();
   const { deletingPost } = useAppSelector((store) => store.posts.post.options);
   const isPostMine = user?.id === postUserId;
@@ -68,7 +69,6 @@ export const PostOptions = ({
 
     const handleDeletePost = () => {
       dispatch(toggleDeletingPost());
-
       deletePost(postId, user?.id as string)
         .then((data) => {
           showToast.success(t(`success.${data.message}`));
@@ -76,8 +76,8 @@ export const PostOptions = ({
           setIsDropDownOpen(false);
           dispatch(toggleDeletingPost());
         })
-        .catch(() => {
-          showToast.error(t('error.failed-to-delete-post'));
+        .catch(({ message }) => {
+          showToast.error(t(`error.${message}`));
           setIsBottomSheetOpen(false);
           setIsDropDownOpen(false);
           dispatch(toggleDeletingPost());
@@ -86,18 +86,20 @@ export const PostOptions = ({
 
     const handleOptimisticSave = () => {
       setIsBottomSheetOpen(false);
+      setIsBottomSheetOpen(false);
       setIsDropDownOpen(false);
+      startTransition(() => {
+        addOptimisticSave({ postId, userId: user?.id });
+      });
 
-      setTimeout(() => {
-        savePost(postId, user?.id as string)
-          .then((data) => showToast.success(t(`success.${data.message}`)))
-          .catch(() => showToast.error(t('error.failed-to-unsave-post')));
-      }, 1);
+      savePost(postId, user?.id as string).catch(({ message }) =>
+        showToast.error(t(`error.${message}`))
+      );
     };
 
     return (
       <>
-        <form action={handleOptimisticSave}>
+        <form onSubmit={handleOptimisticSave}>
           <PostOption
             IconComponent={
               optimisticSaves.some(isMySave) ? BookmarkSlashIcon : BookmarkIcon

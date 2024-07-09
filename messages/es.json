@@ -286,14 +286,25 @@
           "like": "Me gusta",
           "comment": "Comentar",
           "share": "Compartir"
+        },
+        "likes": {
+          "you": "Tú",
+          "and": "y",
+          "person": "persona",
+          "people": "personas",
+          "more": "más"
+        },
+        "comments": {
+          "comment": "Comentario",
+          "comments": "Comentarios"
         }
       },
-      "likes": {
-        "you": "Tú",
-        "and": "y",
-        "person": "persona",
-        "people": "personas",
-        "more": "más"
+      "comments": {
+        "bottom-sheet": {
+          "title": "Escribe un comentario",
+          "description": "Aquí puedes escribir un comentario en esta publicación agregando texto o un GIF.",
+          "no-comments-yet": "Aún no hay comentarios"
+        }
       }
     }
   },
@@ -339,8 +350,14 @@
       "2fa-code-has-expired": "El código 2FA ha expirado",
       "social-auth-is-currently-unavailable-in-production": "La autenticación social no está disponible actualmente en producción",
       "feature-under-development": "Función en desarrollo",
+      "post-not-found": "Publicación no encontrada",
+      "failed-to-create-post": "Error al crear publicación",
       "failed-to-delete-post": "Error al eliminar la publicación",
-      "failed-to-unsave-post": "Error al eliminar la publicación de guardados"
+      "failed-to-save-post": "Error al guardar la publicación",
+      "failed-to-unsave-post": "Error al eliminar la publicación de guardados",
+      "failed-to-like-post": "Error al agregar like",
+      "failed-to-unlike-post": "Error al remover like",
+      "failed-to-post-comment": "Error al agregar comentario"
     },
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",
