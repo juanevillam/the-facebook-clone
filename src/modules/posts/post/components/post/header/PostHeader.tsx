@@ -31,7 +31,7 @@ export const PostHeader = ({
     <div className="flex items-start justify-between p-3 pr-1.5 md:pr-3 space-x-2 md:items-center md:px-4 md:relative">
       <div className="flex space-x-2 w-full">
         <ProfilePic image={image} name={name} />
-        <div className="flex flex-col">
+        <div>
           <PostUserInfo
             feeling={feeling}
             hideFellingInfo

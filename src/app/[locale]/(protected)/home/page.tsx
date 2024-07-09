@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { pick } from 'lodash';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
@@ -5,7 +7,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import { PageProps } from '@/assets/types';
 import { signOut } from '@/auth';
 import { CreatePostCard } from '@/modules/posts/create/components';
-import { Posts } from '@/modules/posts/post/components';
+import { Posts, PostsSkeleton } from '@/modules/posts/post/components';
 
 const HomePage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
@@ -27,7 +29,9 @@ const HomePage = ({ params: { locale } }: PageProps) => {
         )}
       >
         <CreatePostCard />
-        <Posts />
+        <Suspense fallback={<PostsSkeleton />}>
+          <Posts />
+        </Suspense>
       </NextIntlClientProvider>
       <form
         action={async () => {
@@ -40,43 +44,6 @@ const HomePage = ({ params: { locale } }: PageProps) => {
           Sign out
         </button>
       </form>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
-      <h1 className="text-black text-2xl dark:text-white">Home</h1>
     </div>
   );
 };

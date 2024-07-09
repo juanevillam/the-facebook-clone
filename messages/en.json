@@ -347,7 +347,8 @@
       "failed-to-unsave-post": "Failed to unsave post",
       "failed-to-like-post": "Failed to like post",
       "failed-to-unlike-post": "Failed to unlike post",
-      "failed-to-post-comment": "Failed to post comment"
+      "failed-to-post-comment": "Failed to post comment",
+      "unauthorized": "Unauthorized"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",

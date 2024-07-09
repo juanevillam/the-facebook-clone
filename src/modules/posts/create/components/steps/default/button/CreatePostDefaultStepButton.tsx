@@ -3,7 +3,7 @@ import showToast from 'react-hot-toast';
 
 import { Button } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { createPost } from '@/modules/posts/create/api';
+import { createPost } from '@/modules/posts/create/actions';
 import { setActiveLocation } from '@/modules/posts/create/reducers/checkInSlice';
 import { setActiveFeeling } from '@/modules/posts/create/reducers/feelingsSlice';
 import { setActiveGif } from '@/modules/posts/create/reducers/gifsSlice';

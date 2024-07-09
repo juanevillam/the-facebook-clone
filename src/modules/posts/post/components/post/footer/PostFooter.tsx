@@ -10,7 +10,7 @@ import { LikeIcon } from '@/assets/ui/icons';
 import { useCurrentUser } from '@/hooks';
 
 import { PostFooterActions } from './actions/PostFooterActions';
-import { likePost } from '../../../api';
+import { likePost } from '../../../actions';
 import { CommentExtended, LikeExtended } from '../../../assets/types';
 import { PostCommentsBottomSheet } from '../comments/bottom-sheet';
 

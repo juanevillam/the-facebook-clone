@@ -2,9 +2,14 @@
 
 import { revalidatePath } from 'next/cache';
 
+import { auth } from '@/auth';
 import { db } from '@/lib/database';
 
-export const likePost = async (postId: string, userId: string) => {
+export const savePost = async (postId: string, userId: string) => {
+  const session = await auth();
+
+  if (!session) throw new Error('unauthorized');
+
   const post = await db.post.findUnique({
     where: {
       id: postId,
@@ -13,7 +18,7 @@ export const likePost = async (postId: string, userId: string) => {
 
   if (!post) throw new Error('post-not-found');
 
-  const like = await db.like.findUnique({
+  const save = await db.savedPost.findUnique({
     where: {
       postId_userId: {
         postId,
@@ -22,9 +27,9 @@ export const likePost = async (postId: string, userId: string) => {
     },
   });
 
-  if (like) {
+  if (save) {
     try {
-      await db.like.delete({
+      await db.savedPost.delete({
         where: {
           postId_userId: {
             postId,
@@ -34,14 +39,14 @@ export const likePost = async (postId: string, userId: string) => {
       });
 
       revalidatePath('/home');
-      return { message: 'post-unliked', type: 'success' };
+      return { message: 'post-unsaved', type: 'success' };
     } catch (error) {
-      throw new Error('failed-to-unlike-post');
+      throw new Error('failed-to-unsave-post');
     }
   }
 
   try {
-    await db.like.create({
+    await db.savedPost.create({
       data: {
         postId,
         userId,
@@ -49,8 +54,8 @@ export const likePost = async (postId: string, userId: string) => {
     });
 
     revalidatePath('/home');
-    return { message: 'post-liked', type: 'success' };
+    return { message: 'post-saved', type: 'success' };
   } catch (error) {
-    throw new Error('failed-to-like-post');
+    throw new Error('failed-to-save-post');
   }
 };

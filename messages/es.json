@@ -347,7 +347,8 @@
       "failed-to-unsave-post": "Error al eliminar la publicación de guardados",
       "failed-to-like-post": "Error al agregar like",
       "failed-to-unlike-post": "Error al remover like",
-      "failed-to-post-comment": "Error al agregar comentario"
+      "failed-to-post-comment": "Error al agregar comentario",
+      "unauthorized": "Sin autorización"
     },
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",

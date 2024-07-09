@@ -20,6 +20,10 @@
     @apply bg-gray-200 dark:bg-neutral-600;
   }
 
+  .skeleton-bg {
+    @apply bg-gray-200 dark:bg-neutral-500;
+  }
+
   /* Border Utilities */
   .primary-border {
     @apply border-gray-300 dark:border-neutral-700 md:border-gray-200;

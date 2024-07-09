@@ -2,6 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 
+import { auth } from '@/auth';
 import { db } from '@/lib/database';
 
 export const commentPost = async (
@@ -9,6 +10,10 @@ export const commentPost = async (
   thoughts: string,
   userId: string
 ) => {
+  const session = await auth();
+
+  if (!session) throw new Error('unauthorized');
+
   const post = await db.post.findUnique({
     where: {
       id: postId,

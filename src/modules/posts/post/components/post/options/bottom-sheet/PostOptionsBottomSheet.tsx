@@ -15,7 +15,7 @@ import {
 import { ActionLoader } from '@/components';
 import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { deletePost, savePost } from '@/modules/posts/post/api';
+import { deletePost, savePost } from '@/modules/posts/post/actions';
 import { toggleDeletingPost } from '@/modules/posts/post/reducers/optionsSlice';
 
 import { PostOptionsBottomSheetItem } from './item/PostOptionsBottomSheetItem';

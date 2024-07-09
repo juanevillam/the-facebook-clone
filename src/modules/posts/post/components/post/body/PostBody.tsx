@@ -27,6 +27,7 @@ export const PostBody = ({ media, mediaType, thoughts }: PostBodyProps) => {
               alt="Image"
               className="max-h-[600px] object-contain w-full"
               height={0}
+              priority
               sizes="100vw"
               src={media as string}
               width={0}
@@ -37,6 +38,7 @@ export const PostBody = ({ media, mediaType, thoughts }: PostBodyProps) => {
               alt="GIF"
               className="max-h-[600px] object-contain w-full"
               height={0}
+              priority
               sizes="100vw"
               src={media as string}
               unoptimized
