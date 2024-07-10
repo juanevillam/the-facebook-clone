@@ -26,7 +26,7 @@ export const deletePost = async (postId: string, userId: string) => {
       },
     });
 
-    revalidatePath('/home');
+    revalidatePath('/');
     return { message: 'post-deleted', type: 'success' };
   } catch (error) {
     throw new Error('failed-to-delete-post');

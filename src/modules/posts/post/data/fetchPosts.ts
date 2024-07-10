@@ -1,4 +1,4 @@
-import { revalidatePath, unstable_noStore } from 'next/cache';
+import { unstable_noStore } from 'next/cache';
 
 import { db } from '@/lib/database';
 
@@ -29,7 +29,6 @@ export const fetchPosts = async () => {
       },
     });
 
-    revalidatePath('/home');
     return data;
   } catch (error) {
     throw new Error('failed-to-fetch-posts');

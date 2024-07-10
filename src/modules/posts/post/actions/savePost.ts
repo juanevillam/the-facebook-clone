@@ -38,7 +38,7 @@ export const savePost = async (postId: string, userId: string) => {
         },
       });
 
-      revalidatePath('/home');
+      revalidatePath('/');
       return { message: 'post-unsaved', type: 'success' };
     } catch (error) {
       throw new Error('failed-to-unsave-post');
@@ -53,7 +53,7 @@ export const savePost = async (postId: string, userId: string) => {
       },
     });
 
-    revalidatePath('/home');
+    revalidatePath('/');
     return { message: 'post-saved', type: 'success' };
   } catch (error) {
     throw new Error('failed-to-save-post');

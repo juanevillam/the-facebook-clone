@@ -9,24 +9,24 @@ import { usePathname } from '@/navigation';
 
 interface NavbarLinkProps {
   Icon: React.FC<NavbarIconProps>;
-  label: string;
+  href: '/' | 'friends' | 'groups' | 'marketplace' | 'watch';
+  label: 'friends' | 'groups' | 'home' | 'marketplace' | 'watch';
 }
 
-export const NavbarLink = ({ Icon, label }: NavbarLinkProps) => {
+export const NavbarLink = ({ Icon, href, label }: NavbarLinkProps) => {
   const t = useTranslations('navbar.links');
-
   const pathname = usePathname();
-  const isActive = pathname.includes(label);
+  const isActive = href === '/' ? pathname === '/' : pathname === `/${href}`;
 
   return (
     <Tooltip label={t(label)} position="-bottom-10">
       <Link
+        aria-label={label}
         className={`cursor-pointer duration-150 flex h-14 items-center justify-center peer transition md:h-12 md:px-8 md:rounded-lg md:w-max lg:px-10 xl:px-12 ${
           isActive ? 'relative' : 'hover:bg-gray-100 dark:hover:bg-dark-200'
         }`}
-        href={`/${label}`}
+        href={`/${href}`}
         tabIndex={0}
-        aria-label={label}
       >
         <Icon
           className={`size-6 ${

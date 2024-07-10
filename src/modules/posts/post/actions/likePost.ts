@@ -38,7 +38,7 @@ export const likePost = async (postId: string, userId: string) => {
         },
       });
 
-      revalidatePath('/home');
+      revalidatePath('/');
       return { message: 'post-unliked', type: 'success' };
     } catch (error) {
       throw new Error('failed-to-unlike-post');
@@ -53,7 +53,7 @@ export const likePost = async (postId: string, userId: string) => {
       },
     });
 
-    revalidatePath('/home');
+    revalidatePath('/');
     return { message: 'post-liked', type: 'success' };
   } catch (error) {
     throw new Error('failed-to-like-post');

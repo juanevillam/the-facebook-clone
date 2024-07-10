@@ -31,7 +31,7 @@ export const commentPost = async (
       },
     });
 
-    revalidatePath('/home');
+    revalidatePath('/');
     return { message: 'comment-created', type: 'success' };
   } catch (error) {
     throw new Error('failed-to-post-comment');
