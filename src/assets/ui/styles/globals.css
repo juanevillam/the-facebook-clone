@@ -1,3 +1,142 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* Background Utilities */
+  .accent-bg {
+    @apply bg-white dark:bg-neutral-700;
+  }
+
+  .active-bg {
+    @apply bg-gray-200 dark:bg-neutral-900;
+  }
+
+  .primary-bg {
+    @apply bg-gray-100 dark:bg-neutral-700;
+  }
+
+  .secondary-bg {
+    @apply bg-gray-200 dark:bg-neutral-600;
+  }
+
+  .skeleton-bg {
+    @apply bg-gray-200 dark:bg-neutral-500;
+  }
+
+  /* Border Utilities */
+  .primary-border {
+    @apply border-gray-300 dark:border-neutral-700 md:border-gray-200;
+  }
+
+  /* Divide Utilities */
+  .primary-divide {
+    @apply divide-gray-300 dark:divide-neutral-700 md:divide-gray-200;
+  }
+
+  /* Fill Utilities */
+  .primary-fill {
+    @apply fill-neutral-900 dark:fill-gray-100;
+  }
+
+  .secondary-fill {
+    @apply fill-neutral-600 dark:fill-neutral-400;
+  }
+
+  /* Placeholder Utilities */
+  .primary-placeholder {
+    @apply placeholder-neutral-500 dark:placeholder-neutral-400;
+  }
+
+  /* Stroke Utilities */
+  .accent-stroke {
+    @apply stroke-neutral-600 dark:stroke-neutral-300;
+  }
+
+  .primary-stroke {
+    @apply stroke-neutral-900 dark:stroke-gray-100;
+  }
+
+  .secondary-stroke {
+    @apply stroke-neutral-600 dark:stroke-neutral-400;
+  }
+
+  /* Text Utilities */
+  .accent-text {
+    @apply text-neutral-600 dark:text-neutral-300;
+  }
+
+  .primary-text {
+    @apply text-neutral-900 dark:text-gray-100;
+  }
+
+  .primary-text-dark {
+    @apply text-gray-100;
+  }
+
+  .secondary-text {
+    @apply text-neutral-600 dark:text-neutral-400;
+  }
+
+  .tertiary-text {
+    @apply text-neutral-500 dark:text-neutral-400;
+  }
+
+  /* Bottom sheet Utilities */
+  .bottom-sheet-content {
+    @apply bg-white dark:bg-neutral-800 bottom-0 fixed left-0 pt-3 right-0 rounded-t-2xl z-40 md:w-1/2 md:mx-auto;
+  }
+
+  .bottom-sheet-handle {
+    @apply secondary-bg mb-2;
+  }
+
+  .bottom-sheet-overlay {
+    @apply bg-overlay-100 fixed inset-0 z-40;
+  }
+
+  /* Card Utilities */
+  .card {
+    @apply bg-white dark:bg-neutral-800 md:rounded-lg;
+  }
+
+  /* Flexbox Utilities */
+  .flex-center {
+    @apply flex items-center;
+  }
+
+  .flex-center-justify-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-center-justify-between {
+    @apply flex items-center justify-between;
+  }
+
+  /* Modal Utilities */
+  .create-post-modal-gif-size {
+    @apply max-h-96 md:max-h-72;
+  }
+
+  .create-post-modal-spacing-area {
+    @apply md:pb-3 md:px-3;
+  }
+
+  .modal-scrollable-area {
+    @apply h-full md:h-96 overflow-y-auto;
+  }
+
+  /* Responsive Utilities */
+  .only-mobile {
+    @apply md:hidden;
+  }
+
+  .only-desktop {
+    @apply hidden md:block;
+  }
+
+  /* Transition Utilities */
+  .primary-transition {
+    @apply duration-150 transition;
+  }
+}

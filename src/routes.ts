@@ -4,7 +4,6 @@
  * @type {string[]}
  */
 const publicRoutes = [
-  '/',
   '/api/auth',
   '/auth/verify-email',
   '/autenticacion/verificar-email',
@@ -12,7 +11,7 @@ const publicRoutes = [
 
 /**
  * An array of routes that are used for authentication.
- * These routes will redirect logged in users to the home page.
+ * These routes will redirect logged in users to the home ("/") page.
  * @type {string[]}
  */
 const authRoutes = [

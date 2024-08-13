@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH } from '../../../assets/translations';
 import { CardItem } from '../../../assets/types';
 
 export const CreatePostCardItem = ({
@@ -11,15 +10,15 @@ export const CreatePostCardItem = ({
   name,
   onClick,
 }: CardItem) => {
-  const t = useTranslations(`${POSTS_CREATE_LAYOUT_FOOTER_ITEMS_PATH}.${name}`);
+  const t = useTranslations(`posts.create.layout.footer.${name}`);
 
   return (
     <button
       aria-disabled={disabled}
       className={classNames(
-        'duration-150 flex hover:bg-gray-100 items-center justify-center p-3 space-x-2 transition w-full dark:hover:bg-dark-200 md:p-2 md:rounded-lg',
+        'flex-center-justify-center primary-transition px-4 md:px-3 py-2.5 md:py-2 space-x-2 w-full md:rounded-lg hover:primary-bg',
         {
-          'bg-gray-200 dark:bg-dark-400': active,
+          'active-bg': active,
           'opacity-50': disabled,
         }
       )}
@@ -35,12 +34,10 @@ export const CreatePostCardItem = ({
         quality={100}
         width={72}
       />
-      <p className="hidden md:block md:font-medium md:text-gray-600 md:text-sm md:dark:text-gray-400">
+      <p className="accent-text only-desktop font-medium text-sm">
         {t('detailed')}
       </p>
-      <p className="text-gray-600 text-sm dark:text-gray-300 md:hidden">
-        {t('short')}
-      </p>
+      <p className="only-mobile primary-text text-sm">{t('short')}</p>
     </button>
   );
 };

@@ -4,7 +4,7 @@ import {
   MessengerIcon,
   NotificationsIcon,
 } from '@/assets/ui/icons/navbar/drop-downs';
-import { NoProfilePicImage } from '@/components/images';
+import { ProfilePic } from '@/components/profile-pic/ProfilePic';
 
 import { DropDown } from './drop-down/drop-down';
 
@@ -23,7 +23,7 @@ export const NavbarDropDowns = () => {
       <DropDown Icon={MessengerIcon} label="messenger" />
       <div className="hidden md:flex md:space-x-2">
         <DropDown Icon={NotificationsIcon} label="notifications" />
-        <NoProfilePicImage />
+        <ProfilePic />
       </div>
     </div>
   );

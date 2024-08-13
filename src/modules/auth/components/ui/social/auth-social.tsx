@@ -3,8 +3,6 @@ import { useLocale, useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
 import { GithubIcon, GoogleIcon } from '@/assets/ui/icons/social';
-import { getRedirectPath } from '@/utils';
-import { localeType } from '@/utils/getRedirectPath';
 
 import { AuthSocialButton } from './button/auth-social-button';
 
@@ -18,7 +16,7 @@ export const AuthSocial = () => {
   const handleSignInSocial = (provider: providerType) => {
     if (isDevelopment) {
       signIn(provider, {
-        callbackUrl: `/${locale}${getRedirectPath(locale as localeType)}`,
+        callbackUrl: `/${locale}`,
       });
     } else {
       showToast.error(

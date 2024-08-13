@@ -37,4 +37,5 @@ const postSlice = createSlice({
 
 export const { toggleOpenable, setStep, setThoughts, togglePosting } =
   postSlice.actions;
+
 export default postSlice.reducer;

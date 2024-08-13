@@ -18,7 +18,7 @@ export const Navbar = () => {
   return (
     <>
       <header
-        className={`bg-white duration-150 sticky top-0 transform transition-transform z-10 md:transform-none md:dark:border-b dark:bg-dark-100 dark:border-dark-50 ${
+        className={`bg-white duration-150 sticky top-0 transform transition-transform z-40 md:transform-none md:dark:border-b dark:bg-dark-100 dark:border-dark-50 ${
           scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
         }`}
       >
@@ -27,7 +27,7 @@ export const Navbar = () => {
           className="h-14 flex justify-between px-3 md:px-4"
         >
           <div className="flex flex-none items-center">
-            <Link aria-label={t('home')} href="/home">
+            <Link aria-label={t('home')} href="/">
               <FacebookLogoMark className="size-10 hidden md:block" />
               <FacebookLogoType className="fill-primary-100 h-6 md:hidden dark:fill-white" />
             </Link>
@@ -54,7 +54,7 @@ export const Navbar = () => {
       </header>
       <nav
         aria-label={t('mobile-navigation')}
-        className={`bg-white border-b dark:bg-dark-100 duration-150 flex sticky top-14 transform transition-transform z-10 md:hidden dark:border-dark-50 ${
+        className={`bg-white border-b dark:bg-dark-100 duration-150 flex sticky top-14 transform transition-transform z-40 md:hidden dark:border-dark-50 ${
           scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
         }`}
       >

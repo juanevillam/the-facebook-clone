@@ -1,87 +1,38 @@
-import { FileInputRef, VoidFunction } from '@/assets/types';
+import { VoidFunction } from '@/assets/types';
 import { ArrowLeftIcon } from '@/assets/ui/icons';
 import { MobileDialog } from '@/components/mobile';
-import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import { useAppSelector } from '@/lib/store/hooks';
 
-import { setActiveGif } from '../../reducers/gifsSlice';
-import {
-  CreatePostFooter,
-  CreatePostHeader,
-  CreatePostLoader,
-  CreatePostTextArea,
-  CreatePostUserInfo,
-} from '../shared/layout';
-import {
-  CreatePostCheckIn,
-  CreatePostFeelings,
-  CreatePostGifs,
-  CreatePostMedia,
-} from '../shared/steps';
-import { CreatePostGifsItem } from '../shared/steps/gifs/item/CreatePostGifsItem';
+import { CreatePostHeader } from '../layout';
 
 interface CreatePostDialogProps {
-  fileInputRef: FileInputRef;
   handleStep: VoidFunction;
+  handleToggleOpenable: VoidFunction;
+  children: React.ReactNode;
 }
 
 export const CreatePostDialog = ({
-  fileInputRef,
   handleStep,
+  handleToggleOpenable,
+  children,
 }: CreatePostDialogProps) => {
-  const dispatch = useAppDispatch();
-  const { isOpenableOpen, step } = useAppSelector(
-    (store) => store.posts.create.post
-  );
-
-  const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
-
-  const handleRemoveActiveGif = () => dispatch(setActiveGif(null));
-
-  const renderStepContent = () => {
-    switch (step) {
-      case 'media':
-        return <CreatePostMedia fileInputRef={fileInputRef} />;
-      case 'feelings':
-        return <CreatePostFeelings />;
-      case 'check-in':
-        return <CreatePostCheckIn />;
-      case 'gifs':
-        return <CreatePostGifs />;
-      case 'default':
-      default:
-        return (
-          <>
-            <CreatePostUserInfo />
-            <CreatePostTextArea />
-            {activeGif && (
-              <div className="p-3">
-                <div className="max-h-96 size-full">
-                  <CreatePostGifsItem
-                    active
-                    gif={activeGif}
-                    onClick={handleRemoveActiveGif}
-                  />
-                </div>
-              </div>
-            )}
-            <CreatePostFooter />
-            <CreatePostLoader />
-          </>
-        );
-    }
-  };
+  const { isOpenableOpen } = useAppSelector((store) => store.posts.create.post);
 
   return (
-    <MobileDialog open={isOpenableOpen} translateFrom="y">
+    <MobileDialog
+      onDismiss={handleToggleOpenable}
+      open={isOpenableOpen}
+      translateFrom="y"
+    >
       <div className="flex flex-col h-full">
         <CreatePostHeader
-          icon={{
+          Icon={{
             Component: ArrowLeftIcon,
             onClick: handleStep,
             name: 'back',
           }}
         />
-        {renderStepContent()}
+        {children}
       </div>
     </MobileDialog>
   );

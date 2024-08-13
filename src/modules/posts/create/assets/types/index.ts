@@ -3,9 +3,8 @@ import { feelings } from '../feelings';
 type Step = 'default' | 'feelings' | 'media' | 'gif' | 'check-in' | 'gifs';
 
 type Media = {
-  file: string | ArrayBuffer | null;
-  playing: boolean;
-  type: string | null;
+  file: string | null;
+  type: 'image' | 'video' | null;
 };
 
 type Feeling = (typeof feelings)[number];
@@ -20,7 +19,7 @@ type GIF = {
   width: number;
 };
 
-type unparsedGIF = {
+type GIFUnparsed = {
   id: string;
   title: string;
   images: {
@@ -45,4 +44,4 @@ type CardItem = {
   onClick: VoidFunction;
 };
 
-export type { Step, Media, Feeling, Location, GIF, unparsedGIF, CardItem };
+export type { Step, Media, Feeling, Location, GIF, GIFUnparsed, CardItem };
