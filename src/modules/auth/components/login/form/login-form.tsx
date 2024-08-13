@@ -3,8 +3,8 @@
 import { useEffect, useState, useTransition } from 'react';
 
 import { Formik, Form } from 'formik';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { useLocale, useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
@@ -16,22 +16,18 @@ import {
   loginFormSchema,
   loginFormValuesType,
 } from '@/modules/auth/schemas/loginSchema';
-import { getRedirectPath } from '@/modules/auth/utils';
-import { localeType } from '@/modules/auth/utils/getRedirectPath';
 
 import { AuthLink, AuthSocial, AuthTextInput } from '../../ui';
 
 export const LoginForm = () => {
   const [showTwoFactor, setShowTwoFactor] = useState(false);
   const [isPending, startTransition] = useTransition();
-  const router = useRouter();
   const searchParams = useSearchParams();
   const urlError =
     searchParams.get('error') === 'OAuthAccountNotLinked'
       ? 'oauth-account-not-linked'
       : '';
 
-  const locale = useLocale();
   const t = useTranslations();
   const dispatch = useAppDispatch();
 
@@ -50,8 +46,7 @@ export const LoginForm = () => {
               return;
             }
 
-            router.push(`/${locale}${getRedirectPath(locale as localeType)}`);
-            showToast.success(t(`toast-messages.success.${data.message}`));
+            window.location.reload();
           } else if (data.message)
             showToast.error(t(`toast-messages.error.${data.message}`));
         })

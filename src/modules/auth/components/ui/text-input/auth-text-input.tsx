@@ -81,7 +81,7 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
           </label>
           {field.value && (
             <IconButton
-              className="absolute right-2 size-10 top-2 rounded-full z-10"
+              className="absolute right-2 size-10 top-2 z-10"
               icon={{
                 className: 'size-full stroke-[1.5] text-black',
                 Component: CloseIcon,

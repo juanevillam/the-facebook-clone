@@ -18,7 +18,7 @@ export const Navbar = () => {
   return (
     <>
       <header
-        className={`bg-white duration-150 sticky top-0 transform transition-transform z-10 md:transform-none md:dark:border-b dark:bg-dark-100 dark:border-dark-50 ${
+        className={`bg-white duration-150 sticky top-0 transform transition-transform z-40 md:transform-none md:dark:border-b dark:bg-dark-100 dark:border-dark-50 ${
           scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
         }`}
       >
@@ -27,21 +27,21 @@ export const Navbar = () => {
           className="h-14 flex justify-between px-3 md:px-4"
         >
           <div className="flex flex-none items-center">
-            <Link aria-label={t('home')} href="/home">
+            <Link aria-label={t('home')} href="/">
               <FacebookLogoMark className="size-10 hidden md:block" />
               <FacebookLogoType className="fill-primary-100 h-6 md:hidden dark:fill-white" />
             </Link>
-            <div className="bg-smoke-100 duration-150 hidden md:flex items-center h-10 ml-2 p-3 rounded-full transition w-max xl:w-60 dark:bg-dark-200">
-              <SearchIcon className="fill-smoke-200 size-4 dark:fill-smoke-300" />
+            <div className="bg-gray-100 duration-150 hidden h-10 items-center ml-2 p-3 rounded-full transition w-max md:flex xl:w-60 dark:bg-dark-200">
+              <SearchIcon className="fill-gray-500 size-4 dark:fill-gray-400" />
               <label className="sr-only" htmlFor="search">
                 {t('search')}
               </label>
               <input
                 aria-label={t('search')}
+                className="bg-transparent duration-150 font-light flex-shrink placeholder-gray-500 text-gray-500 hidden ml-2 outline-none transition xl:inline-flex dark:text-gray-400 dark:placeholder-dark-300"
                 id="search"
-                type="text"
                 placeholder={t('search')}
-                className="bg-transparent duration-150 font-light flex-shrink placeholder-smoke-200 text-smoke-200 hidden ml-2 outline-none transition xl:inline-flex dark:text-smoke-300 dark:placeholder-dark-300"
+                type="text"
               />
             </div>
           </div>
@@ -54,7 +54,7 @@ export const Navbar = () => {
       </header>
       <nav
         aria-label={t('mobile-navigation')}
-        className={`bg-white dark:bg-dark-100 duration-150 flex sticky top-14 transform transition-transform z-10 md:hidden dark:border-b dark:border-dark-500 ${
+        className={`bg-white border-b dark:bg-dark-100 duration-150 flex sticky top-14 transform transition-transform z-40 md:hidden dark:border-dark-50 ${
           scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
         }`}
       >

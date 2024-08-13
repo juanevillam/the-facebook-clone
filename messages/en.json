@@ -128,6 +128,176 @@
       "search": "Search"
     }
   },
+  "posts": {
+    "create": {
+      "layout": {
+        "thoughts": "What's on your mind?",
+        "header": {
+          "steps": {
+            "default": "Create post",
+            "media": "Select media",
+            "feelings": "How are you feeling?",
+            "check-in": "Search location",
+            "gifs": "Search GIF"
+          }
+        },
+        "footer": {
+          "live-video": {
+            "detailed": "Live video",
+            "short": "Live"
+          },
+          "photo-video": {
+            "detailed": "Photo/video",
+            "short": "Photo"
+          },
+          "feeling-activity": {
+            "detailed": "Feeling/activity",
+            "short": "Feeling"
+          },
+          "tag-people": {
+            "detailed": "Tag people",
+            "short": "Tag"
+          },
+          "check-in": {
+            "detailed": "Check in",
+            "short": "Check in"
+          },
+          "gif": {
+            "detailed": "GIF",
+            "short": "GIF"
+          },
+          "disabled": "This can't be combined with what you've already<br></br>added to your post"
+        }
+      },
+      "steps": {
+        "default": {
+          "footer": "Add to your post",
+          "button": "Post"
+        },
+        "media": "Add photos/videos",
+        "feelings": {
+          "error": "Feeling not found"
+        },
+        "check-in": {
+          "info": "Try searching for a place, city, or address",
+          "error": "Something went wrong while searching for a location"
+        },
+        "gifs": {
+          "info": "Try searching for a GIF",
+          "error": "Something went wrong while searching for a GIF",
+          "button": {
+            "label": "Load more",
+            "loading-label": "Loading more"
+          }
+        }
+      }
+    },
+    "feelings": {
+      "happy": "happy",
+      "blessed": "blessed",
+      "loved": "loved",
+      "sad": "sad",
+      "excited": "excited",
+      "crazy": "crazy",
+      "grateful": "grateful",
+      "silly": "silly",
+      "relaxed": "relaxed",
+      "motivated": "motivated",
+      "alone": "alone",
+      "ok": "ok",
+      "nostalgic": "nostalgic",
+      "emotional": "emotional",
+      "determined": "determined",
+      "exhausted": "exhausted",
+      "lucky": "lucky",
+      "heartbroken": "heartbroken",
+      "bored": "bored",
+      "hungry": "hungry",
+      "pained": "pained",
+      "cold": "cold",
+      "cute": "cute",
+      "sorry": "sorry",
+      "super": "super",
+      "worried": "worried",
+      "funny": "funny",
+      "inspired": "inspired",
+      "confused": "confused",
+      "jolly": "jolly",
+      "broken": "broken",
+      "irritated": "irritated",
+      "incomplete": "incomplete",
+      "puzzled": "puzzled",
+      "furious": "furious",
+      "surprised": "surprised",
+      "meh": "meh",
+      "lost": "lost",
+      "rough": "rough",
+      "strange": "strange",
+      "awful": "awful",
+      "drunk": "drunk",
+      "blue": "blue",
+      "naked": "naked",
+      "dirty": "dirty",
+      "small": "small",
+      "privileged": "privileged",
+      "trapped": "trapped",
+      "afraid": "afraid",
+      "broke": "broke"
+    },
+    "user-info": {
+      "in": "in",
+      "is": "is",
+      "feeling": "feeling",
+      "feeling-icon-alt": "Feeling icon ({feeling})"
+    },
+    "post": {
+      "options": {
+        "save": {
+          "label": "Save post",
+          "description": "Add this to your saved items."
+        },
+        "edit": {
+          "label": "Edit post"
+        },
+        "delete": {
+          "label": "Delete post"
+        },
+        "unsave": {
+          "label": "Unsave post",
+          "description": "Remove this from your saved items."
+        },
+        "bottom-sheet": {
+          "title": "Post options",
+          "description": "Here you can save a post, or edit/delete it if it's yours."
+        }
+      },
+      "footer": {
+        "actions": {
+          "like": "Like",
+          "comment": "Comment",
+          "share": "Share"
+        },
+        "likes": {
+          "you": "You",
+          "and": "and",
+          "person": "person",
+          "people": "people",
+          "more": "more"
+        },
+        "comments": {
+          "comment": "Comment",
+          "comments": "Comments"
+        }
+      },
+      "comments": {
+        "bottom-sheet": {
+          "title": "Write a comment",
+          "description": "Here you can write a comment in this post by adding text or a GIF.",
+          "no-comments-yet": "No comments yet"
+        }
+      }
+    }
+  },
   "form": {
     "fields": {
       "email-address": "Email address",
@@ -151,7 +321,9 @@
     }
   },
   "images": {
-    "alert-triangle": "Alert icon"
+    "alert-triangle": "Alert icon",
+    "no-profile-pic": "No profile pic image",
+    "profile-pic": "{name}'s profile picture"
   },
   "toast-messages": {
     "error": {
@@ -166,18 +338,49 @@
       "token-has-expired": "Token has expired",
       "invalid-2fa-code": "Invalid 2FA code",
       "2fa-code-has-expired": "2FA code has expired",
-      "social-auth-is-currently-unavailable-in-production": "Social auth is currently unavailable in production"
+      "social-auth-is-currently-unavailable-in-production": "Social auth is currently unavailable in production",
+      "feature-under-development": "Feature under development",
+      "post-not-found": "Post not found",
+      "failed-to-create-post": "Failed to create post",
+      "failed-to-delete-post": "Failed to delete post",
+      "failed-to-save-post": "Failed to save post",
+      "failed-to-unsave-post": "Failed to unsave post",
+      "failed-to-like-post": "Failed to like post",
+      "failed-to-unlike-post": "Failed to unlike post",
+      "failed-to-post-comment": "Failed to post comment",
+      "unauthorized": "Unauthorized"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",
-      "welcome-to-the-facebook-clone": "Welcome to The Facebook Clone",
       "email-verified": "Email verified",
       "reset-email-sent": "Reset email sent",
-      "password-updated": "Password updated"
+      "password-updated": "Password updated",
+      "post-created": "Post created",
+      "post-deleted": "Post deleted",
+      "link-copied-to-clipboard": "Link copied to clipboard",
+      "post-saved": "Post saved",
+      "post-unsaved": "Post unsaved"
     }
   },
   "icon-buttons": {
     "close": "Close",
-    "back": "Back"
+    "back": "Back",
+    "dots-horizontal": "More options"
+  },
+  "search-input": {
+    "search": "Search",
+    "where-are-you": "Where are you?"
+  },
+  "action-loader": {
+    "posting": "Posting",
+    "deleting-post": "Deleting post"
+  },
+  "timestamp": {
+    "just-now": "Just now",
+    "minutes": "{minutes} minutes ago",
+    "hours": "{hours} hours ago",
+    "days": "{days} days ago",
+    "date": "{date} at {time}",
+    "full-date": "{dayName}, {day} {month} {year} at {time}"
   }
 }

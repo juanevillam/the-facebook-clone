@@ -128,6 +128,176 @@
       "search": "Buscar"
     }
   },
+  "posts": {
+    "create": {
+      "layout": {
+        "thoughts": "¿Qué estás pensando?",
+        "header": {
+          "steps": {
+            "default": "Crear publicación",
+            "media": "Seleccionar multimedia",
+            "feelings": "¿Cómo te sientes?",
+            "check-in": "Buscar ubicación",
+            "gifs": "Buscar GIF"
+          }
+        },
+        "footer": {
+          "live-video": {
+            "detailed": "Video en vivo",
+            "short": "Video"
+          },
+          "photo-video": {
+            "detailed": "Foto/video",
+            "short": "Foto"
+          },
+          "feeling-activity": {
+            "detailed": "Sentimiento/actividad",
+            "short": "Sentimiento"
+          },
+          "tag-people": {
+            "detailed": "Etiquetar personas",
+            "short": "Etiquetar"
+          },
+          "check-in": {
+            "detailed": "Ubicación",
+            "short": "Ubicación"
+          },
+          "gif": {
+            "detailed": "GIF",
+            "short": "GIF"
+          },
+          "disabled": "Esto no se puede combinar con lo que ya has<br></br>agregado a tu publicación"
+        }
+      },
+      "steps": {
+        "default": {
+          "footer": "Agrega a tu publicación",
+          "button": "Publicar"
+        },
+        "media": "Agrega fotos/videos",
+        "feelings": {
+          "error": "Sentimiento no encontrado"
+        },
+        "check-in": {
+          "info": "Intenta buscar un lugar, ciudad o dirección",
+          "error": "Algo salió mal mientras se buscaba la ubicación"
+        },
+        "gifs": {
+          "info": "Intenta buscar un GIF",
+          "error": "Algo salió mal mientras se buscaba un GIF",
+          "button": {
+            "label": "Cargar más",
+            "loading-label": "Cargando más"
+          }
+        }
+      }
+    },
+    "feelings": {
+      "happy": "feliz",
+      "blessed": "bendecido",
+      "loved": "amado",
+      "sad": "triste",
+      "excited": "emocionado",
+      "crazy": "loco",
+      "grateful": "agradecido",
+      "silly": "tonto",
+      "relaxed": "relajado",
+      "motivated": "motivado",
+      "alone": "solo",
+      "ok": "ok",
+      "nostalgic": "nostálgico",
+      "emotional": "emocional",
+      "determined": "determinado",
+      "exhausted": "agotado",
+      "lucky": "afortunado",
+      "heartbroken": "desconsolado",
+      "bored": "aburrido",
+      "hungry": "hambriento",
+      "pained": "dolorido",
+      "cold": "frío",
+      "cute": "lindo",
+      "sorry": "lo siento",
+      "super": "super",
+      "worried": "preocupado",
+      "funny": "divertido",
+      "inspired": "inspirado",
+      "confused": "confundido",
+      "jolly": "alegre",
+      "broken": "roto",
+      "irritated": "irritado",
+      "incomplete": "incompleto",
+      "puzzled": "perplejo",
+      "furious": "furioso",
+      "surprised": "sorprendido",
+      "meh": "meh",
+      "lost": "perdido",
+      "rough": "áspero",
+      "strange": "extraño",
+      "awful": "horrible",
+      "drunk": "borracho",
+      "blue": "triste",
+      "naked": "desnudo",
+      "dirty": "sucio",
+      "small": "pequeño",
+      "privileged": "privilegiado",
+      "trapped": "atrapado",
+      "afraid": "asustado",
+      "broke": "pobre"
+    },
+    "user-info": {
+      "in": "en",
+      "is": "está",
+      "feeling": "sintiéndose",
+      "feeling-icon-alt": "Ícono de sentimiento ({feeling})"
+    },
+    "post": {
+      "options": {
+        "save": {
+          "label": "Guardar publicación",
+          "description": "Agrega esto a tus elementos guardados."
+        },
+        "edit": {
+          "label": "Editar publicación"
+        },
+        "delete": {
+          "label": "Eliminar publicación"
+        },
+        "unsave": {
+          "label": "Eliminar de guardados",
+          "description": "Eliminar de tus elementos guardados."
+        },
+        "bottom-sheet": {
+          "title": "Opciones de la publicación",
+          "description": "Aquí puedes guardar una publicación, o editar/eliminar si es tuya."
+        }
+      },
+      "footer": {
+        "actions": {
+          "like": "Me gusta",
+          "comment": "Comentar",
+          "share": "Compartir"
+        },
+        "likes": {
+          "you": "Tú",
+          "and": "y",
+          "person": "persona",
+          "people": "personas",
+          "more": "más"
+        },
+        "comments": {
+          "comment": "Comentario",
+          "comments": "Comentarios"
+        }
+      },
+      "comments": {
+        "bottom-sheet": {
+          "title": "Escribe un comentario",
+          "description": "Aquí puedes escribir un comentario en esta publicación agregando texto o un GIF.",
+          "no-comments-yet": "Aún no hay comentarios"
+        }
+      }
+    }
+  },
   "form": {
     "fields": {
       "email-address": "Dirección de correo electrónico",
@@ -151,7 +321,9 @@
     }
   },
   "images": {
-    "alert-triangle": "Ícono de alerta"
+    "alert-triangle": "Ícono de alerta",
+    "no-profile-pic": "Imagen de sin foto de perfil",
+    "profile-pic": "Foto de perfil de {name}"
   },
   "toast-messages": {
     "error": {
@@ -166,18 +338,49 @@
       "token-has-expired": "El token ha expirado",
       "invalid-2fa-code": "Código 2FA inválido",
       "2fa-code-has-expired": "El código 2FA ha expirado",
-      "social-auth-is-currently-unavailable-in-production": "La autenticación social no está disponible actualmente en producción"
+      "social-auth-is-currently-unavailable-in-production": "La autenticación social no está disponible actualmente en producción",
+      "feature-under-development": "Función en desarrollo",
+      "post-not-found": "Publicación no encontrada",
+      "failed-to-create-post": "Error al crear publicación",
+      "failed-to-delete-post": "Error al eliminar la publicación",
+      "failed-to-save-post": "Error al guardar la publicación",
+      "failed-to-unsave-post": "Error al eliminar la publicación de guardados",
+      "failed-to-like-post": "Error al agregar like",
+      "failed-to-unlike-post": "Error al remover like",
+      "failed-to-post-comment": "Error al agregar comentario",
+      "unauthorized": "Sin autorización"
     },
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",
-      "welcome-to-the-facebook-clone": "Bienvenido al clon de Facebook",
       "email-verified": "Correo electrónico verificado",
       "reset-email-sent": "Correo electrónico de restablecimiento enviado",
-      "password-updated": "Contraseña actualizada"
+      "password-updated": "Contraseña actualizada",
+      "post-created": "Publicación creada",
+      "post-deleted": "Publicación eliminada",
+      "link-copied-to-clipboard": "Enlace copiado al portapapeles",
+      "post-saved": "Publicación guardada",
+      "post-unsaved": "Publicación elimininada de guardados"
     }
   },
   "icon-buttons": {
     "close": "Cerrar",
-    "back": "Atrás"
+    "back": "Atrás",
+    "dots-horizontal": "Más opciones"
+  },
+  "search-input": {
+    "search": "Buscar",
+    "where-are-you": "¿Dónde estás?"
+  },
+  "action-loader": {
+    "posting": "Publicando",
+    "deleting-post": "Eliminando publicación"
+  },
+  "timestamp": {
+    "just-now": "Justo ahora",
+    "minutes": "Hace {minutes} minutos",
+    "hours": "Hace {hours} horas",
+    "days": "Hace {days} días",
+    "date": "{date} a las {time}",
+    "full-date": "{dayName} {day} de {month} de {year} a las {time}"
   }
 }

@@ -1,30 +1,39 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { useTranslations } from 'next-intl';
 
-import { SharedSvgProps } from '@/assets/ui/icons/types';
+import { SharedSvg, VoidFunction } from '@/assets/types';
+
+export type IconButtonName = 'back' | 'close' | 'dots-horizontal';
 
 interface IconButtonProps {
   className: string;
   icon: {
     className: string;
-    Component: React.FC<SharedSvgProps>;
-    name: 'close' | 'back';
+    Component: SharedSvg;
+    name: IconButtonName;
   };
-  onClick: () => void;
+  onClick?: VoidFunction;
 }
 
-export const IconButton = ({ className, icon, onClick }: IconButtonProps) => {
-  const t = useTranslations('icon-buttons');
+const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
+  ({ className, icon, onClick }, ref) => {
+    const t = useTranslations('icon-buttons');
 
-  return (
-    <button
-      aria-label={t(icon.name)}
-      className={`duration-150 flex hover:bg-gray-200 items-center justify-center p-2 transition md:p-1 ${className}`}
-      onClick={onClick}
-      type="button"
-    >
-      <icon.Component className={icon.className} />
-    </button>
-  );
-};
+    return (
+      <button
+        aria-label={t(icon.name)}
+        className={`flex-center-justify-center primary-transition p-2 rounded-full ${className}`}
+        onClick={onClick}
+        ref={ref}
+        type="button"
+      >
+        <icon.Component className={icon.className} />
+      </button>
+    );
+  }
+);
+
+IconButton.displayName = 'IconButton';
+
+export { IconButton };

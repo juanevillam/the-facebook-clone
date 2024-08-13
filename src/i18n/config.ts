@@ -26,9 +26,25 @@ const pathnames = {
     en: '/auth/reset-password',
     es: '/autenticacion/restablecer-contrasena',
   },
-  '/home': {
-    en: '/home',
-    es: '/inicio',
+  '/friends': {
+    en: '/friends',
+    es: '/amigos',
+  },
+  '/watch': {
+    en: '/watch',
+    es: '/ver',
+  },
+  '/marketplace': {
+    en: '/marketplace',
+    es: '/mercado',
+  },
+  '/groups': {
+    en: '/groups',
+    es: '/grupos',
+  },
+  '/posts': {
+    en: '/posts',
+    es: '/publicaciones',
   },
 } satisfies Pathnames<typeof locales>;
 

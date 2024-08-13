@@ -1,9 +1,9 @@
-import { SharedSvgProps } from '@/assets/ui/icons/types';
+import { SharedSvg, VoidFunction } from '@/assets/types';
 import { Button } from '@/components/buttons';
 
 interface AuthSocialButtonProps {
-  Icon: React.FC<SharedSvgProps>;
-  onClick: () => void;
+  Icon: SharedSvg;
+  onClick: VoidFunction;
 }
 
 export const AuthSocialButton = ({ Icon, onClick }: AuthSocialButtonProps) => {

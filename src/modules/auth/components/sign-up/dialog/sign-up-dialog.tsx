@@ -30,7 +30,7 @@ export const SignUpDialog = () => {
       <div className="bg-white h-full relative w-full">
         <div className="border-b border-gray-300 flex items-center p-1.5 space-x-1.5">
           <IconButton
-            className="size-10 rounded-full"
+            className="size-10"
             icon={{
               className: 'size-full stroke-black',
               Component: ArrowLeftIcon,

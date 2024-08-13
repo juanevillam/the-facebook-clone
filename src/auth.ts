@@ -20,18 +20,33 @@ export const {
         session.user.id = token.sub;
       }
 
+      if (token.username && session.user) {
+        session.user.username = token.username as string;
+      }
+
       return session;
     },
-    async jwt({ token }) {
+    async jwt({ account, token }) {
       if (!token.sub) return token;
 
       const existingUser = await getUserById(token.sub);
 
       if (!existingUser) return token;
 
+      if (account?.provider !== 'credentials' && !existingUser.username) {
+        await db.user.update({
+          where: { id: existingUser.id },
+          data: {
+            username: existingUser.name?.split(' ').join('').toLowerCase(),
+          },
+        });
+      }
+
+      token.username = existingUser.username;
+
       return token;
     },
-    async signIn({ user, account }) {
+    async signIn({ account, user }) {
       if (account?.provider !== 'credentials') return true;
 
       const existingUser = await getUserById(user.id as string);

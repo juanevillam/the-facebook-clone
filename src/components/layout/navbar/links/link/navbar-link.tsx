@@ -9,30 +9,30 @@ import { usePathname } from '@/navigation';
 
 interface NavbarLinkProps {
   Icon: React.FC<NavbarIconProps>;
-  label: string;
+  href: '/' | 'friends' | 'groups' | 'marketplace' | 'watch';
+  label: 'friends' | 'groups' | 'home' | 'marketplace' | 'watch';
 }
 
-export const NavbarLink = ({ Icon, label }: NavbarLinkProps) => {
+export const NavbarLink = ({ Icon, href, label }: NavbarLinkProps) => {
   const t = useTranslations('navbar.links');
-
   const pathname = usePathname();
-  const isActive = pathname.includes(label);
+  const isActive = href === '/' ? pathname === '/' : pathname === `/${href}`;
 
   return (
     <Tooltip label={t(label)} position="-bottom-10">
       <Link
-        className={`cursor-pointer duration-150 flex h-14 items-center justify-center peer transition md:h-12 md:px-8 md:rounded-lg md:w-max lg:px-10 xl:px-12 ${
-          isActive ? 'relative' : 'hover:bg-smoke-600 dark:hover:bg-dark-200'
-        }`}
-        href={`/${label}`}
-        tabIndex={0}
         aria-label={label}
+        className={`cursor-pointer duration-150 flex h-14 items-center justify-center peer transition md:h-12 md:px-8 md:rounded-lg md:w-max lg:px-10 xl:px-12 ${
+          isActive ? 'relative' : 'hover:bg-gray-100 dark:hover:bg-dark-200'
+        }`}
+        href={`/${href}`}
+        tabIndex={0}
       >
         <Icon
           className={`size-6 ${
             isActive
               ? 'fill-current text-primary-100'
-              : 'fill-smoke-700 dark:fill-smoke-400'
+              : 'fill-gray-600 dark:fill-gray-400'
           }`}
           isActive={isActive}
         />

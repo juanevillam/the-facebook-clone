@@ -29,8 +29,8 @@ export const AuthCard = ({ info, showChildrenOn, children }: AuthCardProps) => {
             <div className="mb-6 w-full md:mb-4">{children}</div>
           )}
           {/* 
-            // TODO: When user is logged in, navigate to home page, otherwise navigate to auth page and the label show be go back to home and go back to log in
-            <Link label={t("link")} navigateTo={session ? "home" : "auth"} />
+            // TODO: When user is logged in, navigate to home ("/") page, otherwise navigate to auth page and the label show be go back to home ("/") and go back to log in
+            <Link label={t("link")} navigateTo={session ? "/" : "auth"} />
           */}
           <AuthLink label={t('link')} navigateTo="auth" />
         </div>

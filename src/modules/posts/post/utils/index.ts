@@ -1,0 +1,1 @@
+export { getRelativeTime } from './getRelativeTime';
