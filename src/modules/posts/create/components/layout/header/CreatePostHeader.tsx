@@ -21,11 +21,11 @@ export const CreatePostHeader = ({ Icon }: CreatePostHeaderProps) => {
   const { step } = useAppSelector((store) => store.posts.create.post);
 
   return (
-    <div className="border-b primary-border flex-center-justify-between p-1.5 md:p-4 md:justify-center">
+    <div className="primary-border flex-center-justify-between border-b p-1.5 md:justify-center md:p-4">
       <div className="flex-center space-x-1.5">
         <IconButton
           className={classNames(
-            'size-10 md:size-9 md:absolute md:primary-bg hover:secondary-bg',
+            'md:primary-bg hover:secondary-bg size-10 md:absolute md:size-9',
             {
               'right-4': step === 'default',
               'left-4': step !== 'default',

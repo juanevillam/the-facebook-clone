@@ -19,7 +19,7 @@ export const CreatePostDefaultStep = () => {
     <>
       <CreatePostDefaultStepUserInfo />
       <CreatePostDefaultStepTextArea />
-      <div className="md:p-4 md:pt-2 md:space-y-4">
+      <div className="md:space-y-4 md:p-4 md:pt-2">
         {activeGif && (
           <div className="p-3 md:p-0">
             <div className="create-post-modal-gif-size">

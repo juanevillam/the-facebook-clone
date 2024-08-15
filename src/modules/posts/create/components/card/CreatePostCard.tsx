@@ -98,18 +98,18 @@ export const CreatePostCard = () => {
   return (
     <>
       <div className="card">
-        <div className="flex-center p-3 md:px-4 space-x-2">
+        <div className="flex-center space-x-2 p-3 md:px-4">
           <ProfilePic />
           <button
             aria-label={thoughts || t('posts.create.layout.thoughts')}
-            className="border md:border-none primary-border primary-text md:accent-text primary-transition flex-grow overflow-hidden px-4 md:px-3 py-2.5 md:py-2 rounded-full text-start whitespace-nowrap md:primary-bg hover:secondary-bg"
+            className="primary-border primary-text md:accent-text primary-transition md:primary-bg hover:secondary-bg flex-grow overflow-hidden whitespace-nowrap rounded-full border px-4 py-2.5 text-start md:border-none md:px-3 md:py-2"
             onClick={handleToggleOpenable}
             type="button"
           >
             {thoughts || t('posts.create.layout.thoughts')}
           </button>
         </div>
-        <div className="border-t primary-border divide-x md:divide-x-0 primary-divide flex md:mx-4 md:py-2.5 md:space-x-1">
+        <div className="primary-border primary-divide flex divide-x border-t md:mx-4 md:space-x-1 md:divide-x-0 md:py-2.5">
           {cardItems.map((item) => (
             <CreatePostCardItem key={item.name} {...item} />
           ))}

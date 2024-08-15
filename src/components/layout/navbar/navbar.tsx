@@ -17,7 +17,7 @@ export const Navbar = () => {
   return (
     <>
       <header
-        className={`card-bg md:border-b primary-border primary-transition sticky top-0 transform transition-transform md:transform-none z-40 ${
+        className={`card-bg primary-border primary-transition sticky top-0 z-40 transform transition-transform md:transform-none md:border-b ${
           scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
         }`}
       >
@@ -27,24 +27,24 @@ export const Navbar = () => {
         >
           <div className="flex flex-none items-center">
             <Link aria-label={t('home')} href="/">
-              <FacebookLogoMark className="size-10 hidden md:block" />
-              <FacebookLogoType className="fill-primary-100 dark:fill-white h-6 md:hidden" />
+              <FacebookLogoMark className="hidden size-10 md:block" />
+              <FacebookLogoType className="h-6 fill-primary-100 md:hidden dark:fill-white" />
             </Link>
-            <div className="primary-bg primary-transition hidden h-10 items-center ml-2 p-3 rounded-full w-max xl:w-60 md:flex">
+            <div className="primary-bg primary-transition ml-2 hidden h-10 w-max items-center rounded-full p-3 md:flex xl:w-60">
               <SearchIcon className="secondary-fill size-4" />
               <label className="sr-only" htmlFor="search">
                 {t('search')}
               </label>
               <input
                 aria-label={t('search')}
-                className="primary-placeholder primary-text primary-transition bg-transparent font-light flex-shrink hidden xl:inline-flex ml-2 focus:outline-none"
+                className="primary-placeholder primary-text primary-transition ml-2 hidden flex-shrink bg-transparent font-light focus:outline-none xl:inline-flex"
                 id="search"
                 placeholder={t('search')}
                 type="text"
               />
             </div>
           </div>
-          <div className="hidden md:flex items-center mt-px space-x-2">
+          <div className="mt-px hidden items-center space-x-2 md:flex">
             <NavbarLinks />
           </div>
           <div className="flex-center space-x-2" />
@@ -53,7 +53,7 @@ export const Navbar = () => {
       </header>
       <nav
         aria-label={t('mobile-navigation')}
-        className={`flex md:hidden card-bg border-b primary-border sticky top-14 transform transition-transform z-40 ${
+        className={`card-bg primary-border sticky top-14 z-40 flex transform border-b transition-transform md:hidden ${
           scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
         }`}
       >

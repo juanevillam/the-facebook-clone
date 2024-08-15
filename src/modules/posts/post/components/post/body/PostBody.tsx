@@ -33,7 +33,7 @@ export const PostBody = ({
             <Link href={`/posts/${postId}`}>
               <Image
                 alt="Image"
-                className="max-h-[600px] object-contain w-full"
+                className="max-h-[600px] w-full object-contain"
                 height={0}
                 priority
                 sizes="100vw"
@@ -46,7 +46,7 @@ export const PostBody = ({
             <Link href={`/posts/${postId}`}>
               <Image
                 alt="GIF"
-                className="max-h-[600px] object-contain w-full"
+                className="max-h-[600px] w-full object-contain"
                 height={0}
                 priority
                 sizes="100vw"

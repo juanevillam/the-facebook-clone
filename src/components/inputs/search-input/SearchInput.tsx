@@ -25,14 +25,14 @@ export const SearchInput = ({
   const id = useId();
 
   return (
-    <div className="flex-center primary-bg primary-transition p-2.5 pr-12 md:py-2 relative rounded-full w-full">
+    <div className="flex-center primary-bg primary-transition relative w-full rounded-full p-2.5 pr-12 md:py-2">
       <SearchIcon className="secondary-fill size-4" />
       <label className="sr-only" htmlFor={id}>
         {t(label)}
       </label>
       <input
         aria-label={t(label)}
-        className="primary-placeholder primary-text primary-transition bg-transparent inline-flex ml-2 w-full focus:outline-none"
+        className="primary-placeholder primary-text primary-transition ml-2 inline-flex w-full bg-transparent focus:outline-none"
         id={id}
         onChange={onChange}
         placeholder={t(label)}
@@ -41,7 +41,7 @@ export const SearchInput = ({
       />
       {value && (
         <IconButton
-          className="absolute right-0 size-10 top-0.5 md:top-0 z-10 hover:secondary-bg"
+          className="hover:secondary-bg absolute right-0 top-0.5 z-10 size-10 md:top-0"
           icon={{
             className: 'stroke-2 secondary-stroke size-full',
             Component: CloseIcon,

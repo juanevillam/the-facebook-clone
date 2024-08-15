@@ -33,10 +33,10 @@ export const SignUpModal = () => {
       }}
     >
       <Fade in={signUpOpenableOpen}>
-        <div className="absolute bg-white left-1/2 max-w-md outline-none pb-4 pt-2 px-3 rounded-xl top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
-          <div className="border-b primary-border-light-full flex justify-between mb-4 pb-3">
+        <div className="absolute left-1/2 top-1/2 w-full max-w-md -translate-x-1/2 -translate-y-1/2 transform rounded-xl bg-white px-3 pb-4 pt-2 outline-none">
+          <div className="primary-border-light-full mb-4 flex justify-between border-b pb-3">
             <div>
-              <h1 className="font-semibold text-3xl" id="sign-up-modal-title">
+              <h1 className="text-3xl font-semibold" id="sign-up-modal-title">
                 {t('title')}
               </h1>
               <p className="ml-1 text-gray-600" id="sign-up-modal-description">

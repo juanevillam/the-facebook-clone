@@ -23,7 +23,7 @@ export const CreatePostDialog = ({
       open={isOpenableOpen}
       translateFrom="y"
     >
-      <div className="flex flex-col h-full">
+      <div className="flex h-full flex-col">
         <CreatePostHeader
           Icon={{
             Component: ArrowLeftIcon,

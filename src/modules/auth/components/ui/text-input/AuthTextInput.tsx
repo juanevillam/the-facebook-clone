@@ -1,7 +1,5 @@
 'use client';
 
-// TODO: Classnames rework
-
 import { Field, useField, useFormikContext } from 'formik';
 import { useTranslations } from 'next-intl';
 
@@ -45,25 +43,25 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
           aria-describedby={`${props.name}-error`}
           aria-invalid={meta.error && meta.touched ? 'true' : 'false'}
           aria-label={placeholder}
-          className={`border border-gray-200 duration-150 focus:border-transparent focus:outline-none focus:ring-primary-100 focus:ring-2 placeholder-gray-500 px-4 py-3.5 rounded-md transition w-full ${
+          className={`w-full rounded-md border border-gray-200 px-4 py-3.5 placeholder-gray-500 transition duration-150 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-100 ${
             varianttype === 'standard'
               ? 'bg-white hover:bg-gray-100'
               : 'bg-gray-100 hover:bg-gray-200'
           } ${
             meta.touched &&
             meta.error &&
-            'focus:ring-error-100 ring-error-100 ring-2 md:mb-1'
+            'ring-2 ring-error-100 focus:ring-error-100 md:mb-1'
           }`}
           {...field}
           {...props}
         />
       ) : (
-        <div className={`h-12 relative w-full ${!meta.error && 'mb-[22px]'}`}>
+        <div className={`relative h-12 w-full ${!meta.error && 'mb-[22px]'}`}>
           <input
             autoComplete="on"
             aria-label={placeholder}
             aria-invalid={meta.error && meta.touched ? 'true' : 'false'}
-            className={`absolute bg-transparent border-b-2 focus:text-dark-100 h-[52px] left-0 outline-none peer pl-3 pr-16 pt-2 top-0 w-full z-10 ${
+            className={`peer absolute left-0 top-0 z-10 h-[52px] w-full border-b-2 bg-transparent pl-3 pr-16 pt-2 outline-none focus:text-dark-100 ${
               meta.touched && meta.error
                 ? 'border-b-error-100 focus:border-b-error-100'
                 : 'border-b-gray-200 focus:border-b-primary-100'
@@ -73,17 +71,17 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
             placeholder=" "
           />
           <label
-            className={`absolute duration-150 peer-focus:font-medium peer-focus:text-xs peer-focus:-top-[0.1rem] peer-focus:z-10 pointer-events-none px-2 text-gray-500 transition-all z-10 ${
+            className={`pointer-events-none absolute z-10 px-2 text-gray-500 transition-all duration-150 peer-focus:-top-[0.1rem] peer-focus:z-10 peer-focus:text-xs peer-focus:font-medium ${
               meta.touched && meta.error
                 ? 'peer-focus:text-error-100'
                 : 'peer-focus:text-primary-100'
-            } ${field.value ? 'font-medium text-xs -top-[0.1rem]' : 'top-4'}`}
+            } ${field.value ? '-top-[0.1rem] text-xs font-medium' : 'top-4'}`}
           >
             {placeholder}
           </label>
           {field.value && (
             <IconButton
-              className="absolute right-2 size-10 top-2 z-10"
+              className="absolute right-2 top-2 z-10 size-10"
               icon={{
                 className: 'size-full stroke-[1.5] text-black',
                 Component: CloseIcon,
@@ -97,12 +95,12 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
       {meta.touched && meta.error && (
         <div
           id={`${props.name}-error`}
-          className="flex items-center px-1.5 py-1.5 space-x-1.5 md:py-0.5 md:space-x-1"
+          className="flex items-center space-x-1.5 px-1.5 py-1.5 md:space-x-1 md:py-0.5"
           aria-live="assertive"
           role="alert"
         >
           <AlertTriangleImage size={16} />
-          <label className="font-medium text-error-100 text-sm">
+          <label className="text-sm font-medium text-error-100">
             {t(meta.error[0], { min: minLength })}
           </label>
         </div>

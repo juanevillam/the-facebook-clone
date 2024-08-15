@@ -26,10 +26,10 @@ export const SignUpDialog = () => {
 
   return (
     <MobileDialog open={signUpOpenableOpen} translateFrom="x">
-      <div className="bg-white relative size-full">
-        <div className="border-b border-gray-300 flex-center p-1.5 space-x-1.5">
+      <div className="relative size-full bg-white">
+        <div className="flex-center space-x-1.5 border-b border-gray-300 p-1.5">
           <IconButton
-            className="size-10 hover:secondary-bg-light"
+            className="hover:secondary-bg-light size-10"
             icon={{
               className: 'stroke-[2.5] primary-stroke-light size-full',
               Component: ArrowLeftIcon,
@@ -41,9 +41,9 @@ export const SignUpDialog = () => {
             {t(`auth.sign-up.dialog.${step}-step.description`)}
           </h1>
         </div>
-        <div className="mt-44 mx-auto space-y-6 w-11/12">
+        <div className="mx-auto mt-44 w-11/12 space-y-6">
           <div className="space-y-3 text-center">
-            <h1 className="font-semibold text-2xl">
+            <h1 className="text-2xl font-semibold">
               {t(`auth.sign-up.dialog.${step}-step.title`)}
             </h1>
             <p className="text-gray-600">

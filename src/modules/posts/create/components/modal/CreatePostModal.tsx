@@ -34,7 +34,7 @@ export const CreatePostModal = ({
       }}
     >
       <Fade in={isOpenableOpen}>
-        <div className="absolute card left-1/2 max-w-lg outline-none top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
+        <div className="card absolute left-1/2 top-1/2 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 transform outline-none">
           <CreatePostHeader
             Icon={{
               Component: step === 'default' ? CloseIcon : ArrowLeftIcon,

@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 
 import { SharedSvg } from '@/assets/types';
-import { Tooltip } from '@/components/tooltip/Tooltip';
+import { Tooltip } from '@/components';
 
 type NavbarDropDownProps = {
   className?: string;
@@ -22,10 +22,10 @@ export const NavbarDropDown = ({
     <Tooltip label={t(label)} position="-bottom-11">
       <button
         aria-label={label}
-        className={`flex-center-justify-center primary-transition p-[10px] rounded-full size-10 ${
+        className={`flex-center-justify-center primary-transition size-10 rounded-full p-[10px] ${
           isActive
-            ? 'bg-primary-500 dark:bg-primary-300 hover:bg-primary-600 dark:hover:bg-primary-400'
-            : 'peer bg-gray-200 dark:bg-neutral-700 hover:bg-gray-300 dark:hover:bg-neutral-600'
+            ? 'bg-primary-500 hover:bg-primary-600 dark:bg-primary-300 dark:hover:bg-primary-400'
+            : 'peer bg-gray-200 hover:bg-gray-300 dark:bg-neutral-700 dark:hover:bg-neutral-600'
         } ${className}`}
       >
         <Icon

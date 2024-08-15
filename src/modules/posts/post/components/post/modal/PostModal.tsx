@@ -109,9 +109,9 @@ export const PostModal = ({ id, post }: PostModalProps) => {
       }}
     >
       <Fade in={isOpen}>
-        <div className="card absolute h-5/6 left-1/2 outline-none top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12">
-          <div className="bg-black flex h-full overflow-hidden rounded-lg">
-            <div className="flex-center absolute left-4 space-x-4 top-4">
+        <div className="card absolute left-1/2 top-1/2 h-5/6 w-11/12 -translate-x-1/2 -translate-y-1/2 transform outline-none">
+          <div className="flex h-full overflow-hidden rounded-lg bg-black">
+            <div className="flex-center absolute left-4 top-4 space-x-4">
               <IconButton
                 className="size-10 hover:bg-neutral-700"
                 icon={{
@@ -121,7 +121,7 @@ export const PostModal = ({ id, post }: PostModalProps) => {
                 }}
                 onClick={closeModal}
               />
-              <FacebookLogoMark className="size-10 hidden md:block" />
+              <FacebookLogoMark className="hidden size-10 md:block" />
             </div>
             <div className="flex-grow">
               {media && (
@@ -129,7 +129,7 @@ export const PostModal = ({ id, post }: PostModalProps) => {
                   {mediaType === 'image' && (
                     <Image
                       alt="Image"
-                      className="object-contain size-full"
+                      className="size-full object-contain"
                       height={0}
                       priority
                       sizes="100vw"
@@ -140,7 +140,7 @@ export const PostModal = ({ id, post }: PostModalProps) => {
                   {mediaType === 'gif' && (
                     <Image
                       alt="GIF"
-                      className="object-contain size-full"
+                      className="size-full object-contain"
                       height={0}
                       priority
                       sizes="100vw"
@@ -170,7 +170,7 @@ export const PostModal = ({ id, post }: PostModalProps) => {
               <div className="md:px-4">
                 {(optimisticLikes.length > 0 ||
                   optimisticComments.length > 0) && (
-                  <div className="flex-center-justify-between py-2 md:py-3 px-3 md:px-0 w-full">
+                  <div className="flex-center-justify-between w-full px-3 py-2 md:px-0 md:py-3">
                     <div className="flex-center space-x-1.5">
                       <LikeIcon className="size-4 md:size-5" />
                       <p className="secondary-text text-sm md:hover:underline">

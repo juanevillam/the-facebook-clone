@@ -8,7 +8,7 @@ type AuthLinkProps = {
 export const AuthLink = ({ label, navigateTo }: AuthLinkProps) => {
   return (
     <Link
-      className="font-semibold text-primary-100 hover:text-primary-200 text-sm hover:underline"
+      className="text-sm font-semibold text-primary-100 hover:text-primary-200 hover:underline"
       href={`/${navigateTo}`}
     >
       {label}

@@ -14,10 +14,10 @@ export const LayoutWrapper = ({
 
   return (
     <div
-      className="bg-gray-100 dark:bg-neutral-900 primary-transition h-full min-h-screen"
+      className="primary-transition h-full min-h-screen bg-gray-100 dark:bg-neutral-900"
       id="facebook-clone"
     >
-      <div className="max-w-screen-2xl mx-auto">
+      <div className="mx-auto max-w-screen-2xl">
         <NextIntlClientProvider
           locale={locale}
           messages={pick(messages, 'navbar', 'images')}

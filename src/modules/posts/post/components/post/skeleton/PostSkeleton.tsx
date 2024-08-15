@@ -3,7 +3,7 @@ import { Skeleton } from '@mui/material';
 export const PostSkeleton = () => {
   return (
     <div className="card pb-3 md:pb-6">
-      <div className="flex-justify-between p-3 md:px-4 space-x-2">
+      <div className="flex-justify-between space-x-2 p-3 md:px-4">
         <div className="flex space-x-2">
           <Skeleton
             className="skeleton-bg"

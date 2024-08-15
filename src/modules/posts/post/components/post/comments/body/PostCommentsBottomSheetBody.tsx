@@ -17,7 +17,7 @@ export const PostCommentsBottomSheetBody = ({
   return (
     <div className="h-full overflow-y-auto">
       {optimisticComments.length > 0 ? (
-        <div className="pb-2 px-4 space-y-4">
+        <div className="space-y-4 px-4 pb-2">
           {optimisticComments.map((optimisticComment, index) => (
             <PostCommentsBottomSheetBodyItem
               key={index}
@@ -26,8 +26,8 @@ export const PostCommentsBottomSheetBody = ({
           ))}
         </div>
       ) : (
-        <div className="flex-center-justify-center flex-col h-full">
-          <ChatBubbleLeftRightIcon className="secondary-fill size-40 mb-4" />
+        <div className="flex-center-justify-center h-full flex-col">
+          <ChatBubbleLeftRightIcon className="secondary-fill mb-4 size-40" />
           <h1 className="secondary-text text-xl">{t('no-comments-yet')}</h1>
         </div>
       )}

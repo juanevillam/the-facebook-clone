@@ -38,9 +38,9 @@ export const AuthSocial = () => {
         <AuthSocialButton Icon={GithubIcon} onClick={handleGithubSignIn} />
       </div>
       <div className="flex-center py-1.5">
-        <div className="border-t primary-border-light flex-grow" />
+        <div className="primary-border-light flex-grow border-t" />
         <span className="mx-4 text-gray-500">{t('auth.social.label')}</span>
-        <div className="border-t primary-border-light flex-grow" />
+        <div className="primary-border-light flex-grow border-t" />
       </div>
     </>
   );

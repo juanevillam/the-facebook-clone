@@ -15,7 +15,7 @@ const ProtectedPage = ({ params: { locale } }: PageProps) => {
   const messages = useMessages();
 
   return (
-    <div className="max-w-3xl mx-auto space-y-1.5 md:max-w-xl md:pt-4 md:space-y-4 lg:max-w-2xl">
+    <div className="mx-auto max-w-3xl space-y-1.5 md:max-w-xl md:space-y-4 md:pt-4 lg:max-w-2xl">
       <NextIntlClientProvider
         messages={pick(
           messages,
@@ -40,7 +40,7 @@ const ProtectedPage = ({ params: { locale } }: PageProps) => {
           await signOut();
         }}
       >
-        <button className="text-black text-2xl dark:text-white" type="submit">
+        <button className="text-2xl text-black dark:text-white" type="submit">
           Sign out
         </button>
       </form>

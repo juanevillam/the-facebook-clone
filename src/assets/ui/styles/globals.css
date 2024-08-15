@@ -42,7 +42,7 @@
 
   /* Border Utilities */
   .primary-border {
-    @apply border-gray-300 dark:border-neutral-700 md:border-gray-200;
+    @apply border-gray-300 md:border-gray-200 dark:border-neutral-700;
   }
 
   .primary-border-light {
@@ -55,7 +55,7 @@
 
   /* Divide Utilities */
   .primary-divide {
-    @apply divide-gray-300 dark:divide-neutral-700 md:divide-gray-200;
+    @apply divide-gray-300 md:divide-gray-200 dark:divide-neutral-700;
   }
 
   /* Fill Utilities */
@@ -120,7 +120,7 @@
 
   /* Bottom sheet Utilities */
   .bottom-sheet-content {
-    @apply card-bg bottom-0 fixed left-0 pt-3 right-0 rounded-t-2xl z-40 md:w-1/2 md:mx-auto;
+    @apply card-bg fixed bottom-0 left-0 right-0 z-40 rounded-t-2xl pt-3 md:mx-auto md:w-1/2;
   }
 
   .bottom-sheet-handle {
@@ -128,7 +128,7 @@
   }
 
   .bottom-sheet-overlay {
-    @apply bg-overlay-100 fixed inset-0 z-40;
+    @apply fixed inset-0 z-40 bg-overlay-100;
   }
 
   /* Card Utilities */
@@ -155,11 +155,11 @@
   }
 
   .create-post-modal-spacing-area {
-    @apply md:pb-3 md:px-3;
+    @apply md:px-3 md:pb-3;
   }
 
   .modal-scrollable-area {
-    @apply h-full md:h-96 overflow-y-auto;
+    @apply h-full overflow-y-auto md:h-96;
   }
 
   /* Responsive Utilities */
@@ -173,6 +173,6 @@
 
   /* Transition Utilities */
   .primary-transition {
-    @apply duration-150 transition;
+    @apply transition duration-150;
   }
 }

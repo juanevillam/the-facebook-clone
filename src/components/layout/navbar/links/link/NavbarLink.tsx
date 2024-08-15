@@ -20,7 +20,7 @@ export const NavbarLink = ({ Icon, href, label }: NavbarLinkProps) => {
     <Tooltip label={t(label)} position="-bottom-10">
       <Link
         aria-label={label}
-        className={`peer flex-center-justify-center primary-transition h-14 md:h-12 md:px-8 lg:px-10 xl:px-12 md:rounded-lg md:w-max ${
+        className={`flex-center-justify-center primary-transition peer h-14 md:h-12 md:w-max md:rounded-lg md:px-8 lg:px-10 xl:px-12 ${
           isActive ? 'relative' : 'hover:primary-bg'
         }`}
         href={`/${href}`}
@@ -35,7 +35,7 @@ export const NavbarLink = ({ Icon, href, label }: NavbarLinkProps) => {
           isActive={isActive}
         />
         {isActive && (
-          <div className="absolute bg-primary-100 -bottom-0.5 md:-bottom-1 h-[3px] rounded-sm w-full z-10" />
+          <div className="absolute -bottom-0.5 z-10 h-[3px] w-full rounded-sm bg-primary-100 md:-bottom-1" />
         )}
       </Link>
     </Tooltip>

@@ -134,7 +134,7 @@ export const LoginForm = () => {
               navigateTo="auth/forgot-password"
             />
           </div>
-          <hr className="hidden w-full md:block md:mb-4" />
+          <hr className="hidden w-full md:mb-4 md:block" />
           <Button
             disabled={isPending}
             label={t('auth.login.form.secondary-button')}

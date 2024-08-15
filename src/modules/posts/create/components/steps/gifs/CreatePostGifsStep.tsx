@@ -114,7 +114,7 @@ export const CreatePostGifsStep = () => {
   };
 
   const GifsColumn = ({ index }: { index: number }) => (
-    <div className="gap-3 md:gap-4 grid">
+    <div className="grid gap-3 md:gap-4">
       {gifs
         .filter((_, i) => i % 2 === index)
         .map((gif: GIF) => (
@@ -148,12 +148,12 @@ export const CreatePostGifsStep = () => {
         <CreatePostStepMessage Icon={GifIcon} message={t('info')} />
       ) : (
         <>
-          <div className="gap-3 md:gap-4 grid grid-cols-2 p-3 md:p-4 md:pt-0">
+          <div className="grid grid-cols-2 gap-3 p-3 md:gap-4 md:p-4 md:pt-0">
             <GifsColumn index={0} />
             <GifsColumn index={1} />
           </div>
           <Button
-            className="pb-3 md:pb-4 px-3 md:px-4"
+            className="px-3 pb-3 md:px-4 md:pb-4"
             disabled={loadingMore}
             fullWidth
             label={t('button.label')}

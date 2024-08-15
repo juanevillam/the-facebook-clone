@@ -81,7 +81,7 @@ export const PostFooter = ({
     <div className="md:px-4">
       {(optimisticLikes.length > 0 || optimisticComments.length > 0) && (
         <button
-          className="flex-center-justify-between primary-transition py-2 md:py-3 px-3 md:px-0 w-full hover:primary-bg md:hover:bg-transparent"
+          className="flex-center-justify-between primary-transition hover:primary-bg w-full px-3 py-2 md:px-0 md:py-3 md:hover:bg-transparent"
           onClick={openCommentsBottomSheet}
           type="button"
         >

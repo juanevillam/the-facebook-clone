@@ -35,7 +35,7 @@ export const PostOptions = ({
     <Drawer.Root open={isBottomSheetOpen} onClose={closeBottomSheetAvailable}>
       <Drawer.Trigger asChild>
         <IconButton
-          className="-mt-1 size-9 hover:primary-bg"
+          className="hover:primary-bg -mt-1 size-9"
           icon={{
             className: 'secondary-fill size-full',
             Component: DotsHorizontalIcon,

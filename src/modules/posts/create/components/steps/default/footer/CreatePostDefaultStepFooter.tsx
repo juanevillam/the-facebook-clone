@@ -75,18 +75,18 @@ export const CreatePostDefaultStepFooter = () => {
   return (
     <div
       className={classNames(
-        'flex-center-justify-between primary-border md:border md:p-3 md:rounded-lg',
+        'flex-center-justify-between primary-border md:rounded-lg md:border md:p-3',
         {
           'border-t': activeGif,
         }
       )}
     >
-      <h1 className="only-desktop primary-text font-semibold text-sm">
+      <h1 className="only-desktop primary-text text-sm font-semibold">
         {t('posts.create.steps.default.footer')}
       </h1>
       <div
-        className={classNames('w-full md:w-max md:flex md:space-x-1', {
-          'divide-x md:divide-none primary-divide flex': activeGif,
+        className={classNames('w-full md:flex md:w-max md:space-x-1', {
+          'primary-divide flex divide-x md:divide-none': activeGif,
         })}
       >
         {cardItems.map((item) => (

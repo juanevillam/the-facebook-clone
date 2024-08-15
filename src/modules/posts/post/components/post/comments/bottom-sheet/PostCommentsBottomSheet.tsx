@@ -39,7 +39,7 @@ export const PostCommentsBottomSheet = ({
         <Drawer.Description className="sr-only">
           {t('description')}
         </Drawer.Description>
-        <div className="flex flex-col h-full">
+        <div className="flex h-full flex-col">
           <Drawer.Handle className="bottom-sheet-handle" />
           <PostCommentsBottomSheetHeader
             handleOptimisticLike={handleOptimisticLike}

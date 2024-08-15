@@ -58,10 +58,10 @@ export const CreatePostMediaStep = ({
   };
 
   return (
-    <div className="h-full md:h-96 overflow-hidden relative md:border md:primary-border md:m-3 md:rounded-lg">
+    <div className="md:primary-border relative h-full overflow-hidden md:m-3 md:h-96 md:rounded-lg md:border">
       {file && (
         <IconButton
-          className="primary-bg hover:secondary-bg absolute right-2 size-10 md:size-9 top-2 z-10"
+          className="primary-bg hover:secondary-bg absolute right-2 top-2 z-10 size-10 md:size-9"
           icon={{
             className: 'stroke-2 primary-stroke md:secondary-stroke size-full',
             Component: CloseIcon,
@@ -72,7 +72,7 @@ export const CreatePostMediaStep = ({
       )}
       <button
         className={classNames(
-          'primary-transition overflow-hidden relative size-full',
+          'primary-transition relative size-full overflow-hidden',
           {
             'bg-black': file,
             'hover:primary-bg': !file,
@@ -85,7 +85,7 @@ export const CreatePostMediaStep = ({
           type === 'image' ? (
             <Image
               alt={t('layout.footer.photo-video.short')}
-              className="object-contain rounded-lg"
+              className="rounded-lg object-contain"
               fill
               src={file as string}
             />

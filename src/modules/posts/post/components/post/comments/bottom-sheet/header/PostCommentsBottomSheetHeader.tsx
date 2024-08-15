@@ -21,25 +21,25 @@ export const PostCommentsBottomSheetHeader = ({
     optimisticLikes.length > 0 && (
       <div className="flex-center justify-between p-2">
         <button
-          className="flex-center-justify-center primary-transition pl-2 py-1 rounded-full space-x-1.5 hover:primary-bg"
+          className="flex-center-justify-center primary-transition hover:primary-bg space-x-1.5 rounded-full py-1 pl-2"
           type="button"
         >
           <LikeIcon className="size-5" />
-          <p className="primary-text font-medium text-lg">
+          <p className="primary-text text-lg font-medium">
             {optimisticLikes.some(isMyLike) && t('you')}
             {!optimisticLikes.some(isMyLike) && optimisticLikes.length}
             {optimisticLikes.some(isMyLike) &&
               optimisticLikes.length > 1 &&
               ` ${t('and')} ${optimisticLikes.length - 1} ${t('more')}`}
           </p>
-          <ChevronRightIcon className="stroke-[1.5] primary-stroke fill-none size-6" />
+          <ChevronRightIcon className="primary-stroke size-6 fill-none stroke-[1.5]" />
         </button>
         <button
-          className="flex-center-justify-center primary-transition p-1 rounded-full hover:primary-bg"
+          className="flex-center-justify-center primary-transition hover:primary-bg rounded-full p-1"
           onClick={handleOptimisticLike}
         >
           <HandThumbUpIcon
-            className={classNames('stroke-[1.5] size-7', {
+            className={classNames('size-7 stroke-[1.5]', {
               'fill-primary-100': optimisticLikes.some(isMyLike),
               'primary-stroke fill-none': !optimisticLikes.some(isMyLike),
             })}

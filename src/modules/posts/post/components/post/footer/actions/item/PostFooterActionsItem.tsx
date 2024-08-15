@@ -23,12 +23,12 @@ export const PostFooterActionsItem = ({
   return (
     <div className="w-full">
       <button
-        className="flex-center-justify-center primary-transition px-4 md:px-3 py-2.5 md:py-2 space-x-2 w-full md:rounded-lg hover:primary-bg"
+        className="flex-center-justify-center primary-transition hover:primary-bg w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2"
         onClick={onClick}
         type="button"
       >
         <Icon
-          className={classNames('stroke-[1.5] size-5 md:size-6', {
+          className={classNames('size-5 stroke-[1.5] md:size-6', {
             'fill-primary-100': isActive,
             'primary-stroke md:accent-stroke fill-none': !isActive,
           })}

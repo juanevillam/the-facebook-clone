@@ -43,9 +43,9 @@ export const PostFooterActions = ({
 
   return (
     <div
-      className={classNames('flex md:py-2.5 md:space-x-1', {
-        'md:border-t md:primary-border': showBorderT,
-        'md:border-y md:primary-border md:py-1.5': isPostModal,
+      className={classNames('flex md:space-x-1 md:py-2.5', {
+        'md:primary-border md:border-t': showBorderT,
+        'md:primary-border md:border-y md:py-1.5': isPostModal,
       })}
     >
       <PostFooterActionsItem

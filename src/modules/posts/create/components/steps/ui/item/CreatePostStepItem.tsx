@@ -20,7 +20,7 @@ export const CreatePostStepItem = ({
     <div
       aria-pressed={active}
       className={classNames(
-        'border-b md:border-none primary-border primary-transition flex-center-justify-between px-3 py-3 md:py-2 space-x-2 w-full md:rounded-lg hover:primary-bg',
+        'primary-border primary-transition flex-center-justify-between hover:primary-bg w-full space-x-2 border-b px-3 py-3 md:rounded-lg md:border-none md:py-2',
         {
           'active-bg': active,
           'border-r': isEven,
@@ -36,7 +36,7 @@ export const CreatePostStepItem = ({
       {children}
       {active && (
         <IconButton
-          className="p-px size-6 hover:secondary-bg"
+          className="hover:secondary-bg size-6 p-px"
           icon={{
             className: 'stroke-2 secondary-stroke size-full',
             Component: CloseIcon,

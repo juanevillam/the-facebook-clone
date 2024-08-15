@@ -16,7 +16,7 @@ export const CreatePostCardItem = ({
     <button
       aria-disabled={disabled}
       className={classNames(
-        'flex-center-justify-center primary-transition px-4 md:px-3 py-2.5 md:py-2 space-x-2 w-full md:rounded-lg hover:primary-bg',
+        'flex-center-justify-center primary-transition hover:primary-bg w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
         {
           'active-bg': active,
           'opacity-50': disabled,
@@ -34,7 +34,7 @@ export const CreatePostCardItem = ({
         quality={100}
         width={72}
       />
-      <p className="only-desktop accent-text font-medium text-sm">
+      <p className="only-desktop accent-text text-sm font-medium">
         {t('detailed')}
       </p>
       <p className="only-mobile primary-text text-sm">{t('short')}</p>

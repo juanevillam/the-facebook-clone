@@ -94,7 +94,7 @@ export const PostOptionsBottomSheet = ({
         <Drawer.Description className="sr-only">
           {t('posts.post.options.bottom-sheet.description')}
         </Drawer.Description>
-        <div className="py-1.5 md:p-3 rounded-lg">
+        <div className="rounded-lg py-1.5 md:p-3">
           <PostOptionsBottomSheetItem
             IconComponent={
               optimisticSaves.some(isMySave) ? BookmarkSlashIcon : BookmarkIcon
@@ -105,13 +105,13 @@ export const PostOptionsBottomSheet = ({
           />
           {isPostMine && (
             <>
-              <hr className="border-t primary-border my-1.5 md:my-2" />
+              <hr className="primary-border my-1.5 border-t md:my-2" />
               <PostOptionsBottomSheetItem
                 IconComponent={PencilIcon}
                 name="edit"
                 onClick={() => console.log('edit')}
               />
-              <hr className="border-t primary-border my-1.5 md:my-2" />
+              <hr className="primary-border my-1.5 border-t md:my-2" />
               <PostOptionsBottomSheetItem
                 IconComponent={TrashIcon}
                 name="delete"

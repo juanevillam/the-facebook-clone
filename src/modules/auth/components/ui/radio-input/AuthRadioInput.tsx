@@ -15,8 +15,8 @@ export const AuthRadioInput = (props: AuthRadioInputProps) => {
 
   return (
     <label
-      className={`border primary-border-light-full flex-center-justify-between cursor-pointer mb-4 px-4 py-3.5 rounded-md w-full ${
-        meta.touched && meta.error && 'ring-error-100 ring-2'
+      className={`primary-border-light-full flex-center-justify-between mb-4 w-full cursor-pointer rounded-md border px-4 py-3.5 ${
+        meta.touched && meta.error && 'ring-2 ring-error-100'
       }`}
       htmlFor={`${name}-${value}`}
     >
@@ -31,13 +31,13 @@ export const AuthRadioInput = (props: AuthRadioInputProps) => {
         {...field}
       />
       <span
-        className={`border-2 flex-center-justify-center rounded-full size-4 ${
+        className={`flex-center-justify-center size-4 rounded-full border-2 ${
           field.checked
-            ? 'bg-primary-100 border-primary-100'
+            ? 'border-primary-100 bg-primary-100'
             : 'border-gray-300'
         }`}
       >
-        {field.checked && <span className="bg-white rounded-full size-2" />}
+        {field.checked && <span className="size-2 rounded-full bg-white" />}
       </span>
     </label>
   );

@@ -48,7 +48,7 @@ export const SignUpModalForm = ({
   };
 
   return (
-    <div className="px-1 space-y-4">
+    <div className="space-y-4 px-1">
       <AuthSocial />
       <Formik
         initialValues={{
@@ -86,7 +86,7 @@ export const SignUpModalForm = ({
             variant="outlined"
             varianttype="secondary"
           />
-          <p className="mb-1 text-gray-700 text-xs" id="gender-label">
+          <p className="mb-1 text-xs text-gray-700" id="gender-label">
             {t('form.fields.gender.label')}
           </p>
           <div

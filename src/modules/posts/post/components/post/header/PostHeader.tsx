@@ -28,8 +28,8 @@ export const PostHeader = ({
   postUserId,
 }: PostHeaderProps) => {
   return (
-    <div className="flex items-start md:items-center justify-between p-3 pr-1.5 md:pr-3 space-x-2 md:px-4 md:relative">
-      <div className="flex space-x-2 w-full">
+    <div className="flex items-start justify-between space-x-2 p-3 pr-1.5 md:relative md:items-center md:px-4 md:pr-3">
+      <div className="flex w-full space-x-2">
         <ProfilePic image={image} name={name} />
         <div>
           <PostUserInfo

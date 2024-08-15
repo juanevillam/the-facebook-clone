@@ -39,16 +39,16 @@ export const PostCommentsBottomSheetFooter = ({
 
   return (
     <form
-      className="bg-white dark:bg-neutral-800 border-t primary-border flex-center space-x-2 p-2 md:p-3 w-full"
+      className="primary-border flex-center w-full space-x-2 border-t bg-white p-2 md:p-3 dark:bg-neutral-800"
       onSubmit={handleOptimisticComment}
     >
-      <div className="flex-center primary-bg p-2.5 rounded-full w-full">
+      <div className="flex-center primary-bg w-full rounded-full p-2.5">
         <label className="sr-only" htmlFor="post-comments-bottom-sheet-input">
           {t('posts.post.comments.bottom-sheet.title')}
         </label>
         <input
           aria-label={t('posts.post.comments.bottom-sheet.title')}
-          className="primary-placeholder primary-text primary-transition bg-transparent inline-flex ml-2 w-full focus:outline-none"
+          className="primary-placeholder primary-text primary-transition ml-2 inline-flex w-full bg-transparent focus:outline-none"
           id="post-comments-bottom-sheet-input"
           onChange={handleComment}
           placeholder={`${t('posts.post.comments.bottom-sheet.title')}...`}
@@ -58,11 +58,11 @@ export const PostCommentsBottomSheetFooter = ({
       </div>
       {thoughts && (
         <button
-          className="flex-center-justify-center primary-transition p-2 rounded-full hover:primary-bg"
+          className="flex-center-justify-center primary-transition hover:primary-bg rounded-full p-2"
           onClick={handleOptimisticComment}
           type="submit"
         >
-          <PaperPlaneIcon className="fill-primary-100 size-7" />
+          <PaperPlaneIcon className="size-7 fill-primary-100" />
         </button>
       )}
     </form>

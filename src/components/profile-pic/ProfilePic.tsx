@@ -20,7 +20,7 @@ export const ProfilePic = ({ image, name }: ProfilePicProps) => {
   return imagetoShow ? (
     <Image
       alt={t('profile-pic', { name: nametoShow || 'user' })}
-      className="rounded-full size-10"
+      className="size-10 rounded-full"
       height={80}
       loading="eager"
       src={imagetoShow}
