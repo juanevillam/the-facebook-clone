@@ -15,6 +15,7 @@ import { CommentExtended, LikeExtended } from '../../../assets/types';
 import { PostCommentsBottomSheet } from '../comments/bottom-sheet';
 
 type PostFooterProps = {
+  isPostModal?: boolean;
   media: string;
   postComments: CommentExtended[];
   postLikes: LikeExtended[];
@@ -22,6 +23,7 @@ type PostFooterProps = {
 };
 
 export const PostFooter = ({
+  isPostModal,
   media,
   postComments,
   postLikes,
@@ -93,13 +95,19 @@ export const PostFooter = ({
               {!optimisticLikes.some(isMyLike) && optimisticLikes.length}
               {optimisticLikes.some(isMyLike) &&
                 optimisticLikes.length > 1 &&
-                ` ${t('posts.post.footer.likes.and')} ${optimisticLikes.length - 1} ${optimisticLikes.length > 2 ? t('posts.post.footer.likes.people') : t('posts.post.footer.likes.person')} ${t('posts.post.footer.likes.more')}`}
+                ` ${t('posts.post.footer.likes.and')} ${
+                  optimisticLikes.length - 1
+                } ${
+                  optimisticLikes.length > 2
+                    ? t('posts.post.footer.likes.people')
+                    : t('posts.post.footer.likes.person')
+                } ${t('posts.post.footer.likes.more')}`}
             </p>
           </div>
-          {optimisticComments.length > 1 && (
+          {optimisticComments.length > 0 && (
             <p className="secondary-text text-sm md:hover:underline">
               {`${optimisticComments.length} `}
-              {optimisticLikes.length === 1
+              {optimisticComments.length === 1
                 ? t('posts.post.footer.comments.comment')
                 : t('posts.post.footer.comments.comments')}
             </p>
@@ -110,6 +118,7 @@ export const PostFooter = ({
         handleOptimisticLike={handleOptimisticLike}
         isCommentsBottomSheetOpen={isCommentsBottomSheetOpen}
         isMyLike={isMyLike}
+        isPostModal={isPostModal}
         openCommentsBottomSheet={openCommentsBottomSheet}
         optimisticLikes={optimisticLikes}
         postId={postId}

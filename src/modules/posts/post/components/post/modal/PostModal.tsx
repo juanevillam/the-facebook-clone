@@ -1,28 +1,19 @@
 'use client';
 
-import { useOptimistic, useTransition } from 'react';
-
 import { Backdrop, Fade, Modal } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useTranslations } from 'next-intl';
-import showToast from 'react-hot-toast';
 import ReactPlayer from 'react-player';
 
-import { CloseIcon, LikeIcon } from '@/assets/ui/icons';
+import { CloseIcon } from '@/assets/ui/icons';
 import { FacebookLogoMark } from '@/assets/ui/icons/brand';
 import { IconButton } from '@/components/buttons';
 import { useMount } from '@/hooks';
 import { Feeling } from '@/modules/posts/create/assets/types';
 import { usePathname } from '@/navigation';
 
-import { likePost } from '../../../actions';
-import {
-  CommentExtended,
-  LikeExtended,
-  PostExtended,
-} from '../../../assets/types';
-import { PostFooterActions } from '../footer/actions/PostFooterActions';
+import { PostExtended } from '../../../assets/types';
+import { PostFooter } from '../footer/PostFooter';
 import { PostHeader } from '../header/PostHeader';
 
 type PostModalProps = {
@@ -45,53 +36,12 @@ export const PostModal = ({ id, post }: PostModalProps) => {
     user,
   } = post;
 
-  const [isPending, startTransition] = useTransition();
   const router = useRouter();
-  const t = useTranslations();
   const mount = useMount();
   const pathname = usePathname();
   const isOpen = pathname === `/posts/${id}`;
 
   const closeModal = () => router.back();
-
-  const isMyLike = (like: LikeExtended) =>
-    like.userId === user?.id && like.postId === postId;
-
-  const [optimisticLikes, addOptimisticLike] = useOptimistic<LikeExtended[]>(
-    likes,
-    // @ts-ignore
-    (likes: LikeExtended[], newLike: LikeExtended) =>
-      likes.some(isMyLike)
-        ? likes.filter((like) => like.userId !== user?.id)
-        : [...likes, newLike]
-  );
-
-  const [optimisticComments, addOptimisticComment] = useOptimistic<
-    CommentExtended[]
-  >(
-    comments,
-    // @ts-ignore
-    (comments: CommentExtended[], newComment: CommentExtended) => [
-      {
-        postId,
-        thoughts: newComment,
-        user,
-        userId: user?.id,
-      },
-      ...comments,
-    ]
-  );
-
-  const handleOptimisticLike = async () => {
-    startTransition(() => addOptimisticLike({ postId, userId: user?.id }));
-
-    try {
-      await likePost(postId, user?.id as string);
-    } catch (error) {
-      error instanceof Error &&
-        showToast.error(t(`toast-messages.error.${error.message}`));
-    }
-  };
 
   if (!mount) return null;
 
@@ -110,52 +60,55 @@ export const PostModal = ({ id, post }: PostModalProps) => {
     >
       <Fade in={isOpen}>
         <div className="card absolute left-1/2 top-1/2 h-5/6 w-11/12 -translate-x-1/2 -translate-y-1/2 transform outline-none">
-          <div className="flex h-full overflow-hidden rounded-lg bg-black">
-            <div className="flex-center absolute left-4 top-4 space-x-4">
-              <IconButton
-                className="size-10 hover:bg-neutral-700"
-                icon={{
-                  className: 'stroke-2 stroke-white size-full',
-                  Component: CloseIcon,
-                  name: 'close',
-                }}
-                onClick={closeModal}
-              />
-              <FacebookLogoMark className="hidden size-10 md:block" />
+          <div className="flex size-full overflow-hidden rounded-lg">
+            <div className="flex-grow bg-black">
+              <div className="flex-center absolute left-4 top-4 space-x-4">
+                <IconButton
+                  className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+                  icon={{
+                    className: 'stroke-2 stroke-white size-full',
+                    Component: CloseIcon,
+                    name: 'close',
+                  }}
+                  onClick={closeModal}
+                />
+                <FacebookLogoMark className="hidden size-10 md:block" />
+              </div>
+              <div className="h-full">
+                {mediaType === 'image' && (
+                  <Image
+                    alt="Image"
+                    className="size-full object-contain"
+                    height={0}
+                    priority
+                    sizes="100vw"
+                    src={media as string}
+                    width={0}
+                  />
+                )}
+                {mediaType === 'gif' && (
+                  <Image
+                    alt="GIF"
+                    className="size-full object-contain"
+                    height={0}
+                    priority
+                    sizes="100vw"
+                    src={media as string}
+                    unoptimized
+                    width={0}
+                  />
+                )}
+                {mediaType === 'video' && (
+                  <ReactPlayer
+                    controls
+                    loop
+                    url={media as string}
+                    width="100%"
+                  />
+                )}
+              </div>
             </div>
-            <div className="flex-grow">
-              {media && (
-                <>
-                  {mediaType === 'image' && (
-                    <Image
-                      alt="Image"
-                      className="size-full object-contain"
-                      height={0}
-                      priority
-                      sizes="100vw"
-                      src={media as string}
-                      width={0}
-                    />
-                  )}
-                  {mediaType === 'gif' && (
-                    <Image
-                      alt="GIF"
-                      className="size-full object-contain"
-                      height={0}
-                      priority
-                      sizes="100vw"
-                      src={media as string}
-                      unoptimized
-                      width={0}
-                    />
-                  )}
-                  {mediaType === 'video' && (
-                    <ReactPlayer controls loop url={media} width="100%" />
-                  )}
-                </>
-              )}
-            </div>
-            <div className="card-bg relative w-80">
+            <div className="card-bg relative w-96">
               <PostHeader
                 createdAt={createdAt}
                 feeling={feeling as Feeling}
@@ -166,43 +119,14 @@ export const PostModal = ({ id, post }: PostModalProps) => {
                 postSaves={savedBy}
                 postUserId={user.id}
               />
-              <p className="primary-text mb-1.5 pl-3">{thoughts}</p>
-              <div className="md:px-4">
-                {(optimisticLikes.length > 0 ||
-                  optimisticComments.length > 0) && (
-                  <div className="flex-center-justify-between w-full px-3 py-2 md:px-0 md:py-3">
-                    <div className="flex-center space-x-1.5">
-                      <LikeIcon className="size-4 md:size-5" />
-                      <p className="secondary-text text-sm md:hover:underline">
-                        {optimisticLikes.some(isMyLike) &&
-                          t('posts.post.footer.likes.you')}
-                        {!optimisticLikes.some(isMyLike) &&
-                          optimisticLikes.length}
-                        {optimisticLikes.some(isMyLike) &&
-                          optimisticLikes.length > 1 &&
-                          ` ${t('posts.post.footer.likes.and')} ${optimisticLikes.length - 1} ${optimisticLikes.length > 2 ? t('posts.post.footer.likes.people') : t('posts.post.footer.likes.person')} ${t('posts.post.footer.likes.more')}`}
-                      </p>
-                    </div>
-                    {optimisticComments.length > 1 && (
-                      <p className="secondary-text text-sm md:hover:underline">
-                        {`${optimisticComments.length} `}
-                        {optimisticLikes.length === 1
-                          ? t('posts.post.footer.comments.comment')
-                          : t('posts.post.footer.comments.comments')}
-                      </p>
-                    )}
-                  </div>
-                )}
-                <PostFooterActions
-                  handleOptimisticLike={handleOptimisticLike}
-                  isCommentsBottomSheetOpen={false}
-                  isMyLike={isMyLike}
-                  isPostModal
-                  openCommentsBottomSheet={() => {}}
-                  optimisticLikes={optimisticLikes}
-                  postId={postId}
-                />
-              </div>
+              <p className="primary-text mb-2 pl-3">{thoughts}</p>
+              <PostFooter
+                isPostModal
+                media={media as string}
+                postComments={comments}
+                postLikes={likes}
+                postId={post.id}
+              />
             </div>
           </div>
         </div>
