@@ -43,7 +43,7 @@ export const SearchInput = ({
         <IconButton
           className="absolute right-0 size-10 top-0.5 md:top-0 z-10 hover:secondary-bg"
           icon={{
-            className: 'stroke-2 secondary-stroke size-full',
+            className: 'secondary-stroke size-full stroke-2',
             Component: CloseIcon,
             name: 'close',
           }}

@@ -18,20 +18,22 @@ interface PostFooterActionsProps {
   handleOptimisticLike: VoidFunction;
   isCommentsBottomSheetOpen: boolean;
   isMyLike: (like: LikeExtended) => boolean;
+  isPostModal?: boolean;
   openCommentsBottomSheet: VoidFunction;
   optimisticLikes: LikeExtended[];
   postId: string;
-  showBorderT: boolean;
+  showBorderT?: boolean;
 }
 
 export const PostFooterActions = ({
   handleOptimisticLike,
   isCommentsBottomSheetOpen,
   isMyLike,
+  isPostModal,
   openCommentsBottomSheet,
   optimisticLikes,
   postId,
-  showBorderT,
+  showBorderT = false,
 }: PostFooterActionsProps) => {
   const t = useTranslations('toast-messages.success');
 
@@ -44,6 +46,7 @@ export const PostFooterActions = ({
     <div
       className={classNames('flex md:py-2.5 md:space-x-1', {
         'md:border-t md:primary-border': showBorderT,
+        'md:border-y md:primary-border md:py-1.5': isPostModal,
       })}
     >
       <PostFooterActionsItem
@@ -51,18 +54,21 @@ export const PostFooterActions = ({
         isActive={optimisticLikes.some(isMyLike)}
         label="like"
         onClick={handleOptimisticLike}
+        showLabel={!isPostModal}
       />
       <PostFooterActionsItem
         Icon={ChatBubbleOvalLeftIcon}
         isActive={isCommentsBottomSheetOpen}
         label="comment"
         onClick={openCommentsBottomSheet}
+        showLabel={!isPostModal}
       />
       <PostFooterActionsItem
         Icon={ShareIcon}
         isActive={false}
         label="share"
         onClick={handleShare}
+        showLabel={!isPostModal}
       />
     </div>
   );

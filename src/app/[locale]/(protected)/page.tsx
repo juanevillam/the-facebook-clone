@@ -9,7 +9,7 @@ import { signOut } from '@/auth';
 import { CreatePostCard } from '@/modules/posts/create/components';
 import { Posts, PostsSkeleton } from '@/modules/posts/post/components';
 
-const HomePage = ({ params: { locale } }: PageProps) => {
+const ProtectedPage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
 
   const messages = useMessages();
@@ -48,4 +48,4 @@ const HomePage = ({ params: { locale } }: PageProps) => {
   );
 };
 
-export default HomePage;
+export default ProtectedPage;

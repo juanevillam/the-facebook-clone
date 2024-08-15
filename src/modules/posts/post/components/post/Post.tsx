@@ -40,6 +40,7 @@ export const Post = async ({ ...props }: PostExtended) => {
       <PostBody
         media={media as string}
         mediaType={mediaType as string}
+        postId={id}
         thoughts={thoughts as string}
       />
       <PostFooter

@@ -7,8 +7,9 @@ import { NavbarIconProps } from '@/assets/ui/icons/navbar/types';
 interface PostFooterActionsItemProps {
   Icon: React.FC<NavbarIconProps>;
   isActive: boolean;
-  label: 'comment' | 'like' | 'share';
+  label?: 'comment' | 'like' | 'share';
   onClick: VoidFunction;
+  showLabel?: boolean;
 }
 
 export const PostFooterActionsItem = ({
@@ -16,6 +17,7 @@ export const PostFooterActionsItem = ({
   isActive,
   label,
   onClick,
+  showLabel = true,
 }: PostFooterActionsItemProps) => {
   const t = useTranslations('posts.post.footer.actions');
 
@@ -33,14 +35,16 @@ export const PostFooterActionsItem = ({
           })}
           isActive={isActive}
         />
-        <p
-          className={classNames('text-sm md:font-medium', {
-            'text-primary-100': isActive,
-            'primary-text md:accent-text': !isActive,
-          })}
-        >
-          {t(label)}
-        </p>
+        {showLabel && (
+          <p
+            className={classNames('text-sm md:font-medium', {
+              'text-primary-100': isActive,
+              'primary-text md:accent-text': !isActive,
+            })}
+          >
+            {t(label)}
+          </p>
+        )}
       </button>
     </div>
   );

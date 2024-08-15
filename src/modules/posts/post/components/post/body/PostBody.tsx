@@ -2,15 +2,22 @@
 
 import classNames from 'classnames';
 import Image from 'next/image';
+import Link from 'next/link';
 import ReactPlayer from 'react-player';
 
 interface PostBodyProps {
   media: string;
   mediaType: string;
+  postId: string;
   thoughts: string;
 }
 
-export const PostBody = ({ media, mediaType, thoughts }: PostBodyProps) => {
+export const PostBody = ({
+  media,
+  mediaType,
+  postId,
+  thoughts,
+}: PostBodyProps) => {
   return (
     <>
       <p
@@ -23,27 +30,31 @@ export const PostBody = ({ media, mediaType, thoughts }: PostBodyProps) => {
       {media && (
         <div className="bg-black">
           {mediaType === 'image' && (
-            <Image
-              alt="Image"
-              className="max-h-[600px] object-contain w-full"
-              height={0}
-              priority
-              sizes="100vw"
-              src={media as string}
-              width={0}
-            />
+            <Link href={`/posts/${postId}`}>
+              <Image
+                alt="Image"
+                className="max-h-[600px] object-contain w-full"
+                height={0}
+                priority
+                sizes="100vw"
+                src={media as string}
+                width={0}
+              />
+            </Link>
           )}
           {mediaType === 'gif' && (
-            <Image
-              alt="GIF"
-              className="max-h-[600px] object-contain w-full"
-              height={0}
-              priority
-              sizes="100vw"
-              src={media as string}
-              unoptimized
-              width={0}
-            />
+            <Link href={`/posts/${postId}`}>
+              <Image
+                alt="GIF"
+                className="max-h-[600px] object-contain w-full"
+                height={0}
+                priority
+                sizes="100vw"
+                src={media as string}
+                unoptimized
+                width={0}
+              />
+            </Link>
           )}
           {mediaType === 'video' && (
             <ReactPlayer controls loop url={media} width="100%" />

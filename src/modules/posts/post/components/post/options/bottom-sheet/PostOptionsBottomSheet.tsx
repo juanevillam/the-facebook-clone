@@ -87,7 +87,7 @@ export const PostOptionsBottomSheet = ({
   return (
     <Drawer.Portal>
       <Drawer.Overlay className="bottom-sheet-overlay" onClick={onDismiss} />
-      <Drawer.Content className="bottom-sheet-content h-max md:h-5/6">
+      <Drawer.Content className="bottom-sheet-content h-max">
         <Drawer.Handle className="bottom-sheet-handle" />
         <Drawer.Title className="sr-only">
           {t('posts.post.options.bottom-sheet.title')}
