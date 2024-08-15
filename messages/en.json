@@ -164,9 +164,12 @@
           },
           "gif": {
             "detailed": "GIF",
-            "short": "GIF"
+            "short": "GIF",
+            "disabled-prod": "GIF picker is currently unavailable in production"
           },
-          "disabled": "This can't be combined with what you've already<br></br>added to your post"
+          "media": {
+            "disabled": "This can't be combined with what you've already<br></br>added to your post"
+          }
         }
       },
       "steps": {
