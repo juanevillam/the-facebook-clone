@@ -6,23 +6,23 @@ import {
 } from '@/assets/ui/icons/navbar/drop-downs';
 import { ProfilePic } from '@/components/profile-pic/ProfilePic';
 
-import { DropDown } from './drop-down/drop-down';
+import { NavbarDropDown } from './drop-down/NavbarDropDown';
 
 export const NavbarDropDowns = () => {
   return (
-    <div className="flex items-center space-x-2">
-      <DropDown
+    <div className="flex-center space-x-2">
+      <NavbarDropDown
         className="hidden md:block"
         Icon={MenuIcon}
         isActive
         label="menu"
       />
       <div className="block md:hidden">
-        <DropDown Icon={SearchIcon} label="search" />
+        <NavbarDropDown Icon={SearchIcon} label="search" />
       </div>
-      <DropDown Icon={MessengerIcon} label="messenger" />
+      <NavbarDropDown Icon={MessengerIcon} label="messenger" />
       <div className="hidden md:flex md:space-x-2">
-        <DropDown Icon={NotificationsIcon} label="notifications" />
+        <NavbarDropDown Icon={NotificationsIcon} label="notifications" />
         <ProfilePic />
       </div>
     </div>

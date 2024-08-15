@@ -1,2 +1,2 @@
-export { GoogleIcon } from './google-icon';
-export { GithubIcon } from './github-icon';
+export { GoogleIcon } from './GoogleIcon';
+export { GithubIcon } from './GithubIcon';

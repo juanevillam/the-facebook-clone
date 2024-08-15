@@ -2,11 +2,11 @@ import { Location } from '@/modules/posts/create/assets/types';
 
 import { CreatePostStepItem } from '../../ui';
 
-interface CreatePostCheckInStepItemProps {
+type CreatePostCheckInStepItemProps = {
   active: boolean;
   item: Location;
   onClick: (location: Location) => void;
-}
+};
 
 export const CreatePostCheckInStepItem = ({
   active,
@@ -20,7 +20,7 @@ export const CreatePostCheckInStepItem = ({
   return (
     <CreatePostStepItem active={active} handleSelect={handleSelect}>
       <div>
-        <h2 className="font-medium md:font-semibold primary-text">
+        <h2 className="primary-text font-medium md:font-semibold">
           {main_text}
         </h2>
         <p className="secondary-text text-sm">{secondary_text}</p>

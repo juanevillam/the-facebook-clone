@@ -6,13 +6,12 @@ import { useTranslations } from 'next-intl';
 import { CloseIcon } from '@/assets/ui/icons';
 import { IconButton } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { toggleSignUpOpenable } from '@/lib/store/reducers/auth-reducer';
+import { toggleSignUpOpenable } from '@/lib/store/reducers/authReducer';
 
-import { SignUpModalForm } from './form/sign-up-modal-form';
+import { SignUpModalForm } from './form/SignUpModalForm';
 
 export const SignUpModal = () => {
   const t = useTranslations('auth.sign-up.modal');
-
   const dispatch = useAppDispatch();
   const { signUpOpenableOpen } = useAppSelector((store) => store.authReducer);
 
@@ -34,8 +33,8 @@ export const SignUpModal = () => {
       }}
     >
       <Fade in={signUpOpenableOpen}>
-        <div className="absolute bg-white left-1/2 max-w-md outline-none pb-4 pt-2 px-3 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-xl w-full">
-          <div className="border-b flex justify-between mb-4 pb-3">
+        <div className="absolute bg-white left-1/2 max-w-md outline-none pb-4 pt-2 px-3 rounded-xl top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
+          <div className="border-b primary-border-light-full flex justify-between mb-4 pb-3">
             <div>
               <h1 className="font-semibold text-3xl" id="sign-up-modal-title">
                 {t('title')}
@@ -45,9 +44,9 @@ export const SignUpModal = () => {
               </p>
             </div>
             <IconButton
-              className="-mr-1 size-9"
+              className="primary-bg-light hover:secondary-bg-light -mr-1 size-9"
               icon={{
-                className: 'size-full stroke-2 text-gray-500',
+                className: 'stroke-2 secondary-stroke size-full',
                 Component: CloseIcon,
                 name: 'close',
               }}

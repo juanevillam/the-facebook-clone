@@ -1,10 +1,10 @@
-import { SharedSvg, VoidFunction } from '@/assets/types';
+import { SharedSvg } from '@/assets/types';
 import { Button } from '@/components/buttons';
 
-interface AuthSocialButtonProps {
+type AuthSocialButtonProps = {
   Icon: SharedSvg;
   onClick: VoidFunction;
-}
+};
 
 export const AuthSocialButton = ({ Icon, onClick }: AuthSocialButtonProps) => {
   return (

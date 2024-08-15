@@ -1,11 +1,7 @@
-import React from 'react';
-
 import classNames from 'classnames';
 import { MoonLoader } from 'react-spinners';
 
-import { VoidFunction } from '@/assets/types';
-
-interface ButtonProps {
+type ButtonProps = {
   className?: string;
   disabled?: boolean;
   fullWidth?: boolean;
@@ -17,7 +13,7 @@ interface ButtonProps {
   type: 'button' | 'submit';
   variant: 'auth' | 'primary' | 'secondary' | 'tertiary';
   children?: React.ReactNode;
-}
+};
 
 export const Button = ({
   className = '',
@@ -38,23 +34,23 @@ export const Button = ({
         aria-busy={loading}
         aria-live="polite"
         className={classNames(
-          'duration-150 flex items-center justify-center px-3.5 rounded-md text-white transition md:px-5',
+          'flex-center-justify-center primary-transition px-3.5 md:px-5 rounded-md text-white',
           {
             'w-full': fullWidth,
             'w-max': !fullWidth,
-            'font-medium p-1.5 text-lg uppercase md:font-semibold md:normal-case md:py-2 md:text-sm':
+            'font-medium md:font-semibold p-1.5 md:py-2 text-lg md:text-sm uppercase md:normal-case':
               size === 'xs',
             'font-medium py-2.5': size === 'sm',
             'font-semibold py-3 text-base': size === 'md',
             'font-semibold py-3 text-lg': size === 'lg',
-            'bg-transparent border border-gray-200 hover:bg-gray-100 py-3.5':
+            'border primary-border-light py-3.5 hover:primary-bg-light':
               variant === 'auth',
             'bg-primary-100 hover:bg-primary-200 disabled:hover:bg-primary-100':
               variant === 'primary' || variant === 'tertiary',
             'bg-success-100 hover:bg-success-200 disabled:hover:bg-success-100':
               variant === 'secondary',
             'cursor-not-allowed opacity-80': disabled,
-            'text-opacity-80 dark:bg-dark-900 dark:disabled:hover:bg-dark-900 dark:text-opacity-40 md:dark:bg-dark-800 md:dark:disabled:hover:bg-dark-800':
+            'dark:bg-neutral-700 dark:disabled:hover:bg-neutral-700 md:dark:bg-neutral-600 md:dark:disabled:hover:bg-neutral-600 text-opacity-80 dark:text-opacity-40':
               disabled && variant === 'tertiary',
           }
         )}

@@ -6,21 +6,19 @@ import { PostFooter } from './footer/PostFooter';
 import { PostHeader } from './header/PostHeader';
 import { PostExtended } from '../../assets/types';
 
-export const Post = async ({ ...props }: PostExtended) => {
-  const {
-    comments,
-    createdAt,
-    feeling,
-    id,
-    likes,
-    location,
-    media,
-    mediaType,
-    thoughts,
-    savedBy,
-    user,
-  } = props;
-
+export const Post = async ({
+  comments,
+  createdAt,
+  feeling,
+  id,
+  likes,
+  location,
+  media,
+  mediaType,
+  thoughts,
+  savedBy,
+  user,
+}: PostExtended) => {
   const session = await auth();
 
   if (!session?.user) return null;

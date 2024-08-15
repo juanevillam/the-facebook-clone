@@ -1,5 +1,7 @@
 'use client';
 
+// TODO: Classnames rework
+
 import { Field, useField, useFormikContext } from 'formik';
 import { useTranslations } from 'next-intl';
 
@@ -7,7 +9,7 @@ import { CloseIcon } from '@/assets/ui/icons';
 import { IconButton } from '@/components/buttons';
 import { AlertTriangleImage } from '@/components/images';
 
-interface AuthTextInputProps {
+type AuthTextInputProps = {
   disabled: boolean;
   minLength?: number;
   name: string;
@@ -16,7 +18,7 @@ interface AuthTextInputProps {
   variant: 'standard' | 'outlined';
   varianttype?: 'standard' | 'secondary';
   [x: string]: any;
-}
+};
 
 export const AuthTextInput = (props: AuthTextInputProps) => {
   const {
@@ -61,7 +63,7 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
             autoComplete="on"
             aria-label={placeholder}
             aria-invalid={meta.error && meta.touched ? 'true' : 'false'}
-            className={`absolute bg-transparent border-b-2 focus:text-dark-400 h-[52px] left-0 outline-none peer pl-3 pr-16 pt-2 top-0 w-full z-10 ${
+            className={`absolute bg-transparent border-b-2 focus:text-dark-100 h-[52px] left-0 outline-none peer pl-3 pr-16 pt-2 top-0 w-full z-10 ${
               meta.touched && meta.error
                 ? 'border-b-error-100 focus:border-b-error-100'
                 : 'border-b-gray-200 focus:border-b-primary-100'

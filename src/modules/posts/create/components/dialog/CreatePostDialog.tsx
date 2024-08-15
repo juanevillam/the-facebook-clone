@@ -1,15 +1,14 @@
-import { VoidFunction } from '@/assets/types';
 import { ArrowLeftIcon } from '@/assets/ui/icons';
 import { MobileDialog } from '@/components/mobile';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostHeader } from '../layout';
 
-interface CreatePostDialogProps {
+type CreatePostDialogProps = {
   handleStep: VoidFunction;
   handleToggleOpenable: VoidFunction;
   children: React.ReactNode;
-}
+};
 
 export const CreatePostDialog = ({
   handleStep,

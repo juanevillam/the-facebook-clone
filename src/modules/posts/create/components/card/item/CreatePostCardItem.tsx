@@ -34,7 +34,7 @@ export const CreatePostCardItem = ({
         quality={100}
         width={72}
       />
-      <p className="accent-text only-desktop font-medium text-sm">
+      <p className="only-desktop accent-text font-medium text-sm">
         {t('detailed')}
       </p>
       <p className="only-mobile primary-text text-sm">{t('short')}</p>

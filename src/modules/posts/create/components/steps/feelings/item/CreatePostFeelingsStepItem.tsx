@@ -5,12 +5,12 @@ import { Feeling } from '@/modules/posts/create/assets/types';
 
 import { CreatePostStepItem } from '../../ui';
 
-interface CreatePostFeelingsStepItemProps {
+type CreatePostFeelingsStepItemProps = {
   active: boolean;
   isEven?: boolean;
   item: Feeling;
   onClick: (item: Feeling) => void;
-}
+};
 
 export const CreatePostFeelingsStepItem = ({
   active,

@@ -3,11 +3,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { feelings } from '../assets/feelings';
 import { Feeling } from '../assets/types';
 
-interface FeelingsState {
+type FeelingsState = {
   activeFeeling: Feeling | null;
   searchInputValue: string;
   feelings: readonly Feeling[];
-}
+};
 
 const initialState: FeelingsState = {
   activeFeeling: null,

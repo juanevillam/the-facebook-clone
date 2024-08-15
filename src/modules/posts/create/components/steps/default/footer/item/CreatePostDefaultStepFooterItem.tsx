@@ -12,19 +12,20 @@ export const CreatePostDefaultStepFooterItem = ({
   name,
   onClick,
 }: CardItem) => {
-  const tItems = useTranslations('posts.create.layout.footer');
-  const tItem = useTranslations(`posts.create.layout.footer.${name}`);
+  const t = useTranslations('posts.create.layout.footer');
   const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
   const tooltipLabel = disabled
-    ? (tItems.rich('disabled', { br: () => <br /> }) as string)
-    : tItem('detailed');
+    ? (t.rich('disabled', {
+        br: () => <br />,
+      }) as string)
+    : t(`${name}.detailed`);
 
   return (
     <Tooltip label={tooltipLabel} position="bottom-9">
       <button
         aria-disabled={disabled}
         className={classNames(
-          'flex-center justify-start md:justify-center p-3 md:p-0 peer relative w-full md:rounded-full md:size-9',
+          'peer flex-center justify-start md:justify-center p-3 md:p-0 relative w-full md:rounded-full md:size-9',
           {
             'active-bg': active && !disabled,
             'cursor-not-allowed opacity-50': disabled,
@@ -38,7 +39,7 @@ export const CreatePostDefaultStepFooterItem = ({
         type="button"
       >
         <Image
-          alt={tItem('detailed')}
+          alt={t(`${name}.detailed`)}
           className="size-6"
           height={72}
           loading="eager"
@@ -47,11 +48,11 @@ export const CreatePostDefaultStepFooterItem = ({
           width={72}
         />
         <p
-          className={classNames('ml-3 only-mobile primary-text text-lg', {
+          className={classNames('only-mobile primary-text ml-3 text-lg', {
             hidden: activeGif,
           })}
         >
-          {tItem('detailed')}
+          {t(`${name}.detailed`)}
         </p>
       </button>
     </Tooltip>

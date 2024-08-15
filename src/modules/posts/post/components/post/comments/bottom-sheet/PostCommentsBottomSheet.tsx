@@ -1,7 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Drawer } from 'vaul';
 
-import { VoidFunction } from '@/assets/types';
 import {
   CommentExtended,
   LikeExtended,
@@ -11,7 +10,7 @@ import { PostCommentsBottomSheetFooter } from './footer/PostCommentsBottomSheetF
 import { PostCommentsBottomSheetHeader } from './header/PostCommentsBottomSheetHeader';
 import { PostCommentsBottomSheetBody } from '../body/PostCommentsBottomSheetBody';
 
-interface PostCommentsBottomSheetProps {
+type PostCommentsBottomSheetProps = {
   addOptimisticComment: (action: unknown) => void;
   handleOptimisticLike: VoidFunction;
   isMyLike: (like: LikeExtended) => boolean;
@@ -19,7 +18,7 @@ interface PostCommentsBottomSheetProps {
   optimisticComments: CommentExtended[];
   optimisticLikes: LikeExtended[];
   postId: string;
-}
+};
 
 export const PostCommentsBottomSheet = ({
   addOptimisticComment,

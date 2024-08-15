@@ -8,12 +8,12 @@ import { IconButton } from '@/components/buttons';
 
 export type SearchInputLabel = 'search' | 'where-are-you';
 
-interface SearchInputProps {
+type SearchInputProps = {
   label: SearchInputLabel;
   handleClear: VoidFunction;
   onChange: (event: InputEvent) => void;
   value: string;
-}
+};
 
 export const SearchInput = ({
   label,
@@ -43,7 +43,7 @@ export const SearchInput = ({
         <IconButton
           className="absolute right-0 size-10 top-0.5 md:top-0 z-10 hover:secondary-bg"
           icon={{
-            className: 'secondary-stroke size-full stroke-2',
+            className: 'stroke-2 secondary-stroke size-full',
             Component: CloseIcon,
             name: 'close',
           }}

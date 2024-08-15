@@ -1,27 +1,27 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
-import { SharedSvg, VoidFunction } from '@/assets/types';
+import { SharedSvg } from '@/assets/types';
 import { IconButton } from '@/components/buttons';
-import { IconButtonName } from '@/components/buttons/icon-button/icon-button';
+import { IconButtonName } from '@/components/buttons/icon-button/IconButton';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostDefaultStepButton } from '../../steps/default';
 
-interface CreatePostHeaderProps {
+type CreatePostHeaderProps = {
   Icon: {
     Component: SharedSvg;
     name: IconButtonName;
     onClick: VoidFunction;
   };
-}
+};
 
 export const CreatePostHeader = ({ Icon }: CreatePostHeaderProps) => {
   const t = useTranslations('posts.create.layout.header.steps');
   const { step } = useAppSelector((store) => store.posts.create.post);
 
   return (
-    <div className="border-b flex-center-justify-between p-1.5 md:p-4 primary-border md:justify-center">
+    <div className="border-b primary-border flex-center-justify-between p-1.5 md:p-4 md:justify-center">
       <div className="flex-center space-x-1.5">
         <IconButton
           className={classNames(
@@ -33,7 +33,7 @@ export const CreatePostHeader = ({ Icon }: CreatePostHeaderProps) => {
           )}
           icon={{
             className:
-              'primary-stroke md:secondary-stroke size-full stroke-[2.5] md:stroke-2',
+              'stroke-[2.5] md:stroke-2 primary-stroke md:secondary-stroke size-full',
             Component: Icon.Component,
             name: Icon.name,
           }}

@@ -4,11 +4,11 @@ import { CloseIcon } from '@/assets/ui/icons';
 import { IconButton } from '@/components/buttons';
 import { GIF } from '@/modules/posts/create/assets/types';
 
-interface CreatePostGifsItemProps {
+type CreatePostGifsItemProps = {
   active?: boolean;
   gif: GIF;
   onClick: (gif: GIF) => void;
-}
+};
 
 export const CreatePostGifsStepItem = ({
   active,
@@ -19,7 +19,7 @@ export const CreatePostGifsStepItem = ({
 
   return (
     <div
-      className="create-post-modal-gif-size group overflow-hidden relative rounded-lg"
+      className="group create-post-modal-gif-size overflow-hidden relative rounded-lg"
       onClick={handleSelect}
       onKeyPress={(e) => {
         if (e.key === 'Enter' || e.key === ' ') handleSelect();
@@ -29,9 +29,9 @@ export const CreatePostGifsStepItem = ({
     >
       {active && (
         <IconButton
-          className="absolute primary-bg right-2 size-8 top-2 z-10 hover:secondary-bg"
+          className="primary-bg hover:secondary-bg absolute right-2 size-8 top-2 z-10"
           icon={{
-            className: 'primary-stroke md:secondary-stroke size-full stroke-2',
+            className: 'stroke-2 primary-stroke md:secondary-stroke size-full',
             Component: CloseIcon,
             name: 'close',
           }}

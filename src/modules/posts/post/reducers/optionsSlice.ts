@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface OptionsState {
+type OptionsState = {
   deletingPost: boolean;
-}
+};
 
 const initialState: OptionsState = {
   deletingPost: false,

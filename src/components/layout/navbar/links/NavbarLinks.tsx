@@ -8,7 +8,7 @@ import {
   WatchIcon,
 } from '@/assets/ui/icons/navbar/links';
 
-import { NavbarLink } from './link/navbar-link';
+import { NavbarLink } from './link/NavbarLink';
 
 export const NavbarLinks = () => {
   return (

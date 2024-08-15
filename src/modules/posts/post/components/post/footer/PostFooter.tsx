@@ -14,12 +14,12 @@ import { likePost } from '../../../actions';
 import { CommentExtended, LikeExtended } from '../../../assets/types';
 import { PostCommentsBottomSheet } from '../comments/bottom-sheet';
 
-interface PostFooterProps {
+type PostFooterProps = {
   media: string;
   postComments: CommentExtended[];
   postLikes: LikeExtended[];
   postId: string;
-}
+};
 
 export const PostFooter = ({
   media,
@@ -31,9 +31,7 @@ export const PostFooter = ({
     useState(false);
 
   const [isPending, startTransition] = useTransition();
-  const tLikes = useTranslations('posts.post.footer.likes');
-  const tComments = useTranslations('posts.post.footer.comments');
-  const tErrorToastMessages = useTranslations('toast-messages.error');
+  const t = useTranslations();
   const user = useCurrentUser();
 
   const isMyLike = (like: LikeExtended) =>
@@ -74,8 +72,8 @@ export const PostFooter = ({
     try {
       await likePost(postId, user?.id as string);
     } catch (error) {
-      if (error instanceof Error)
-        showToast.error(tErrorToastMessages(error.message));
+      error instanceof Error &&
+        showToast.error(t(`toast-messages.error.${error.message}`));
     }
   };
 
@@ -90,19 +88,20 @@ export const PostFooter = ({
           <div className="flex-center space-x-1.5">
             <LikeIcon className="size-4 md:size-5" />
             <p className="secondary-text text-sm md:hover:underline">
-              {optimisticLikes.some(isMyLike) && tLikes('you')}
+              {optimisticLikes.some(isMyLike) &&
+                t('posts.post.footer.likes.you')}
               {!optimisticLikes.some(isMyLike) && optimisticLikes.length}
               {optimisticLikes.some(isMyLike) &&
                 optimisticLikes.length > 1 &&
-                ` ${tLikes('and')} ${optimisticLikes.length - 1} ${optimisticLikes.length > 2 ? tLikes('people') : tLikes('person')} ${tLikes('more')}`}
+                ` ${t('posts.post.footer.likes.and')} ${optimisticLikes.length - 1} ${optimisticLikes.length > 2 ? t('posts.post.footer.likes.people') : t('posts.post.footer.likes.person')} ${t('posts.post.footer.likes.more')}`}
             </p>
           </div>
           {optimisticComments.length > 1 && (
             <p className="secondary-text text-sm md:hover:underline">
               {`${optimisticComments.length} `}
               {optimisticLikes.length === 1
-                ? tComments('comment')
-                : tComments('comments')}
+                ? t('posts.post.footer.comments.comment')
+                : t('posts.post.footer.comments.comments')}
             </p>
           )}
         </button>

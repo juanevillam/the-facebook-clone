@@ -4,9 +4,10 @@ import { ProfilePic, Timestamp } from '@/components';
 import { CommentExtended } from '@/modules/posts/post/assets/types';
 
 export const PostCommentsBottomSheetBodyItem = ({
-  ...props
+  createdAt,
+  thoughts,
+  user,
 }: CommentExtended) => {
-  const { createdAt, thoughts, user } = props;
   const t = useTranslations('action-loader');
 
   return (
@@ -14,7 +15,7 @@ export const PostCommentsBottomSheetBodyItem = ({
       <ProfilePic image={user?.image as string} name={user?.name as string} />
       <div>
         <div className="primary-bg mb-1 px-3 py-2 rounded-2xl">
-          <h1 className="font-semibold leading-tight primary-text">
+          <h1 className="primary-text font-semibold leading-tight">
             {user?.name}
           </h1>
           <p className="primary-text">{thoughts}</p>

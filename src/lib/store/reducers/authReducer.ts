@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface initialState {
+type AuthState = {
   signUpOpenableOpen: boolean;
-}
+};
 
-const initialState: initialState = {
+const initialState: AuthState = {
   signUpOpenableOpen: false,
 };
 

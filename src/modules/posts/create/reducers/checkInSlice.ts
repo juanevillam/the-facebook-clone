@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { Location } from '../assets/types';
 
-interface CheckInState {
+type CheckInState = {
   activeLocation: Location | null;
   searchInputValue: string;
   locations: Location[];
   error: boolean;
-}
+};
 
 const initialState: CheckInState = {
   activeLocation: null,

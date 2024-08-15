@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { Step } from '../assets/types';
 
-interface PostState {
+type PostState = {
   isOpenableOpen: boolean;
   step: Step;
   thoughts: string;
   posting: boolean;
-}
+};
 
 const initialState: PostState = {
   isOpenableOpen: false,

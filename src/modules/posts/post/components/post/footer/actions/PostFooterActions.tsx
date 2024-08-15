@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
-import { VoidFunction } from '@/assets/types';
 import {
   ChatBubbleOvalLeftIcon,
   HandThumbUpIcon,
@@ -14,7 +13,7 @@ import { LikeExtended } from '@/modules/posts/post/assets/types';
 
 import { PostFooterActionsItem } from './item/PostFooterActionsItem';
 
-interface PostFooterActionsProps {
+type PostFooterActionsProps = {
   handleOptimisticLike: VoidFunction;
   isCommentsBottomSheetOpen: boolean;
   isMyLike: (like: LikeExtended) => boolean;
@@ -23,7 +22,7 @@ interface PostFooterActionsProps {
   optimisticLikes: LikeExtended[];
   postId: string;
   showBorderT?: boolean;
-}
+};
 
 export const PostFooterActions = ({
   handleOptimisticLike,

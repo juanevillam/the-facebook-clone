@@ -1,12 +1,12 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import { useTranslations } from 'next-intl';
 
-import { SharedSvg, VoidFunction } from '@/assets/types';
+import { SharedSvg } from '@/assets/types';
 
 export type IconButtonName = 'back' | 'close' | 'dots-horizontal';
 
-interface IconButtonProps {
+type IconButtonProps = {
   className: string;
   icon: {
     className: string;
@@ -14,7 +14,7 @@ interface IconButtonProps {
     name: IconButtonName;
   };
   onClick?: VoidFunction;
-}
+};
 
 const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ className, icon, onClick }, ref) => {

@@ -1,8 +1,10 @@
-export interface SharedSvgProps {
+type SharedSvgProps = {
   className: string;
-}
+};
 
-export interface SharedActiveSvgProps {
+type SharedActiveSvgProps = {
   className: string;
   isActive: boolean;
-}
+};
+
+export type { SharedSvgProps, SharedActiveSvgProps };

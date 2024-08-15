@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 import { Drawer } from 'vaul';
 
-import { VoidFunction } from '@/assets/types';
 import {
   BookmarkIcon,
   BookmarkSlashIcon,
@@ -20,13 +19,13 @@ import { toggleDeletingPost } from '@/modules/posts/post/reducers/optionsSlice';
 
 import { PostOptionsBottomSheetItem } from './item/PostOptionsBottomSheetItem';
 
-interface PostOptionsBottomSheetProps {
+type PostOptionsBottomSheetProps = {
   closeBottomSheet: VoidFunction;
   onDismiss: VoidFunction;
   postId: string;
   postSaves: SavedPost[];
   postUserId: string;
-}
+};
 
 export const PostOptionsBottomSheet = ({
   closeBottomSheet,
@@ -79,7 +78,7 @@ export const PostOptionsBottomSheet = ({
     try {
       await savePost(postId, user?.id as string);
     } catch (error) {
-      if (error instanceof Error)
+      error instanceof Error &&
         showToast.error(t(`toast-messages.error.${error.message}`));
     }
   };
@@ -106,13 +105,13 @@ export const PostOptionsBottomSheet = ({
           />
           {isPostMine && (
             <>
-              <hr className="border-t my-1.5 md:my-2 primary-border" />
+              <hr className="border-t primary-border my-1.5 md:my-2" />
               <PostOptionsBottomSheetItem
                 IconComponent={PencilIcon}
                 name="edit"
                 onClick={() => console.log('edit')}
               />
-              <hr className="border-t my-1.5 md:my-2 primary-border" />
+              <hr className="border-t primary-border my-1.5 md:my-2" />
               <PostOptionsBottomSheetItem
                 IconComponent={TrashIcon}
                 name="delete"

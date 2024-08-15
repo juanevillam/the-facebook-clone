@@ -1,12 +1,10 @@
-import { VoidFunction } from '@/assets/types';
-
-interface MobileDialogProps {
+type MobileDialogProps = {
   className?: string;
   onDismiss?: VoidFunction;
   open: boolean;
   translateFrom: 'x' | 'y';
   children: React.ReactNode;
-}
+};
 
 export const MobileDialog = ({
   className = 'h-full',

@@ -23,33 +23,19 @@ export const CreatePostDefaultStepFooter = () => {
     (store) => store.posts.create.checkIn
   );
 
-  const handleOpenMediaStep = useCallback(
-    () => dispatch(setStep('media')),
-    [dispatch]
-  );
+  const handleOpenMediaStep = () => dispatch(setStep('media'));
 
-  const handleOpenLiveStep = useCallback(() => {
+  const handleOpenLiveStep = () =>
     showToast.error(t('toast-messages.error.feature-under-development'));
-  }, [t]);
 
-  const handleOpenFeelingsStep = useCallback(
-    () => dispatch(setStep('feelings')),
-    [dispatch]
-  );
+  const handleOpenFeelingsStep = () => dispatch(setStep('feelings'));
 
-  const handleOpenCheckInStep = useCallback(
-    () => dispatch(setStep('check-in')),
-    [dispatch]
-  );
+  const handleOpenCheckInStep = () => dispatch(setStep('check-in'));
 
-  const handleOpenGifStep = useCallback(
-    () => dispatch(setStep('gifs')),
-    [dispatch]
-  );
+  const handleOpenGifStep = () => dispatch(setStep('gifs'));
 
-  const handleOpenTagPeopleStep = useCallback(() => {
+  const handleOpenTagPeopleStep = () =>
     showToast.error(t('toast-messages.error.feature-under-development'));
-  }, [t]);
 
   const cardItems: CardItem[] = [
     {
@@ -95,12 +81,12 @@ export const CreatePostDefaultStepFooter = () => {
         }
       )}
     >
-      <h1 className="font-semibold only-desktop primary-text text-sm">
+      <h1 className="only-desktop primary-text font-semibold text-sm">
         {t('posts.create.steps.default.footer')}
       </h1>
       <div
         className={classNames('w-full md:w-max md:flex md:space-x-1', {
-          'divide-x md:divide-none flex primary-divide': activeGif,
+          'divide-x md:divide-none primary-divide flex': activeGif,
         })}
       >
         {cardItems.map((item) => (

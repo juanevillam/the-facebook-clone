@@ -4,12 +4,12 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import { PostModalWrapper } from '@/modules/posts/post/components/post';
 import { fetchPost } from '@/modules/posts/post/data';
 
-interface PostModalPageProps {
+type PostModalPageProps = {
   params: {
     id: string;
     locale: string;
   };
-}
+};
 
 const PostModalPage = async ({
   params: { id, locale },

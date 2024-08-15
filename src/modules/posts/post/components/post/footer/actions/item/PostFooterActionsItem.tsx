@@ -1,16 +1,15 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
-import { VoidFunction } from '@/assets/types';
 import { NavbarIconProps } from '@/assets/ui/icons/navbar/types';
 
-interface PostFooterActionsItemProps {
+type PostFooterActionsItemProps = {
   Icon: React.FC<NavbarIconProps>;
   isActive: boolean;
   label?: 'comment' | 'like' | 'share';
   onClick: VoidFunction;
   showLabel?: boolean;
-}
+};
 
 export const PostFooterActionsItem = ({
   Icon,
@@ -29,9 +28,9 @@ export const PostFooterActionsItem = ({
         type="button"
       >
         <Icon
-          className={classNames('size-5 stroke-[1.5] md:size-6', {
+          className={classNames('stroke-[1.5] size-5 md:size-6', {
             'fill-primary-100': isActive,
-            'fill-none primary-stroke md:accent-stroke': !isActive,
+            'primary-stroke md:accent-stroke fill-none': !isActive,
           })}
           isActive={isActive}
         />

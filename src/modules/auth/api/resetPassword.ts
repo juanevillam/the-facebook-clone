@@ -2,7 +2,7 @@
 
 import { hash } from 'bcryptjs';
 
-import { getPasswordResetTokenByToken } from '@/data/password-reset-token';
+import { getPasswordResetTokenByToken } from '@/data/passwordResetToken';
 import { getUserByEmail } from '@/data/user';
 import { db } from '@/lib/database';
 

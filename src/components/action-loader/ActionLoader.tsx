@@ -2,11 +2,11 @@ import { Backdrop } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { MoonLoader } from 'react-spinners';
 
-interface ActionLoaderProps {
+type ActionLoaderProps = {
   className?: string;
   message: 'deleting-post' | 'posting';
   open: boolean;
-}
+};
 
 export const ActionLoader = ({
   className,

@@ -1,15 +1,15 @@
 import { SharedSvgProps } from '../ui/icons/types';
 
-interface LayoutProps {
+type LayoutProps = {
   params: { locale: string };
   children: React.ReactNode;
-}
+};
 
-interface PageProps {
+type PageProps = {
   params: {
     locale: string;
   };
-}
+};
 
 type ImageType = {
   alt: string;
@@ -17,8 +17,6 @@ type ImageType = {
 };
 
 type FileInputRef = React.MutableRefObject<HTMLInputElement | null>;
-
-type VoidFunction = () => void;
 
 type SharedSvg = React.FC<SharedSvgProps>;
 
@@ -29,7 +27,6 @@ export type {
   PageProps,
   ImageType,
   FileInputRef,
-  VoidFunction,
   SharedSvg,
   InputEvent,
 };

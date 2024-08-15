@@ -5,11 +5,11 @@ import { NavbarIconProps } from '@/assets/ui/icons/navbar/types';
 import { Tooltip } from '@/components';
 import { usePathname } from '@/navigation';
 
-interface NavbarLinkProps {
+type NavbarLinkProps = {
   Icon: React.FC<NavbarIconProps>;
   href: '/' | 'friends' | 'groups' | 'marketplace' | 'watch';
   label: 'friends' | 'groups' | 'home' | 'marketplace' | 'watch';
-}
+};
 
 export const NavbarLink = ({ Icon, href, label }: NavbarLinkProps) => {
   const t = useTranslations('navbar.links');
@@ -20,8 +20,8 @@ export const NavbarLink = ({ Icon, href, label }: NavbarLinkProps) => {
     <Tooltip label={t(label)} position="-bottom-10">
       <Link
         aria-label={label}
-        className={`cursor-pointer duration-150 flex h-14 items-center justify-center peer transition md:h-12 md:px-8 md:rounded-lg md:w-max lg:px-10 xl:px-12 ${
-          isActive ? 'relative' : 'hover:bg-gray-100 dark:hover:bg-dark-200'
+        className={`peer flex-center-justify-center primary-transition h-14 md:h-12 md:px-8 lg:px-10 xl:px-12 md:rounded-lg md:w-max ${
+          isActive ? 'relative' : 'hover:primary-bg'
         }`}
         href={`/${href}`}
         tabIndex={0}
@@ -35,7 +35,7 @@ export const NavbarLink = ({ Icon, href, label }: NavbarLinkProps) => {
           isActive={isActive}
         />
         {isActive && (
-          <div className="bg-primary-100 absolute -bottom-0.5 h-[3px] rounded-sm w-full z-10 md:-bottom-1" />
+          <div className="absolute bg-primary-100 -bottom-0.5 md:-bottom-1 h-[3px] rounded-sm w-full z-10" />
         )}
       </Link>
     </Tooltip>

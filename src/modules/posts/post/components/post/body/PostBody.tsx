@@ -5,12 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ReactPlayer from 'react-player';
 
-interface PostBodyProps {
+type PostBodyProps = {
   media: string;
   mediaType: string;
   postId: string;
   thoughts: string;
-}
+};
 
 export const PostBody = ({
   media,
@@ -21,7 +21,7 @@ export const PostBody = ({
   return (
     <>
       <p
-        className={classNames('mb-1.5 pl-3 primary-text', {
+        className={classNames('primary-text mb-1.5 pl-3', {
           'text-2xl': !media,
         })}
       >

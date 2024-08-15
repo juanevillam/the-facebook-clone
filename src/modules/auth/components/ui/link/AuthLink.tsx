@@ -1,14 +1,14 @@
 import Link from 'next/link';
 
-interface AuthLinkProps {
+type AuthLinkProps = {
   label: string;
-  navigateTo: string;
-}
+  navigateTo: '/' | 'auth' | 'auth/forgot-password';
+};
 
 export const AuthLink = ({ label, navigateTo }: AuthLinkProps) => {
   return (
     <Link
-      className="font-semibold hover:text-primary-200 hover:underline text-primary-100 text-sm"
+      className="font-semibold text-primary-100 hover:text-primary-200 text-sm hover:underline"
       href={`/${navigateTo}`}
     >
       {label}

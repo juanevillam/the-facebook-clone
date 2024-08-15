@@ -9,7 +9,7 @@ import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/buttons';
-import { resetPassword } from '@/modules/auth/api/reset-password';
+import { resetPassword } from '@/modules/auth/api';
 import {
   resetPasswordFormSchema,
   resetPasswordFormValuesType,
@@ -32,9 +32,9 @@ export const ResetPasswordForm = () => {
 
       resetPassword(values, token)
         .then((data) => {
-          if (data.type === 'success') {
-            showToast.success(t(`toast-messages.success.${data.message}`));
-          } else showToast.error(t(`toast-messages.error.${data.message}`));
+          data.type === 'success'
+            ? showToast.success(t(`toast-messages.success.${data.message}`))
+            : showToast.error(t(`toast-messages.error.${data.message}`));
         })
         .catch(() =>
           showToast.error(t('toast-messages.error.something-went-wrong'))
@@ -46,9 +46,7 @@ export const ResetPasswordForm = () => {
     try {
       resetPasswordFormSchema.parse(values);
     } catch (error) {
-      if (error instanceof z.ZodError) {
-        return error.formErrors.fieldErrors;
-      }
+      if (error instanceof z.ZodError) return error.formErrors.fieldErrors;
     }
   };
 

@@ -5,9 +5,9 @@ import { CommentExtended } from '@/modules/posts/post/assets/types';
 
 import { PostCommentsBottomSheetBodyItem } from './item/PostCommentsBottomSheetBodyItem';
 
-interface PostCommentsBottomSheetBodyProps {
+type PostCommentsBottomSheetBodyProps = {
   optimisticComments: CommentExtended[];
-}
+};
 
 export const PostCommentsBottomSheetBody = ({
   optimisticComments,
@@ -27,7 +27,7 @@ export const PostCommentsBottomSheetBody = ({
         </div>
       ) : (
         <div className="flex-center-justify-center flex-col h-full">
-          <ChatBubbleLeftRightIcon className="mb-4 secondary-fill size-40" />
+          <ChatBubbleLeftRightIcon className="secondary-fill size-40 mb-4" />
           <h1 className="secondary-text text-xl">{t('no-comments-yet')}</h1>
         </div>
       )}

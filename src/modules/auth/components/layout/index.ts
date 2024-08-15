@@ -1,2 +1,2 @@
-export { AuthFooter } from './footer/auth-footer';
-export { AuthHeader } from './header/auth-header';
+export { AuthFooter } from './footer/AuthFooter';
+export { AuthHeader } from './header/AuthHeader';

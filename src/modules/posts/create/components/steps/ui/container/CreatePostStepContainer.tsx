@@ -3,7 +3,7 @@ import { SearchInput } from '@/components/inputs';
 import { SearchInputLabel } from '@/components/inputs/search-input/SearchInput';
 import { Feeling, Location } from '@/modules/posts/create/assets/types';
 
-interface CreatePostStepContainerProps {
+type CreatePostStepContainerProps = {
   activeItem?: {
     Component: React.ElementType;
     handleSetItem: ((item: Feeling) => void) | ((item: Location) => void);
@@ -16,7 +16,7 @@ interface CreatePostStepContainerProps {
     value: string;
   };
   children: React.ReactNode;
-}
+};
 
 export const CreatePostStepContainer = ({
   activeItem,
@@ -27,7 +27,7 @@ export const CreatePostStepContainer = ({
 
   return (
     <>
-      <div className="border-b md:border-none p-3 primary-border">
+      <div className="border-b md:border-none primary-border p-3">
         <SearchInput
           label={searchInput.label}
           handleClear={searchInput.handleClear}

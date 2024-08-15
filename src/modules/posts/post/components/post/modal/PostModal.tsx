@@ -25,10 +25,10 @@ import {
 import { PostFooterActions } from '../footer/actions/PostFooterActions';
 import { PostHeader } from '../header/PostHeader';
 
-interface PostModalProps {
+type PostModalProps = {
   id: string;
   post: PostExtended;
-}
+};
 
 export const PostModal = ({ id, post }: PostModalProps) => {
   const {
@@ -47,9 +47,7 @@ export const PostModal = ({ id, post }: PostModalProps) => {
 
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
-  const tLikes = useTranslations('posts.post.footer.likes');
-  const tComments = useTranslations('posts.post.footer.comments');
-  const t = useTranslations('toast-messages.error');
+  const t = useTranslations();
   const mount = useMount();
   const pathname = usePathname();
   const isOpen = pathname === `/posts/${id}`;
@@ -90,7 +88,8 @@ export const PostModal = ({ id, post }: PostModalProps) => {
     try {
       await likePost(postId, user?.id as string);
     } catch (error) {
-      if (error instanceof Error) showToast.error(t(error.message));
+      error instanceof Error &&
+        showToast.error(t(`toast-messages.error.${error.message}`));
     }
   };
 
@@ -110,13 +109,13 @@ export const PostModal = ({ id, post }: PostModalProps) => {
       }}
     >
       <Fade in={isOpen}>
-        <div className="absolute card h-5/6 left-1/2 outline-none top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12">
+        <div className="card absolute h-5/6 left-1/2 outline-none top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12">
           <div className="bg-black flex h-full overflow-hidden rounded-lg">
-            <div className="absolute flex items-center left-4 space-x-4 top-4">
+            <div className="flex-center absolute left-4 space-x-4 top-4">
               <IconButton
                 className="size-10 hover:bg-neutral-700"
                 icon={{
-                  className: 'stroke-white size-full stroke-2',
+                  className: 'stroke-2 stroke-white size-full',
                   Component: CloseIcon,
                   name: 'close',
                 }}
@@ -156,7 +155,7 @@ export const PostModal = ({ id, post }: PostModalProps) => {
                 </>
               )}
             </div>
-            <div className="bg-white dark:bg-neutral-800 relative w-80">
+            <div className="card-bg relative w-80">
               <PostHeader
                 createdAt={createdAt}
                 feeling={feeling as Feeling}
@@ -167,7 +166,7 @@ export const PostModal = ({ id, post }: PostModalProps) => {
                 postSaves={savedBy}
                 postUserId={user.id}
               />
-              <p className="mb-1.5 pl-3 primary-text">{thoughts}</p>
+              <p className="primary-text mb-1.5 pl-3">{thoughts}</p>
               <div className="md:px-4">
                 {(optimisticLikes.length > 0 ||
                   optimisticComments.length > 0) && (
@@ -175,20 +174,21 @@ export const PostModal = ({ id, post }: PostModalProps) => {
                     <div className="flex-center space-x-1.5">
                       <LikeIcon className="size-4 md:size-5" />
                       <p className="secondary-text text-sm md:hover:underline">
-                        {optimisticLikes.some(isMyLike) && tLikes('you')}
+                        {optimisticLikes.some(isMyLike) &&
+                          t('posts.post.footer.likes.you')}
                         {!optimisticLikes.some(isMyLike) &&
                           optimisticLikes.length}
                         {optimisticLikes.some(isMyLike) &&
                           optimisticLikes.length > 1 &&
-                          ` ${tLikes('and')} ${optimisticLikes.length - 1} ${optimisticLikes.length > 2 ? tLikes('people') : tLikes('person')} ${tLikes('more')}`}
+                          ` ${t('posts.post.footer.likes.and')} ${optimisticLikes.length - 1} ${optimisticLikes.length > 2 ? t('posts.post.footer.likes.people') : t('posts.post.footer.likes.person')} ${t('posts.post.footer.likes.more')}`}
                       </p>
                     </div>
                     {optimisticComments.length > 1 && (
                       <p className="secondary-text text-sm md:hover:underline">
                         {`${optimisticComments.length} `}
                         {optimisticLikes.length === 1
-                          ? tComments('comment')
-                          : tComments('comments')}
+                          ? t('posts.post.footer.comments.comment')
+                          : t('posts.post.footer.comments.comments')}
                       </p>
                     )}
                   </div>

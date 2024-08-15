@@ -2,7 +2,7 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import { locales } from '@/i18n/config';
 
-import { AuthFooterLocaleSwitcherSelect } from './select/auth-footer-locale-switcher-select';
+import { AuthFooterLocaleSwitcherSelect } from './select/AuthFooterLocaleSwitcherSelect';
 
 export const AuthFooterLocaleSwitcher = () => {
   const locale = useLocale();

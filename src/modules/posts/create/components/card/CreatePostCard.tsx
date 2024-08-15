@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useCallback } from 'react';
+import { useRef } from 'react';
 
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
@@ -24,8 +24,6 @@ import {
 export const CreatePostCard = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const t = useTranslations();
-  const tFooter = useTranslations('posts.create.layout.footer');
-  const tLayout = useTranslations('posts.create.layout');
   const dispatch = useAppDispatch();
   const { step, thoughts, posting } = useAppSelector(
     (store) => store.posts.create.post
@@ -37,22 +35,18 @@ export const CreatePostCard = () => {
     (store) => store.posts.create.feelings
   );
 
-  const handleToggleOpenable = useCallback(() => {
-    !posting && dispatch(toggleOpenable());
-  }, [dispatch, posting]);
+  const handleToggleOpenable = () => !posting && dispatch(toggleOpenable());
 
-  const handleStep = useCallback(() => {
+  const handleStep = () =>
     step === 'default' ? handleToggleOpenable() : dispatch(setStep('default'));
-  }, [dispatch, handleToggleOpenable, step]);
 
-  const handleOpenLiveVideoStep = useCallback(() => {
+  const handleOpenLiveVideoStep = () =>
     showToast.error(t('toast-messages.error.feature-under-development'));
-  }, [t]);
 
-  const handleOpenMediaStep = useCallback(() => {
+  const handleOpenMediaStep = () => {
     if (activeGif) {
       showToast.error(
-        tFooter.rich('disabled', {
+        t.rich('posts.create.layout.footer.disabled', {
           br: () => null,
         }) as string
       );
@@ -60,12 +54,12 @@ export const CreatePostCard = () => {
       handleToggleOpenable();
       dispatch(setStep('media'));
     }
-  }, [activeGif, dispatch, handleToggleOpenable, tFooter]);
+  };
 
-  const handleOpenFeelingsStep = useCallback(() => {
+  const handleOpenFeelingsStep = () => {
     handleToggleOpenable();
     dispatch(setStep('feelings'));
-  }, [dispatch, handleToggleOpenable]);
+  };
 
   const cardItems: CardItem[] = [
     {
@@ -107,15 +101,15 @@ export const CreatePostCard = () => {
         <div className="flex-center p-3 md:px-4 space-x-2">
           <ProfilePic />
           <button
-            aria-label={thoughts || tLayout('thoughts')}
-            className="border md:border-none flex-grow overflow-hidden primary-border primary-text md:accent-text primary-transition px-4 md:px-3 py-2.5 md:py-2 rounded-full text-start whitespace-nowrap md:primary-bg hover:secondary-bg"
+            aria-label={thoughts || t('posts.create.layout.thoughts')}
+            className="border md:border-none primary-border primary-text md:accent-text primary-transition flex-grow overflow-hidden px-4 md:px-3 py-2.5 md:py-2 rounded-full text-start whitespace-nowrap md:primary-bg hover:secondary-bg"
             onClick={handleToggleOpenable}
             type="button"
           >
-            {thoughts || tLayout('thoughts')}
+            {thoughts || t('posts.create.layout.thoughts')}
           </button>
         </div>
-        <div className="border-t divide-x md:divide-x-0 flex primary-border primary-divide md:mx-4 md:py-2.5 md:space-x-1">
+        <div className="border-t primary-border divide-x md:divide-x-0 primary-divide flex md:mx-4 md:py-2.5 md:space-x-1">
           {cardItems.map((item) => (
             <CreatePostCardItem key={item.name} {...item} />
           ))}

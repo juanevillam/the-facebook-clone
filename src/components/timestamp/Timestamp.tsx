@@ -7,9 +7,9 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Tooltip } from '@/components';
 import { getRelativeTime } from '@/modules/posts/post/utils';
 
-interface TimestampProps {
+type TimestampProps = {
   date: Date;
-}
+};
 
 export const Timestamp = ({ date }: TimestampProps) => {
   const locale = useLocale();

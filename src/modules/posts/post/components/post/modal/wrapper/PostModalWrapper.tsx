@@ -5,10 +5,10 @@ import { PostExtended } from '@/modules/posts/post/assets/types';
 
 import { PostModal } from '../PostModal';
 
-interface PostModalWrapperProps {
+type PostModalWrapperProps = {
   id: string;
   post: PostExtended;
-}
+};
 
 export const PostModalWrapper = ({ id, post }: PostModalWrapperProps) => {
   const messages = useMessages();

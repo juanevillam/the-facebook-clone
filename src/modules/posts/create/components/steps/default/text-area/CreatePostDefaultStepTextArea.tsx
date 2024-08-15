@@ -17,7 +17,7 @@ export const CreatePostDefaultStepTextArea = () => {
     <textarea
       aria-label={t('thoughts')}
       className={classNames(
-        'bg-transparent font-light md:font-normal pb-1.5 md:pb-0 primary-placeholder primary-text px-3 md:px-4 resize-none size-full text-2xl focus:outline-none',
+        'primary-placeholder primary-text bg-transparent font-light md:font-normal pb-1.5 md:pb-0 px-3 md:px-4 resize-none size-full text-2xl focus:outline-none',
         {
           'md:h-30': activeGif,
           'md:h-40': !activeGif,

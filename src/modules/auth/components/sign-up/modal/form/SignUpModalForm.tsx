@@ -5,9 +5,8 @@ import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
-import { VoidFunction } from '@/assets/types';
 import { Button } from '@/components/buttons';
-import { signUp } from '@/modules/auth/api/sign-up';
+import { signUp } from '@/modules/auth/api';
 import {
   signUpFormSchema,
   signUpFormValuesType,
@@ -15,9 +14,9 @@ import {
 
 import { AuthRadioInput, AuthSocial, AuthTextInput } from '../../../ui';
 
-interface SignUpModalFormProps {
+type SignUpModalFormProps = {
   handleToggleSignUpOpenable: VoidFunction;
-}
+};
 
 export const SignUpModalForm = ({
   handleToggleSignUpOpenable,
@@ -44,9 +43,7 @@ export const SignUpModalForm = ({
     try {
       signUpFormSchema.parse(values);
     } catch (error) {
-      if (error instanceof z.ZodError) {
-        return error.formErrors.fieldErrors;
-      }
+      if (error instanceof z.ZodError) return error.formErrors.fieldErrors;
     }
   };
 

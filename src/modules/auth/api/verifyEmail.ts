@@ -1,6 +1,6 @@
 'use server';
 
-import { getEmailVerificationTokenByToken } from '@/data/email-verification-token';
+import { getEmailVerificationTokenByToken } from '@/data/emailVerificationToken';
 import { getUserByEmail } from '@/data/user';
 import { db } from '@/lib/database';
 

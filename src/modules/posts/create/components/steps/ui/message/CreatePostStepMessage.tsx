@@ -1,9 +1,9 @@
 import { SharedSvg } from '@/assets/types';
 
-interface CreatePostStepMessageProps {
+type CreatePostStepMessageProps = {
   Icon: SharedSvg;
   message: string;
-}
+};
 
 export const CreatePostStepMessage = ({
   Icon,
@@ -14,7 +14,7 @@ export const CreatePostStepMessage = ({
       <div className="mb-1 md:mb-2 p-1 md:p-2 rounded-full md:primary-bg">
         <Icon className="primary-text size-10 md:size-6" />
       </div>
-      <h1 className="font-medium primary-text text-center w-11/12 md:text-sm">
+      <h1 className="primary-text font-medium text-center w-11/12 md:text-sm">
         {message}
       </h1>
     </div>

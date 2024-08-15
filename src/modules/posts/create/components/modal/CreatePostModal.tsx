@@ -1,16 +1,15 @@
 import { Backdrop, Fade, Modal } from '@mui/material';
 
-import { VoidFunction } from '@/assets/types';
 import { ArrowLeftIcon, CloseIcon } from '@/assets/ui/icons';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostHeader } from '../layout';
 
-interface CreatePostModalProps {
+type CreatePostModalProps = {
   handleStep: VoidFunction;
   handleToggleOpenable: VoidFunction;
   children: React.ReactNode;
-}
+};
 
 export const CreatePostModal = ({
   handleStep,

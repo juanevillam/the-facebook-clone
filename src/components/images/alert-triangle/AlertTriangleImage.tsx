@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-interface AlertTriangleImageProps {
+type AlertTriangleImageProps = {
   size: number;
-}
+};
 
 export const AlertTriangleImage = ({ size }: AlertTriangleImageProps) => {
   const t = useTranslations('images');

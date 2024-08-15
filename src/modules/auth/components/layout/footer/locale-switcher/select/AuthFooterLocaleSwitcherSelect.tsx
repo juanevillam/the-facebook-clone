@@ -1,16 +1,16 @@
 'use client';
 
-import { ChangeEvent, useTransition } from 'react';
+import { useTransition } from 'react';
 
 import { useParams } from 'next/navigation';
 
 import { useRouter, usePathname } from '@/navigation';
 
-interface AuthFooterLocaleSwitcherSelectProps {
+type AuthFooterLocaleSwitcherSelectProps = {
   defaultValue: string;
   label: string;
   children: React.ReactNode;
-}
+};
 
 export const AuthFooterLocaleSwitcherSelect = ({
   defaultValue,
@@ -19,11 +19,10 @@ export const AuthFooterLocaleSwitcherSelect = ({
 }: AuthFooterLocaleSwitcherSelectProps) => {
   const [isPending, startTransition] = useTransition();
   const params = useParams();
-
   const router = useRouter();
   const pathname = usePathname();
 
-  const onSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
+  const onSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const nextLocale = event.target.value;
 
     startTransition(() => {
@@ -36,7 +35,7 @@ export const AuthFooterLocaleSwitcherSelect = ({
 
   return (
     <label
-      className={`relative text-sm text-gray-500 ${isPending && 'transition-opacity [&:disabled]:opacity-30'}`}
+      className={`relative text-gray-500 text-sm ${isPending && 'transition-opacity [&:disabled]:opacity-30'}`}
       htmlFor="locale-select"
     >
       <p className="sr-only">{label}</p>

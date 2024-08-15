@@ -11,11 +11,11 @@ import { useAppSelector } from '@/lib/store/hooks';
 
 import { PostOptionsBottomSheet } from './bottom-sheet/PostOptionsBottomSheet';
 
-interface PostOptionsProps {
+type PostOptionsProps = {
   postId: string;
   postSaves: SavedPost[];
   postUserId: string;
-}
+};
 
 export const PostOptions = ({
   postId,

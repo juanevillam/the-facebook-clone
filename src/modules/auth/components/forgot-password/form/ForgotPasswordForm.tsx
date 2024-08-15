@@ -8,7 +8,7 @@ import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/buttons';
-import { forgotPassword } from '@/modules/auth/api/forgot-password';
+import { forgotPassword } from '@/modules/auth/api';
 import {
   forgotPasswordFormSchema,
   forgotPasswordFormValuesType,
@@ -18,16 +18,15 @@ import { AuthTextInput } from '../../ui';
 
 export const ForgotPasswordForm = () => {
   const [isPending, startTransition] = useTransition();
-
   const t = useTranslations();
 
   const handleSubmit = (values: forgotPasswordFormValuesType) => {
     startTransition(() => {
       forgotPassword(values)
         .then((data) => {
-          if (data.type === 'success') {
-            showToast.success(t(`toast-messages.success.${data.message}`));
-          } else showToast.error(t(`toast-messages.error.${data.message}`));
+          data.type === 'success'
+            ? showToast.success(t(`toast-messages.success.${data.message}`))
+            : showToast.error(t(`toast-messages.error.${data.message}`));
         })
         .catch(() =>
           showToast.error(t('toast-messages.error.something-went-wrong'))
@@ -39,9 +38,7 @@ export const ForgotPasswordForm = () => {
     try {
       forgotPasswordFormSchema.parse(values);
     } catch (error) {
-      if (error instanceof z.ZodError) {
-        return error.formErrors.fieldErrors;
-      }
+      if (error instanceof z.ZodError) return error.formErrors.fieldErrors;
     }
   };
 

@@ -5,9 +5,8 @@ import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
-import { VoidFunction } from '@/assets/types';
 import { Button } from '@/components/buttons';
-import { signUp } from '@/modules/auth/api/sign-up';
+import { signUp } from '@/modules/auth/api';
 import {
   signUpDialogFormSchema,
   signUpFormValuesType,
@@ -15,10 +14,10 @@ import {
 
 import { AuthRadioInput, AuthTextInput } from '../../../ui';
 
-interface SignUpDialogFormProps {
+type SignUpDialogFormProps = {
   nextStep: VoidFunction;
   step: number;
-}
+};
 
 export const SignUpDialogForm = ({ nextStep, step }: SignUpDialogFormProps) => {
   const [isPending, startTransition] = useTransition();
@@ -45,9 +44,7 @@ export const SignUpDialogForm = ({ nextStep, step }: SignUpDialogFormProps) => {
     try {
       (signUpDialogFormSchema as any)[`step${step}`].parse(values);
     } catch (error) {
-      if (error instanceof z.ZodError) {
-        return error.formErrors.fieldErrors;
-      }
+      if (error instanceof z.ZodError) return error.formErrors.fieldErrors;
     }
   };
 

@@ -1,14 +1,13 @@
 import { useTranslations } from 'next-intl';
 
-import { VoidFunction } from '@/assets/types';
 import { SharedSvgProps } from '@/assets/ui/icons/types';
 
-interface PostOptionsBottomSheetItemProps {
+type PostOptionsBottomSheetItemProps = {
   IconComponent: React.FC<SharedSvgProps>;
   name: 'delete' | 'save' | 'edit' | 'unsave';
   onClick: VoidFunction;
   showDescription?: boolean;
-}
+};
 
 export const PostOptionsBottomSheetItem = ({
   IconComponent,
@@ -20,7 +19,7 @@ export const PostOptionsBottomSheetItem = ({
 
   return (
     <button
-      className="flex flex-col items-start p-2 primary-transition px-3 md:px-2 w-full md:rounded-md hover:primary-bg"
+      className="primary-transition flex flex-col items-start p-2 px-3 md:px-2 w-full md:rounded-md hover:primary-bg"
       onClick={onClick}
       type="button"
     >

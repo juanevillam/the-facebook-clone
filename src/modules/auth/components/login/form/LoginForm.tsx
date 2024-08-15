@@ -10,8 +10,8 @@ import * as z from 'zod';
 
 import { Button } from '@/components/buttons';
 import { useAppDispatch } from '@/lib/store/hooks';
-import { toggleSignUpOpenable } from '@/lib/store/reducers/auth-reducer';
-import { login } from '@/modules/auth/api/login';
+import { toggleSignUpOpenable } from '@/lib/store/reducers/authReducer';
+import { login } from '@/modules/auth/api';
 import {
   loginFormSchema,
   loginFormValuesType,
@@ -60,9 +60,7 @@ export const LoginForm = () => {
     try {
       loginFormSchema.parse(values);
     } catch (error) {
-      if (error instanceof z.ZodError) {
-        return error.formErrors.fieldErrors;
-      }
+      if (error instanceof z.ZodError) return error.formErrors.fieldErrors;
     }
   };
 

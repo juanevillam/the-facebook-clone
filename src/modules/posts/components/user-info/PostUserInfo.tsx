@@ -4,12 +4,12 @@ import { useTranslations } from 'next-intl';
 
 import { Feeling } from '@/modules/posts/create/assets/types';
 
-interface PostUserInfoProps {
+type PostUserInfoProps = {
   feeling?: Feeling;
   hideFellingInfo?: boolean;
   location?: string;
   name: string;
-}
+};
 
 export const PostUserInfo = ({
   feeling,
@@ -17,23 +17,22 @@ export const PostUserInfo = ({
   location,
   name,
 }: PostUserInfoProps) => {
-  const tUserInfo = useTranslations('posts.user-info');
-  const tFeelings = useTranslations('posts.feelings');
+  const t = useTranslations('posts');
 
   return (
     <p className="leading-tight">
-      <span className="font-semibold primary-text">{name}</span>
+      <span className="primary-text font-semibold">{name}</span>
       {(feeling || location) && (
-        <span className="tertiary-text">&nbsp;{tUserInfo('is')}</span>
+        <span className="tertiary-text">&nbsp;{t('user-info.is')}</span>
       )}
       {feeling && (
         <span className="tertiary-text">
           {!hideFellingInfo && (
-            <span className="md:hidden">&nbsp;{tUserInfo('feeling')}</span>
+            <span className="md:hidden">&nbsp;{t('user-info.feeling')}</span>
           )}
           &nbsp;
           <Image
-            alt={tUserInfo('feeling-icon-alt', { feeling })}
+            alt={t('user-info.feeling-icon-alt', { feeling })}
             className="inline-block"
             height={18}
             loading="eager"
@@ -41,21 +40,21 @@ export const PostUserInfo = ({
             width={18}
           />
           <span className="hidden md:inline-block">
-            &nbsp;{tUserInfo('feeling')}
+            &nbsp;{t('user-info.feeling')}
           </span>
           <span
             className={classNames('md:inline-block', {
               hidden: hideFellingInfo,
             })}
           >
-            &nbsp;{tFeelings(feeling)}
+            &nbsp;{t(`feelings.${feeling}`)}
           </span>
         </span>
       )}
       {location && (
         <span>
-          <span className="tertiary-text">&nbsp;{tUserInfo('in')}</span>
-          <span className="font-semibold primary-text">&nbsp;{location}</span>
+          <span className="tertiary-text">&nbsp;{t('user-info.in')}</span>
+          <span className="primary-text font-semibold">&nbsp;{location}</span>
         </span>
       )}
     </p>

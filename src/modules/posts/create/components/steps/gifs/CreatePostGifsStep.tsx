@@ -92,11 +92,12 @@ export const CreatePostGifsStep = () => {
       return;
     }
 
-    if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
+    debounceTimeout.current && clearTimeout(debounceTimeout.current);
 
-    debounceTimeout.current = setTimeout(() => {
-      handleGetGifs(value, false, 0);
-    }, 300);
+    debounceTimeout.current = setTimeout(
+      () => handleGetGifs(value, false, 0),
+      300
+    );
   };
 
   const handleSetActiveGif = (gif: GIF) => {
