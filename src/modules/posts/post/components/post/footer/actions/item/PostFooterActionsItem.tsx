@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { NavbarIconProps } from '@/assets/ui/icons/navbar/types';
 
 type PostFooterActionsItemProps = {
+  className?: string;
   Icon: React.FC<NavbarIconProps>;
   isActive: boolean;
   label?: 'comment' | 'like' | 'share';
@@ -12,6 +13,7 @@ type PostFooterActionsItemProps = {
 };
 
 export const PostFooterActionsItem = ({
+  className,
   Icon,
   isActive,
   label,
@@ -21,7 +23,7 @@ export const PostFooterActionsItem = ({
   const t = useTranslations('posts.post.footer.actions');
 
   return (
-    <div className="w-full">
+    <div className={`w-full ${className}`}>
       <button
         className="flex-center-justify-center primary-transition hover:primary-bg w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2"
         onClick={onClick}

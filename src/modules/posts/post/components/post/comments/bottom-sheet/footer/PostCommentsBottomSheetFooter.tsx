@@ -10,11 +10,13 @@ import { commentPost } from '@/modules/posts/post/actions';
 type PostCommentsBottomSheetFooterProps = {
   addOptimisticComment: (action: unknown) => void;
   postId: string;
+  setIsCommentsSectionOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const PostCommentsBottomSheetFooter = ({
   addOptimisticComment,
   postId,
+  setIsCommentsSectionOpen,
 }: PostCommentsBottomSheetFooterProps) => {
   const [thoughts, setThoughts] = useState('');
   const [isPending, startTransition] = useTransition();
@@ -27,6 +29,7 @@ export const PostCommentsBottomSheetFooter = ({
   const handleOptimisticComment = () => {
     const thoughtsCopy = thoughts;
 
+    setIsCommentsSectionOpen && setIsCommentsSectionOpen(true);
     setThoughts('');
     startTransition(() => {
       addOptimisticComment(thoughtsCopy);
@@ -39,16 +42,16 @@ export const PostCommentsBottomSheetFooter = ({
 
   return (
     <form
-      className="primary-border flex-center w-full space-x-2 border-t bg-white p-2 md:p-3 dark:bg-neutral-800"
+      className="primary-border flex-center w-full space-x-2 border-t bg-white p-2 md:border-none md:p-0 dark:bg-neutral-800"
       onSubmit={handleOptimisticComment}
     >
-      <div className="flex-center primary-bg w-full rounded-full p-2.5">
+      <div className="flex-center primary-bg primary-border w-full rounded-full px-4 py-2.5">
         <label className="sr-only" htmlFor="post-comments-bottom-sheet-input">
           {t('posts.post.comments.bottom-sheet.title')}
         </label>
         <input
           aria-label={t('posts.post.comments.bottom-sheet.title')}
-          className="primary-placeholder primary-text primary-transition ml-2 inline-flex w-full bg-transparent focus:outline-none"
+          className="primary-placeholder md:accent-placeholder primary-text md:accent-text primary-transition inline-flex w-full bg-transparent focus:outline-none"
           id="post-comments-bottom-sheet-input"
           onChange={handleComment}
           placeholder={`${t('posts.post.comments.bottom-sheet.title')}...`}
@@ -58,7 +61,7 @@ export const PostCommentsBottomSheetFooter = ({
       </div>
       {thoughts && (
         <button
-          className="flex-center-justify-center primary-transition hover:primary-bg rounded-full p-2"
+          className="only-mobile flex-center-justify-center primary-transition hover:primary-bg rounded-full p-2"
           onClick={handleOptimisticComment}
           type="submit"
         >

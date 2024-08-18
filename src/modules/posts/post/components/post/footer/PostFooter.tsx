@@ -6,17 +6,19 @@ import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 import { Drawer } from 'vaul';
 
-import { LikeIcon } from '@/assets/ui/icons';
+import { ProfilePic } from '@/components';
 import { useCurrentUser } from '@/hooks';
 
 import { PostFooterActions } from './actions/PostFooterActions';
+import { PostFooterInfo } from './info/PostFooterInfo';
 import { likePost } from '../../../actions';
 import { CommentExtended, LikeExtended } from '../../../assets/types';
+import { PostCommentsBottomSheetBody } from '../comments/body/PostCommentsBottomSheetBody';
 import { PostCommentsBottomSheet } from '../comments/bottom-sheet';
+import { PostCommentsBottomSheetFooter } from '../comments/bottom-sheet/footer/PostCommentsBottomSheetFooter';
 
 type PostFooterProps = {
   isPostModal?: boolean;
-  media: string;
   postComments: CommentExtended[];
   postLikes: LikeExtended[];
   postId: string;
@@ -24,13 +26,14 @@ type PostFooterProps = {
 
 export const PostFooter = ({
   isPostModal,
-  media,
   postComments,
   postLikes,
   postId,
 }: PostFooterProps) => {
   const [isCommentsBottomSheetOpen, setIsCommentsBottomSheetOpen] =
     useState(false);
+
+  const [isCommentsSectionOpen, setIsCommentsSectionOpen] = useState(false);
 
   const [isPending, startTransition] = useTransition();
   const t = useTranslations();
@@ -64,6 +67,9 @@ export const PostFooter = ({
     ]
   );
 
+  const handleCommentsSection = () =>
+    setIsCommentsSectionOpen(!isCommentsSectionOpen);
+
   const openCommentsBottomSheet = () => setIsCommentsBottomSheetOpen(true);
 
   const closeCommentsBottomSheet = () => setIsCommentsBottomSheetOpen(false);
@@ -80,50 +86,61 @@ export const PostFooter = ({
   };
 
   return (
-    <div className="md:px-4">
+    <>
       {(optimisticLikes.length > 0 || optimisticComments.length > 0) && (
-        <button
-          className="flex-center-justify-between primary-transition hover:primary-bg w-full px-3 py-2 md:px-0 md:py-3 md:hover:bg-transparent"
-          onClick={openCommentsBottomSheet}
-          type="button"
-        >
-          <div className="flex-center space-x-1.5">
-            <LikeIcon className="size-4 md:size-5" />
-            <p className="secondary-text text-sm md:hover:underline">
-              {optimisticLikes.some(isMyLike) &&
-                t('posts.post.footer.likes.you')}
-              {!optimisticLikes.some(isMyLike) && optimisticLikes.length}
-              {optimisticLikes.some(isMyLike) &&
-                optimisticLikes.length > 1 &&
-                ` ${t('posts.post.footer.likes.and')} ${
-                  optimisticLikes.length - 1
-                } ${
-                  optimisticLikes.length > 2
-                    ? t('posts.post.footer.likes.people')
-                    : t('posts.post.footer.likes.person')
-                } ${t('posts.post.footer.likes.more')}`}
-            </p>
+        <div className="md:px-4">
+          <button
+            className="only-mobile flex-center-justify-between primary-transition hover:primary-bg w-full px-3 py-2"
+            onClick={openCommentsBottomSheet}
+            type="button"
+          >
+            <PostFooterInfo
+              isMyLike={isMyLike}
+              optimisticComments={optimisticComments}
+              optimisticLikes={optimisticLikes}
+            />
+          </button>
+          <div className="only-desktop center-justify-between w-full px-0 py-3">
+            <PostFooterInfo
+              handleCommentsSection={handleCommentsSection}
+              isMyLike={isMyLike}
+              optimisticComments={optimisticComments}
+              optimisticLikes={optimisticLikes}
+            />
           </div>
-          {optimisticComments.length > 0 && (
-            <p className="secondary-text text-sm md:hover:underline">
-              {`${optimisticComments.length} `}
-              {optimisticComments.length === 1
-                ? t('posts.post.footer.comments.comment')
-                : t('posts.post.footer.comments.comments')}
-            </p>
-          )}
-        </button>
+        </div>
       )}
       <PostFooterActions
+        handleCommentsSection={handleCommentsSection}
         handleOptimisticLike={handleOptimisticLike}
         isCommentsBottomSheetOpen={isCommentsBottomSheetOpen}
+        isCommentsSectionOpen={isCommentsSectionOpen}
         isMyLike={isMyLike}
         isPostModal={isPostModal}
         openCommentsBottomSheet={openCommentsBottomSheet}
         optimisticLikes={optimisticLikes}
         postId={postId}
-        showBorderT={media ? optimisticLikes.length > 0 : true}
       />
+      {isCommentsSectionOpen && (
+        <div className="only-desktop border-l-4 border-primary-100 px-3 pt-4">
+          <PostCommentsBottomSheetBody
+            optimisticComments={optimisticComments}
+          />
+        </div>
+      )}
+      <div className="md:px-4">
+        <div className="only-desktop space-x-2 pb-2 pt-4">
+          <ProfilePic />
+          <PostCommentsBottomSheetFooter
+            addOptimisticComment={addOptimisticComment}
+            postId={postId}
+            setIsCommentsSectionOpen={setIsCommentsSectionOpen}
+          />
+        </div>
+        <p className="only-desktop secondary-text ml-16 pb-4 text-xs">
+          {t('posts.post.footer.comments.press-enter-to-post')}
+        </p>
+      </div>
       <Drawer.Root
         open={isCommentsBottomSheetOpen}
         onClose={closeCommentsBottomSheet}
@@ -138,6 +155,6 @@ export const PostFooter = ({
           postId={postId}
         />
       </Drawer.Root>
-    </div>
+    </>
   );
 };

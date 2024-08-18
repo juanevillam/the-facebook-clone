@@ -289,7 +289,8 @@
         },
         "comments": {
           "comment": "Comment",
-          "comments": "Comments"
+          "comments": "Comments",
+          "press-enter-to-post": "Press enter to post"
         }
       },
       "comments": {
@@ -326,7 +327,8 @@
   "images": {
     "alert-triangle": "Alert icon",
     "no-profile-pic": "No profile pic image",
-    "profile-pic": "{name}'s profile picture"
+    "profile-pic": "{name}'s profile picture",
+    "thumb-up": "Thumb up icon"
   },
   "toast-messages": {
     "error": {

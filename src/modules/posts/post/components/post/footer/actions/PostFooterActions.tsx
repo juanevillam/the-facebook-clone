@@ -14,25 +14,27 @@ import { LikeExtended } from '@/modules/posts/post/assets/types';
 import { PostFooterActionsItem } from './item/PostFooterActionsItem';
 
 type PostFooterActionsProps = {
+  handleCommentsSection: VoidFunction;
   handleOptimisticLike: VoidFunction;
   isCommentsBottomSheetOpen: boolean;
+  isCommentsSectionOpen: boolean;
   isMyLike: (like: LikeExtended) => boolean;
   isPostModal?: boolean;
   openCommentsBottomSheet: VoidFunction;
   optimisticLikes: LikeExtended[];
   postId: string;
-  showBorderT?: boolean;
 };
 
 export const PostFooterActions = ({
+  handleCommentsSection,
   handleOptimisticLike,
   isCommentsBottomSheetOpen,
+  isCommentsSectionOpen,
   isMyLike,
   isPostModal,
   openCommentsBottomSheet,
   optimisticLikes,
   postId,
-  showBorderT = false,
 }: PostFooterActionsProps) => {
   const t = useTranslations('toast-messages.success');
 
@@ -42,12 +44,7 @@ export const PostFooterActions = ({
   };
 
   return (
-    <div
-      className={classNames('flex md:space-x-1 md:py-2.5', {
-        'md:primary-border md:border-t': showBorderT,
-        'md:primary-border md:border-y md:py-1.5': isPostModal,
-      })}
-    >
+    <div className="md:primary-border flex md:space-x-1 md:border-y md:px-4 md:py-2.5">
       <PostFooterActionsItem
         Icon={HandThumbUpIcon}
         isActive={optimisticLikes.some(isMyLike)}
@@ -56,10 +53,19 @@ export const PostFooterActions = ({
         showLabel={!isPostModal}
       />
       <PostFooterActionsItem
+        className="only-mobile"
         Icon={ChatBubbleOvalLeftIcon}
         isActive={isCommentsBottomSheetOpen}
         label="comment"
         onClick={openCommentsBottomSheet}
+        showLabel={!isPostModal}
+      />
+      <PostFooterActionsItem
+        className="only-desktop"
+        Icon={ChatBubbleOvalLeftIcon}
+        isActive={isCommentsSectionOpen}
+        label="comment"
+        onClick={handleCommentsSection}
         showLabel={!isPostModal}
       />
       <PostFooterActionsItem

@@ -41,12 +41,7 @@ export const Post = async ({
         postId={id}
         thoughts={thoughts as string}
       />
-      <PostFooter
-        media={media as string}
-        postComments={comments}
-        postLikes={likes}
-        postId={id}
-      />
+      <PostFooter postComments={comments} postLikes={likes} postId={id} />
     </div>
   );
 };

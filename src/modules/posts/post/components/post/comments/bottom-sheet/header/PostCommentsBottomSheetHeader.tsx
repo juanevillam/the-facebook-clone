@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
-import { ChevronRightIcon, HandThumbUpIcon, LikeIcon } from '@/assets/ui/icons';
+import { ChevronRightIcon, HandThumbUpIcon } from '@/assets/ui/icons';
+import { ThumbUpImage } from '@/components/images';
 import { LikeExtended } from '@/modules/posts/post/assets/types';
 
 type PostCommentsBottomSheetHeaderProps = {
@@ -24,7 +25,7 @@ export const PostCommentsBottomSheetHeader = ({
           className="flex-center-justify-center primary-transition hover:primary-bg space-x-1.5 rounded-full py-1 pl-2"
           type="button"
         >
-          <LikeIcon className="size-5" />
+          <ThumbUpImage className="size-5" />
           <p className="primary-text text-lg font-medium">
             {optimisticLikes.some(isMyLike) && t('you')}
             {!optimisticLikes.some(isMyLike) && optimisticLikes.length}

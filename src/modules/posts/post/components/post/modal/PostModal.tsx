@@ -122,7 +122,6 @@ export const PostModal = ({ id, post }: PostModalProps) => {
               <p className="primary-text mb-2 pl-3">{thoughts}</p>
               <PostFooter
                 isPostModal
-                media={media as string}
                 postComments={comments}
                 postLikes={likes}
                 postId={post.id}

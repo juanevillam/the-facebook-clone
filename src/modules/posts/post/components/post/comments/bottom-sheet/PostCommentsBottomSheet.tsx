@@ -47,6 +47,7 @@ export const PostCommentsBottomSheet = ({
             optimisticLikes={optimisticLikes}
           />
           <PostCommentsBottomSheetBody
+            isMobile
             optimisticComments={optimisticComments}
           />
           <PostCommentsBottomSheetFooter
