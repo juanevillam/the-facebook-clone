@@ -13,7 +13,7 @@ type PostUserInfoProps = {
 
 export const PostUserInfo = ({
   feeling,
-  hideFellingInfo,
+  hideFellingInfo = false,
   location,
   name,
 }: PostUserInfoProps) => {
@@ -27,7 +27,7 @@ export const PostUserInfo = ({
       )}
       {feeling && (
         <span className="tertiary-text">
-          {!hideFellingInfo && (
+          {hideFellingInfo && (
             <span className="md:hidden">&nbsp;{t('user-info.feeling')}</span>
           )}
           &nbsp;

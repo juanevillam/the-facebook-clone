@@ -7,14 +7,14 @@ import {
 } from '@/modules/posts/post/assets/types';
 
 type PostFooterInfoProps = {
-  handleCommentsSection?: VoidFunction;
+  handleDesktopCommentsOpen?: VoidFunction;
   isMyLike: (like: LikeExtended) => boolean;
   optimisticComments: CommentExtended[];
   optimisticLikes: LikeExtended[];
 };
 
 export const PostFooterInfo = ({
-  handleCommentsSection,
+  handleDesktopCommentsOpen,
   isMyLike,
   optimisticComments,
   optimisticLikes,
@@ -42,7 +42,7 @@ export const PostFooterInfo = ({
         )}
       </div>
       {optimisticComments.length > 0 && (
-        <button onClick={handleCommentsSection} type="button">
+        <button onClick={handleDesktopCommentsOpen} type="button">
           <p className="secondary-text text-sm md:hover:underline">
             {`${optimisticComments.length} `}
             {optimisticComments.length === 1

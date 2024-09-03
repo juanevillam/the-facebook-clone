@@ -14,25 +14,25 @@ import { LikeExtended } from '@/modules/posts/post/assets/types';
 import { PostFooterActionsItem } from './item/PostFooterActionsItem';
 
 type PostFooterActionsProps = {
-  handleCommentsSection: VoidFunction;
+  areDesktopCommentsOpen: boolean;
+  areMobileCommentsOpen: boolean;
+  handleDesktopCommentsOpen: VoidFunction;
   handleOptimisticLike: VoidFunction;
-  isCommentsBottomSheetOpen: boolean;
-  isCommentsSectionOpen: boolean;
   isMyLike: (like: LikeExtended) => boolean;
-  isPostModal?: boolean;
-  openCommentsBottomSheet: VoidFunction;
+  isPostModal: boolean;
+  openMobileComments: VoidFunction;
   optimisticLikes: LikeExtended[];
   postId: string;
 };
 
 export const PostFooterActions = ({
-  handleCommentsSection,
+  areDesktopCommentsOpen,
+  areMobileCommentsOpen,
+  handleDesktopCommentsOpen,
   handleOptimisticLike,
-  isCommentsBottomSheetOpen,
-  isCommentsSectionOpen,
   isMyLike,
   isPostModal,
-  openCommentsBottomSheet,
+  openMobileComments,
   optimisticLikes,
   postId,
 }: PostFooterActionsProps) => {
@@ -44,36 +44,43 @@ export const PostFooterActions = ({
   };
 
   return (
-    <div className="md:primary-border flex md:space-x-1 md:border-y md:px-4 md:py-2.5">
+    <div
+      className={classNames(
+        'primary-border flex md:space-x-1 md:border-y md:px-4 md:py-2.5',
+        {
+          'border-t': isPostModal,
+        }
+      )}
+    >
       <PostFooterActionsItem
         Icon={HandThumbUpIcon}
         isActive={optimisticLikes.some(isMyLike)}
+        isPostModal={isPostModal}
         label="like"
         onClick={handleOptimisticLike}
-        showLabel={!isPostModal}
       />
       <PostFooterActionsItem
         className="only-mobile"
         Icon={ChatBubbleOvalLeftIcon}
-        isActive={isCommentsBottomSheetOpen}
+        isActive={areMobileCommentsOpen}
+        isPostModal={isPostModal}
         label="comment"
-        onClick={openCommentsBottomSheet}
-        showLabel={!isPostModal}
+        onClick={openMobileComments}
       />
       <PostFooterActionsItem
         className="only-desktop"
         Icon={ChatBubbleOvalLeftIcon}
-        isActive={isCommentsSectionOpen}
+        isActive={areDesktopCommentsOpen}
+        isPostModal={isPostModal}
         label="comment"
-        onClick={handleCommentsSection}
-        showLabel={!isPostModal}
+        onClick={handleDesktopCommentsOpen}
       />
       <PostFooterActionsItem
         Icon={ShareIcon}
         isActive={false}
+        isPostModal={isPostModal}
         label="share"
         onClick={handleShare}
-        showLabel={!isPostModal}
       />
     </div>
   );

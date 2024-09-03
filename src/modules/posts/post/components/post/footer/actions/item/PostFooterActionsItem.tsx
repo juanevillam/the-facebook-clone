@@ -7,18 +7,18 @@ type PostFooterActionsItemProps = {
   className?: string;
   Icon: React.FC<NavbarIconProps>;
   isActive: boolean;
+  isPostModal: boolean;
   label?: 'comment' | 'like' | 'share';
   onClick: VoidFunction;
-  showLabel?: boolean;
 };
 
 export const PostFooterActionsItem = ({
   className,
   Icon,
   isActive,
+  isPostModal,
   label,
   onClick,
-  showLabel = true,
 }: PostFooterActionsItemProps) => {
   const t = useTranslations('posts.post.footer.actions');
 
@@ -36,16 +36,15 @@ export const PostFooterActionsItem = ({
           })}
           isActive={isActive}
         />
-        {showLabel && (
-          <p
-            className={classNames('text-sm md:font-medium', {
-              'text-primary-100': isActive,
-              'primary-text md:accent-text': !isActive,
-            })}
-          >
-            {t(label)}
-          </p>
-        )}
+        <p
+          className={classNames('text-sm md:font-medium', {
+            'text-primary-100': isActive,
+            'primary-text md:accent-text': !isActive,
+            'md:hidden': isPostModal,
+          })}
+        >
+          {t(label)}
+        </p>
       </button>
     </div>
   );

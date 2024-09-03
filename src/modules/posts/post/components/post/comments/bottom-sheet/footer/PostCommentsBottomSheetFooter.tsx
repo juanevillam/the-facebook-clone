@@ -10,13 +10,13 @@ import { commentPost } from '@/modules/posts/post/actions';
 type PostCommentsBottomSheetFooterProps = {
   addOptimisticComment: (action: unknown) => void;
   postId: string;
-  setIsCommentsSectionOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  setAreDesktopCommentsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const PostCommentsBottomSheetFooter = ({
   addOptimisticComment,
   postId,
-  setIsCommentsSectionOpen,
+  setAreDesktopCommentsOpen,
 }: PostCommentsBottomSheetFooterProps) => {
   const [thoughts, setThoughts] = useState('');
   const [isPending, startTransition] = useTransition();
@@ -29,7 +29,7 @@ export const PostCommentsBottomSheetFooter = ({
   const handleOptimisticComment = () => {
     const thoughtsCopy = thoughts;
 
-    setIsCommentsSectionOpen && setIsCommentsSectionOpen(true);
+    setAreDesktopCommentsOpen && setAreDesktopCommentsOpen(true);
     setThoughts('');
     startTransition(() => {
       addOptimisticComment(thoughtsCopy);
@@ -42,7 +42,7 @@ export const PostCommentsBottomSheetFooter = ({
 
   return (
     <form
-      className="primary-border flex-center w-full space-x-2 border-t bg-white p-2 md:border-none md:p-0 dark:bg-neutral-800"
+      className="primary-border flex-center w-full space-x-2 border-t p-2 md:border-none md:p-0"
       onSubmit={handleOptimisticComment}
     >
       <div className="flex-center primary-bg primary-border w-full rounded-full px-4 py-2.5">

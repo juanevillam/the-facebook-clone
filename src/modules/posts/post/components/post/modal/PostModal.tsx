@@ -15,6 +15,7 @@ import { usePathname } from '@/navigation';
 import { PostExtended } from '../../../assets/types';
 import { PostFooter } from '../footer/PostFooter';
 import { PostHeader } from '../header/PostHeader';
+import { PostOptions } from '../options/PostOptions';
 
 type PostModalProps = {
   id: string;
@@ -47,7 +48,7 @@ export const PostModal = ({ id, post }: PostModalProps) => {
 
   return (
     <Modal
-      className="only-desktop z-40"
+      className="z-40"
       closeAfterTransition
       onClose={closeModal}
       open={isOpen}
@@ -59,10 +60,10 @@ export const PostModal = ({ id, post }: PostModalProps) => {
       }}
     >
       <Fade in={isOpen}>
-        <div className="card absolute left-1/2 top-1/2 h-5/6 w-11/12 -translate-x-1/2 -translate-y-1/2 transform outline-none">
-          <div className="flex size-full overflow-hidden rounded-lg">
+        <div className="card absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transform outline-none md:h-5/6 md:w-11/12">
+          <div className="flex size-full flex-col overflow-hidden md:flex-row md:rounded-lg">
             <div className="flex-grow bg-black">
-              <div className="flex-center absolute left-4 top-4 space-x-4">
+              <div className="flex-center absolute left-0 top-2 w-full justify-between space-x-4 px-2 md:left-4 md:top-4 md:w-max md:px-0">
                 <IconButton
                   className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
                   icon={{
@@ -73,6 +74,14 @@ export const PostModal = ({ id, post }: PostModalProps) => {
                   onClick={closeModal}
                 />
                 <FacebookLogoMark className="hidden size-10 md:block" />
+                <div className="only-mobile">
+                  <PostOptions
+                    isPostModal
+                    postId={post.id}
+                    postSaves={post.savedBy}
+                    postUserId={post.userId}
+                  />
+                </div>
               </div>
               <div className="h-full">
                 {mediaType === 'image' && (
@@ -108,11 +117,12 @@ export const PostModal = ({ id, post }: PostModalProps) => {
                 )}
               </div>
             </div>
-            <div className="card-bg relative w-96">
+            <div className="md:card-bg absolute bottom-0 w-full bg-neutral-900 bg-opacity-50 md:static md:w-96 md:min-w-96 md:bg-transparent">
               <PostHeader
                 createdAt={createdAt}
                 feeling={feeling as Feeling}
                 image={user.image as string}
+                isPostModal
                 location={location as string}
                 name={user.name as string}
                 postId={postId}

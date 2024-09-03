@@ -1,9 +1,5 @@
-const PostModalLoadingPage = () => {
-  return (
-    <h1 className="text-2xl text-black dark:text-white">
-      PostModalLoadingPage
-    </h1>
-  );
-};
+import { PostModalSkeleton } from '@/modules/posts/post/components/post';
+
+const PostModalLoadingPage = () => <PostModalSkeleton />;
 
 export default PostModalLoadingPage;
