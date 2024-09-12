@@ -14,7 +14,7 @@ import {
   forgotPasswordFormValuesType,
 } from '@/modules/auth/schemas/forgotPasswordSchema';
 
-import { EmailAuthTextInput } from '../../ui/text-input';
+import { EmailAuthTextInput } from '../../ui';
 
 export const ForgotPasswordForm = () => {
   const [isPending, startTransition] = useTransition();

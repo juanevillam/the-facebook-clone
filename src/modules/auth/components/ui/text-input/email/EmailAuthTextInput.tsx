@@ -14,6 +14,7 @@ type EmailAuthTextInputProps = {
 
 export const EmailAuthTextInput = ({
   disabled,
+  skin,
   variant,
 }: EmailAuthTextInputProps) => {
   const t = useTranslations();
@@ -24,6 +25,7 @@ export const EmailAuthTextInput = ({
       disabled={disabled}
       name="email"
       placeholder={t('form.fields.email-address')}
+      skin={skin}
       type="email"
       variant={variant}
     />

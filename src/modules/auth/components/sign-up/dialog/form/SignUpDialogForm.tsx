@@ -12,8 +12,7 @@ import {
   signUpFormValuesType,
 } from '@/modules/auth/schemas/signUpSchema';
 
-import { AuthRadioInput, AuthTextInput } from '../../../ui';
-import { EmailAuthTextInput } from '../../../ui/text-input';
+import { AuthRadioInput, AuthTextInput, EmailAuthTextInput } from '../../../ui';
 
 type SignUpDialogFormProps = {
   nextStep: VoidFunction;

@@ -12,8 +12,12 @@ import {
   signUpFormValuesType,
 } from '@/modules/auth/schemas/signUpSchema';
 
-import { AuthRadioInput, AuthSocial, AuthTextInput } from '../../../ui';
-import { EmailAuthTextInput } from '../../../ui/text-input';
+import {
+  AuthRadioInput,
+  AuthSocial,
+  AuthTextInput,
+  EmailAuthTextInput,
+} from '../../../ui';
 
 type SignUpModalFormProps = {
   handleToggleSignUpOpenable: VoidFunction;

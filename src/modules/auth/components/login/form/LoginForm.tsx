@@ -17,8 +17,12 @@ import {
   loginFormValuesType,
 } from '@/modules/auth/schemas/loginSchema';
 
-import { AuthLink, AuthSocial, AuthTextInput } from '../../ui';
-import { EmailAuthTextInput } from '../../ui/text-input';
+import {
+  AuthLink,
+  AuthSocial,
+  AuthTextInput,
+  EmailAuthTextInput,
+} from '../../ui';
 
 export const LoginForm = () => {
   const [showTwoFactor, setShowTwoFactor] = useState(false);
