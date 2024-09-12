@@ -13,6 +13,7 @@ import {
 } from '@/modules/auth/schemas/signUpSchema';
 
 import { AuthRadioInput, AuthTextInput } from '../../../ui';
+import { EmailAuthTextInput } from '../../../ui/text-input';
 
 type SignUpDialogFormProps = {
   nextStep: VoidFunction;
@@ -66,17 +67,11 @@ export const SignUpDialogForm = ({ nextStep, step }: SignUpDialogFormProps) => {
             name="name"
             placeholder={t('form.fields.name')}
             type="text"
-            variant="standard"
+            variant="mobile"
           />
         )}
         {step === 2 && (
-          <AuthTextInput
-            disabled={isPending}
-            name="email"
-            placeholder={t('form.fields.email-address')}
-            type="email"
-            variant="standard"
-          />
+          <EmailAuthTextInput disabled={isPending} variant="mobile" />
         )}
         {step === 3 && (
           <AuthTextInput
@@ -85,7 +80,7 @@ export const SignUpDialogForm = ({ nextStep, step }: SignUpDialogFormProps) => {
             minLength={8}
             placeholder={t('form.fields.password')}
             type="password"
-            variant="standard"
+            variant="mobile"
           />
         )}
         {step === 4 && (

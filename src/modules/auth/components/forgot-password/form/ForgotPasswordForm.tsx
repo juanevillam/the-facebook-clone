@@ -14,7 +14,7 @@ import {
   forgotPasswordFormValuesType,
 } from '@/modules/auth/schemas/forgotPasswordSchema';
 
-import { AuthTextInput } from '../../ui';
+import { EmailAuthTextInput } from '../../ui/text-input';
 
 export const ForgotPasswordForm = () => {
   const [isPending, startTransition] = useTransition();
@@ -51,13 +51,7 @@ export const ForgotPasswordForm = () => {
       validate={handleValidateForm}
     >
       <Form className="pt-2">
-        <AuthTextInput
-          disabled={isPending}
-          name="email"
-          placeholder={t('form.fields.email-address')}
-          type="email"
-          variant="outlined"
-        />
+        <EmailAuthTextInput disabled={isPending} />
         <Button
           disabled={isPending}
           fullWidth

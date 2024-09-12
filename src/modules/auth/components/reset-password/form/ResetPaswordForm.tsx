@@ -65,7 +65,6 @@ export const ResetPasswordForm = () => {
           name="password"
           placeholder={t('form.fields.password')}
           type="password"
-          variant="outlined"
         />
         <Button
           disabled={isPending}

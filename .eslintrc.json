@@ -6,16 +6,32 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    "prettier"
+    "prettier",
+    "plugin:jest/recommended",
+    "plugin:testing-library/react"
   ],
-  "plugins": ["prettier", "react", "jsx-a11y", "import"],
+  "plugins": [
+    "prettier",
+    "react",
+    "jsx-a11y",
+    "import",
+    "jest",
+    "testing-library"
+  ],
+  "env": {
+    "jest/globals": true
+  },
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal"],
+        "groups": [
+          "builtin",
+          "external",
+          "internal"
+        ],
         "pathGroups": [
           {
             "pattern": "react",
@@ -23,7 +39,9 @@
             "position": "before"
           }
         ],
-        "pathGroupsExcludedImportTypes": ["react"],
+        "pathGroupsExcludedImportTypes": [
+          "react"
+        ],
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc",

@@ -7,24 +7,30 @@ import { CloseIcon } from '@/assets/ui/icons';
 import { IconButton } from '@/components/buttons';
 import { AlertTriangleImage } from '@/components/images';
 
+export type AuthTextInputSkin = 'primary' | 'secondary';
+
+export type AuthTextInputVariant = 'desktop' | 'mobile';
+
 type AuthTextInputProps = {
-  disabled: boolean;
+  datatestid?: 'email-auth-text-input';
+  disabled?: boolean;
   minLength?: number;
   name: string;
   placeholder: string;
+  skin?: AuthTextInputSkin;
   type: 'text' | 'email' | 'password';
-  variant: 'standard' | 'outlined';
-  varianttype?: 'standard' | 'secondary';
-  [x: string]: any;
+  variant?: AuthTextInputVariant;
 };
 
 export const AuthTextInput = (props: AuthTextInputProps) => {
   const {
+    datatestid,
+    disabled = false,
     minLength,
-    placeholder,
     name,
-    variant,
-    varianttype = 'standard',
+    placeholder,
+    skin = 'primary',
+    variant = 'desktop',
   } = props;
 
   const [field, meta] = useField(props);
@@ -37,14 +43,14 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
 
   return (
     <div className="mb-4 w-full">
-      {variant === 'outlined' ? (
+      {variant === 'desktop' ? (
         <Field
           autoComplete="on"
           aria-describedby={`${props.name}-error`}
           aria-invalid={meta.error && meta.touched ? 'true' : 'false'}
           aria-label={placeholder}
           className={`w-full rounded-md border border-gray-200 px-4 py-3.5 placeholder-gray-500 transition duration-150 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-100 ${
-            varianttype === 'standard'
+            skin === 'primary'
               ? 'bg-white hover:bg-gray-100'
               : 'bg-gray-100 hover:bg-gray-200'
           } ${
@@ -52,6 +58,8 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
             meta.error &&
             'ring-2 ring-error-100 focus:ring-error-100 md:mb-1'
           }`}
+          data-testid={datatestid}
+          disabled={disabled}
           {...field}
           {...props}
         />
@@ -66,6 +74,8 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
                 ? 'border-b-error-100 focus:border-b-error-100'
                 : 'border-b-gray-200 focus:border-b-primary-100'
             }`}
+            data-testid={datatestid}
+            disabled={disabled}
             {...field}
             {...props}
             placeholder=" "
