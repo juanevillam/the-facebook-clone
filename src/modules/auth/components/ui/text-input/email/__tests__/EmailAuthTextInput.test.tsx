@@ -2,12 +2,15 @@
 
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { Formik } from 'formik';
+import { axe, toHaveNoViolations } from 'jest-axe';
 import { IntlProvider } from 'next-intl';
 import { z } from 'zod';
 
 import messages from '@messages/en.json';
 
 import { EmailAuthTextInput } from '../EmailAuthTextInput';
+
+expect.extend(toHaveNoViolations);
 
 const emailSchema = z.object({
   email: z.string().email('form.validations.email-address'),
@@ -91,5 +94,12 @@ describe('[AUTH] EmailAuthTextInput', () => {
 
       expect(errorMessage).not.toBeInTheDocument();
     });
+  });
+
+  test('is accessible', async () => {
+    const { container } = renderWithFormik(<EmailAuthTextInput />);
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
   });
 });
