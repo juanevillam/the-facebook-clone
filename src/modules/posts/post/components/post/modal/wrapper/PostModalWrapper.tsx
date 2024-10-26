@@ -21,6 +21,7 @@ export const PostModalWrapper = ({ id, post }: PostModalWrapperProps) => {
         'images',
         'toast-messages',
         'icon-buttons',
+        'action-loader',
         'timestamp'
       )}
     >

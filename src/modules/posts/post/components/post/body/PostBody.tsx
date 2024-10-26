@@ -21,7 +21,7 @@ export const PostBody = ({
   return (
     <>
       <p
-        className={classNames('primary-text mb-1.5 pl-3', {
+        className={classNames('primary-text mb-2 pl-3', {
           'text-2xl': !media,
         })}
       >

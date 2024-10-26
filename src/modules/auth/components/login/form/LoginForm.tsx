@@ -17,7 +17,12 @@ import {
   loginFormValuesType,
 } from '@/modules/auth/schemas/loginSchema';
 
-import { AuthLink, AuthSocial, AuthTextInput } from '../../ui';
+import {
+  AuthLink,
+  AuthSocial,
+  AuthTextInput,
+  EmailAuthTextInput,
+} from '../../ui';
 
 export const LoginForm = () => {
   const [showTwoFactor, setShowTwoFactor] = useState(false);
@@ -94,24 +99,16 @@ export const LoginForm = () => {
               name="code"
               placeholder={t('form.fields.code')}
               type="text"
-              variant="outlined"
             />
           ) : (
             <>
-              <AuthTextInput
-                disabled={isPending}
-                name="email"
-                placeholder={t('form.fields.email-address')}
-                type="email"
-                variant="outlined"
-              />
+              <EmailAuthTextInput disabled={isPending} />
               <AuthTextInput
                 disabled={isPending}
                 minLength={1}
                 name="password"
                 placeholder={t('form.fields.password')}
                 type="password"
-                variant="outlined"
               />
             </>
           )}

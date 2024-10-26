@@ -72,6 +72,10 @@
     @apply placeholder-neutral-500 dark:placeholder-neutral-400;
   }
 
+  .accent-placeholder {
+    @apply placeholder-neutral-600 dark:placeholder-neutral-300;
+  }
+
   /* Stroke Utilities */
   .accent-stroke {
     @apply stroke-neutral-600 dark:stroke-neutral-300;
@@ -149,6 +153,10 @@
     @apply flex items-center justify-between;
   }
 
+  .center-justify-between {
+    @apply items-center justify-between;
+  }
+
   /* Modal Utilities */
   .create-post-modal-gif-size {
     @apply max-h-96 md:max-h-72;
@@ -168,7 +176,7 @@
   }
 
   .only-desktop {
-    @apply hidden md:block;
+    @apply hidden md:flex;
   }
 
   /* Transition Utilities */

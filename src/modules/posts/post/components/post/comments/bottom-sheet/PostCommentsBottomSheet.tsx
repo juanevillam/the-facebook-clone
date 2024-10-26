@@ -8,7 +8,7 @@ import {
 
 import { PostCommentsBottomSheetFooter } from './footer/PostCommentsBottomSheetFooter';
 import { PostCommentsBottomSheetHeader } from './header/PostCommentsBottomSheetHeader';
-import { PostCommentsBottomSheetBody } from '../body/PostCommentsBottomSheetBody';
+import { PostComments } from '../PostComments';
 
 type PostCommentsBottomSheetProps = {
   addOptimisticComment: (action: unknown) => void;
@@ -46,9 +46,7 @@ export const PostCommentsBottomSheet = ({
             isMyLike={isMyLike}
             optimisticLikes={optimisticLikes}
           />
-          <PostCommentsBottomSheetBody
-            optimisticComments={optimisticComments}
-          />
+          <PostComments optimisticComments={optimisticComments} />
           <PostCommentsBottomSheetFooter
             addOptimisticComment={addOptimisticComment}
             postId={postId}

@@ -3,11 +3,7 @@ import { useTranslations } from 'next-intl';
 import { ProfilePic, Timestamp } from '@/components';
 import { CommentExtended } from '@/modules/posts/post/assets/types';
 
-export const PostCommentsBottomSheetBodyItem = ({
-  createdAt,
-  thoughts,
-  user,
-}: CommentExtended) => {
+export const PostComment = ({ createdAt, thoughts, user }: CommentExtended) => {
   const t = useTranslations('action-loader');
 
   return (

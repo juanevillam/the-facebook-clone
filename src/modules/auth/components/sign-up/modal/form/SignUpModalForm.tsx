@@ -12,7 +12,12 @@ import {
   signUpFormValuesType,
 } from '@/modules/auth/schemas/signUpSchema';
 
-import { AuthRadioInput, AuthSocial, AuthTextInput } from '../../../ui';
+import {
+  AuthRadioInput,
+  AuthSocial,
+  AuthTextInput,
+  EmailAuthTextInput,
+} from '../../../ui';
 
 type SignUpModalFormProps = {
   handleToggleSignUpOpenable: VoidFunction;
@@ -65,26 +70,17 @@ export const SignUpModalForm = ({
             disabled={isPending}
             name="name"
             placeholder={t('form.fields.name')}
+            skin="secondary"
             type="text"
-            variant="outlined"
-            varianttype="secondary"
           />
-          <AuthTextInput
-            disabled={isPending}
-            name="email"
-            placeholder={t('form.fields.email-address')}
-            type="email"
-            variant="outlined"
-            varianttype="secondary"
-          />
+          <EmailAuthTextInput disabled={isPending} skin="secondary" />
           <AuthTextInput
             disabled={isPending}
             minLength={8}
             name="password"
+            skin="secondary"
             placeholder={t('form.fields.password')}
             type="password"
-            variant="outlined"
-            varianttype="secondary"
           />
           <p className="mb-1 text-xs text-gray-700" id="gender-label">
             {t('form.fields.gender.label')}

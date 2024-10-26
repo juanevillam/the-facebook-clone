@@ -14,11 +14,19 @@ export const CreatePostDefaultStepFooterItem = ({
 }: CardItem) => {
   const t = useTranslations('posts.create.layout.footer');
   const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
-  const tooltipLabel = disabled
-    ? (t.rich('disabled', {
-        br: () => <br />,
-      }) as string)
-    : t(`${name}.detailed`);
+  const isProduction = process.env.NODE_ENV === 'production';
+  const tooltipLabel =
+    disabled && name === 'gif'
+      ? isProduction
+        ? t(`${name}.disabled-prod`)
+        : (t.rich('media.disabled', {
+            br: () => <br />,
+          }) as string)
+      : disabled && name === 'photo-video'
+        ? (t.rich('media.disabled', {
+            br: () => <br />,
+          }) as string)
+        : t(`${name}.detailed`);
 
   return (
     <Tooltip label={tooltipLabel} position="bottom-9">

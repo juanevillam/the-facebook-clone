@@ -11,7 +11,6 @@ export { ExclamationCircleIcon } from './ExclamationCircleIcon';
 export { FaceFrowIcon } from './FaceFrownIcon';
 export { GifIcon } from './GifIcon';
 export { HandThumbUpIcon } from './HandThumbUpIcon';
-export { LikeIcon } from './LikeIcon';
 export { MapIcon } from './MapIcon';
 export { PaperPlaneIcon } from './PaperPlaneIcon';
 export { PencilIcon } from './PencilIcon';

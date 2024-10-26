@@ -1,5 +1,3 @@
-import { useCallback } from 'react';
-
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
@@ -22,6 +20,8 @@ export const CreatePostDefaultStepFooter = () => {
   const { activeLocation } = useAppSelector(
     (store) => store.posts.create.checkIn
   );
+
+  const isProduction = process.env.NODE_ENV === 'production';
 
   const handleOpenMediaStep = () => dispatch(setStep('media'));
 
@@ -61,7 +61,7 @@ export const CreatePostDefaultStepFooter = () => {
     },
     {
       active: !!activeGif,
-      disabled: !!file,
+      disabled: !!file || isProduction,
       name: 'gif',
       onClick: handleOpenGifStep,
     },
