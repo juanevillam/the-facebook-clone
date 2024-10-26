@@ -12,9 +12,9 @@ import { setStep } from '@/modules/posts/create/reducers/postSlice';
 
 import { CreatePostStepMessage } from '../ui';
 
-interface CreatePostMediaStepProps {
+type CreatePostMediaStepProps = {
   fileInputRef: FileInputRef;
-}
+};
 
 export const CreatePostMediaStep = ({
   fileInputRef,
@@ -29,8 +29,9 @@ export const CreatePostMediaStep = ({
   };
 
   const handleOnClickMediaFile = () => {
-    if (type === 'video') dispatch(setMedia({ file, type }));
-    else fileInputRef?.current?.click();
+    type === 'video'
+      ? dispatch(setMedia({ file, type }))
+      : fileInputRef?.current?.click();
   };
 
   const handleMediaFile = (event: InputEvent) => {
@@ -57,12 +58,12 @@ export const CreatePostMediaStep = ({
   };
 
   return (
-    <div className="h-full overflow-hidden relative md:border md:h-96 md:m-3 md:primary-border md:rounded-lg">
+    <div className="md:primary-border relative h-full overflow-hidden md:m-3 md:h-96 md:rounded-lg md:border">
       {file && (
         <IconButton
-          className="absolute primary-bg right-2 size-10 md:size-9 top-2 z-10 hover:secondary-bg"
+          className="primary-bg hover:secondary-bg absolute right-2 top-2 z-10 size-10 md:size-9"
           icon={{
-            className: 'primary-stroke md:secondary-stroke size-full stroke-2',
+            className: 'stroke-2 primary-stroke md:secondary-stroke size-full',
             Component: CloseIcon,
             name: 'close',
           }}
@@ -71,7 +72,7 @@ export const CreatePostMediaStep = ({
       )}
       <button
         className={classNames(
-          'overflow-hidden primary-transition relative size-full',
+          'primary-transition relative size-full overflow-hidden',
           {
             'bg-black': file,
             'hover:primary-bg': !file,
@@ -84,7 +85,7 @@ export const CreatePostMediaStep = ({
           type === 'image' ? (
             <Image
               alt={t('layout.footer.photo-video.short')}
-              className="object-contain rounded-lg"
+              className="rounded-lg object-contain"
               fill
               src={file as string}
             />

@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { GIF } from '../assets/types';
 
-interface GifsState {
+type GifsState = {
   activeGif: GIF | null;
   searchInputValue: string;
   gifs: GIF[];
   error: boolean;
-}
+};
 
 const initialState: GifsState = {
   activeGif: null,

@@ -4,6 +4,10 @@
 
 @layer components {
   /* Background Utilities */
+  .card-bg {
+    @apply bg-white dark:bg-neutral-800;
+  }
+
   .accent-bg {
     @apply bg-white dark:bg-neutral-700;
   }
@@ -12,12 +16,24 @@
     @apply bg-gray-200 dark:bg-neutral-900;
   }
 
+  .active-bg-inverse {
+    @apply bg-neutral-900 dark:bg-gray-200;
+  }
+
   .primary-bg {
     @apply bg-gray-100 dark:bg-neutral-700;
   }
 
+  .primary-bg-light {
+    @apply bg-gray-100;
+  }
+
   .secondary-bg {
     @apply bg-gray-200 dark:bg-neutral-600;
+  }
+
+  .secondary-bg-light {
+    @apply bg-gray-200;
   }
 
   .skeleton-bg {
@@ -26,12 +42,20 @@
 
   /* Border Utilities */
   .primary-border {
-    @apply border-gray-300 dark:border-neutral-700 md:border-gray-200;
+    @apply border-gray-300 md:border-gray-200 dark:border-neutral-700;
+  }
+
+  .primary-border-light {
+    @apply border-gray-200;
+  }
+
+  .primary-border-light-full {
+    @apply border-gray-200 md:border-gray-200;
   }
 
   /* Divide Utilities */
   .primary-divide {
-    @apply divide-gray-300 dark:divide-neutral-700 md:divide-gray-200;
+    @apply divide-gray-300 md:divide-gray-200 dark:divide-neutral-700;
   }
 
   /* Fill Utilities */
@@ -48,6 +72,10 @@
     @apply placeholder-neutral-500 dark:placeholder-neutral-400;
   }
 
+  .accent-placeholder {
+    @apply placeholder-neutral-600 dark:placeholder-neutral-300;
+  }
+
   /* Stroke Utilities */
   .accent-stroke {
     @apply stroke-neutral-600 dark:stroke-neutral-300;
@@ -55,6 +83,10 @@
 
   .primary-stroke {
     @apply stroke-neutral-900 dark:stroke-gray-100;
+  }
+
+  .primary-stroke-light {
+    @apply stroke-neutral-900;
   }
 
   .secondary-stroke {
@@ -70,8 +102,16 @@
     @apply text-neutral-900 dark:text-gray-100;
   }
 
+  .primary-text-light {
+    @apply text-neutral-900;
+  }
+
   .primary-text-dark {
     @apply text-gray-100;
+  }
+
+  .primary-text-inverse {
+    @apply text-gray-100 dark:text-neutral-900;
   }
 
   .secondary-text {
@@ -84,7 +124,7 @@
 
   /* Bottom sheet Utilities */
   .bottom-sheet-content {
-    @apply bg-white dark:bg-neutral-800 bottom-0 fixed left-0 pt-3 right-0 rounded-t-2xl z-40 md:w-1/2 md:mx-auto;
+    @apply card-bg fixed bottom-0 left-0 right-0 z-40 rounded-t-2xl pt-3 md:mx-auto md:w-1/2;
   }
 
   .bottom-sheet-handle {
@@ -92,12 +132,12 @@
   }
 
   .bottom-sheet-overlay {
-    @apply bg-overlay-100 fixed inset-0 z-40;
+    @apply fixed inset-0 z-40 bg-overlay-100;
   }
 
   /* Card Utilities */
   .card {
-    @apply bg-white dark:bg-neutral-800 md:rounded-lg;
+    @apply card-bg md:rounded-lg;
   }
 
   /* Flexbox Utilities */
@@ -113,17 +153,21 @@
     @apply flex items-center justify-between;
   }
 
+  .center-justify-between {
+    @apply items-center justify-between;
+  }
+
   /* Modal Utilities */
   .create-post-modal-gif-size {
     @apply max-h-96 md:max-h-72;
   }
 
   .create-post-modal-spacing-area {
-    @apply md:pb-3 md:px-3;
+    @apply md:px-3 md:pb-3;
   }
 
   .modal-scrollable-area {
-    @apply h-full md:h-96 overflow-y-auto;
+    @apply h-full overflow-y-auto md:h-96;
   }
 
   /* Responsive Utilities */
@@ -132,11 +176,11 @@
   }
 
   .only-desktop {
-    @apply hidden md:block;
+    @apply hidden md:flex;
   }
 
   /* Transition Utilities */
   .primary-transition {
-    @apply duration-150 transition;
+    @apply transition duration-150;
   }
 }

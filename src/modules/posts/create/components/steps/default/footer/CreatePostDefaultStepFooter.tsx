@@ -1,5 +1,3 @@
-import { useCallback } from 'react';
-
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
@@ -23,33 +21,21 @@ export const CreatePostDefaultStepFooter = () => {
     (store) => store.posts.create.checkIn
   );
 
-  const handleOpenMediaStep = useCallback(
-    () => dispatch(setStep('media')),
-    [dispatch]
-  );
+  const isProduction = process.env.NODE_ENV === 'production';
 
-  const handleOpenLiveStep = useCallback(() => {
+  const handleOpenMediaStep = () => dispatch(setStep('media'));
+
+  const handleOpenLiveStep = () =>
     showToast.error(t('toast-messages.error.feature-under-development'));
-  }, [t]);
 
-  const handleOpenFeelingsStep = useCallback(
-    () => dispatch(setStep('feelings')),
-    [dispatch]
-  );
+  const handleOpenFeelingsStep = () => dispatch(setStep('feelings'));
 
-  const handleOpenCheckInStep = useCallback(
-    () => dispatch(setStep('check-in')),
-    [dispatch]
-  );
+  const handleOpenCheckInStep = () => dispatch(setStep('check-in'));
 
-  const handleOpenGifStep = useCallback(
-    () => dispatch(setStep('gifs')),
-    [dispatch]
-  );
+  const handleOpenGifStep = () => dispatch(setStep('gifs'));
 
-  const handleOpenTagPeopleStep = useCallback(() => {
+  const handleOpenTagPeopleStep = () =>
     showToast.error(t('toast-messages.error.feature-under-development'));
-  }, [t]);
 
   const cardItems: CardItem[] = [
     {
@@ -75,7 +61,7 @@ export const CreatePostDefaultStepFooter = () => {
     },
     {
       active: !!activeGif,
-      disabled: !!file,
+      disabled: !!file || isProduction,
       name: 'gif',
       onClick: handleOpenGifStep,
     },
@@ -89,18 +75,18 @@ export const CreatePostDefaultStepFooter = () => {
   return (
     <div
       className={classNames(
-        'flex-center-justify-between primary-border md:border md:p-3 md:rounded-lg',
+        'flex-center-justify-between primary-border md:rounded-lg md:border md:p-3',
         {
           'border-t': activeGif,
         }
       )}
     >
-      <h1 className="font-semibold only-desktop primary-text text-sm">
+      <h1 className="only-desktop primary-text text-sm font-semibold">
         {t('posts.create.steps.default.footer')}
       </h1>
       <div
-        className={classNames('w-full md:w-max md:flex md:space-x-1', {
-          'divide-x md:divide-none flex primary-divide': activeGif,
+        className={classNames('w-full md:flex md:w-max md:space-x-1', {
+          'primary-divide flex divide-x md:divide-none': activeGif,
         })}
       >
         {cardItems.map((item) => (

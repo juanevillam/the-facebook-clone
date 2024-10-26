@@ -1,5 +1,6 @@
-export { AuthCard } from './card/auth-card';
-export { AuthLink } from './link/auth-link';
-export { AuthRadioInput } from './radio-input/auth-radio-input';
-export { AuthSocial } from './social/auth-social';
-export { AuthTextInput } from './text-input/auth-text-input';
+export { AuthCard } from './card/AuthCard';
+export { AuthLink } from './link/AuthLink';
+export { AuthRadioInput } from './radio-input/AuthRadioInput';
+export { AuthSocial } from './social/AuthSocial';
+export { AuthTextInput } from './text-input/AuthTextInput';
+export { EmailAuthTextInput } from './text-input/email/EmailAuthTextInput';

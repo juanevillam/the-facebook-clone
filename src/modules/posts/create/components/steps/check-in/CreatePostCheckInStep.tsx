@@ -78,7 +78,7 @@ export const CreatePostCheckInStep = () => {
 
   useEffect(() => {
     const loader = new Loader({
-      apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
+      apiKey: process.env.NEXT_PUBLIC_GOOGLE_LOCATIONS_API_KEY as string,
       libraries: ['places'],
     });
 

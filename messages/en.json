@@ -164,9 +164,12 @@
           },
           "gif": {
             "detailed": "GIF",
-            "short": "GIF"
+            "short": "GIF",
+            "disabled-prod": "GIF picker is currently unavailable in production"
           },
-          "disabled": "This can't be combined with what you've already<br></br>added to your post"
+          "media": {
+            "disabled": "This can't be combined with what you've already<br></br>added to your post"
+          }
         }
       },
       "steps": {
@@ -286,7 +289,8 @@
         },
         "comments": {
           "comment": "Comment",
-          "comments": "Comments"
+          "comments": "Comments",
+          "press-enter-to-post": "Press enter to post"
         }
       },
       "comments": {
@@ -323,7 +327,8 @@
   "images": {
     "alert-triangle": "Alert icon",
     "no-profile-pic": "No profile pic image",
-    "profile-pic": "{name}'s profile picture"
+    "profile-pic": "{name}'s profile picture",
+    "thumb-up": "Thumb up icon"
   },
   "toast-messages": {
     "error": {

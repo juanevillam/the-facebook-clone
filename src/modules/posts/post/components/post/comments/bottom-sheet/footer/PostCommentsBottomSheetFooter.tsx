@@ -7,19 +7,20 @@ import { PaperPlaneIcon } from '@/assets/ui/icons';
 import { useCurrentUser } from '@/hooks';
 import { commentPost } from '@/modules/posts/post/actions';
 
-interface PostCommentsBottomSheetFooterProps {
+type PostCommentsBottomSheetFooterProps = {
   addOptimisticComment: (action: unknown) => void;
   postId: string;
-}
+  setAreDesktopCommentsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 export const PostCommentsBottomSheetFooter = ({
   addOptimisticComment,
   postId,
+  setAreDesktopCommentsOpen,
 }: PostCommentsBottomSheetFooterProps) => {
   const [thoughts, setThoughts] = useState('');
   const [isPending, startTransition] = useTransition();
-  const tBottomSheet = useTranslations('posts.post.comments.bottom-sheet');
-  const tErrorToastMessages = useTranslations('toast-messages.error');
+  const t = useTranslations();
   const user = useCurrentUser();
 
   const handleComment = (event: React.ChangeEvent<HTMLInputElement>) =>
@@ -28,38 +29,39 @@ export const PostCommentsBottomSheetFooter = ({
   const handleOptimisticComment = () => {
     const thoughtsCopy = thoughts;
 
+    setAreDesktopCommentsOpen && setAreDesktopCommentsOpen(true);
     setThoughts('');
     startTransition(() => {
       addOptimisticComment(thoughtsCopy);
     });
 
     commentPost(postId, thoughtsCopy, user?.id as string).catch(({ message }) =>
-      showToast.error(tErrorToastMessages(message))
+      showToast.error(t(`toast-messages.error.${message}`))
     );
   };
 
   return (
     <form
-      className="bg-white dark:bg-neutral-800 border-t flex-center space-x-2 p-2 md:p-3 primary-border w-full"
+      className="primary-border flex-center w-full space-x-2 border-t p-2 md:border-none md:p-0"
       onSubmit={handleOptimisticComment}
     >
-      <div className="flex-center primary-bg p-2.5 rounded-full w-full">
+      <div className="flex-center primary-bg primary-border w-full rounded-full px-4 py-2.5">
         <label className="sr-only" htmlFor="post-comments-bottom-sheet-input">
-          {tBottomSheet('title')}
+          {t('posts.post.comments.bottom-sheet.title')}
         </label>
         <input
-          aria-label={tBottomSheet('title')}
-          className="primary-placeholder primary-text primary-transition bg-transparent inline-flex ml-2 w-full focus:outline-none"
+          aria-label={t('posts.post.comments.bottom-sheet.title')}
+          className="primary-placeholder md:accent-placeholder primary-text md:accent-text primary-transition inline-flex w-full bg-transparent focus:outline-none"
           id="post-comments-bottom-sheet-input"
           onChange={handleComment}
-          placeholder={`${tBottomSheet('title')}...`}
+          placeholder={`${t('posts.post.comments.bottom-sheet.title')}...`}
           type="text"
           value={thoughts}
         />
       </div>
       {thoughts && (
         <button
-          className="flex-center-justify-center p-2 primary-transition rounded-full hover:primary-bg"
+          className="only-mobile flex-center-justify-center primary-transition hover:primary-bg rounded-full p-2"
           onClick={handleOptimisticComment}
           type="submit"
         >

@@ -1,2 +1,2 @@
-export { FacebookLogoMark } from './facebook-logomark';
-export { FacebookLogoType } from './facebook-logotype';
+export { FacebookLogoMark } from './FacebookLogomark';
+export { FacebookLogoType } from './FacebookLogotype';

@@ -1,6 +1,6 @@
 import { feelings } from '../feelings';
 
-type Step = 'default' | 'feelings' | 'media' | 'gif' | 'check-in' | 'gifs';
+type Step = 'default' | 'feelings' | 'media' | 'check-in' | 'gifs';
 
 type Media = {
   file: string | null;

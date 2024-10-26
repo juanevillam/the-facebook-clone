@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
-import { VoidFunction } from '@/assets/types';
 import {
   ChatBubbleOvalLeftIcon,
   HandThumbUpIcon,
@@ -14,24 +13,28 @@ import { LikeExtended } from '@/modules/posts/post/assets/types';
 
 import { PostFooterActionsItem } from './item/PostFooterActionsItem';
 
-interface PostFooterActionsProps {
+type PostFooterActionsProps = {
+  areDesktopCommentsOpen: boolean;
+  areMobileCommentsOpen: boolean;
+  handleDesktopCommentsOpen: VoidFunction;
   handleOptimisticLike: VoidFunction;
-  isCommentsBottomSheetOpen: boolean;
   isMyLike: (like: LikeExtended) => boolean;
-  openCommentsBottomSheet: VoidFunction;
+  isPostModal: boolean;
+  openMobileComments: VoidFunction;
   optimisticLikes: LikeExtended[];
   postId: string;
-  showBorderT: boolean;
-}
+};
 
 export const PostFooterActions = ({
+  areDesktopCommentsOpen,
+  areMobileCommentsOpen,
+  handleDesktopCommentsOpen,
   handleOptimisticLike,
-  isCommentsBottomSheetOpen,
   isMyLike,
-  openCommentsBottomSheet,
+  isPostModal,
+  openMobileComments,
   optimisticLikes,
   postId,
-  showBorderT,
 }: PostFooterActionsProps) => {
   const t = useTranslations('toast-messages.success');
 
@@ -42,25 +45,40 @@ export const PostFooterActions = ({
 
   return (
     <div
-      className={classNames('flex md:py-2.5 md:space-x-1', {
-        'md:border-t md:primary-border': showBorderT,
-      })}
+      className={classNames(
+        'primary-border flex md:space-x-1 md:border-y md:px-4 md:py-2.5',
+        {
+          'border-t': isPostModal,
+        }
+      )}
     >
       <PostFooterActionsItem
         Icon={HandThumbUpIcon}
         isActive={optimisticLikes.some(isMyLike)}
+        isPostModal={isPostModal}
         label="like"
         onClick={handleOptimisticLike}
       />
       <PostFooterActionsItem
+        className="only-mobile"
         Icon={ChatBubbleOvalLeftIcon}
-        isActive={isCommentsBottomSheetOpen}
+        isActive={areMobileCommentsOpen}
+        isPostModal={isPostModal}
         label="comment"
-        onClick={openCommentsBottomSheet}
+        onClick={openMobileComments}
+      />
+      <PostFooterActionsItem
+        className="only-desktop"
+        Icon={ChatBubbleOvalLeftIcon}
+        isActive={areDesktopCommentsOpen}
+        isPostModal={isPostModal}
+        label="comment"
+        onClick={handleDesktopCommentsOpen}
       />
       <PostFooterActionsItem
         Icon={ShareIcon}
         isActive={false}
+        isPostModal={isPostModal}
         label="share"
         onClick={handleShare}
       />

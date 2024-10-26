@@ -1,16 +1,15 @@
 import { Backdrop, Fade, Modal } from '@mui/material';
 
-import { VoidFunction } from '@/assets/types';
 import { ArrowLeftIcon, CloseIcon } from '@/assets/ui/icons';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostHeader } from '../layout';
 
-interface CreatePostModalProps {
+type CreatePostModalProps = {
   handleStep: VoidFunction;
   handleToggleOpenable: VoidFunction;
   children: React.ReactNode;
-}
+};
 
 export const CreatePostModal = ({
   handleStep,
@@ -35,7 +34,7 @@ export const CreatePostModal = ({
       }}
     >
       <Fade in={isOpenableOpen}>
-        <div className="absolute card left-1/2 max-w-lg outline-none top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
+        <div className="card absolute left-1/2 top-1/2 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 transform outline-none">
           <CreatePostHeader
             Icon={{
               Component: step === 'default' ? CloseIcon : ArrowLeftIcon,

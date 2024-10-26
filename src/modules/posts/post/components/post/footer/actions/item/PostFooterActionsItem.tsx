@@ -1,35 +1,38 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
-import { VoidFunction } from '@/assets/types';
 import { NavbarIconProps } from '@/assets/ui/icons/navbar/types';
 
-interface PostFooterActionsItemProps {
+type PostFooterActionsItemProps = {
+  className?: string;
   Icon: React.FC<NavbarIconProps>;
   isActive: boolean;
-  label: 'comment' | 'like' | 'share';
+  isPostModal: boolean;
+  label?: 'comment' | 'like' | 'share';
   onClick: VoidFunction;
-}
+};
 
 export const PostFooterActionsItem = ({
+  className,
   Icon,
   isActive,
+  isPostModal,
   label,
   onClick,
 }: PostFooterActionsItemProps) => {
   const t = useTranslations('posts.post.footer.actions');
 
   return (
-    <div className="w-full">
+    <div className={`w-full ${className}`}>
       <button
-        className="flex-center-justify-center primary-transition px-4 md:px-3 py-2.5 md:py-2 space-x-2 w-full md:rounded-lg hover:primary-bg"
+        className="flex-center-justify-center primary-transition hover:primary-bg w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2"
         onClick={onClick}
         type="button"
       >
         <Icon
           className={classNames('size-5 stroke-[1.5] md:size-6', {
             'fill-primary-100': isActive,
-            'fill-none primary-stroke md:accent-stroke': !isActive,
+            'primary-stroke md:accent-stroke fill-none': !isActive,
           })}
           isActive={isActive}
         />
@@ -37,6 +40,7 @@ export const PostFooterActionsItem = ({
           className={classNames('text-sm md:font-medium', {
             'text-primary-100': isActive,
             'primary-text md:accent-text': !isActive,
+            'md:hidden': isPostModal,
           })}
         >
           {t(label)}

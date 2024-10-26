@@ -14,13 +14,13 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-interface createPostProps {
+type createPostProps = {
   thoughts: string | null;
   media: { file: string | null; type: string | null };
   feeling: Feeling | null;
   location: string | undefined;
   gif: string | undefined;
-}
+};
 
 export const createPost = async ({
   thoughts,

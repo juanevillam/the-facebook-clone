@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { SavedPost } from '@prisma/client';
+import classNames from 'classnames';
 import { Drawer } from 'vaul';
 
 import { DotsHorizontalIcon } from '@/assets/ui/icons';
@@ -11,13 +12,15 @@ import { useAppSelector } from '@/lib/store/hooks';
 
 import { PostOptionsBottomSheet } from './bottom-sheet/PostOptionsBottomSheet';
 
-interface PostOptionsProps {
+type PostOptionsProps = {
+  isPostModal?: boolean;
   postId: string;
   postSaves: SavedPost[];
   postUserId: string;
-}
+};
 
 export const PostOptions = ({
+  isPostModal = false,
   postId,
   postSaves,
   postUserId,
@@ -35,9 +38,16 @@ export const PostOptions = ({
     <Drawer.Root open={isBottomSheetOpen} onClose={closeBottomSheetAvailable}>
       <Drawer.Trigger asChild>
         <IconButton
-          className="-mt-1 size-9 hover:primary-bg"
+          className={classNames({
+            'hover:primary-bg -mt-1 size-9': !isPostModal,
+            'size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50':
+              isPostModal,
+          })}
           icon={{
-            className: 'secondary-fill size-full',
+            className: classNames({
+              'secondary-fill size-full': !isPostModal,
+              'fill-white size-full': isPostModal,
+            }),
             Component: DotsHorizontalIcon,
             name: 'dots-horizontal',
           }}

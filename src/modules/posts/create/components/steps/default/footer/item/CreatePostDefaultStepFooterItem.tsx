@@ -12,25 +12,34 @@ export const CreatePostDefaultStepFooterItem = ({
   name,
   onClick,
 }: CardItem) => {
-  const tItems = useTranslations('posts.create.layout.footer');
-  const tItem = useTranslations(`posts.create.layout.footer.${name}`);
+  const t = useTranslations('posts.create.layout.footer');
   const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
-  const tooltipLabel = disabled
-    ? (tItems.rich('disabled', { br: () => <br /> }) as string)
-    : tItem('detailed');
+  const isProduction = process.env.NODE_ENV === 'production';
+  const tooltipLabel =
+    disabled && name === 'gif'
+      ? isProduction
+        ? t(`${name}.disabled-prod`)
+        : (t.rich('media.disabled', {
+            br: () => <br />,
+          }) as string)
+      : disabled && name === 'photo-video'
+        ? (t.rich('media.disabled', {
+            br: () => <br />,
+          }) as string)
+        : t(`${name}.detailed`);
 
   return (
     <Tooltip label={tooltipLabel} position="bottom-9">
       <button
         aria-disabled={disabled}
         className={classNames(
-          'flex-center justify-start md:justify-center p-3 md:p-0 peer relative w-full md:rounded-full md:size-9',
+          'flex-center peer relative w-full justify-start p-3 md:size-9 md:justify-center md:rounded-full md:p-0',
           {
             'active-bg': active && !disabled,
             'cursor-not-allowed opacity-50': disabled,
             'primary-transition hover:primary-bg': !disabled,
             'justify-center': activeGif,
-            'border-t md:border-none primary-border': !activeGif,
+            'primary-border border-t md:border-none': !activeGif,
           }
         )}
         disabled={disabled}
@@ -38,7 +47,7 @@ export const CreatePostDefaultStepFooterItem = ({
         type="button"
       >
         <Image
-          alt={tItem('detailed')}
+          alt={t(`${name}.detailed`)}
           className="size-6"
           height={72}
           loading="eager"
@@ -47,11 +56,11 @@ export const CreatePostDefaultStepFooterItem = ({
           width={72}
         />
         <p
-          className={classNames('ml-3 only-mobile primary-text text-lg', {
+          className={classNames('only-mobile primary-text ml-3 text-lg', {
             hidden: activeGif,
           })}
         >
-          {tItem('detailed')}
+          {t(`${name}.detailed`)}
         </p>
       </button>
     </Tooltip>

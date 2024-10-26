@@ -1,7 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Drawer } from 'vaul';
 
-import { VoidFunction } from '@/assets/types';
 import {
   CommentExtended,
   LikeExtended,
@@ -9,9 +8,9 @@ import {
 
 import { PostCommentsBottomSheetFooter } from './footer/PostCommentsBottomSheetFooter';
 import { PostCommentsBottomSheetHeader } from './header/PostCommentsBottomSheetHeader';
-import { PostCommentsBottomSheetBody } from '../body/PostCommentsBottomSheetBody';
+import { PostComments } from '../PostComments';
 
-interface PostCommentsBottomSheetProps {
+type PostCommentsBottomSheetProps = {
   addOptimisticComment: (action: unknown) => void;
   handleOptimisticLike: VoidFunction;
   isMyLike: (like: LikeExtended) => boolean;
@@ -19,7 +18,7 @@ interface PostCommentsBottomSheetProps {
   optimisticComments: CommentExtended[];
   optimisticLikes: LikeExtended[];
   postId: string;
-}
+};
 
 export const PostCommentsBottomSheet = ({
   addOptimisticComment,
@@ -40,16 +39,14 @@ export const PostCommentsBottomSheet = ({
         <Drawer.Description className="sr-only">
           {t('description')}
         </Drawer.Description>
-        <div className="flex flex-col h-full">
+        <div className="flex h-full flex-col">
           <Drawer.Handle className="bottom-sheet-handle" />
           <PostCommentsBottomSheetHeader
             handleOptimisticLike={handleOptimisticLike}
             isMyLike={isMyLike}
             optimisticLikes={optimisticLikes}
           />
-          <PostCommentsBottomSheetBody
-            optimisticComments={optimisticComments}
-          />
+          <PostComments optimisticComments={optimisticComments} />
           <PostCommentsBottomSheetFooter
             addOptimisticComment={addOptimisticComment}
             postId={postId}

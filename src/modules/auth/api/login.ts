@@ -3,8 +3,8 @@
 import { AuthError } from 'next-auth';
 
 import { signIn } from '@/auth';
-import { getTwoFactorConfirmationByUserId } from '@/data/two-factor-confirmation';
-import { getTwoFactorTokenByEmail } from '@/data/two-factor-token';
+import { getTwoFactorConfirmationByUserId } from '@/data/twoFactorConfirmation';
+import { getTwoFactorTokenByEmail } from '@/data/twoFactorToken';
 import { getUserByEmail } from '@/data/user';
 import { db } from '@/lib/database';
 import { sendTwoFactorTokenEmail, sendVerificationEmail } from '@/lib/mail';

@@ -10,8 +10,8 @@ export default function AuthLayout({
   unstable_setRequestLocale(locale);
 
   return (
-    <main className="flex flex-col h-screen justify-between md:bg-gray-100">
-      <section className="z-10 md:h-5/6 md:flex md:flex-row md:items-center md:max-w-4xl md:mx-auto md:px-6 md:space-x-12 lg:max-w-5xl">
+    <main className="flex h-screen flex-col justify-between md:bg-gray-100">
+      <section className="z-10 md:mx-auto md:flex md:h-5/6 md:max-w-4xl md:flex-row md:items-center md:space-x-12 md:px-6 lg:max-w-5xl">
         <AuthHeader />
         {children}
       </section>

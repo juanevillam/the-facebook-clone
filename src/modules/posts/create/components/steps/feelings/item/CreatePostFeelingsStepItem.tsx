@@ -5,12 +5,12 @@ import { Feeling } from '@/modules/posts/create/assets/types';
 
 import { CreatePostStepItem } from '../../ui';
 
-interface CreatePostFeelingsStepItemProps {
+type CreatePostFeelingsStepItemProps = {
   active: boolean;
   isEven?: boolean;
   item: Feeling;
   onClick: (item: Feeling) => void;
-}
+};
 
 export const CreatePostFeelingsStepItem = ({
   active,
@@ -29,7 +29,7 @@ export const CreatePostFeelingsStepItem = ({
       isEven={isEven}
     >
       <div className="flex-center space-x-2">
-        <div className="relative rounded-full md:p-2 md:primary-bg md:primary-transition">
+        <div className="md:primary-bg md:primary-transition relative rounded-full md:p-2">
           <Image
             alt={t(item)}
             className="size-8 md:size-5"

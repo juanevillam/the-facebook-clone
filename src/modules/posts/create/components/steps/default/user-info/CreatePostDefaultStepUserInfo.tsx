@@ -15,7 +15,7 @@ export const CreatePostDefaultStepUserInfo = () => {
   );
 
   return (
-    <div className="flex-center p-3 md:p-4 space-x-2">
+    <div className="flex-center space-x-2 p-3 md:p-4">
       <ProfilePic />
       <PostUserInfo
         feeling={activeFeeling as Feeling}
