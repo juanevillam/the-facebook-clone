@@ -1,7 +1,7 @@
 import { pick } from 'lodash';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 
-import { Navbar } from '../navbar/Navbar';
+import { Navbar } from '../navbar/navbar-temp';
 
 export const LayoutWrapper = ({
   locale,
