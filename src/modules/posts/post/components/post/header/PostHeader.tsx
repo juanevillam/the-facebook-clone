@@ -46,13 +46,13 @@ export const PostHeader = ({
           <Timestamp date={createdAt} />
         </div>
       </div>
-      {!isPostModal && (
+      <div className={classNames({ 'hidden md:block': isPostModal })}>
         <PostOptions
           postId={postId}
           postSaves={postSaves}
           postUserId={postUserId}
         />
-      )}
+      </div>
     </div>
   );
 };

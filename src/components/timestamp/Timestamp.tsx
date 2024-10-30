@@ -54,7 +54,7 @@ export const Timestamp = ({ date }: TimestampProps) => {
 
   return (
     <div className="-mt-1">
-      <Tooltip label={fullDateTime} position="-bottom-9">
+      <Tooltip label={fullDateTime} position="-bottom-9 left-28">
         <span className="secondary-text peer text-xs md:cursor-pointer md:hover:underline">
           {renderTimestamp()}
         </span>

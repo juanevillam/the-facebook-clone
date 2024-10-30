@@ -25,7 +25,14 @@ export const PostFooterActionsItem = ({
   return (
     <div className={`w-full ${className}`}>
       <button
-        className="flex-center-justify-center primary-transition hover:primary-bg w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2"
+        className={classNames(
+          'flex-center-justify-center primary-transition w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
+          {
+            'md:hover:primary-bg hover:bg-neutral-700 hover:bg-opacity-50 md:hover:bg-opacity-100':
+              isPostModal,
+            'hover:primary-bg hover:bg-opacity-100': !isPostModal,
+          }
+        )}
         onClick={onClick}
         type="button"
       >

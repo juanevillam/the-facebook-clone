@@ -14,7 +14,7 @@ export const PostComments = ({ optimisticComments }: PostCommentsProps) => {
   const t = useTranslations('posts.post.comments.bottom-sheet');
 
   return (
-    <div className="h-full w-full overflow-y-auto px-4 md:px-3">
+    <div className="h-full w-full overflow-y-auto px-4 md:px-3 md:pb-10">
       {optimisticComments.length > 0 ? (
         <div className="space-y-4 pb-2 md:pt-4">
           {optimisticComments.map((optimisticComment, index) => (

@@ -117,7 +117,7 @@ export const PostModal = ({ id, post }: PostModalProps) => {
                 )}
               </div>
             </div>
-            <div className="md:card-bg absolute bottom-0 w-full bg-neutral-900 bg-opacity-50 md:static md:w-96 md:min-w-96 md:bg-transparent">
+            <div className="md:card-bg absolute bottom-0 flex w-full flex-col bg-neutral-900 bg-opacity-50 md:static md:h-full md:w-96 md:min-w-96 md:bg-transparent">
               <PostHeader
                 createdAt={createdAt}
                 feeling={feeling as Feeling}

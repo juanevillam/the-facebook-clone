@@ -90,7 +90,12 @@ export const PostFooter = ({
       {(optimisticLikes.length > 0 || optimisticComments.length > 0) && (
         <div className="md:px-4">
           <div
-            className="only-mobile flex-center-justify-between primary-transition hover:primary-bg w-full px-3 py-2"
+            className={classNames(
+              'only-mobile flex-center-justify-between primary-transition hover:primary-bg w-full px-3 py-2',
+              {
+                'hover:bg-neutral-700 hover:bg-opacity-50': isPostModal,
+              }
+            )}
             onClick={openMobileComments}
             onKeyPress={(e) =>
               (e.key === 'Enter' || e.key === ' ') && openMobileComments()
@@ -131,7 +136,7 @@ export const PostFooter = ({
             'only-desktop w-full border-l-4 border-primary-100',
             {
               'h-72': optimisticComments.length === 0,
-              'max-h-96 overflow-y-auto': optimisticComments.length > 0,
+              'h-full overflow-y-auto': optimisticComments.length > 0,
             }
           )}
         >
