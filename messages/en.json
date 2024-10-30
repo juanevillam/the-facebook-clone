@@ -290,7 +290,16 @@
         "comments": {
           "comment": "Comment",
           "comments": "Comments",
-          "press-enter-to-post": "Press enter to post"
+          "press-enter-to-post": "Press enter to post",
+          "options": {
+            "delete": {
+              "label": "Delete comment"
+            },
+            "bottom-sheet": {
+              "title": "Comment options",
+              "description": "Here you can delete a comment if it's yours."
+            }
+          }
         }
       },
       "comments": {
@@ -353,7 +362,8 @@
       "failed-to-like-post": "Failed to like post",
       "failed-to-unlike-post": "Failed to unlike post",
       "failed-to-post-comment": "Failed to post comment",
-      "unauthorized": "Unauthorized"
+      "unauthorized": "Unauthorized",
+      "failed-to-delete-comment": "Failed to delete comment"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",
@@ -364,7 +374,8 @@
       "post-deleted": "Post deleted",
       "link-copied-to-clipboard": "Link copied to clipboard",
       "post-saved": "Post saved",
-      "post-unsaved": "Post unsaved"
+      "post-unsaved": "Post unsaved",
+      "comment-deleted": "Comment deleted"
     }
   },
   "icon-buttons": {
@@ -378,7 +389,8 @@
   },
   "action-loader": {
     "posting": "Posting",
-    "deleting-post": "Deleting post"
+    "deleting-post": "Deleting post",
+    "deleting-comment": "Deleting comment"
   },
   "timestamp": {
     "just-now": "Just now",

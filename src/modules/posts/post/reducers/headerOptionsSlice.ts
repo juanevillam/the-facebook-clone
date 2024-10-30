@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-type OptionsState = {
+type HeaderOptionsState = {
   deletingPost: boolean;
 };
 
-const initialState: OptionsState = {
+const initialState: HeaderOptionsState = {
   deletingPost: false,
 };
 
-const optionsSlice = createSlice({
+const headerOptionsSlice = createSlice({
   name: 'headerOptions',
   initialState,
   reducers: {
@@ -18,6 +18,6 @@ const optionsSlice = createSlice({
   },
 });
 
-export const { toggleDeletingPost } = optionsSlice.actions;
+export const { toggleDeletingPost } = headerOptionsSlice.actions;
 
-export default optionsSlice.reducer;
+export default headerOptionsSlice.reducer;

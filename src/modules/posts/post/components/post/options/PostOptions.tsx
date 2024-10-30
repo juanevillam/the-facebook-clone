@@ -26,7 +26,9 @@ export const PostOptions = ({
   postUserId,
 }: PostOptionsProps) => {
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
-  const { deletingPost } = useAppSelector((store) => store.posts.post.options);
+  const { deletingPost } = useAppSelector(
+    (store) => store.posts.post.headerOptions
+  );
 
   const openBottomSheet = () => setIsBottomSheetOpen(true);
 

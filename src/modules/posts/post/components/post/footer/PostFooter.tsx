@@ -37,17 +37,17 @@ export const PostFooter = ({
   const [areMobileCommentsOpen, setAreMobileCommentsOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const t = useTranslations();
-  const user = useCurrentUser();
+  const currentUser = useCurrentUser();
 
   const isMyLike = (like: LikeExtended) =>
-    like.userId === user?.id && like.postId === postId;
+    like.userId === currentUser?.id && like.postId === postId;
 
   const [optimisticLikes, addOptimisticLike] = useOptimistic<LikeExtended[]>(
     postLikes,
     // @ts-ignore
     (likes: LikeExtended[], newLike: LikeExtended) =>
       likes.some(isMyLike)
-        ? likes.filter((like) => like.userId !== user?.id)
+        ? likes.filter((like) => like.userId !== currentUser?.id)
         : [...likes, newLike]
   );
 
@@ -60,8 +60,8 @@ export const PostFooter = ({
       {
         postId,
         thoughts: newComment,
-        user,
-        userId: user?.id,
+        user: currentUser,
+        userId: currentUser?.id,
       },
       ...comments,
     ]
@@ -75,10 +75,12 @@ export const PostFooter = ({
   const closeMobileComments = () => setAreMobileCommentsOpen(false);
 
   const handleOptimisticLike = async () => {
-    startTransition(() => addOptimisticLike({ postId, userId: user?.id }));
+    startTransition(() =>
+      addOptimisticLike({ postId, userId: currentUser?.id })
+    );
 
     try {
-      await likePost(postId, user?.id as string);
+      await likePost(postId, currentUser?.id as string);
     } catch (error) {
       error instanceof Error &&
         showToast.error(t(`toast-messages.error.${error.message}`));

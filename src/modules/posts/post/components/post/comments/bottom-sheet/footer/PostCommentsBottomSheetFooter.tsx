@@ -21,7 +21,7 @@ export const PostCommentsBottomSheetFooter = ({
   const [thoughts, setThoughts] = useState('');
   const [isPending, startTransition] = useTransition();
   const t = useTranslations();
-  const user = useCurrentUser();
+  const currentUser = useCurrentUser();
 
   const handleComment = (event: React.ChangeEvent<HTMLInputElement>) =>
     setThoughts(event.target.value);
@@ -35,8 +35,8 @@ export const PostCommentsBottomSheetFooter = ({
       addOptimisticComment(thoughtsCopy);
     });
 
-    commentPost(postId, thoughtsCopy, user?.id as string).catch(({ message }) =>
-      showToast.error(t(`toast-messages.error.${message}`))
+    commentPost(postId, thoughtsCopy, currentUser?.id as string).catch(
+      ({ message }) => showToast.error(t(`toast-messages.error.${message}`))
     );
   };
 

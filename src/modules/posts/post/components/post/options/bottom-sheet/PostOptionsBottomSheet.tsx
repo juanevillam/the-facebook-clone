@@ -15,7 +15,7 @@ import { ActionLoader } from '@/components';
 import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { deletePost, savePost } from '@/modules/posts/post/actions';
-import { toggleDeletingPost } from '@/modules/posts/post/reducers/optionsSlice';
+import { toggleDeletingPost } from '@/modules/posts/post/reducers/headerOptionsSlice';
 
 import { PostOptionsBottomSheetItem } from './item/PostOptionsBottomSheetItem';
 
@@ -36,20 +36,23 @@ export const PostOptionsBottomSheet = ({
 }: PostOptionsBottomSheetProps) => {
   const [isPending, startTransition] = useTransition();
   const t = useTranslations();
-  const user = useCurrentUser();
+  const currentUser = useCurrentUser();
   const dispatch = useAppDispatch();
-  const { deletingPost } = useAppSelector((store) => store.posts.post.options);
-  const isPostMine = user?.id === postUserId;
+  const { deletingPost } = useAppSelector(
+    (store) => store.posts.post.headerOptions
+  );
+
+  const isPostMine = currentUser?.id === postUserId;
 
   const isMySave = (save: SavedPost) =>
-    save.userId === user?.id && save.postId === postId;
+    save.userId === currentUser?.id && save.postId === postId;
 
   const [optimisticSaves, addOptimisticSave] = useOptimistic<SavedPost[]>(
     postSaves,
     // @ts-ignore
     (saves: SavedPost[], newSave: SavedPost) =>
       saves.some(isMySave)
-        ? saves.filter((save) => save.userId !== user?.id)
+        ? saves.filter((save) => save.userId !== currentUser?.id)
         : [...saves, newSave]
   );
 
@@ -57,7 +60,7 @@ export const PostOptionsBottomSheet = ({
     dispatch(toggleDeletingPost());
 
     try {
-      const { message } = await deletePost(postId, user?.id as string);
+      const { message } = await deletePost(postId, currentUser?.id as string);
 
       showToast.success(t(`toast-messages.success.${message}`));
       closeBottomSheet();
@@ -73,10 +76,12 @@ export const PostOptionsBottomSheet = ({
 
   const handleOptimisticSave = async () => {
     closeBottomSheet();
-    startTransition(() => addOptimisticSave({ postId, userId: user?.id }));
+    startTransition(() =>
+      addOptimisticSave({ postId, userId: currentUser?.id })
+    );
 
     try {
-      await savePost(postId, user?.id as string);
+      await savePost(postId, currentUser?.id as string);
     } catch (error) {
       error instanceof Error &&
         showToast.error(t(`toast-messages.error.${error.message}`));

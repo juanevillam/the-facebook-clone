@@ -290,7 +290,16 @@
         "comments": {
           "comment": "Comentario",
           "comments": "Comentarios",
-          "press-enter-to-post": "Presionar enter para publicar"
+          "press-enter-to-post": "Presionar enter para publicar",
+          "options": {
+            "delete": {
+              "label": "Eliminar comentario"
+            },
+            "bottom-sheet": {
+              "title": "Opciones del comentario",
+              "description": "Aquí puedes eliminar un comentario si es tuyo."
+            }
+          }
         }
       },
       "comments": {
@@ -353,7 +362,8 @@
       "failed-to-like-post": "Error al agregar like",
       "failed-to-unlike-post": "Error al remover like",
       "failed-to-post-comment": "Error al agregar comentario",
-      "unauthorized": "Sin autorización"
+      "unauthorized": "Sin autorización",
+      "failed-to-delete-comment": "Error al eliminar comentario"
     },
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",
@@ -364,7 +374,8 @@
       "post-deleted": "Publicación eliminada",
       "link-copied-to-clipboard": "Enlace copiado al portapapeles",
       "post-saved": "Publicación guardada",
-      "post-unsaved": "Publicación elimininada de guardados"
+      "post-unsaved": "Publicación elimininada de guardados",
+      "comment-deleted": "Comentario eliminado"
     }
   },
   "icon-buttons": {
@@ -378,7 +389,8 @@
   },
   "action-loader": {
     "posting": "Publicando",
-    "deleting-post": "Eliminando publicación"
+    "deleting-post": "Eliminando publicación",
+    "deleting-comment": "Eliminando comentario"
   },
   "timestamp": {
     "just-now": "Justo ahora",
