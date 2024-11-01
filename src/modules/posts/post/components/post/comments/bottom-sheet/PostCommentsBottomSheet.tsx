@@ -6,9 +6,9 @@ import {
   LikeExtended,
 } from '@/modules/posts/post/assets/types';
 
+import { PostComments } from '../PostComments';
 import { PostCommentsBottomSheetFooter } from './footer/PostCommentsBottomSheetFooter';
 import { PostCommentsBottomSheetHeader } from './header/PostCommentsBottomSheetHeader';
-import { PostComments } from '../PostComments';
 
 type PostCommentsBottomSheetProps = {
   addOptimisticComment: (action: unknown) => void;
