@@ -1,22 +1,11 @@
 import { Skeleton } from '@mui/material';
 
+import { PostSkeletonHeader } from './header/PostSkeletonHeader';
+
 export const PostSkeleton = () => {
   return (
     <div className="card pb-3 md:pb-6">
-      <div className="flex-justify-between space-x-2 p-3 md:px-4">
-        <div className="flex space-x-2">
-          <Skeleton
-            className="skeleton-bg"
-            height={40}
-            variant="circular"
-            width={40}
-          />
-          <div>
-            <Skeleton className="skeleton-bg" height={20} width={120} />
-            <Skeleton className="skeleton-bg" height={20} width={80} />
-          </div>
-        </div>
-      </div>
+      <PostSkeletonHeader />
       <Skeleton
         className="skeleton-bg"
         variant="rectangular"
