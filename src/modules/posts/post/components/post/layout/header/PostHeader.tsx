@@ -5,7 +5,7 @@ import { ProfilePic, Timestamp } from '@/components';
 import { PostUserInfo } from '@/modules/posts/components';
 import { Feeling } from '@/modules/posts/create/assets/types';
 
-import { PostOptions } from '../options/PostOptions';
+import { PostOptions } from '../common';
 
 type PostHeaderProps = {
   createdAt: Date;

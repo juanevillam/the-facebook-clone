@@ -9,16 +9,19 @@ import { Drawer } from 'vaul';
 
 import { ProfilePic } from '@/components';
 import { useCurrentUser } from '@/hooks';
+import { likePost } from '@/modules/posts/post/actions';
+import {
+  CommentExtended,
+  LikeExtended,
+} from '@/modules/posts/post/assets/types';
 
 import { PostFooterActions } from './actions/PostFooterActions';
-import { PostFooterInfo } from './info/PostFooterInfo';
-import { likePost } from '../../../actions';
-import { CommentExtended, LikeExtended } from '../../../assets/types';
 import {
   PostComments,
   PostCommentsBottomSheet,
   PostCommentsBottomSheetFooter,
-} from '../comments';
+} from './comments';
+import { PostFooterInfo } from './info/PostFooterInfo';
 
 type PostFooterProps = {
   isPostModal?: boolean;

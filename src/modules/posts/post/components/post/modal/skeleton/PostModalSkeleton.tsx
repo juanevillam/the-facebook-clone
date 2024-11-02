@@ -1,6 +1,6 @@
 import { Backdrop, Fade, Modal, Skeleton } from '@mui/material';
 
-import { PostSkeletonHeader } from '../../skeleton';
+import { PostSkeletonHeader } from '../../layout/common/skeleton';
 
 export const PostModalSkeleton = () => {
   return (

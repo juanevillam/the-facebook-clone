@@ -1,5 +1,5 @@
-import { Post } from './post';
-import { fetchPosts } from '../data';
+import { fetchPosts } from '../../data';
+import { Post } from '../post';
 
 export const Posts = async () => {
   const posts = await fetchPosts();

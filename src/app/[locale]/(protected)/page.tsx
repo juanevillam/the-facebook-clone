@@ -7,7 +7,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import { PageProps } from '@/assets/types';
 import { signOut } from '@/auth';
 import { CreatePostCard } from '@/modules/posts/create/components';
-import { Posts, PostsSkeleton } from '@/modules/posts/post/components';
+import { Posts, PostsSkeleton } from '@/modules/posts/post/components/posts';
 
 const ProtectedPage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
