@@ -24,14 +24,14 @@ import {
 import { PostFooterInfo } from './info/PostFooterInfo';
 
 type PostFooterProps = {
-  isPostModal?: boolean;
+  isPostContent?: boolean;
   postComments: CommentExtended[];
   postLikes: LikeExtended[];
   postId: string;
 };
 
 export const PostFooter = ({
-  isPostModal = false,
+  isPostContent = false,
   postComments,
   postLikes,
   postId,
@@ -98,7 +98,7 @@ export const PostFooter = ({
             className={classNames(
               'only-mobile flex-center-justify-between primary-transition hover:primary-bg w-full px-3 py-2',
               {
-                'hover:bg-neutral-700 hover:bg-opacity-50': isPostModal,
+                'hover:bg-neutral-700 hover:bg-opacity-50': isPostContent,
               }
             )}
             onClick={openMobileComments}
@@ -110,6 +110,7 @@ export const PostFooter = ({
           >
             <PostFooterInfo
               isMyLike={isMyLike}
+              isPostContent={isPostContent}
               optimisticComments={optimisticComments}
               optimisticLikes={optimisticLikes}
             />
@@ -130,7 +131,7 @@ export const PostFooter = ({
         handleDesktopCommentsOpen={handleDesktopCommentsOpen}
         handleOptimisticLike={handleOptimisticLike}
         isMyLike={isMyLike}
-        isPostModal={isPostModal}
+        isPostContent={isPostContent}
         openMobileComments={openMobileComments}
         optimisticLikes={optimisticLikes}
         postId={postId}
@@ -150,7 +151,7 @@ export const PostFooter = ({
       )}
       <div
         className={classNames('md:px-4', {
-          'w-full': isPostModal,
+          'w-full': isPostContent,
           'primary-border border-t': areDesktopCommentsOpen,
         })}
       >

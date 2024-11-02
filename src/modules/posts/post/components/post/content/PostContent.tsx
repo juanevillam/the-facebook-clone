@@ -54,7 +54,7 @@ export const PostContent = ({
             <FacebookLogoMark className="hidden size-10 md:block" />
             <div className="only-mobile">
               <PostOptions
-                isPostModal
+                isPostContent
                 postId={post.id}
                 postSaves={post.savedBy}
                 postUserId={post.userId}
@@ -100,7 +100,7 @@ export const PostContent = ({
           createdAt={createdAt}
           feeling={feeling as Feeling}
           image={user.image as string}
-          isPostModal
+          isPostContent
           location={location as string}
           name={user.name as string}
           postId={postId}
@@ -109,7 +109,7 @@ export const PostContent = ({
         />
         <p className="primary-text mb-2 pl-3">{thoughts}</p>
         <PostFooter
-          isPostModal
+          isPostContent
           postComments={comments}
           postLikes={likes}
           postId={post.id}

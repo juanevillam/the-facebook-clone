@@ -19,7 +19,7 @@ type PostFooterActionsProps = {
   handleDesktopCommentsOpen: VoidFunction;
   handleOptimisticLike: VoidFunction;
   isMyLike: (like: LikeExtended) => boolean;
-  isPostModal: boolean;
+  isPostContent: boolean;
   openMobileComments: VoidFunction;
   optimisticLikes: LikeExtended[];
   postId: string;
@@ -31,7 +31,7 @@ export const PostFooterActions = ({
   handleDesktopCommentsOpen,
   handleOptimisticLike,
   isMyLike,
-  isPostModal,
+  isPostContent,
   openMobileComments,
   optimisticLikes,
   postId,
@@ -48,14 +48,14 @@ export const PostFooterActions = ({
       className={classNames(
         'primary-border flex md:space-x-1 md:border-y md:px-4 md:py-2.5',
         {
-          'border-t': isPostModal,
+          'primary-border-dark md:primary-border border-t': isPostContent,
         }
       )}
     >
       <PostFooterActionsItem
         Icon={HandThumbUpIcon}
         isActive={optimisticLikes.some(isMyLike)}
-        isPostModal={isPostModal}
+        isPostContent={isPostContent}
         label="like"
         onClick={handleOptimisticLike}
       />
@@ -63,7 +63,7 @@ export const PostFooterActions = ({
         className="only-mobile"
         Icon={ChatBubbleOvalLeftIcon}
         isActive={areMobileCommentsOpen}
-        isPostModal={isPostModal}
+        isPostContent={isPostContent}
         label="comment"
         onClick={openMobileComments}
       />
@@ -71,14 +71,14 @@ export const PostFooterActions = ({
         className="only-desktop"
         Icon={ChatBubbleOvalLeftIcon}
         isActive={areDesktopCommentsOpen}
-        isPostModal={isPostModal}
+        isPostContent={isPostContent}
         label="comment"
         onClick={handleDesktopCommentsOpen}
       />
       <PostFooterActionsItem
         Icon={ShareIcon}
         isActive={false}
-        isPostModal={isPostModal}
+        isPostContent={isPostContent}
         label="share"
         onClick={handleShare}
       />

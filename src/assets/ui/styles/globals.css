@@ -49,6 +49,10 @@
     @apply border-gray-200;
   }
 
+  .primary-border-dark {
+    @apply border-neutral-700;
+  }
+
   .primary-border-light-full {
     @apply border-gray-200 md:border-gray-200;
   }
@@ -89,6 +93,10 @@
     @apply stroke-neutral-900;
   }
 
+  .primary-stroke-dark {
+    @apply stroke-gray-100;
+  }
+
   .secondary-stroke {
     @apply stroke-neutral-600 dark:stroke-neutral-400;
   }
@@ -118,8 +126,16 @@
     @apply text-neutral-600 dark:text-neutral-400;
   }
 
+  .secondary-text-dark {
+    @apply text-neutral-400;
+  }
+
   .tertiary-text {
     @apply text-neutral-500 dark:text-neutral-400;
+  }
+
+  .tertiary-text-dark {
+    @apply text-neutral-400;
   }
 
   /* Bottom sheet Utilities */

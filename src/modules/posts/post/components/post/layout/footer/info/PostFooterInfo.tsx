@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
 import { ThumbUpImage } from '@/components/images';
@@ -9,6 +10,7 @@ import {
 type PostFooterInfoProps = {
   handleDesktopCommentsOpen?: VoidFunction;
   isMyLike: (like: LikeExtended) => boolean;
+  isPostContent?: boolean;
   optimisticComments: CommentExtended[];
   optimisticLikes: LikeExtended[];
 };
@@ -16,6 +18,7 @@ type PostFooterInfoProps = {
 export const PostFooterInfo = ({
   handleDesktopCommentsOpen,
   isMyLike,
+  isPostContent = false,
   optimisticComments,
   optimisticLikes,
 }: PostFooterInfoProps) => {
@@ -27,7 +30,12 @@ export const PostFooterInfo = ({
         {optimisticLikes.length > 0 && (
           <>
             <ThumbUpImage className="size-4 md:size-5" />
-            <p className="secondary-text text-sm">
+            <p
+              className={classNames('text-sm', {
+                'secondary-text-dark': isPostContent,
+                'secondary-text': !isPostContent,
+              })}
+            >
               {optimisticLikes.some(isMyLike) && t('likes.you')}
               {!optimisticLikes.some(isMyLike) && optimisticLikes.length}
               {optimisticLikes.some(isMyLike) &&
@@ -43,7 +51,12 @@ export const PostFooterInfo = ({
       </div>
       {optimisticComments.length > 0 && (
         <button onClick={handleDesktopCommentsOpen} type="button">
-          <p className="secondary-text text-sm md:hover:underline">
+          <p
+            className={classNames('text-sm md:hover:underline', {
+              'secondary-text-dark': isPostContent,
+              'secondary-text': !isPostContent,
+            })}
+          >
             {`${optimisticComments.length} `}
             {optimisticComments.length === 1
               ? t('comments.comment')

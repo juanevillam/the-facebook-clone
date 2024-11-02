@@ -13,14 +13,14 @@ import { useAppSelector } from '@/lib/store/hooks';
 import { PostOptionsBottomSheet } from './bottom-sheet/PostOptionsBottomSheet';
 
 type PostOptionsProps = {
-  isPostModal?: boolean;
+  isPostContent?: boolean;
   postId: string;
   postSaves: SavedPost[];
   postUserId: string;
 };
 
 export const PostOptions = ({
-  isPostModal = false,
+  isPostContent = false,
   postId,
   postSaves,
   postUserId,
@@ -41,14 +41,14 @@ export const PostOptions = ({
       <Drawer.Trigger asChild>
         <IconButton
           className={classNames({
-            'hover:primary-bg -mt-1 size-9': !isPostModal,
+            'hover:primary-bg -mt-1 size-9': !isPostContent,
             'size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50':
-              isPostModal,
+              isPostContent,
           })}
           icon={{
             className: classNames({
-              'secondary-fill size-full': !isPostModal,
-              'fill-white size-full': isPostModal,
+              'secondary-fill size-full': !isPostContent,
+              'fill-white size-full': isPostContent,
             }),
             Component: DotsHorizontalIcon,
             name: 'dots-horizontal',

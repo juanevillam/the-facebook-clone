@@ -19,6 +19,7 @@ export const PostPageWrapper = ({ post }: PostPageWrapperProps) => {
         'posts',
         'images',
         'toast-messages',
+        'icon-buttons',
         'action-loader',
         'timestamp'
       )}
