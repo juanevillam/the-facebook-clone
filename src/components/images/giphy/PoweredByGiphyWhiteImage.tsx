@@ -8,7 +8,7 @@ export const PoweredByGiphyWhiteImage = () => {
 
   return (
     <Image
-      alt={t('power-by-giphy')}
+      alt={t('powered-by-giphy')}
       height={POWERED_BY_GIPHY_IMAGE_SIZE}
       src="/images/giphy/powered-by-giphy-white.png"
       width={POWERED_BY_GIPHY_IMAGE_SIZE}

@@ -66,7 +66,7 @@ export const CreatePostCard = () => {
     },
     {
       active: !!activeFeeling,
-      name: 'feeling-activity',
+      name: 'feeling',
       onClick: handleOpenFeelingsStep,
     },
   ];

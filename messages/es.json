@@ -117,15 +117,12 @@
     "links": {
       "home": "Inicio",
       "friends": "Amigos",
-      "watch": "Ver",
-      "marketplace": "Mercado",
-      "groups": "Grupos"
+      "watch": "Ver"
     },
     "drop-downs": {
       "menu": "Menú",
       "messenger": "Messenger",
-      "notifications": "Notificaciones",
-      "search": "Buscar"
+      "notifications": "Notificaciones"
     }
   },
   "posts": {
@@ -146,8 +143,8 @@
             "detailed": "Foto/video",
             "short": "Foto"
           },
-          "feeling-activity": {
-            "detailed": "Sentimiento/actividad",
+          "feeling": {
+            "detailed": "Sentimiento",
             "short": "Sentimiento"
           },
           "check-in": {

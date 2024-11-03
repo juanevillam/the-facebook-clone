@@ -43,7 +43,7 @@ export const CreatePostDefaultStepFooter = () => {
     },
     {
       active: !!activeFeeling,
-      name: 'feeling-activity',
+      name: 'feeling',
       onClick: handleOpenFeelingsStep,
     },
     {

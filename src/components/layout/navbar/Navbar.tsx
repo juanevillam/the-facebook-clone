@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
-import { SearchIcon } from '@/assets/ui/icons';
 import { FacebookLogoMark, FacebookLogoType } from '@/assets/ui/icons/brand';
 import { useScrollDirection } from '@/hooks';
 
@@ -30,19 +29,6 @@ export const Navbar = () => {
               <FacebookLogoMark className="hidden size-10 md:block" />
               <FacebookLogoType className="h-6 fill-primary-100 md:hidden dark:fill-white" />
             </Link>
-            <div className="primary-bg primary-transition ml-2 hidden h-10 w-max items-center rounded-full p-3 md:flex xl:w-60">
-              <SearchIcon className="secondary-fill size-4" />
-              <label className="sr-only" htmlFor="search">
-                {t('search')}
-              </label>
-              <input
-                aria-label={t('search')}
-                className="primary-placeholder primary-text primary-transition ml-2 hidden flex-shrink bg-transparent font-light focus:outline-none xl:inline-flex"
-                id="search"
-                placeholder={t('search')}
-                type="text"
-              />
-            </div>
           </div>
           <div className="mt-px hidden items-center space-x-2 md:flex">
             <NavbarLinks />
