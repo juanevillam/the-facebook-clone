@@ -6,7 +6,11 @@ import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { createPost } from '@/modules/posts/create/actions';
 import { setActiveLocation } from '@/modules/posts/create/reducers/checkInSlice';
 import { setActiveFeeling } from '@/modules/posts/create/reducers/feelingsSlice';
-import { setActiveGif } from '@/modules/posts/create/reducers/gifsSlice';
+import {
+  setActiveGif,
+  setGifs,
+  setGifsSearchInputValue,
+} from '@/modules/posts/create/reducers/gifsSlice';
 import { setMedia } from '@/modules/posts/create/reducers/mediaSlice';
 import {
   setThoughts,
@@ -53,6 +57,8 @@ export const CreatePostDefaultStepButton = () => {
         dispatch(setActiveFeeling(null));
         dispatch(setActiveLocation(null));
         dispatch(setActiveGif(null));
+        dispatch(setGifsSearchInputValue(''));
+        dispatch(setGifs({ gifs: [], error: false }));
         dispatch(togglePosting());
       })
       .catch(({ message }) => {

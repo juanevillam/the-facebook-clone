@@ -329,7 +329,8 @@
     "alert-triangle": "Ícono de alerta",
     "no-profile-pic": "Imagen de sin foto de perfil",
     "profile-pic": "Foto de perfil de {name}",
-    "thumb-up": "Ícono de pulgar arriba"
+    "thumb-up": "Ícono de pulgar arriba",
+    "powered-by-giphy": "Desarrollado por Giphy"
   },
   "toast-messages": {
     "error": {
