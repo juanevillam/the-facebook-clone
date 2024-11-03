@@ -29,10 +29,7 @@ export const CreatePostDefaultStepFooter = () => {
 
   const handleOpenCheckInStep = () => dispatch(setStep('check-in'));
 
-  const handleOpenGifStep = () => dispatch(setStep('gifs'));
-
-  const handleOpenTagPeopleStep = () =>
-    showToast.error(t('toast-messages.error.feature-under-development'));
+  const handleOpenGifsStep = () => dispatch(setStep('gifs'));
 
   const cardItems: CardItem[] = [
     {
@@ -55,7 +52,7 @@ export const CreatePostDefaultStepFooter = () => {
       active: !!activeGif,
       disabled: !!file || isProduction,
       name: 'gif',
-      onClick: handleOpenGifStep,
+      onClick: handleOpenGifsStep,
     },
   ];
 
