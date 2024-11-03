@@ -25,9 +25,6 @@ export const CreatePostDefaultStepFooter = () => {
 
   const handleOpenMediaStep = () => dispatch(setStep('media'));
 
-  const handleOpenLiveStep = () =>
-    showToast.error(t('toast-messages.error.feature-under-development'));
-
   const handleOpenFeelingsStep = () => dispatch(setStep('feelings'));
 
   const handleOpenCheckInStep = () => dispatch(setStep('check-in'));
@@ -38,11 +35,6 @@ export const CreatePostDefaultStepFooter = () => {
     showToast.error(t('toast-messages.error.feature-under-development'));
 
   const cardItems: CardItem[] = [
-    {
-      active: false,
-      name: 'live-video',
-      onClick: handleOpenLiveStep,
-    },
     {
       active: !!file,
       disabled: !!activeGif,
@@ -64,11 +56,6 @@ export const CreatePostDefaultStepFooter = () => {
       disabled: !!file || isProduction,
       name: 'gif',
       onClick: handleOpenGifStep,
-    },
-    {
-      active: false,
-      name: 'tag-people',
-      onClick: handleOpenTagPeopleStep,
     },
   ];
 

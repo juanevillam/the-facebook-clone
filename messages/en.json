@@ -142,10 +142,6 @@
           }
         },
         "footer": {
-          "live-video": {
-            "detailed": "Live video",
-            "short": "Live"
-          },
           "photo-video": {
             "detailed": "Photo/video",
             "short": "Photo"
@@ -153,10 +149,6 @@
           "feeling-activity": {
             "detailed": "Feeling/activity",
             "short": "Feeling"
-          },
-          "tag-people": {
-            "detailed": "Tag people",
-            "short": "Tag"
           },
           "check-in": {
             "detailed": "Check in",

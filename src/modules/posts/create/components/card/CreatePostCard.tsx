@@ -40,9 +40,6 @@ export const CreatePostCard = () => {
   const handleStep = () =>
     step === 'default' ? handleToggleOpenable() : dispatch(setStep('default'));
 
-  const handleOpenLiveVideoStep = () =>
-    showToast.error(t('toast-messages.error.feature-under-development'));
-
   const handleOpenMediaStep = () => {
     if (activeGif) {
       showToast.error(
@@ -62,11 +59,6 @@ export const CreatePostCard = () => {
   };
 
   const cardItems: CardItem[] = [
-    {
-      active: false,
-      name: 'live-video',
-      onClick: handleOpenLiveVideoStep,
-    },
     {
       active: !!file,
       name: 'photo-video',

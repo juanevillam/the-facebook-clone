@@ -142,10 +142,6 @@
           }
         },
         "footer": {
-          "live-video": {
-            "detailed": "Video en vivo",
-            "short": "Video"
-          },
           "photo-video": {
             "detailed": "Foto/video",
             "short": "Foto"
@@ -153,10 +149,6 @@
           "feeling-activity": {
             "detailed": "Sentimiento/actividad",
             "short": "Sentimiento"
-          },
-          "tag-people": {
-            "detailed": "Etiquetar personas",
-            "short": "Etiquetar"
           },
           "check-in": {
             "detailed": "Ubicación",
