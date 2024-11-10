@@ -7,6 +7,7 @@ import { Feeling } from '@/modules/posts/create/assets/types';
 type PostUserInfoProps = {
   feeling?: Feeling;
   hideFellingInfo?: boolean;
+  isPostContent?: boolean;
   location?: string;
   name: string;
 };
@@ -14,6 +15,7 @@ type PostUserInfoProps = {
 export const PostUserInfo = ({
   feeling,
   hideFellingInfo = false,
+  isPostContent = false,
   location,
   name,
 }: PostUserInfoProps) => {
@@ -21,12 +23,31 @@ export const PostUserInfo = ({
 
   return (
     <p className="leading-tight">
-      <span className="primary-text font-semibold">{name}</span>
+      <span
+        className={classNames('font-semibold', {
+          'primary-text-dark md:primary-text': isPostContent,
+          'primary-text': !isPostContent,
+        })}
+      >
+        {name}
+      </span>
       {(feeling || location) && (
-        <span className="tertiary-text">&nbsp;{t('user-info.is')}</span>
+        <span
+          className={classNames({
+            'tertiary-text-dark md:tertiary-text': isPostContent,
+            'tertiary-text': !isPostContent,
+          })}
+        >
+          &nbsp;{t('user-info.is')}
+        </span>
       )}
       {feeling && (
-        <span className="tertiary-text">
+        <span
+          className={classNames({
+            'tertiary-text-dark md:tertiary-text': isPostContent,
+            'tertiary-text': !isPostContent,
+          })}
+        >
           {hideFellingInfo && (
             <span className="md:hidden">&nbsp;{t('user-info.feeling')}</span>
           )}

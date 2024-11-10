@@ -17,9 +17,6 @@ export const NavbarDropDowns = () => {
         isActive
         label="menu"
       />
-      <div className="block md:hidden">
-        <NavbarDropDown Icon={SearchIcon} label="search" />
-      </div>
       <NavbarDropDown Icon={MessengerIcon} label="messenger" />
       <div className="hidden md:flex md:space-x-2">
         <NavbarDropDown Icon={NotificationsIcon} label="notifications" />

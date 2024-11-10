@@ -5,7 +5,7 @@ import { PostUserInfo } from '@/modules/posts/components';
 import { Feeling } from '@/modules/posts/create/assets/types';
 
 export const CreatePostDefaultStepUserInfo = () => {
-  const user = useCurrentUser();
+  const currentUser = useCurrentUser();
   const { activeFeeling } = useAppSelector(
     (store) => store.posts.create.feelings
   );
@@ -20,7 +20,7 @@ export const CreatePostDefaultStepUserInfo = () => {
       <PostUserInfo
         feeling={activeFeeling as Feeling}
         location={activeLocation?.structured_formatting.main_text}
-        name={user?.name as string}
+        name={currentUser?.name as string}
       />
     </div>
   );

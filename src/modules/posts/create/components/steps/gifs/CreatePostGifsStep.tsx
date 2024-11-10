@@ -15,12 +15,12 @@ import {
 } from '@/modules/posts/create/reducers/gifsSlice';
 import { setStep } from '@/modules/posts/create/reducers/postSlice';
 
-import { CreatePostGifsStepItem } from './item/CreatePostGifsStepItem';
 import {
   CreatePostStepContainer,
   CreatePostStepLoader,
   CreatePostStepMessage,
 } from '../ui';
+import { CreatePostGifsStepItem } from './item/CreatePostGifsStepItem';
 
 export const CreatePostGifsStep = () => {
   const debounceTimeout = useRef<NodeJS.Timeout | null>(null);

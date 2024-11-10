@@ -1,9 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import optionsReducer from './optionsSlice';
+import footerOptionsReducer from './footerOptionsSlice';
+import headerOptionsReducer from './headerOptionsSlice';
 
 const createReducer = combineReducers({
-  options: optionsReducer,
+  footerOptions: footerOptionsReducer,
+  headerOptions: headerOptionsReducer,
 });
 
 export default createReducer;

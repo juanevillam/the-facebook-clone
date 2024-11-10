@@ -11,20 +11,11 @@ type Provider = 'google' | 'github';
 export const AuthSocial = () => {
   const locale = useLocale();
   const t = useTranslations();
-  const isDevelopment = process.env.NODE_ENV === 'development';
 
   const handleSignInSocial = (provider: Provider) => {
-    if (isDevelopment) {
-      signIn(provider, {
-        callbackUrl: `/${locale}`,
-      });
-    } else {
-      showToast.error(
-        t(
-          'toast-messages.error.social-auth-is-currently-unavailable-in-production'
-        )
-      );
-    }
+    signIn(provider, {
+      callbackUrl: `/${locale}`,
+    });
   };
 
   const handleGoogleSignIn = () => handleSignInSocial('google');

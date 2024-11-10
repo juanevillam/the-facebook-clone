@@ -13,9 +13,9 @@ type ProfilePicProps = {
 
 export const ProfilePic = ({ image, name }: ProfilePicProps) => {
   const t = useTranslations('images');
-  const user = useCurrentUser();
-  const imagetoShow = image || (image === undefined && user?.image);
-  const nametoShow = name || (name === undefined && user?.name);
+  const currentUser = useCurrentUser();
+  const imagetoShow = image || (image === undefined && currentUser?.image);
+  const nametoShow = name || (name === undefined && currentUser?.name);
 
   return imagetoShow ? (
     <Image
