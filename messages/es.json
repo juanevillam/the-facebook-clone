@@ -376,9 +376,9 @@
   "icon-buttons": {
     "close": "Cerrar",
     "back": "Atrás",
-    "dots-horizontal": "Más opciones",
-    "arrows-pointing-in": "Entrar en pantalla completa",
-    "arrows-pointing-out": "Salir de pantalla completa",
+    "more-options": "Más opciones",
+    "enter-full-screen": "Entrar en pantalla completa",
+    "exit-full-screen": "Salir de pantalla completa",
     "see-all-in-messenger": "Ver todos en Messenger",
     "new-message": "Nuevo mensaje"
   },

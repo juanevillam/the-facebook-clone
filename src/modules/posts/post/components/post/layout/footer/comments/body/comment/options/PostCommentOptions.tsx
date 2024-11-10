@@ -35,7 +35,7 @@ export const PostCommentOptions = ({ commentId }: PostCommentOptionsProps) => {
           icon={{
             className: 'secondary-fill size-full',
             Component: DotsHorizontalIcon,
-            name: 'dots-horizontal',
+            name: 'more-options',
           }}
           onClick={openBottomSheet}
         />

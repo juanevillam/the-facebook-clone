@@ -81,7 +81,7 @@ export const PostContent = ({
               Component: fullScreen
                 ? ArrowsPointingInIcon
                 : ArrowsPointingOutIcon,
-              name: fullScreen ? 'arrows-pointing-in' : 'arrows-pointing-out',
+              name: fullScreen ? 'exit-full-screen' : 'enter-full-screen',
             }}
             onClick={handleFullScreen}
           />
