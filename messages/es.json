@@ -250,9 +250,6 @@
           "label": "Guardar publicación",
           "description": "Agrega esto a tus elementos guardados."
         },
-        "edit": {
-          "label": "Editar publicación"
-        },
         "delete": {
           "label": "Eliminar publicación",
           "description": "Elimina esta publicación permanentemente."
@@ -263,7 +260,7 @@
         },
         "bottom-sheet": {
           "title": "Opciones de la publicación",
-          "description": "Aquí puedes guardar una publicación, o editar/eliminar si es tuya."
+          "description": "Aquí puedes guardar una publicación o eliminarla si es tuya."
         }
       },
       "footer": {

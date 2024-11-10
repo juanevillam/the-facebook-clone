@@ -249,9 +249,6 @@
           "label": "Save post",
           "description": "Add this to your saved items."
         },
-        "edit": {
-          "label": "Edit post"
-        },
         "delete": {
           "label": "Delete post",
           "description": "Remove this post permanently."
@@ -262,7 +259,7 @@
         },
         "bottom-sheet": {
           "title": "Post options",
-          "description": "Here you can save a post, or edit/delete it if it's yours."
+          "description": "Here you can save a post or delete it if it's yours."
         }
       },
       "footer": {

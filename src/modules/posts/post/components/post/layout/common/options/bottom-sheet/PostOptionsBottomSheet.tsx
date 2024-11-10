@@ -123,12 +123,6 @@ export const PostOptionsBottomSheet = ({
             <>
               <hr className="primary-border my-1.5 border-t md:my-2" />
               <PostOptionsBottomSheetItem
-                IconComponent={PencilIcon}
-                name="edit"
-                onClick={() => console.log('edit')}
-              />
-              <hr className="primary-border my-1.5 border-t md:my-2" />
-              <PostOptionsBottomSheetItem
                 IconComponent={TrashIcon}
                 name="delete"
                 onClick={handleDeletePost}
