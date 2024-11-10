@@ -1,6 +1,7 @@
 export { ArrowLeftIcon } from './ArrowLeftIcon';
 export { ArrowsPointingInIcon } from './ArrowsPointingInIcon';
 export { ArrowsPointingOutIcon } from './ArrowsPointingOutIcon';
+export { BellIcon } from './BellIcon';
 export { BookmarkIcon } from './BookmarkIcon';
 export { BookmarkSlashIcon } from './BookmarkSlashIcon';
 export { ChatBubbleOvalLeftIcon } from './ChatBubbleOvalLeftIcon';

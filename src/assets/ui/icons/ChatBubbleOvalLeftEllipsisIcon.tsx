@@ -11,7 +11,6 @@ export const ChatBubbleOvalLeftEllipsisIcon = ({
       strokeWidth="1.5"
       viewBox="0 0 24 24"
     >
-      2
       <path
         strokeLinecap="round"
         strokeLinejoin="round"

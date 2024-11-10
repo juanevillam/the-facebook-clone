@@ -126,7 +126,9 @@
         "footer": "See all in Messenger"
       },
       "notifications": {
-        "tooltip": "Notifications"
+        "tooltip": "Notifications",
+        "title": "Notifications",
+        "you-have-no-notifications": "You have no notifications"
       }
     }
   },
