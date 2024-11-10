@@ -21,28 +21,15 @@ export const CreatePostDefaultStepFooter = () => {
     (store) => store.posts.create.checkIn
   );
 
-  const isProduction = process.env.NODE_ENV === 'production';
-
   const handleOpenMediaStep = () => dispatch(setStep('media'));
-
-  const handleOpenLiveStep = () =>
-    showToast.error(t('toast-messages.error.feature-under-development'));
 
   const handleOpenFeelingsStep = () => dispatch(setStep('feelings'));
 
   const handleOpenCheckInStep = () => dispatch(setStep('check-in'));
 
-  const handleOpenGifStep = () => dispatch(setStep('gifs'));
-
-  const handleOpenTagPeopleStep = () =>
-    showToast.error(t('toast-messages.error.feature-under-development'));
+  const handleOpenGifsStep = () => dispatch(setStep('gifs'));
 
   const cardItems: CardItem[] = [
-    {
-      active: false,
-      name: 'live-video',
-      onClick: handleOpenLiveStep,
-    },
     {
       active: !!file,
       disabled: !!activeGif,
@@ -51,7 +38,7 @@ export const CreatePostDefaultStepFooter = () => {
     },
     {
       active: !!activeFeeling,
-      name: 'feeling-activity',
+      name: 'feeling',
       onClick: handleOpenFeelingsStep,
     },
     {
@@ -61,14 +48,9 @@ export const CreatePostDefaultStepFooter = () => {
     },
     {
       active: !!activeGif,
-      disabled: !!file || isProduction,
+      disabled: !!file,
       name: 'gif',
-      onClick: handleOpenGifStep,
-    },
-    {
-      active: false,
-      name: 'tag-people',
-      onClick: handleOpenTagPeopleStep,
+      onClick: handleOpenGifsStep,
     },
   ];
 

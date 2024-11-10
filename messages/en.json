@@ -112,20 +112,16 @@
   "navbar": {
     "main-navigation": "Main navigation",
     "home": "Home",
-    "search": "Search",
     "mobile-navigation": "Mobile navigation",
     "links": {
       "home": "Home",
       "friends": "Friends",
-      "watch": "Watch",
-      "marketplace": "Marketplace",
-      "groups": "Groups"
+      "watch": "Watch"
     },
     "drop-downs": {
       "menu": "Menu",
       "messenger": "Messenger",
-      "notifications": "Notifications",
-      "search": "Search"
+      "notifications": "Notifications"
     }
   },
   "posts": {
@@ -142,21 +138,13 @@
           }
         },
         "footer": {
-          "live-video": {
-            "detailed": "Live video",
-            "short": "Live"
-          },
           "photo-video": {
             "detailed": "Photo/video",
             "short": "Photo"
           },
-          "feeling-activity": {
-            "detailed": "Feeling/activity",
+          "feeling": {
+            "detailed": "Feeling",
             "short": "Feeling"
-          },
-          "tag-people": {
-            "detailed": "Tag people",
-            "short": "Tag"
           },
           "check-in": {
             "detailed": "Check in",
@@ -164,8 +152,7 @@
           },
           "gif": {
             "detailed": "GIF",
-            "short": "GIF",
-            "disabled-prod": "GIF picker is currently unavailable in production"
+            "short": "GIF"
           },
           "media": {
             "disabled": "This can't be combined with what you've already<br></br>added to your post"
@@ -255,15 +242,16 @@
     },
     "post": {
       "options": {
+        "view": {
+          "label": "View post"
+        },
         "save": {
           "label": "Save post",
           "description": "Add this to your saved items."
         },
-        "edit": {
-          "label": "Edit post"
-        },
         "delete": {
-          "label": "Delete post"
+          "label": "Delete post",
+          "description": "Remove this post permanently."
         },
         "unsave": {
           "label": "Unsave post",
@@ -271,7 +259,7 @@
         },
         "bottom-sheet": {
           "title": "Post options",
-          "description": "Here you can save a post, or edit/delete it if it's yours."
+          "description": "Here you can save a post or delete it if it's yours."
         }
       },
       "footer": {
@@ -290,7 +278,16 @@
         "comments": {
           "comment": "Comment",
           "comments": "Comments",
-          "press-enter-to-post": "Press enter to post"
+          "press-enter-to-post": "Press enter to post",
+          "options": {
+            "delete": {
+              "label": "Delete comment"
+            },
+            "bottom-sheet": {
+              "title": "Comment options",
+              "description": "Here you can delete a comment if it's yours."
+            }
+          }
         }
       },
       "comments": {
@@ -328,7 +325,8 @@
     "alert-triangle": "Alert icon",
     "no-profile-pic": "No profile pic image",
     "profile-pic": "{name}'s profile picture",
-    "thumb-up": "Thumb up icon"
+    "thumb-up": "Thumb up icon",
+    "powered-by-giphy": "Powered by Giphy image"
   },
   "toast-messages": {
     "error": {
@@ -343,7 +341,6 @@
       "token-has-expired": "Token has expired",
       "invalid-2fa-code": "Invalid 2FA code",
       "2fa-code-has-expired": "2FA code has expired",
-      "social-auth-is-currently-unavailable-in-production": "Social auth is currently unavailable in production",
       "feature-under-development": "Feature under development",
       "post-not-found": "Post not found",
       "failed-to-create-post": "Failed to create post",
@@ -353,7 +350,8 @@
       "failed-to-like-post": "Failed to like post",
       "failed-to-unlike-post": "Failed to unlike post",
       "failed-to-post-comment": "Failed to post comment",
-      "unauthorized": "Unauthorized"
+      "unauthorized": "Unauthorized",
+      "failed-to-delete-comment": "Failed to delete comment"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",
@@ -364,13 +362,16 @@
       "post-deleted": "Post deleted",
       "link-copied-to-clipboard": "Link copied to clipboard",
       "post-saved": "Post saved",
-      "post-unsaved": "Post unsaved"
+      "post-unsaved": "Post unsaved",
+      "comment-deleted": "Comment deleted"
     }
   },
   "icon-buttons": {
     "close": "Close",
     "back": "Back",
-    "dots-horizontal": "More options"
+    "dots-horizontal": "More options",
+    "arrows-pointing-in": "Enter full screen",
+    "arrows-pointing-out": "Exit full screen"
   },
   "search-input": {
     "search": "Search",
@@ -378,7 +379,8 @@
   },
   "action-loader": {
     "posting": "Posting",
-    "deleting-post": "Deleting post"
+    "deleting-post": "Deleting post",
+    "deleting-comment": "Deleting comment"
   },
   "timestamp": {
     "just-now": "Just now",

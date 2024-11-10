@@ -4,7 +4,7 @@ import { MoonLoader } from 'react-spinners';
 
 type ActionLoaderProps = {
   className?: string;
-  message: 'deleting-post' | 'posting';
+  message: 'deleting-comment' | 'deleting-post' | 'posting';
   open: boolean;
 };
 

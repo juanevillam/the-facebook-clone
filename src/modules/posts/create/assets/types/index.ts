@@ -34,13 +34,7 @@ type GIFUnparsed = {
 type CardItem = {
   active: boolean;
   disabled?: boolean;
-  name:
-    | 'live-video'
-    | 'photo-video'
-    | 'feeling-activity'
-    | 'tag-people'
-    | 'check-in'
-    | 'gif';
+  name: 'photo-video' | 'feeling' | 'check-in' | 'gif';
   onClick: VoidFunction;
 };
 

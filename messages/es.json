@@ -117,15 +117,12 @@
     "links": {
       "home": "Inicio",
       "friends": "Amigos",
-      "watch": "Ver",
-      "marketplace": "Mercado",
-      "groups": "Grupos"
+      "watch": "Ver"
     },
     "drop-downs": {
       "menu": "Menú",
       "messenger": "Messenger",
-      "notifications": "Notificaciones",
-      "search": "Buscar"
+      "notifications": "Notificaciones"
     }
   },
   "posts": {
@@ -142,21 +139,13 @@
           }
         },
         "footer": {
-          "live-video": {
-            "detailed": "Video en vivo",
-            "short": "Video"
-          },
           "photo-video": {
             "detailed": "Foto/video",
             "short": "Foto"
           },
-          "feeling-activity": {
-            "detailed": "Sentimiento/actividad",
+          "feeling": {
+            "detailed": "Sentimiento",
             "short": "Sentimiento"
-          },
-          "tag-people": {
-            "detailed": "Etiquetar personas",
-            "short": "Etiquetar"
           },
           "check-in": {
             "detailed": "Ubicación",
@@ -164,8 +153,7 @@
           },
           "gif": {
             "detailed": "GIF",
-            "short": "GIF",
-            "disabled-prod": "La selección de GIFs no está disponible actualmente en producción"
+            "short": "GIF"
           },
           "media": {
             "disabled": "Esto no se puede combinar con lo que ya has<br></br>agregado a tu publicación"
@@ -255,15 +243,16 @@
     },
     "post": {
       "options": {
+        "view": {
+          "label": "Ver post"
+        },
         "save": {
           "label": "Guardar publicación",
           "description": "Agrega esto a tus elementos guardados."
         },
-        "edit": {
-          "label": "Editar publicación"
-        },
         "delete": {
-          "label": "Eliminar publicación"
+          "label": "Eliminar publicación",
+          "description": "Elimina esta publicación permanentemente."
         },
         "unsave": {
           "label": "Eliminar de guardados",
@@ -271,7 +260,7 @@
         },
         "bottom-sheet": {
           "title": "Opciones de la publicación",
-          "description": "Aquí puedes guardar una publicación, o editar/eliminar si es tuya."
+          "description": "Aquí puedes guardar una publicación o eliminarla si es tuya."
         }
       },
       "footer": {
@@ -290,7 +279,16 @@
         "comments": {
           "comment": "Comentario",
           "comments": "Comentarios",
-          "press-enter-to-post": "Presionar enter para publicar"
+          "press-enter-to-post": "Presionar enter para publicar",
+          "options": {
+            "delete": {
+              "label": "Eliminar comentario"
+            },
+            "bottom-sheet": {
+              "title": "Opciones del comentario",
+              "description": "Aquí puedes eliminar un comentario si es tuyo."
+            }
+          }
         }
       },
       "comments": {
@@ -328,7 +326,8 @@
     "alert-triangle": "Ícono de alerta",
     "no-profile-pic": "Imagen de sin foto de perfil",
     "profile-pic": "Foto de perfil de {name}",
-    "thumb-up": "Ícono de pulgar arriba"
+    "thumb-up": "Ícono de pulgar arriba",
+    "powered-by-giphy": "Desarrollado por Giphy"
   },
   "toast-messages": {
     "error": {
@@ -343,7 +342,6 @@
       "token-has-expired": "El token ha expirado",
       "invalid-2fa-code": "Código 2FA inválido",
       "2fa-code-has-expired": "El código 2FA ha expirado",
-      "social-auth-is-currently-unavailable-in-production": "La autenticación social no está disponible actualmente en producción",
       "feature-under-development": "Función en desarrollo",
       "post-not-found": "Publicación no encontrada",
       "failed-to-create-post": "Error al crear publicación",
@@ -353,7 +351,8 @@
       "failed-to-like-post": "Error al agregar like",
       "failed-to-unlike-post": "Error al remover like",
       "failed-to-post-comment": "Error al agregar comentario",
-      "unauthorized": "Sin autorización"
+      "unauthorized": "Sin autorización",
+      "failed-to-delete-comment": "Error al eliminar comentario"
     },
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",
@@ -364,13 +363,16 @@
       "post-deleted": "Publicación eliminada",
       "link-copied-to-clipboard": "Enlace copiado al portapapeles",
       "post-saved": "Publicación guardada",
-      "post-unsaved": "Publicación elimininada de guardados"
+      "post-unsaved": "Publicación elimininada de guardados",
+      "comment-deleted": "Comentario eliminado"
     }
   },
   "icon-buttons": {
     "close": "Cerrar",
     "back": "Atrás",
-    "dots-horizontal": "Más opciones"
+    "dots-horizontal": "Más opciones",
+    "arrows-pointing-in": "Entrar en pantalla completa",
+    "arrows-pointing-out": "Salir de pantalla completa"
   },
   "search-input": {
     "search": "Buscar",
@@ -378,7 +380,8 @@
   },
   "action-loader": {
     "posting": "Publicando",
-    "deleting-post": "Eliminando publicación"
+    "deleting-post": "Eliminando publicación",
+    "deleting-comment": "Eliminando comentario"
   },
   "timestamp": {
     "just-now": "Justo ahora",

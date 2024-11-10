@@ -14,12 +14,12 @@ import {
 } from '@/modules/posts/create/reducers/checkInSlice';
 import { setStep } from '@/modules/posts/create/reducers/postSlice';
 
-import { CreatePostCheckInStepItem } from './item/CreatePostCheckInStepItem';
 import {
   CreatePostStepContainer,
   CreatePostStepLoader,
   CreatePostStepMessage,
 } from '../ui';
+import { CreatePostCheckInStepItem } from './item/CreatePostCheckInStepItem';
 
 export const CreatePostCheckInStep = () => {
   const autocompleteService =

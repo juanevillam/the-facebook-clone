@@ -40,17 +40,8 @@ export const CreatePostCard = () => {
   const handleStep = () =>
     step === 'default' ? handleToggleOpenable() : dispatch(setStep('default'));
 
-  const handleOpenLiveVideoStep = () =>
-    showToast.error(t('toast-messages.error.feature-under-development'));
-
   const handleOpenMediaStep = () => {
-    if (activeGif) {
-      showToast.error(
-        t.rich('posts.create.layout.footer.disabled', {
-          br: () => null,
-        }) as string
-      );
-    } else {
+    if (!activeGif) {
       handleToggleOpenable();
       dispatch(setStep('media'));
     }
@@ -61,21 +52,30 @@ export const CreatePostCard = () => {
     dispatch(setStep('feelings'));
   };
 
+  const handleOpenGifsStep = () => {
+    if (!file) {
+      handleToggleOpenable();
+      dispatch(setStep('gifs'));
+    }
+  };
+
   const cardItems: CardItem[] = [
     {
-      active: false,
-      name: 'live-video',
-      onClick: handleOpenLiveVideoStep,
-    },
-    {
       active: !!file,
+      disabled: !!activeGif,
       name: 'photo-video',
       onClick: handleOpenMediaStep,
     },
     {
       active: !!activeFeeling,
-      name: 'feeling-activity',
+      name: 'feeling',
       onClick: handleOpenFeelingsStep,
+    },
+    {
+      active: !!activeGif,
+      disabled: !!file,
+      name: 'gif',
+      onClick: handleOpenGifsStep,
     },
   ];
 

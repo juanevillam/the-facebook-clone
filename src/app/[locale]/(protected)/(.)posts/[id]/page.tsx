@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
-import { PostModalWrapper } from '@/modules/posts/post/components/post';
+import { PostModalWrapper } from '@/modules/posts/post/components/post/modal';
 import { fetchPost } from '@/modules/posts/post/data';
 
 type PostModalPageProps = {

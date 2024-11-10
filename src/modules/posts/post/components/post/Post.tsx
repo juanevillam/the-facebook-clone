@@ -1,9 +1,7 @@
 import { auth } from '@/auth';
 import { Feeling } from '@/modules/posts/create/assets/types';
 
-import { PostBody } from './body/PostBody';
-import { PostFooter } from './footer/PostFooter';
-import { PostHeader } from './header/PostHeader';
+import { PostBody, PostFooter, PostHeader } from './layout';
 import { PostExtended } from '../../assets/types';
 
 export const Post = async ({

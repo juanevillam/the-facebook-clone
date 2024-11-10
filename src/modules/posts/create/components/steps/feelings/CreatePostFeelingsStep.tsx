@@ -10,8 +10,8 @@ import {
 } from '@/modules/posts/create/reducers/feelingsSlice';
 import { setStep } from '@/modules/posts/create/reducers/postSlice';
 
-import { CreatePostFeelingsStepItem } from './item/CreatePostFeelingsStepItem';
 import { CreatePostStepContainer, CreatePostStepMessage } from '../ui';
+import { CreatePostFeelingsStepItem } from './item/CreatePostFeelingsStepItem';
 
 export const CreatePostFeelingsStep = () => {
   const t = useTranslations('posts.create.steps.feelings');

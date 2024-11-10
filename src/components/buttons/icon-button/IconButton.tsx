@@ -4,7 +4,12 @@ import { useTranslations } from 'next-intl';
 
 import { SharedSvg } from '@/assets/types';
 
-export type IconButtonName = 'back' | 'close' | 'dots-horizontal';
+export type IconButtonName =
+  | 'arrows-pointing-in'
+  | 'arrows-pointing-out'
+  | 'back'
+  | 'close'
+  | 'dots-horizontal';
 
 type IconButtonProps = {
   className: string;
