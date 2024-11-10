@@ -35,8 +35,6 @@ export const CreatePostCard = () => {
     (store) => store.posts.create.feelings
   );
 
-  const isProduction = process.env.NODE_ENV === 'production';
-
   const handleToggleOpenable = () => !posting && dispatch(toggleOpenable());
 
   const handleStep = () =>
@@ -55,7 +53,7 @@ export const CreatePostCard = () => {
   };
 
   const handleOpenGifsStep = () => {
-    if (!file && !isProduction) {
+    if (!file) {
       handleToggleOpenable();
       dispatch(setStep('gifs'));
     }
@@ -75,7 +73,7 @@ export const CreatePostCard = () => {
     },
     {
       active: !!activeGif,
-      disabled: !!file || isProduction,
+      disabled: !!file,
       name: 'gif',
       onClick: handleOpenGifsStep,
     },

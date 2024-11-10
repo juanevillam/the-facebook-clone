@@ -152,8 +152,7 @@
           },
           "gif": {
             "detailed": "GIF",
-            "short": "GIF",
-            "disabled-prod": "GIF picker is currently unavailable in production"
+            "short": "GIF"
           },
           "media": {
             "disabled": "This can't be combined with what you've already<br></br>added to your post"
@@ -345,7 +344,6 @@
       "token-has-expired": "Token has expired",
       "invalid-2fa-code": "Invalid 2FA code",
       "2fa-code-has-expired": "2FA code has expired",
-      "social-auth-is-currently-unavailable-in-production": "Social auth is currently unavailable in production",
       "feature-under-development": "Feature under development",
       "post-not-found": "Post not found",
       "failed-to-create-post": "Failed to create post",

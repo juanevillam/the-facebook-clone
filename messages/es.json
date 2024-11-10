@@ -153,8 +153,7 @@
           },
           "gif": {
             "detailed": "GIF",
-            "short": "GIF",
-            "disabled-prod": "La selección de GIFs no está disponible actualmente en producción"
+            "short": "GIF"
           },
           "media": {
             "disabled": "Esto no se puede combinar con lo que ya has<br></br>agregado a tu publicación"
@@ -346,7 +345,6 @@
       "token-has-expired": "El token ha expirado",
       "invalid-2fa-code": "Código 2FA inválido",
       "2fa-code-has-expired": "El código 2FA ha expirado",
-      "social-auth-is-currently-unavailable-in-production": "La autenticación social no está disponible actualmente en producción",
       "feature-under-development": "Función en desarrollo",
       "post-not-found": "Publicación no encontrada",
       "failed-to-create-post": "Error al crear publicación",

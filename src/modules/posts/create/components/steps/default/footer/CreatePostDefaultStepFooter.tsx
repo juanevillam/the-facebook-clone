@@ -21,8 +21,6 @@ export const CreatePostDefaultStepFooter = () => {
     (store) => store.posts.create.checkIn
   );
 
-  const isProduction = process.env.NODE_ENV === 'production';
-
   const handleOpenMediaStep = () => dispatch(setStep('media'));
 
   const handleOpenFeelingsStep = () => dispatch(setStep('feelings'));
@@ -50,7 +48,7 @@ export const CreatePostDefaultStepFooter = () => {
     },
     {
       active: !!activeGif,
-      disabled: !!file || isProduction,
+      disabled: !!file,
       name: 'gif',
       onClick: handleOpenGifsStep,
     },
