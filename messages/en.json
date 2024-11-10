@@ -116,7 +116,8 @@
     "links": {
       "home": "Home",
       "friends": "Friends",
-      "watch": "Watch"
+      "watch": "Watch",
+      "menu": "Menu"
     },
     "drop-downs": {
       "messenger": {

@@ -117,7 +117,8 @@
     "links": {
       "home": "Inicio",
       "friends": "Amigos",
-      "watch": "Ver"
+      "watch": "Ver",
+      "menu": "Menú"
     },
     "drop-downs": {
       "messenger": {
