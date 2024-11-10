@@ -1,4 +1,6 @@
 export { ArrowLeftIcon } from './ArrowLeftIcon';
+export { ArrowsPointingInIcon } from './ArrowsPointingInIcon';
+export { ArrowsPointingOutIcon } from './ArrowsPointingOutIcon';
 export { ShareIcon } from './ShareIcon';
 export { BookmarkIcon } from './BookmarkIcon';
 export { BookmarkSlashIcon } from './BookmarkSlashIcon';

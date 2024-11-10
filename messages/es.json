@@ -371,7 +371,9 @@
   "icon-buttons": {
     "close": "Cerrar",
     "back": "Atrás",
-    "dots-horizontal": "Más opciones"
+    "dots-horizontal": "Más opciones",
+    "arrows-pointing-in": "Entrar en pantalla completa",
+    "arrows-pointing-out": "Salir de pantalla completa"
   },
   "search-input": {
     "search": "Buscar",

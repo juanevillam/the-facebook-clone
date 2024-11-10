@@ -1,9 +1,16 @@
 'use client';
 
+import { useState } from 'react';
+
+import classNames from 'classnames';
 import Image from 'next/image';
 import ReactPlayer from 'react-player';
 
-import { CloseIcon } from '@/assets/ui/icons';
+import {
+  ArrowsPointingInIcon,
+  ArrowsPointingOutIcon,
+  CloseIcon,
+} from '@/assets/ui/icons';
 import { FacebookLogoMark } from '@/assets/ui/icons/brand';
 import { IconButton } from '@/components/buttons';
 import { Feeling } from '@/modules/posts/create/assets/types';
@@ -37,21 +44,48 @@ export const PostContent = ({
     user,
   } = post;
 
+  const [fullScreen, setFullScreen] = useState(false);
+
+  const handleFullScreen = () => setFullScreen(!fullScreen);
+
   return (
     <>
-      <div className="h-[calc(100%-113px)] flex-grow bg-black md:h-full">
-        {variant === 'modal' && closeModal && (
-          <div className="flex-center absolute left-0 top-2 w-full justify-between space-x-4 px-2 md:left-4 md:top-4 md:w-max md:px-0">
-            <IconButton
-              className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
-              icon={{
-                className: 'stroke-2 stroke-white size-full',
-                Component: CloseIcon,
-                name: 'close',
-              }}
-              onClick={closeModal}
-            />
-            <FacebookLogoMark className="hidden size-10 md:block" />
+      <div className="relative h-[calc(100%-113px)] flex-grow bg-black md:h-full">
+        <div
+          className={classNames(
+            'flex-center absolute top-2 w-full px-2 md:top-3 md:w-full md:px-4',
+            {
+              'justify-between': variant === 'modal',
+              'justify-end': variant === 'page',
+            }
+          )}
+        >
+          {variant === 'modal' && (
+            <div className="flex-center space-x-4">
+              <IconButton
+                className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+                icon={{
+                  className: 'stroke-2 stroke-white size-full',
+                  Component: CloseIcon,
+                  name: 'close',
+                }}
+                onClick={closeModal}
+              />
+              <FacebookLogoMark className="hidden size-10 md:block" />
+            </div>
+          )}
+          <IconButton
+            className="only-desktop size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+            icon={{
+              className: 'fill-white size-full',
+              Component: fullScreen
+                ? ArrowsPointingInIcon
+                : ArrowsPointingOutIcon,
+              name: fullScreen ? 'arrows-pointing-in' : 'arrows-pointing-out',
+            }}
+            onClick={handleFullScreen}
+          />
+          {variant === 'modal' && (
             <div className="only-mobile">
               <PostOptions
                 isPostContent
@@ -60,8 +94,8 @@ export const PostContent = ({
                 postUserId={post.userId}
               />
             </div>
-          </div>
-        )}
+          )}
+        </div>
         {mediaType === 'image' && (
           <Image
             alt="Image"
@@ -95,7 +129,15 @@ export const PostContent = ({
           />
         )}
       </div>
-      <div className="md:card-bg absolute bottom-0 flex w-full flex-col bg-neutral-900 bg-opacity-50 md:static md:h-full md:w-96 md:min-w-96 md:bg-transparent">
+      <div
+        className={classNames(
+          'md:card-bg absolute bottom-0 flex w-full flex-col bg-neutral-900 bg-opacity-50 md:static md:h-full md:bg-transparent',
+          {
+            'md:w-0': fullScreen,
+            'md:w-96 md:min-w-96': !fullScreen,
+          }
+        )}
+      >
         <PostHeader
           createdAt={createdAt}
           feeling={feeling as Feeling}
