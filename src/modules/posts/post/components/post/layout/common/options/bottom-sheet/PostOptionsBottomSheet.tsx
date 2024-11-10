@@ -8,6 +8,7 @@ import { Drawer } from 'vaul';
 import {
   BookmarkIcon,
   BookmarkSlashIcon,
+  EyeIcon,
   PencilIcon,
   TrashIcon,
 } from '@/assets/ui/icons';
@@ -16,6 +17,7 @@ import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { deletePost, savePost } from '@/modules/posts/post/actions';
 import { toggleDeletingPost } from '@/modules/posts/post/reducers/headerOptionsSlice';
+import { useRouter } from '@/navigation';
 
 import { PostOptionsBottomSheetItem } from './item/PostOptionsBottomSheetItem';
 
@@ -35,6 +37,7 @@ export const PostOptionsBottomSheet = ({
   postSaves,
 }: PostOptionsBottomSheetProps) => {
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
   const t = useTranslations();
   const currentUser = useCurrentUser();
   const dispatch = useAppDispatch();
@@ -56,6 +59,22 @@ export const PostOptionsBottomSheet = ({
         : [...saves, newSave]
   );
 
+  const handleOptimisticSave = async () => {
+    closeBottomSheet();
+    startTransition(() =>
+      addOptimisticSave({ postId, userId: currentUser?.id })
+    );
+
+    try {
+      await savePost(postId, currentUser?.id as string);
+    } catch (error) {
+      error instanceof Error &&
+        showToast.error(t(`toast-messages.error.${error.message}`));
+    }
+  };
+
+  const handleViewPost = () => router.push(`/posts/${postId}` as any);
+
   const handleDeletePost = async () => {
     dispatch(toggleDeletingPost());
 
@@ -71,20 +90,6 @@ export const PostOptionsBottomSheet = ({
         closeBottomSheet();
         dispatch(toggleDeletingPost());
       }
-    }
-  };
-
-  const handleOptimisticSave = async () => {
-    closeBottomSheet();
-    startTransition(() =>
-      addOptimisticSave({ postId, userId: currentUser?.id })
-    );
-
-    try {
-      await savePost(postId, currentUser?.id as string);
-    } catch (error) {
-      error instanceof Error &&
-        showToast.error(t(`toast-messages.error.${error.message}`));
     }
   };
 
@@ -108,6 +113,12 @@ export const PostOptionsBottomSheet = ({
             onClick={handleOptimisticSave}
             showDescription
           />
+          <hr className="primary-border my-1.5 border-t md:my-2" />
+          <PostOptionsBottomSheetItem
+            IconComponent={EyeIcon}
+            name="view"
+            onClick={handleViewPost}
+          />
           {isPostMine && (
             <>
               <hr className="primary-border my-1.5 border-t md:my-2" />
@@ -121,6 +132,7 @@ export const PostOptionsBottomSheet = ({
                 IconComponent={TrashIcon}
                 name="delete"
                 onClick={handleDeletePost}
+                showDescription
               />
             </>
           )}

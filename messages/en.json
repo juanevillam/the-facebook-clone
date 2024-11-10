@@ -243,6 +243,9 @@
     },
     "post": {
       "options": {
+        "view": {
+          "label": "View post"
+        },
         "save": {
           "label": "Save post",
           "description": "Add this to your saved items."
@@ -251,7 +254,8 @@
           "label": "Edit post"
         },
         "delete": {
-          "label": "Delete post"
+          "label": "Delete post",
+          "description": "Remove this post permanently."
         },
         "unsave": {
           "label": "Unsave post",

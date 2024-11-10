@@ -4,7 +4,7 @@ import { SharedSvgProps } from '@/assets/ui/icons/types';
 
 type PostOptionsBottomSheetItemProps = {
   IconComponent: React.FC<SharedSvgProps>;
-  name: 'delete' | 'save' | 'edit' | 'unsave';
+  name: 'delete' | 'save' | 'edit' | 'unsave' | 'view';
   onClick: VoidFunction;
   showDescription?: boolean;
 };

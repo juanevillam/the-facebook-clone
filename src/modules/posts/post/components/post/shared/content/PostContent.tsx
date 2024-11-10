@@ -63,7 +63,7 @@ export const PostContent = ({
           {variant === 'modal' && (
             <div className="flex-center space-x-4">
               <IconButton
-                className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+                className="z-10 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
                 icon={{
                   className: 'stroke-2 stroke-white size-full',
                   Component: CloseIcon,
@@ -75,7 +75,7 @@ export const PostContent = ({
             </div>
           )}
           <IconButton
-            className="only-desktop size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+            className="only-desktop z-10 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
             icon={{
               className: 'fill-white size-full',
               Component: fullScreen

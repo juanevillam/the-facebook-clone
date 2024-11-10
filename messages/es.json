@@ -244,6 +244,9 @@
     },
     "post": {
       "options": {
+        "view": {
+          "label": "Ver post"
+        },
         "save": {
           "label": "Guardar publicación",
           "description": "Agrega esto a tus elementos guardados."
@@ -252,7 +255,8 @@
           "label": "Editar publicación"
         },
         "delete": {
-          "label": "Eliminar publicación"
+          "label": "Eliminar publicación",
+          "description": "Elimina esta publicación permanentemente."
         },
         "unsave": {
           "label": "Eliminar de guardados",
