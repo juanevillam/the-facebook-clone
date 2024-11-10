@@ -195,6 +195,10 @@
     @apply hidden md:flex;
   }
 
+  .only-desktop-block {
+    @apply hidden md:block;
+  }
+
   /* Transition Utilities */
   .primary-transition {
     @apply transition duration-150;

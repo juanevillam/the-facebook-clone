@@ -46,6 +46,14 @@ const pathnames = {
     en: '/posts',
     es: '/publicaciones',
   },
+  '/messenger': {
+    en: '/messenger',
+    es: '/messenger',
+  },
+  '/notifications': {
+    en: '/notifications',
+    es: '/notificaciones',
+  },
 } satisfies Pathnames<typeof locales>;
 
 const localePrefix = undefined;
