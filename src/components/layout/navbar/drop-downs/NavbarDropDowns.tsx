@@ -1,27 +1,32 @@
-import { SearchIcon } from '@/assets/ui/icons';
+import { useState } from 'react';
+
 import {
-  MenuIcon,
   MessengerIcon,
   NotificationsIcon,
 } from '@/assets/ui/icons/navbar/drop-downs';
 import { ProfilePic } from '@/components/profile-pic/ProfilePic';
-
-import { NavbarDropDown } from './drop-down/NavbarDropDown';
+import { NavbarDropDownIcon } from './icons';
+import { MessengerDropDown } from './messenger/MessengerDropDown';
 
 export const NavbarDropDowns = () => {
+  const [openMessengerDropDown, setOpenMessengerDropDown] = useState(false);
+
+  const handleMessengerDropDown = () =>
+    setOpenMessengerDropDown(!openMessengerDropDown);
+
   return (
     <div className="flex-center space-x-2">
-      <NavbarDropDown
-        className="hidden md:block"
-        Icon={MenuIcon}
-        isActive
-        label="menu"
+      <NavbarDropDownIcon
+        Icon={MessengerIcon}
+        isActive={openMessengerDropDown}
+        label="messenger"
+        onClick={handleMessengerDropDown}
       />
-      <NavbarDropDown Icon={MessengerIcon} label="messenger" />
       <div className="hidden md:flex md:space-x-2">
-        <NavbarDropDown Icon={NotificationsIcon} label="notifications" />
+        <NavbarDropDownIcon Icon={NotificationsIcon} label="notifications" />
         <ProfilePic />
       </div>
+      {openMessengerDropDown && <MessengerDropDown />}
     </div>
   );
 };

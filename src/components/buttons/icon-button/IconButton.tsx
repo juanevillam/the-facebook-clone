@@ -9,7 +9,9 @@ export type IconButtonName =
   | 'arrows-pointing-out'
   | 'back'
   | 'close'
-  | 'dots-horizontal';
+  | 'dots-horizontal'
+  | 'see-all-in-messenger'
+  | 'new-message';
 
 type IconButtonProps = {
   className: string;

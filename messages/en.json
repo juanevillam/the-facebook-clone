@@ -119,9 +119,15 @@
       "watch": "Watch"
     },
     "drop-downs": {
-      "menu": "Menu",
-      "messenger": "Messenger",
-      "notifications": "Notifications"
+      "messenger": {
+        "tooltip": "Messenger",
+        "title": "Chats",
+        "subtitle": "No messages",
+        "footer": "See all in Messenger"
+      },
+      "notifications": {
+        "tooltip": "Notifications"
+      }
     }
   },
   "posts": {
@@ -371,11 +377,14 @@
     "back": "Back",
     "dots-horizontal": "More options",
     "arrows-pointing-in": "Enter full screen",
-    "arrows-pointing-out": "Exit full screen"
+    "arrows-pointing-out": "Exit full screen",
+    "see-all-in-messenger": "See all in Messenger",
+    "new-message": "New message"
   },
   "search-input": {
     "search": "Search",
-    "where-are-you": "Where are you?"
+    "where-are-you": "Where are you?",
+    "search-messenger": "Search Messenger"
   },
   "action-loader": {
     "posting": "Posting",

@@ -77,7 +77,7 @@ export const PostContent = ({
           <IconButton
             className="only-desktop z-10 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
             icon={{
-              className: 'fill-white size-full',
+              className: 'stroke-white fill-white size-full',
               Component: fullScreen
                 ? ArrowsPointingInIcon
                 : ArrowsPointingOutIcon,

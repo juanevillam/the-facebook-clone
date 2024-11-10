@@ -120,9 +120,15 @@
       "watch": "Ver"
     },
     "drop-downs": {
-      "menu": "Menú",
-      "messenger": "Messenger",
-      "notifications": "Notificaciones"
+      "messenger": {
+        "tooltip": "Messenger",
+        "title": "Chats",
+        "subtitle": "No hay mensajes",
+        "footer": "Ver todos en Messenger"
+      },
+      "notifications": {
+        "tooltip": "Notificaciones"
+      }
     }
   },
   "posts": {
@@ -372,11 +378,14 @@
     "back": "Atrás",
     "dots-horizontal": "Más opciones",
     "arrows-pointing-in": "Entrar en pantalla completa",
-    "arrows-pointing-out": "Salir de pantalla completa"
+    "arrows-pointing-out": "Salir de pantalla completa",
+    "see-all-in-messenger": "Ver todos en Messenger",
+    "new-message": "Nuevo mensaje"
   },
   "search-input": {
     "search": "Buscar",
-    "where-are-you": "¿Dónde estás?"
+    "where-are-you": "¿Dónde estás?",
+    "search-messenger": "Buscar en Messenger"
   },
   "action-loader": {
     "posting": "Publicando",

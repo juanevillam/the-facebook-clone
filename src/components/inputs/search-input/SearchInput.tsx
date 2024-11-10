@@ -1,18 +1,20 @@
 import { useId } from 'react';
 
+import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
 import { InputEvent } from '@/assets/types';
 import { CloseIcon, SearchIcon } from '@/assets/ui/icons';
 import { IconButton } from '@/components/buttons';
 
-export type SearchInputLabel = 'search' | 'where-are-you';
+export type SearchInputLabel = 'search' | 'search-messenger' | 'where-are-you';
 
 type SearchInputProps = {
   label: SearchInputLabel;
   handleClear: VoidFunction;
   onChange: (event: InputEvent) => void;
   value: string;
+  variant?: 'primary' | 'secondary';
 };
 
 export const SearchInput = ({
@@ -20,12 +22,21 @@ export const SearchInput = ({
   handleClear,
   onChange,
   value,
+  variant = 'primary',
 }: SearchInputProps) => {
   const t = useTranslations('search-input');
   const id = useId();
 
   return (
-    <div className="flex-center primary-bg primary-transition relative w-full rounded-full p-2.5 pr-12 md:py-2">
+    <div
+      className={classNames(
+        'flex-center primary-bg primary-transition relative w-full rounded-full p-2.5 pr-12',
+        {
+          'md:py-2': variant === 'primary',
+          'md:py-1.5': variant === 'secondary',
+        }
+      )}
+    >
       <SearchIcon className="secondary-fill size-4" />
       <label className="sr-only" htmlFor={id}>
         {t(label)}
@@ -41,7 +52,13 @@ export const SearchInput = ({
       />
       {value && (
         <IconButton
-          className="hover:secondary-bg absolute right-0 top-0.5 z-10 size-10 md:top-0"
+          className={classNames(
+            'hover:secondary-bg absolute right-0 top-0.5 z-10 md:top-0',
+            {
+              'size-10': variant === 'primary',
+              'size-9': variant === 'secondary',
+            }
+          )}
           icon={{
             className: 'stroke-2 secondary-stroke size-full',
             Component: CloseIcon,
