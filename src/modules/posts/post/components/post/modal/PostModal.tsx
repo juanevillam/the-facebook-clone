@@ -1,10 +1,9 @@
 'use client';
 
 import { Backdrop, Fade, Modal } from '@mui/material';
-import { useRouter } from 'next/navigation';
 
 import { useMount } from '@/hooks';
-import { usePathname } from '@/navigation';
+import { usePathname, useRouter } from '@/navigation';
 
 import { PostExtended } from '../../../assets/types';
 import { PostContent } from '../shared';

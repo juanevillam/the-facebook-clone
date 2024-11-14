@@ -1,10 +1,9 @@
-import Link from 'next/link';
+import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
 import { NavbarIconProps } from '@/assets/ui/icons/navbar/types';
 import { Tooltip } from '@/components';
-import { usePathname } from '@/navigation';
-import classNames from 'classnames';
+import { Link, usePathname } from '@/navigation';
 
 type NavbarLinkProps = {
   Icon: React.FC<NavbarIconProps>;
@@ -35,7 +34,7 @@ export const NavbarLink = ({
             'md:hidden': onlyMobile,
           }
         )}
-        href={`/${href}`}
+        href={`/${href}` as any}
         tabIndex={0}
       >
         <Icon
