@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 
 import { FacebookLogoMark, FacebookLogoType } from '@/assets/ui/icons/brand';
 import { useScrollDirection } from '@/hooks';
-import { Link } from '@/navigation';
+import { Link, usePathname } from '@/navigation';
 
 import { NavbarDropDowns } from './drop-downs/NavbarDropDowns';
 import { NavbarLinks } from './links/NavbarLinks';
@@ -12,12 +12,15 @@ import { NavbarLinks } from './links/NavbarLinks';
 export const Navbar = () => {
   const t = useTranslations('navbar');
   const scrollDirection = useScrollDirection();
+  const pathname = usePathname();
+  const showTopHeader =
+    (scrollDirection === 'down' && pathname === '/') || pathname !== '/';
 
   return (
     <>
       <header
         className={`card-bg primary-border primary-transition sticky top-0 z-40 transform transition-transform md:transform-none md:border-b ${
-          scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
+          showTopHeader ? '-translate-y-full' : 'translate-y-0'
         }`}
       >
         <nav
@@ -40,7 +43,7 @@ export const Navbar = () => {
       <nav
         aria-label={t('mobile-navigation')}
         className={`card-bg primary-border sticky top-14 z-40 flex transform border-b transition-transform md:hidden ${
-          scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
+          showTopHeader ? '-translate-y-full' : 'translate-y-0'
         }`}
       >
         <NavbarLinks />
