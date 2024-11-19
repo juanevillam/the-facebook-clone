@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useTranslations } from 'next-intl';
 
-import { InputEvent } from '@/assets/types';
+import { InputEvent, SetValue } from '@/assets/types';
 import {
   ArrowsPointingOutIcon,
   ChatBubbleOvalLeftEllipsisIcon,
@@ -13,7 +13,13 @@ import { Link } from '@/navigation';
 
 import { DropDownHeaderIcon } from '../icons';
 
-export const MessengerDropDown = () => {
+type MessengerDropDownProps = {
+  setOpenMessengerDropDown: SetValue<boolean>;
+};
+
+export const MessengerDropDown = ({
+  setOpenMessengerDropDown,
+}: MessengerDropDownProps) => {
   const [searchInputValue, setSearchInputValue] = useState('');
   const t = useTranslations('navbar.drop-downs.messenger');
 
@@ -22,6 +28,8 @@ export const MessengerDropDown = () => {
 
   const handleSearchChange = (event: InputEvent) =>
     setSearchInputValue(event.target.value);
+
+  const handleClose = () => setOpenMessengerDropDown(false);
 
   return (
     <div className="card primary-transition only-desktop-block absolute right-5 top-14 w-96 px-4 py-3 shadow-lg">
@@ -63,6 +71,7 @@ export const MessengerDropDown = () => {
         <Link
           className="font-medium text-blue-400 hover:underline"
           href="/messenger"
+          onClick={handleClose}
         >
           {t('footer')}
         </Link>

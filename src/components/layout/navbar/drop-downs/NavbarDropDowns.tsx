@@ -89,9 +89,15 @@ export const NavbarDropDowns = () => {
           <ProfilePic />
         </NavbarDropDownIcon>
       </div>
-      {openMessengerDropDown && <MessengerDropDown />}
+      {openMessengerDropDown && (
+        <MessengerDropDown
+          setOpenMessengerDropDown={setOpenMessengerDropDown}
+        />
+      )}
       {openNotificationsDropDown && <NotificationsDropDown />}
-      {openProfileDropDown && <ProfileDropDown />}
+      {openProfileDropDown && (
+        <ProfileDropDown setOpenProfileDropDown={setOpenProfileDropDown} />
+      )}
     </div>
   );
 };

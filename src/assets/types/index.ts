@@ -22,6 +22,8 @@ type SharedSvg = React.FC<SharedSvgProps>;
 
 type InputEvent = React.ChangeEvent<HTMLInputElement>;
 
+type SetValue<T> = React.Dispatch<React.SetStateAction<T>>;
+
 export type {
   LayoutProps,
   PageProps,
@@ -29,4 +31,5 @@ export type {
   FileInputRef,
   SharedSvg,
   InputEvent,
+  SetValue,
 };
