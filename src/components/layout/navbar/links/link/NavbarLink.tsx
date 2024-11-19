@@ -7,8 +7,8 @@ import { Link, usePathname } from '@/navigation';
 
 type NavbarLinkProps = {
   Icon: React.FC<NavbarIconProps>;
-  href: '/' | 'friends' | 'groups' | 'marketplace' | 'menu' | 'watch';
-  label: 'friends' | 'groups' | 'home' | 'marketplace' | 'menu' | 'watch';
+  href: '/' | 'friends' | 'menu' | 'watch';
+  label: 'friends' | 'home' | 'menu' | 'watch';
   onlyMobile?: boolean;
 };
 

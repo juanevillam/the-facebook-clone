@@ -34,14 +34,6 @@ const pathnames = {
     en: '/watch',
     es: '/ver',
   },
-  '/marketplace': {
-    en: '/marketplace',
-    es: '/mercado',
-  },
-  '/groups': {
-    en: '/groups',
-    es: '/grupos',
-  },
   '/posts': {
     en: '/posts',
     es: '/publicaciones',

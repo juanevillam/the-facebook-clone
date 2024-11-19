@@ -402,5 +402,11 @@
     "days": "Hace {days} días",
     "date": "{date} a las {time}",
     "full-date": "{dayName} {day} de {month} de {year} a las {time}"
+  },
+  "feedback": {
+    "not-available-yet": {
+      "title": "Esta página no está disponible",
+      "description": "{author} está trabajando en esta funcionalidad, y no puedes usarla aún. ¡Vuelve pronto para ver qué hay de nuevo!"
+    }
   }
 }

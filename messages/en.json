@@ -401,5 +401,11 @@
     "days": "{days} days ago",
     "date": "{date} at {time}",
     "full-date": "{dayName}, {day} {month} {year} at {time}"
+  },
+  "feedback": {
+    "not-available-yet": {
+      "title": "This page isn’t available",
+      "description": "{author} is working on this functionality, and you can’t use it yet. Please check soon to see what’s new!"
+    }
   }
 }

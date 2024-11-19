@@ -7,6 +7,7 @@ export { BookmarkSlashIcon } from './BookmarkSlashIcon';
 export { ChatBubbleOvalLeftIcon } from './ChatBubbleOvalLeftIcon';
 export { ChatBubbleLeftRightIcon } from './ChatBubbleLeftRightIcon';
 export { ChatBubbleOvalLeftEllipsisIcon } from './ChatBubbleOvalLeftEllipsisIcon';
+export { ChainBroken } from './ChainBroken';
 export { CloseIcon } from './CloseIcon';
 export { ChevronRightIcon } from './ChevronRightIcon';
 export { DotsHorizontalIcon } from './DotsHorizontalIcon';

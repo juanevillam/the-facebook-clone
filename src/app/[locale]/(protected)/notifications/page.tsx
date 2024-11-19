@@ -1,7 +1,5 @@
-const NotificationsPage = () => {
-  return (
-    <h1 className="text-2xl text-black dark:text-white">NotificationsPage</h1>
-  );
-};
+import { NotAvailableYet } from '@/components/feedback';
+
+const NotificationsPage = () => <NotAvailableYet />;
 
 export default NotificationsPage;

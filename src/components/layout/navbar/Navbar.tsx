@@ -1,10 +1,10 @@
 'use client';
 
-import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
 
 import { FacebookLogoMark, FacebookLogoType } from '@/assets/ui/icons/brand';
 import { useScrollDirection } from '@/hooks';
+import { Link } from '@/navigation';
 
 import { NavbarDropDowns } from './drop-downs/NavbarDropDowns';
 import { NavbarLinks } from './links/NavbarLinks';
