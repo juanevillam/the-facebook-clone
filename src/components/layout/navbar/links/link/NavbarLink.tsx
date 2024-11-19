@@ -39,7 +39,7 @@ export const NavbarLink = ({
       >
         <Icon
           className={classNames({
-            'size-7': label === 'menu',
+            'size-[30px]': label === 'menu',
             'size-6': label !== 'menu',
             'fill-current text-primary-100': isActive,
             'stroke-gray-600 dark:stroke-gray-400':

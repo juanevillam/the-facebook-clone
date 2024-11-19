@@ -22,9 +22,9 @@ export const Navbar = () => {
       >
         <nav
           aria-label={t('main-navigation')}
-          className="flex h-14 justify-between px-3 md:px-4"
+          className="flex-center-justify-between h-14 px-3 md:px-4"
         >
-          <div className="flex flex-none items-center">
+          <div className="flex-center">
             <Link aria-label={t('home')} href="/">
               <FacebookLogoMark className="hidden size-10 md:block" />
               <FacebookLogoType className="h-6 fill-primary-100 md:hidden dark:fill-white" />

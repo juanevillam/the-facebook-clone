@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { useTranslations } from 'next-intl';
+
 import { InputEvent } from '@/assets/types';
 import {
   ArrowsPointingOutIcon,
@@ -8,8 +10,8 @@ import {
 } from '@/assets/ui/icons';
 import { SearchInput } from '@/components/inputs';
 import { Link } from '@/navigation';
+
 import { DropDownHeaderIcon } from '../icons';
-import { useTranslations } from 'next-intl';
 
 export const MessengerDropDown = () => {
   const [searchInputValue, setSearchInputValue] = useState('');
@@ -54,7 +56,7 @@ export const MessengerDropDown = () => {
         variant="secondary"
       />
       <div className="flex-center-justify-center mb-3 h-60 flex-col space-y-4">
-        <ChatBubbleOvalLeftEllipsisIcon className="secondary-stroke size-36" />
+        <ChatBubbleOvalLeftEllipsisIcon className="secondary-fill size-36" />
         <h1 className="secondary-text text-xl font-medium">{t('subtitle')}</h1>
       </div>
       <div className="primary-border w-full border-t pt-2 text-center">
