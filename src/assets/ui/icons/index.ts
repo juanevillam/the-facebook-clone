@@ -1,4 +1,5 @@
 export { ArrowLeftIcon } from './ArrowLeftIcon';
+export { ArrowRightStartOnRectangleIcon } from './ArrowRightStartOnRectangleIcon';
 export { ArrowsPointingInIcon } from './ArrowsPointingInIcon';
 export { ArrowsPointingOutIcon } from './ArrowsPointingOutIcon';
 export { BellIcon } from './BellIcon';
@@ -10,6 +11,7 @@ export { ChatBubbleOvalLeftEllipsisIcon } from './ChatBubbleOvalLeftEllipsisIcon
 export { ChainBroken } from './ChainBroken';
 export { CloseIcon } from './CloseIcon';
 export { ChevronRightIcon } from './ChevronRightIcon';
+export { CogIcon } from './CogIcon';
 export { DotsHorizontalIcon } from './DotsHorizontalIcon';
 export { ExclamationCircleIcon } from './ExclamationCircleIcon';
 export { EyeIcon } from './EyeIcon';
@@ -17,6 +19,7 @@ export { FaceFrowIcon } from './FaceFrownIcon';
 export { GifIcon } from './GifIcon';
 export { HandThumbUpIcon } from './HandThumbUpIcon';
 export { MapIcon } from './MapIcon';
+export { MoonIcon } from './MoonIcon';
 export { PaperPlaneIcon } from './PaperPlaneIcon';
 export { PencilIcon } from './PencilIcon';
 export { PencilSquareIcon } from './PencilSquareIcon';

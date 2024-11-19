@@ -136,29 +136,31 @@
         "profile-preview": {
           "title": "See your profile"
         },
-        "settings-privacy": {
-          "title": "Settings & privacy",
-          "options": {
-            "language": {
-              "title": "Language"
+        "options": {
+          "settings-privacy": {
+            "title": "Settings & privacy",
+            "options": {
+              "language": {
+                "title": "Language"
+              }
             }
-          }
-        },
-        "display-accessibility": {
-          "title": "Display & accessibility",
-          "options": {
-            "dark-mode": {
-              "label": "Dark mode",
-              "description": "Adjust the appearance of The Facebook Clone to reduce glare and give your eyes a break."
-            },
-            "full-screen": {
-              "label": "Full screen",
-              "description": "Adjust the screen size of The Facebook Clone to maximise the space and enjoy more."
+          },
+          "display-accessibility": {
+            "title": "Display & accessibility",
+            "options": {
+              "dark-mode": {
+                "label": "Dark mode",
+                "description": "Adjust the appearance of The Facebook Clone to reduce glare and give your eyes a break."
+              },
+              "full-screen": {
+                "label": "Full screen",
+                "description": "Adjust the screen size of The Facebook Clone to maximise the space and enjoy more."
+              }
             }
+          },
+          "log-out": {
+            "title": "Log out"
           }
-        },
-        "log-out": {
-          "title": "Log out"
         }
       }
     }

@@ -1,2 +1,2 @@
-export { MessengerIcon } from './Messengericon';
+export { MessengerIcon } from './MessengerIcon';
 export { NotificationsIcon } from './Notificationsicon';

@@ -1,8 +1,9 @@
+import { useTranslations } from 'next-intl';
+
 import { SharedSvg } from '@/assets/types';
 import { IconButton } from '@/components/buttons';
 import { IconButtonName } from '@/components/buttons/icon-button/IconButton';
 import { Tooltip } from '@/components/tooltip/Tooltip';
-import { useTranslations } from 'next-intl';
 
 type DropDownHeaderIconProps = {
   icon: {
