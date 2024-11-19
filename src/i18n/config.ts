@@ -50,6 +50,10 @@ const pathnames = {
     en: '/menu',
     es: '/menu',
   },
+  '/profile': {
+    en: '/profile',
+    es: '/perfil',
+  },
 } satisfies Pathnames<typeof locales>;
 
 const localePrefix = undefined;

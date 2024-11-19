@@ -1,6 +1,8 @@
-import { BellIcon, DotsHorizontalIcon } from '@/assets/ui/icons';
-import { DropDownHeaderIcon } from '../icons';
 import { useTranslations } from 'next-intl';
+
+import { BellIcon, DotsHorizontalIcon } from '@/assets/ui/icons';
+
+import { DropDownHeaderIcon } from '../icons';
 
 export const NotificationsDropDown = () => {
   const t = useTranslations('navbar.drop-downs.notifications');

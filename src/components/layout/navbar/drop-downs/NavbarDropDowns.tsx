@@ -5,15 +5,19 @@ import {
   NotificationsIcon,
 } from '@/assets/ui/icons/navbar/drop-downs';
 import { ProfilePic } from '@/components/profile-pic/ProfilePic';
+import { usePathname, useRouter } from '@/navigation';
+
 import { NavbarDropDownIcon } from './icons';
 import { MessengerDropDown } from './messenger/MessengerDropDown';
 import { NotificationsDropDown } from './notifications/NotificationsDropDown';
-import { usePathname, useRouter } from '@/navigation';
+import { ProfileDropDown } from './profile/ProfileDropDown';
 
 export const NavbarDropDowns = () => {
   const [openMessengerDropDown, setOpenMessengerDropDown] = useState(false);
   const [openNotificationsDropDown, setOpenNotificationsDropDown] =
     useState(false);
+
+  const [openProfileDropDown, setOpenProfileDropDown] = useState(false);
 
   const router = useRouter();
   const pathname = usePathname();
@@ -22,12 +26,20 @@ export const NavbarDropDowns = () => {
 
   const handleMessengerDropDown = () => {
     setOpenNotificationsDropDown(false);
+    setOpenProfileDropDown(false);
     setOpenMessengerDropDown(!openMessengerDropDown);
   };
 
   const handleNotificationsDropDown = () => {
     setOpenMessengerDropDown(false);
+    setOpenProfileDropDown(false);
     setOpenNotificationsDropDown(!openNotificationsDropDown);
+  };
+
+  const handleProfileDropDown = () => {
+    setOpenMessengerDropDown(false);
+    setOpenNotificationsDropDown(false);
+    setOpenProfileDropDown(!openProfileDropDown);
   };
 
   const navigateToMessenger = () => router.push('/messenger');
@@ -69,10 +81,17 @@ export const NavbarDropDowns = () => {
         />
       </div>
       <div className="only-desktop">
-        <ProfilePic />
+        <NavbarDropDownIcon
+          isActive={openProfileDropDown}
+          label="profile"
+          onClick={handleProfileDropDown}
+        >
+          <ProfilePic />
+        </NavbarDropDownIcon>
       </div>
       {openMessengerDropDown && <MessengerDropDown />}
       {openNotificationsDropDown && <NotificationsDropDown />}
+      {openProfileDropDown && <ProfileDropDown />}
     </div>
   );
 };
