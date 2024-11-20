@@ -32,7 +32,7 @@ export const MessengerDropDown = ({
   const handleClose = () => setOpenMessengerDropDown(false);
 
   return (
-    <div className="card primary-transition only-desktop-block absolute right-5 top-14 w-96 px-4 py-3 shadow-lg">
+    <div className="card only-desktop-block absolute right-5 top-14 w-96 px-4 py-3 shadow-lg">
       <div className="flex-center-justify-between mb-2 w-full">
         <h1 className="primary-text text-2xl font-bold">{t('title')}</h1>
         <div className="flex space-x-2">
@@ -67,7 +67,7 @@ export const MessengerDropDown = ({
         <ChatBubbleOvalLeftEllipsisIcon className="secondary-fill size-36" />
         <h1 className="secondary-text text-xl font-medium">{t('subtitle')}</h1>
       </div>
-      <div className="primary-border w-full border-t pt-2 text-center">
+      <div className="primary-border w-full border-t pt-2.5 text-center">
         <Link
           className="font-medium text-blue-400 hover:underline"
           href="/messenger"

@@ -48,7 +48,7 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
           aria-describedby={`${name}-error`}
           aria-invalid={error && touched ? 'true' : 'false'}
           aria-label={placeholder}
-          className={`w-full rounded-md border border-gray-200 px-4 py-3.5 placeholder-gray-500 transition duration-150 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-100 ${
+          className={`primary-transition w-full rounded-md border border-gray-200 px-4 py-3.5 placeholder-gray-500 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-100 ${
             skin === 'primary'
               ? 'bg-white hover:bg-gray-100'
               : 'bg-gray-100 hover:bg-gray-200'
@@ -84,7 +84,7 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
             {...field}
           />
           <label
-            className={`pointer-events-none absolute z-10 px-2 text-gray-500 transition-all duration-150 peer-focus:-top-[0.1rem] peer-focus:z-10 peer-focus:text-xs peer-focus:font-medium ${
+            className={`pointer-events-none absolute z-10 px-2 text-gray-500 transition-all duration-300 peer-focus:-top-[0.1rem] peer-focus:z-10 peer-focus:text-xs peer-focus:font-medium ${
               error && touched
                 ? 'peer-focus:text-error-100'
                 : 'peer-focus:text-primary-100'

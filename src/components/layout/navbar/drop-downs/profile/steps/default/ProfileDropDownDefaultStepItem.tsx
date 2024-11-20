@@ -3,20 +3,20 @@ import { useTranslations } from 'next-intl';
 import { SharedSvg } from '@/assets/types';
 import { ChevronRightIcon } from '@/assets/ui/icons';
 
-type ProfileOptionLabelProps = {
+type ProfileDropDownDefaultStepItemProps = {
   dropdown?: boolean;
   Icon: SharedSvg;
   label: 'settings-privacy' | 'display-accessibility' | 'log-out';
   onClick: VoidFunction;
 };
 
-export const ProfileOption = ({
+export const ProfileDropDownDefaultStepItem = ({
   dropdown = false,
   Icon,
   label,
   onClick,
-}: ProfileOptionLabelProps) => {
-  const t = useTranslations('navbar.drop-downs.profile.options');
+}: ProfileDropDownDefaultStepItemProps) => {
+  const t = useTranslations('navbar.drop-downs.profile.steps');
 
   return (
     <button

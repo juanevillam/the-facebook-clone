@@ -42,7 +42,7 @@
 
   /* Border Utilities */
   .primary-border {
-    @apply border-gray-300 md:border-gray-200 dark:border-neutral-700;
+    @apply border-gray-300 dark:border-neutral-700 md:border-gray-200;
   }
 
   .primary-border-light {
@@ -59,7 +59,7 @@
 
   /* Divide Utilities */
   .primary-divide {
-    @apply divide-gray-300 md:divide-gray-200 dark:divide-neutral-700;
+    @apply divide-gray-300 dark:divide-neutral-700 md:divide-gray-200;
   }
 
   /* Fill Utilities */
@@ -153,7 +153,7 @@
 
   /* Card Utilities */
   .card {
-    @apply card-bg md:rounded-lg;
+    @apply card-bg primary-transition md:rounded-lg;
   }
 
   /* Flexbox Utilities */
@@ -201,6 +201,6 @@
 
   /* Transition Utilities */
   .primary-transition {
-    @apply transition duration-150;
+    @apply transition duration-300;
   }
 }

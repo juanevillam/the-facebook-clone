@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
 import { SharedSvg } from '@/assets/types';
@@ -13,12 +14,14 @@ type DropDownHeaderIconProps = {
   };
   leftPosition: string;
   onClick?: VoidFunction;
+  tooltilp?: boolean;
 };
 
 export const DropDownHeaderIcon = ({
   icon,
   leftPosition,
   onClick,
+  tooltilp = true,
 }: DropDownHeaderIconProps) => {
   const t = useTranslations('icon-buttons');
 
@@ -29,7 +32,9 @@ export const DropDownHeaderIcon = ({
       variant="small"
     >
       <IconButton
-        className="hover:primary-bg peer -mt-1 size-9"
+        className={classNames('hover:primary-bg -mt-1 size-9', {
+          peer: tooltilp,
+        })}
         icon={{
           className: icon.className,
           Component: icon.Component,

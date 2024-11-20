@@ -137,26 +137,21 @@
         "profile-preview": {
           "title": "Ver tu perfil"
         },
-        "options": {
+        "steps": {
           "settings-privacy": {
             "title": "Configuración y privacidad",
-            "options": {
-              "language": {
-                "title": "Idioma"
-              }
+            "language": {
+              "title": "Idioma"
             }
           },
           "display-accessibility": {
             "title": "Pantalla y accesibilidad",
-            "options": {
-              "dark-mode": {
-                "label": "Modo oscuro",
-                "description": "Ajusta la apariencia de el clon de Facebook para reducir el resplandor y darle un descanso a tus ojos."
-              },
-              "full-screen": {
-                "label": "Pantalla completa",
-                "description": "Ajusta el tamaño de la pantalla de el clon de Facebook para maximizar el espacio y disfrutar más."
-              }
+            "dark-mode": {
+              "title": "Modo oscuro",
+              "description": "Ajusta la apariencia para reducir el resplandor y darle un descanso a tus ojos.",
+              "off": "Desactivado",
+              "on": "Activado",
+              "automatic": "Automático"
             }
           },
           "log-out": {
