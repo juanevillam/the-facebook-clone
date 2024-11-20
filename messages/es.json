@@ -148,7 +148,13 @@
             "title": "Pantalla y accesibilidad",
             "dark-mode": {
               "title": "Modo oscuro",
-              "description": "Ajusta la apariencia para reducir el resplandor y darle un descanso a tus ojos.",
+              "description": "Ajusta la apariencia para reducir el resplandor y darle un descanso a tus ojos."
+            },
+            "full-screen": {
+              "title": "Pantalla completa",
+              "description": "Cambia al modo de pantalla completa para disfrutar de una experiencia más inmersiva."
+            },
+            "options": {
               "off": "Desactivado",
               "on": "Activado",
               "automatic": "Automático"

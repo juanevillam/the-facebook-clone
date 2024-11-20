@@ -3,8 +3,12 @@
 import { useTranslations } from 'next-intl';
 
 import { SetValue } from '@/assets/types';
-import { ArrowLeftIcon, MoonIcon } from '@/assets/ui/icons';
-import { useTheme } from '@/hooks';
+import {
+  ArrowLeftIcon,
+  ArrowsPointingOutIcon,
+  MoonIcon,
+} from '@/assets/ui/icons';
+import { useTheme, useFullScreen } from '@/hooks';
 
 import { ProfileDropDownDisplayAccessibilityStepItem } from './ProfileDropDownDisplayAccessibilityStepItem';
 import { DropDownHeaderIcon } from '../../../icons';
@@ -22,8 +26,12 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
   );
 
   const [theme, changeTheme] = useTheme();
+  const { isFullScreen, toggleFullScreen } = useFullScreen();
 
   const handleClose = () => setStep('default');
+
+  const handleThemeChange = (newTheme: typeof theme) => () =>
+    changeTheme(newTheme);
 
   return (
     <>
@@ -53,24 +61,51 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
           </p>
         </div>
       </div>
-      <div className="ml-10">
+      <div className="mb-4 ml-10">
         <ProfileDropDownDisplayAccessibilityStepItem
-          changeTheme={changeTheme}
+          checked={theme === 'light'}
           label="off"
-          theme={theme}
-          value="light"
+          name="theme"
+          onChange={handleThemeChange('light')}
         />
         <ProfileDropDownDisplayAccessibilityStepItem
-          changeTheme={changeTheme}
+          checked={theme === 'dark'}
           label="on"
-          theme={theme}
-          value="dark"
+          name="theme"
+          onChange={handleThemeChange('dark')}
         />
         <ProfileDropDownDisplayAccessibilityStepItem
-          changeTheme={changeTheme}
+          checked={theme === 'system'}
           label="automatic"
-          theme={theme}
-          value="system"
+          name="theme"
+          onChange={handleThemeChange('system')}
+        />
+      </div>
+      <div className="mb-2 flex space-x-2">
+        <div className="primary-bg primary-transition h-max rounded-full p-2">
+          <ArrowsPointingOutIcon className="primary-fill primary-stroke size-6" />
+        </div>
+        <div>
+          <h1 className="primary-text text-lg font-semibold">
+            {t('full-screen.title')}
+          </h1>
+          <p className="secondary-text pr-4 text-sm">
+            {t('full-screen.description')}
+          </p>
+        </div>
+      </div>
+      <div className="mb-4 ml-10">
+        <ProfileDropDownDisplayAccessibilityStepItem
+          checked={!isFullScreen}
+          label="off"
+          name="full-screen"
+          onChange={toggleFullScreen}
+        />
+        <ProfileDropDownDisplayAccessibilityStepItem
+          checked={isFullScreen}
+          label="on"
+          name="full-screen"
+          onChange={toggleFullScreen}
         />
       </div>
     </>

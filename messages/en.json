@@ -147,7 +147,13 @@
             "title": "Display & accessibility",
             "dark-mode": {
               "title": "Dark mode",
-              "description": "Adjust the appearance to reduce glare and give your eyes a break.",
+              "description": "Adjust the appearance to reduce glare and give your eyes a break."
+            },
+            "full-screen": {
+              "title": "Full screen",
+              "description": "Toggle full screen mode for a more immersive experience."
+            },
+            "options": {
               "on": "On",
               "off": "Off",
               "automatic": "Automatic"
