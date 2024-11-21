@@ -10,9 +10,9 @@ import {
 } from '@/assets/ui/icons';
 import { useTheme, useFullScreen } from '@/hooks';
 
-import { ProfileDropDownDisplayAccessibilityStepItem } from './ProfileDropDownDisplayAccessibilityStepItem';
 import { DropDownHeaderIcon } from '../../../icons';
 import { ProfileDropDownStep } from '../../types';
+import { ProfileDropDownRadioInput } from '../shared';
 
 type ProfileDropDownDisplayAccessibilityStepProps = {
   setStep: SetValue<ProfileDropDownStep>;
@@ -62,19 +62,19 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
         </div>
       </div>
       <div className="mb-4 ml-10">
-        <ProfileDropDownDisplayAccessibilityStepItem
+        <ProfileDropDownRadioInput
           checked={theme === 'light'}
           label="off"
           name="theme"
           onChange={handleThemeChange('light')}
         />
-        <ProfileDropDownDisplayAccessibilityStepItem
+        <ProfileDropDownRadioInput
           checked={theme === 'dark'}
           label="on"
           name="theme"
           onChange={handleThemeChange('dark')}
         />
-        <ProfileDropDownDisplayAccessibilityStepItem
+        <ProfileDropDownRadioInput
           checked={theme === 'system'}
           label="automatic"
           name="theme"
@@ -95,13 +95,13 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
         </div>
       </div>
       <div className="mb-4 ml-10">
-        <ProfileDropDownDisplayAccessibilityStepItem
+        <ProfileDropDownRadioInput
           checked={!isFullScreen}
           label="off"
           name="full-screen"
           onChange={toggleFullScreen}
         />
-        <ProfileDropDownDisplayAccessibilityStepItem
+        <ProfileDropDownRadioInput
           checked={isFullScreen}
           label="on"
           name="full-screen"

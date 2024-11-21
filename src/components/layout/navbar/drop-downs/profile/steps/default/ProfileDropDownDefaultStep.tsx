@@ -28,6 +28,8 @@ export const ProfileDropDownDefaultStep = ({
 
   const handleClose = () => setOpenProfileDropDown(false);
 
+  const handleOpenSettingsStep = () => setStep('settings');
+
   const handleOpenDisplayAccessibilityStep = () =>
     setStep('display-accessibility');
 
@@ -41,16 +43,19 @@ export const ProfileDropDownDefaultStep = ({
         onClick={handleClose}
       >
         <ProfilePic variant="large" />
-        <h1 className="primary-text truncate text-lg font-semibold leading-snug">
-          {currentUser?.name}
-        </h1>
+        <div className="flex-1 overflow-hidden">
+          <h1 className="primary-text truncate text-lg font-semibold leading-snug">
+            {currentUser?.name}
+          </h1>
+          <p className="secondary-text text-sm">@{currentUser?.username}</p>
+        </div>
       </Link>
       <hr className="primary-border my-2" />
       <ProfileDropDownDefaultStepItem
         dropdown
         Icon={CogIcon}
         label="settings"
-        onClick={() => {}}
+        onClick={handleOpenSettingsStep}
       />
       <ProfileDropDownDefaultStepItem
         dropdown

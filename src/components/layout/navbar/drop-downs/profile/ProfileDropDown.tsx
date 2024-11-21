@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import {
   ProfileDropDownDefaultStep,
   ProfileDropDownDisplayAccessibilityStep,
+  ProfileDropDownSettingsStep,
 } from './steps';
 import { ProfileDropDownProps, ProfileDropDownStep } from './types';
 
@@ -24,6 +25,7 @@ export const ProfileDropDown = ({
         setStep={setStep}
       />
     ),
+    settings: <ProfileDropDownSettingsStep setStep={setStep} />,
     'display-accessibility': (
       <ProfileDropDownDisplayAccessibilityStep setStep={setStep} />
     ),

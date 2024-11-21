@@ -137,7 +137,8 @@
           "settings": {
             "title": "Settings",
             "language": {
-              "title": "Language"
+              "title": "Language",
+              "description": "Change the language of the application."
             }
           },
           "display-accessibility": {
@@ -149,12 +150,14 @@
             "full-screen": {
               "title": "Full screen",
               "description": "Enable full screen mode to maximize space and enjoy a more immersive experience."
-            },
-            "options": {
-              "on": "On",
-              "off": "Off",
-              "automatic": "Automatic"
             }
+          },
+          "options": {
+            "on": "On",
+            "off": "Off",
+            "automatic": "Automatic",
+            "english": "English",
+            "spanish": "Spanish"
           },
           "log-out": {
             "title": "Log out"

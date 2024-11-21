@@ -17,6 +17,7 @@ export { ExclamationCircleIcon } from './ExclamationCircleIcon';
 export { EyeIcon } from './EyeIcon';
 export { FaceFrowIcon } from './FaceFrownIcon';
 export { GifIcon } from './GifIcon';
+export { GlobeIcon } from './GlobeIcon';
 export { HandThumbUpIcon } from './HandThumbUpIcon';
 export { MapIcon } from './MapIcon';
 export { MoonIcon } from './MoonIcon';

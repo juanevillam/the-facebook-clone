@@ -138,7 +138,8 @@
           "settings": {
             "title": "Configuración",
             "language": {
-              "title": "Idioma"
+              "title": "Idioma",
+              "description": "Cambia el idioma de la aplicación."
             }
           },
           "display-accessibility": {
@@ -150,12 +151,14 @@
             "full-screen": {
               "title": "Pantalla completa",
               "description": "Activa el modo de pantalla completa para maximizar el espacio y disfrutar de una experiencia más inmersiva."
-            },
-            "options": {
-              "off": "Desactivado",
-              "on": "Activado",
-              "automatic": "Automático"
             }
+          },
+          "options": {
+            "off": "Desactivado",
+            "on": "Activado",
+            "automatic": "Automático",
+            "english": "Inglés",
+            "spanish": "Español"
           },
           "log-out": {
             "title": "Cerrar sesión"

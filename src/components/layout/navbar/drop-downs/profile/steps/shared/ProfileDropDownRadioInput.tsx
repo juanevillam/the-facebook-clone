@@ -3,22 +3,20 @@ import React from 'react';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
-type ProfileDropDownDisplayAccessibilityStepItemProps = {
+type ProfileDropDownRadioInputProps = {
   checked: boolean;
-  label: 'on' | 'off' | 'automatic';
-  name: 'theme' | 'full-screen';
+  label: 'on' | 'off' | 'automatic' | 'english' | 'spanish';
+  name: 'theme' | 'full-screen' | 'language';
   onChange: () => void;
 };
 
-export const ProfileDropDownDisplayAccessibilityStepItem = ({
+export const ProfileDropDownRadioInput = ({
   checked,
   label,
   name,
   onChange,
-}: ProfileDropDownDisplayAccessibilityStepItemProps) => {
-  const t = useTranslations(
-    `navbar.drop-downs.profile.steps.display-accessibility.options`
-  );
+}: ProfileDropDownRadioInputProps) => {
+  const t = useTranslations(`navbar.drop-downs.profile.steps.options`);
 
   return (
     <label className="hover:primary-bg primary-transition flex-center-justify-between primary-text cursor-pointer rounded-lg p-3 font-medium">
