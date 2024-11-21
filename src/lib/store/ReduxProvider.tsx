@@ -2,8 +2,9 @@
 
 import { Provider } from 'react-redux';
 
-import { store } from './store';
 import { useTheme } from '@/hooks';
+
+import { store } from './store';
 
 export default function ReduxProvider({
   children,

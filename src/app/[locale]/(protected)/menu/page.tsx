@@ -3,8 +3,8 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@/assets/types';
-import { MenuView } from '@/views';
 import { NotAvailableForDesktop } from '@/components/feedback';
+import { MenuView } from '@/views';
 
 const MenuPage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
