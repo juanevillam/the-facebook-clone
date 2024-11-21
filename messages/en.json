@@ -439,6 +439,13 @@
     "not-available-yet": {
       "title": "This page isn’t available",
       "description": "{author} is working on this functionality, and you can’t use it yet. Please check soon to see what’s new!"
+    },
+    "not-available-for-desktop": {
+      "title": "Not available for desktop",
+      "description": "This page is only accessible on mobile devices. Please open it on a mobile device for the best experience."
     }
+  },
+  "menu": {
+    "title": "Menu"
   }
 }

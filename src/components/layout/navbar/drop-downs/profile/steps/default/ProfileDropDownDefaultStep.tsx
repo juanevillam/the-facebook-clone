@@ -15,7 +15,7 @@ import { ProfileDropDownDefaultStepItem } from './ProfileDropDownDefaultStepItem
 import { ProfileDropDownStep } from '../../types';
 
 type ProfileDropDownDefaultStepProps = {
-  setOpenProfileDropDown: SetValue<boolean>;
+  setOpenProfileDropDown?: SetValue<boolean>;
   setStep: SetValue<ProfileDropDownStep>;
 };
 
@@ -26,7 +26,8 @@ export const ProfileDropDownDefaultStep = ({
   const t = useTranslations('navbar.drop-downs.profile');
   const currentUser = useCurrentUser();
 
-  const handleClose = () => setOpenProfileDropDown(false);
+  const handleClose = () =>
+    setOpenProfileDropDown && setOpenProfileDropDown(false);
 
   const handleOpenSettingsStep = () => setStep('settings');
 
@@ -38,7 +39,7 @@ export const ProfileDropDownDefaultStep = ({
   return (
     <div className="p-2.5">
       <Link
-        className="flex-center primary-transition hover:primary-bg space-x-2.5 rounded-lg p-2"
+        className="card flex-center primary-transition hover:primary-bg space-x-2.5 rounded-lg p-2"
         href="/profile"
         onClick={handleClose}
       >
@@ -50,24 +51,26 @@ export const ProfileDropDownDefaultStep = ({
           <p className="secondary-text text-sm">@{currentUser?.username}</p>
         </div>
       </Link>
-      <hr className="primary-border my-2" />
-      <ProfileDropDownDefaultStepItem
-        dropdown
-        Icon={CogIcon}
-        label="settings"
-        onClick={handleOpenSettingsStep}
-      />
-      <ProfileDropDownDefaultStepItem
-        dropdown
-        Icon={MoonIcon}
-        label="display-accessibility"
-        onClick={handleOpenDisplayAccessibilityStep}
-      />
-      <ProfileDropDownDefaultStepItem
-        Icon={ArrowRightStartOnRectangleIcon}
-        label="log-out"
-        onClick={handleLogout}
-      />
+      <hr className="md:primary-border my-1 border-transparent md:my-2" />
+      <div className="space-y-2 md:space-y-0">
+        <ProfileDropDownDefaultStepItem
+          dropdown
+          Icon={CogIcon}
+          label="settings"
+          onClick={handleOpenSettingsStep}
+        />
+        <ProfileDropDownDefaultStepItem
+          dropdown
+          Icon={MoonIcon}
+          label="display-accessibility"
+          onClick={handleOpenDisplayAccessibilityStep}
+        />
+        <ProfileDropDownDefaultStepItem
+          Icon={ArrowRightStartOnRectangleIcon}
+          label="log-out"
+          onClick={handleLogout}
+        />
+      </div>
     </div>
   );
 };

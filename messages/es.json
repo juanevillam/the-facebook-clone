@@ -440,6 +440,13 @@
     "not-available-yet": {
       "title": "Esta página no está disponible",
       "description": "{author} está trabajando en esta funcionalidad, y no puedes usarla aún. ¡Vuelve pronto para ver qué hay de nuevo!"
+    },
+    "not-available-for-desktop": {
+      "title": "No disponible en modo escritorio",
+      "description": "Esta página solo está disponible en dispositivos móviles. Por favor, ábrela en un dispositivo móvil para obtener la mejor experiencia."
     }
+  },
+  "menu": {
+    "title": "Menú"
   }
 }

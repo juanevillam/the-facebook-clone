@@ -34,48 +34,52 @@ export const ProfileDropDownSettingsStep = ({
   };
 
   return (
-    <div className="px-4 py-3">
-      <div className="flex-center mb-4 w-full space-x-2">
-        <DropDownHeaderIcon
-          leftPosition="-left-4"
-          icon={{
-            className: 'stroke-2 secondary-stroke size-full',
-            Component: ArrowLeftIcon,
-            name: 'back',
-          }}
-          onClick={handleClose}
-          tooltilp={false}
-        />
-        <h1 className="primary-text truncate text-2xl font-bold">
-          {t('title')}
-        </h1>
-      </div>
-      <div className="mb-2 flex space-x-2">
-        <div className="primary-bg primary-transition h-max rounded-full p-2">
-          <GlobeIcon className="primary-fill size-6" />
-        </div>
-        <div>
-          <h1 className="primary-text text-lg font-semibold">
-            {t('language.title')}
+    <div className="p-2.5 md:px-4 md:py-3">
+      <div className="card-bg primary-transition rounded-lg py-3 pl-2 pr-4 md:p-0">
+        <div className="flex-center mb-4 w-full space-x-2">
+          <div>
+            <DropDownHeaderIcon
+              leftPosition="-left-4"
+              icon={{
+                className: 'stroke-2 secondary-stroke size-full',
+                Component: ArrowLeftIcon,
+                name: 'back',
+              }}
+              onClick={handleClose}
+              tooltilp={false}
+            />
+          </div>
+          <h1 className="primary-text truncate text-2xl font-bold">
+            {t('title')}
           </h1>
-          <p className="secondary-text truncate text-sm">
-            {t('language.description')}
-          </p>
         </div>
-      </div>
-      <div className="mb-4 ml-10">
-        <ProfileDropDownRadioInput
-          checked={locale === 'en'}
-          label="english"
-          name="language"
-          onChange={() => handleLanguageChange('en')}
-        />
-        <ProfileDropDownRadioInput
-          checked={locale === 'es'}
-          label="spanish"
-          name="language"
-          onChange={() => handleLanguageChange('es')}
-        />
+        <div className="mb-2 flex space-x-2">
+          <div className="primary-bg primary-transition h-max rounded-full p-2">
+            <GlobeIcon className="primary-fill size-6" />
+          </div>
+          <div>
+            <h1 className="primary-text text-lg font-semibold">
+              {t('language.title')}
+            </h1>
+            <p className="secondary-text truncate text-sm">
+              {t('language.description')}
+            </p>
+          </div>
+        </div>
+        <div className="mb-4 ml-10">
+          <ProfileDropDownRadioInput
+            checked={locale === 'en'}
+            label="english"
+            name="language"
+            onChange={() => handleLanguageChange('en')}
+          />
+          <ProfileDropDownRadioInput
+            checked={locale === 'es'}
+            label="spanish"
+            name="language"
+            onChange={() => handleLanguageChange('es')}
+          />
+        </div>
       </div>
     </div>
   );

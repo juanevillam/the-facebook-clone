@@ -13,6 +13,7 @@ import { ProfileDropDownProps, ProfileDropDownStep } from './types';
 
 export const ProfileDropDown = ({
   setOpenProfileDropDown,
+  variant = 'dropdown',
 }: ProfileDropDownProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [step, setStep] = useState<ProfileDropDownStep>('default');
@@ -41,13 +42,13 @@ export const ProfileDropDown = ({
 
   return (
     <div
-      className={classNames(
-        'card only-desktop-block absolute right-5 top-14 overflow-hidden shadow-lg transition-all duration-300 ease-in-out',
-        {
-          'w-80': step === 'default',
-          'w-96': step !== 'default',
-        }
-      )}
+      className={classNames({
+        'card only-desktop-block absolute right-5 top-14 overflow-hidden shadow-lg transition-all duration-300 ease-in-out':
+          variant === 'dropdown',
+        'w-80': variant === 'dropdown' && step === 'default',
+        'w-96': variant === 'dropdown' && step !== 'default',
+        'w-full': variant === 'page',
+      })}
       style={{
         height,
       }}

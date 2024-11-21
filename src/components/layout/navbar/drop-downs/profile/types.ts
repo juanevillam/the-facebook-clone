@@ -1,7 +1,8 @@
 import { SetValue } from '@/assets/types';
 
 type ProfileDropDownProps = {
-  setOpenProfileDropDown: SetValue<boolean>;
+  setOpenProfileDropDown?: SetValue<boolean>;
+  variant?: 'dropdown' | 'page';
 };
 
 type ProfileDropDownStep = 'default' | 'settings' | 'display-accessibility';
