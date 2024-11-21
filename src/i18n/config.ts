@@ -36,7 +36,7 @@ const pathnames = {
   },
   '/posts': {
     en: '/posts',
-    es: '/publicaciones',
+    es: '/posts',
   },
   '/messenger': {
     en: '/messenger',
