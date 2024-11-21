@@ -2,8 +2,9 @@
 
 import classNames from 'classnames';
 import Image from 'next/image';
-import Link from 'next/link';
 import ReactPlayer from 'react-player';
+
+import { Link } from '@/navigation';
 
 type PostBodyProps = {
   media: string;
@@ -30,7 +31,7 @@ export const PostBody = ({
       {media && (
         <div className="bg-black">
           {mediaType === 'image' && (
-            <Link href={`/posts/${postId}`}>
+            <Link href={`/posts/${postId}` as any}>
               <Image
                 alt="Image"
                 className="max-h-[600px] w-full object-contain"
@@ -43,7 +44,7 @@ export const PostBody = ({
             </Link>
           )}
           {mediaType === 'gif' && (
-            <Link href={`/posts/${postId}`}>
+            <Link href={`/posts/${postId}` as any}>
               <Image
                 alt="GIF"
                 className="max-h-[600px] w-full object-contain"

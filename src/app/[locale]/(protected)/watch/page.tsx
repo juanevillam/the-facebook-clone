@@ -1,5 +1,5 @@
-const WatchPage = () => {
-  return <h1 className="text-2xl text-black dark:text-white">WatchPage</h1>;
-};
+import { NotAvailableYet } from '@/components/feedback';
+
+const WatchPage = () => <NotAvailableYet />;
 
 export default WatchPage;

@@ -4,7 +4,7 @@ import { useTransition } from 'react';
 
 import { useParams } from 'next/navigation';
 
-import { useRouter, usePathname } from '@/navigation';
+import { usePathname, useRouter } from '@/navigation';
 
 type AuthFooterLocaleSwitcherSelectProps = {
   defaultValue: string;

@@ -9,9 +9,26 @@ import { useCurrentUser } from '@/hooks';
 type ProfilePicProps = {
   image?: string;
   name?: string;
+  variant?: 'medium' | 'large';
 };
 
-export const ProfilePic = ({ image, name }: ProfilePicProps) => {
+const sizes = {
+  medium: {
+    className: 'size-10',
+    size: 80,
+  },
+  large: {
+    className: 'size-16',
+    size: 128,
+  },
+};
+
+export const ProfilePic = ({
+  image,
+  name,
+  variant = 'medium',
+}: ProfilePicProps) => {
+  const { className, size } = sizes[variant];
   const t = useTranslations('images');
   const currentUser = useCurrentUser();
   const imagetoShow = image || (image === undefined && currentUser?.image);
@@ -20,14 +37,14 @@ export const ProfilePic = ({ image, name }: ProfilePicProps) => {
   return imagetoShow ? (
     <Image
       alt={t('profile-pic', { name: nametoShow || 'user' })}
-      className="size-10 rounded-full"
-      height={80}
+      className={`rounded-full ${className}`}
+      height={size}
       loading="eager"
       src={imagetoShow}
       quality={100}
-      width={80}
+      width={size}
     />
   ) : (
-    <NoProfilePicImage />
+    <NoProfilePicImage className={className} size={size} />
   );
 };

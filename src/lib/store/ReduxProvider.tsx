@@ -2,6 +2,8 @@
 
 import { Provider } from 'react-redux';
 
+import { useTheme } from '@/hooks';
+
 import { store } from './store';
 
 export default function ReduxProvider({
@@ -9,5 +11,7 @@ export default function ReduxProvider({
 }: {
   children: React.ReactNode;
 }) {
+  useTheme();
+
   return <Provider store={store}>{children}</Provider>;
 }

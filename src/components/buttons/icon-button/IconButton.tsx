@@ -5,11 +5,13 @@ import { useTranslations } from 'next-intl';
 import { SharedSvg } from '@/assets/types';
 
 export type IconButtonName =
-  | 'arrows-pointing-in'
-  | 'arrows-pointing-out'
   | 'back'
   | 'close'
-  | 'dots-horizontal';
+  | 'enter-full-screen'
+  | 'exit-full-screen'
+  | 'more-options'
+  | 'new-message'
+  | 'see-all-in-messenger';
 
 type IconButtonProps = {
   className: string;

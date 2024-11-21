@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/navigation';
 
 type AuthLinkProps = {
   label: string;
@@ -9,7 +9,7 @@ export const AuthLink = ({ label, navigateTo }: AuthLinkProps) => {
   return (
     <Link
       className="text-sm font-semibold text-primary-100 hover:text-primary-200 hover:underline"
-      href={`/${navigateTo}`}
+      href={`/${navigateTo}` as any}
     >
       {label}
     </Link>

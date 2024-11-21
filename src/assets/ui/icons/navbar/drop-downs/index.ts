@@ -1,3 +1,2 @@
-export { MenuIcon } from './MenuIcon';
-export { MessengerIcon } from './Messengericon';
+export { MessengerIcon } from './MessengerIcon';
 export { NotificationsIcon } from './Notificationsicon';
