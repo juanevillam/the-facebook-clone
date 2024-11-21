@@ -195,7 +195,8 @@
           },
           "gif": {
             "detailed": "GIF",
-            "short": "GIF"
+            "short": "GIF",
+            "disabled-prod": "La selección de GIFs no está disponible<br></br>en producción"
           },
           "media": {
             "disabled": "Esto no se puede combinar con lo que ya has<br></br>agregado a tu publicación"

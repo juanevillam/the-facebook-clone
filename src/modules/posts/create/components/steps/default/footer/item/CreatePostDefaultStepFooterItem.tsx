@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import { Tooltip } from '@/components';
+import { IS_PRODUCTION } from '@/constants/environment';
 import { useAppSelector } from '@/lib/store/hooks';
 import { CardItem } from '@/modules/posts/create/assets/types';
 
@@ -16,9 +17,13 @@ export const CreatePostDefaultStepFooterItem = ({
   const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
   const tooltipLabel =
     disabled && name === 'gif'
-      ? (t.rich('media.disabled', {
-          br: () => <br />,
-        }) as string)
+      ? IS_PRODUCTION
+        ? (t.rich(`${name}.disabled-prod`, {
+            br: () => <br />,
+          }) as string)
+        : (t.rich('media.disabled', {
+            br: () => <br />,
+          }) as string)
       : disabled && name === 'photo-video'
         ? (t.rich('media.disabled', {
             br: () => <br />,

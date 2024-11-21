@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import showToast from 'react-hot-toast';
 
+import { IS_PRODUCTION } from '@/constants/environment';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { CardItem } from '@/modules/posts/create/assets/types';
 import { setStep } from '@/modules/posts/create/reducers/postSlice';
@@ -48,7 +48,7 @@ export const CreatePostDefaultStepFooter = () => {
     },
     {
       active: !!activeGif,
-      disabled: !!file,
+      disabled: !!file || IS_PRODUCTION,
       name: 'gif',
       onClick: handleOpenGifsStep,
     },

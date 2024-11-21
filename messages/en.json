@@ -194,7 +194,8 @@
           },
           "gif": {
             "detailed": "GIF",
-            "short": "GIF"
+            "short": "GIF",
+            "disabled-prod": "GIF picker is unavailable<br></br>in production"
           },
           "media": {
             "disabled": "This can't be combined with what you've already<br></br>added to your post"
