@@ -25,7 +25,7 @@ export const PostModal = ({ id, post }: PostModalProps) => {
 
   return (
     <Modal
-      className="z-40"
+      className="!z-30"
       closeAfterTransition
       onClose={closeModal}
       open={isOpen}
@@ -37,7 +37,7 @@ export const PostModal = ({ id, post }: PostModalProps) => {
       }}
     >
       <Fade in={isOpen}>
-        <div className="card absolute left-1/2 top-1/2 flex size-full -translate-x-1/2 -translate-y-1/2 transform flex-col overflow-hidden outline-none md:h-5/6 md:w-11/12 md:flex-row md:rounded-lg">
+        <div className="card absolute left-1/2 top-1/2 z-30 flex size-full -translate-x-1/2 -translate-y-1/2 transform flex-col overflow-hidden outline-none md:h-5/6 md:w-11/12 md:flex-row md:rounded-lg">
           <PostContent closeModal={closeModal} post={post} variant="modal" />
         </div>
       </Fade>

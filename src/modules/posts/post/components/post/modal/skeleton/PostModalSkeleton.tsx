@@ -5,7 +5,7 @@ import { PostSkeletonHeader } from '../../layout/common/skeleton';
 export const PostModalSkeleton = () => {
   return (
     <Modal
-      className="z-40"
+      className="!z-30"
       closeAfterTransition
       open
       slots={{ backdrop: Backdrop }}

@@ -22,12 +22,12 @@ export const Navbar = () => {
 
   return (
     <div
-      className={classNames('sticky top-0 z-40', {
+      className={classNames('sticky top-0 z-30', {
         'hidden md:block': isPostsPage,
       })}
     >
       <header
-        className={`card-bg primary-border primary-transition sticky top-0 z-40 transform transition-transform md:transform-none md:border-b ${
+        className={`card-bg primary-border primary-transition sticky top-0 z-30 transform transition-transform md:transform-none md:border-b ${
           showTopHeader ? '-translate-y-full' : 'translate-y-0'
         }`}
       >
@@ -51,7 +51,7 @@ export const Navbar = () => {
       </header>
       <nav
         aria-label={t('mobile-navigation')}
-        className={`card-bg primary-border sticky top-14 z-40 flex transform border-b transition-transform md:hidden ${
+        className={`card-bg primary-border sticky top-14 z-30 flex transform border-b transition-transform md:hidden ${
           showTopHeader ? '-translate-y-full' : 'translate-y-0'
         }`}
       >

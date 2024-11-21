@@ -22,7 +22,7 @@ export const MobileDialog = ({
   return (
     <div className="md:hidden">
       <div
-        className={`fixed left-0 right-0 top-0 z-50 h-full bg-overlay-100 transition-all duration-300 ${
+        className={`fixed left-0 right-0 top-0 z-40 h-full bg-overlay-100 transition-all duration-300 ${
           open ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
         onClick={onDismiss}
@@ -33,7 +33,7 @@ export const MobileDialog = ({
         tabIndex={0}
       />
       <div
-        className={`card fixed bottom-0 left-0 right-0 z-50 transition-transform duration-300 ${className} ${
+        className={`card fixed bottom-0 left-0 right-0 z-40 transition-transform duration-300 ${className} ${
           open ? translateOpenClass : translateClass
         }`}
       >
