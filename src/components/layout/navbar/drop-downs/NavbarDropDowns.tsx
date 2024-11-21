@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import {
   MessengerIcon,
@@ -13,14 +13,15 @@ import { NotificationsDropDown } from './notifications/NotificationsDropDown';
 import { ProfileDropDown } from './profile/ProfileDropDown';
 
 export const NavbarDropDowns = () => {
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const [openMessengerDropDown, setOpenMessengerDropDown] = useState(false);
   const [openNotificationsDropDown, setOpenNotificationsDropDown] =
     useState(false);
 
   const [openProfileDropDown, setOpenProfileDropDown] = useState(false);
 
-  const router = useRouter();
   const pathname = usePathname();
+  const router = useRouter();
   const isOnMessengerPage = pathname === '/messenger';
   const isOnNotificationsPage = pathname === '/notifications';
 
@@ -46,8 +47,27 @@ export const NavbarDropDowns = () => {
 
   const navigateToNotifications = () => router.push('/notifications');
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setOpenMessengerDropDown(false);
+        setOpenNotificationsDropDown(false);
+        setOpenProfileDropDown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="flex-center space-x-2">
+    <div className="flex-center space-x-2" ref={dropdownRef}>
       <div className="only-mobile">
         <NavbarDropDownIcon
           Icon={MessengerIcon}
