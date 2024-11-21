@@ -4,9 +4,6 @@ type ProfileDropDownProps = {
   setOpenProfileDropDown: SetValue<boolean>;
 };
 
-type ProfileDropDownStep =
-  | 'default'
-  | 'settings-privacy'
-  | 'display-accessibility';
+type ProfileDropDownStep = 'default' | 'settings' | 'display-accessibility';
 
 export type { ProfileDropDownProps, ProfileDropDownStep };

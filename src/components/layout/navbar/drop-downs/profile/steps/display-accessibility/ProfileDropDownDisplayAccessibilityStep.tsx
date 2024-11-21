@@ -34,7 +34,7 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
     changeTheme(newTheme);
 
   return (
-    <>
+    <div className="px-4 py-3">
       <div className="flex-center mb-4 w-full space-x-2">
         <DropDownHeaderIcon
           leftPosition="-left-4"
@@ -46,7 +46,9 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
           onClick={handleClose}
           tooltilp={false}
         />
-        <h1 className="primary-text text-2xl font-bold">{t('title')}</h1>
+        <h1 className="primary-text truncate text-2xl font-bold">
+          {t('title')}
+        </h1>
       </div>
       <div className="mb-2 flex space-x-2">
         <div className="primary-bg primary-transition h-max rounded-full p-2">
@@ -56,9 +58,7 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
           <h1 className="primary-text text-lg font-semibold">
             {t('dark-mode.title')}
           </h1>
-          <p className="secondary-text pr-4 text-sm">
-            {t('dark-mode.description')}
-          </p>
+          <p className="secondary-text text-sm">{t('dark-mode.description')}</p>
         </div>
       </div>
       <div className="mb-4 ml-10">
@@ -108,6 +108,6 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
           onChange={toggleFullScreen}
         />
       </div>
-    </>
+    </div>
   );
 };

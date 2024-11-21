@@ -133,12 +133,9 @@
       },
       "profile": {
         "tooltip": "Profile",
-        "profile-preview": {
-          "title": "See your profile"
-        },
         "steps": {
-          "settings-privacy": {
-            "title": "Settings & privacy",
+          "settings": {
+            "title": "Settings",
             "language": {
               "title": "Language"
             }
@@ -147,11 +144,11 @@
             "title": "Display & accessibility",
             "dark-mode": {
               "title": "Dark mode",
-              "description": "Adjust the appearance to reduce glare and give your eyes a break."
+              "description": "Switch to dark mode to reduce glare and give your eyes a break, especially in low-light environments."
             },
             "full-screen": {
               "title": "Full screen",
-              "description": "Toggle full screen mode for a more immersive experience."
+              "description": "Enable full screen mode to maximize space and enjoy a more immersive experience."
             },
             "options": {
               "on": "On",

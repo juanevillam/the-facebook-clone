@@ -134,12 +134,9 @@
       },
       "profile": {
         "tooltip": "Perfil",
-        "profile-preview": {
-          "title": "Ver tu perfil"
-        },
         "steps": {
-          "settings-privacy": {
-            "title": "Configuración y privacidad",
+          "settings": {
+            "title": "Configuración",
             "language": {
               "title": "Idioma"
             }
@@ -148,11 +145,11 @@
             "title": "Pantalla y accesibilidad",
             "dark-mode": {
               "title": "Modo oscuro",
-              "description": "Ajusta la apariencia para reducir el resplandor y darle un descanso a tus ojos."
+              "description": "Activa el modo oscuro para reducir el resplandor y darle un descanso a tus ojos, especialmente en entornos con poca luz."
             },
             "full-screen": {
               "title": "Pantalla completa",
-              "description": "Cambia al modo de pantalla completa para disfrutar de una experiencia más inmersiva."
+              "description": "Activa el modo de pantalla completa para maximizar el espacio y disfrutar de una experiencia más inmersiva."
             },
             "options": {
               "off": "Desactivado",

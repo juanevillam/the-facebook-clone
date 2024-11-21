@@ -6,7 +6,7 @@ import { ChevronRightIcon } from '@/assets/ui/icons';
 type ProfileDropDownDefaultStepItemProps = {
   dropdown?: boolean;
   Icon: SharedSvg;
-  label: 'settings-privacy' | 'display-accessibility' | 'log-out';
+  label: 'settings' | 'display-accessibility' | 'log-out';
   onClick: VoidFunction;
 };
 

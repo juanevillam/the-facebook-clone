@@ -34,25 +34,22 @@ export const ProfileDropDownDefaultStep = ({
   const handleLogout = () => logout();
 
   return (
-    <>
+    <div className="p-2.5">
       <Link
         className="flex-center primary-transition hover:primary-bg space-x-2.5 rounded-lg p-2"
         href="/profile"
         onClick={handleClose}
       >
         <ProfilePic variant="large" />
-        <div>
-          <h1 className="primary-text text-lg font-semibold leading-snug">
-            {currentUser?.name}
-          </h1>
-          <p className="secondary-text -mt-px">{t('profile-preview.title')}</p>
-        </div>
+        <h1 className="primary-text truncate text-lg font-semibold leading-snug">
+          {currentUser?.name}
+        </h1>
       </Link>
       <hr className="primary-border my-2" />
       <ProfileDropDownDefaultStepItem
         dropdown
         Icon={CogIcon}
-        label="settings-privacy"
+        label="settings"
         onClick={() => {}}
       />
       <ProfileDropDownDefaultStepItem
@@ -66,6 +63,6 @@ export const ProfileDropDownDefaultStep = ({
         label="log-out"
         onClick={handleLogout}
       />
-    </>
+    </div>
   );
 };
