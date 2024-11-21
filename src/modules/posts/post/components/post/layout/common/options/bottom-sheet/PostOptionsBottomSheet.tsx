@@ -9,7 +9,6 @@ import {
   BookmarkIcon,
   BookmarkSlashIcon,
   EyeIcon,
-  PencilIcon,
   TrashIcon,
 } from '@/assets/ui/icons';
 import { ActionLoader } from '@/components';
