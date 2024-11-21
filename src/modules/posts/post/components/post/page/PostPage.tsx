@@ -9,7 +9,7 @@ type PostPageProps = {
 
 export const PostPage = ({ post }: PostPageProps) => {
   return (
-    <div className="md:card-bg h-[calc(100vh-113px)] bg-black md:flex md:h-[calc(100vh-57px)] md:flex-row">
+    <div className="card-bg md:h-[calc(100vh-57px)]">
       <PostContent post={post} variant="page" />
     </div>
   );

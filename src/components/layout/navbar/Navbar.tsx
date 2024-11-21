@@ -1,5 +1,6 @@
 'use client';
 
+import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
 import { FacebookLogoMark, FacebookLogoType } from '@/assets/ui/icons/brand';
@@ -13,11 +14,18 @@ export const Navbar = () => {
   const t = useTranslations('navbar');
   const scrollDirection = useScrollDirection();
   const pathname = usePathname();
+
+  const isPostsPage = pathname.includes('posts');
   const showTopHeader =
-    (scrollDirection === 'down' && pathname === '/') || pathname !== '/';
+    !isPostsPage &&
+    ((scrollDirection === 'down' && pathname === '/') || pathname !== '/');
 
   return (
-    <>
+    <div
+      className={classNames('sticky top-0 z-40', {
+        'hidden md:block': isPostsPage,
+      })}
+    >
       <header
         className={`card-bg primary-border primary-transition sticky top-0 z-40 transform transition-transform md:transform-none md:border-b ${
           showTopHeader ? '-translate-y-full' : 'translate-y-0'
@@ -36,8 +44,9 @@ export const Navbar = () => {
           <div className="mt-px hidden items-center space-x-2 md:flex">
             <NavbarLinks />
           </div>
-          <div className="flex-center space-x-2" />
-          <NavbarDropDowns />
+          <div className="flex-center space-x-2">
+            <NavbarDropDowns />
+          </div>
         </nav>
       </header>
       <nav
@@ -48,6 +57,6 @@ export const Navbar = () => {
       >
         <NavbarLinks />
       </nav>
-    </>
+    </div>
   );
 };
