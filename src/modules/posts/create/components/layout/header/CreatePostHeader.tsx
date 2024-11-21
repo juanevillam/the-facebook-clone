@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl';
 import { SharedSvg } from '@/assets/types';
 import { IconButton } from '@/components/buttons';
 import { IconButtonName } from '@/components/buttons/icon-button/IconButton';
-import { PoweredByGiphyImage } from '@/components/images';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostDefaultStepButton } from '../../steps/default';
@@ -47,11 +46,6 @@ export const CreatePostHeader = ({ Icon }: CreatePostHeaderProps) => {
       {step === 'default' && (
         <div className="md:hidden">
           <CreatePostDefaultStepButton />
-        </div>
-      )}
-      {step === 'gifs' && (
-        <div className="right-4 md:absolute">
-          <PoweredByGiphyImage />
         </div>
       )}
     </div>

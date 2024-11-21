@@ -367,8 +367,7 @@
     "alert-triangle": "Alert icon",
     "no-profile-pic": "No profile pic image",
     "profile-pic": "{name}'s profile picture",
-    "thumb-up": "Thumb up icon",
-    "powered-by-giphy": "Powered by Giphy image"
+    "thumb-up": "Thumb up icon"
   },
   "toast-messages": {
     "error": {
