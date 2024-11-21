@@ -9,6 +9,7 @@ import {
 
 type PostFooterInfoProps = {
   handleDesktopCommentsOpen?: VoidFunction;
+  hideComments?: boolean;
   isMyLike: (like: LikeExtended) => boolean;
   isPostContent?: boolean;
   optimisticComments: CommentExtended[];
@@ -17,6 +18,7 @@ type PostFooterInfoProps = {
 
 export const PostFooterInfo = ({
   handleDesktopCommentsOpen,
+  hideComments = false,
   isMyLike,
   isPostContent = false,
   optimisticComments,
@@ -49,7 +51,7 @@ export const PostFooterInfo = ({
           </>
         )}
       </div>
-      {optimisticComments.length > 0 && (
+      {!hideComments && optimisticComments.length > 0 && (
         <button onClick={handleDesktopCommentsOpen} type="button">
           <p
             className={classNames('text-sm md:hover:underline', {

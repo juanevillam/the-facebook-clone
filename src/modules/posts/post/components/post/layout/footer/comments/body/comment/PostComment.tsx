@@ -21,13 +21,11 @@ export const PostComment = ({
       <ProfilePic image={user?.image as string} name={user?.name as string} />
       <div>
         <div className="flex-center space-x-2">
-          <div>
-            <div className="primary-bg mb-1 rounded-2xl px-3 py-2">
-              <h1 className="primary-text font-semibold leading-tight">
-                {user?.name}
-              </h1>
-              <p className="primary-text">{thoughts}</p>
-            </div>
+          <div className="primary-bg mb-1 rounded-2xl px-3 py-2">
+            <h1 className="primary-text font-semibold leading-tight">
+              {user?.name}
+            </h1>
+            <p className="primary-text">{thoughts}</p>
           </div>
           {isCommentMine && (
             <div className="group-hover:block md:hidden">

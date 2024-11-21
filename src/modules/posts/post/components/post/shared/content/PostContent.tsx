@@ -7,6 +7,7 @@ import Image from 'next/image';
 import ReactPlayer from 'react-player';
 
 import {
+  ArrowLeftIcon,
   ArrowsPointingInIcon,
   ArrowsPointingOutIcon,
   CloseIcon,
@@ -15,6 +16,7 @@ import { FacebookLogoMark } from '@/assets/ui/icons/brand';
 import { IconButton } from '@/components/buttons';
 import { Feeling } from '@/modules/posts/create/assets/types';
 import { PostExtended } from '@/modules/posts/post/assets/types';
+import { useRouter } from '@/navigation';
 
 import { PostBody, PostFooter, PostHeader } from '../../layout';
 import { PostOptions } from '../../layout/common';
@@ -45,13 +47,28 @@ export const PostContent = ({
   } = post;
 
   const [fullScreen, setFullScreen] = useState(false);
+  const router = useRouter();
 
   const handleFullScreen = () => setFullScreen(!fullScreen);
+
+  const navigateToHome = () => router.push('/');
 
   return (
     <>
       {variant === 'page' && (
-        <div className="card only-mobile">
+        <div className="card-bg only-mobile h-full min-h-screen">
+          <div className="flex-center primary-border space-x-1.5 border-b p-1.5">
+            <IconButton
+              className="hover:primary-bg size-10"
+              icon={{
+                className: 'stroke-[2.5] primary-stroke size-full',
+                Component: ArrowLeftIcon,
+                name: 'back',
+              }}
+              onClick={navigateToHome}
+            />
+            <h1 className="primary-text text-lg">{user.name}</h1>
+          </div>
           <PostHeader
             createdAt={createdAt}
             feeling={feeling as Feeling}
@@ -69,6 +86,7 @@ export const PostContent = ({
             thoughts={thoughts as string}
           />
           <PostFooter
+            isPage={variant === 'page'}
             postComments={comments}
             postLikes={likes}
             postId={postId}
@@ -180,9 +198,11 @@ export const PostContent = ({
             postSaves={savedBy}
             postUserId={user.id}
           />
-          <p className="primary-text-dark md:primary-text mb-2 pl-3">
-            {thoughts}
-          </p>
+          {thoughts && (
+            <p className="primary-text-dark md:primary-text mb-2 pl-3">
+              {thoughts}
+            </p>
+          )}
           <PostFooter
             isPostContent
             postComments={comments}

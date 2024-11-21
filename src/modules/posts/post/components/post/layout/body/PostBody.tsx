@@ -21,13 +21,15 @@ export const PostBody = ({
 }: PostBodyProps) => {
   return (
     <>
-      <p
-        className={classNames('primary-text mb-2 pl-3', {
-          'text-2xl': !media,
-        })}
-      >
-        {thoughts}
-      </p>
+      {thoughts && (
+        <p
+          className={classNames('primary-text mb-2 pl-3', {
+            'text-2xl': !media,
+          })}
+        >
+          {thoughts}
+        </p>
+      )}
       {media && (
         <div className="bg-black">
           {mediaType === 'image' && (

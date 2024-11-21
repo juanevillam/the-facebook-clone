@@ -24,6 +24,7 @@ import {
 import { PostFooterInfo } from './info/PostFooterInfo';
 
 type PostFooterProps = {
+  isPage?: boolean;
   isPostContent?: boolean;
   postComments: CommentExtended[];
   postLikes: LikeExtended[];
@@ -31,6 +32,7 @@ type PostFooterProps = {
 };
 
 export const PostFooter = ({
+  isPage = false,
   isPostContent = false,
   postComments,
   postLikes,
@@ -90,31 +92,36 @@ export const PostFooter = ({
     }
   };
 
+  const renderMobileFooterInfo = () => (
+    <div
+      className={classNames(
+        'only-mobile flex-center-justify-between primary-transition hover:primary-bg w-full px-3 py-2',
+        {
+          'hover:bg-neutral-700 hover:bg-opacity-50': isPostContent,
+        }
+      )}
+      onClick={() => !isPage && openMobileComments()}
+      onKeyPress={(e) =>
+        (e.key === 'Enter' || e.key === ' ') && !isPage && openMobileComments()
+      }
+      role="button"
+      tabIndex={0}
+    >
+      <PostFooterInfo
+        hideComments={isPage}
+        isMyLike={isMyLike}
+        isPostContent={isPostContent}
+        optimisticComments={optimisticComments}
+        optimisticLikes={optimisticLikes}
+      />
+    </div>
+  );
+
   return (
     <>
       {(optimisticLikes.length > 0 || optimisticComments.length > 0) && (
         <div className="md:px-4">
-          <div
-            className={classNames(
-              'only-mobile flex-center-justify-between primary-transition hover:primary-bg w-full px-3 py-2',
-              {
-                'hover:bg-neutral-700 hover:bg-opacity-50': isPostContent,
-              }
-            )}
-            onClick={openMobileComments}
-            onKeyPress={(e) =>
-              (e.key === 'Enter' || e.key === ' ') && openMobileComments()
-            }
-            role="button"
-            tabIndex={0}
-          >
-            <PostFooterInfo
-              isMyLike={isMyLike}
-              isPostContent={isPostContent}
-              optimisticComments={optimisticComments}
-              optimisticLikes={optimisticLikes}
-            />
-          </div>
+          {!isPage && renderMobileFooterInfo()}
           <div className="only-desktop center-justify-between w-full px-0 py-3">
             <PostFooterInfo
               handleDesktopCommentsOpen={handleDesktopCommentsOpen}
@@ -136,6 +143,7 @@ export const PostFooter = ({
         optimisticLikes={optimisticLikes}
         postId={postId}
       />
+      {isPage && renderMobileFooterInfo()}
       {areDesktopCommentsOpen && (
         <div
           className={classNames(
@@ -146,6 +154,11 @@ export const PostFooter = ({
             }
           )}
         >
+          <PostComments optimisticComments={optimisticComments} />
+        </div>
+      )}
+      {isPage && (
+        <div className="py-3">
           <PostComments optimisticComments={optimisticComments} />
         </div>
       )}
