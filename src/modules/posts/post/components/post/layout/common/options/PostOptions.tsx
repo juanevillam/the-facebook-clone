@@ -51,7 +51,7 @@ export const PostOptions = ({
               'fill-white size-full': isPostContent,
             }),
             Component: DotsHorizontalIcon,
-            name: 'dots-horizontal',
+            name: 'more-options',
           }}
           onClick={openBottomSheet}
         />

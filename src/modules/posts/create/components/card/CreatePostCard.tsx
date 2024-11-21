@@ -109,7 +109,7 @@ export const CreatePostCard = () => {
             {thoughts || t('posts.create.layout.thoughts')}
           </button>
         </div>
-        <div className="primary-border primary-divide flex divide-x border-t md:mx-4 md:space-x-1 md:divide-x-0 md:py-2.5">
+        <div className="primary-border primary-divide primary-transition flex divide-x border-t md:mx-4 md:space-x-1 md:divide-x-0 md:py-2.5">
           {cardItems.map((item) => (
             <CreatePostCardItem key={item.name} {...item} />
           ))}

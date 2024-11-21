@@ -16,11 +16,11 @@ export const CreatePostCardItem = ({
     <button
       aria-disabled={disabled}
       className={classNames(
-        'flex-center-justify-center w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
+        'flex-center-justify-center primary-transition w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
         {
           'active-bg': active && !disabled,
           'cursor-not-allowed opacity-50': disabled,
-          'primary-transition hover:primary-bg': !disabled,
+          'hover:primary-bg': !disabled,
         }
       )}
       onClick={onClick}

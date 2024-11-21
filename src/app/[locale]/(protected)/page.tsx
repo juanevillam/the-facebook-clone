@@ -5,7 +5,6 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@/assets/types';
-import { signOut } from '@/auth';
 import { CreatePostCard } from '@/modules/posts/create/components';
 import { Posts, PostsSkeleton } from '@/modules/posts/post/components/posts';
 
@@ -33,17 +32,6 @@ const ProtectedPage = ({ params: { locale } }: PageProps) => {
           <Posts />
         </Suspense>
       </NextIntlClientProvider>
-      <form
-        action={async () => {
-          'use server';
-
-          await signOut();
-        }}
-      >
-        <button className="text-2xl text-black dark:text-white" type="submit">
-          Sign out
-        </button>
-      </form>
     </div>
   );
 };

@@ -117,12 +117,54 @@
     "links": {
       "home": "Inicio",
       "friends": "Amigos",
-      "watch": "Ver"
+      "watch": "Ver",
+      "menu": "Menú"
     },
     "drop-downs": {
-      "menu": "Menú",
-      "messenger": "Messenger",
-      "notifications": "Notificaciones"
+      "messenger": {
+        "tooltip": "Messenger",
+        "title": "Chats",
+        "subtitle": "No hay mensajes",
+        "footer": "Ver todos en Messenger"
+      },
+      "notifications": {
+        "tooltip": "Notificaciones",
+        "title": "Notificaciones",
+        "you-have-no-notifications": "No tienes notificaciones"
+      },
+      "profile": {
+        "tooltip": "Perfil",
+        "steps": {
+          "settings": {
+            "title": "Configuración",
+            "language": {
+              "title": "Idioma",
+              "description": "Cambia el idioma de la aplicación."
+            }
+          },
+          "display-accessibility": {
+            "title": "Pantalla y accesibilidad",
+            "dark-mode": {
+              "title": "Modo oscuro",
+              "description": "Activa el modo oscuro para reducir el resplandor y darle un descanso a tus ojos, especialmente en entornos con poca luz."
+            },
+            "full-screen": {
+              "title": "Pantalla completa",
+              "description": "Activa el modo de pantalla completa para maximizar el espacio y disfrutar de una experiencia más inmersiva."
+            }
+          },
+          "options": {
+            "off": "Desactivado",
+            "on": "Activado",
+            "automatic": "Automático",
+            "english": "Inglés",
+            "spanish": "Español"
+          },
+          "log-out": {
+            "title": "Cerrar sesión"
+          }
+        }
+      }
     }
   },
   "posts": {
@@ -370,13 +412,16 @@
   "icon-buttons": {
     "close": "Cerrar",
     "back": "Atrás",
-    "dots-horizontal": "Más opciones",
-    "arrows-pointing-in": "Entrar en pantalla completa",
-    "arrows-pointing-out": "Salir de pantalla completa"
+    "more-options": "Más opciones",
+    "enter-full-screen": "Entrar en pantalla completa",
+    "exit-full-screen": "Salir de pantalla completa",
+    "see-all-in-messenger": "Ver todos en Messenger",
+    "new-message": "Nuevo mensaje"
   },
   "search-input": {
     "search": "Buscar",
-    "where-are-you": "¿Dónde estás?"
+    "where-are-you": "¿Dónde estás?",
+    "search-messenger": "Buscar en Messenger"
   },
   "action-loader": {
     "posting": "Publicando",
@@ -390,5 +435,18 @@
     "days": "Hace {days} días",
     "date": "{date} a las {time}",
     "full-date": "{dayName} {day} de {month} de {year} a las {time}"
+  },
+  "feedback": {
+    "not-available-yet": {
+      "title": "Esta página no está disponible",
+      "description": "{author} está trabajando en esta funcionalidad, y no puedes usarla aún. ¡Vuelve pronto para ver qué hay de nuevo!"
+    },
+    "not-available-for-desktop": {
+      "title": "No disponible en modo escritorio",
+      "description": "Esta página solo está disponible en dispositivos móviles. Por favor, ábrela en un dispositivo móvil para obtener la mejor experiencia."
+    }
+  },
+  "menu": {
+    "title": "Menú"
   }
 }

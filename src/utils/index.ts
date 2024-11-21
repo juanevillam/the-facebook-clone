@@ -1,0 +1,1 @@
+export { applyThemeToDOM } from './applyThemeToDOM';

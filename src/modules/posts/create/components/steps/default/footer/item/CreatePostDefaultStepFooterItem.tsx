@@ -30,11 +30,11 @@ export const CreatePostDefaultStepFooterItem = ({
       <button
         aria-disabled={disabled}
         className={classNames(
-          'flex-center peer relative w-full justify-start p-3 md:size-9 md:justify-center md:rounded-full md:p-0',
+          'flex-center primary-transition peer relative w-full justify-start p-3 md:size-9 md:justify-center md:rounded-full md:p-0',
           {
             'active-bg': active && !disabled,
             'cursor-not-allowed opacity-50': disabled,
-            'primary-transition hover:primary-bg': !disabled,
+            'hover:primary-bg': !disabled,
             'justify-center': activeGif,
             'primary-border border-t md:border-none': !activeGif,
           }

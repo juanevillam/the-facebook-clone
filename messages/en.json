@@ -116,12 +116,54 @@
     "links": {
       "home": "Home",
       "friends": "Friends",
-      "watch": "Watch"
+      "watch": "Watch",
+      "menu": "Menu"
     },
     "drop-downs": {
-      "menu": "Menu",
-      "messenger": "Messenger",
-      "notifications": "Notifications"
+      "messenger": {
+        "tooltip": "Messenger",
+        "title": "Chats",
+        "subtitle": "No messages",
+        "footer": "See all in Messenger"
+      },
+      "notifications": {
+        "tooltip": "Notifications",
+        "title": "Notifications",
+        "you-have-no-notifications": "You have no notifications"
+      },
+      "profile": {
+        "tooltip": "Profile",
+        "steps": {
+          "settings": {
+            "title": "Settings",
+            "language": {
+              "title": "Language",
+              "description": "Change the language of the application."
+            }
+          },
+          "display-accessibility": {
+            "title": "Display & accessibility",
+            "dark-mode": {
+              "title": "Dark mode",
+              "description": "Switch to dark mode to reduce glare and give your eyes a break, especially in low-light environments."
+            },
+            "full-screen": {
+              "title": "Full screen",
+              "description": "Enable full screen mode to maximize space and enjoy a more immersive experience."
+            }
+          },
+          "options": {
+            "on": "On",
+            "off": "Off",
+            "automatic": "Automatic",
+            "english": "English",
+            "spanish": "Spanish"
+          },
+          "log-out": {
+            "title": "Log out"
+          }
+        }
+      }
     }
   },
   "posts": {
@@ -369,13 +411,16 @@
   "icon-buttons": {
     "close": "Close",
     "back": "Back",
-    "dots-horizontal": "More options",
-    "arrows-pointing-in": "Enter full screen",
-    "arrows-pointing-out": "Exit full screen"
+    "more-options": "More options",
+    "enter-full-screen": "Enter full screen",
+    "exit-full-screen": "Exit full screen",
+    "see-all-in-messenger": "See all in Messenger",
+    "new-message": "New message"
   },
   "search-input": {
     "search": "Search",
-    "where-are-you": "Where are you?"
+    "where-are-you": "Where are you?",
+    "search-messenger": "Search Messenger"
   },
   "action-loader": {
     "posting": "Posting",
@@ -389,5 +434,18 @@
     "days": "{days} days ago",
     "date": "{date} at {time}",
     "full-date": "{dayName}, {day} {month} {year} at {time}"
+  },
+  "feedback": {
+    "not-available-yet": {
+      "title": "This page isn’t available",
+      "description": "{author} is working on this functionality, and you can’t use it yet. Please check soon to see what’s new!"
+    },
+    "not-available-for-desktop": {
+      "title": "Not available for desktop",
+      "description": "This page is only accessible on mobile devices. Please open it on a mobile device for the best experience."
+    }
+  },
+  "menu": {
+    "title": "Menu"
   }
 }

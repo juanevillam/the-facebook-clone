@@ -34,17 +34,25 @@ const pathnames = {
     en: '/watch',
     es: '/ver',
   },
-  '/marketplace': {
-    en: '/marketplace',
-    es: '/mercado',
-  },
-  '/groups': {
-    en: '/groups',
-    es: '/grupos',
-  },
   '/posts': {
     en: '/posts',
     es: '/publicaciones',
+  },
+  '/messenger': {
+    en: '/messenger',
+    es: '/messenger',
+  },
+  '/notifications': {
+    en: '/notifications',
+    es: '/notificaciones',
+  },
+  '/menu': {
+    en: '/menu',
+    es: '/menu',
+  },
+  '/profile': {
+    en: '/profile',
+    es: '/perfil',
   },
 } satisfies Pathnames<typeof locales>;
 

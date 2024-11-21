@@ -1,5 +1,5 @@
-const FriendsPage = () => {
-  return <h1 className="text-2xl text-black dark:text-white">FriendsPage</h1>;
-};
+import { NotAvailableYet } from '@/components/feedback';
+
+const FriendsPage = () => <NotAvailableYet />;
 
 export default FriendsPage;
