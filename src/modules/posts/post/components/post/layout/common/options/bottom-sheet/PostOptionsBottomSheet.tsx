@@ -9,7 +9,6 @@ import {
   BookmarkIcon,
   BookmarkSlashIcon,
   EyeIcon,
-  PencilIcon,
   TrashIcon,
 } from '@/assets/ui/icons';
 import { ActionLoader } from '@/components';
@@ -17,7 +16,7 @@ import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { deletePost, savePost } from '@/modules/posts/post/actions';
 import { toggleDeletingPost } from '@/modules/posts/post/reducers/headerOptionsSlice';
-import { useRouter } from '@/navigation';
+import { usePathname, useRouter } from '@/navigation';
 
 import { PostOptionsBottomSheetItem } from './item/PostOptionsBottomSheetItem';
 
@@ -37,6 +36,7 @@ export const PostOptionsBottomSheet = ({
   postSaves,
 }: PostOptionsBottomSheetProps) => {
   const [isPending, startTransition] = useTransition();
+  const pathname = usePathname();
   const router = useRouter();
   const t = useTranslations();
   const currentUser = useCurrentUser();
@@ -46,6 +46,7 @@ export const PostOptionsBottomSheet = ({
   );
 
   const isPostMine = currentUser?.id === postUserId;
+  const isPostPage = pathname.includes('posts');
 
   const isMySave = (save: SavedPost) =>
     save.userId === currentUser?.id && save.postId === postId;
@@ -113,12 +114,16 @@ export const PostOptionsBottomSheet = ({
             onClick={handleOptimisticSave}
             showDescription
           />
-          <hr className="primary-border my-1.5 border-t md:my-2" />
-          <PostOptionsBottomSheetItem
-            IconComponent={EyeIcon}
-            name="view"
-            onClick={handleViewPost}
-          />
+          {!isPostPage && (
+            <>
+              <hr className="primary-border my-1.5 border-t md:my-2" />
+              <PostOptionsBottomSheetItem
+                IconComponent={EyeIcon}
+                name="view"
+                onClick={handleViewPost}
+              />
+            </>
+          )}
           {isPostMine && (
             <>
               <hr className="primary-border my-1.5 border-t md:my-2" />

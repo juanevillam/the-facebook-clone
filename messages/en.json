@@ -194,7 +194,8 @@
           },
           "gif": {
             "detailed": "GIF",
-            "short": "GIF"
+            "short": "GIF",
+            "disabled-prod": "GIF picker is unavailable<br></br>in production"
           },
           "media": {
             "disabled": "This can't be combined with what you've already<br></br>added to your post"
@@ -367,8 +368,7 @@
     "alert-triangle": "Alert icon",
     "no-profile-pic": "No profile pic image",
     "profile-pic": "{name}'s profile picture",
-    "thumb-up": "Thumb up icon",
-    "powered-by-giphy": "Powered by Giphy image"
+    "thumb-up": "Thumb up icon"
   },
   "toast-messages": {
     "error": {
@@ -415,7 +415,11 @@
     "enter-full-screen": "Enter full screen",
     "exit-full-screen": "Exit full screen",
     "see-all-in-messenger": "See all in Messenger",
-    "new-message": "New message"
+    "new-message": "New message",
+    "play": "Play",
+    "pause": "Pause",
+    "mute": "Mute",
+    "unmute": "Unmute"
   },
   "search-input": {
     "search": "Search",
@@ -447,5 +451,11 @@
   },
   "menu": {
     "title": "Menu"
+  },
+  "video-player": {
+    "seek": "Seek",
+    "change-playback-rate": "Change playback rate",
+    "change-playback-rate-to": "Change playback rate to {rate}x",
+    "volume": "Volume"
   }
 }
