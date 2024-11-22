@@ -340,6 +340,12 @@
           "description": "Aquí puedes escribir un comentario en esta publicación agregando texto o un GIF.",
           "no-comments-yet": "Aún no hay comentarios"
         }
+      },
+      "likes": {
+        "bottom-sheet": {
+          "title": "Personas que reaccionaron",
+          "description": "Aquí puedes ver quién reaccionó a esta publicación."
+        }
       }
     }
   },

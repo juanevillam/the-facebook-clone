@@ -122,7 +122,7 @@ export const VideoPlayer = ({
         <div className="group relative ml-2 text-center md:ml-3">
           <button
             aria-label={t('change-playback-rate')}
-            className="primary-transition primary-text-dark w-16 rounded-md py-1.5 font-bold hover:bg-neutral-700 hover:bg-opacity-50"
+            className="primary-transition primary-text-dark w-14 rounded-md py-1.5 font-bold hover:bg-neutral-700 hover:bg-opacity-50 md:w-16"
             onClick={togglePlaybackMenu}
             type="button"
           >
@@ -140,7 +140,7 @@ export const VideoPlayer = ({
                     rate,
                   })}
                   className={classNames(
-                    'primary-text hover:primary-bg primary-transition w-16 rounded-md py-1.5',
+                    'primary-text hover:primary-bg primary-transition w-14 rounded-md py-1.5 md:w-16',
                     {
                       'font-bold': rate === playbackRate,
                     }

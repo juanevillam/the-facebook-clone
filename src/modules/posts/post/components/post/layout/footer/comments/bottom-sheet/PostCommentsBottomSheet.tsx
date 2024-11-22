@@ -34,7 +34,7 @@ export const PostCommentsBottomSheet = ({
   return (
     <Drawer.Portal>
       <Drawer.Overlay className="bottom-sheet-overlay" onClick={onDismiss} />
-      <Drawer.Content className="bottom-sheet-content h-full md:h-5/6">
+      <Drawer.Content className="bottom-sheet-content h-full md:h-[576px]">
         <Drawer.Title className="sr-only">{t('title')}</Drawer.Title>
         <Drawer.Description className="sr-only">
           {t('description')}

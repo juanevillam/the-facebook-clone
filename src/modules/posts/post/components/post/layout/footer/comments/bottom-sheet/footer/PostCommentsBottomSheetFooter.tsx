@@ -1,5 +1,6 @@
 import { useState, useTransition } from 'react';
 
+import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
@@ -11,12 +12,14 @@ type PostCommentsBottomSheetFooterProps = {
   addOptimisticComment: (action: unknown) => void;
   postId: string;
   setAreDesktopCommentsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  variant?: 'bottom-sheet' | 'post-footer';
 };
 
 export const PostCommentsBottomSheetFooter = ({
   addOptimisticComment,
   postId,
   setAreDesktopCommentsOpen,
+  variant = 'bottom-sheet',
 }: PostCommentsBottomSheetFooterProps) => {
   const [thoughts, setThoughts] = useState('');
   const [isPending, startTransition] = useTransition();
@@ -42,7 +45,12 @@ export const PostCommentsBottomSheetFooter = ({
 
   return (
     <form
-      className="primary-border flex-center w-full space-x-2 border-t p-2 md:border-none md:p-0"
+      className={classNames(
+        'primary-border flex-center w-full space-x-2 border-t p-2',
+        {
+          'md:border-none md:p-0': variant === 'post-footer',
+        }
+      )}
       onSubmit={handleOptimisticComment}
     >
       <div className="flex-center primary-bg primary-border w-full rounded-full px-4 py-2.5">
