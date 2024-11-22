@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import ReactPlayer from 'react-player';
 
 import { FileInputRef, InputEvent } from '@/assets/types';
 import { CloseIcon, PhotoIcon } from '@/assets/ui/icons';
+import { VideoPlayer } from '@/components';
 import { IconButton } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { setMedia } from '@/modules/posts/create/reducers/mediaSlice';
@@ -90,13 +90,7 @@ export const CreatePostMediaStep = ({
               src={file as string}
             />
           ) : (
-            <ReactPlayer
-              controls
-              height="100%"
-              loop
-              url={file as string}
-              width="100%"
-            />
+            <VideoPlayer url={file} />
           )
         ) : (
           <CreatePostStepMessage Icon={PhotoIcon} message={t('steps.media')} />

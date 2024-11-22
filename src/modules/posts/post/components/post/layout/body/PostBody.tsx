@@ -2,8 +2,8 @@
 
 import classNames from 'classnames';
 import Image from 'next/image';
-import ReactPlayer from 'react-player';
 
+import { VideoPlayer } from '@/components';
 import { Link } from '@/navigation';
 
 type PostBodyProps = {
@@ -60,7 +60,7 @@ export const PostBody = ({
             </Link>
           )}
           {mediaType === 'video' && (
-            <ReactPlayer controls loop url={media} width="100%" />
+            <VideoPlayer showFullHeight={false} url={media} />
           )}
         </div>
       )}

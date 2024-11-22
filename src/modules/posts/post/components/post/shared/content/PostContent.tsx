@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 import classNames from 'classnames';
 import Image from 'next/image';
-import ReactPlayer from 'react-player';
 
 import {
   ArrowLeftIcon,
@@ -13,10 +12,11 @@ import {
   CloseIcon,
 } from '@/assets/ui/icons';
 import { FacebookLogoMark } from '@/assets/ui/icons/brand';
+import { VideoPlayer } from '@/components';
 import { IconButton } from '@/components/buttons';
 import { Feeling } from '@/modules/posts/create/assets/types';
 import { PostExtended } from '@/modules/posts/post/assets/types';
-import { useRouter } from '@/navigation';
+import { Link, useRouter } from '@/navigation';
 
 import { PostBody, PostFooter, PostHeader } from '../../layout';
 import { PostOptions } from '../../layout/common';
@@ -110,7 +110,7 @@ export const PostContent = ({
             )}
           >
             {variant === 'modal' && (
-              <div className="flex-center space-x-4">
+              <div className="flex-center z-10 space-x-4">
                 <IconButton
                   className="z-10 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
                   icon={{
@@ -120,7 +120,9 @@ export const PostContent = ({
                   }}
                   onClick={closeModal}
                 />
-                <FacebookLogoMark className="hidden size-10 md:block" />
+                <Link href="/">
+                  <FacebookLogoMark className="hidden size-10 md:block" />
+                </Link>
               </div>
             )}
             <IconButton
@@ -168,15 +170,7 @@ export const PostContent = ({
               width={0}
             />
           )}
-          {mediaType === 'video' && (
-            <ReactPlayer
-              controls
-              height="100%"
-              loop
-              url={media as string}
-              width="100%"
-            />
-          )}
+          {mediaType === 'video' && media && <VideoPlayer url={media} />}
         </div>
         <div
           className={classNames(

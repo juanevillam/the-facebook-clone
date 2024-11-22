@@ -3,3 +3,4 @@ export { ProfilePic } from './profile-pic/ProfilePic';
 export { SuspenseLoader } from './suspense-loader/SuspenseLoader';
 export { Timestamp } from './timestamp/Timestamp';
 export { Tooltip } from './tooltip/Tooltip';
+export { VideoPlayer } from './video-player/VideoPlayer';

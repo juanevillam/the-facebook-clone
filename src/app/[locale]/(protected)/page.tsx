@@ -24,7 +24,8 @@ const ProtectedPage = ({ params: { locale } }: PageProps) => {
           'icon-buttons',
           'search-input',
           'action-loader',
-          'timestamp'
+          'timestamp',
+          'video-player'
         )}
       >
         <CreatePostCard />

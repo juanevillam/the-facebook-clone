@@ -92,30 +92,33 @@ export const PostFooter = ({
     }
   };
 
-  const renderMobileFooterInfo = () => (
-    <div
-      className={classNames(
-        'only-mobile flex-center-justify-between primary-transition hover:primary-bg w-full px-3 py-2',
-        {
-          'hover:bg-neutral-700 hover:bg-opacity-50': isPostContent,
+  const renderMobileFooterInfo = () =>
+    (optimisticLikes.length > 0 || optimisticComments.length > 0) && (
+      <div
+        className={classNames(
+          'only-mobile flex-center-justify-between primary-transition hover:primary-bg w-full px-3 py-2',
+          {
+            'hover:bg-neutral-700 hover:bg-opacity-50': isPostContent,
+          }
+        )}
+        onClick={() => !isPage && openMobileComments()}
+        onKeyPress={(e) =>
+          (e.key === 'Enter' || e.key === ' ') &&
+          !isPage &&
+          openMobileComments()
         }
-      )}
-      onClick={() => !isPage && openMobileComments()}
-      onKeyPress={(e) =>
-        (e.key === 'Enter' || e.key === ' ') && !isPage && openMobileComments()
-      }
-      role="button"
-      tabIndex={0}
-    >
-      <PostFooterInfo
-        hideComments={isPage}
-        isMyLike={isMyLike}
-        isPostContent={isPostContent}
-        optimisticComments={optimisticComments}
-        optimisticLikes={optimisticLikes}
-      />
-    </div>
-  );
+        role="button"
+        tabIndex={0}
+      >
+        <PostFooterInfo
+          hideComments={isPage}
+          isMyLike={isMyLike}
+          isPostContent={isPostContent}
+          optimisticComments={optimisticComments}
+          optimisticLikes={optimisticLikes}
+        />
+      </div>
+    );
 
   return (
     <>
