@@ -67,7 +67,7 @@ export const PostContent = ({
               }}
               onClick={navigateToHome}
             />
-            <h1 className="primary-text text-lg">{user.name}</h1>
+            <h1 className="primary-text text-lg font-semibold">{user.name}</h1>
           </div>
           <PostHeader
             createdAt={createdAt}
@@ -137,7 +137,7 @@ export const PostContent = ({
               onClick={handleFullScreen}
             />
             {variant === 'modal' && (
-              <div className="only-mobile">
+              <div className="only-mobile z-10">
                 <PostOptions
                   isPostContent
                   postId={post.id}
@@ -178,6 +178,7 @@ export const PostContent = ({
             {
               'md:w-0': fullScreen,
               'md:w-96 md:min-w-96': !fullScreen,
+              'hidden md:block': mediaType === 'video',
             }
           )}
         >
