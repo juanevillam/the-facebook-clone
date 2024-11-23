@@ -112,9 +112,9 @@ export const PostContent = ({
             )}
           >
             {variant === 'modal' && (
-              <div className="flex-center z-10 space-x-4">
+              <div className="flex-center z-20 space-x-4">
                 <IconButton
-                  className="z-10 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+                  className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
                   icon={{
                     className: 'stroke-2 stroke-white size-full',
                     Component: CloseIcon,
@@ -128,7 +128,7 @@ export const PostContent = ({
               </div>
             )}
             <IconButton
-              className="only-desktop z-10 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+              className="only-desktop z-20 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
               icon={{
                 className: 'stroke-white fill-white size-full',
                 Component: fullScreen
@@ -139,7 +139,7 @@ export const PostContent = ({
               onClick={handleFullScreen}
             />
             {variant === 'modal' && (
-              <div className="only-mobile z-10">
+              <div className="only-mobile z-20">
                 <PostOptions
                   isModal
                   postId={post.id}

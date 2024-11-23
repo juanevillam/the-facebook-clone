@@ -48,7 +48,6 @@ export const VideoPlayer = ({
   const handleSeekChange = (_: Event, newValue: number | number[]) => {
     if (playerRef.current) {
       const newPlayed = typeof newValue === 'number' ? newValue : newValue[0];
-
       setPlayed(newPlayed);
       playerRef.current.seekTo(newPlayed / 100, 'fraction');
     }
@@ -63,7 +62,6 @@ export const VideoPlayer = ({
 
   const handleVolumeChange = (_: Event, newValue: number | number[]) => {
     const newVolume = typeof newValue === 'number' ? newValue : newValue[0];
-
     setVolume(newVolume);
     setMuted(newVolume === 0);
   };
@@ -81,6 +79,11 @@ export const VideoPlayer = ({
         'md:h-[500px]': !showFullHeight,
       })}
     >
+      <button
+        className="absolute inset-0 z-10 cursor-pointer"
+        onClick={togglePlayPause}
+        type="button"
+      />
       <ReactPlayer
         height="100%"
         loop
@@ -94,7 +97,7 @@ export const VideoPlayer = ({
         volume={volume}
         width="100%"
       />
-      <div className="flex-center absolute bottom-0 w-full bg-neutral-900 bg-opacity-50 p-1 md:p-2">
+      <div className="flex-center absolute bottom-0 z-10 w-full bg-neutral-900 bg-opacity-50 p-1 md:p-2">
         <IconButton
           className="mr-1 size-9 hover:bg-neutral-700 hover:bg-opacity-50 md:mr-1.5"
           icon={{
@@ -136,9 +139,7 @@ export const VideoPlayer = ({
               {[0.5, 1, 1.5, 2].map((rate) => (
                 <button
                   key={rate}
-                  aria-label={t('change-playback-rate-to', {
-                    rate,
-                  })}
+                  aria-label={t('change-playback-rate-to', { rate })}
                   className={classNames(
                     'primary-text hover:primary-bg primary-transition w-14 rounded-md py-1.5 md:w-16',
                     {
