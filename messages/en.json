@@ -353,6 +353,24 @@
       "card": {
         "title": "Create a story",
         "subtitle": "Share a photo or write something."
+      },
+      "page": {
+        "sidebar": {
+          "title": "Your story"
+        },
+        "header": {
+          "title": "Create story"
+        },
+        "options": {
+          "photo": {
+            "detailed": "Create a photo story",
+            "short": "Photo"
+          },
+          "text": {
+            "detailed": "Create a text story",
+            "short": "Text"
+          }
+        }
       }
     }
   },

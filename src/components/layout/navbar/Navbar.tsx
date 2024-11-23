@@ -16,6 +16,9 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   const isPostPage = pathname.includes('posts');
+  const isStoriesPage =
+    pathname.includes('stories') || pathname.includes('historias');
+
   const showTopHeader =
     !isPostPage &&
     ((scrollDirection === 'down' && pathname === '/') || pathname !== '/');
@@ -23,7 +26,7 @@ export const Navbar = () => {
   return (
     <div
       className={classNames('sticky top-0 z-30', {
-        'hidden md:block': isPostPage,
+        'hidden md:block': isPostPage || isStoriesPage,
       })}
     >
       <header

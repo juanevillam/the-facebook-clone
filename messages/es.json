@@ -354,6 +354,24 @@
       "card": {
         "title": "Crear una historia",
         "subtitle": "Comparte una foto o escribe algo."
+      },
+      "page": {
+        "sidebar": {
+          "title": "Tu historia"
+        },
+        "header": {
+          "title": "Crear historia"
+        },
+        "options": {
+          "photo": {
+            "detailed": "Crear una historia con foto",
+            "short": "Foto"
+          },
+          "text": {
+            "detailed": "Crear una historia con texto",
+            "short": "Texto"
+          }
+        }
       }
     }
   },

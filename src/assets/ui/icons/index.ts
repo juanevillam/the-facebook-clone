@@ -2,6 +2,7 @@ export { ArrowLeftIcon } from './ArrowLeftIcon';
 export { ArrowRightStartOnRectangleIcon } from './ArrowRightStartOnRectangleIcon';
 export { ArrowsPointingInIcon } from './ArrowsPointingInIcon';
 export { ArrowsPointingOutIcon } from './ArrowsPointingOutIcon';
+export { AtSymbolIcon } from './AtSymbolIcon';
 export { BellIcon } from './BellIcon';
 export { BookmarkIcon } from './BookmarkIcon';
 export { BookmarkSlashIcon } from './BookmarkSlashIcon';
