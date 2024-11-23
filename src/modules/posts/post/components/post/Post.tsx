@@ -32,6 +32,7 @@ export const Post = async ({
         postId={id}
         postSaves={savedBy}
         postUserId={user.id}
+        username={user.username as string}
       />
       <PostBody
         media={media as string}

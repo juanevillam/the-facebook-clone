@@ -17,6 +17,7 @@ type PostHeaderProps = {
   postId: string;
   postSaves: SavedPost[];
   postUserId: string;
+  username: string;
   variant?: PostVariant;
 };
 
@@ -29,6 +30,7 @@ export const PostHeader = ({
   postId,
   postSaves,
   postUserId,
+  username,
   variant = 'page',
 }: PostHeaderProps) => {
   const isModal = variant === 'modal';
@@ -46,6 +48,7 @@ export const PostHeader = ({
             isModal={isModal}
             location={location}
             name={name}
+            username={username}
           />
           <Timestamp
             className={classNames({

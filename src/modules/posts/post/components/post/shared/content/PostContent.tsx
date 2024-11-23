@@ -79,6 +79,7 @@ export const PostContent = ({
             postId={postId}
             postSaves={savedBy}
             postUserId={user.id}
+            username={user.username as string}
             variant="page"
           />
           <PostBody
@@ -193,6 +194,7 @@ export const PostContent = ({
             postId={postId}
             postSaves={savedBy}
             postUserId={user.id}
+            username={user.username as string}
             variant={variant}
           />
           {thoughts && (

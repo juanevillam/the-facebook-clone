@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import { ProfilePic, Timestamp } from '@/components';
 import { useCurrentUser } from '@/hooks';
 import { CommentExtended } from '@/modules/posts/post/assets/types';
+import { Link } from '@/navigation';
 
 import { PostCommentOptions } from './options/PostCommentOptions';
 
@@ -22,9 +23,12 @@ export const PostComment = ({
       <div>
         <div className="flex-center space-x-2">
           <div className="primary-bg mb-1 rounded-2xl px-3 py-2">
-            <h1 className="primary-text font-semibold leading-tight">
+            <Link
+              className="primary-text font-semibold leading-tight hover:underline"
+              href={`/${user.username}` as any}
+            >
               {user?.name}
-            </h1>
+            </Link>
             <p className="primary-text">{thoughts}</p>
           </div>
           {isCommentMine && (

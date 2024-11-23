@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import { Feeling } from '@/modules/posts/create/assets/types';
+import { Link } from '@/navigation';
 
 type PostUserInfoProps = {
   feeling?: Feeling;
@@ -10,6 +11,7 @@ type PostUserInfoProps = {
   isModal?: boolean;
   location?: string;
   name: string;
+  username: string;
 };
 
 export const PostUserInfo = ({
@@ -18,19 +20,21 @@ export const PostUserInfo = ({
   isModal = false,
   location,
   name,
+  username,
 }: PostUserInfoProps) => {
   const t = useTranslations('posts');
 
   return (
     <p className="leading-tight">
-      <span
-        className={classNames('font-semibold', {
+      <Link
+        className={classNames('font-semibold hover:underline', {
           'primary-text-dark md:primary-text': isModal,
           'primary-text': !isModal,
         })}
+        href={`/${username}` as any}
       >
         {name}
-      </span>
+      </Link>
       {(feeling || location) && (
         <span
           className={classNames({
