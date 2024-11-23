@@ -140,7 +140,7 @@
 
   /* Bottom sheet Utilities */
   .bottom-sheet-content {
-    @apply card-bg fixed bottom-0 left-0 right-0 z-40 rounded-t-2xl pt-3 md:mx-auto md:w-1/2;
+    @apply card-bg fixed bottom-0 left-0 right-0 z-40 rounded-t-2xl pt-3 md:mx-auto md:w-[432px];
   }
 
   .bottom-sheet-handle {

@@ -16,6 +16,7 @@ import { VideoPlayer } from '@/components';
 import { IconButton } from '@/components/buttons';
 import { Feeling } from '@/modules/posts/create/assets/types';
 import { PostExtended } from '@/modules/posts/post/assets/types';
+import { PostVariant } from '@/modules/posts/post/types';
 import { Link, useRouter } from '@/navigation';
 
 import { PostBody, PostFooter, PostHeader } from '../../layout';
@@ -24,7 +25,7 @@ import { PostOptions } from '../../layout/common';
 type PostContentProps = {
   closeModal?: VoidFunction;
   post: PostExtended;
-  variant: 'modal' | 'page';
+  variant: PostVariant;
 };
 
 export const PostContent = ({
@@ -78,6 +79,8 @@ export const PostContent = ({
             postId={postId}
             postSaves={savedBy}
             postUserId={user.id}
+            username={user.username as string}
+            variant="page"
           />
           <PostBody
             media={media as string}
@@ -86,10 +89,10 @@ export const PostContent = ({
             thoughts={thoughts as string}
           />
           <PostFooter
-            isPage={variant === 'page'}
             postComments={comments}
             postLikes={likes}
             postId={postId}
+            variant={variant}
           />
         </div>
       )}
@@ -110,9 +113,9 @@ export const PostContent = ({
             )}
           >
             {variant === 'modal' && (
-              <div className="flex-center z-10 space-x-4">
+              <div className="flex-center z-20 space-x-4">
                 <IconButton
-                  className="z-10 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+                  className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
                   icon={{
                     className: 'stroke-2 stroke-white size-full',
                     Component: CloseIcon,
@@ -126,7 +129,7 @@ export const PostContent = ({
               </div>
             )}
             <IconButton
-              className="only-desktop z-10 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+              className="only-desktop z-20 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
               icon={{
                 className: 'stroke-white fill-white size-full',
                 Component: fullScreen
@@ -137,9 +140,9 @@ export const PostContent = ({
               onClick={handleFullScreen}
             />
             {variant === 'modal' && (
-              <div className="only-mobile z-10">
+              <div className="only-mobile z-20">
                 <PostOptions
-                  isPostContent
+                  isModal
                   postId={post.id}
                   postSaves={post.savedBy}
                   postUserId={post.userId}
@@ -186,12 +189,13 @@ export const PostContent = ({
             createdAt={createdAt}
             feeling={feeling as Feeling}
             image={user.image as string}
-            isPostContent
             location={location as string}
             name={user.name as string}
             postId={postId}
             postSaves={savedBy}
             postUserId={user.id}
+            username={user.username as string}
+            variant={variant}
           />
           {thoughts && (
             <p className="primary-text-dark md:primary-text mb-2 pl-3">
@@ -199,10 +203,10 @@ export const PostContent = ({
             </p>
           )}
           <PostFooter
-            isPostContent
             postComments={comments}
             postLikes={likes}
             postId={post.id}
+            variant={variant}
           />
         </div>
       </div>

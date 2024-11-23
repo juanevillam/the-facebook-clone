@@ -21,6 +21,7 @@ export const CreatePostDefaultStepUserInfo = () => {
         feeling={activeFeeling as Feeling}
         location={activeLocation?.structured_formatting.main_text}
         name={currentUser?.name as string}
+        username={currentUser?.username as string}
       />
     </div>
   );

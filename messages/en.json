@@ -339,6 +339,12 @@
           "description": "Here you can write a comment in this post by adding text or a GIF.",
           "no-comments-yet": "No comments yet"
         }
+      },
+      "likes": {
+        "bottom-sheet": {
+          "title": "People who reacted",
+          "description": "Here you can see who reacted to this post."
+        }
       }
     }
   },

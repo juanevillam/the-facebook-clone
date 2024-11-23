@@ -32,6 +32,7 @@ export const Post = async ({
         postId={id}
         postSaves={savedBy}
         postUserId={user.id}
+        username={user.username as string}
       />
       <PostBody
         media={media as string}
@@ -39,7 +40,12 @@ export const Post = async ({
         postId={id}
         thoughts={thoughts as string}
       />
-      <PostFooter postComments={comments} postLikes={likes} postId={id} />
+      <PostFooter
+        postComments={comments}
+        postLikes={likes}
+        postId={id}
+        variant="page"
+      />
     </div>
   );
 };
