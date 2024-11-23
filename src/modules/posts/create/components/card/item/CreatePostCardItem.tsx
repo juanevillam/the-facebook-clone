@@ -23,6 +23,7 @@ export const CreatePostCardItem = ({
           'hover:primary-bg': !disabled,
         }
       )}
+      disabled={disabled}
       onClick={onClick}
       type="button"
     >

@@ -22,7 +22,8 @@ export const PostModalWrapper = ({ id, post }: PostModalWrapperProps) => {
         'toast-messages',
         'icon-buttons',
         'action-loader',
-        'timestamp'
+        'timestamp',
+        'video-player'
       )}
     >
       <PostModal id={id} post={post} />

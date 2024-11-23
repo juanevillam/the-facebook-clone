@@ -14,7 +14,7 @@ const ProtectedPage = ({ params: { locale } }: PageProps) => {
   const messages = useMessages();
 
   return (
-    <div className="mx-auto max-w-3xl space-y-1.5 md:max-w-xl md:space-y-4 md:pt-4 lg:max-w-2xl">
+    <div className="mx-auto max-w-3xl space-y-1.5 pb-1.5 md:max-w-xl md:space-y-4 md:pb-4 md:pt-4 lg:max-w-2xl">
       <NextIntlClientProvider
         messages={pick(
           messages,
@@ -24,7 +24,8 @@ const ProtectedPage = ({ params: { locale } }: PageProps) => {
           'icon-buttons',
           'search-input',
           'action-loader',
-          'timestamp'
+          'timestamp',
+          'video-player'
         )}
       >
         <CreatePostCard />

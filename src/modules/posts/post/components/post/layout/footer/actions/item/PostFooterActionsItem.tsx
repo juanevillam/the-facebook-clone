@@ -7,7 +7,7 @@ type PostFooterActionsItemProps = {
   className?: string;
   Icon: React.FC<NavbarIconProps>;
   isActive: boolean;
-  isPostContent: boolean;
+  isModal: boolean;
   label?: 'comment' | 'like' | 'share';
   onClick: VoidFunction;
 };
@@ -16,7 +16,7 @@ export const PostFooterActionsItem = ({
   className,
   Icon,
   isActive,
-  isPostContent,
+  isModal,
   label,
   onClick,
 }: PostFooterActionsItemProps) => {
@@ -29,8 +29,8 @@ export const PostFooterActionsItem = ({
           'flex-center-justify-center primary-transition w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
           {
             'hover:bg-neutral-700 hover:bg-opacity-50 md:hover:bg-gray-100 md:hover:bg-opacity-100 md:dark:hover:dark:bg-neutral-700':
-              isPostContent,
-            'hover:primary-bg hover:bg-opacity-100': !isPostContent,
+              isModal,
+            'hover:primary-bg hover:bg-opacity-100': !isModal,
           }
         )}
         onClick={onClick}
@@ -40,7 +40,7 @@ export const PostFooterActionsItem = ({
           className={classNames('size-5 stroke-[1.5] md:size-6', {
             'fill-primary-100': isActive,
             'primary-stroke md:accent-stroke fill-none': !isActive,
-            'primary-stroke-dark': !isActive && isPostContent,
+            'primary-stroke-dark': !isActive && isModal,
           })}
           isActive={isActive}
         />
@@ -48,7 +48,7 @@ export const PostFooterActionsItem = ({
           className={classNames('text-sm md:font-medium', {
             'text-primary-100': isActive,
             'primary-text md:accent-text': !isActive,
-            'primary-text-dark md:hidden': isPostContent,
+            'primary-text-dark': isModal,
           })}
         >
           {t(label)}

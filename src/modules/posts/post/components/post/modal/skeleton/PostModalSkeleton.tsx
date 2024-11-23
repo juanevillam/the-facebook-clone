@@ -5,7 +5,7 @@ import { PostSkeletonHeader } from '../../layout/common/skeleton';
 export const PostModalSkeleton = () => {
   return (
     <Modal
-      className="z-40"
+      className="!z-30"
       closeAfterTransition
       open
       slots={{ backdrop: Backdrop }}
@@ -19,15 +19,8 @@ export const PostModalSkeleton = () => {
         <div className="card absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transform outline-none md:h-5/6 md:w-11/12">
           <div className="flex h-full flex-col md:flex-row">
             <Skeleton
-              className="only-mobile skeleton-bg"
+              className="skeleton-bg !h-4/5 md:!h-full md:rounded-bl-xl md:rounded-tl-xl"
               variant="rectangular"
-              height="80%"
-              width="100%"
-            />
-            <Skeleton
-              className="only-desktop skeleton-bg rounded-bl-xl rounded-tl-xl"
-              variant="rectangular"
-              height="100%"
               width="100%"
             />
             <div className="md:min-w-96">

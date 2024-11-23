@@ -2,8 +2,8 @@
 
 import classNames from 'classnames';
 import Image from 'next/image';
-import ReactPlayer from 'react-player';
 
+import { VideoPlayer } from '@/components';
 import { Link } from '@/navigation';
 
 type PostBodyProps = {
@@ -21,13 +21,15 @@ export const PostBody = ({
 }: PostBodyProps) => {
   return (
     <>
-      <p
-        className={classNames('primary-text mb-2 pl-3', {
-          'text-2xl': !media,
-        })}
-      >
-        {thoughts}
-      </p>
+      {thoughts && (
+        <p
+          className={classNames('primary-text mb-2 pl-3', {
+            'text-2xl': !media,
+          })}
+        >
+          {thoughts}
+        </p>
+      )}
       {media && (
         <div className="bg-black">
           {mediaType === 'image' && (
@@ -58,7 +60,7 @@ export const PostBody = ({
             </Link>
           )}
           {mediaType === 'video' && (
-            <ReactPlayer controls loop url={media} width="100%" />
+            <VideoPlayer showFullHeight={false} url={media} />
           )}
         </div>
       )}

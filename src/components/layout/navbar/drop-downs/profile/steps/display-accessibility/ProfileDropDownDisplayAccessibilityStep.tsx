@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
 
 import { SetValue } from '@/assets/types';
 import {
@@ -8,7 +9,7 @@ import {
   ArrowsPointingOutIcon,
   MoonIcon,
 } from '@/assets/ui/icons';
-import { useTheme, useFullScreen } from '@/hooks';
+import { useFullScreen } from '@/hooks';
 
 import { DropDownHeaderIcon } from '../../../icons';
 import { ProfileDropDownStep } from '../../types';
@@ -25,13 +26,13 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
     'navbar.drop-downs.profile.steps.display-accessibility'
   );
 
-  const [theme, changeTheme] = useTheme();
+  const { setTheme, theme } = useTheme();
   const { isFullScreen, toggleFullScreen } = useFullScreen();
 
   const handleClose = () => setStep('default');
 
-  const handleThemeChange = (newTheme: typeof theme) => () =>
-    changeTheme(newTheme);
+  const handleThemeChange = (newTheme: 'light' | 'dark' | 'system') => () =>
+    setTheme(newTheme);
 
   return (
     <div className="p-2.5 md:px-4 md:py-3">

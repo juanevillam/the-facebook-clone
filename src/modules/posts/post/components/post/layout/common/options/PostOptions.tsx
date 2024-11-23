@@ -8,47 +8,49 @@ import { Drawer } from 'vaul';
 
 import { DotsHorizontalIcon } from '@/assets/ui/icons';
 import { IconButton } from '@/components/buttons';
+import { useBreakpoint } from '@/hooks';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { PostOptionsBottomSheet } from './bottom-sheet/PostOptionsBottomSheet';
 
 type PostOptionsProps = {
-  isPostContent?: boolean;
+  isModal?: boolean;
   postId: string;
   postSaves: SavedPost[];
   postUserId: string;
 };
 
 export const PostOptions = ({
-  isPostContent = false,
+  isModal = false,
   postId,
   postSaves,
   postUserId,
 }: PostOptionsProps) => {
-  const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
+  const [bottomSheetOpen, setBottomSheetOpen] = useState(false);
+  const breakpoint = useBreakpoint();
   const { deletingPost } = useAppSelector(
     (store) => store.posts.post.headerOptions
   );
 
-  const openBottomSheet = () => setIsBottomSheetOpen(true);
+  const isMobile = breakpoint === 'xs' || breakpoint === 'sm';
 
-  const closeBottomSheet = () => setIsBottomSheetOpen(false);
+  const openBottomSheet = () => setBottomSheetOpen(true);
+
+  const closeBottomSheet = () => setBottomSheetOpen(false);
 
   const closeBottomSheetAvailable = () => !deletingPost && closeBottomSheet();
 
   return (
-    <Drawer.Root open={isBottomSheetOpen} onClose={closeBottomSheetAvailable}>
+    <Drawer.Root open={bottomSheetOpen} onClose={closeBottomSheetAvailable}>
       <Drawer.Trigger asChild>
         <IconButton
-          className={classNames({
-            'hover:primary-bg -mt-1 size-9': !isPostContent,
-            'size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50':
-              isPostContent,
+          className={classNames('hover:primary-bg -mt-1 size-9', {
+            'size-10 bg-neutral-900/50 hover:bg-neutral-700/50':
+              isModal && isMobile,
           })}
           icon={{
-            className: classNames({
-              'secondary-fill size-full': !isPostContent,
-              'fill-white size-full': isPostContent,
+            className: classNames('secondary-fill size-full', {
+              '!fill-white': isModal && isMobile,
             }),
             Component: DotsHorizontalIcon,
             name: 'more-options',

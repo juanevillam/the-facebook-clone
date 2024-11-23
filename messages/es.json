@@ -195,7 +195,8 @@
           },
           "gif": {
             "detailed": "GIF",
-            "short": "GIF"
+            "short": "GIF",
+            "disabled-prod": "La selección de GIFs no está disponible<br></br>en producción"
           },
           "media": {
             "disabled": "Esto no se puede combinar con lo que ya has<br></br>agregado a tu publicación"
@@ -339,6 +340,12 @@
           "description": "Aquí puedes escribir un comentario en esta publicación agregando texto o un GIF.",
           "no-comments-yet": "Aún no hay comentarios"
         }
+      },
+      "likes": {
+        "bottom-sheet": {
+          "title": "Personas que reaccionaron",
+          "description": "Aquí puedes ver quién reaccionó a esta publicación."
+        }
       }
     }
   },
@@ -368,8 +375,7 @@
     "alert-triangle": "Ícono de alerta",
     "no-profile-pic": "Imagen de sin foto de perfil",
     "profile-pic": "Foto de perfil de {name}",
-    "thumb-up": "Ícono de pulgar arriba",
-    "powered-by-giphy": "Desarrollado por Giphy"
+    "thumb-up": "Ícono de pulgar arriba"
   },
   "toast-messages": {
     "error": {
@@ -416,7 +422,11 @@
     "enter-full-screen": "Entrar en pantalla completa",
     "exit-full-screen": "Salir de pantalla completa",
     "see-all-in-messenger": "Ver todos en Messenger",
-    "new-message": "Nuevo mensaje"
+    "new-message": "Nuevo mensaje",
+    "play": "Reproducir",
+    "pause": "Pausar",
+    "mute": "Silenciar",
+    "unmute": "Activar sonido"
   },
   "search-input": {
     "search": "Buscar",
@@ -448,5 +458,11 @@
   },
   "menu": {
     "title": "Menú"
+  },
+  "video-player": {
+    "seek": "Adelantar/retroceder",
+    "change-playback-rate": "Cambiar velocidad de reproducción",
+    "change-playback-rate-to": "Cambiar velocidad de reproducción a {rate}x",
+    "volume": "Volumen"
   }
 }

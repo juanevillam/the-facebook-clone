@@ -9,16 +9,18 @@ import {
 
 type PostFooterInfoProps = {
   handleDesktopCommentsOpen?: VoidFunction;
+  isModal?: boolean;
   isMyLike: (like: LikeExtended) => boolean;
-  isPostContent?: boolean;
+  openDesktopLikes?: VoidFunction;
   optimisticComments: CommentExtended[];
   optimisticLikes: LikeExtended[];
 };
 
 export const PostFooterInfo = ({
   handleDesktopCommentsOpen,
+  isModal,
   isMyLike,
-  isPostContent = false,
+  openDesktopLikes,
   optimisticComments,
   optimisticLikes,
 }: PostFooterInfoProps) => {
@@ -26,14 +28,18 @@ export const PostFooterInfo = ({
 
   return (
     <>
-      <div className="flex-center space-x-1.5">
+      <button
+        className="flex-center space-x-1.5"
+        onClick={openDesktopLikes && openDesktopLikes}
+        type="button"
+      >
         {optimisticLikes.length > 0 && (
           <>
             <ThumbUpImage className="size-4 md:size-5" />
             <p
-              className={classNames('text-sm', {
-                'secondary-text-dark': isPostContent,
-                'secondary-text': !isPostContent,
+              className={classNames('text-sm md:hover:underline', {
+                'secondary-text-dark md:secondary-text': isModal,
+                'secondary-text': !isModal,
               })}
             >
               {optimisticLikes.some(isMyLike) && t('likes.you')}
@@ -48,13 +54,13 @@ export const PostFooterInfo = ({
             </p>
           </>
         )}
-      </div>
+      </button>
       {optimisticComments.length > 0 && (
         <button onClick={handleDesktopCommentsOpen} type="button">
           <p
             className={classNames('text-sm md:hover:underline', {
-              'secondary-text-dark': isPostContent,
-              'secondary-text': !isPostContent,
+              'secondary-text-dark md:secondary-text': isModal,
+              'secondary-text': !isModal,
             })}
           >
             {`${optimisticComments.length} `}

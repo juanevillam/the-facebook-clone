@@ -10,8 +10,12 @@ export type IconButtonName =
   | 'enter-full-screen'
   | 'exit-full-screen'
   | 'more-options'
+  | 'mute'
   | 'new-message'
-  | 'see-all-in-messenger';
+  | 'play'
+  | 'pause'
+  | 'see-all-in-messenger'
+  | 'unmute';
 
 type IconButtonProps = {
   className: string;
