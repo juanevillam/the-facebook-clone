@@ -2,18 +2,17 @@
 
 import { useEffect, useState } from 'react';
 
-import classNames from 'classnames';
 import { useLocale, useTranslations } from 'next-intl';
 
 import { Tooltip } from '@/components';
 import { getRelativeTime } from '@/modules/posts/post/utils';
 
 type TimestampProps = {
+  className?: string;
   date: Date;
-  isPostContent?: boolean;
 };
 
-export const Timestamp = ({ date, isPostContent = false }: TimestampProps) => {
+export const Timestamp = ({ className, date }: TimestampProps) => {
   const locale = useLocale();
   const t = useTranslations('timestamp');
   const [relativeTime, setRelativeTime] = useState(
@@ -58,13 +57,7 @@ export const Timestamp = ({ date, isPostContent = false }: TimestampProps) => {
     <div className="-mt-1">
       <Tooltip label={fullDateTime} position="-bottom-9 left-28">
         <span
-          className={classNames(
-            'peer text-xs md:cursor-pointer md:hover:underline',
-            {
-              'secondary-text-dark md:secondary-text': isPostContent,
-              'secondary-text': !isPostContent,
-            }
-          )}
+          className={`secondary-text peer text-xs md:cursor-pointer md:hover:underline ${className}`}
         >
           {renderTimestamp()}
         </span>

@@ -14,24 +14,24 @@ import { LikeExtended } from '@/modules/posts/post/assets/types';
 import { PostFooterActionsItem } from './item/PostFooterActionsItem';
 
 type PostFooterActionsProps = {
-  areDesktopCommentsOpen: boolean;
-  areMobileCommentsOpen: boolean;
+  desktopCommentsOpen: boolean;
   handleDesktopCommentsOpen: VoidFunction;
   handleOptimisticLike: VoidFunction;
+  isModal: boolean;
   isMyLike: (like: LikeExtended) => boolean;
-  isPostContent: boolean;
+  mobileCommentsOpen: boolean;
   openMobileComments: VoidFunction;
   optimisticLikes: LikeExtended[];
   postId: string;
 };
 
 export const PostFooterActions = ({
-  areDesktopCommentsOpen,
-  areMobileCommentsOpen,
+  desktopCommentsOpen,
   handleDesktopCommentsOpen,
   handleOptimisticLike,
+  isModal,
   isMyLike,
-  isPostContent,
+  mobileCommentsOpen,
   openMobileComments,
   optimisticLikes,
   postId,
@@ -48,37 +48,37 @@ export const PostFooterActions = ({
       className={classNames(
         'primary-border flex md:space-x-1 md:border-y md:px-4 md:py-2.5',
         {
-          'primary-border-dark md:primary-border border-t': isPostContent,
+          'primary-border-dark md:primary-border border-t': isModal,
         }
       )}
     >
       <PostFooterActionsItem
         Icon={HandThumbUpIcon}
         isActive={optimisticLikes.some(isMyLike)}
-        isPostContent={isPostContent}
+        isModal={isModal}
         label="like"
         onClick={handleOptimisticLike}
       />
       <PostFooterActionsItem
         className="only-mobile"
         Icon={ChatBubbleOvalLeftIcon}
-        isActive={areMobileCommentsOpen}
-        isPostContent={isPostContent}
+        isActive={mobileCommentsOpen}
+        isModal={isModal}
         label="comment"
         onClick={openMobileComments}
       />
       <PostFooterActionsItem
         className="only-desktop"
         Icon={ChatBubbleOvalLeftIcon}
-        isActive={areDesktopCommentsOpen}
-        isPostContent={isPostContent}
+        isActive={desktopCommentsOpen}
+        isModal={isModal}
         label="comment"
         onClick={handleDesktopCommentsOpen}
       />
       <PostFooterActionsItem
         Icon={ShareIcon}
         isActive={false}
-        isPostContent={isPostContent}
+        isModal={isModal}
         label="share"
         onClick={handleShare}
       />

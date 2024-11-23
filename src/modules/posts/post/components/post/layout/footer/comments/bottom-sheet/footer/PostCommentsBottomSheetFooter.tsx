@@ -11,14 +11,14 @@ import { commentPost } from '@/modules/posts/post/actions';
 type PostCommentsBottomSheetFooterProps = {
   addOptimisticComment: (action: unknown) => void;
   postId: string;
-  setAreDesktopCommentsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  setDesktopCommentsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
   variant?: 'bottom-sheet' | 'post-footer';
 };
 
 export const PostCommentsBottomSheetFooter = ({
   addOptimisticComment,
   postId,
-  setAreDesktopCommentsOpen,
+  setDesktopCommentsOpen,
   variant = 'bottom-sheet',
 }: PostCommentsBottomSheetFooterProps) => {
   const [thoughts, setThoughts] = useState('');
@@ -32,7 +32,7 @@ export const PostCommentsBottomSheetFooter = ({
   const handleOptimisticComment = () => {
     const thoughtsCopy = thoughts;
 
-    setAreDesktopCommentsOpen && setAreDesktopCommentsOpen(true);
+    setDesktopCommentsOpen && setDesktopCommentsOpen(true);
     setThoughts('');
     startTransition(() => {
       addOptimisticComment(thoughtsCopy);

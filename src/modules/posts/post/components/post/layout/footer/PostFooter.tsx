@@ -14,6 +14,7 @@ import {
   CommentExtended,
   LikeExtended,
 } from '@/modules/posts/post/assets/types';
+import { PostVariant } from '@/modules/posts/post/types';
 
 import { PostFooterActions } from './actions/PostFooterActions';
 import {
@@ -25,23 +26,23 @@ import { PostFooterInfo } from './info/PostFooterInfo';
 import { PostLikesBottomSheet } from './likes';
 
 type PostFooterProps = {
-  isPage?: boolean;
-  isPostContent?: boolean;
   postComments: CommentExtended[];
   postLikes: LikeExtended[];
   postId: string;
+  variant: PostVariant;
 };
 
 export const PostFooter = ({
-  isPage = false,
-  isPostContent = false,
   postComments,
   postLikes,
   postId,
+  variant,
 }: PostFooterProps) => {
-  const [areDesktopCommentsOpen, setAreDesktopCommentsOpen] = useState(false);
-  const [areMobileCommentsOpen, setAreMobileCommentsOpen] = useState(false);
-  const [areDesktopLikesOpen, setAreDesktopLikesOpen] = useState(false);
+  const isModal = variant === 'modal';
+
+  const [mobileCommentsOpen, setMobileCommentsOpen] = useState(false);
+  const [desktopCommentsOpen, setDesktopCommentsOpen] = useState(false);
+  const [desktopLikesOpen, setDesktopLikesOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const t = useTranslations();
   const currentUser = useCurrentUser();
@@ -77,16 +78,16 @@ export const PostFooter = ({
     ]
   );
 
+  const openMobileComments = () => setMobileCommentsOpen(true);
+
+  const closeMobileComments = () => setMobileCommentsOpen(false);
+
   const handleDesktopCommentsOpen = () =>
-    setAreDesktopCommentsOpen(!areDesktopCommentsOpen);
+    setDesktopCommentsOpen(!desktopCommentsOpen);
 
-  const openMobileComments = () => setAreMobileCommentsOpen(true);
+  const openDesktopLikes = () => setDesktopLikesOpen(true);
 
-  const closeMobileComments = () => setAreMobileCommentsOpen(false);
-
-  const openDesktopLikes = () => setAreDesktopLikesOpen(true);
-
-  const closeDesktopLikes = () => setAreDesktopLikesOpen(false);
+  const closeDesktopLikes = () => setDesktopLikesOpen(false);
 
   const handleOptimisticLike = async () => {
     startTransition(() =>
@@ -101,43 +102,36 @@ export const PostFooter = ({
     }
   };
 
-  const renderMobileFooterInfo = () =>
-    (optimisticLikes.length > 0 || optimisticComments.length > 0) && (
-      <div
-        className={classNames(
-          'only-mobile flex-center-justify-between primary-transition w-full px-3 py-2',
-          {
-            'hover:bg-neutral-700 hover:bg-opacity-50': isPostContent,
-            'hover:primary-bg': !isPostContent,
-          }
-        )}
-        onClick={() => (isPage ? openDesktopLikes() : openMobileComments())}
-        onKeyPress={(e) =>
-          (e.key === 'Enter' || e.key === ' ') && isPage
-            ? openDesktopLikes()
-            : openMobileComments()
-        }
-        role="button"
-        tabIndex={0}
-      >
-        <PostFooterInfo
-          hideComments={isPage}
-          isMyLike={isMyLike}
-          isPostContent={isPostContent}
-          optimisticComments={optimisticComments}
-          optimisticLikes={optimisticLikes}
-        />
-      </div>
-    );
-
   return (
     <>
       {(optimisticLikes.length > 0 || optimisticComments.length > 0) && (
         <div className="md:px-4">
-          {!isPage && renderMobileFooterInfo()}
+          <div
+            className={classNames(
+              'only-mobile flex-center-justify-between primary-transition w-full px-3 py-2',
+              {
+                'hover:bg-neutral-700 hover:bg-opacity-50': isModal,
+                'hover:primary-bg': !isModal,
+              }
+            )}
+            onClick={openMobileComments}
+            onKeyPress={(e) =>
+              (e.key === 'Enter' || e.key === ' ') && openMobileComments()
+            }
+            role="button"
+            tabIndex={0}
+          >
+            <PostFooterInfo
+              isModal={isModal}
+              isMyLike={isMyLike}
+              optimisticComments={optimisticComments}
+              optimisticLikes={optimisticLikes}
+            />
+          </div>
           <div className="only-desktop center-justify-between w-full px-0 py-3">
             <PostFooterInfo
               handleDesktopCommentsOpen={handleDesktopCommentsOpen}
+              isModal={isModal}
               isMyLike={isMyLike}
               openDesktopLikes={openDesktopLikes}
               optimisticComments={optimisticComments}
@@ -147,18 +141,17 @@ export const PostFooter = ({
         </div>
       )}
       <PostFooterActions
-        areDesktopCommentsOpen={areDesktopCommentsOpen}
-        areMobileCommentsOpen={areMobileCommentsOpen}
+        desktopCommentsOpen={desktopCommentsOpen}
         handleDesktopCommentsOpen={handleDesktopCommentsOpen}
         handleOptimisticLike={handleOptimisticLike}
+        isModal={isModal}
         isMyLike={isMyLike}
-        isPostContent={isPostContent}
+        mobileCommentsOpen={mobileCommentsOpen}
         openMobileComments={openMobileComments}
         optimisticLikes={optimisticLikes}
         postId={postId}
       />
-      {isPage && renderMobileFooterInfo()}
-      {areDesktopCommentsOpen && (
+      {desktopCommentsOpen && (
         <div
           className={classNames(
             'only-desktop w-full border-l-4 border-primary-100',
@@ -171,15 +164,10 @@ export const PostFooter = ({
           <PostComments optimisticComments={optimisticComments} />
         </div>
       )}
-      {isPage && (
-        <div className="py-3">
-          <PostComments optimisticComments={optimisticComments} />
-        </div>
-      )}
       <div
         className={classNames('md:px-4', {
-          'w-full': isPostContent,
-          'primary-border border-t': areDesktopCommentsOpen,
+          'w-full': isModal,
+          'primary-border border-t': desktopCommentsOpen,
         })}
       >
         <div className="only-desktop space-x-2 pb-2 pt-4">
@@ -187,7 +175,7 @@ export const PostFooter = ({
           <PostCommentsBottomSheetFooter
             addOptimisticComment={addOptimisticComment}
             postId={postId}
-            setAreDesktopCommentsOpen={setAreDesktopCommentsOpen}
+            setDesktopCommentsOpen={setDesktopCommentsOpen}
             variant="post-footer"
           />
         </div>
@@ -195,7 +183,7 @@ export const PostFooter = ({
           {t('posts.post.footer.comments.press-enter-to-post')}
         </p>
       </div>
-      <Drawer.Root open={areMobileCommentsOpen} onClose={closeMobileComments}>
+      <Drawer.Root open={mobileCommentsOpen} onClose={closeMobileComments}>
         <PostCommentsBottomSheet
           addOptimisticComment={addOptimisticComment}
           handleOptimisticLike={handleOptimisticLike}
@@ -206,7 +194,7 @@ export const PostFooter = ({
           postId={postId}
         />
       </Drawer.Root>
-      <Drawer.Root open={areDesktopLikesOpen} onClose={closeDesktopLikes}>
+      <Drawer.Root open={desktopLikesOpen} onClose={closeDesktopLikes}>
         <PostLikesBottomSheet optimisticLikes={optimisticLikes} />
       </Drawer.Root>
     </>

@@ -7,7 +7,7 @@ import { Feeling } from '@/modules/posts/create/assets/types';
 type PostUserInfoProps = {
   feeling?: Feeling;
   hideFellingInfo?: boolean;
-  isPostContent?: boolean;
+  isModal?: boolean;
   location?: string;
   name: string;
 };
@@ -15,7 +15,7 @@ type PostUserInfoProps = {
 export const PostUserInfo = ({
   feeling,
   hideFellingInfo = false,
-  isPostContent = false,
+  isModal = false,
   location,
   name,
 }: PostUserInfoProps) => {
@@ -25,8 +25,8 @@ export const PostUserInfo = ({
     <p className="leading-tight">
       <span
         className={classNames('font-semibold', {
-          'primary-text-dark md:primary-text': isPostContent,
-          'primary-text': !isPostContent,
+          'primary-text-dark md:primary-text': isModal,
+          'primary-text': !isModal,
         })}
       >
         {name}
@@ -34,8 +34,8 @@ export const PostUserInfo = ({
       {(feeling || location) && (
         <span
           className={classNames({
-            'tertiary-text-dark md:tertiary-text': isPostContent,
-            'tertiary-text': !isPostContent,
+            'tertiary-text-dark md:tertiary-text': isModal,
+            'tertiary-text': !isModal,
           })}
         >
           &nbsp;{t('user-info.is')}
@@ -44,8 +44,8 @@ export const PostUserInfo = ({
       {feeling && (
         <span
           className={classNames({
-            'tertiary-text-dark md:tertiary-text': isPostContent,
-            'tertiary-text': !isPostContent,
+            'tertiary-text-dark md:tertiary-text': isModal,
+            'tertiary-text': !isModal,
           })}
         >
           {hideFellingInfo && (

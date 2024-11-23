@@ -39,7 +39,12 @@ export const Post = async ({
         postId={id}
         thoughts={thoughts as string}
       />
-      <PostFooter postComments={comments} postLikes={likes} postId={id} />
+      <PostFooter
+        postComments={comments}
+        postLikes={likes}
+        postId={id}
+        variant="page"
+      />
     </div>
   );
 };
