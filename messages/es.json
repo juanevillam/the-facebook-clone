@@ -349,6 +349,14 @@
       }
     }
   },
+  "stories": {
+    "create": {
+      "card": {
+        "title": "Crear una historia",
+        "subtitle": "Comparte una foto o escribe algo."
+      }
+    }
+  },
   "form": {
     "fields": {
       "email-address": "Dirección de correo electrónico",

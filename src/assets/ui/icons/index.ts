@@ -27,6 +27,7 @@ export { PencilIcon } from './PencilIcon';
 export { PencilSquareIcon } from './PencilSquareIcon';
 export { PhotoIcon } from './PhotoIcon';
 export { PlayIcon } from './PlayIcon';
+export { PlusIcon } from './PlusIcon';
 export { SearchIcon } from './SearchIcon';
 export { ShareIcon } from './ShareIcon';
 export { SpeakerWaveIcon } from './SpeakerWaveIcon';

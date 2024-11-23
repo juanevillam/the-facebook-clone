@@ -54,6 +54,10 @@ const pathnames = {
     en: '/profile',
     es: '/perfil',
   },
+  '/stories/create': {
+    en: '/stories/create',
+    es: '/historias/crear',
+  },
 } satisfies Pathnames<typeof locales>;
 
 const localePrefix = undefined;

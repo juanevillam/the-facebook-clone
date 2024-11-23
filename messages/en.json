@@ -348,6 +348,14 @@
       }
     }
   },
+  "stories": {
+    "create": {
+      "card": {
+        "title": "Create a story",
+        "subtitle": "Share a photo or write something."
+      }
+    }
+  },
   "form": {
     "fields": {
       "email-address": "Email address",
