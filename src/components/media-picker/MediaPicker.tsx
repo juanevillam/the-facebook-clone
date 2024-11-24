@@ -3,10 +3,14 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import { CloseIcon } from '@/assets/ui/icons';
-import { VideoPlayer } from '@/components';
+import { ActionLoader, VideoPlayer } from '@/components';
 import { IconButton } from '@/components/buttons';
 
 type MediaPickerProps = {
+  actionLoader?: {
+    className: string;
+    show: boolean;
+  };
   className?: string;
   file: string | null;
   fileInputRef: React.RefObject<HTMLInputElement>;
@@ -18,6 +22,7 @@ type MediaPickerProps = {
 };
 
 export const MediaPicker = ({
+  actionLoader,
   className,
   file,
   fileInputRef,
@@ -76,6 +81,13 @@ export const MediaPicker = ({
           onChange={onFileChange}
         />
       </div>
+      {actionLoader && (
+        <ActionLoader
+          className={actionLoader.className}
+          message="posting"
+          open={actionLoader.show}
+        />
+      )}
     </div>
   );
 };

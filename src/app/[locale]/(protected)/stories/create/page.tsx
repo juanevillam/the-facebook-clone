@@ -20,7 +20,9 @@ const CreateStoryPage = ({ params: { locale } }: PageProps) => {
         messages,
         'stories.create.page',
         'images',
+        'toast-messages',
         'icon-buttons',
+        'action-loader',
         'video-player'
       )}
     >

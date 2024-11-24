@@ -25,6 +25,7 @@ model User {
   likes                 Like[]
   comments              Comment[]
   savedPosts            SavedPost[]
+  Story                 Story[]
 
   @@map("users")
 }
@@ -144,5 +145,20 @@ model SavedPost {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([postId, userId])
+  @@index([userId])
+}
+
+model Story {
+  id          String    @id @default(cuid())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  media       String
+  mediaType   String
+  isPermanent Boolean   @default(false)
+  expiresAt   DateTime?
+  userId      String    @map("user_id")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@index([userId])
 }

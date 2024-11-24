@@ -367,7 +367,8 @@
             "detailed": "Crear una historia con foto",
             "short": "Foto"
           }
-        }
+        },
+        "button": "Publicar"
       }
     }
   },
@@ -425,7 +426,8 @@
       "failed-to-unlike-post": "Error al remover like",
       "failed-to-post-comment": "Error al agregar comentario",
       "unauthorized": "Sin autorización",
-      "failed-to-delete-comment": "Error al eliminar comentario"
+      "failed-to-delete-comment": "Error al eliminar comentario",
+      "failed-to-create-story": "Error al crear historia"
     },
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",
@@ -437,7 +439,8 @@
       "link-copied-to-clipboard": "Enlace copiado al portapapeles",
       "post-saved": "Publicación guardada",
       "post-unsaved": "Publicación elimininada de guardados",
-      "comment-deleted": "Comentario eliminado"
+      "comment-deleted": "Comentario eliminado",
+      "story-created": "Historia creada"
     }
   },
   "icon-buttons": {

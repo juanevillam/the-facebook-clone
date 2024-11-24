@@ -366,7 +366,8 @@
             "detailed": "Create a photo story",
             "short": "Photo"
           }
-        }
+        },
+        "button": "Post"
       }
     }
   },
@@ -424,7 +425,8 @@
       "failed-to-unlike-post": "Failed to unlike post",
       "failed-to-post-comment": "Failed to post comment",
       "unauthorized": "Unauthorized",
-      "failed-to-delete-comment": "Failed to delete comment"
+      "failed-to-delete-comment": "Failed to delete comment",
+      "failed-to-create-story": "Failed to create story"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",
@@ -436,7 +438,8 @@
       "link-copied-to-clipboard": "Link copied to clipboard",
       "post-saved": "Post saved",
       "post-unsaved": "Post unsaved",
-      "comment-deleted": "Comment deleted"
+      "comment-deleted": "Comment deleted",
+      "story-created": "Story created"
     }
   },
   "icon-buttons": {

@@ -23,7 +23,7 @@ export const CreatePostHeader = ({ Icon }: CreatePostHeaderProps) => {
   );
 
   return (
-    <div className="primary-border flex-center-justify-between border-b p-1.5 md:justify-center md:p-4">
+    <div className="flex-center-justify-between primary-border border-b p-1.5 md:justify-center md:p-4">
       <div className="flex-center space-x-1.5">
         <IconButton
           className={classNames(

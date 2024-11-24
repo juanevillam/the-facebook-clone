@@ -42,11 +42,7 @@ export const CreatePostDefaultStep = () => {
           <CreatePostDefaultStepButton />
         </div>
       </div>
-      <ActionLoader
-        className="md:rounded-lg"
-        message="posting"
-        open={posting}
-      />
+      <ActionLoader message="posting" open={posting} />
     </>
   );
 };
