@@ -7,16 +7,16 @@ const initialState: Media = {
   type: null,
 };
 
-const mediaSlice = createSlice({
-  name: 'media',
+const createStoriesMediaSlice = createSlice({
+  name: 'createStoriesMedia',
   initialState,
   reducers: {
-    setMedia(state, action: PayloadAction<Media>) {
+    setCreateStoryMedia(state, action: PayloadAction<Media>) {
       state.file = action.payload.file;
       state.type = action.payload.type;
     },
   },
 });
 
-export const { setMedia } = mediaSlice.actions;
-export default mediaSlice.reducer;
+export const { setCreateStoryMedia } = createStoriesMediaSlice.actions;
+export default createStoriesMediaSlice.reducer;

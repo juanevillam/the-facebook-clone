@@ -9,17 +9,23 @@ import { MediaPicker } from '@/components';
 import { useMedia } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
-import { setMedia } from '../../../reducers/mediaSlice';
+import { setCreateStoryMedia } from '../../../reducers/createStoriesMediaSlice';
+import { toggleCreateStoryPosting } from '../../../reducers/createStoriesStorySlice';
 
 export const CreateStoryPageBody = () => {
   const t = useTranslations('stories.create.page.body.photo');
   const dispatch = useAppDispatch();
-  const { file, type } = useAppSelector((store) => store.stories.create.media);
+  const { file, type } = useAppSelector(
+    (store) => store.stories.createStories.createStoriesMedia
+  );
 
   const onChangeMedia = (file: string, type: MediaType) =>
-    dispatch(setMedia({ file, type }));
+    dispatch(setCreateStoryMedia({ file, type }));
 
-  const removeMedia = () => dispatch(setMedia({ file: null, type: null }));
+  const removeMedia = () => {
+    dispatch(toggleCreateStoryPosting());
+    dispatch(setCreateStoryMedia({ file: null, type: null }));
+  };
 
   const { fileInputRef, handleFileChange, triggerFileInput } = useMedia(
     onChangeMedia,
