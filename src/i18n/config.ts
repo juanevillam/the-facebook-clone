@@ -34,9 +34,9 @@ const pathnames = {
     en: '/watch',
     es: '/ver',
   },
-  '/posts': {
-    en: '/posts',
-    es: '/posts',
+  '/posts/[id]': {
+    en: '/posts/[id]',
+    es: '/publicaciones/[id]',
   },
   '/messenger': {
     en: '/messenger',
