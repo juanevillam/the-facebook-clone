@@ -50,8 +50,10 @@ export const CreateStoryPageBody = () => {
         file={file}
         fileInputRef={fileInputRef}
         NoMediaComponent={
-          <div className="primary-transition flex h-44 w-full flex-col items-center justify-center space-y-1 rounded-md bg-gradient-to-b from-green-400 to-blue-500 text-center font-medium text-white hover:opacity-85 md:h-96 md:w-56 md:space-y-2 md:rounded-xl md:from-green-400/95 md:to-blue-500/95 md:font-semibold lg:w-60">
-            <PhotoIcon className="primary-text-light mx-auto size-11 rounded-full bg-white p-2 shadow-md md:size-10" />
+          <div className="primary-transition flex h-44 w-full flex-col items-center justify-center space-y-1 rounded-md bg-gradient-to-b from-green-400 to-blue-500 text-center font-medium text-white hover:opacity-85 md:h-96 md:w-60 md:space-y-2 md:rounded-xl md:from-green-400/95 md:to-blue-500/95 md:font-semibold">
+            <div className="mb-1 rounded-full bg-white p-2 shadow-md">
+              <PhotoIcon className="primary-text-light size-7 md:size-6" />
+            </div>
             <h1 className="only-desktop-block">{t('detailed')}</h1>
             <h1 className="only-mobile">{t('short')}</h1>
           </div>

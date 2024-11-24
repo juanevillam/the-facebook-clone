@@ -24,7 +24,7 @@ const CreateStoryPage = ({ params: { locale } }: PageProps) => {
         'video-player'
       )}
     >
-      <div className="card-bg flex h-screen flex-col md:h-[calc(100vh-57px)] md:flex-row md:bg-transparent">
+      <div className="card-bg primary-transition flex h-screen flex-col md:h-[calc(100vh-57px)] md:flex-row md:bg-transparent">
         <CreateStoryPageSidebar />
         <CreateStoryPageHeader />
         <CreateStoryPageBody />
