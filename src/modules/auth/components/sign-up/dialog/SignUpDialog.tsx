@@ -8,7 +8,7 @@ import { ArrowLeftIcon } from '@/assets/ui/icons';
 import { Button, IconButton } from '@/components/buttons';
 import { MobileDialog } from '@/components/mobile';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { toggleSignUpOpenable } from '@/lib/store/reducers/authReducer';
+import { toggleSignUpOpenable } from '@/modules/auth/reducers/authReducer';
 
 import { SignUpDialogForm } from './form/SignUpDialogForm';
 
@@ -16,7 +16,7 @@ export const SignUpDialog = () => {
   const [step, setStep] = useState(0);
   const t = useTranslations();
   const dispatch = useAppDispatch();
-  const { signUpOpenableOpen } = useAppSelector((store) => store.authReducer);
+  const { signUpOpenableOpen } = useAppSelector((store) => store.auth);
 
   const closeStep = () =>
     step === 0 ? dispatch(toggleSignUpOpenable()) : setStep(step - 1);
