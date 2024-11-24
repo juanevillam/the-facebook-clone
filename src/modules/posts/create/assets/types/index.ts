@@ -2,11 +2,6 @@ import { feelings } from '../feelings';
 
 type Step = 'default' | 'feelings' | 'media' | 'check-in' | 'gifs';
 
-type Media = {
-  file: string | null;
-  type: 'image' | 'video' | null;
-};
-
 type Feeling = (typeof feelings)[number];
 
 type Location = google.maps.places.AutocompletePrediction;
@@ -38,4 +33,4 @@ type CardItem = {
   onClick: VoidFunction;
 };
 
-export type { Step, Media, Feeling, Location, GIF, GIFUnparsed, CardItem };
+export type { Step, Feeling, Location, GIF, GIFUnparsed, CardItem };

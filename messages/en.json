@@ -361,14 +361,10 @@
         "header": {
           "title": "Create story"
         },
-        "options": {
+        "body": {
           "photo": {
             "detailed": "Create a photo story",
             "short": "Photo"
-          },
-          "text": {
-            "detailed": "Create a text story",
-            "short": "Text"
           }
         }
       }

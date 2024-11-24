@@ -4,7 +4,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@/assets/types';
 import {
-  CreateStoryPageCards,
+  CreateStoryPageBody,
   CreateStoryPageHeader,
   CreateStoryPageSidebar,
 } from '@/modules/stories/create/components/page';
@@ -15,20 +15,21 @@ const CreateStoryPage = ({ params: { locale } }: PageProps) => {
   const messages = useMessages();
 
   return (
-    <div className="card-bg h-screen md:flex md:h-[calc(100vh-57px)] md:bg-transparent">
-      <NextIntlClientProvider
-        messages={pick(
-          messages,
-          'stories.create.page',
-          'images',
-          'icon-buttons'
-        )}
-      >
+    <NextIntlClientProvider
+      messages={pick(
+        messages,
+        'stories.create.page',
+        'images',
+        'icon-buttons',
+        'video-player'
+      )}
+    >
+      <div className="card-bg flex h-screen flex-col md:h-[calc(100vh-57px)] md:flex-row md:bg-transparent">
         <CreateStoryPageSidebar />
         <CreateStoryPageHeader />
-        <CreateStoryPageCards />
-      </NextIntlClientProvider>
-    </div>
+        <CreateStoryPageBody />
+      </div>
+    </NextIntlClientProvider>
   );
 };
 

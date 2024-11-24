@@ -362,14 +362,10 @@
         "header": {
           "title": "Crear historia"
         },
-        "options": {
+        "body": {
           "photo": {
             "detailed": "Crear una historia con foto",
             "short": "Foto"
-          },
-          "text": {
-            "detailed": "Crear una historia con texto",
-            "short": "Texto"
           }
         }
       }

@@ -23,7 +23,8 @@ export const CreateStoryPageHeader = () => {
         }}
         onClick={navigateToHome}
       />
-      <h1 className="primary-text text-lg font-semibold">{t('title')}</h1>
+
+      <h1 className="primary-text text-lg md:font-semibold">{t('title')}</h1>
     </div>
   );
 };
