@@ -11,7 +11,7 @@ import { CardItem } from '../../assets/types';
 import {
   setCreatePostStep,
   toggleCreatePostOpenable,
-} from '../../reducers/steps/createPostPostReducer';
+} from '../../reducers/createPostPostReducer';
 import { CreatePostDialog } from '../dialog/CreatePostDialog';
 import { CreatePostModal } from '../modal/CreatePostModal';
 import {

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { setCreatePostThoughts } from '@/modules/posts/create/reducers/steps/createPostPostReducer';
+import { setCreatePostThoughts } from '@/modules/posts/create/reducers/createPostPostReducer';
 
 export const CreatePostDefaultStepTextArea = () => {
   const t = useTranslations('posts.create.layout');

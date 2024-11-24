@@ -4,6 +4,11 @@ import showToast from 'react-hot-toast';
 import { Button } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { createPost } from '@/modules/posts/create/actions';
+import {
+  setCreatePostThoughts,
+  toggleCreatePostOpenable,
+  toggleCreatePostPosting,
+} from '@/modules/posts/create/reducers/createPostPostReducer';
 import { setCreatePostCheckInStepActiveLocation } from '@/modules/posts/create/reducers/steps/createPostCheckInStepReducer';
 import { setCreatePostFeelingsStepActiveFeeling } from '@/modules/posts/create/reducers/steps/createPostFeelingsStepReducer';
 import {
@@ -12,11 +17,6 @@ import {
   setCreatePostGifsStepSearchInputValue,
 } from '@/modules/posts/create/reducers/steps/createPostGifsStepReducer';
 import { setCreatePostMediaStepMedia } from '@/modules/posts/create/reducers/steps/createPostMediaStepReducer';
-import {
-  setCreatePostThoughts,
-  toggleCreatePostOpenable,
-  toggleCreatePostPosting,
-} from '@/modules/posts/create/reducers/steps/createPostPostReducer';
 
 export const CreatePostDefaultStepButton = () => {
   const t = useTranslations();

@@ -14,12 +14,12 @@ import {
   CreatePostStepMessage,
 } from '../ui';
 import { CreatePostCheckInStepItem } from './item/CreatePostCheckInStepItem';
+import { setCreatePostStep } from '../../../reducers/createPostPostReducer';
 import {
   setCreatePostCheckInStepActiveLocation,
   setCreatePostCheckInStepSearchInputValue,
   setCreatePostCheckStepInLocations,
 } from '../../../reducers/steps/createPostCheckInStepReducer';
-import { setCreatePostStep } from '../../../reducers/steps/createPostPostReducer';
 
 export const CreatePostCheckInStep = () => {
   const autocompleteService =

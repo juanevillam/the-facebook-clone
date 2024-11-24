@@ -7,11 +7,11 @@ import { Feeling } from '@/modules/posts/create/assets/types';
 
 import { CreatePostStepContainer, CreatePostStepMessage } from '../ui';
 import { CreatePostFeelingsStepItem } from './item/CreatePostFeelingsStepItem';
+import { setCreatePostStep } from '../../../reducers/createPostPostReducer';
 import {
   setCreatePostFeelingsStepActiveFeeling,
   setCreatePostFeelingsStepSearchInputValue,
 } from '../../../reducers/steps/createPostFeelingsStepReducer';
-import { setCreatePostStep } from '../../../reducers/steps/createPostPostReducer';
 
 export const CreatePostFeelingsStep = () => {
   const t = useTranslations('posts.create.steps.feelings');

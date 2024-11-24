@@ -6,8 +6,8 @@ import { MediaPicker } from '@/components';
 import { useMedia } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
+import { setCreatePostStep } from '../../../reducers/createPostPostReducer';
 import { setCreatePostMediaStepMedia } from '../../../reducers/steps/createPostMediaStepReducer';
-import { setCreatePostStep } from '../../../reducers/steps/createPostPostReducer';
 import { CreatePostStepMessage } from '../ui';
 
 export const CreatePostMediaStep = () => {
