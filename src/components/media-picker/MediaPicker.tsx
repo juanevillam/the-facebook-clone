@@ -33,9 +33,9 @@ export const MediaPicker = ({
     <div className={classNames('relative h-full overflow-hidden', className)}>
       {file && (
         <IconButton
-          className="hover:secondary-bg absolute right-2 top-2 z-20 size-10"
+          className="absolute right-2 top-2 z-20 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
           icon={{
-            className: 'stroke-2 size-full',
+            className: 'stroke-2 stroke-white size-full',
             Component: CloseIcon,
             name: 'close',
           }}
