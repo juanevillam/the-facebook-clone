@@ -4,30 +4,36 @@ import { useTranslations } from 'next-intl';
 import { IS_PRODUCTION } from '@/constants/environment';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { CardItem } from '@/modules/posts/create/assets/types';
-import { setStep } from '@/modules/posts/create/reducers/postSlice';
+import { setCreatePostStep } from '@/modules/posts/create/reducers/steps/createPostPostReducer';
 
 import { CreatePostDefaultStepFooterItem } from './item/CreatePostDefaultStepFooterItem';
 
 export const CreatePostDefaultStepFooter = () => {
   const t = useTranslations();
   const dispatch = useAppDispatch();
-  const { file } = useAppSelector((store) => store.posts.create.media);
-  const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
+  const { file } = useAppSelector(
+    (store) => store.posts.createPost.createPostMediaStep
+  );
+
+  const { activeGif } = useAppSelector(
+    (store) => store.posts.createPost.createPostGifsStep
+  );
+
   const { activeFeeling } = useAppSelector(
-    (store) => store.posts.create.feelings
+    (store) => store.posts.createPost.createPostFeelingsStep
   );
 
   const { activeLocation } = useAppSelector(
-    (store) => store.posts.create.checkIn
+    (store) => store.posts.createPost.createPostCheckInStep
   );
 
-  const handleOpenMediaStep = () => dispatch(setStep('media'));
+  const handleOpenMediaStep = () => dispatch(setCreatePostStep('media'));
 
-  const handleOpenFeelingsStep = () => dispatch(setStep('feelings'));
+  const handleOpenFeelingsStep = () => dispatch(setCreatePostStep('feelings'));
 
-  const handleOpenCheckInStep = () => dispatch(setStep('check-in'));
+  const handleOpenCheckInStep = () => dispatch(setCreatePostStep('check-in'));
 
-  const handleOpenGifsStep = () => dispatch(setStep('gifs'));
+  const handleOpenGifsStep = () => dispatch(setCreatePostStep('gifs'));
 
   const cardItems: CardItem[] = [
     {

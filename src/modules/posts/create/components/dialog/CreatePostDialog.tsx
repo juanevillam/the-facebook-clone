@@ -15,7 +15,9 @@ export const CreatePostDialog = ({
   handleToggleOpenable,
   children,
 }: CreatePostDialogProps) => {
-  const { isOpenableOpen } = useAppSelector((store) => store.posts.create.post);
+  const { isOpenableOpen } = useAppSelector(
+    (store) => store.posts.createPost.createPostPost
+  );
 
   return (
     <MobileDialog

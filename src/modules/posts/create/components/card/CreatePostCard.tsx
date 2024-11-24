@@ -1,7 +1,5 @@
 'use client';
 
-import { useRef } from 'react';
-
 import { useTranslations } from 'next-intl';
 
 import { ProfilePic } from '@/components';
@@ -10,7 +8,10 @@ import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostCardItem } from './item/CreatePostCardItem';
 import { CardItem } from '../../assets/types';
-import { setStep, toggleOpenable } from '../../reducers/postSlice';
+import {
+  setCreatePostStep,
+  toggleCreatePostOpenable,
+} from '../../reducers/steps/createPostPostReducer';
 import { CreatePostDialog } from '../dialog/CreatePostDialog';
 import { CreatePostModal } from '../modal/CreatePostModal';
 import {
@@ -22,40 +23,48 @@ import {
 } from '../steps';
 
 export const CreatePostCard = () => {
-  const fileInputRef = useRef<HTMLInputElement>(null);
   const t = useTranslations();
   const dispatch = useAppDispatch();
   const { step, thoughts, posting } = useAppSelector(
-    (store) => store.posts.create.post
+    (store) => store.posts.createPost.createPostPost
   );
 
-  const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
-  const { file } = useAppSelector((store) => store.posts.create.media);
+  const { activeGif } = useAppSelector(
+    (store) => store.posts.createPost.createPostGifsStep
+  );
+
+  const { file } = useAppSelector(
+    (store) => store.posts.createPost.createPostMediaStep
+  );
+
   const { activeFeeling } = useAppSelector(
-    (store) => store.posts.create.feelings
+    (store) => store.posts.createPost.createPostFeelingsStep
   );
 
-  const handleToggleOpenable = () => !posting && dispatch(toggleOpenable());
+  const handleToggleOpenable = () =>
+    !posting && dispatch(toggleCreatePostOpenable());
 
   const handleStep = () =>
-    step === 'default' ? handleToggleOpenable() : dispatch(setStep('default'));
+    step === 'default'
+      ? handleToggleOpenable()
+      : dispatch(setCreatePostStep('default'));
 
   const handleOpenMediaStep = () => {
     if (!activeGif) {
       handleToggleOpenable();
-      dispatch(setStep('media'));
+      dispatch(setCreatePostStep('media'));
     }
   };
 
   const handleOpenFeelingsStep = () => {
     handleToggleOpenable();
-    dispatch(setStep('feelings'));
+    dispatch(setCreatePostStep('feelings'));
   };
 
   const handleOpenGifsStep = () => {
     if (!file) {
       handleToggleOpenable();
-      dispatch(setStep('gifs'));
+      dispatch(setCreatePostStep('gifs'));
     }
   };
 
@@ -82,7 +91,7 @@ export const CreatePostCard = () => {
   const renderStep = () => {
     switch (step) {
       case 'media':
-        return <CreatePostMediaStep fileInputRef={fileInputRef} />;
+        return <CreatePostMediaStep />;
       case 'feelings':
         return <CreatePostFeelingsStep />;
       case 'check-in':

@@ -5,15 +5,21 @@ import { CreatePostDefaultStepButton } from './button/CreatePostDefaultStepButto
 import { CreatePostDefaultStepFooter } from './footer/CreatePostDefaultStepFooter';
 import { CreatePostDefaultStepTextArea } from './text-area/CreatePostDefaultStepTextArea';
 import { CreatePostDefaultStepUserInfo } from './user-info/CreatePostDefaultStepUserInfo';
-import { setActiveGif } from '../../../reducers/gifsSlice';
+import { setCreatePostGifsStepActiveGif } from '../../../reducers/steps/createPostGifsStepReducer';
 import { CreatePostGifsStepItem } from '../gifs/item/CreatePostGifsStepItem';
 
 export const CreatePostDefaultStep = () => {
   const dispatch = useAppDispatch();
-  const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
-  const { posting } = useAppSelector((store) => store.posts.create.post);
+  const { activeGif } = useAppSelector(
+    (store) => store.posts.createPost.createPostGifsStep
+  );
 
-  const handleRemoveActiveGif = () => dispatch(setActiveGif(null));
+  const { posting } = useAppSelector(
+    (store) => store.posts.createPost.createPostPost
+  );
+
+  const handleRemoveActiveGif = () =>
+    dispatch(setCreatePostGifsStepActiveGif(null));
 
   return (
     <>

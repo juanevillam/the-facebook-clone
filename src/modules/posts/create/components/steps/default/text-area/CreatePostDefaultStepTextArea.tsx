@@ -2,16 +2,21 @@ import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { setThoughts } from '@/modules/posts/create/reducers/postSlice';
+import { setCreatePostThoughts } from '@/modules/posts/create/reducers/steps/createPostPostReducer';
 
 export const CreatePostDefaultStepTextArea = () => {
   const t = useTranslations('posts.create.layout');
   const dispatch = useAppDispatch();
-  const { thoughts } = useAppSelector((store) => store.posts.create.post);
-  const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
+  const { thoughts } = useAppSelector(
+    (store) => store.posts.createPost.createPostPost
+  );
+
+  const { activeGif } = useAppSelector(
+    (store) => store.posts.createPost.createPostGifsStep
+  );
 
   const handleSetThoughts = (event: React.ChangeEvent<HTMLTextAreaElement>) =>
-    dispatch(setThoughts(event.target.value));
+    dispatch(setCreatePostThoughts(event.target.value));
 
   return (
     <textarea

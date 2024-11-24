@@ -7,11 +7,11 @@ import { Feeling } from '@/modules/posts/create/assets/types';
 export const CreatePostDefaultStepUserInfo = () => {
   const currentUser = useCurrentUser();
   const { activeFeeling } = useAppSelector(
-    (store) => store.posts.create.feelings
+    (store) => store.posts.createPost.createPostFeelingsStep
   );
 
   const { activeLocation } = useAppSelector(
-    (store) => store.posts.create.checkIn
+    (store) => store.posts.createPost.createPostCheckInStep
   );
 
   return (

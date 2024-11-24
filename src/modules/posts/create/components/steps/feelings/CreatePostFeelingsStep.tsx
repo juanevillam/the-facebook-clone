@@ -4,34 +4,40 @@ import { InputEvent } from '@/assets/types';
 import { FaceFrowIcon } from '@/assets/ui/icons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { Feeling } from '@/modules/posts/create/assets/types';
-import {
-  setActiveFeeling,
-  setFeelingsSearchInputValue,
-} from '@/modules/posts/create/reducers/feelingsSlice';
-import { setStep } from '@/modules/posts/create/reducers/postSlice';
 
 import { CreatePostStepContainer, CreatePostStepMessage } from '../ui';
 import { CreatePostFeelingsStepItem } from './item/CreatePostFeelingsStepItem';
+import {
+  setCreatePostFeelingsStepActiveFeeling,
+  setCreatePostFeelingsStepSearchInputValue,
+} from '../../../reducers/steps/createPostFeelingsStepReducer';
+import { setCreatePostStep } from '../../../reducers/steps/createPostPostReducer';
 
 export const CreatePostFeelingsStep = () => {
   const t = useTranslations('posts.create.steps.feelings');
   const dispatch = useAppDispatch();
   const { feelings, searchInputValue, activeFeeling } = useAppSelector(
-    (store) => store.posts.create.feelings
+    (store) => store.posts.createPost.createPostFeelingsStep
   );
 
-  const handleClearSearch = () => dispatch(setFeelingsSearchInputValue(''));
+  const handleClearSearch = () =>
+    dispatch(setCreatePostFeelingsStepSearchInputValue(''));
 
   const handleSearchChange = (event: InputEvent) =>
-    dispatch(setFeelingsSearchInputValue(event.target.value));
+    dispatch(setCreatePostFeelingsStepSearchInputValue(event.target.value));
 
   const filteredFeelings = feelings.filter((item) =>
     item.toLowerCase().includes(searchInputValue.toLowerCase())
   );
 
   const handleSetActiveFeeling = (item: Feeling) => {
-    dispatch(setActiveFeeling(activeFeeling === item ? null : item));
-    dispatch(setStep('default'));
+    dispatch(
+      setCreatePostFeelingsStepActiveFeeling(
+        activeFeeling === item ? null : item
+      )
+    );
+
+    dispatch(setCreatePostStep('default'));
   };
 
   return (

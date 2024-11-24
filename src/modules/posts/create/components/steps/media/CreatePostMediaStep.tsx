@@ -5,22 +5,24 @@ import { PhotoIcon } from '@/assets/ui/icons';
 import { MediaPicker } from '@/components';
 import { useMedia } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { setMedia } from '@/modules/posts/create/reducers/mediaSlice';
-import { setStep } from '@/modules/posts/create/reducers/postSlice';
 
+import { setCreatePostMediaStepMedia } from '../../../reducers/steps/createPostMediaStepReducer';
+import { setCreatePostStep } from '../../../reducers/steps/createPostPostReducer';
 import { CreatePostStepMessage } from '../ui';
 
 export const CreatePostMediaStep = () => {
   const t = useTranslations('posts.create');
   const dispatch = useAppDispatch();
-  const { file, type } = useAppSelector((store) => store.posts.create.media);
+  const { file, type } = useAppSelector(
+    (store) => store.posts.createPost.createPostMediaStep
+  );
 
   const onChangeMedia = (file: string, type: MediaType) =>
-    dispatch(setMedia({ file, type }));
+    dispatch(setCreatePostMediaStepMedia({ file, type }));
 
   const removeMedia = () => {
-    dispatch(setMedia({ file: null, type: null }));
-    dispatch(setStep('default'));
+    dispatch(setCreatePostMediaStepMedia({ file: null, type: null }));
+    dispatch(setCreatePostStep('default'));
   };
 
   const { fileInputRef, handleFileChange, triggerFileInput } = useMedia(

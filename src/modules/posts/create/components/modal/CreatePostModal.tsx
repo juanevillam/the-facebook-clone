@@ -17,7 +17,7 @@ export const CreatePostModal = ({
   children,
 }: CreatePostModalProps) => {
   const { isOpenableOpen, step } = useAppSelector(
-    (store) => store.posts.create.post
+    (store) => store.posts.createPost.createPostPost
   );
 
   return (
