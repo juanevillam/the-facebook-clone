@@ -9,14 +9,14 @@ import { MediaPicker } from '@/components';
 import { useMedia } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
-import { setCreateStoryMedia } from '../../../reducers/createStoriesMediaSlice';
-import { toggleCreateStoryPosting } from '../../../reducers/createStoriesStorySlice';
+import { setCreateStoryMedia } from '../../../reducers/createStoryMediaSlice';
+import { toggleCreateStoryPosting } from '../../../reducers/createStoryStorySlice';
 
 export const CreateStoryPageBody = () => {
   const t = useTranslations('stories.create.page.body.photo');
   const dispatch = useAppDispatch();
   const { file, type } = useAppSelector(
-    (store) => store.stories.createStories.createStoriesMedia
+    (store) => store.stories.createStory.createStoriesMedia
   );
 
   const onChangeMedia = (file: string, type: MediaType) =>

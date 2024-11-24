@@ -1,9 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import createStoriesReducer from '../create/reducers/createStoriesReducer';
+import createStoryReducer from '../create/reducers/createStoryReducer';
 
 const storiesReducer = combineReducers({
-  createStories: createStoriesReducer,
+  createStory: createStoryReducer,
 });
 
 export default storiesReducer;

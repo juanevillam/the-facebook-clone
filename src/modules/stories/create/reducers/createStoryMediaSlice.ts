@@ -7,8 +7,8 @@ const initialState: Media = {
   type: null,
 };
 
-const createStoriesMediaSlice = createSlice({
-  name: 'createStoriesMedia',
+const createStoryMediaSlice = createSlice({
+  name: 'createStoryMedia',
   initialState,
   reducers: {
     setCreateStoryMedia(state, action: PayloadAction<Media>) {
@@ -18,5 +18,5 @@ const createStoriesMediaSlice = createSlice({
   },
 });
 
-export const { setCreateStoryMedia } = createStoriesMediaSlice.actions;
-export default createStoriesMediaSlice.reducer;
+export const { setCreateStoryMedia } = createStoryMediaSlice.actions;
+export default createStoryMediaSlice.reducer;
