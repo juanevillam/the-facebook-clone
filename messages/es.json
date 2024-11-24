@@ -397,7 +397,10 @@
     "alert-triangle": "Ícono de alerta",
     "no-profile-pic": "Imagen de sin foto de perfil",
     "profile-pic": "Foto de perfil de {name}",
-    "thumb-up": "Ícono de pulgar arriba"
+    "thumb-up": "Ícono de pulgar arriba",
+    "media-preview": "Vista previa del medio subido por el usuario",
+    "user-image": "Imagen subida por el usuario",
+    "user-gif": "GIF subido por el usuario"
   },
   "toast-messages": {
     "error": {

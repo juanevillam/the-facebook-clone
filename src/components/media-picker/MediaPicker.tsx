@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { CloseIcon } from '@/assets/ui/icons';
 import { VideoPlayer } from '@/components';
@@ -26,6 +27,8 @@ export const MediaPicker = ({
   triggerFileInput,
   type,
 }: MediaPickerProps) => {
+  const t = useTranslations('images');
+
   return (
     <div className={classNames('relative h-full overflow-hidden', className)}>
       {file && (
@@ -54,7 +57,7 @@ export const MediaPicker = ({
         {file ? (
           type === 'image' ? (
             <Image
-              alt="Media preview"
+              alt={t('media-preview')}
               className="object-contain"
               fill
               src={file}

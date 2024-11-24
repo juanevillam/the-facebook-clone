@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import classNames from 'classnames';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import {
   ArrowLeftIcon,
@@ -48,6 +49,7 @@ export const PostContent = ({
   } = post;
 
   const [fullScreen, setFullScreen] = useState(false);
+  const t = useTranslations('images');
   const router = useRouter();
 
   const handleFullScreen = () => setFullScreen(!fullScreen);
@@ -152,7 +154,7 @@ export const PostContent = ({
           </div>
           {mediaType === 'image' && (
             <Image
-              alt="Image"
+              alt={t('user-image')}
               className="size-full object-contain"
               height={0}
               priority
@@ -163,7 +165,7 @@ export const PostContent = ({
           )}
           {mediaType === 'gif' && (
             <Image
-              alt="GIF"
+              alt={t('user-gif')}
               className="size-full object-contain"
               height={0}
               priority

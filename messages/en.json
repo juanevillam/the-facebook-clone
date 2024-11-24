@@ -396,7 +396,10 @@
     "alert-triangle": "Alert icon",
     "no-profile-pic": "No profile pic image",
     "profile-pic": "{name}'s profile picture",
-    "thumb-up": "Thumb up icon"
+    "thumb-up": "Thumb up icon",
+    "media-preview": "User-uploaded media preview",
+    "user-image": "User-uploaded image",
+    "user-gif": "User-uploaded GIF"
   },
   "toast-messages": {
     "error": {
