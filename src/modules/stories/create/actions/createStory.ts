@@ -14,14 +14,10 @@ cloudinary.config({
 });
 
 type CreateStoryProps = {
-  isPermanent?: boolean;
   media: Media;
 };
 
-export const createStory = async ({
-  isPermanent = false,
-  media,
-}: CreateStoryProps) => {
+export const createStory = async ({ media }: CreateStoryProps) => {
   const session = await auth();
 
   if (!session) throw new Error('unauthorized');
@@ -39,16 +35,28 @@ export const createStory = async ({
   }
 
   try {
-    const expiresAt = isPermanent
-      ? null
-      : new Date(Date.now() + 24 * 60 * 60 * 1000);
+    let story = await db.story.findFirst({
+      where: { userId: session?.user?.id },
+    });
 
-    await db.story.create({
+    if (!story) {
+      story = await db.story.create({
+        data: {
+          user: {
+            connect: { id: session?.user?.id },
+          },
+        },
+      });
+    }
+
+    await db.storyItem.create({
       data: {
+        expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
         media: mediaUrl as string,
         mediaType: mediaType as string,
-        isPermanent,
-        expiresAt,
+        story: {
+          connect: { id: story.id },
+        },
         user: {
           connect: {
             id: session?.user?.id,

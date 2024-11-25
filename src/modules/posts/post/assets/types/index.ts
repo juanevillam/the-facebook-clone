@@ -4,6 +4,7 @@ import type {
   Post,
   SavedPost,
   Story,
+  StoryItem,
   User,
 } from '@prisma/client';
 
@@ -19,6 +20,7 @@ type PostExtended = Post & {
 };
 
 type StoryExtended = Story & {
+  items: StoryItem[];
   user: User;
 };
 

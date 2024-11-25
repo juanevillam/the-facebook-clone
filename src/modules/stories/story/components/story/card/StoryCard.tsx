@@ -10,17 +10,21 @@ import { useTranslations } from 'next-intl';
 import { ProfilePic, VideoPlayer } from '@/components';
 import { StoryExtended } from '@/modules/posts/post/assets/types';
 
-export const StoryCard = ({ media, mediaType, user }: StoryExtended) => {
+export const StoryCard = ({ items, user }: StoryExtended) => {
   const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
   const t = useTranslations('images');
 
+  const latestItem = items[items.length - 1];
+
   useEffect(() => {
-    const img = new window.Image();
+    if (latestItem.mediaType === 'image') {
+      const img = new window.Image();
 
-    img.src = media as string;
+      img.src = latestItem.media;
 
-    img.onload = () => setIsHorizontal(img.width > img.height);
-  }, [media]);
+      img.onload = () => setIsHorizontal(img.width > img.height);
+    }
+  }, [latestItem.media, latestItem.mediaType]);
 
   return (
     <button
@@ -32,8 +36,8 @@ export const StoryCard = ({ media, mediaType, user }: StoryExtended) => {
         image={user.image as string}
         name={user.name as string}
       />
-      {mediaType === 'video' ? (
-        <VideoPlayer showControls={false} url={media} />
+      {latestItem.mediaType === 'video' ? (
+        <VideoPlayer showControls={false} url={latestItem.media} />
       ) : isHorizontal !== null ? (
         <Image
           alt={t('story', {
@@ -46,7 +50,7 @@ export const StoryCard = ({ media, mediaType, user }: StoryExtended) => {
           fill
           sizes="100%"
           priority
-          src={media as string}
+          src={latestItem.media}
         />
       ) : (
         <Skeleton className="skeleton-bg size-full" variant="rectangular" />

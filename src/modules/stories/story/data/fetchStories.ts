@@ -9,6 +9,9 @@ export const fetchStories = async () => {
     const data = await db.story.findMany({
       include: {
         user: true,
+        items: {
+          orderBy: { createdAt: 'asc' },
+        },
       },
       orderBy: {
         createdAt: 'desc',
