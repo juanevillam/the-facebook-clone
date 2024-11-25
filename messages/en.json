@@ -352,7 +352,8 @@
     "create": {
       "card": {
         "title": "Create a story",
-        "subtitle": "Share a photo or write something."
+        "subtitle": "Share a photo or write something.",
+        "title-short": "Create story"
       },
       "page": {
         "sidebar": {
@@ -400,7 +401,8 @@
     "thumb-up": "Thumb up icon",
     "media-preview": "User-uploaded media preview",
     "user-image": "User-uploaded image",
-    "user-gif": "User-uploaded GIF"
+    "user-gif": "User-uploaded GIF",
+    "story": "{name}'s story"
   },
   "toast-messages": {
     "error": {

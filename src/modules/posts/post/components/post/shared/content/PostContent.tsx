@@ -179,7 +179,7 @@ export const PostContent = ({
         </div>
         <div
           className={classNames(
-            'md:card-bg absolute bottom-0 flex w-full flex-col bg-neutral-900 bg-opacity-50 md:static md:h-full md:bg-transparent',
+            'md:card-bg absolute bottom-0 flex w-full flex-col bg-neutral-900/50 md:static md:h-full md:bg-transparent',
             {
               'md:w-0': fullScreen,
               'md:w-96 md:min-w-96': !fullScreen,

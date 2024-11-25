@@ -353,7 +353,8 @@
     "create": {
       "card": {
         "title": "Crear una historia",
-        "subtitle": "Comparte una foto o escribe algo."
+        "subtitle": "Comparte una foto o escribe algo.",
+        "title-short": "Crear historia"
       },
       "page": {
         "sidebar": {
@@ -401,7 +402,8 @@
     "thumb-up": "Ícono de pulgar arriba",
     "media-preview": "Vista previa del medio subido por el usuario",
     "user-image": "Imagen subida por el usuario",
-    "user-gif": "GIF subido por el usuario"
+    "user-gif": "GIF subido por el usuario",
+    "story": "Historia de {name}"
   },
   "toast-messages": {
     "error": {

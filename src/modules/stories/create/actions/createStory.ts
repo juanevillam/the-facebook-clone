@@ -1,6 +1,7 @@
 'use server';
 
 import { v2 as cloudinary } from 'cloudinary';
+import { revalidatePath } from 'next/cache';
 
 import { Media } from '@/assets/types';
 import { auth } from '@/auth';
@@ -56,6 +57,7 @@ export const createStory = async ({
       },
     });
 
+    revalidatePath('/');
     return { message: 'story-created', type: 'success' };
   } catch (error) {
     throw new Error('failed-to-create-story');

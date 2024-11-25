@@ -7,7 +7,10 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import { PageProps } from '@/assets/types';
 import { CreatePostCard } from '@/modules/posts/create/components';
 import { Posts, PostsSkeleton } from '@/modules/posts/post/components/posts';
-import { CreateStoryCard } from '@/modules/stories/create/components';
+import {
+  Stories,
+  StoriesSkeleton,
+} from '@/modules/stories/story/components/stories';
 
 const ProtectedPage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
@@ -31,7 +34,9 @@ const ProtectedPage = ({ params: { locale } }: PageProps) => {
         )}
       >
         <CreatePostCard />
-        <CreateStoryCard />
+        <Suspense fallback={<StoriesSkeleton />}>
+          <Stories />
+        </Suspense>
         <Suspense fallback={<PostsSkeleton />}>
           <Posts />
         </Suspense>
