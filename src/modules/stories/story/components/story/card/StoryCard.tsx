@@ -9,8 +9,9 @@ import { useTranslations } from 'next-intl';
 
 import { ProfilePic, VideoPlayer } from '@/components';
 import { StoryExtended } from '@/modules/posts/post/assets/types';
+import { Link } from '@/navigation';
 
-export const StoryCard = ({ items, user }: StoryExtended) => {
+export const StoryCard = ({ id, items, user }: StoryExtended) => {
   const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
   const t = useTranslations('images');
 
@@ -27,9 +28,9 @@ export const StoryCard = ({ items, user }: StoryExtended) => {
   }, [latestItem.media, latestItem.mediaType]);
 
   return (
-    <button
+    <Link
       className="primary-transition group relative h-full min-w-28 overflow-hidden rounded-xl bg-black md:min-w-32"
-      type="button"
+      href={`/stories/${id}` as any}
     >
       <ProfilePic
         customClassName="primary-transition absolute left-3 top-3 z-20 shadow-xl ring-[3px] ring-primary-100"
@@ -56,6 +57,6 @@ export const StoryCard = ({ items, user }: StoryExtended) => {
         <Skeleton className="skeleton-bg size-full" variant="rectangular" />
       )}
       <div className="absolute inset-0 z-20 bg-black/15 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-    </button>
+    </Link>
   );
 };
