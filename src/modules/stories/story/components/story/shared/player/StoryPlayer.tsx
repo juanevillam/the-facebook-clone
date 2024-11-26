@@ -153,15 +153,9 @@ export const ImagePlayer = ({ items, onEnd, user }: ImagePlayerProps) => {
               />
             </div>
           )}
-          {currentIndex !== items.length - 1 && (
-            <div className="only-mobile absolute right-0 top-0 z-10 h-full w-1/2">
-              <button
-                className="size-full"
-                onClick={handleNext}
-                type="button"
-              />
-            </div>
-          )}
+          <div className="only-mobile absolute right-0 top-0 z-10 h-full w-1/2">
+            <button className="size-full" onClick={handleNext} type="button" />
+          </div>
           {isHorizontal !== null && (
             <Image
               alt={t('story-item', {
