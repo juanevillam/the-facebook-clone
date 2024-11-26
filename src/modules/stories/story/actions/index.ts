@@ -1,0 +1,1 @@
+export { markStoryAsViewed } from './markStoryAsViewed';

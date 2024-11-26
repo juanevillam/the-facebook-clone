@@ -403,7 +403,8 @@
     "media-preview": "Vista previa del medio subido por el usuario",
     "user-image": "Imagen subida por el usuario",
     "user-gif": "GIF subido por el usuario",
-    "story": "Historia de {name}"
+    "story": "Historia de {name}",
+    "story-item": "Historia #{index} de {name}"
   },
   "toast-messages": {
     "error": {

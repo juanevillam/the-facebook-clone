@@ -11,6 +11,7 @@ export { ChatBubbleLeftRightIcon } from './ChatBubbleLeftRightIcon';
 export { ChatBubbleOvalLeftEllipsisIcon } from './ChatBubbleOvalLeftEllipsisIcon';
 export { ChainBroken } from './ChainBroken';
 export { CloseIcon } from './CloseIcon';
+export { ChevronLeftIcon } from './ChevronLeftIcon';
 export { ChevronRightIcon } from './ChevronRightIcon';
 export { CogIcon } from './CogIcon';
 export { DotsHorizontalIcon } from './DotsHorizontalIcon';

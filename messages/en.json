@@ -402,7 +402,8 @@
     "media-preview": "User-uploaded media preview",
     "user-image": "User-uploaded image",
     "user-gif": "User-uploaded GIF",
-    "story": "{name}'s story"
+    "story": "{name}'s story",
+    "story-item": "{name}'s story item #{index}"
   },
   "toast-messages": {
     "error": {

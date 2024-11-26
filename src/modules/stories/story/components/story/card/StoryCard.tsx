@@ -33,7 +33,15 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
       href={`/stories/${id}` as any}
     >
       <ProfilePic
-        customClassName="primary-transition absolute left-3 top-3 z-20 shadow-xl ring-[3px] ring-primary-100"
+        customClassName={classNames(
+          'primary-transition absolute left-3 top-3 z-20 shadow-xl ring-[3px]',
+          {
+            'ring-primary-100':
+              items.filter((item) => item.viewed).length !== items.length,
+            'ring-white dark:ring-neutral-800':
+              items.filter((item) => item.viewed).length === items.length,
+          }
+        )}
         image={user.image as string}
         name={user.name as string}
       />
