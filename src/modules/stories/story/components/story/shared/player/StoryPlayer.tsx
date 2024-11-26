@@ -91,7 +91,7 @@ export const ImagePlayer = ({ items, onEnd, user }: ImagePlayerProps) => {
   }, [currentItem.media, currentItem.mediaType]);
 
   return (
-    <div className="flex w-full justify-center">
+    <div className="flex size-full justify-center">
       <div className="only-desktop w-60">
         {currentIndex !== 0 && (
           <button
