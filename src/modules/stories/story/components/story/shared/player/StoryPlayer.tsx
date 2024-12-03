@@ -8,8 +8,13 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { ChevronLeftIcon, ChevronRightIcon } from '@/assets/ui/icons';
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CloseIcon,
+} from '@/assets/ui/icons';
 import { ProfilePic } from '@/components';
+import { IconButton } from '@/components/buttons';
 import { useCurrentUser } from '@/hooks';
 import { StoryItemExtended } from '@/modules/posts/post/assets/types';
 import { markStoryItemAsViewed } from '@/modules/stories/story/actions';
@@ -18,7 +23,7 @@ import { Link } from '@/navigation';
 
 type StoryPlayerProps = {
   items: StoryItemExtended[];
-  onEnd: VoidFunction;
+  onEnd?: VoidFunction;
   user: User;
 };
 
@@ -45,7 +50,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
 
     currentIndex < items.length - 1
       ? setCurrentIndex((prev) => prev + 1)
-      : onEnd();
+      : onEnd && onEnd();
 
     setTimeout(() => (isNextCalled.current = false), 50);
   };
@@ -137,19 +142,32 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
                 </div>
               ))}
             </div>
-            <div className="flex-center space-x-2.5">
-              <ProfilePic
-                image={user.image as string}
-                name={user.name as string}
-              />
-              <Link href={`/${user.username}` as any}>
-                <h1 className="text-lg font-semibold text-white hover:underline">
-                  {user.name}
-                </h1>
-              </Link>
-              <p className="text-sm font-medium text-white">
-                {getStoryTimeAgo(currentItem.createdAt)}
-              </p>
+            <div className="flex-center-justify-between">
+              <div className="flex-center space-x-2.5">
+                <ProfilePic
+                  image={user.image as string}
+                  name={user.name as string}
+                />
+                <Link href={`/${user.username}` as any}>
+                  <h1 className="text-lg font-semibold text-white hover:underline">
+                    {user.name}
+                  </h1>
+                </Link>
+                <p className="text-sm font-medium text-white">
+                  {getStoryTimeAgo(currentItem.createdAt)}
+                </p>
+              </div>
+              {onEnd && (
+                <IconButton
+                  className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+                  icon={{
+                    className: 'stroke-2 stroke-white size-full',
+                    Component: CloseIcon,
+                    name: 'close',
+                  }}
+                  onClick={onEnd}
+                />
+              )}
             </div>
           </div>
           {currentIndex !== 0 && (

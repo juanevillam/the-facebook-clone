@@ -66,7 +66,7 @@ export const StoryContent = ({
       )}
       <StoryPlayer
         items={items}
-        onEnd={closeModal ? closeModal : () => {}}
+        onEnd={closeModal ? closeModal : undefined}
         user={user}
       />
     </div>

@@ -31,7 +31,7 @@ export const CreateStoryCard = ({ variant = 'card' }: CreateStoryCardProps) => {
     <div className="flex h-full">
       <div
         className={classNames({
-          'card md:p-2.5': variant === 'card',
+          'card w-full md:p-2.5': variant === 'card',
           'primary-bg md:card-bg primary-transition min-w-28 overflow-hidden rounded-xl md:min-w-32':
             variant === 'list',
         })}
