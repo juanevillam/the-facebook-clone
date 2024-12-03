@@ -9,15 +9,15 @@ import { PostExtended } from '../../../assets/types';
 import { PostContent } from '../shared';
 
 type PostModalProps = {
-  id: string;
   post: PostExtended;
 };
 
-export const PostModal = ({ id, post }: PostModalProps) => {
+export const PostModal = ({ post }: PostModalProps) => {
   const router = useRouter();
   const mount = useMount();
   const pathname = usePathname();
-  const isOpen = pathname === `/posts/${id}`;
+  const isOpen =
+    pathname.includes('posts') || pathname.includes('publicaciones');
 
   const closeModal = () => router.back();
 

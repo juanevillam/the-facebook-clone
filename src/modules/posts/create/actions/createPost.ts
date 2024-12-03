@@ -3,6 +3,7 @@
 import { v2 as cloudinary } from 'cloudinary';
 import { revalidatePath } from 'next/cache';
 
+import { Media } from '@/assets/types';
 import { auth } from '@/auth';
 import { db } from '@/lib/database';
 
@@ -16,7 +17,7 @@ cloudinary.config({
 
 type createPostProps = {
   thoughts: string | null;
-  media: { file: string | null; type: string | null };
+  media: Media;
   feeling: Feeling | null;
   location: string | undefined;
   gif: string | undefined;

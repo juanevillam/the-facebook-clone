@@ -28,9 +28,7 @@ export const PostOptions = ({
 }: PostOptionsProps) => {
   const [bottomSheetOpen, setBottomSheetOpen] = useState(false);
   const breakpoint = useBreakpoint();
-  const { deletingPost } = useAppSelector(
-    (store) => store.posts.post.headerOptions
-  );
+  const { deletingPost } = useAppSelector((store) => store.posts.postsPost);
 
   const isMobile = breakpoint === 'xs' || breakpoint === 'sm';
 

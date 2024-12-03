@@ -10,8 +10,8 @@ import * as z from 'zod';
 
 import { Button } from '@/components/buttons';
 import { useAppDispatch } from '@/lib/store/hooks';
-import { toggleSignUpOpenable } from '@/lib/store/reducers/authReducer';
 import { login } from '@/modules/auth/api';
+import { toggleSignUpOpenable } from '@/modules/auth/reducers/authReducer';
 import {
   loginFormSchema,
   loginFormValuesType,

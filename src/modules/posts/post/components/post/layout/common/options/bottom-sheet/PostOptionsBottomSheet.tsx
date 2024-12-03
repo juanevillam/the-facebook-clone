@@ -15,7 +15,7 @@ import { ActionLoader } from '@/components';
 import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { deletePost, savePost } from '@/modules/posts/post/actions';
-import { toggleDeletingPost } from '@/modules/posts/post/reducers/headerOptionsSlice';
+import { toggleDeletingPost } from '@/modules/posts/post/reducers/postReducer';
 import { usePathname, useRouter } from '@/navigation';
 
 import { PostOptionsBottomSheetItem } from './item/PostOptionsBottomSheetItem';
@@ -41,9 +41,7 @@ export const PostOptionsBottomSheet = ({
   const t = useTranslations();
   const currentUser = useCurrentUser();
   const dispatch = useAppDispatch();
-  const { deletingPost } = useAppSelector(
-    (store) => store.posts.post.headerOptions
-  );
+  const { deletingPost } = useAppSelector((store) => store.posts.postsPost);
 
   const isPostMine = currentUser?.id === postUserId;
   const isPostPage = pathname.includes('posts');

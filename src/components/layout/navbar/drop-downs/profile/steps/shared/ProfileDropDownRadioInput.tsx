@@ -19,7 +19,7 @@ export const ProfileDropDownRadioInput = ({
   const t = useTranslations(`navbar.drop-downs.profile.steps.options`);
 
   return (
-    <label className="hover:primary-bg primary-transition flex-center-justify-between primary-text cursor-pointer rounded-lg p-3 font-medium">
+    <label className="hover:primary-bg flex-center-justify-between primary-text cursor-pointer rounded-lg p-3 font-medium">
       {t(label)}
       <input
         className="sr-only"

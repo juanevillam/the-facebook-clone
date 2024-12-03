@@ -34,9 +34,9 @@ const pathnames = {
     en: '/watch',
     es: '/ver',
   },
-  '/posts': {
-    en: '/posts',
-    es: '/posts',
+  '/posts/[id]': {
+    en: '/posts/[id]',
+    es: '/publicaciones/[id]',
   },
   '/messenger': {
     en: '/messenger',
@@ -53,6 +53,10 @@ const pathnames = {
   '/profile': {
     en: '/profile',
     es: '/perfil',
+  },
+  '/stories/[id]': {
+    en: '/stories/[id]',
+    es: '/historias/[id]',
   },
 } satisfies Pathnames<typeof locales>;
 

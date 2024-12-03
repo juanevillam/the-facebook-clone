@@ -348,6 +348,30 @@
       }
     }
   },
+  "stories": {
+    "create": {
+      "card": {
+        "title": "Create a story",
+        "subtitle": "Share a photo or write something.",
+        "title-short": "Create story"
+      },
+      "layout": {
+        "sidebar": {
+          "title": "Your story"
+        },
+        "header": {
+          "title": "Create story"
+        },
+        "body": {
+          "photo": {
+            "detailed": "Create a photo story",
+            "short": "Photo"
+          }
+        },
+        "button": "Post"
+      }
+    }
+  },
   "form": {
     "fields": {
       "email-address": "Email address",
@@ -374,7 +398,12 @@
     "alert-triangle": "Alert icon",
     "no-profile-pic": "No profile pic image",
     "profile-pic": "{name}'s profile picture",
-    "thumb-up": "Thumb up icon"
+    "thumb-up": "Thumb up icon",
+    "media-preview": "User-uploaded media preview",
+    "user-image": "User-uploaded image",
+    "user-gif": "User-uploaded GIF",
+    "story": "{name}'s story",
+    "story-item": "{name}'s story item #{index}"
   },
   "toast-messages": {
     "error": {
@@ -399,7 +428,8 @@
       "failed-to-unlike-post": "Failed to unlike post",
       "failed-to-post-comment": "Failed to post comment",
       "unauthorized": "Unauthorized",
-      "failed-to-delete-comment": "Failed to delete comment"
+      "failed-to-delete-comment": "Failed to delete comment",
+      "failed-to-create-story": "Failed to create story"
     },
     "success": {
       "confirmation-email-sent": "Confirmation email sent",
@@ -411,7 +441,8 @@
       "link-copied-to-clipboard": "Link copied to clipboard",
       "post-saved": "Post saved",
       "post-unsaved": "Post unsaved",
-      "comment-deleted": "Comment deleted"
+      "comment-deleted": "Comment deleted",
+      "story-created": "Story created"
     }
   },
   "icon-buttons": {

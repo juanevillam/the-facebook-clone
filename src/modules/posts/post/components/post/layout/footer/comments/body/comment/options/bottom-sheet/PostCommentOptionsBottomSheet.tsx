@@ -7,7 +7,7 @@ import { ActionLoader } from '@/components';
 import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { deleteComment } from '@/modules/posts/post/actions';
-import { toggleDeletingComment } from '@/modules/posts/post/reducers/footerOptionsSlice';
+import { toggleDeletingComment } from '@/modules/posts/post/reducers/postReducer';
 
 import { PostCommentOptionsBottomSheetItem } from './item/PostCommentOptionsBottomSheetItem';
 
@@ -25,9 +25,7 @@ export const PostCommentOptionsBottomSheet = ({
   const t = useTranslations();
   const currentUser = useCurrentUser();
   const dispatch = useAppDispatch();
-  const { deletingComment } = useAppSelector(
-    (store) => store.posts.post.footerOptions
-  );
+  const { deletingComment } = useAppSelector((store) => store.posts.postsPost);
 
   const handleDeleteComment = async () => {
     dispatch(toggleDeletingComment());

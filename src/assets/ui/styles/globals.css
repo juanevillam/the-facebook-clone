@@ -40,9 +40,13 @@
     @apply bg-neutral-300 dark:bg-neutral-600;
   }
 
+  .skeleton-placeholder {
+    @apply bg-neutral-200/50 dark:bg-neutral-700/50;
+  }
+
   /* Border Utilities */
   .primary-border {
-    @apply border-gray-300 dark:border-neutral-700 md:border-gray-200;
+    @apply border-gray-300 md:border-gray-200 dark:border-neutral-700;
   }
 
   .primary-border-light {
@@ -59,7 +63,7 @@
 
   /* Divide Utilities */
   .primary-divide {
-    @apply divide-gray-300 dark:divide-neutral-700 md:divide-gray-200;
+    @apply divide-gray-300 md:divide-gray-200 dark:divide-neutral-700;
   }
 
   /* Fill Utilities */

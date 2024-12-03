@@ -2,6 +2,7 @@
 
 import classNames from 'classnames';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { VideoPlayer } from '@/components';
 import { Link } from '@/navigation';
@@ -19,6 +20,8 @@ export const PostBody = ({
   postId,
   thoughts,
 }: PostBodyProps) => {
+  const t = useTranslations('images');
+
   return (
     <>
       {thoughts && (
@@ -35,7 +38,7 @@ export const PostBody = ({
           {mediaType === 'image' && (
             <Link href={`/posts/${postId}` as any}>
               <Image
-                alt="Image"
+                alt={t('user-image')}
                 className="max-h-[600px] w-full object-contain"
                 height={0}
                 priority
@@ -48,7 +51,7 @@ export const PostBody = ({
           {mediaType === 'gif' && (
             <Link href={`/posts/${postId}` as any}>
               <Image
-                alt="GIF"
+                alt={t('user-gif')}
                 className="max-h-[600px] w-full object-contain"
                 height={0}
                 priority

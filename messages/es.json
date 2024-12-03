@@ -349,6 +349,30 @@
       }
     }
   },
+  "stories": {
+    "create": {
+      "card": {
+        "title": "Crear una historia",
+        "subtitle": "Comparte una foto o escribe algo.",
+        "title-short": "Crear historia"
+      },
+      "layout": {
+        "sidebar": {
+          "title": "Tu historia"
+        },
+        "header": {
+          "title": "Crear historia"
+        },
+        "body": {
+          "photo": {
+            "detailed": "Crear una historia con foto",
+            "short": "Foto"
+          }
+        },
+        "button": "Publicar"
+      }
+    }
+  },
   "form": {
     "fields": {
       "email-address": "Dirección de correo electrónico",
@@ -375,7 +399,12 @@
     "alert-triangle": "Ícono de alerta",
     "no-profile-pic": "Imagen de sin foto de perfil",
     "profile-pic": "Foto de perfil de {name}",
-    "thumb-up": "Ícono de pulgar arriba"
+    "thumb-up": "Ícono de pulgar arriba",
+    "media-preview": "Vista previa del medio subido por el usuario",
+    "user-image": "Imagen subida por el usuario",
+    "user-gif": "GIF subido por el usuario",
+    "story": "Historia de {name}",
+    "story-item": "Historia #{index} de {name}"
   },
   "toast-messages": {
     "error": {
@@ -400,7 +429,8 @@
       "failed-to-unlike-post": "Error al remover like",
       "failed-to-post-comment": "Error al agregar comentario",
       "unauthorized": "Sin autorización",
-      "failed-to-delete-comment": "Error al eliminar comentario"
+      "failed-to-delete-comment": "Error al eliminar comentario",
+      "failed-to-create-story": "Error al crear historia"
     },
     "success": {
       "confirmation-email-sent": "Correo electrónico de confirmación enviado",
@@ -412,7 +442,8 @@
       "link-copied-to-clipboard": "Enlace copiado al portapapeles",
       "post-saved": "Publicación guardada",
       "post-unsaved": "Publicación elimininada de guardados",
-      "comment-deleted": "Comentario eliminado"
+      "comment-deleted": "Comentario eliminado",
+      "story-created": "Historia creada"
     }
   },
   "icon-buttons": {

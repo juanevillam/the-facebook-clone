@@ -25,6 +25,9 @@ model User {
   likes                 Like[]
   comments              Comment[]
   savedPosts            SavedPost[]
+  stories               Story[]
+  storyItems            StoryItem[]
+  viewedStoryItems      StoryItemView[]        @relation("viewedStoryItems")
 
   @@map("users")
 }
@@ -145,4 +148,46 @@ model SavedPost {
 
   @@unique([postId, userId])
   @@index([userId])
+}
+
+model Story {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String   @map("user_id")
+
+  user  User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items StoryItem[] @relation("storyItems")
+
+  @@index([userId])
+}
+
+model StoryItem {
+  id        String    @id @default(cuid())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  media     String
+  mediaType String
+  expiresAt DateTime?
+  userId    String    @map("user_id")
+  storyId   String    @map("story_id")
+
+  user  User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  story Story           @relation("storyItems", fields: [storyId], references: [id], onDelete: Cascade)
+  views StoryItemView[] @relation("views")
+
+  @@index([userId])
+}
+
+model StoryItemView {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  userId      String   @map("user_id")
+  storyItemId String   @map("story_item_id")
+
+  user      User      @relation("viewedStoryItems", fields: [userId], references: [id], onDelete: Cascade)
+  storyItem StoryItem @relation("views", fields: [storyItemId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, storyItemId])
+  @@index([storyItemId])
 }

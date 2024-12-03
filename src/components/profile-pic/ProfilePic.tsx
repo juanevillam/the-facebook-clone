@@ -7,6 +7,7 @@ import { NoProfilePicImage } from '@/components/images';
 import { useCurrentUser } from '@/hooks';
 
 type ProfilePicProps = {
+  customClassName?: string;
   image?: string;
   name?: string;
   variant?: 'medium' | 'large';
@@ -24,6 +25,7 @@ const sizes = {
 };
 
 export const ProfilePic = ({
+  customClassName,
   image,
   name,
   variant = 'medium',
@@ -37,7 +39,7 @@ export const ProfilePic = ({
   return imagetoShow ? (
     <Image
       alt={t('profile-pic', { name: nametoShow || 'user' })}
-      className={`rounded-full ${className}`}
+      className={`rounded-full ${className} ${customClassName}`}
       height={size}
       loading="eager"
       src={imagetoShow}
@@ -45,6 +47,9 @@ export const ProfilePic = ({
       width={size}
     />
   ) : (
-    <NoProfilePicImage className={className} size={size} />
+    <NoProfilePicImage
+      className={`${className} ${customClassName}`}
+      size={size}
+    />
   );
 };
