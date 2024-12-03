@@ -1,6 +1,6 @@
 import { CreateStoryCard } from '@/modules/stories/create/components';
 
-import { fetchStories } from '../../data';
+import { fetchStories } from '../../services/storiesService';
 import { StoryCard } from '../story';
 
 export const Stories = async () => {

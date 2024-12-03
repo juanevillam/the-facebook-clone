@@ -6,7 +6,7 @@ import { useMount } from '@/hooks';
 import { StoryExtended } from '@/modules/posts/post/assets/types';
 import { usePathname, useRouter } from '@/navigation';
 
-import { StoryContent } from '../shared';
+import { StoryContent } from '../StoryContent';
 
 type StoryModalProps = {
   story: StoryExtended;

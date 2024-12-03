@@ -9,7 +9,7 @@ import { StoryExtended } from '@/modules/posts/post/assets/types';
 import { StoryVariant } from '@/modules/stories/story/types';
 import { Link, useRouter } from '@/navigation';
 
-import { StoryPlayer } from './StoryPlayer';
+import { StoryPlayer } from './player/StoryPlayer';
 
 type StoryContentProps = {
   closeModal?: VoidFunction;

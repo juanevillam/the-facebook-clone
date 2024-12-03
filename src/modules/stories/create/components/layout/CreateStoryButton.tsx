@@ -6,11 +6,11 @@ import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { useRouter } from '@/navigation';
 
 import { createStory } from '../../actions';
-import { setCreateStoryMedia } from '../../reducers/createStoryMediaSlice';
+import { setCreateStoryMedia } from '../../reducers/createStoryMediaReducer';
 import {
   toggleCreateStoryOpenable,
   toggleCreateStoryPosting,
-} from '../../reducers/createStoryStorySlice';
+} from '../../reducers/createStoryStoryReducer';
 
 export const CreateStoryButton = () => {
   const t = useTranslations();

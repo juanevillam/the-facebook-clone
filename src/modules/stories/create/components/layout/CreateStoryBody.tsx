@@ -9,7 +9,7 @@ import { MediaPicker } from '@/components';
 import { useMedia } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
-import { setCreateStoryMedia } from '../../reducers/createStoryMediaSlice';
+import { setCreateStoryMedia } from '../../reducers/createStoryMediaReducer';
 
 export const CreateStoryBody = () => {
   const t = useTranslations('stories.create.layout.body.photo');

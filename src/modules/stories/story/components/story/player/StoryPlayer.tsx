@@ -14,8 +14,9 @@ import { IconButton } from '@/components/buttons';
 import { useCurrentUser } from '@/hooks';
 import { StoryItemExtended } from '@/modules/posts/post/assets/types';
 import { markStoryItemAsViewed } from '@/modules/stories/story/actions';
-import { getStoryTimeAgo } from '@/modules/stories/story/utils';
 import { Link } from '@/navigation';
+
+import { getStoryTimeAgo } from './helpers/getStoryTimeAgo';
 
 type StoryPlayerProps = {
   items: StoryItemExtended[];

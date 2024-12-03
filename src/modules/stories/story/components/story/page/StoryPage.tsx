@@ -2,7 +2,7 @@
 
 import { StoryExtended } from '@/modules/posts/post/assets/types';
 
-import { StoryContent } from '../shared';
+import { StoryContent } from '../StoryContent';
 
 type StoryPageProps = {
   story: StoryExtended;

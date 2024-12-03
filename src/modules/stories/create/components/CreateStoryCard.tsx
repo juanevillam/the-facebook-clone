@@ -10,7 +10,7 @@ import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
 import { CreateStoryDialog } from './CreateStoryDialog';
 import { CreateStoryModal } from './CreateStoryModal';
-import { toggleCreateStoryOpenable } from '../reducers/createStoryStorySlice';
+import { toggleCreateStoryOpenable } from '../reducers/createStoryStoryReducer';
 
 type CreateStoryCardProps = {
   variant?: 'card' | 'list';

@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { StoryPageWrapper } from '@/modules/stories/story/components/story/page';
-import { fetchStory } from '@/modules/stories/story/data';
+import { fetchStory } from '@/modules/stories/story/services/storiesService';
 
 type StoryPageProps = {
   params: {
