@@ -4,7 +4,7 @@ import { Drawer } from 'vaul';
 
 import { ChevronRightIcon, HandThumbUpIcon } from '@/assets/icons';
 import { ThumbUpImage } from '@/components/images';
-import { LikeExtended } from '@/modules/posts/post/assets/types';
+import { LikeExtended } from '@/modules/posts/post/types';
 
 import { PostLikesBottomSheet } from '../../likes';
 

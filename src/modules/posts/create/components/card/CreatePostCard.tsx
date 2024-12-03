@@ -6,7 +6,6 @@ import { ProfilePic } from '@/components';
 import { IS_PRODUCTION } from '@/constants/environment';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
-import { CardItem } from '../../assets/types';
 import {
   setCreatePostStep,
   toggleCreatePostOpenable,
@@ -19,6 +18,7 @@ import {
   CreatePostMediaStep,
 } from '../steps';
 import { CreatePostCardItem } from './CreatePostCardItem';
+import { CardItem } from '../../types';
 import { CreatePostDialog } from '../CreatePostDialog';
 import { CreatePostModal } from '../CreatePostModal';
 

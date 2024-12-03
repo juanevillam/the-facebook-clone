@@ -3,7 +3,7 @@
 import { Backdrop, Fade, Modal } from '@mui/material';
 
 import { useMount } from '@/hooks';
-import { StoryExtended } from '@/modules/posts/post/assets/types';
+import { StoryExtended } from '@/modules/posts/post/types';
 import { usePathname, useRouter } from '@/navigation';
 
 import { StoryContent } from '../StoryContent';

@@ -1,6 +1,6 @@
 import { Backdrop, Fade, Modal, Skeleton } from '@mui/material';
 
-import { PostSkeletonHeader } from '@/modules/posts/post/components/post/layout/common/skeleton';
+import { PostSkeletonHeader } from '@/modules/posts/post/components/post/layout/shared/skeleton';
 
 export const StoryModalSkeleton = () => {
   return (

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { ArrowLeftIcon, CloseIcon } from '@/assets/icons';
 import { FacebookLogoMark } from '@/assets/icons/brand';
 import { IconButton } from '@/components/buttons';
-import { StoryExtended } from '@/modules/posts/post/assets/types';
+import { StoryExtended } from '@/modules/posts/post/types';
 import { StoryVariant } from '@/modules/stories/story/types';
 import { Link, useRouter } from '@/navigation';
 

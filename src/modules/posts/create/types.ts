@@ -1,4 +1,4 @@
-import { feelings } from '../feelings';
+import { feelings } from './assets/feelings';
 
 type Step = 'default' | 'feelings' | 'media' | 'check-in' | 'gifs';
 

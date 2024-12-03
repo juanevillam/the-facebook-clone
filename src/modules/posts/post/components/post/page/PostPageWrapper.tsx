@@ -1,7 +1,7 @@
 import { pick } from 'lodash';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 
-import { PostExtended } from '@/modules/posts/post/assets/types';
+import { PostExtended } from '@/modules/posts/post/types';
 
 import { PostPage } from './PostPage';
 

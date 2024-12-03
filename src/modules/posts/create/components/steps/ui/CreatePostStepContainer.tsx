@@ -1,7 +1,7 @@
 import { InputEvent } from '@/assets/types';
 import { SearchInput } from '@/components';
 import { SearchInputLabel } from '@/components/SearchInput';
-import { Feeling, Location } from '@/modules/posts/create/assets/types';
+import { Feeling, Location } from '@/modules/posts/create/types';
 
 type CreatePostStepContainerProps = {
   activeItem?: {

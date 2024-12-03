@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { FaceFrowIcon } from '@/assets/icons';
 import { InputEvent } from '@/assets/types';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { Feeling } from '@/modules/posts/create/assets/types';
+import { Feeling } from '@/modules/posts/create/types';
 
 import { CreatePostStepContainer, CreatePostStepMessage } from '../ui';
 import { CreatePostFeelingsStepItem } from './CreatePostFeelingsStepItem';

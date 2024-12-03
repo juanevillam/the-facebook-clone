@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Tooltip } from '@/components';
 import { IS_PRODUCTION } from '@/constants/environment';
 import { useAppSelector } from '@/lib/store/hooks';
-import { CardItem } from '@/modules/posts/create/assets/types';
+import { CardItem } from '@/modules/posts/create/types';
 
 export const CreatePostDefaultStepFooterItem = ({
   active,

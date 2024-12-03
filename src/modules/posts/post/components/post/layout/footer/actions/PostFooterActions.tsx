@@ -9,7 +9,7 @@ import {
   HandThumbUpIcon,
   ShareIcon,
 } from '@/assets/icons';
-import { LikeExtended } from '@/modules/posts/post/assets/types';
+import { LikeExtended } from '@/modules/posts/post/types';
 
 import { PostFooterActionsItem } from './PostFooterActionsItem';
 

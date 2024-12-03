@@ -14,7 +14,7 @@ import {
   CommentExtended,
   LikeExtended,
   PostVariant,
-} from '@/modules/posts/post/assets/types';
+} from '@/modules/posts/post/types';
 
 import { PostFooterActions } from './actions/PostFooterActions';
 import {

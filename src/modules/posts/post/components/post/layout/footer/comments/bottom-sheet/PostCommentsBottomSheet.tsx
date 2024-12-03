@@ -1,10 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Drawer } from 'vaul';
 
-import {
-  CommentExtended,
-  LikeExtended,
-} from '@/modules/posts/post/assets/types';
+import { CommentExtended, LikeExtended } from '@/modules/posts/post/types';
 
 import { PostComments } from '../PostComments';
 import { PostCommentsBottomSheetFooter } from './PostCommentsBottomSheetFooter';

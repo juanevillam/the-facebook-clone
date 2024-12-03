@@ -12,7 +12,7 @@ import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '@/assets/icons';
 import { ProfilePic } from '@/components';
 import { IconButton } from '@/components/buttons';
 import { useCurrentUser } from '@/hooks';
-import { StoryItemExtended } from '@/modules/posts/post/assets/types';
+import { StoryItemExtended } from '@/modules/posts/post/types';
 import { markStoryItemAsViewed } from '@/modules/stories/story/actions';
 import { Link } from '@/navigation';
 

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { CloseIcon } from '@/assets/icons';
 import { IconButton } from '@/components/buttons';
-import { GIF } from '@/modules/posts/create/assets/types';
+import { GIF } from '@/modules/posts/create/types';
 
 type CreatePostGifsItemProps = {
   active?: boolean;

@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PostModalWrapper } from '@/modules/posts/post/components/post/modal';
-import { fetchPost } from '@/modules/posts/post/data';
+import { fetchPost } from '@/modules/posts/post/services/postsService';
 
 type PostModalPageProps = {
   params: {

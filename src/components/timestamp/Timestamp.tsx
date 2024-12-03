@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 
 import { Tooltip } from '@/components';
-import { getRelativeTime } from '@/modules/posts/post/utils';
+
+import { getRelativeTime } from './helpers/getRelativeTime';
 
 type TimestampProps = {
   className?: string;

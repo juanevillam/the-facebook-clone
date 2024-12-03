@@ -5,8 +5,8 @@ import { Backdrop, Fade, Modal } from '@mui/material';
 import { useMount } from '@/hooks';
 import { usePathname, useRouter } from '@/navigation';
 
-import { PostExtended } from '../../../assets/types';
-import { PostContent } from '../shared';
+import { PostExtended } from '../../../types';
+import { PostContent } from '../PostContent';
 
 type PostModalProps = {
   post: PostExtended;

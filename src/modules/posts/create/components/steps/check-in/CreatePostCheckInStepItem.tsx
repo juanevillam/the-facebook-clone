@@ -1,4 +1,4 @@
-import { Location } from '@/modules/posts/create/assets/types';
+import { Location } from '@/modules/posts/create/types';
 
 import { CreatePostStepItem } from '../ui';
 

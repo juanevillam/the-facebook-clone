@@ -1,6 +1,6 @@
 'use client';
 
-import { StoryExtended } from '@/modules/posts/post/assets/types';
+import { StoryExtended } from '@/modules/posts/post/types';
 
 import { StoryContent } from '../StoryContent';
 

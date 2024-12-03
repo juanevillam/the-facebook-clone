@@ -2,10 +2,7 @@ import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
 import { ThumbUpImage } from '@/components/images';
-import {
-  CommentExtended,
-  LikeExtended,
-} from '@/modules/posts/post/assets/types';
+import { CommentExtended, LikeExtended } from '@/modules/posts/post/types';
 
 type PostFooterInfoProps = {
   handleDesktopCommentsOpen?: VoidFunction;

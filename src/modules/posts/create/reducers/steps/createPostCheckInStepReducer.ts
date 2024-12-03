@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { Location } from '../../assets/types';
+import { Location } from '../../types';
 
 type CreatePostCheckInStepState = {
   activeLocation: Location | null;

@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Drawer } from 'vaul';
 
-import { LikeExtended } from '@/modules/posts/post/assets/types';
+import { LikeExtended } from '@/modules/posts/post/types';
 
 import { PostLikesBottomSheetBody } from './PostLikesBottomSheetBody';
 import { PostLikesBottomSheetHeader } from './PostLikesBottomSheetHeader';

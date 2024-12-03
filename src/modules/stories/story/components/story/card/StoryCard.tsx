@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
 
 import { ProfilePic, VideoPlayer } from '@/components';
 import { useCurrentUser } from '@/hooks';
-import { StoryExtended } from '@/modules/posts/post/assets/types';
+import { StoryExtended } from '@/modules/posts/post/types';
 import { Link } from '@/navigation';
 
 export const StoryCard = ({ id, items, user }: StoryExtended) => {

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { feelings } from '../../assets/feelings';
-import { Feeling } from '../../assets/types';
+import { Feeling } from '../../types';
 
 type CreatePostFeelingsStepState = {
   activeFeeling: Feeling | null;

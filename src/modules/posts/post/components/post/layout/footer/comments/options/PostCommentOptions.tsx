@@ -8,7 +8,7 @@ import { DotsHorizontalIcon } from '@/assets/icons';
 import { IconButton } from '@/components/buttons';
 import { useAppSelector } from '@/lib/store/hooks';
 
-import { PostCommentOptionsBottomSheet } from './bottom-sheet/PostCommentOptionsBottomSheet';
+import { PostCommentOptionsBottomSheet } from './PostCommentOptionsBottomSheet';
 
 type PostCommentOptionsProps = {
   commentId: string;

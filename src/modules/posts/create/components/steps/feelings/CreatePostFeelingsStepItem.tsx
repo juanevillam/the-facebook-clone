@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { Feeling } from '@/modules/posts/create/assets/types';
+import { Feeling } from '@/modules/posts/create/types';
 
 import { CreatePostStepItem } from '../ui';
 

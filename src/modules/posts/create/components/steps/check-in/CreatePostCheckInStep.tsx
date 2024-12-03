@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import { ExclamationCircleIcon, MapIcon } from '@/assets/icons';
 import { InputEvent } from '@/assets/types';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { Location } from '@/modules/posts/create/assets/types';
+import { Location } from '@/modules/posts/create/types';
 
 import {
   CreatePostStepContainer,

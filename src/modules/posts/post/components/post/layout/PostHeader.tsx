@@ -3,10 +3,10 @@ import classNames from 'classnames';
 
 import { ProfilePic, Timestamp } from '@/components';
 import { PostUserInfo } from '@/modules/posts/components';
-import { Feeling } from '@/modules/posts/create/assets/types';
-import { PostVariant } from '@/modules/posts/post/assets/types';
+import { Feeling } from '@/modules/posts/create/types';
+import { PostVariant } from '@/modules/posts/post/types';
 
-import { PostOptions } from './common';
+import { PostOptions } from './shared';
 
 type PostHeaderProps = {
   createdAt: Date;

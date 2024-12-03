@@ -1,8 +1,8 @@
 import { auth } from '@/auth';
-import { Feeling } from '@/modules/posts/create/assets/types';
+import { Feeling } from '@/modules/posts/create/types';
 
 import { PostBody, PostFooter, PostHeader } from './layout';
-import { PostExtended } from '../../assets/types';
+import { PostExtended } from '../../types';
 
 export const Post = async ({
   comments,

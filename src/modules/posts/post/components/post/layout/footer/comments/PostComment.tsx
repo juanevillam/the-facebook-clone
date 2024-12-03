@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 
 import { ProfilePic, Timestamp } from '@/components';
 import { useCurrentUser } from '@/hooks';
-import { CommentExtended } from '@/modules/posts/post/assets/types';
+import { CommentExtended } from '@/modules/posts/post/types';
 import { Link } from '@/navigation';
 
 import { PostCommentOptions } from './options/PostCommentOptions';

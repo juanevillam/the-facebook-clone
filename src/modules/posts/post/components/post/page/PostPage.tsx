@@ -1,7 +1,7 @@
 'use client';
 
-import { PostExtended } from '../../../assets/types';
-import { PostContent } from '../shared';
+import { PostExtended } from '../../../types';
+import { PostContent } from '../PostContent';
 
 type PostPageProps = {
   post: PostExtended;

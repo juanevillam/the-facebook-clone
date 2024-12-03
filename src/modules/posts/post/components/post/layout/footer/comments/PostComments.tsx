@@ -1,10 +1,9 @@
-import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
 import { ChatBubbleLeftRightIcon } from '@/assets/icons';
-import { CommentExtended } from '@/modules/posts/post/assets/types';
+import { CommentExtended } from '@/modules/posts/post/types';
 
-import { PostComment } from './body/PostComment';
+import { PostComment } from './PostComment';
 
 type PostCommentsProps = {
   optimisticComments: CommentExtended[];

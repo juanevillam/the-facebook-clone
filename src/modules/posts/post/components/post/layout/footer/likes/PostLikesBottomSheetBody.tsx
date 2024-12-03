@@ -1,5 +1,5 @@
 import { ProfilePic } from '@/components';
-import { LikeExtended } from '@/modules/posts/post/assets/types';
+import { LikeExtended } from '@/modules/posts/post/types';
 import { Link } from '@/navigation';
 
 type PostLikesBottomSheetBodyProps = {

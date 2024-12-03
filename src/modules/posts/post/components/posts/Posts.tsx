@@ -1,4 +1,4 @@
-import { fetchPosts } from '../../data';
+import { fetchPosts } from '../../services/postsService';
 import { Post } from '../post';
 
 export const Posts = async () => {

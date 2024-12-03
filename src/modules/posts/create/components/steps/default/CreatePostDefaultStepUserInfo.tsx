@@ -2,7 +2,7 @@ import { ProfilePic } from '@/components';
 import { useCurrentUser } from '@/hooks';
 import { useAppSelector } from '@/lib/store/hooks';
 import { PostUserInfo } from '@/modules/posts/components';
-import { Feeling } from '@/modules/posts/create/assets/types';
+import { Feeling } from '@/modules/posts/create/types';
 
 export const CreatePostDefaultStepUserInfo = () => {
   const currentUser = useCurrentUser();

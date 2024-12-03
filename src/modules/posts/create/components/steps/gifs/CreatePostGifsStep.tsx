@@ -7,7 +7,7 @@ import { ExclamationCircleIcon, GifIcon } from '@/assets/icons';
 import { InputEvent } from '@/assets/types';
 import { Button } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { GIF, GIFUnparsed } from '@/modules/posts/create/assets/types';
+import { GIF, GIFUnparsed } from '@/modules/posts/create/types';
 
 import {
   CreatePostStepContainer,

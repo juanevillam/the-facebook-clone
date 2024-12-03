@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { Step } from '../assets/types';
+import { Step } from '../types';
 
 type CreatePostPostState = {
   isOpenableOpen: boolean;

@@ -6,6 +6,6 @@ export { NextThemeProvider } from './NextThemeProvider';
 export { ProfilePic } from './ProfilePic';
 export { SearchInput } from './SearchInput';
 export { SuspenseLoader } from './SuspenseLoader';
-export { Timestamp } from './Timestamp';
+export { Timestamp } from './timestamp/Timestamp';
 export { Tooltip } from './Tooltip';
 export { VideoPlayer } from './video-player/VideoPlayer';

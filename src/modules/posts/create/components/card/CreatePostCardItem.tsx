@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { CardItem } from '../../assets/types';
+import { CardItem } from '../../types';
 
 export const CreatePostCardItem = ({
   active,

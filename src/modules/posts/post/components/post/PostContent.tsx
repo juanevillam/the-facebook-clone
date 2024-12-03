@@ -15,12 +15,12 @@ import {
 import { FacebookLogoMark } from '@/assets/icons/brand';
 import { VideoPlayer } from '@/components';
 import { IconButton } from '@/components/buttons';
-import { Feeling } from '@/modules/posts/create/assets/types';
-import { PostExtended, PostVariant } from '@/modules/posts/post/assets/types';
+import { Feeling } from '@/modules/posts/create/types';
+import { PostExtended, PostVariant } from '@/modules/posts/post/types';
 import { Link, useRouter } from '@/navigation';
 
-import { PostBody, PostFooter, PostHeader } from '../layout';
-import { PostOptions } from '../layout/common';
+import { PostBody, PostFooter, PostHeader } from './layout';
+import { PostOptions } from './layout/shared';
 
 type PostContentProps = {
   closeModal?: VoidFunction;
