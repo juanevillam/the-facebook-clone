@@ -13,11 +13,11 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-type CreateStoryProps = {
+type createStoryProps = {
   media: Media;
 };
 
-export const createStory = async ({ media }: CreateStoryProps) => {
+export const createStory = async ({ media }: createStoryProps) => {
   const session = await auth();
 
   if (!session) throw new Error('unauthorized');

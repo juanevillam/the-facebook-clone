@@ -3,32 +3,35 @@
 import { useState, useEffect, useRef } from 'react';
 
 import LinearProgress from '@mui/material/LinearProgress';
-import { StoryItem, User } from '@prisma/client';
+import { User } from '@prisma/client';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@/assets/ui/icons';
 import { ProfilePic } from '@/components';
-import { markStoryAsViewed } from '@/modules/stories/story/actions';
+import { useCurrentUser } from '@/hooks';
+import { StoryItemExtended } from '@/modules/posts/post/assets/types';
+import { markStoryItemAsViewed } from '@/modules/stories/story/actions';
 import { getStoryTimeAgo } from '@/modules/stories/story/utils';
 import { Link } from '@/navigation';
 
-type ImagePlayerProps = {
-  items: StoryItem[];
+type StoryPlayerProps = {
+  items: StoryItemExtended[];
   onEnd: VoidFunction;
   user: User;
 };
 
 const STORY_DURATION = 6;
 
-export const ImagePlayer = ({ items, onEnd, user }: ImagePlayerProps) => {
+export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const isNextCalled = useRef(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
   const t = useTranslations('images');
+  const currentUser = useCurrentUser();
 
   const currentItem = items[currentIndex];
 
@@ -74,11 +77,16 @@ export const ImagePlayer = ({ items, onEnd, user }: ImagePlayerProps) => {
   }, [currentIndex]);
 
   useEffect(() => {
-    const markAsViewed = async () =>
-      !currentItem.viewed && (await markStoryAsViewed(currentItem.id));
+    const markAsViewed = async () => {
+      const hasUserViewed = currentItem.views.some(
+        (view) => view.userId === currentUser?.id
+      );
+
+      if (!hasUserViewed) await markStoryItemAsViewed(currentItem.id);
+    };
 
     markAsViewed();
-  }, [currentItem]);
+  }, [currentItem.id, currentItem.views, currentUser?.id]);
 
   useEffect(() => {
     if (currentItem.mediaType === 'image') {

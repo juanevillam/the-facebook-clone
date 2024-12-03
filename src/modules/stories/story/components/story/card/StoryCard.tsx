@@ -8,38 +8,50 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import { ProfilePic, VideoPlayer } from '@/components';
+import { useCurrentUser } from '@/hooks';
 import { StoryExtended } from '@/modules/posts/post/assets/types';
 import { Link } from '@/navigation';
 
 export const StoryCard = ({ id, items, user }: StoryExtended) => {
   const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
+  const [allViewed, setAllViewed] = useState(false);
   const t = useTranslations('images');
+  const currentUser = useCurrentUser();
 
   const latestItem = items[items.length - 1];
 
   useEffect(() => {
     if (latestItem.mediaType === 'image') {
       const img = new window.Image();
-
       img.src = latestItem.media;
-
       img.onload = () => setIsHorizontal(img.width > img.height);
     }
   }, [latestItem.media, latestItem.mediaType]);
 
+  useEffect(() => {
+    const hasViewedAll = items.every((item) =>
+      item.views.some((view) => view.userId === currentUser?.id)
+    );
+
+    setAllViewed(hasViewedAll);
+  }, [currentUser?.id, items]);
+
   return (
     <Link
-      className="primary-transition group relative h-full min-w-28 overflow-hidden rounded-xl bg-black md:min-w-32"
+      className={classNames(
+        'primary-transition group relative h-full min-w-28 overflow-hidden rounded-xl bg-black md:min-w-32',
+        {
+          'opacity-70': allViewed,
+        }
+      )}
       href={`/stories/${id}` as any}
     >
       <ProfilePic
         customClassName={classNames(
           'primary-transition absolute left-3 top-3 z-20 shadow-xl ring-[3px]',
           {
-            'ring-primary-100':
-              items.filter((item) => item.viewed).length !== items.length,
-            'ring-white dark:ring-neutral-800':
-              items.filter((item) => item.viewed).length === items.length,
+            'ring-primary-100': !allViewed,
+            'ring-white dark:ring-neutral-800': allViewed,
           }
         )}
         image={user.image as string}

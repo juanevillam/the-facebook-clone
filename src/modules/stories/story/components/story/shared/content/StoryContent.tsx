@@ -9,7 +9,7 @@ import { StoryExtended } from '@/modules/posts/post/assets/types';
 import { StoryVariant } from '@/modules/stories/story/types';
 import { Link, useRouter } from '@/navigation';
 
-import { ImagePlayer } from '../player/StoryPlayer';
+import { StoryPlayer } from '../player/StoryPlayer';
 
 type StoryContentProps = {
   closeModal?: VoidFunction;
@@ -64,7 +64,7 @@ export const StoryContent = ({
           </Link>
         </div>
       )}
-      <ImagePlayer
+      <StoryPlayer
         items={items}
         onEnd={closeModal ? closeModal : () => {}}
         user={user}

@@ -20,6 +20,9 @@ export const fetchStory = async (storyId: string) => {
               gt: now,
             },
           },
+          include: {
+            views: true,
+          },
           orderBy: { createdAt: 'asc' },
         },
       },

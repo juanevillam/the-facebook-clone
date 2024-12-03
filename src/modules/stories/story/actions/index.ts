@@ -1,1 +1,1 @@
-export { markStoryAsViewed } from './markStoryAsViewed';
+export { markStoryItemAsViewed } from './markStoryItemAsViewed';
