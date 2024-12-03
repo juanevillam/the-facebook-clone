@@ -7,10 +7,8 @@ type PostPageProps = {
   post: PostExtended;
 };
 
-export const PostPage = ({ post }: PostPageProps) => {
-  return (
-    <div className="card-bg md:h-[calc(100vh-57px)]">
-      <PostContent post={post} variant="page" />
-    </div>
-  );
-};
+export const PostPage = ({ post }: PostPageProps) => (
+  <div className="card-bg md:h-[calc(100vh-57px)]">
+    <PostContent post={post} variant="page" />
+  </div>
+);

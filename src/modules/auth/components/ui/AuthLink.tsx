@@ -5,13 +5,11 @@ type AuthLinkProps = {
   navigateTo: '/' | 'auth' | 'auth/forgot-password';
 };
 
-export const AuthLink = ({ label, navigateTo }: AuthLinkProps) => {
-  return (
-    <Link
-      className="text-sm font-semibold text-primary-100 hover:text-primary-200 hover:underline"
-      href={`/${navigateTo}` as any}
-    >
-      {label}
-    </Link>
-  );
-};
+export const AuthLink = ({ label, navigateTo }: AuthLinkProps) => (
+  <Link
+    className="text-sm font-semibold text-primary-100 hover:text-primary-200 hover:underline"
+    href={`/${navigateTo}` as any}
+  >
+    {label}
+  </Link>
+);
