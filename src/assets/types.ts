@@ -11,6 +11,13 @@ type PageProps = {
   };
 };
 
+type DynamicPageProps = {
+  params: {
+    id: string;
+    locale: string;
+  };
+};
+
 type ImageType = {
   alt: string;
   src: string;
@@ -34,6 +41,7 @@ type Media = {
 export type {
   LayoutProps,
   PageProps,
+  DynamicPageProps,
   ImageType,
   FileInputRef,
   SharedSvg,
