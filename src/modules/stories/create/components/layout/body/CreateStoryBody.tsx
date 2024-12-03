@@ -44,6 +44,7 @@ export const CreateStoryBody = () => {
       )}
     >
       <MediaPicker
+        accept="image/*"
         actionLoader={{
           className: 'md:absolute',
           show: posting,

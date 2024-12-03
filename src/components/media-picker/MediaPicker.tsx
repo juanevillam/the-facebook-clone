@@ -7,6 +7,7 @@ import { ActionLoader, VideoPlayer } from '@/components';
 import { IconButton } from '@/components/buttons';
 
 type MediaPickerProps = {
+  accept?: 'image/*' | 'image/*,video/*';
   actionLoader?: {
     className: string;
     show: boolean;
@@ -22,6 +23,7 @@ type MediaPickerProps = {
 };
 
 export const MediaPicker = ({
+  accept = 'image/*,video/*',
   actionLoader,
   className,
   file,
@@ -75,7 +77,7 @@ export const MediaPicker = ({
         )}
         <input
           type="file"
-          accept="image/*,video/*"
+          accept={accept}
           hidden
           ref={fileInputRef}
           onChange={onFileChange}
