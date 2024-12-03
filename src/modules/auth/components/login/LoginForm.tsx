@@ -127,14 +127,16 @@ export const LoginForm = () => {
             />
           </div>
           <hr className="hidden w-full md:mb-4 md:block" />
-          <Button
-            disabled={isPending}
-            label={t('auth.login.form.secondary-button')}
-            onClick={handleToggleSignUpOpenable}
-            type="button"
-            size="md"
-            variant="secondary"
-          />
+          <div className="mx-auto w-max">
+            <Button
+              disabled={isPending}
+              label={t('auth.login.form.secondary-button')}
+              onClick={handleToggleSignUpOpenable}
+              type="button"
+              size="md"
+              variant="secondary"
+            />
+          </div>
         </Form>
       </Formik>
     </div>

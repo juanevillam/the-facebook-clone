@@ -65,7 +65,11 @@
       }
     },
     "social": {
-      "label": "o continuar con"
+      "label": "o continuar con",
+      "buttons": {
+        "google": "Iniciar sesión con Google",
+        "github": "Iniciar sesión con GitHub"
+      }
     },
     "error": {
       "title": "Error",
@@ -447,17 +451,33 @@
     }
   },
   "icon-buttons": {
-    "close": "Cerrar",
-    "back": "Atrás",
-    "more-options": "Más opciones",
-    "enter-full-screen": "Entrar en pantalla completa",
-    "exit-full-screen": "Salir de pantalla completa",
-    "see-all-in-messenger": "Ver todos en Messenger",
-    "new-message": "Nuevo mensaje",
-    "play": "Reproducir",
-    "pause": "Pausar",
-    "mute": "Silenciar",
-    "unmute": "Activar sonido"
+    "back-to-login": "Volver al inicio de sesión",
+    "clear-search": "Limpiar búsqueda",
+    "clear-value": "Limpiar valor",
+    "close-create-post": "Cerrar creación de publicación",
+    "close-create-story": "Cerrar creación de historia",
+    "close-post": "Cerrar publicación",
+    "close-post-likes-menu": "Cerrar menú de me gusta de la publicación",
+    "close-profile-dropdown-display-accessibility-menu": "Cerrar menú de accesibilidad del perfil",
+    "close-profile-dropdown-settings-menu": "Cerrar menú de configuración del perfil",
+    "close-story": "Cerrar historia",
+    "close-story-player": "Cerrar reproductor de historias",
+    "collapse-post": "Colapsar publicación",
+    "compose-new-message": "Escribir nuevo mensaje",
+    "expand-post": "Expandir publicación",
+    "go-back": "Regresar",
+    "go-back-to-home": "Regresar al inicio",
+    "mute-video": "Silenciar video",
+    "open-comment-options-menu": "Abrir menú de opciones de comentarios",
+    "open-notification-dropdown-options-menu": "Abrir menú de opciones de notificaciones",
+    "open-post-options-menu": "Abrir menú de opciones de publicación",
+    "pause-video": "Pausar video",
+    "play-video": "Reproducir video",
+    "remove-gif": "Eliminar GIF",
+    "remove-media": "Eliminar contenido multimedia",
+    "see-all-in-messenger": "Ver todo en Messenger",
+    "unmute-video": "Activar sonido del video",
+    "unselect-item": "Deseleccionar elemento"
   },
   "search-input": {
     "search": "Buscar",

@@ -36,9 +36,9 @@ export const CreatePostModal = ({
       <Fade in={isOpenableOpen}>
         <div className="card absolute left-1/2 top-1/2 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 transform outline-none">
           <CreatePostHeader
-            Icon={{
+            icon={{
+              ariaLabel: step === 'default' ? 'close-create-post' : 'go-back',
               Component: step === 'default' ? CloseIcon : ArrowLeftIcon,
-              name: step === 'default' ? 'close' : 'back',
               onClick: handleStep,
             }}
           />

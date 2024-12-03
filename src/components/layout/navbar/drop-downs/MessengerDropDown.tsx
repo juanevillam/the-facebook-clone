@@ -39,18 +39,18 @@ export const MessengerDropDown = ({
           <DropDownHeaderIcon
             leftPosition="-left-9"
             icon={{
+              ariaLabel: 'see-all-in-messenger',
               className: 'secondary-stroke secondary-fill size-full',
               Component: ArrowsPointingOutIcon,
-              name: 'see-all-in-messenger',
             }}
             onClick={() => {}}
           />
           <DropDownHeaderIcon
             leftPosition="-left-4"
             icon={{
+              ariaLabel: 'compose-new-message',
               className: 'secondary-fill size-full',
               Component: PencilSquareIcon,
-              name: 'new-message',
             }}
             onClick={() => {}}
           />

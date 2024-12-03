@@ -13,9 +13,9 @@ export const PostLikesBottomSheetHeader = () => {
         <IconButton
           className="hover:secondary-bg size-10"
           icon={{
+            ariaLabel: 'close-post-likes-menu',
             className: 'stroke-[2.5] primary-stroke size-full',
             Component: ArrowLeftIcon,
-            name: 'back',
           }}
         />
       </Drawer.Close>

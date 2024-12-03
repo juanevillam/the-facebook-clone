@@ -31,9 +31,9 @@ export const PostCommentOptions = ({ commentId }: PostCommentOptionsProps) => {
         <IconButton
           className="hover:primary-bg -mt-1 size-9"
           icon={{
+            ariaLabel: 'open-comment-options-menu',
             className: 'secondary-fill size-full',
             Component: DotsHorizontalIcon,
-            name: 'more-options',
           }}
           onClick={openBottomSheet}
         />

@@ -26,9 +26,9 @@ export const CreateStoryHeader = ({
         <IconButton
           className="hover:primary-bg size-10"
           icon={{
+            ariaLabel: 'close-create-story',
             className: 'stroke-[2.5] primary-stroke size-full',
             Component: ArrowLeftIcon,
-            name: 'back',
           }}
           onClick={handleToggleOpenable}
         />

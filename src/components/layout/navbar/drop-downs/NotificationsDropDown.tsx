@@ -14,9 +14,9 @@ export const NotificationsDropDown = () => {
         <DropDownHeaderIcon
           leftPosition="-left-4"
           icon={{
+            ariaLabel: 'open-notification-dropdown-options-menu',
             className: 'secondary-stroke secondary-fill size-full',
             Component: DotsHorizontalIcon,
-            name: 'more-options',
           }}
           onClick={() => {}}
         />

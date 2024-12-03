@@ -46,9 +46,9 @@ export const SignUpModal = () => {
             <IconButton
               className="primary-bg-light hover:secondary-bg-light -mr-1 size-9"
               icon={{
+                ariaLabel: 'back-to-login',
                 className: 'stroke-2 secondary-stroke size-full',
                 Component: CloseIcon,
-                name: 'close',
               }}
               onClick={handleToggleSignUpOpenable}
             />

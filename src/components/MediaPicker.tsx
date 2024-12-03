@@ -42,9 +42,9 @@ export const MediaPicker = ({
         <IconButton
           className="absolute right-2 top-2 z-20 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
           icon={{
+            ariaLabel: 'remove-media',
             className: 'stroke-2 stroke-white size-full',
             Component: CloseIcon,
-            name: 'close',
           }}
           onClick={onRemove}
         />

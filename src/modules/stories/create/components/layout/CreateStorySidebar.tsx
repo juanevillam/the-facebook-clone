@@ -31,9 +31,9 @@ export const CreateStorySidebar = ({
           <IconButton
             className="size-10 bg-neutral-900/50 hover:bg-neutral-700/50"
             icon={{
+              ariaLabel: 'close-create-story',
               className: 'stroke-2 stroke-white size-full',
               Component: CloseIcon,
-              name: 'close',
             }}
             onClick={handleToggleOpenable}
           />

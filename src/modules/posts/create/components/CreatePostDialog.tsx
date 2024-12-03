@@ -27,10 +27,10 @@ export const CreatePostDialog = ({
     >
       <div className="flex h-full flex-col">
         <CreatePostHeader
-          Icon={{
+          icon={{
+            ariaLabel: 'close-create-post',
             Component: ArrowLeftIcon,
             onClick: handleStep,
-            name: 'back',
           }}
         />
         {children}

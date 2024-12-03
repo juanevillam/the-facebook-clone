@@ -41,9 +41,9 @@ export const ProfileDropDownSettingsStep = ({
             <DropDownHeaderIcon
               leftPosition="-left-4"
               icon={{
+                ariaLabel: 'close-profile-dropdown-settings-menu',
                 className: 'stroke-2 secondary-stroke size-full',
                 Component: ArrowLeftIcon,
-                name: 'back',
               }}
               onClick={handleClose}
               tooltilp={false}

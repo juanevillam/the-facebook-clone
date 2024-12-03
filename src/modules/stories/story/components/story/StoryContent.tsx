@@ -35,13 +35,13 @@ export const StoryContent = ({
       })}
     >
       {variant === 'page' && (
-        <div className="card-bg primary-transition only-mobile flex-center primary-border space-x-1.5 border-b p-1.5">
+        <div className="only-mobile card-bg primary-transition flex-center primary-border space-x-1.5 border-b p-1.5">
           <IconButton
             className="hover:primary-bg size-10"
             icon={{
+              ariaLabel: 'go-back-to-home',
               className: 'stroke-[2.5] primary-stroke size-full',
               Component: ArrowLeftIcon,
-              name: 'back',
             }}
             onClick={navigateToHome}
           />
@@ -53,9 +53,9 @@ export const StoryContent = ({
           <IconButton
             className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
             icon={{
+              ariaLabel: 'close-story',
               className: 'stroke-2 stroke-white size-full',
               Component: CloseIcon,
-              name: 'close',
             }}
             onClick={closeModal}
           />

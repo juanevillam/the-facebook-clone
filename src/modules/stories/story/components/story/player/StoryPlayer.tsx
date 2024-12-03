@@ -156,11 +156,11 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
               </div>
               {onEnd && (
                 <IconButton
-                  className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+                  className="only-mobile size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
                   icon={{
+                    ariaLabel: 'close-story-player',
                     className: 'stroke-2 stroke-white size-full',
                     Component: CloseIcon,
-                    name: 'close',
                   }}
                   onClick={onEnd}
                 />

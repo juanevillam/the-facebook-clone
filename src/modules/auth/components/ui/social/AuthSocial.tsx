@@ -5,17 +5,16 @@ import { GithubIcon, GoogleIcon } from '@/assets/icons/social';
 
 import { AuthSocialButton } from './AuthSocialButton';
 
-type Provider = 'google' | 'github';
+export type AuthProvider = 'google' | 'github';
 
 export const AuthSocial = () => {
   const locale = useLocale();
   const t = useTranslations();
 
-  const handleSignInSocial = (provider: Provider) => {
+  const handleSignInSocial = (provider: AuthProvider) =>
     signIn(provider, {
       callbackUrl: `/${locale}`,
     });
-  };
 
   const handleGoogleSignIn = () => handleSignInSocial('google');
 
@@ -24,8 +23,16 @@ export const AuthSocial = () => {
   return (
     <>
       <div className="flex flex-row space-x-3">
-        <AuthSocialButton Icon={GoogleIcon} onClick={handleGoogleSignIn} />
-        <AuthSocialButton Icon={GithubIcon} onClick={handleGithubSignIn} />
+        <AuthSocialButton
+          Icon={GoogleIcon}
+          label="google"
+          onClick={handleGoogleSignIn}
+        />
+        <AuthSocialButton
+          Icon={GithubIcon}
+          label="github"
+          onClick={handleGithubSignIn}
+        />
       </div>
       <div className="flex-center py-1.5">
         <div className="primary-border-light flex-grow border-t" />

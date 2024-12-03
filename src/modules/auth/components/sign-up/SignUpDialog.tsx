@@ -31,9 +31,9 @@ export const SignUpDialog = () => {
           <IconButton
             className="hover:secondary-bg-light size-10"
             icon={{
+              ariaLabel: 'back-to-login',
               className: 'stroke-[2.5] primary-stroke-light size-full',
               Component: ArrowLeftIcon,
-              name: 'back',
             }}
             onClick={closeStep}
           />

@@ -31,9 +31,9 @@ export const CreatePostGifsStepItem = ({
         <IconButton
           className="primary-bg hover:secondary-bg absolute right-2 top-2 z-10 size-8"
           icon={{
+            ariaLabel: 'remove-gif',
             className: 'stroke-2 primary-stroke md:secondary-stroke size-full',
             Component: CloseIcon,
-            name: 'close',
           }}
           onClick={handleSelect}
         />

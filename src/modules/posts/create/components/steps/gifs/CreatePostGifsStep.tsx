@@ -152,18 +152,19 @@ export const CreatePostGifsStep = () => {
             <GifsColumn index={0} />
             <GifsColumn index={1} />
           </div>
-          <Button
-            className="px-3 pb-3 md:px-4 md:pb-4"
-            disabled={loadingMore}
-            fullWidth
-            label={t('button.label')}
-            loading={loadingMore}
-            loadingLabel={t('button.loading-label')}
-            onClick={handleLoadMore}
-            size="sm"
-            type="button"
-            variant="primary"
-          />
+          <div className="px-3 pb-3 md:px-4 md:pb-4">
+            <Button
+              disabled={loadingMore}
+              fullWidth
+              label={t('button.label')}
+              loading={loadingMore}
+              loadingLabel={t('button.loading-label')}
+              onClick={handleLoadMore}
+              size="sm"
+              type="button"
+              variant="primary"
+            />
+          </div>
         </>
       )}
     </CreatePostStepContainer>

@@ -113,9 +113,9 @@ export const VideoPlayer = ({
               <IconButton
                 className="mr-1 size-9 hover:bg-neutral-700 hover:bg-opacity-50 md:mr-1.5"
                 icon={{
+                  ariaLabel: playing ? 'pause-video' : 'play-video',
                   className: 'fill-white size-full',
                   Component: playing ? PauseIcon : PlayIcon,
-                  name: playing ? 'pause' : 'play',
                 }}
                 onClick={togglePlayPause}
               />
@@ -173,9 +173,9 @@ export const VideoPlayer = ({
                 <IconButton
                   className="size-9 hover:bg-neutral-700 hover:bg-opacity-50"
                   icon={{
+                    ariaLabel: muted ? 'unmute-video' : 'mute-video',
                     className: 'fill-white size-full',
                     Component: muted ? SpeakerXMarkIcon : SpeakerWaveIcon,
-                    name: muted ? 'unmute' : 'mute',
                   }}
                   onClick={toggleMute}
                 />

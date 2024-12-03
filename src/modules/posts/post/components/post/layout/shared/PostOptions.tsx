@@ -47,11 +47,11 @@ export const PostOptions = ({
               isModal && isMobile,
           })}
           icon={{
+            ariaLabel: 'open-post-options-menu',
             className: classNames('secondary-fill size-full', {
               '!fill-white': isModal && isMobile,
             }),
             Component: DotsHorizontalIcon,
-            name: 'more-options',
           }}
           onClick={openBottomSheet}
         />

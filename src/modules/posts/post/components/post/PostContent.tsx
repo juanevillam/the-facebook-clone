@@ -47,11 +47,11 @@ export const PostContent = ({
     user,
   } = post;
 
-  const [fullScreen, setFullScreen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const t = useTranslations('images');
   const router = useRouter();
 
-  const handleFullScreen = () => setFullScreen(!fullScreen);
+  const handleExpand = () => setExpanded(!expanded);
 
   const navigateToHome = () => router.push('/');
 
@@ -63,9 +63,9 @@ export const PostContent = ({
             <IconButton
               className="hover:primary-bg size-10"
               icon={{
+                ariaLabel: 'go-back-to-home',
                 className: 'stroke-[2.5] primary-stroke size-full',
                 Component: ArrowLeftIcon,
-                name: 'back',
               }}
               onClick={navigateToHome}
             />
@@ -118,9 +118,9 @@ export const PostContent = ({
                 <IconButton
                   className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
                   icon={{
+                    ariaLabel: 'close-post',
                     className: 'stroke-2 stroke-white size-full',
                     Component: CloseIcon,
-                    name: 'close',
                   }}
                   onClick={closeModal}
                 />
@@ -132,13 +132,13 @@ export const PostContent = ({
             <IconButton
               className="only-desktop z-20 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
               icon={{
+                ariaLabel: expanded ? 'collapse-post' : 'expand-post',
                 className: 'stroke-white fill-white size-full',
-                Component: fullScreen
+                Component: expanded
                   ? ArrowsPointingInIcon
                   : ArrowsPointingOutIcon,
-                name: fullScreen ? 'exit-full-screen' : 'enter-full-screen',
               }}
-              onClick={handleFullScreen}
+              onClick={handleExpand}
             />
             {variant === 'modal' && (
               <div className="only-mobile z-20">
@@ -180,8 +180,8 @@ export const PostContent = ({
           className={classNames(
             'md:card-bg absolute bottom-0 flex w-full flex-col bg-neutral-900/50 md:static md:h-full md:bg-transparent',
             {
-              'md:w-0': fullScreen,
-              'md:w-96 md:min-w-96': !fullScreen,
+              'md:w-0': expanded,
+              'md:w-96 md:min-w-96': !expanded,
               'hidden md:block': mediaType === 'video',
             }
           )}

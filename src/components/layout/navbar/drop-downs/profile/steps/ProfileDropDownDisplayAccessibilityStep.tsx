@@ -38,9 +38,9 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
             <DropDownHeaderIcon
               leftPosition="-left-4"
               icon={{
+                ariaLabel: 'close-profile-dropdown-display-accessibility-menu',
                 className: 'stroke-2 secondary-stroke size-full',
                 Component: ArrowLeftIcon,
-                name: 'back',
               }}
               onClick={handleClose}
               tooltilp={false}

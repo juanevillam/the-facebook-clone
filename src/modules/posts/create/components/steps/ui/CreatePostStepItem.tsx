@@ -38,9 +38,9 @@ export const CreatePostStepItem = ({
         <IconButton
           className="hover:secondary-bg size-6 p-px"
           icon={{
+            ariaLabel: 'unselect-item',
             className: 'stroke-2 secondary-stroke size-full',
             Component: CloseIcon,
-            name: 'close',
           }}
           onClick={handleSelect}
         />

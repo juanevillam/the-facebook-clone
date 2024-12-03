@@ -3,20 +3,20 @@ import { useTranslations } from 'next-intl';
 
 import { SharedSvg } from '@/assets/types';
 import { IconButton } from '@/components/buttons';
-import { IconButtonName } from '@/components/buttons/IconButton';
+import { IconButtonAriaLabel } from '@/components/buttons/IconButton';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostDefaultStepButton } from '../steps/default';
 
 type CreatePostHeaderProps = {
-  Icon: {
+  icon: {
+    ariaLabel: IconButtonAriaLabel;
     Component: SharedSvg;
-    name: IconButtonName;
     onClick: VoidFunction;
   };
 };
 
-export const CreatePostHeader = ({ Icon }: CreatePostHeaderProps) => {
+export const CreatePostHeader = ({ icon }: CreatePostHeaderProps) => {
   const t = useTranslations('posts.create.layout.header.steps');
   const { step } = useAppSelector(
     (store) => store.posts.createPost.createPostPost
@@ -34,12 +34,12 @@ export const CreatePostHeader = ({ Icon }: CreatePostHeaderProps) => {
             }
           )}
           icon={{
+            ariaLabel: icon.ariaLabel,
             className:
               'stroke-[2.5] md:stroke-2 primary-stroke md:secondary-stroke size-full',
-            Component: Icon.Component,
-            name: Icon.name,
+            Component: icon.Component,
           }}
-          onClick={Icon.onClick}
+          onClick={icon.onClick}
         />
         <h1 className="primary-text text-lg md:text-xl md:font-semibold">
           {t(step)}

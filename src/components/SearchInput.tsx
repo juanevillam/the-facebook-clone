@@ -60,9 +60,9 @@ export const SearchInput = ({
             }
           )}
           icon={{
+            ariaLabel: 'clear-search',
             className: 'stroke-2 secondary-stroke size-full',
             Component: CloseIcon,
-            name: 'close',
           }}
           onClick={handleClear}
         />

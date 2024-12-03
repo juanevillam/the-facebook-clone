@@ -65,7 +65,11 @@
       }
     },
     "social": {
-      "label": "or continue with"
+      "label": "or continue with",
+      "buttons": {
+        "google": "Log in with Google",
+        "github": "Log in with GitHub"
+      }
     },
     "error": {
       "title": "Error",
@@ -446,17 +450,33 @@
     }
   },
   "icon-buttons": {
-    "close": "Close",
-    "back": "Back",
-    "more-options": "More options",
-    "enter-full-screen": "Enter full screen",
-    "exit-full-screen": "Exit full screen",
+    "back-to-login": "Back to login",
+    "clear-search": "Clear search",
+    "clear-value": "Clear value",
+    "close-create-post": "Close create post",
+    "close-create-story": "Close create story",
+    "close-post": "Close post",
+    "close-post-likes-menu": "Close post likes menu",
+    "close-profile-dropdown-display-accessibility-menu": "Close profile dropdown display accessibility menu",
+    "close-profile-dropdown-settings-menu": "Close profile dropdown settings menu",
+    "close-story": "Close story",
+    "close-story-player": "Close story player",
+    "collapse-post": "Collapse post",
+    "compose-new-message": "Compose new message",
+    "expand-post": "Expand post",
+    "go-back": "Go back",
+    "go-back-to-home": "Go back to home",
+    "mute-video": "Mute video",
+    "open-comment-options-menu": "Open comment options menu",
+    "open-notification-dropdown-options-menu": "Open notification dropdown options menu",
+    "open-post-options-menu": "Open post options menu",
+    "pause-video": "Pause video",
+    "play-video": "Play video",
+    "remove-gif": "Remove GIF",
+    "remove-media": "Remove media",
     "see-all-in-messenger": "See all in Messenger",
-    "new-message": "New message",
-    "play": "Play",
-    "pause": "Pause",
-    "mute": "Mute",
-    "unmute": "Unmute"
+    "unmute-video": "Unmute video",
+    "unselect-item": "Unselect item"
   },
   "search-input": {
     "search": "Search",

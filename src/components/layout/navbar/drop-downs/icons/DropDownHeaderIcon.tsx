@@ -3,14 +3,14 @@ import { useTranslations } from 'next-intl';
 
 import { SharedSvg } from '@/assets/types';
 import { IconButton } from '@/components/buttons';
-import { IconButtonName } from '@/components/buttons/IconButton';
+import { IconButtonAriaLabel } from '@/components/buttons/IconButton';
 import { Tooltip } from '@/components/Tooltip';
 
 type DropDownHeaderIconProps = {
   icon: {
+    ariaLabel: IconButtonAriaLabel;
     className: string;
     Component: SharedSvg;
-    name: IconButtonName;
   };
   leftPosition: string;
   onClick?: VoidFunction;
@@ -27,7 +27,7 @@ export const DropDownHeaderIcon = ({
 
   return (
     <Tooltip
-      label={t(icon.name)}
+      label={t(icon.ariaLabel)}
       position={`-bottom-9 ${leftPosition}`}
       variant="small"
     >
@@ -36,9 +36,9 @@ export const DropDownHeaderIcon = ({
           peer: tooltilp,
         })}
         icon={{
+          ariaLabel: icon.ariaLabel,
           className: icon.className,
           Component: icon.Component,
-          name: icon.name,
         }}
         onClick={onClick}
       />

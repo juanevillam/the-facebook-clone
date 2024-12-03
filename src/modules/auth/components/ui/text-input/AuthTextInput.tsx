@@ -96,9 +96,9 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
             <IconButton
               className="absolute right-2 top-2 z-10 size-10"
               icon={{
+                ariaLabel: 'clear-value',
                 className: 'size-full stroke-[1.5] text-black',
                 Component: CloseIcon,
-                name: 'close',
               }}
               onClick={handleClear}
             />
