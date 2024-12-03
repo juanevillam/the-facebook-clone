@@ -16,8 +16,8 @@ export const CreateStoryDialog = ({
 
   return (
     <MobileDialog
-      onDismiss={handleToggleOpenable}
       open={isOpenableOpen}
+      titleId="create-story-title"
       translateFrom="y"
     >
       <div className="flex h-full flex-col">

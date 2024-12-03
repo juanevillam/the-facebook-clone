@@ -32,7 +32,12 @@ export const CreateStoryHeader = ({
           }}
           onClick={handleToggleOpenable}
         />
-        <h1 className="primary-text text-lg md:font-semibold">{t('title')}</h1>
+        <h1
+          className="primary-text text-lg md:font-semibold"
+          id="create-story-title"
+        >
+          {t('title')}
+        </h1>
       </div>
       {file && (
         <div>

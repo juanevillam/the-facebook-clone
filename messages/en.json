@@ -519,9 +519,20 @@
     "title": "Menu"
   },
   "video-player": {
+    "controls": "Video player controls",
     "seek": "Seek",
     "change-playback-rate": "Change playback rate",
     "change-playback-rate-to": "Change playback rate to {rate}x",
     "volume": "Volume"
+  },
+  "media-picker": {
+    "add-media": "Add media",
+    "change-media": "Change media",
+    "remove-media": "Remove media",
+    "file-input": "Upload a file",
+    "media-preview": "Preview of the selected media"
+  },
+  "suspense-loader": {
+    "aria-label": "Loading content"
   }
 }

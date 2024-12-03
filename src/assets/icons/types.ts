@@ -1,4 +1,5 @@
 type SharedSvgProps = {
+  ariaHidden?: 'true' | 'false';
   className: string;
 };
 

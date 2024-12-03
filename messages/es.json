@@ -520,9 +520,22 @@
     "title": "Menú"
   },
   "video-player": {
+    "controls": "Controles del reproductor de video",
     "seek": "Adelantar/retroceder",
     "change-playback-rate": "Cambiar velocidad de reproducción",
     "change-playback-rate-to": "Cambiar velocidad de reproducción a {rate}x",
     "volume": "Volumen"
+  },
+  "media-picker": {
+    "media-picker": {
+      "add-media": "Agregar multimedia",
+      "change-media": "Cambiar multimedia",
+      "remove-media": "Eliminar multimedia",
+      "file-input": "Subir un archivo",
+      "media-preview": "Vista previa de la multimedia seleccionada"
+    }
+  },
+  "suspense-loader": {
+    "aria-label": "Cargando contenido"
   }
 }

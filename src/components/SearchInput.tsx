@@ -37,12 +37,9 @@ export const SearchInput = ({
         }
       )}
     >
-      <SearchIcon className="secondary-fill size-4" />
-      <label className="sr-only" htmlFor={id}>
-        {t(label)}
-      </label>
+      <SearchIcon aria-hidden="true" className="secondary-fill size-4" />
       <input
-        aria-label={t(label)}
+        aria-labelledby={id}
         className="primary-placeholder primary-text primary-transition ml-2 inline-flex w-full bg-transparent focus:outline-none"
         id={id}
         onChange={onChange}
@@ -50,6 +47,9 @@ export const SearchInput = ({
         type="text"
         value={value}
       />
+      <label id={id} className="sr-only">
+        {t(label)}
+      </label>
       {value && (
         <IconButton
           className={classNames(

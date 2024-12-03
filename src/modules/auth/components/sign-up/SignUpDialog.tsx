@@ -25,7 +25,11 @@ export const SignUpDialog = () => {
     step === 4 ? dispatch(toggleSignUpOpenable()) : setStep(step + 1);
 
   return (
-    <MobileDialog open={signUpOpenableOpen} translateFrom="x">
+    <MobileDialog
+      open={signUpOpenableOpen}
+      titleId="sign-up-dialog-title"
+      translateFrom="x"
+    >
       <div className="relative size-full bg-white">
         <div className="flex-center space-x-1.5 border-b border-gray-300 p-1.5">
           <IconButton
@@ -37,7 +41,7 @@ export const SignUpDialog = () => {
             }}
             onClick={closeStep}
           />
-          <h1 className="primary-text-light text-lg">
+          <h1 className="primary-text-light text-lg" id="sign-up-dialog-title">
             {t(`auth.sign-up.dialog.${step}-step.description`)}
           </h1>
         </div>

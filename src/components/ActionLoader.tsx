@@ -9,16 +9,23 @@ type ActionLoaderProps = {
 };
 
 export const ActionLoader = ({
-  className,
+  className = '',
   message,
   open,
 }: ActionLoaderProps) => {
   const t = useTranslations('action-loader');
 
   return (
-    <Backdrop className={`z-20 flex-col ${className}`} open={open}>
+    <Backdrop
+      aria-labelledby="action-loader-title"
+      className={`z-20 flex-col ${className}`}
+      open={open}
+      role="dialog"
+    >
       <MoonLoader className="mb-2" color="#F3F4F6" size={28} />
-      <h1 className="primary-text-dark text-xl">{t(message)}</h1>
+      <h1 id="action-loader-title" className="primary-text-dark text-xl">
+        {t(message)}
+      </h1>
     </Backdrop>
   );
 };

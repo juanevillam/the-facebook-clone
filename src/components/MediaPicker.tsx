@@ -34,12 +34,23 @@ export const MediaPicker = ({
   triggerFileInput,
   type,
 }: MediaPickerProps) => {
-  const t = useTranslations('images');
+  const t = useTranslations();
+
+  const handleKeyInteraction = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      triggerFileInput();
+    }
+  };
 
   return (
-    <div className={classNames('relative h-full overflow-hidden', className)}>
+    <div
+      aria-live="polite"
+      className={classNames('relative h-full overflow-hidden', className)}
+    >
       {file && (
         <IconButton
+          aria-label={t('media-picker.remove-media')}
           className="absolute right-2 top-2 z-20 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
           icon={{
             ariaLabel: 'remove-media',
@@ -50,21 +61,22 @@ export const MediaPicker = ({
         />
       )}
       <div
+        aria-label={
+          file ? t('media-picker.change-media') : t('media-picker.add-media')
+        }
         className={classNames('primary-transition relative size-full', {
           'bg-black': file,
           'hover:primary-bg': !file,
         })}
         onClick={triggerFileInput}
-        onKeyPress={(e) =>
-          (e.key === 'Enter' || e.key === ' ') && triggerFileInput()
-        }
+        onKeyDown={handleKeyInteraction}
         role="button"
         tabIndex={0}
       >
         {file ? (
           type === 'image' ? (
             <Image
-              alt={t('media-preview')}
+              alt={t('images.media-preview')}
               className="object-contain"
               fill
               src={file}
@@ -76,11 +88,12 @@ export const MediaPicker = ({
           NoMediaComponent
         )}
         <input
-          type="file"
           accept={accept}
+          aria-label={t('media-picker.file-input')}
           hidden
-          ref={fileInputRef}
           onChange={onFileChange}
+          ref={fileInputRef}
+          type="file"
         />
       </div>
       {actionLoader && (

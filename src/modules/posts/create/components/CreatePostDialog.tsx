@@ -6,13 +6,11 @@ import { CreatePostHeader } from './layout';
 
 type CreatePostDialogProps = {
   handleStep: VoidFunction;
-  handleToggleOpenable: VoidFunction;
   children: React.ReactNode;
 };
 
 export const CreatePostDialog = ({
   handleStep,
-  handleToggleOpenable,
   children,
 }: CreatePostDialogProps) => {
   const { isOpenableOpen } = useAppSelector(
@@ -21,8 +19,8 @@ export const CreatePostDialog = ({
 
   return (
     <MobileDialog
-      onDismiss={handleToggleOpenable}
       open={isOpenableOpen}
+      titleId="create-post-title"
       translateFrom="y"
     >
       <div className="flex h-full flex-col">

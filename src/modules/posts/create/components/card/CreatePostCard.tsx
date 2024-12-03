@@ -124,10 +124,7 @@ export const CreatePostCard = () => {
           ))}
         </div>
       </div>
-      <CreatePostDialog
-        handleStep={handleStep}
-        handleToggleOpenable={handleToggleOpenable}
-      >
+      <CreatePostDialog handleStep={handleStep}>
         {renderStep()}
       </CreatePostDialog>
       <CreatePostModal

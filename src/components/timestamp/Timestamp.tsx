@@ -16,17 +16,10 @@ type TimestampProps = {
 export const Timestamp = ({ className, date }: TimestampProps) => {
   const locale = useLocale();
   const t = useTranslations('timestamp');
+
   const [relativeTime, setRelativeTime] = useState(
     getRelativeTime(date, locale)
   );
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setRelativeTime(getRelativeTime(date, locale));
-    }, 60000);
-
-    return () => clearInterval(intervalId);
-  }, [date, locale]);
 
   const renderTimestamp = () => {
     switch (relativeTime.type) {
@@ -54,14 +47,23 @@ export const Timestamp = ({ className, date }: TimestampProps) => {
     minute: 'numeric',
   }).format(date);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setRelativeTime(getRelativeTime(date, locale));
+    }, 60000);
+
+    return () => clearInterval(intervalId);
+  }, [date, locale]);
+
   return (
     <div className="-mt-1">
       <Tooltip label={fullDateTime} position="-bottom-9 left-28">
-        <span
+        <time
           className={`secondary-text peer text-xs md:cursor-pointer md:hover:underline ${className}`}
+          dateTime={date.toISOString()}
         >
           {renderTimestamp()}
-        </span>
+        </time>
       </Tooltip>
     </div>
   );

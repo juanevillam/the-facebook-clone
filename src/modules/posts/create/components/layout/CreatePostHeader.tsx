@@ -41,7 +41,10 @@ export const CreatePostHeader = ({ icon }: CreatePostHeaderProps) => {
           }}
           onClick={icon.onClick}
         />
-        <h1 className="primary-text text-lg md:text-xl md:font-semibold">
+        <h1
+          className="primary-text text-lg md:text-xl md:font-semibold"
+          id="create-post-title"
+        >
           {t(step)}
         </h1>
       </div>

@@ -1,7 +1,10 @@
 import { SharedSvgProps } from './types';
 
-export const SearchIcon = ({ className }: SharedSvgProps) => (
-  <svg className={className} viewBox="0 0 16 16">
+export const SearchIcon = ({
+  ariaHidden = 'false',
+  className,
+}: SharedSvgProps) => (
+  <svg aria-hidden={ariaHidden} className={className} viewBox="0 0 16 16">
     <g fillRule="evenodd" transform="translate(-448 -544)">
       <g fillRule="nonzero">
         <path

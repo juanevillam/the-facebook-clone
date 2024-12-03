@@ -58,7 +58,7 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
         name={user.name as string}
       />
       {latestItem.mediaType === 'video' ? (
-        <VideoPlayer showControls={false} url={latestItem.media} />
+        <VideoPlayer url={latestItem.media} />
       ) : isHorizontal !== null ? (
         <Image
           alt={t('story', {
