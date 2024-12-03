@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 
 import { SharedSvg } from '@/assets/types';
 import { IconButton } from '@/components/buttons';
-import { IconButtonAriaLabel } from '@/components/buttons/IconButton';
+import { IconButtonAriaLabel } from '@/components/buttons/icon/types';
 import { Tooltip } from '@/components/Tooltip';
 
 type DropDownHeaderIconProps = {
@@ -32,7 +32,7 @@ export const DropDownHeaderIcon = ({
       variant="small"
     >
       <IconButton
-        className={classNames('hover:primary-bg -mt-1 size-9', {
+        className={classNames('hover:primary-bg size-9', {
           peer: tooltilp,
         })}
         icon={{

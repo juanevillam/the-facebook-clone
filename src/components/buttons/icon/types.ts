@@ -1,17 +1,15 @@
-import { useTranslations } from 'next-intl';
-
 import { SharedSvg } from '@/assets/types';
 
-export type IconButtonAriaLabel =
+type IconButtonAriaLabel =
   | 'back-to-login'
   | 'clear-search'
   | 'clear-value'
   | 'close-create-post'
   | 'close-create-story'
+  | 'close-display-accessibility-menu'
   | 'close-post'
   | 'close-post-likes-menu'
-  | 'close-profile-dropdown-display-accessibility-menu'
-  | 'close-profile-dropdown-settings-menu'
+  | 'close-settings-menu'
   | 'close-story'
   | 'close-story-player'
   | 'collapse-post'
@@ -21,8 +19,11 @@ export type IconButtonAriaLabel =
   | 'go-back-to-home'
   | 'mute-video'
   | 'open-comment-options-menu'
-  | 'open-notification-dropdown-options-menu'
+  | 'open-messenger-dropdown'
+  | 'open-notification-options-menu'
+  | 'open-notifications-dropdown'
   | 'open-post-options-menu'
+  | 'open-profile-dropdown'
   | 'pause-video'
   | 'play-video'
   | 'remove-gif'
@@ -41,17 +42,4 @@ type IconButtonProps = {
   onClick?: VoidFunction;
 };
 
-export const IconButton = ({ className, icon, onClick }: IconButtonProps) => {
-  const t = useTranslations('icon-buttons');
-
-  return (
-    <button
-      aria-label={t(icon.ariaLabel)}
-      className={`flex-center-justify-center primary-transition rounded-full p-2 ${className}`}
-      onClick={onClick}
-      type="button"
-    >
-      <icon.Component className={icon.className} />
-    </button>
-  );
-};
+export type { IconButtonAriaLabel, IconButtonProps };

@@ -34,36 +34,44 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
     <div className="p-2.5 md:px-4 md:py-3">
       <div className="card-bg primary-transition rounded-lg py-3 pl-2 pr-4 md:p-0">
         <div className="flex-center mb-4 w-full space-x-2">
-          <div>
-            <DropDownHeaderIcon
-              leftPosition="-left-4"
-              icon={{
-                ariaLabel: 'close-profile-dropdown-display-accessibility-menu',
-                className: 'stroke-2 secondary-stroke size-full',
-                Component: ArrowLeftIcon,
-              }}
-              onClick={handleClose}
-              tooltilp={false}
-            />
-          </div>
-          <h1 className="primary-text truncate text-2xl font-bold">
+          <DropDownHeaderIcon
+            leftPosition="-left-4"
+            icon={{
+              ariaLabel: 'close-display-accessibility-menu',
+              className: 'stroke-2 secondary-stroke size-full',
+              Component: ArrowLeftIcon,
+            }}
+            onClick={handleClose}
+            tooltilp={false}
+          />
+          <h1
+            className="primary-text truncate text-2xl font-bold"
+            id="profile-dropdown-display-accessibility-title"
+          >
             {t('title')}
           </h1>
+          <h2
+            className="sr-only"
+            id="profile-dropdown-display-accessibility-description"
+          >
+            {t('description')}
+          </h2>
         </div>
         <div className="mb-2 flex space-x-2">
           <div className="primary-bg primary-transition h-max rounded-full p-2">
             <MoonIcon className="primary-fill size-6" />
           </div>
           <div>
-            <h1 className="primary-text text-lg font-semibold">
+            <h2 className="primary-text text-lg font-semibold">
               {t('dark-mode.title')}
-            </h1>
+            </h2>
             <p className="secondary-text text-sm">
               {t('dark-mode.description')}
             </p>
           </div>
         </div>
-        <div className="mb-4 ml-10">
+        <fieldset className="mb-4 ml-10">
+          <legend className="sr-only">{t('dark-mode.legend')}</legend>
           <ProfileDropDownRadioInput
             checked={theme === 'light'}
             label="off"
@@ -82,21 +90,22 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
             name="theme"
             onChange={handleThemeChange('system')}
           />
-        </div>
+        </fieldset>
         <div className="mb-2 flex space-x-2">
           <div className="primary-bg primary-transition h-max rounded-full p-2">
             <ArrowsPointingOutIcon className="primary-fill primary-stroke size-6" />
           </div>
           <div>
-            <h1 className="primary-text text-lg font-semibold">
+            <h2 className="primary-text text-lg font-semibold">
               {t('full-screen.title')}
-            </h1>
+            </h2>
             <p className="secondary-text pr-4 text-sm">
               {t('full-screen.description')}
             </p>
           </div>
         </div>
-        <div className="mb-4 ml-10">
+        <fieldset className="mb-4 ml-10">
+          <legend className="sr-only">{t('full-screen.legend')}</legend>
           <ProfileDropDownRadioInput
             checked={!isFullScreen}
             label="off"
@@ -109,7 +118,7 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
             name="full-screen"
             onChange={toggleFullScreen}
           />
-        </div>
+        </fieldset>
       </div>
     </div>
   );

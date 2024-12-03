@@ -18,24 +18,26 @@ export const Navbar = () => {
   const isPostPage = pathname === '/posts/[id]';
   const isStoryPage = pathname === '/stories/[id]';
 
-  const showTopHeader =
+  const shouldShowTopHeader = () =>
     !isPostPage &&
     ((scrollDirection === 'down' && pathname === '/') || pathname !== '/');
+
+  const showTopHeader = shouldShowTopHeader();
 
   return (
     <div
       className={classNames('sticky top-0 z-30', {
-        'hidden md:block': isPostPage || isStoryPage,
+        'only-desktop-block': isPostPage || isStoryPage,
       })}
     >
       <header
-        className={`card-bg primary-border primary-transition sticky top-0 z-30 transform transition-transform md:transform-none md:border-b ${
+        className={`card-bg primary-border primary-transition transform transition-transform md:transform-none md:border-b ${
           showTopHeader ? '-translate-y-full' : 'translate-y-0'
         }`}
       >
         <nav
           aria-label={t('main-navigation')}
-          className="flex-center-justify-between h-14 px-3 md:px-4"
+          className="flex-center-justify-between px-3 py-2 md:px-4 md:py-1"
         >
           <div className="flex-center">
             <Link aria-label={t('home')} href="/">
@@ -53,7 +55,7 @@ export const Navbar = () => {
       </header>
       <nav
         aria-label={t('mobile-navigation')}
-        className={`card-bg primary-border sticky top-14 z-30 flex transform border-b transition-transform md:hidden ${
+        className={`card-bg primary-border flex-center transform border-b transition-transform md:hidden ${
           showTopHeader ? '-translate-y-full' : 'translate-y-0'
         }`}
       >

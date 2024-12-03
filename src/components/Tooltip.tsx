@@ -23,6 +23,7 @@ export const Tooltip = ({
           'px-3 py-2': variant === 'small',
         }
       )}
+      role="tooltip"
     >
       {label}
     </div>

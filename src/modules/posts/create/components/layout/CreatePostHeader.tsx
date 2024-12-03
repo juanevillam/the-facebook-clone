@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 
 import { SharedSvg } from '@/assets/types';
 import { IconButton } from '@/components/buttons';
-import { IconButtonAriaLabel } from '@/components/buttons/IconButton';
+import { IconButtonAriaLabel } from '@/components/buttons/icon/types';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostDefaultStepButton } from '../steps/default';

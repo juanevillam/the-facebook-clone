@@ -16,12 +16,13 @@ export const ProfileDropDownRadioInput = ({
   name,
   onChange,
 }: ProfileDropDownRadioInputProps) => {
-  const t = useTranslations(`navbar.drop-downs.profile.steps.options`);
+  const t = useTranslations('navbar.drop-downs.profile.steps.options');
 
   return (
     <label className="hover:primary-bg flex-center-justify-between primary-text cursor-pointer rounded-lg p-3 font-medium">
       {t(label)}
       <input
+        aria-describedby={`${name}-option-description`}
         className="sr-only"
         checked={checked}
         name={name}
@@ -30,6 +31,7 @@ export const ProfileDropDownRadioInput = ({
         value={label}
       />
       <span
+        aria-checked={checked}
         className={classNames(
           'flex-center-justify-center size-6 rounded-full border-2',
           {
@@ -39,6 +41,12 @@ export const ProfileDropDownRadioInput = ({
         )}
       >
         {checked && <span className="size-3 rounded-full bg-primary-100" />}
+      </span>
+      <span className="sr-only" id={`${name}-option-description`}>
+        {t('this-option-sets-to', {
+          name,
+          label,
+        })}
       </span>
     </label>
   );

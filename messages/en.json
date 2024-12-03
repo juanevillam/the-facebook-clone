@@ -137,6 +137,8 @@
       },
       "profile": {
         "tooltip": "Profile",
+        "title": "Profile",
+        "description": "Access settings for your account, display preferences, and logout",
         "steps": {
           "settings": {
             "title": "Settings",
@@ -147,13 +149,16 @@
           },
           "display-accessibility": {
             "title": "Display & accessibility",
+            "description": "Change the display and accessibility settings of the application.",
             "dark-mode": {
               "title": "Dark mode",
-              "description": "Switch to dark mode to reduce glare and give your eyes a break, especially in low-light environments."
+              "description": "Switch to dark mode to reduce glare and give your eyes a break, especially in low-light environments.",
+              "legend": "Dark mode settings"
             },
             "full-screen": {
               "title": "Full screen",
-              "description": "Enable full screen mode to maximize space and enjoy a more immersive experience."
+              "description": "Enable full screen mode to maximize space and enjoy a more immersive experience.",
+              "legend": "Full screen settings"
             }
           },
           "options": {
@@ -161,7 +166,8 @@
             "off": "Off",
             "automatic": "Automatic",
             "english": "English",
-            "spanish": "Spanish"
+            "spanish": "Spanish",
+            "this-option-sets-to": "This option sets {name} to {label}"
           },
           "log-out": {
             "title": "Log out"
@@ -457,8 +463,8 @@
     "close-create-story": "Close create story",
     "close-post": "Close post",
     "close-post-likes-menu": "Close post likes menu",
-    "close-profile-dropdown-display-accessibility-menu": "Close profile dropdown display accessibility menu",
-    "close-profile-dropdown-settings-menu": "Close profile dropdown settings menu",
+    "close-display-accessibility-menu": "Close display and accessibility menu",
+    "close-settings-menu": "Close settings menu",
     "close-story": "Close story",
     "close-story-player": "Close story player",
     "collapse-post": "Collapse post",
@@ -468,8 +474,11 @@
     "go-back-to-home": "Go back to home",
     "mute-video": "Mute video",
     "open-comment-options-menu": "Open comment options menu",
-    "open-notification-dropdown-options-menu": "Open notification dropdown options menu",
+    "open-messenger-dropdown": "Open Messenger dropdown",
+    "open-notification-options-menu": "Open notification options menu",
+    "open-notifications-dropdown": "Open Notifications dropdown",
     "open-post-options-menu": "Open post options menu",
+    "open-profile-dropdown": "Open Profile dropdown",
     "pause-video": "Pause video",
     "play-video": "Play video",
     "remove-gif": "Remove GIF",

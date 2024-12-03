@@ -25,7 +25,7 @@ export const NavbarLink = ({
   return (
     <Tooltip label={t(label)} position="-bottom-10">
       <Link
-        aria-label={label}
+        aria-label={t(label)}
         className={classNames(
           'flex-center-justify-center primary-transition peer h-14 md:h-12 md:w-max md:rounded-lg md:px-8 lg:px-10 xl:px-12',
           {

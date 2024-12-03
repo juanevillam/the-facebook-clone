@@ -38,6 +38,12 @@ export const ProfileDropDownDefaultStep = ({
 
   return (
     <div className="p-2.5">
+      <h1 className="sr-only" id="profile-dropdown-default-title">
+        {t('title')}
+      </h1>
+      <h2 className="sr-only" id="profile-dropdown-default-description">
+        {t('description')}
+      </h2>
       <Link
         className="card flex-center primary-transition hover:primary-bg space-x-2.5 rounded-lg p-2"
         href="/profile"
@@ -52,25 +58,27 @@ export const ProfileDropDownDefaultStep = ({
         </div>
       </Link>
       <hr className="md:primary-border my-1 border-transparent md:my-2" />
-      <div className="space-y-2 md:space-y-0">
-        <ProfileDropDownDefaultStepItem
-          dropdown
-          Icon={CogIcon}
-          label="settings"
-          onClick={handleOpenSettingsStep}
-        />
-        <ProfileDropDownDefaultStepItem
-          dropdown
-          Icon={MoonIcon}
-          label="display-accessibility"
-          onClick={handleOpenDisplayAccessibilityStep}
-        />
-        <ProfileDropDownDefaultStepItem
-          Icon={ArrowRightStartOnRectangleIcon}
-          label="log-out"
-          onClick={handleLogout}
-        />
-      </div>
+      <section aria-labelledby="profile-dropdown-default-description">
+        <div className="space-y-2 md:space-y-0">
+          <ProfileDropDownDefaultStepItem
+            dropdown
+            Icon={CogIcon}
+            label="settings"
+            onClick={handleOpenSettingsStep}
+          />
+          <ProfileDropDownDefaultStepItem
+            dropdown
+            Icon={MoonIcon}
+            label="display-accessibility"
+            onClick={handleOpenDisplayAccessibilityStep}
+          />
+          <ProfileDropDownDefaultStepItem
+            Icon={ArrowRightStartOnRectangleIcon}
+            label="log-out"
+            onClick={handleLogout}
+          />
+        </div>
+      </section>
     </div>
   );
 };

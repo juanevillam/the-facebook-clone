@@ -18,38 +18,38 @@ type ProfileDropDownSettingsStepProps = {
 export const ProfileDropDownSettingsStep = ({
   setStep,
 }: ProfileDropDownSettingsStepProps) => {
+  const params = useParams();
   const locale = useLocale();
   const t = useTranslations('navbar.drop-downs.profile.steps.settings');
-  const params = useParams();
-  const router = useRouter();
   const pathname = usePathname();
+  const router = useRouter();
 
   const handleClose = () => setStep('default');
 
-  const handleLanguageChange = (locale: 'en' | 'es') => {
+  const handleLanguageChange = (locale: 'en' | 'es') =>
     // @ts-expect-error -- TypeScript will validate that only known `params`
     // are used in combination with a given `pathname`. Since the two will
     // always match for the current route, we can skip runtime checks.
     router.replace({ pathname, params }, { locale: locale });
-  };
 
   return (
     <div className="p-2.5 md:px-4 md:py-3">
       <div className="card-bg primary-transition rounded-lg py-3 pl-2 pr-4 md:p-0">
         <div className="flex-center mb-4 w-full space-x-2">
-          <div>
-            <DropDownHeaderIcon
-              leftPosition="-left-4"
-              icon={{
-                ariaLabel: 'close-profile-dropdown-settings-menu',
-                className: 'stroke-2 secondary-stroke size-full',
-                Component: ArrowLeftIcon,
-              }}
-              onClick={handleClose}
-              tooltilp={false}
-            />
-          </div>
-          <h1 className="primary-text truncate text-2xl font-bold">
+          <DropDownHeaderIcon
+            leftPosition="-left-4"
+            icon={{
+              ariaLabel: 'close-settings-menu',
+              className: 'stroke-2 secondary-stroke size-full',
+              Component: ArrowLeftIcon,
+            }}
+            onClick={handleClose}
+            tooltilp={false}
+          />
+          <h1
+            className="primary-text truncate text-2xl font-bold"
+            id="profile-dropdown-settings-title"
+          >
             {t('title')}
           </h1>
         </div>
@@ -61,7 +61,10 @@ export const ProfileDropDownSettingsStep = ({
             <h1 className="primary-text text-lg font-semibold">
               {t('language.title')}
             </h1>
-            <p className="secondary-text truncate text-sm">
+            <p
+              className="secondary-text truncate text-sm"
+              id="profile-dropdown-settings-description"
+            >
               {t('language.description')}
             </p>
           </div>

@@ -138,6 +138,8 @@
       },
       "profile": {
         "tooltip": "Perfil",
+        "title": "Perfil",
+        "description": "Accede a la configuración de tu cuenta, preferencias de pantalla y cierra sesión",
         "steps": {
           "settings": {
             "title": "Configuración",
@@ -148,13 +150,16 @@
           },
           "display-accessibility": {
             "title": "Pantalla y accesibilidad",
+            "description": "Cambia la configuración de la pantalla y accesibilidad de la aplicación.",
             "dark-mode": {
               "title": "Modo oscuro",
-              "description": "Activa el modo oscuro para reducir el resplandor y darle un descanso a tus ojos, especialmente en entornos con poca luz."
+              "description": "Activa el modo oscuro para reducir el resplandor y darle un descanso a tus ojos, especialmente en entornos con poca luz.",
+              "legend": "Configuración de modo oscuro"
             },
             "full-screen": {
               "title": "Pantalla completa",
-              "description": "Activa el modo de pantalla completa para maximizar el espacio y disfrutar de una experiencia más inmersiva."
+              "description": "Activa el modo de pantalla completa para maximizar el espacio y disfrutar de una experiencia más inmersiva.",
+              "legend": "Configuración de pantalla completa"
             }
           },
           "options": {
@@ -162,7 +167,8 @@
             "on": "Activado",
             "automatic": "Automático",
             "english": "Inglés",
-            "spanish": "Español"
+            "spanish": "Español",
+            "this-option-sets-to": "Esta opción establece {name} a {label}"
           },
           "log-out": {
             "title": "Cerrar sesión"
@@ -458,8 +464,8 @@
     "close-create-story": "Cerrar creación de historia",
     "close-post": "Cerrar publicación",
     "close-post-likes-menu": "Cerrar menú de me gusta de la publicación",
-    "close-profile-dropdown-display-accessibility-menu": "Cerrar menú de accesibilidad del perfil",
-    "close-profile-dropdown-settings-menu": "Cerrar menú de configuración del perfil",
+    "close-display-accessibility-menu": "Cerrar menú de pantalla y accesibilidad",
+    "close-settings-menu": "Cerrar menú de configuración",
     "close-story": "Cerrar historia",
     "close-story-player": "Cerrar reproductor de historias",
     "collapse-post": "Colapsar publicación",
@@ -468,9 +474,12 @@
     "go-back": "Regresar",
     "go-back-to-home": "Regresar al inicio",
     "mute-video": "Silenciar video",
-    "open-comment-options-menu": "Abrir menú de opciones de comentarios",
-    "open-notification-dropdown-options-menu": "Abrir menú de opciones de notificaciones",
+    "open-comment-options-menu": "Abrir menú de opciones del comentario",
+    "open-messenger-dropdown": "Abrir menú desplegable de Messenger",
+    "open-notification-options-menu": "Abrir menú de opciones de notificaciones",
+    "open-notifications-dropdown": "Abrir menú desplegable de notificaciones",
     "open-post-options-menu": "Abrir menú de opciones de publicación",
+    "open-profile-dropdown": "Abrir menú desplegable de perfil",
     "pause-video": "Pausar video",
     "play-video": "Reproducir video",
     "remove-gif": "Eliminar GIF",

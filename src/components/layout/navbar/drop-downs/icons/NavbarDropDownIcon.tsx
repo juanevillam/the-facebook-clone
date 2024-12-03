@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 
 import { SharedSvg } from '@/assets/types';
 import { Tooltip } from '@/components';
+import { IconButton } from '@/components/buttons';
 
 type NavbarDropDownIconProps = {
   className?: string;
@@ -23,7 +24,7 @@ export const NavbarDropDownIcon = ({
 }: NavbarDropDownIconProps) => {
   const t = useTranslations('navbar.drop-downs');
 
-  if (children) {
+  if (children)
     return (
       <Tooltip label={t(`${label}.tooltip`)} position="-bottom-11">
         <button
@@ -37,32 +38,30 @@ export const NavbarDropDownIcon = ({
         </button>
       </Tooltip>
     );
-  }
 
-  return (
-    <Tooltip label={t(`${label}.tooltip`)} position="-bottom-11">
-      <button
-        aria-label={t(`${label}.tooltip`)}
-        className={classNames(
-          `flex-center-justify-center primary-transition size-10 rounded-full p-[10px] ${className}`,
-          {
-            'bg-primary-500 hover:bg-primary-600 dark:bg-primary-300 dark:hover:bg-primary-400':
-              isActive,
-            'peer bg-gray-200 hover:bg-gray-300 dark:bg-neutral-700 dark:hover:bg-neutral-600':
-              !isActive,
-          }
-        )}
-        onClick={onClick}
-      >
-        {Icon && (
-          <Icon
-            className={classNames({
+  if (Icon)
+    return (
+      <Tooltip label={t(`${label}.tooltip`)} position="-bottom-11">
+        <IconButton
+          className={classNames(
+            `flex-center-justify-center primary-transition size-10 rounded-full p-[10px] ${className}`,
+            {
+              'bg-primary-500 hover:bg-primary-600 dark:bg-primary-300 dark:hover:bg-primary-400':
+                isActive,
+              'peer bg-gray-200 hover:bg-gray-300 dark:bg-neutral-700 dark:hover:bg-neutral-600':
+                !isActive,
+            }
+          )}
+          icon={{
+            ariaLabel: `open-${label}-dropdown`,
+            className: classNames({
               'fill-primary-100': isActive,
               'fill-black dark:fill-gray-200': !isActive,
-            })}
-          />
-        )}
-      </button>
-    </Tooltip>
-  );
+            }),
+            Component: Icon,
+          }}
+          onClick={onClick}
+        />
+      </Tooltip>
+    );
 };
