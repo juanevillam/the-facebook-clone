@@ -8,8 +8,8 @@ import showToast from 'react-hot-toast';
 import { BeatLoader } from 'react-spinners';
 
 import { AlertTriangleImage } from '@/components/images';
-import { verifyEmail } from '@/modules/auth/api';
 
+import { verifyEmail } from '../../services/emailVerificationService';
 import { AuthCard } from '../ui';
 
 export const VerifyEmailForm = () => {

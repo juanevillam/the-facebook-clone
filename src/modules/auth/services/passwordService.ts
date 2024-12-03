@@ -3,13 +3,42 @@
 import { hash } from 'bcryptjs';
 
 import { db } from '@/lib/database/prismaClient';
+import { sendResetPasswordEmail } from '@/lib/email/emailUtils';
 import { getUserByEmail } from '@/lib/services/userService';
-import { getPasswordResetTokenByToken } from '@/modules/auth/services/passwordResetTokenService';
+import { generatePasswordResetToken } from '@/lib/tokens/tokenGenerator';
 
+import { getPasswordResetTokenByToken } from './passwordResetTokenService';
+import {
+  forgotPasswordFormSchema,
+  forgotPasswordFormValuesType,
+} from '../schemas/forgotPasswordSchema';
 import {
   resetPasswordFormSchema,
   resetPasswordFormValuesType,
 } from '../schemas/resetPasswordSchema';
+
+export const forgotPassword = async (values: forgotPasswordFormValuesType) => {
+  const validatedFields = forgotPasswordFormSchema.safeParse(values);
+
+  if (!validatedFields.success)
+    return { message: 'invalid-fields', type: 'error' };
+
+  const { email } = validatedFields.data;
+
+  const existingUser = await getUserByEmail(email);
+
+  if (!existingUser)
+    return { message: 'account-does-not-exist', type: 'error' };
+
+  const passwordResetToken = await generatePasswordResetToken(email);
+
+  await sendResetPasswordEmail(
+    passwordResetToken.email,
+    passwordResetToken.token
+  );
+
+  return { message: 'reset-email-sent', type: 'success' };
+};
 
 export const resetPassword = async (
   values: resetPasswordFormValuesType,

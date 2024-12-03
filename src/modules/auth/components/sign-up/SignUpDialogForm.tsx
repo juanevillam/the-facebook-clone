@@ -6,13 +6,13 @@ import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/buttons';
-import { signUp } from '@/modules/auth/api';
 import {
   signUpDialogFormSchema,
   signUpFormValuesType,
 } from '@/modules/auth/schemas/signUpSchema';
 
-import { AuthRadioInput, AuthTextInput, EmailAuthTextInput } from '../../ui';
+import { signUp } from '../../services/registrationService';
+import { AuthRadioInput, AuthTextInput, EmailAuthTextInput } from '../ui';
 
 type SignUpDialogFormProps = {
   nextStep: VoidFunction;

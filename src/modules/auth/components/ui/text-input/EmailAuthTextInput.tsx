@@ -4,7 +4,7 @@ import {
   AuthTextInput,
   AuthTextInputSkin,
   AuthTextInputVariant,
-} from '../AuthTextInput';
+} from './AuthTextInput';
 
 type EmailAuthTextInputProps = {
   disabled?: boolean;

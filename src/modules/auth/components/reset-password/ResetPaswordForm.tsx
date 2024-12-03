@@ -9,12 +9,12 @@ import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/buttons';
-import { resetPassword } from '@/modules/auth/api';
 import {
   resetPasswordFormSchema,
   resetPasswordFormValuesType,
 } from '@/modules/auth/schemas/resetPasswordSchema';
 
+import { resetPassword } from '../../services/passwordService';
 import { AuthTextInput } from '../ui';
 
 export const ResetPasswordForm = () => {

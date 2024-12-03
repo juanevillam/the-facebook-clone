@@ -8,7 +8,7 @@ import {
 import { SetValue } from '@/assets/types';
 import { ProfilePic } from '@/components';
 import { useCurrentUser } from '@/hooks';
-import { logout } from '@/modules/auth/api';
+import { logout } from '@/modules/auth/services/authenticationService';
 import { Link } from '@/navigation';
 
 import { ProfileDropDownDefaultStepItem } from './ProfileDropDownDefaultStepItem';

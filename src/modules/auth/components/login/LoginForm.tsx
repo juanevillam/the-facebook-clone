@@ -10,13 +10,13 @@ import * as z from 'zod';
 
 import { Button } from '@/components/buttons';
 import { useAppDispatch } from '@/lib/store/hooks';
-import { login } from '@/modules/auth/api';
 import { toggleSignUpOpenable } from '@/modules/auth/reducers/authReducer';
 import {
   loginFormSchema,
   loginFormValuesType,
 } from '@/modules/auth/schemas/loginSchema';
 
+import { login } from '../../services/authenticationService';
 import { AuthLink, AuthSocial, AuthTextInput, EmailAuthTextInput } from '../ui';
 
 export const LoginForm = () => {

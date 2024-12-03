@@ -8,12 +8,12 @@ import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/buttons';
-import { forgotPassword } from '@/modules/auth/api';
 import {
   forgotPasswordFormSchema,
   forgotPasswordFormValuesType,
 } from '@/modules/auth/schemas/forgotPasswordSchema';
 
+import { forgotPassword } from '../../services/passwordService';
 import { EmailAuthTextInput } from '../ui';
 
 export const ForgotPasswordForm = () => {

@@ -2,7 +2,7 @@
 
 import { AuthError } from 'next-auth';
 
-import { signIn } from '@/auth';
+import { signIn, signOut } from '@/auth';
 import { db } from '@/lib/database/prismaClient';
 import {
   sendTwoFactorTokenEmail,
@@ -18,7 +18,7 @@ import { getTwoFactorTokenByEmail } from '@/modules/auth/services/twoFactorToken
 
 import { loginFormSchema, loginFormValuesType } from '../schemas/loginSchema';
 
-export const login = async (values: loginFormValuesType) => {
+const login = async (values: loginFormValuesType) => {
   const validatedFields = loginFormSchema.safeParse(values);
 
   if (!validatedFields.success)
@@ -111,3 +111,7 @@ export const login = async (values: loginFormValuesType) => {
     throw error;
   }
 };
+
+const logout = async () => await signOut();
+
+export { login, logout };

@@ -6,18 +6,18 @@ import showToast from 'react-hot-toast';
 import * as z from 'zod';
 
 import { Button } from '@/components/buttons';
-import { signUp } from '@/modules/auth/api';
 import {
   signUpFormSchema,
   signUpFormValuesType,
 } from '@/modules/auth/schemas/signUpSchema';
 
+import { signUp } from '../../services/registrationService';
 import {
   AuthRadioInput,
   AuthSocial,
   AuthTextInput,
   EmailAuthTextInput,
-} from '../../ui';
+} from '../ui';
 
 type SignUpModalFormProps = {
   handleToggleSignUpOpenable: VoidFunction;
