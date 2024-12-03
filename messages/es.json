@@ -356,7 +356,7 @@
         "subtitle": "Comparte una foto o escribe algo.",
         "title-short": "Crear historia"
       },
-      "page": {
+      "layout": {
         "sidebar": {
           "title": "Tu historia"
         },

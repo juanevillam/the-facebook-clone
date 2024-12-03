@@ -11,15 +11,15 @@ import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
 import { setCreateStoryMedia } from '../../../reducers/createStoryMediaSlice';
 
-export const CreateStoryPageBody = () => {
-  const t = useTranslations('stories.create.page.body.photo');
+export const CreateStoryBody = () => {
+  const t = useTranslations('stories.create.layout.body.photo');
   const dispatch = useAppDispatch();
   const { file, type } = useAppSelector(
-    (store) => store.stories.createStory.createStoriesMedia
+    (store) => store.stories.createStory.createStoryMedia
   );
 
   const { posting } = useAppSelector(
-    (store) => store.stories.createStory.createStoriesStory
+    (store) => store.stories.createStory.createStoryStory
   );
 
   const onChangeMedia = (file: string, type: MediaType) =>
@@ -36,7 +36,7 @@ export const CreateStoryPageBody = () => {
   return (
     <div
       className={classNames(
-        'relative flex size-full md:items-center md:justify-center',
+        'relative flex size-full md:items-center md:justify-center md:bg-gray-100 md:dark:bg-neutral-900',
         {
           'md:p-6': file,
           'p-3 md:p-6': !file,

@@ -7,17 +7,20 @@ import { useRouter } from '@/navigation';
 
 import { createStory } from '../../../actions';
 import { setCreateStoryMedia } from '../../../reducers/createStoryMediaSlice';
-import { toggleCreateStoryPosting } from '../../../reducers/createStoryStorySlice';
+import {
+  toggleCreateStoryOpenable,
+  toggleCreateStoryPosting,
+} from '../../../reducers/createStoryStorySlice';
 
-export const CreateStoryPageButton = () => {
+export const CreateStoryButton = () => {
   const t = useTranslations();
   const dispatch = useAppDispatch();
   const { posting } = useAppSelector(
-    (store) => store.stories.createStory.createStoriesStory
+    (store) => store.stories.createStory.createStoryStory
   );
 
   const { file, type } = useAppSelector(
-    (store) => store.stories.createStory.createStoriesMedia
+    (store) => store.stories.createStory.createStoryMedia
   );
 
   const router = useRouter();
@@ -33,6 +36,7 @@ export const CreateStoryPageButton = () => {
     })
       .then((data) => {
         showToast.success(t(`toast-messages.success.${data.message}`));
+        dispatch(toggleCreateStoryOpenable());
         dispatch(setCreateStoryMedia({ file: null, type: null }));
         dispatch(toggleCreateStoryPosting());
         router.push('/');
@@ -47,7 +51,7 @@ export const CreateStoryPageButton = () => {
     <Button
       disabled={posting}
       fullWidth
-      label={t('stories.create.page.button')}
+      label={t('stories.create.layout.button')}
       onClick={handleCreateStory}
       size="xs"
       type="button"

@@ -54,10 +54,6 @@ const pathnames = {
     en: '/profile',
     es: '/perfil',
   },
-  '/stories/create': {
-    en: '/stories/create',
-    es: '/historias/crear',
-  },
   '/stories/[id]': {
     en: '/stories/[id]',
     es: '/historias/[id]',

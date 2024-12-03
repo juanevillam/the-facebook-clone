@@ -1,5 +1,7 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
+
 import { auth } from '@/auth';
 import { db } from '@/lib/database';
 
@@ -30,6 +32,8 @@ export const markStoryItemAsViewed = async (storyItemId: string) => {
         },
       });
     }
+
+    revalidatePath('/');
   } catch (error) {
     throw new Error('failed-to-mark-story-as-viewed');
   }

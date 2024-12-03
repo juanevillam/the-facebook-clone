@@ -1,11 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import createStoriesMediaReducer from './createStoryMediaSlice';
-import createStoriesStoryReducer from './createStoryStorySlice';
+import createStoryMediaReducer from './createStoryMediaSlice';
+import createStoryStoryReducer from './createStoryStorySlice';
 
 const createStoryReducer = combineReducers({
-  createStoriesMedia: createStoriesMediaReducer,
-  createStoriesStory: createStoriesStoryReducer,
+  createStoryMedia: createStoryMediaReducer,
+  createStoryStory: createStoryStoryReducer,
 });
 
 export default createStoryReducer;

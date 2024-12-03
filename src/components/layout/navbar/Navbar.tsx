@@ -16,7 +16,6 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   const isPostPage = pathname === '/posts/[id]';
-  const isCreateStoriesPage = pathname === '/stories/create';
   const isStoryPage = pathname === '/stories/[id]';
 
   const showTopHeader =
@@ -26,7 +25,7 @@ export const Navbar = () => {
   return (
     <div
       className={classNames('sticky top-0 z-30', {
-        'hidden md:block': isPostPage || isCreateStoriesPage || isStoryPage,
+        'hidden md:block': isPostPage || isStoryPage,
       })}
     >
       <header

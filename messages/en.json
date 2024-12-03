@@ -355,7 +355,7 @@
         "subtitle": "Share a photo or write something.",
         "title-short": "Create story"
       },
-      "page": {
+      "layout": {
         "sidebar": {
           "title": "Your story"
         },
