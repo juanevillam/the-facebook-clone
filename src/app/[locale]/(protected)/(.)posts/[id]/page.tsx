@@ -20,7 +20,7 @@ const PostModalPage = async ({
 
   if (!post) notFound();
 
-  return <PostModalWrapper id={id} post={post} />;
+  return <PostModalWrapper post={post} />;
 };
 
 export default PostModalPage;

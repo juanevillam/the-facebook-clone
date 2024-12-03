@@ -4,40 +4,45 @@ import showToast from 'react-hot-toast';
 import { Button } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { createPost } from '@/modules/posts/create/actions';
-import { setActiveLocation } from '@/modules/posts/create/reducers/checkInSlice';
-import { setActiveFeeling } from '@/modules/posts/create/reducers/feelingsSlice';
 import {
-  setActiveGif,
-  setGifs,
-  setGifsSearchInputValue,
-} from '@/modules/posts/create/reducers/gifsSlice';
-import { setMedia } from '@/modules/posts/create/reducers/mediaSlice';
+  setCreatePostThoughts,
+  toggleCreatePostOpenable,
+  toggleCreatePostPosting,
+} from '@/modules/posts/create/reducers/createPostPostReducer';
+import { setCreatePostCheckInStepActiveLocation } from '@/modules/posts/create/reducers/steps/createPostCheckInStepReducer';
+import { setCreatePostFeelingsStepActiveFeeling } from '@/modules/posts/create/reducers/steps/createPostFeelingsStepReducer';
 import {
-  setThoughts,
-  toggleOpenable,
-  togglePosting,
-} from '@/modules/posts/create/reducers/postSlice';
+  setCreatePostGifsStepActiveGif,
+  setCreatePostGifsStepGifs,
+  setCreatePostGifsStepSearchInputValue,
+} from '@/modules/posts/create/reducers/steps/createPostGifsStepReducer';
+import { setCreatePostMediaStepMedia } from '@/modules/posts/create/reducers/steps/createPostMediaStepReducer';
 
 export const CreatePostDefaultStepButton = () => {
   const t = useTranslations();
   const dispatch = useAppDispatch();
   const { posting, thoughts } = useAppSelector(
-    (store) => store.posts.create.post
+    (store) => store.posts.createPost.createPostPost
   );
 
-  const media = useAppSelector((store) => store.posts.create.media);
+  const media = useAppSelector(
+    (store) => store.posts.createPost.createPostMediaStep
+  );
+
   const { activeFeeling } = useAppSelector(
-    (store) => store.posts.create.feelings
+    (store) => store.posts.createPost.createPostFeelingsStep
   );
 
   const { activeLocation } = useAppSelector(
-    (store) => store.posts.create.checkIn
+    (store) => store.posts.createPost.createPostCheckInStep
   );
 
-  const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
+  const { activeGif } = useAppSelector(
+    (store) => store.posts.createPost.createPostGifsStep
+  );
 
   const handleCreatePost = () => {
-    dispatch(togglePosting());
+    dispatch(toggleCreatePostPosting());
 
     createPost({
       thoughts: thoughts.length > 0 ? thoughts : null,
@@ -51,19 +56,19 @@ export const CreatePostDefaultStepButton = () => {
     })
       .then((data) => {
         showToast.success(t(`toast-messages.success.${data.message}`));
-        dispatch(toggleOpenable());
-        dispatch(setThoughts(''));
-        dispatch(setMedia({ file: null, type: null }));
-        dispatch(setActiveFeeling(null));
-        dispatch(setActiveLocation(null));
-        dispatch(setActiveGif(null));
-        dispatch(setGifsSearchInputValue(''));
-        dispatch(setGifs({ gifs: [], error: false }));
-        dispatch(togglePosting());
+        dispatch(toggleCreatePostOpenable());
+        dispatch(setCreatePostThoughts(''));
+        dispatch(setCreatePostMediaStepMedia({ file: null, type: null }));
+        dispatch(setCreatePostFeelingsStepActiveFeeling(null));
+        dispatch(setCreatePostCheckInStepActiveLocation(null));
+        dispatch(setCreatePostGifsStepActiveGif(null));
+        dispatch(setCreatePostGifsStepSearchInputValue(''));
+        dispatch(setCreatePostGifsStepGifs({ gifs: [], error: false }));
+        dispatch(toggleCreatePostPosting());
       })
       .catch(({ message }) => {
         showToast.error(t(`toast-messages.error.${message}`));
-        dispatch(togglePosting());
+        dispatch(toggleCreatePostPosting());
       });
   };
 

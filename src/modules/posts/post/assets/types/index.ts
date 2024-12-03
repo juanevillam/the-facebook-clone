@@ -1,4 +1,13 @@
-import type { Comment, Like, Post, SavedPost, User } from '@prisma/client';
+import type {
+  Comment,
+  Like,
+  Post,
+  SavedPost,
+  Story,
+  StoryItem,
+  StoryItemView,
+  User,
+} from '@prisma/client';
 
 type CommentExtended = Comment & { user: User };
 
@@ -11,4 +20,17 @@ type PostExtended = Post & {
   user: User;
 };
 
-export type { CommentExtended, LikeExtended, PostExtended };
+type StoryItemExtended = StoryItem & { views: StoryItemView[] };
+
+type StoryExtended = Story & {
+  items: StoryItemExtended[];
+  user: User;
+};
+
+export type {
+  CommentExtended,
+  LikeExtended,
+  PostExtended,
+  StoryItemExtended,
+  StoryExtended,
+};

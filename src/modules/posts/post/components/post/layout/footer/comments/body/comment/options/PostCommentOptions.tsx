@@ -16,9 +16,7 @@ type PostCommentOptionsProps = {
 
 export const PostCommentOptions = ({ commentId }: PostCommentOptionsProps) => {
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
-  const { deletingComment } = useAppSelector(
-    (store) => store.posts.post.footerOptions
-  );
+  const { deletingComment } = useAppSelector((store) => store.posts.postsPost);
 
   const openBottomSheet = () => setIsBottomSheetOpen(true);
 

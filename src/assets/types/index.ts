@@ -24,6 +24,13 @@ type InputEvent = React.ChangeEvent<HTMLInputElement>;
 
 type SetValue<T> = React.Dispatch<React.SetStateAction<T>>;
 
+type MediaType = 'image' | 'video' | null;
+
+type Media = {
+  file: string | null;
+  type: MediaType;
+};
+
 export type {
   LayoutProps,
   PageProps,
@@ -32,4 +39,6 @@ export type {
   SharedSvg,
   InputEvent,
   SetValue,
+  Media,
+  MediaType,
 };

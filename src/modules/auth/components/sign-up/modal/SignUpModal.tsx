@@ -6,14 +6,14 @@ import { useTranslations } from 'next-intl';
 import { CloseIcon } from '@/assets/ui/icons';
 import { IconButton } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { toggleSignUpOpenable } from '@/lib/store/reducers/authReducer';
+import { toggleSignUpOpenable } from '@/modules/auth/reducers/authReducer';
 
 import { SignUpModalForm } from './form/SignUpModalForm';
 
 export const SignUpModal = () => {
   const t = useTranslations('auth.sign-up.modal');
   const dispatch = useAppDispatch();
-  const { signUpOpenableOpen } = useAppSelector((store) => store.authReducer);
+  const { signUpOpenableOpen } = useAppSelector((store) => store.auth);
 
   const handleToggleSignUpOpenable = () => dispatch(toggleSignUpOpenable());
 

@@ -6,11 +6,10 @@ import { PostExtended } from '@/modules/posts/post/assets/types';
 import { PostModal } from '../PostModal';
 
 type PostModalWrapperProps = {
-  id: string;
   post: PostExtended;
 };
 
-export const PostModalWrapper = ({ id, post }: PostModalWrapperProps) => {
+export const PostModalWrapper = ({ post }: PostModalWrapperProps) => {
   const messages = useMessages();
 
   return (
@@ -26,7 +25,7 @@ export const PostModalWrapper = ({ id, post }: PostModalWrapperProps) => {
         'video-player'
       )}
     >
-      <PostModal id={id} post={post} />
+      <PostModal post={post} />
     </NextIntlClientProvider>
   );
 };

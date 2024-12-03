@@ -7,12 +7,6 @@ import { InputEvent } from '@/assets/types';
 import { ExclamationCircleIcon, MapIcon } from '@/assets/ui/icons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { Location } from '@/modules/posts/create/assets/types';
-import {
-  setActiveLocation,
-  setCheckInSearchInputValue,
-  setLocations,
-} from '@/modules/posts/create/reducers/checkInSlice';
-import { setStep } from '@/modules/posts/create/reducers/postSlice';
 
 import {
   CreatePostStepContainer,
@@ -20,6 +14,12 @@ import {
   CreatePostStepMessage,
 } from '../ui';
 import { CreatePostCheckInStepItem } from './item/CreatePostCheckInStepItem';
+import { setCreatePostStep } from '../../../reducers/createPostPostReducer';
+import {
+  setCreatePostCheckInStepActiveLocation,
+  setCreatePostCheckInStepSearchInputValue,
+  setCreatePostCheckStepInLocations,
+} from '../../../reducers/steps/createPostCheckInStepReducer';
 
 export const CreatePostCheckInStep = () => {
   const autocompleteService =
@@ -29,21 +29,26 @@ export const CreatePostCheckInStep = () => {
   const t = useTranslations('posts.create.steps.check-in');
   const dispatch = useAppDispatch();
   const { activeLocation, searchInputValue, locations, error } = useAppSelector(
-    (store) => store.posts.create.checkIn
+    (store) => store.posts.createPost.createPostCheckInStep
   );
 
   const handleClearSearch = () => {
-    dispatch(setCheckInSearchInputValue(''));
-    dispatch(setLocations({ locations: [], error: false }));
+    dispatch(setCreatePostCheckInStepSearchInputValue(''));
+    dispatch(
+      setCreatePostCheckStepInLocations({ locations: [], error: false })
+    );
   };
 
   const handleSearchChange = (event: InputEvent) => {
     const { value } = event.target;
 
-    dispatch(setCheckInSearchInputValue(value));
+    dispatch(setCreatePostCheckInStepSearchInputValue(value));
 
     if (value.length === 0) {
-      dispatch(setLocations({ locations: [], error: false }));
+      dispatch(
+        setCreatePostCheckStepInLocations({ locations: [], error: false })
+      );
+
       return;
     }
 
@@ -58,22 +63,29 @@ export const CreatePostCheckInStep = () => {
             },
             (placePredictions) =>
               dispatch(
-                setLocations({
+                setCreatePostCheckStepInLocations({
                   locations: placePredictions || [],
                   error: placePredictions ? false : true,
                 })
               )
           );
         } catch (error) {
-          dispatch(setLocations({ locations: [], error: true }));
+          dispatch(
+            setCreatePostCheckStepInLocations({ locations: [], error: true })
+          );
         }
       });
     }
   };
 
   const handleSetActiveLocation = (item: Location) => {
-    dispatch(setActiveLocation(activeLocation === item ? null : item));
-    dispatch(setStep('default'));
+    dispatch(
+      setCreatePostCheckInStepActiveLocation(
+        activeLocation === item ? null : item
+      )
+    );
+
+    dispatch(setCreatePostStep('default'));
   };
 
   useEffect(() => {

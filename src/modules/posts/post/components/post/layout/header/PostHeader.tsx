@@ -38,7 +38,11 @@ export const PostHeader = ({
   return (
     <div className="flex items-start justify-between space-x-2 p-3 pr-1.5 md:relative md:items-center md:px-4 md:pr-3">
       <div className="flex w-full">
-        <div className={classNames('mr-2', { 'hidden md:block': isModal })}>
+        <div
+          className={classNames('mr-2 min-w-10', {
+            'hidden md:block': isModal,
+          })}
+        >
           <ProfilePic image={image} name={name} />
         </div>
         <div>

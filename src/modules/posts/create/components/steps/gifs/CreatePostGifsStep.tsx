@@ -8,12 +8,6 @@ import { ExclamationCircleIcon, GifIcon } from '@/assets/ui/icons';
 import { Button } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { GIF, GIFUnparsed } from '@/modules/posts/create/assets/types';
-import {
-  setActiveGif,
-  setGifs,
-  setGifsSearchInputValue,
-} from '@/modules/posts/create/reducers/gifsSlice';
-import { setStep } from '@/modules/posts/create/reducers/postSlice';
 
 import {
   CreatePostStepContainer,
@@ -21,6 +15,12 @@ import {
   CreatePostStepMessage,
 } from '../ui';
 import { CreatePostGifsStepItem } from './item/CreatePostGifsStepItem';
+import { setCreatePostStep } from '../../../reducers/createPostPostReducer';
+import {
+  setCreatePostGifsStepActiveGif,
+  setCreatePostGifsStepGifs,
+  setCreatePostGifsStepSearchInputValue,
+} from '../../../reducers/steps/createPostGifsStepReducer';
 
 export const CreatePostGifsStep = () => {
   const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -30,7 +30,7 @@ export const CreatePostGifsStep = () => {
   const t = useTranslations('posts.create.steps.gifs');
   const dispatch = useAppDispatch();
   const { activeGif, searchInputValue, gifs, error } = useAppSelector(
-    (store) => store.posts.create.gifs
+    (store) => store.posts.createPost.createPostGifsStep
   );
 
   const handleGetGifs = async (
@@ -62,13 +62,13 @@ export const CreatePostGifsStep = () => {
       }));
 
       dispatch(
-        setGifs({
+        setCreatePostGifsStepGifs({
           gifs: append ? [...gifs, ...parsedGifs] : parsedGifs,
           error: false,
         })
       );
     } catch (error) {
-      dispatch(setGifs({ gifs: [], error: true }));
+      dispatch(setCreatePostGifsStepGifs({ gifs: [], error: true }));
     } finally {
       setLoadingMore(false);
       setLoading(false);
@@ -76,19 +76,19 @@ export const CreatePostGifsStep = () => {
   };
 
   const handleClearSearch = () => {
-    dispatch(setGifsSearchInputValue(''));
-    dispatch(setGifs({ gifs: [], error: false }));
+    dispatch(setCreatePostGifsStepSearchInputValue(''));
+    dispatch(setCreatePostGifsStepGifs({ gifs: [], error: false }));
     setOffset(0);
   };
 
   const handleSearchChange = (event: InputEvent) => {
     const { value } = event.target;
 
-    dispatch(setGifsSearchInputValue(value));
+    dispatch(setCreatePostGifsStepSearchInputValue(value));
     setOffset(0);
 
     if (value.length === 0) {
-      dispatch(setGifs({ gifs: [], error: false }));
+      dispatch(setCreatePostGifsStepGifs({ gifs: [], error: false }));
       return;
     }
 
@@ -101,8 +101,8 @@ export const CreatePostGifsStep = () => {
   };
 
   const handleSetActiveGif = (gif: GIF) => {
-    dispatch(setActiveGif(activeGif === gif ? null : gif));
-    dispatch(setStep('default'));
+    dispatch(setCreatePostGifsStepActiveGif(activeGif === gif ? null : gif));
+    dispatch(setCreatePostStep('default'));
   };
 
   const handleLoadMore = () => {

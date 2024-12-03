@@ -14,7 +14,10 @@ export const CreatePostDefaultStepFooterItem = ({
   onClick,
 }: CardItem) => {
   const t = useTranslations('posts.create.layout.footer');
-  const { activeGif } = useAppSelector((store) => store.posts.create.gifs);
+  const { activeGif } = useAppSelector(
+    (store) => store.posts.createPost.createPostGifsStep
+  );
+
   const tooltipLabel =
     disabled && name === 'gif'
       ? IS_PRODUCTION
