@@ -1,11 +1,7 @@
-type ChainBrokenProps = {
-  className: string;
-};
-
-export const ChainBroken = ({ className }: ChainBrokenProps) => (
+export const ChainBroken = () => (
   <svg
     aria-hidden="true"
-    className={className}
+    className="mb-4 size-28"
     fill="currentColor"
     viewBox="0 0 112 112"
   >
