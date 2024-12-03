@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { CardItem } from '@/modules/posts/create/assets/types';
 import { setCreatePostStep } from '@/modules/posts/create/reducers/createPostPostReducer';
 
-import { CreatePostDefaultStepFooterItem } from './item/CreatePostDefaultStepFooterItem';
+import { CreatePostDefaultStepFooterItem } from './CreatePostDefaultStepFooterItem';
 
 export const CreatePostDefaultStepFooter = () => {
   const t = useTranslations();

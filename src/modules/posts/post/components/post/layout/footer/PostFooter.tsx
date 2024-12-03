@@ -13,8 +13,8 @@ import { likePost } from '@/modules/posts/post/actions';
 import {
   CommentExtended,
   LikeExtended,
+  PostVariant,
 } from '@/modules/posts/post/assets/types';
-import { PostVariant } from '@/modules/posts/post/types';
 
 import { PostFooterActions } from './actions/PostFooterActions';
 import {
@@ -22,8 +22,8 @@ import {
   PostCommentsBottomSheet,
   PostCommentsBottomSheetFooter,
 } from './comments';
-import { PostFooterInfo } from './info/PostFooterInfo';
 import { PostLikesBottomSheet } from './likes';
+import { PostFooterInfo } from './PostFooterInfo';
 
 type PostFooterProps = {
   postComments: CommentExtended[];

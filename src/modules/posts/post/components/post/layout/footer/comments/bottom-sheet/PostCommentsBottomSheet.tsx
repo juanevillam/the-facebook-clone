@@ -7,8 +7,8 @@ import {
 } from '@/modules/posts/post/assets/types';
 
 import { PostComments } from '../PostComments';
-import { PostCommentsBottomSheetFooter } from './footer/PostCommentsBottomSheetFooter';
-import { PostCommentsBottomSheetHeader } from './header/PostCommentsBottomSheetHeader';
+import { PostCommentsBottomSheetFooter } from './PostCommentsBottomSheetFooter';
+import { PostCommentsBottomSheetHeader } from './PostCommentsBottomSheetHeader';
 
 type PostCommentsBottomSheetProps = {
   addOptimisticComment: (action: unknown) => void;

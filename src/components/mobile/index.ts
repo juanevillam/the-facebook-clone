@@ -1,1 +1,1 @@
-export { MobileDialog } from './dialog/MobileDialog';
+export { MobileDialog } from './MobileDialog';

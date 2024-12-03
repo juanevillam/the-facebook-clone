@@ -6,14 +6,11 @@ import { ProfilePic } from '@/components';
 import { IS_PRODUCTION } from '@/constants/environment';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
-import { CreatePostCardItem } from './item/CreatePostCardItem';
 import { CardItem } from '../../assets/types';
 import {
   setCreatePostStep,
   toggleCreatePostOpenable,
 } from '../../reducers/createPostPostReducer';
-import { CreatePostDialog } from '../dialog/CreatePostDialog';
-import { CreatePostModal } from '../modal/CreatePostModal';
 import {
   CreatePostCheckInStep,
   CreatePostDefaultStep,
@@ -21,6 +18,9 @@ import {
   CreatePostGifsStep,
   CreatePostMediaStep,
 } from '../steps';
+import { CreatePostCardItem } from './CreatePostCardItem';
+import { CreatePostDialog } from '../CreatePostDialog';
+import { CreatePostModal } from '../CreatePostModal';
 
 export const CreatePostCard = () => {
   const t = useTranslations();

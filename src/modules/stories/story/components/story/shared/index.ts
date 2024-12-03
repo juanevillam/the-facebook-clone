@@ -1,1 +1,1 @@
-export { StoryContent } from './content/StoryContent';
+export { StoryContent } from './StoryContent';

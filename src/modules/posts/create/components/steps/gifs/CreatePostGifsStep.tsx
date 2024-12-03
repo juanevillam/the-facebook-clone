@@ -14,7 +14,7 @@ import {
   CreatePostStepLoader,
   CreatePostStepMessage,
 } from '../ui';
-import { CreatePostGifsStepItem } from './item/CreatePostGifsStepItem';
+import { CreatePostGifsStepItem } from './CreatePostGifsStepItem';
 import { setCreatePostStep } from '../../../reducers/createPostPostReducer';
 import {
   setCreatePostGifsStepActiveGif,

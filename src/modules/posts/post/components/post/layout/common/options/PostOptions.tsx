@@ -11,7 +11,7 @@ import { IconButton } from '@/components/buttons';
 import { useBreakpoint } from '@/hooks';
 import { useAppSelector } from '@/lib/store/hooks';
 
-import { PostOptionsBottomSheet } from './bottom-sheet/PostOptionsBottomSheet';
+import { PostOptionsBottomSheet } from './PostOptionsBottomSheet';
 
 type PostOptionsProps = {
   isModal?: boolean;

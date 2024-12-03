@@ -27,10 +27,13 @@ type StoryExtended = Story & {
   user: User;
 };
 
+type PostVariant = 'modal' | 'page';
+
 export type {
   CommentExtended,
   LikeExtended,
   PostExtended,
   StoryItemExtended,
   StoryExtended,
+  PostVariant,
 };

@@ -1,2 +1,2 @@
-export { StoryModalSkeleton } from './skeleton/StoryModalSkeleton';
-export { StoryModalWrapper } from './wrapper/StoryModalWrapper';
+export { StoryModalSkeleton } from './StoryModalSkeleton';
+export { StoryModalWrapper } from './StoryModalWrapper';

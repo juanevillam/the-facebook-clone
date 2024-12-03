@@ -1,10 +1,9 @@
 import { signIn } from 'next-auth/react';
 import { useLocale, useTranslations } from 'next-intl';
-import showToast from 'react-hot-toast';
 
 import { GithubIcon, GoogleIcon } from '@/assets/ui/icons/social';
 
-import { AuthSocialButton } from './button/AuthSocialButton';
+import { AuthSocialButton } from './AuthSocialButton';
 
 type Provider = 'google' | 'github';
 

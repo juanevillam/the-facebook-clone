@@ -1,1 +1,1 @@
-export { PostSkeletonHeader } from './header/PostSkeletonHeader';
+export { PostSkeletonHeader } from './PostSkeletonHeader';

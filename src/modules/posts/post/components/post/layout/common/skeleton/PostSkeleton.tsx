@@ -1,6 +1,6 @@
 import { Skeleton } from '@mui/material';
 
-import { PostSkeletonHeader } from './header/PostSkeletonHeader';
+import { PostSkeletonHeader } from './PostSkeletonHeader';
 
 export const PostSkeleton = () => {
   return (

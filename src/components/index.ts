@@ -1,8 +1,9 @@
-export { ActionLoader } from './action-loader/ActionLoader';
-export { MediaPicker } from './media-picker/MediaPicker';
-export { NextThemeProvider } from './next-theme-provider/NextThemeProvider';
-export { ProfilePic } from './profile-pic/ProfilePic';
-export { SuspenseLoader } from './suspense-loader/SuspenseLoader';
-export { Timestamp } from './timestamp/Timestamp';
-export { Tooltip } from './tooltip/Tooltip';
-export { VideoPlayer } from './video-player/VideoPlayer';
+export { ActionLoader } from './ActionLoader';
+export { MediaPicker } from './MediaPicker';
+export { NextThemeProvider } from './NextThemeProvider';
+export { ProfilePic } from './ProfilePic';
+export { SearchInput } from './SearchInput';
+export { SuspenseLoader } from './SuspenseLoader';
+export { Timestamp } from './Timestamp';
+export { Tooltip } from './Tooltip';
+export { VideoPlayer } from './VideoPlayer';

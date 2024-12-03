@@ -1,12 +1,12 @@
 import { ActionLoader } from '@/components';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
-import { CreatePostDefaultStepButton } from './button/CreatePostDefaultStepButton';
-import { CreatePostDefaultStepFooter } from './footer/CreatePostDefaultStepFooter';
-import { CreatePostDefaultStepTextArea } from './text-area/CreatePostDefaultStepTextArea';
-import { CreatePostDefaultStepUserInfo } from './user-info/CreatePostDefaultStepUserInfo';
+import { CreatePostDefaultStepButton } from './CreatePostDefaultStepButton';
+import { CreatePostDefaultStepTextArea } from './CreatePostDefaultStepTextArea';
+import { CreatePostDefaultStepUserInfo } from './CreatePostDefaultStepUserInfo';
 import { setCreatePostGifsStepActiveGif } from '../../../reducers/steps/createPostGifsStepReducer';
-import { CreatePostGifsStepItem } from '../gifs/item/CreatePostGifsStepItem';
+import { CreatePostGifsStepItem } from '../gifs/CreatePostGifsStepItem';
+import { CreatePostDefaultStepFooter } from './footer/CreatePostDefaultStepFooter';
 
 export const CreatePostDefaultStep = () => {
   const dispatch = useAppDispatch();

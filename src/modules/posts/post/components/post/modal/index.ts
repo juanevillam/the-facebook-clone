@@ -1,2 +1,2 @@
-export { PostModalSkeleton } from './skeleton/PostModalSkeleton';
-export { PostModalWrapper } from './wrapper/PostModalWrapper';
+export { PostModalSkeleton } from './PostModalSkeleton';
+export { PostModalWrapper } from './PostModalWrapper';

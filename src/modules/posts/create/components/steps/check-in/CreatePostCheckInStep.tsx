@@ -13,7 +13,7 @@ import {
   CreatePostStepLoader,
   CreatePostStepMessage,
 } from '../ui';
-import { CreatePostCheckInStepItem } from './item/CreatePostCheckInStepItem';
+import { CreatePostCheckInStepItem } from './CreatePostCheckInStepItem';
 import { setCreatePostStep } from '../../../reducers/createPostPostReducer';
 import {
   setCreatePostCheckInStepActiveLocation,

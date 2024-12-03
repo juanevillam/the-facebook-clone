@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { ChatBubbleLeftRightIcon } from '@/assets/ui/icons';
 import { CommentExtended } from '@/modules/posts/post/assets/types';
 
-import { PostComment } from './body/comment/PostComment';
+import { PostComment } from './body/PostComment';
 
 type PostCommentsProps = {
   optimisticComments: CommentExtended[];

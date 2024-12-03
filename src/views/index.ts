@@ -1,1 +1,1 @@
-export { MenuView } from './menu/MenuView';
+export { MenuView } from './MenuView';

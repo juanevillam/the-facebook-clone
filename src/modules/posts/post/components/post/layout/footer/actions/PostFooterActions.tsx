@@ -11,7 +11,7 @@ import {
 } from '@/assets/ui/icons';
 import { LikeExtended } from '@/modules/posts/post/assets/types';
 
-import { PostFooterActionsItem } from './item/PostFooterActionsItem';
+import { PostFooterActionsItem } from './PostFooterActionsItem';
 
 type PostFooterActionsProps = {
   desktopCommentsOpen: boolean;

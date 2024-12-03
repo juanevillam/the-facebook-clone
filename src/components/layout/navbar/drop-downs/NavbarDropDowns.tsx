@@ -4,12 +4,12 @@ import {
   MessengerIcon,
   NotificationsIcon,
 } from '@/assets/ui/icons/navbar/drop-downs';
-import { ProfilePic } from '@/components/profile-pic/ProfilePic';
+import { ProfilePic } from '@/components/ProfilePic';
 import { usePathname, useRouter } from '@/navigation';
 
 import { NavbarDropDownIcon } from './icons';
-import { MessengerDropDown } from './messenger/MessengerDropDown';
-import { NotificationsDropDown } from './notifications/NotificationsDropDown';
+import { MessengerDropDown } from './MessengerDropDown';
+import { NotificationsDropDown } from './NotificationsDropDown';
 import { ProfileDropDown } from './profile/ProfileDropDown';
 
 export const NavbarDropDowns = () => {

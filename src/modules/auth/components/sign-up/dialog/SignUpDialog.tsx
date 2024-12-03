@@ -10,7 +10,7 @@ import { MobileDialog } from '@/components/mobile';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { toggleSignUpOpenable } from '@/modules/auth/reducers/authReducer';
 
-import { SignUpDialogForm } from './form/SignUpDialogForm';
+import { SignUpDialogForm } from './SignUpDialogForm';
 
 export const SignUpDialog = () => {
   const [step, setStep] = useState(0);

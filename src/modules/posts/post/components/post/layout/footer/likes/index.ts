@@ -1,1 +1,1 @@
-export { PostLikesBottomSheet } from './bottom-sheet/PostLikesBottomSheet';
+export { PostLikesBottomSheet } from './PostLikesBottomSheet';

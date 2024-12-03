@@ -1,3 +1,3 @@
 export { ProfileDropDownDefaultStep } from './default/ProfileDropDownDefaultStep';
-export { ProfileDropDownDisplayAccessibilityStep } from './display-accessibility/ProfileDropDownDisplayAccessibilityStep';
-export { ProfileDropDownSettingsStep } from './settings/ProfileDropDownSettingsStep';
+export { ProfileDropDownDisplayAccessibilityStep } from './ProfileDropDownDisplayAccessibilityStep';
+export { ProfileDropDownSettingsStep } from './ProfileDropDownSettingsStep';

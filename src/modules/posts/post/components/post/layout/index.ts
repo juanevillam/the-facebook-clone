@@ -1,3 +1,3 @@
-export { PostBody } from './body/PostBody';
+export { PostBody } from './PostBody';
 export { PostFooter } from './footer/PostFooter';
-export { PostHeader } from './header/PostHeader';
+export { PostHeader } from './PostHeader';

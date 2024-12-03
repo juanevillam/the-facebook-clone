@@ -8,7 +8,7 @@ import { IconButton } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { toggleSignUpOpenable } from '@/modules/auth/reducers/authReducer';
 
-import { SignUpModalForm } from './form/SignUpModalForm';
+import { SignUpModalForm } from './SignUpModalForm';
 
 export const SignUpModal = () => {
   const t = useTranslations('auth.sign-up.modal');

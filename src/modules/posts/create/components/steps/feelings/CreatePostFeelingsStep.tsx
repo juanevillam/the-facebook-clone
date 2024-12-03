@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { Feeling } from '@/modules/posts/create/assets/types';
 
 import { CreatePostStepContainer, CreatePostStepMessage } from '../ui';
-import { CreatePostFeelingsStepItem } from './item/CreatePostFeelingsStepItem';
+import { CreatePostFeelingsStepItem } from './CreatePostFeelingsStepItem';
 import { setCreatePostStep } from '../../../reducers/createPostPostReducer';
 import {
   setCreatePostFeelingsStepActiveFeeling,

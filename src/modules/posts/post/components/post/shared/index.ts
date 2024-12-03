@@ -1,1 +1,1 @@
-export { PostContent } from './content/PostContent';
+export { PostContent } from './PostContent';
