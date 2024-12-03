@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { FacebookLogoMark, FacebookLogoType } from '@/assets/ui/icons/brand';
+import { FacebookLogoMark, FacebookLogoType } from '@/assets/icons/brand';
 
 export const AuthHeader = () => {
   const t = useTranslations('auth.header');

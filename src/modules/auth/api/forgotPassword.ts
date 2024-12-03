@@ -1,8 +1,8 @@
 'use server';
 
-import { getUserByEmail } from '@/data/user';
-import { sendResetPasswordEmail } from '@/lib/mail';
-import { generatePasswordResetToken } from '@/lib/tokens';
+import { sendResetPasswordEmail } from '@/lib/email/emailUtils';
+import { getUserByEmail } from '@/lib/services/userService';
+import { generatePasswordResetToken } from '@/lib/tokens/tokenGenerator';
 
 import {
   forgotPasswordFormSchema,

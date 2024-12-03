@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { BellIcon, DotsHorizontalIcon } from '@/assets/ui/icons';
+import { BellIcon, DotsHorizontalIcon } from '@/assets/icons';
 
 import { DropDownHeaderIcon } from './icons';
 

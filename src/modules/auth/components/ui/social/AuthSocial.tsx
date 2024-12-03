@@ -1,7 +1,7 @@
 import { signIn } from 'next-auth/react';
 import { useLocale, useTranslations } from 'next-intl';
 
-import { GithubIcon, GoogleIcon } from '@/assets/ui/icons/social';
+import { GithubIcon, GoogleIcon } from '@/assets/icons/social';
 
 import { AuthSocialButton } from './AuthSocialButton';
 

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
-import { NavbarIconProps } from '@/assets/ui/icons/navbar/types';
+import { NavbarIconProps } from '@/assets/icons/navbar/types';
 import { Tooltip } from '@/components';
 import { Link, usePathname } from '@/navigation';
 

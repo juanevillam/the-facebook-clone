@@ -1,8 +1,8 @@
 'use server';
 
-import { getEmailVerificationTokenByToken } from '@/data/emailVerificationToken';
-import { getUserByEmail } from '@/data/user';
-import { db } from '@/lib/database';
+import { db } from '@/lib/database/prismaClient';
+import { getUserByEmail } from '@/lib/services/userService';
+import { getEmailVerificationTokenByToken } from '@/modules/auth/services/emailVerificationTokenService';
 
 export const verifyEmail = async (token: string) => {
   if (!token) {

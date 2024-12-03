@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 
-import { PaperPlaneIcon } from '@/assets/ui/icons';
+import { PaperPlaneIcon } from '@/assets/icons';
 import { useCurrentUser } from '@/hooks';
 import { commentPost } from '@/modules/posts/post/actions';
 

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { CloseIcon } from '@/assets/ui/icons';
+import { CloseIcon } from '@/assets/icons';
 import { ActionLoader, VideoPlayer } from '@/components';
 import { IconButton } from '@/components/buttons';
 

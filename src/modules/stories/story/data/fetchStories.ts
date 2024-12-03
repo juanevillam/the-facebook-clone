@@ -1,7 +1,7 @@
 import { unstable_noStore } from 'next/cache';
 
 import { auth } from '@/auth';
-import { db } from '@/lib/database';
+import { db } from '@/lib/database/prismaClient';
 
 export const fetchStories = async () => {
   unstable_noStore();

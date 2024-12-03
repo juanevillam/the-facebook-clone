@@ -8,11 +8,7 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  CloseIcon,
-} from '@/assets/ui/icons';
+import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '@/assets/icons';
 import { ProfilePic } from '@/components';
 import { IconButton } from '@/components/buttons';
 import { useCurrentUser } from '@/hooks';

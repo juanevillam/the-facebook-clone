@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 
+import { ChevronRightIcon } from '@/assets/icons';
 import { SharedSvg } from '@/assets/types';
-import { ChevronRightIcon } from '@/assets/ui/icons';
 
 type ProfileDropDownDefaultStepItemProps = {
   dropdown?: boolean;

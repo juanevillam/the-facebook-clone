@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { Drawer } from 'vaul';
 
-import { DotsHorizontalIcon } from '@/assets/ui/icons';
+import { DotsHorizontalIcon } from '@/assets/icons';
 import { IconButton } from '@/components/buttons';
 import { useAppSelector } from '@/lib/store/hooks';
 

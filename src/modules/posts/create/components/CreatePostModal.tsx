@@ -1,6 +1,6 @@
 import { Backdrop, Fade, Modal } from '@mui/material';
 
-import { ArrowLeftIcon, CloseIcon } from '@/assets/ui/icons';
+import { ArrowLeftIcon, CloseIcon } from '@/assets/icons';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostHeader } from './layout';

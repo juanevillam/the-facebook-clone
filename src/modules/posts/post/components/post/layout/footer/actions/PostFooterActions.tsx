@@ -8,7 +8,7 @@ import {
   ChatBubbleOvalLeftIcon,
   HandThumbUpIcon,
   ShareIcon,
-} from '@/assets/ui/icons';
+} from '@/assets/icons';
 import { LikeExtended } from '@/modules/posts/post/assets/types';
 
 import { PostFooterActionsItem } from './PostFooterActionsItem';

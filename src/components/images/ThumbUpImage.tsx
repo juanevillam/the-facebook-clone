@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { SharedSvgProps } from '@/assets/ui/icons/types';
+import { SharedSvgProps } from '@/assets/icons/types';
 
 export const ThumbUpImage = ({ className }: SharedSvgProps) => {
   const t = useTranslations('images');

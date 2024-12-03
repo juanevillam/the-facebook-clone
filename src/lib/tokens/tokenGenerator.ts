@@ -2,10 +2,10 @@ import crypto from 'crypto';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import { getEmailVerificationTokenByEmail } from '@/data/emailVerificationToken';
-import { getPasswordResetTokenByEmail } from '@/data/passwordResetToken';
-import { getTwoFactorTokenByEmail } from '@/data/twoFactorToken';
-import { db } from '@/lib/database';
+import { db } from '@/lib/database/prismaClient';
+import { getEmailVerificationTokenByEmail } from '@/modules/auth/services/emailVerificationTokenService';
+import { getPasswordResetTokenByEmail } from '@/modules/auth/services/passwordResetTokenService';
+import { getTwoFactorTokenByEmail } from '@/modules/auth/services/twoFactorTokenService';
 
 const generateEmailVerificationToken = async (email: string) => {
   const token = uuidv4();

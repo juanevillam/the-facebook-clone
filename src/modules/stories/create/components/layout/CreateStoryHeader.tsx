@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 
-import { ArrowLeftIcon } from '@/assets/ui/icons';
+import { ArrowLeftIcon } from '@/assets/icons';
 import { IconButton } from '@/components/buttons';
 import { useAppSelector } from '@/lib/store/hooks';
 

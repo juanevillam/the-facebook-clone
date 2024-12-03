@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { CloseIcon } from '@/assets/ui/icons';
+import { CloseIcon } from '@/assets/icons';
 import { IconButton } from '@/components/buttons';
 
 type CreatePostStepItemProps = {

@@ -1,9 +1,11 @@
 export { ActionLoader } from './ActionLoader';
 export { MediaPicker } from './MediaPicker';
+export { MenuView } from './MenuView';
+export { MobileDialog } from './MobileDialog';
 export { NextThemeProvider } from './NextThemeProvider';
 export { ProfilePic } from './ProfilePic';
 export { SearchInput } from './SearchInput';
 export { SuspenseLoader } from './SuspenseLoader';
 export { Timestamp } from './Timestamp';
 export { Tooltip } from './Tooltip';
-export { VideoPlayer } from './VideoPlayer';
+export { VideoPlayer } from './video-player/VideoPlayer';

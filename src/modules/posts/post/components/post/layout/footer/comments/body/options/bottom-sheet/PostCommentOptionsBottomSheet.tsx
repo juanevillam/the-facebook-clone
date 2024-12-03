@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import showToast from 'react-hot-toast';
 import { Drawer } from 'vaul';
 
-import { TrashIcon } from '@/assets/ui/icons';
+import { TrashIcon } from '@/assets/icons';
 import { ActionLoader } from '@/components';
 import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';

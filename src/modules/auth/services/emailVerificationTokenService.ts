@@ -1,4 +1,4 @@
-import { db } from '@/lib/database';
+import { db } from '@/lib/database/prismaClient';
 
 const getEmailVerificationTokenByToken = async (token: string) => {
   try {

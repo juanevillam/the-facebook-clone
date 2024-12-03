@@ -5,7 +5,7 @@ import {
   HomeIcon,
   MenuIcon,
   WatchIcon,
-} from '@/assets/ui/icons/navbar/links';
+} from '@/assets/icons/navbar/links';
 
 import { NavbarLink } from './NavbarLink';
 

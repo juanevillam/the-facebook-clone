@@ -3,15 +3,18 @@
 import { AuthError } from 'next-auth';
 
 import { signIn } from '@/auth';
-import { getTwoFactorConfirmationByUserId } from '@/data/twoFactorConfirmation';
-import { getTwoFactorTokenByEmail } from '@/data/twoFactorToken';
-import { getUserByEmail } from '@/data/user';
-import { db } from '@/lib/database';
-import { sendTwoFactorTokenEmail, sendVerificationEmail } from '@/lib/mail';
+import { db } from '@/lib/database/prismaClient';
+import {
+  sendTwoFactorTokenEmail,
+  sendVerificationEmail,
+} from '@/lib/email/emailUtils';
+import { getTwoFactorConfirmationByUserId } from '@/lib/services/twoFactorConfirmationService';
+import { getUserByEmail } from '@/lib/services/userService';
 import {
   generateEmailVerificationToken,
   generateTwoFactorToken,
-} from '@/lib/tokens';
+} from '@/lib/tokens/tokenGenerator';
+import { getTwoFactorTokenByEmail } from '@/modules/auth/services/twoFactorTokenService';
 
 import { loginFormSchema, loginFormValuesType } from '../schemas/loginSchema';
 

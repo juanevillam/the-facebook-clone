@@ -2,10 +2,10 @@
 
 import { hash } from 'bcryptjs';
 
-import { getUserByEmail } from '@/data/user';
-import { db } from '@/lib/database';
-import { sendVerificationEmail } from '@/lib/mail';
-import { generateEmailVerificationToken } from '@/lib/tokens';
+import { db } from '@/lib/database/prismaClient';
+import { sendVerificationEmail } from '@/lib/email/emailUtils';
+import { getUserByEmail } from '@/lib/services/userService';
+import { generateEmailVerificationToken } from '@/lib/tokens/tokenGenerator';
 
 import {
   signUpFormSchema,

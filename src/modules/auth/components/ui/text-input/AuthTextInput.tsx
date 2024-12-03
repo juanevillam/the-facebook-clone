@@ -3,7 +3,7 @@
 import { Field, useField, useFormikContext } from 'formik';
 import { useTranslations } from 'next-intl';
 
-import { CloseIcon } from '@/assets/ui/icons';
+import { CloseIcon } from '@/assets/icons';
 import { IconButton } from '@/components/buttons';
 import { AlertTriangleImage } from '@/components/images';
 

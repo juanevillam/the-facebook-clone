@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 
 import { auth } from '@/auth';
-import { db } from '@/lib/database';
+import { db } from '@/lib/database/prismaClient';
 
 export const deletePost = async (postId: string, userId: string) => {
   const session = await auth();

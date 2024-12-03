@@ -10,7 +10,7 @@ import {
   BookmarkSlashIcon,
   EyeIcon,
   TrashIcon,
-} from '@/assets/ui/icons';
+} from '@/assets/icons';
 import { ActionLoader } from '@/components';
 import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';

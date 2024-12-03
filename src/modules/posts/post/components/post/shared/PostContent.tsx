@@ -11,8 +11,8 @@ import {
   ArrowsPointingInIcon,
   ArrowsPointingOutIcon,
   CloseIcon,
-} from '@/assets/ui/icons';
-import { FacebookLogoMark } from '@/assets/ui/icons/brand';
+} from '@/assets/icons';
+import { FacebookLogoMark } from '@/assets/icons/brand';
 import { VideoPlayer } from '@/components';
 import { IconButton } from '@/components/buttons';
 import { Feeling } from '@/modules/posts/create/assets/types';

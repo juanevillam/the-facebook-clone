@@ -1,11 +1,11 @@
 import { useTranslations } from 'next-intl';
 
-import { SetValue } from '@/assets/types';
 import {
   ArrowRightStartOnRectangleIcon,
   CogIcon,
   MoonIcon,
-} from '@/assets/ui/icons';
+} from '@/assets/icons';
+import { SetValue } from '@/assets/types';
 import { ProfilePic } from '@/components';
 import { useCurrentUser } from '@/hooks';
 import { logout } from '@/modules/auth/api';

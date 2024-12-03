@@ -1,5 +1,5 @@
-import { ArrowLeftIcon } from '@/assets/ui/icons';
-import { MobileDialog } from '@/components/mobile';
+import { ArrowLeftIcon } from '@/assets/icons';
+import { MobileDialog } from '@/components';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { CreatePostHeader } from './layout';

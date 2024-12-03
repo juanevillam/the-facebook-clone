@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
-import { NavbarIconProps } from '@/assets/ui/icons/navbar/types';
+import { NavbarIconProps } from '@/assets/icons/navbar/types';
 
 type PostFooterActionsItemProps = {
   className?: string;

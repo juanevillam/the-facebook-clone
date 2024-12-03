@@ -3,12 +3,8 @@
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 
+import { ArrowLeftIcon, ArrowsPointingOutIcon, MoonIcon } from '@/assets/icons';
 import { SetValue } from '@/assets/types';
-import {
-  ArrowLeftIcon,
-  ArrowsPointingOutIcon,
-  MoonIcon,
-} from '@/assets/ui/icons';
 import { useFullScreen } from '@/hooks';
 
 import { ProfileDropDownRadioInput } from './ProfileDropDownRadioInput';

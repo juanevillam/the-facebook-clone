@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import {
   MessengerIcon,
   NotificationsIcon,
-} from '@/assets/ui/icons/navbar/drop-downs';
+} from '@/assets/icons/navbar/drop-downs';
 import { ProfilePic } from '@/components/ProfilePic';
 import { usePathname, useRouter } from '@/navigation';
 

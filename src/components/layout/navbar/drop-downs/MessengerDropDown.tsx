@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 import { useTranslations } from 'next-intl';
 
-import { InputEvent, SetValue } from '@/assets/types';
 import {
   ArrowsPointingOutIcon,
   ChatBubbleOvalLeftEllipsisIcon,
   PencilSquareIcon,
-} from '@/assets/ui/icons';
+} from '@/assets/icons';
+import { InputEvent, SetValue } from '@/assets/types';
 import { SearchInput } from '@/components';
 import { Link } from '@/navigation';
 

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
-import { ChatBubbleLeftRightIcon } from '@/assets/ui/icons';
+import { ChatBubbleLeftRightIcon } from '@/assets/icons';
 import { CommentExtended } from '@/modules/posts/post/assets/types';
 
 import { PostComment } from './body/PostComment';

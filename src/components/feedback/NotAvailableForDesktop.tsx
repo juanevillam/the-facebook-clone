@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { ChainBroken } from '@/assets/ui/icons';
+import { ChainBroken } from '@/assets/icons';
 
 export const NotAvailableForDesktop = () => {
   const t = useTranslations('feedback.not-available-for-desktop');

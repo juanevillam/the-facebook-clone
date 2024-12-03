@@ -3,8 +3,8 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
+import { PhotoIcon } from '@/assets/icons';
 import { MediaType } from '@/assets/types';
-import { PhotoIcon } from '@/assets/ui/icons';
 import { MediaPicker } from '@/components';
 import { useMedia } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';

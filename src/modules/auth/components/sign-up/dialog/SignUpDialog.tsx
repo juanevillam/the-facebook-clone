@@ -4,9 +4,9 @@ import { useState } from 'react';
 
 import { useTranslations } from 'next-intl';
 
-import { ArrowLeftIcon } from '@/assets/ui/icons';
+import { ArrowLeftIcon } from '@/assets/icons';
+import { MobileDialog } from '@/components';
 import { Button, IconButton } from '@/components/buttons';
-import { MobileDialog } from '@/components/mobile';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { toggleSignUpOpenable } from '@/modules/auth/reducers/authReducer';
 

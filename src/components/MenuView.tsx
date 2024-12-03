@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { ProfileDropDown } from '@/components/layout/navbar/drop-downs';
+import { ProfileDropDown } from './layout/navbar/drop-downs';
 
 export const MenuView = () => {
   const t = useTranslations('menu');

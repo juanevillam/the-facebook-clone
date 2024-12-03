@@ -3,8 +3,8 @@ import { useId } from 'react';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
+import { CloseIcon, SearchIcon } from '@/assets/icons';
 import { InputEvent } from '@/assets/types';
-import { CloseIcon, SearchIcon } from '@/assets/ui/icons';
 import { IconButton } from '@/components/buttons';
 
 export type SearchInputLabel = 'search' | 'search-messenger' | 'where-are-you';

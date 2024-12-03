@@ -2,9 +2,9 @@
 
 import { hash } from 'bcryptjs';
 
-import { getPasswordResetTokenByToken } from '@/data/passwordResetToken';
-import { getUserByEmail } from '@/data/user';
-import { db } from '@/lib/database';
+import { db } from '@/lib/database/prismaClient';
+import { getUserByEmail } from '@/lib/services/userService';
+import { getPasswordResetTokenByToken } from '@/modules/auth/services/passwordResetTokenService';
 
 import {
   resetPasswordFormSchema,

@@ -3,8 +3,8 @@
 import { useParams } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 
+import { ArrowLeftIcon, GlobeIcon } from '@/assets/icons';
 import { SetValue } from '@/assets/types';
-import { ArrowLeftIcon, GlobeIcon } from '@/assets/ui/icons';
 import { usePathname, useRouter } from '@/navigation';
 
 import { ProfileDropDownRadioInput } from './ProfileDropDownRadioInput';

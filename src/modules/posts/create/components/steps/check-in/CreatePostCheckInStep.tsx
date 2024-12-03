@@ -3,8 +3,8 @@ import { useEffect, useRef, useTransition } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
 import { useTranslations } from 'next-intl';
 
+import { ExclamationCircleIcon, MapIcon } from '@/assets/icons';
 import { InputEvent } from '@/assets/types';
-import { ExclamationCircleIcon, MapIcon } from '@/assets/ui/icons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { Location } from '@/modules/posts/create/assets/types';
 

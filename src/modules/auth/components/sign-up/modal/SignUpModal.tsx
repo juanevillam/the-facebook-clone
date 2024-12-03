@@ -3,7 +3,7 @@
 import { Backdrop, Fade, Modal } from '@mui/material';
 import { useTranslations } from 'next-intl';
 
-import { CloseIcon } from '@/assets/ui/icons';
+import { CloseIcon } from '@/assets/icons';
 import { IconButton } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { toggleSignUpOpenable } from '@/modules/auth/reducers/authReducer';

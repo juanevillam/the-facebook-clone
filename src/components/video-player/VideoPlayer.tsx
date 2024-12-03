@@ -12,10 +12,10 @@ import {
   PlayIcon,
   SpeakerWaveIcon,
   SpeakerXMarkIcon,
-} from '@/assets/ui/icons';
-import { formatSecondsToVideoTime } from '@/utils';
+} from '@/assets/icons';
 
-import { IconButton } from './buttons';
+import { IconButton } from '../buttons';
+import { formatSecondsToVideoTime } from './helpers/formatSecondsToVideoTime';
 
 type VideoPlayerProps = {
   showControls?: boolean;

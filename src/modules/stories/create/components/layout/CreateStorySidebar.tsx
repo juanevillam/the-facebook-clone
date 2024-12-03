@@ -2,8 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 
-import { CloseIcon } from '@/assets/ui/icons';
-import { FacebookLogoMark } from '@/assets/ui/icons/brand';
+import { CloseIcon } from '@/assets/icons';
+import { FacebookLogoMark } from '@/assets/icons/brand';
 import { ProfilePic } from '@/components';
 import { IconButton } from '@/components/buttons';
 import { useCurrentUser } from '@/hooks';

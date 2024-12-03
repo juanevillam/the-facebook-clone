@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { SharedSvgProps } from '@/assets/ui/icons/types';
+import { SharedSvgProps } from '@/assets/icons/types';
 
 type PostOptionsBottomSheetItemProps = {
   IconComponent: React.FC<SharedSvgProps>;

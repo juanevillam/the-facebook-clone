@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
-import { PlusIcon } from '@/assets/ui/icons';
+import { PlusIcon } from '@/assets/icons';
 import { ProfilePic } from '@/components';
 import { useCurrentUser } from '@/hooks';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';

@@ -1,4 +1,4 @@
-import { MobileDialog } from '@/components/mobile';
+import { MobileDialog } from '@/components';
 import { useAppSelector } from '@/lib/store/hooks';
 
 import { CreateStoryBody, CreateStoryHeader } from './layout';

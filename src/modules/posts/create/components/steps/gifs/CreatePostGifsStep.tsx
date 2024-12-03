@@ -3,8 +3,8 @@ import { useRef, useState } from 'react';
 import axios from 'axios';
 import { useTranslations } from 'next-intl';
 
+import { ExclamationCircleIcon, GifIcon } from '@/assets/icons';
 import { InputEvent } from '@/assets/types';
-import { ExclamationCircleIcon, GifIcon } from '@/assets/ui/icons';
 import { Button } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { GIF, GIFUnparsed } from '@/modules/posts/create/assets/types';

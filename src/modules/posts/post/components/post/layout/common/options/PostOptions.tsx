@@ -6,7 +6,7 @@ import { SavedPost } from '@prisma/client';
 import classNames from 'classnames';
 import { Drawer } from 'vaul';
 
-import { DotsHorizontalIcon } from '@/assets/ui/icons';
+import { DotsHorizontalIcon } from '@/assets/icons';
 import { IconButton } from '@/components/buttons';
 import { useBreakpoint } from '@/hooks';
 import { useAppSelector } from '@/lib/store/hooks';

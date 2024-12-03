@@ -1,6 +1,6 @@
 import { unstable_noStore } from 'next/cache';
 
-import { db } from '@/lib/database';
+import { db } from '@/lib/database/prismaClient';
 
 export const fetchPosts = async () => {
   unstable_noStore();

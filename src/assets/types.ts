@@ -1,4 +1,4 @@
-import { SharedSvgProps } from '../ui/icons/types';
+import { SharedSvgProps } from './icons/types';
 
 type LayoutProps = {
   params: { locale: string };

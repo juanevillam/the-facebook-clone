@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
-import { FacebookLogoMark, FacebookLogoType } from '@/assets/ui/icons/brand';
+import { FacebookLogoMark, FacebookLogoType } from '@/assets/icons/brand';
 import { useScrollDirection } from '@/hooks';
 import { Link, usePathname } from '@/navigation';
 
