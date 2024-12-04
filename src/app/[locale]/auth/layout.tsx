@@ -11,7 +11,10 @@ export default function AuthLayout({
 
   return (
     <main className="flex h-screen flex-col justify-between md:bg-gray-100">
-      <section className="z-10 md:mx-auto md:flex md:h-5/6 md:max-w-4xl md:flex-row md:items-center md:space-x-12 md:px-6 lg:max-w-5xl">
+      <section
+        aria-labelledby="auth-layout-title"
+        className="z-10 md:mx-auto md:flex md:h-5/6 md:max-w-4xl md:flex-row md:items-center md:space-x-12 md:px-6 lg:max-w-5xl"
+      >
         <AuthHeader />
         {children}
       </section>

@@ -1,6 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
+import { useTranslations } from 'next-intl';
 
 import { ArrowLeftIcon, CloseIcon } from '@/assets/icons';
 import { FacebookLogoMark } from '@/assets/icons/brand';
@@ -23,6 +24,7 @@ export const StoryContent = ({
   variant,
 }: StoryContentProps) => {
   const { items, user } = story;
+  const t = useTranslations('logos');
   const router = useRouter();
 
   const navigateToHome = () => router.push('/');
@@ -59,7 +61,7 @@ export const StoryContent = ({
             }}
             onClick={closeModal}
           />
-          <Link href="/">
+          <Link aria-label={t('link-aria-label')} href="/">
             <FacebookLogoMark className="size-10" />
           </Link>
         </div>

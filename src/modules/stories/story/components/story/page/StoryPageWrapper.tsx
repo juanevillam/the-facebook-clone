@@ -20,7 +20,8 @@ export const StoryPageWrapper = ({ story }: StoryPageWrapperProps) => {
         'toast-messages',
         'icon-buttons',
         'action-loader',
-        'timestamp'
+        'timestamp',
+        'logos'
       )}
     >
       <StoryPage story={story} />

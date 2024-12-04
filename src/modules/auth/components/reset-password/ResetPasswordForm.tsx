@@ -59,8 +59,16 @@ export const ResetPasswordForm = () => {
       validate={handleValidateForm}
     >
       <Form className="pt-2">
+        <h1 className="sr-only" id="reset-password-form-title">
+          {t('auth.reset-password.title')}
+        </h1>
+        <p className="sr-only" id="reset-password-form-instructions">
+          {t('auth.reset-password.description')}
+        </p>
         <AuthTextInput
+          ariaDescribedBy="reset-password-form-instructions"
           disabled={isPending}
+          id="reset-password-password-input"
           minLength={8}
           name="password"
           placeholder={t('form.fields.password')}

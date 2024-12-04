@@ -67,12 +67,17 @@ export const VerifyEmailForm = () => {
       }}
       showChildrenOn="top"
     >
-      {status === 'loading' && (
-        <div className="flex py-1.5">
-          <BeatLoader color="#2C64F6" size={16} />
-        </div>
-      )}
-      {status === 'error' && <AlertTriangleImage size={32} />}
+      <div aria-live="polite">
+        {status === 'loading' && (
+          <div className="flex py-1.5">
+            <BeatLoader color="#2C64F6" size={16} />
+            <span className="sr-only">
+              {t('auth.verify-email.loading.description')}
+            </span>
+          </div>
+        )}
+        {status === 'error' && <AlertTriangleImage size={32} />}
+      </div>
     </AuthCard>
   );
 };

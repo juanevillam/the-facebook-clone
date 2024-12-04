@@ -17,21 +17,28 @@ export const AuthCard = ({ info, showChildrenOn, children }: AuthCardProps) => {
   return (
     <div className="p-4 md:w-5/12 md:rounded-lg md:bg-white md:shadow-lg">
       {info ? (
-        <div className="flex-center-justify-center flex-col text-center">
+        <div
+          className="flex flex-col items-center text-center"
+          aria-describedby="auth-card-description"
+          aria-labelledby="auth-card-title"
+        >
           {showChildrenOn === 'top' && (
-            <div className="flex-center-justify-center mb-2 w-full">
+            <div className="mb-2 flex w-full items-center justify-center">
               {children}
             </div>
           )}
-          <h1 className="mb-1 text-2xl font-semibold">{info?.title}</h1>
-          <p className="mb-4">{info?.description}</p>
+          <h1
+            className="mb-1 text-2xl font-semibold text-gray-900"
+            id="auth-card-title"
+          >
+            {info.title}
+          </h1>
+          <p className="mb-4 text-gray-600" id="auth-card-description">
+            {info.description}
+          </p>
           {showChildrenOn === 'bottom' && (
             <div className="mb-6 w-full md:mb-4">{children}</div>
           )}
-          {/* 
-            // TODO: When user is logged in, navigate to home ("/") page, otherwise navigate to auth page and the label show be go back to home ("/") and go back to log in
-            <Link label={t("link")} navigateTo={session ? "/" : "auth"} />
-          */}
           <AuthLink label={t('link')} navigateTo="auth" />
         </div>
       ) : (

@@ -9,7 +9,7 @@ export type AuthProvider = 'google' | 'github';
 
 export const AuthSocial = () => {
   const locale = useLocale();
-  const t = useTranslations();
+  const t = useTranslations('auth.social');
 
   const handleSignInSocial = (provider: AuthProvider) =>
     signIn(provider, {
@@ -21,8 +21,14 @@ export const AuthSocial = () => {
   const handleGithubSignIn = () => handleSignInSocial('github');
 
   return (
-    <>
-      <div className="flex flex-row space-x-3">
+    <div className="pb-4">
+      <h2 className="sr-only" id="auth-social-title">
+        {t('title')}
+      </h2>
+      <div
+        aria-labelledby="auth-social-title"
+        className="flex flex-row space-x-3 pb-4"
+      >
         <AuthSocialButton
           Icon={GoogleIcon}
           label="google"
@@ -36,9 +42,9 @@ export const AuthSocial = () => {
       </div>
       <div className="flex-center py-1.5">
         <div className="primary-border-light flex-grow border-t" />
-        <span className="mx-4 text-gray-500">{t('auth.social.label')}</span>
+        <span className="mx-4 text-gray-500">{t('label')}</span>
         <div className="primary-border-light flex-grow border-t" />
       </div>
-    </>
+    </div>
   );
 };

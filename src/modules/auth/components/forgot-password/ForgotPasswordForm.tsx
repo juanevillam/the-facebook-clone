@@ -51,7 +51,17 @@ export const ForgotPasswordForm = () => {
       validate={handleValidateForm}
     >
       <Form className="pt-2">
-        <EmailAuthTextInput disabled={isPending} />
+        <h1 className="sr-only" id="forgot-password-form-title">
+          {t('auth.forgot-password.title')}
+        </h1>
+        <p className="sr-only" id="forgot-password-form-instructions">
+          {t('auth.forgot-password.description')}
+        </p>
+        <EmailAuthTextInput
+          ariaDescribedBy="forgot-password-form-instructions"
+          id="forgot-password-form-email-input"
+          disabled={isPending}
+        />
         <Button
           disabled={isPending}
           fullWidth

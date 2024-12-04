@@ -48,7 +48,7 @@ export const PostContent = ({
   } = post;
 
   const [expanded, setExpanded] = useState(false);
-  const t = useTranslations('images');
+  const t = useTranslations();
   const router = useRouter();
 
   const handleExpand = () => setExpanded(!expanded);
@@ -124,7 +124,7 @@ export const PostContent = ({
                   }}
                   onClick={closeModal}
                 />
-                <Link href="/">
+                <Link aria-label={t('logos.link-aria-label')} href="/">
                   <FacebookLogoMark className="hidden size-10 md:block" />
                 </Link>
               </div>
@@ -153,7 +153,7 @@ export const PostContent = ({
           </div>
           {mediaType === 'image' && (
             <Image
-              alt={t('user-image')}
+              alt={t('images.user-image')}
               className="size-full object-contain"
               height={0}
               priority
@@ -164,7 +164,7 @@ export const PostContent = ({
           )}
           {mediaType === 'gif' && (
             <Image
-              alt={t('user-gif')}
+              alt={t('images.user-gif')}
               className="size-full object-contain"
               height={0}
               priority

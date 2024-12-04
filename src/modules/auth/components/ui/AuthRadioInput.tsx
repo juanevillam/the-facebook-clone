@@ -1,5 +1,6 @@
 'use client';
 
+import classNames from 'classnames';
 import { Field, useField } from 'formik';
 
 type AuthRadioInputProps = {
@@ -15,27 +16,32 @@ export const AuthRadioInput = (props: AuthRadioInputProps) => {
 
   return (
     <label
-      className={`primary-border-light-full flex-center-justify-between mb-4 w-full cursor-pointer rounded-md border px-4 py-3.5 ${
-        meta.touched && meta.error && 'ring-2 ring-error-100'
-      }`}
+      className={classNames(
+        'primary-border-light-full flex-center-justify-between mb-4 w-full cursor-pointer rounded-md border px-4 py-3.5',
+        {
+          'ring-2 ring-error-100': meta.touched && meta.error,
+        }
+      )}
       htmlFor={`${name}-${value}`}
     >
-      {label}
+      <span id={`${name}-${value}-label`}>{label}</span>
       <Field
-        aria-labelledby={`${name}-${value}-label`}
         aria-checked={field.checked}
         aria-invalid={meta.error && meta.touched ? 'true' : 'false'}
+        aria-labelledby={`${name}-${value}-label`}
         className="sr-only"
         id={`${name}-${value}`}
         type="radio"
         {...field}
       />
       <span
-        className={`flex-center-justify-center size-4 rounded-full border-2 ${
-          field.checked
-            ? 'border-primary-100 bg-primary-100'
-            : 'border-gray-300'
-        }`}
+        className={classNames(
+          'flex-center-justify-center size-4 rounded-full border-2 transition',
+          {
+            'border-primary-100 bg-primary-100': field.checked,
+            'border-gray-300': !field.checked,
+          }
+        )}
       >
         {field.checked && <span className="size-2 rounded-full bg-white" />}
       </span>

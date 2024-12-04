@@ -40,15 +40,14 @@ export const LoginForm = () => {
               showToast.success(t(`toast-messages.success.${data.message}`));
               return;
             }
-
             if (data.twoFactor) {
               setShowTwoFactor(true);
               return;
             }
-
             window.location.reload();
-          } else if (data.message)
+          } else if (data.message) {
             showToast.error(t(`toast-messages.error.${data.message}`));
+          }
         })
         .catch(() =>
           showToast.error(t('toast-messages.error.something-went-wrong'))
@@ -67,16 +66,15 @@ export const LoginForm = () => {
   const handleToggleSignUpOpenable = () => dispatch(toggleSignUpOpenable());
 
   useEffect(() => {
-    if (urlError)
+    if (urlError) {
       showToast.error(t(`toast-messages.error.${urlError}`), {
         id: 'oauth-account-not-linked',
       });
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [urlError]);
+    }
+  }, [urlError, t]);
 
   return (
-    <div className="space-y-4">
+    <>
       <AuthSocial />
       <Formik
         initialValues={{
@@ -87,19 +85,27 @@ export const LoginForm = () => {
         onSubmit={handleSubmit}
         validate={handleValidateForm}
       >
-        <Form>
+        <Form aria-labelledby="login-form-title">
+          <h1 className="sr-only" id="login-form-title">
+            {t('auth.login.title')}
+          </h1>
           {showTwoFactor ? (
             <AuthTextInput
               disabled={isPending}
+              id="login-form-code-input"
               name="code"
               placeholder={t('form.fields.code')}
               type="text"
             />
           ) : (
             <>
-              <EmailAuthTextInput disabled={isPending} />
+              <EmailAuthTextInput
+                disabled={isPending}
+                id="login-form-email-input"
+              />
               <AuthTextInput
                 disabled={isPending}
+                id="login-form-password-input"
                 minLength={1}
                 name="password"
                 placeholder={t('form.fields.password')}
@@ -110,11 +116,11 @@ export const LoginForm = () => {
           <Button
             disabled={isPending}
             fullWidth
-            label={t(
-              `auth.login.form.primary-button.${
-                showTwoFactor ? '2fa-' : ''
-              }label`
-            )}
+            label={
+              showTwoFactor
+                ? t('auth.login.form.primary-button.2fa-label')
+                : t('auth.login.form.primary-button.label')
+            }
             loading={isPending}
             loadingLabel={t('auth.login.form.primary-button.loading-label')}
             type="submit"
@@ -139,6 +145,6 @@ export const LoginForm = () => {
           </div>
         </Form>
       </Formik>
-    </div>
+    </>
   );
 };

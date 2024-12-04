@@ -9,11 +9,15 @@
     },
     "footer": {
       "locale-switcher": {
+        "title": "Change application language",
         "label": "Change language",
         "locale": "{locale, select, es {Spanish} en {English} other {Unknown}}"
-      }
+      },
+      "footer-section": "Footer section",
+      "author-information": "Author information"
     },
     "login": {
+      "title": "Log in",
       "form": {
         "primary-button": {
           "label": "Log in",
@@ -65,6 +69,7 @@
       }
     },
     "social": {
+      "title": "Log in with a social account",
       "label": "or continue with",
       "buttons": {
         "google": "Log in with Google",
@@ -115,7 +120,6 @@
   },
   "navbar": {
     "main-navigation": "Main navigation",
-    "home": "Home",
     "mobile-navigation": "Mobile navigation",
     "links": {
       "home": "Home",
@@ -465,6 +469,7 @@
     "close-post-likes-menu": "Close post likes menu",
     "close-display-accessibility-menu": "Close display and accessibility menu",
     "close-settings-menu": "Close settings menu",
+    "close-sign-up-modal": "Close sign up modal",
     "close-story": "Close story",
     "close-story-player": "Close story player",
     "collapse-post": "Collapse post",
@@ -534,5 +539,10 @@
   },
   "suspense-loader": {
     "aria-label": "Loading content"
+  },
+  "logos": {
+    "logotype": "Facebook logotype",
+    "logomark": "Facebook logomark",
+    "link-aria-label": "Navigate to the home page"
   }
 }

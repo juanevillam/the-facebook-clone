@@ -61,40 +61,69 @@ export const SignUpDialogForm = ({ nextStep, step }: SignUpDialogFormProps) => {
     >
       <Form>
         {step === 1 && (
-          <AuthTextInput
-            disabled={isPending}
-            name="name"
-            placeholder={t('form.fields.name')}
-            type="text"
-            variant="mobile"
-          />
+          <>
+            <label htmlFor="name" className="sr-only">
+              {t('form.fields.name')}
+            </label>
+            <AuthTextInput
+              disabled={isPending}
+              id="sign-up-dialog-form-name-input"
+              name="name"
+              placeholder={t('form.fields.name')}
+              type="text"
+              variant="mobile"
+            />
+          </>
         )}
         {step === 2 && (
-          <EmailAuthTextInput disabled={isPending} variant="mobile" />
+          <>
+            <label htmlFor="email" className="sr-only">
+              {t('form.fields.email-address')}
+            </label>
+            <EmailAuthTextInput
+              disabled={isPending}
+              id="sign-up-dialog-form-email-input"
+              variant="mobile"
+            />
+          </>
         )}
         {step === 3 && (
-          <AuthTextInput
-            disabled={isPending}
-            name="password"
-            minLength={8}
-            placeholder={t('form.fields.password')}
-            type="password"
-            variant="mobile"
-          />
+          <>
+            <label htmlFor="password" className="sr-only">
+              {t('form.fields.password')}
+            </label>
+            <AuthTextInput
+              disabled={isPending}
+              id="sign-up-dialog-form-password-input"
+              name="password"
+              minLength={8}
+              placeholder={t('form.fields.password')}
+              type="password"
+              variant="mobile"
+            />
+          </>
         )}
         {step === 4 && (
-          <div className="flex space-x-3" role="group">
-            <AuthRadioInput
-              label={t('form.fields.gender.male')}
-              name="gender"
-              value="male"
-            />
-            <AuthRadioInput
-              label={t('form.fields.gender.female')}
-              name="gender"
-              value="female"
-            />
-          </div>
+          <>
+            <legend className="sr-only" id="gender-group-label">
+              {t('form.fields.gender.label')}
+            </legend>
+            <fieldset
+              aria-labelledby="gender-group-label"
+              className="flex space-x-3"
+            >
+              <AuthRadioInput
+                label={t('form.fields.gender.male')}
+                name="gender"
+                value="male"
+              />
+              <AuthRadioInput
+                label={t('form.fields.gender.female')}
+                name="gender"
+                value="female"
+              />
+            </fieldset>
+          </>
         )}
         <Button
           fullWidth

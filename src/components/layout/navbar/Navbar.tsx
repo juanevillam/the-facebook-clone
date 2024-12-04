@@ -11,7 +11,7 @@ import { NavbarDropDowns } from './drop-downs/NavbarDropDowns';
 import { NavbarLinks } from './links/NavbarLinks';
 
 export const Navbar = () => {
-  const t = useTranslations('navbar');
+  const t = useTranslations();
   const scrollDirection = useScrollDirection();
   const pathname = usePathname();
 
@@ -36,11 +36,11 @@ export const Navbar = () => {
         }`}
       >
         <nav
-          aria-label={t('main-navigation')}
+          aria-label={t('navbar.main-navigation')}
           className="flex-center-justify-between px-3 py-2 md:px-4 md:py-1"
         >
           <div className="flex-center">
-            <Link aria-label={t('home')} href="/">
+            <Link aria-label={t('logos.link-aria-label')} href="/">
               <FacebookLogoMark className="hidden size-10 md:block" />
               <FacebookLogoType className="h-6 fill-primary-100 md:hidden dark:fill-white" />
             </Link>
@@ -54,7 +54,7 @@ export const Navbar = () => {
         </nav>
       </header>
       <nav
-        aria-label={t('mobile-navigation')}
+        aria-label={t('navbar.mobile-navigation')}
         className={`card-bg primary-border flex-center transform border-b transition-transform md:hidden ${
           showTopHeader ? '-translate-y-full' : 'translate-y-0'
         }`}

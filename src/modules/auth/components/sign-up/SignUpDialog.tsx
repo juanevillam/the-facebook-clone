@@ -31,7 +31,7 @@ export const SignUpDialog = () => {
       translateFrom="x"
     >
       <div className="relative size-full bg-white">
-        <div className="flex-center space-x-1.5 border-b border-gray-300 p-1.5">
+        <header className="flex-center space-x-1.5 border-b border-gray-300 p-1.5">
           <IconButton
             className="hover:secondary-bg-light size-10"
             icon={{
@@ -41,19 +41,23 @@ export const SignUpDialog = () => {
             }}
             onClick={closeStep}
           />
-          <h1 className="primary-text-light text-lg" id="sign-up-dialog-title">
+          <h1
+            className="primary-text-light text-lg"
+            id="sign-up-dialog-title"
+            aria-live="polite"
+          >
             {t(`auth.sign-up.dialog.${step}-step.description`)}
           </h1>
-        </div>
-        <div className="mx-auto mt-44 w-11/12 space-y-6">
-          <div className="space-y-3 text-center">
-            <h1 className="text-2xl font-semibold">
+        </header>
+        <main className="mx-auto mt-44 w-11/12 space-y-6">
+          <section className="space-y-3 text-center">
+            <h2 className="text-2xl font-semibold">
               {t(`auth.sign-up.dialog.${step}-step.title`)}
-            </h1>
+            </h2>
             <p className="text-gray-600">
               {t(`auth.sign-up.dialog.${step}-step.subtitle`)}
             </p>
-          </div>
+          </section>
           {step === 0 ? (
             <Button
               fullWidth
@@ -66,7 +70,7 @@ export const SignUpDialog = () => {
           ) : (
             <SignUpDialogForm nextStep={nextStep} step={step} />
           )}
-        </div>
+        </main>
       </div>
     </MobileDialog>
   );

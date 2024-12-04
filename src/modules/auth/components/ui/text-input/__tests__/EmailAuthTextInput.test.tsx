@@ -47,7 +47,7 @@ const renderWithFormik = (ui: JSX.Element) => {
 
 describe('[AUTH] EmailAuthTextInput', () => {
   test('renders desktop input with correct attributes', () => {
-    renderWithFormik(<EmailAuthTextInput />);
+    renderWithFormik(<EmailAuthTextInput id="login-form-email-input" />);
 
     const input = screen.getByTestId('email-auth-text-input');
 
@@ -57,7 +57,9 @@ describe('[AUTH] EmailAuthTextInput', () => {
   });
 
   test('renders mobile input with correct attributes', () => {
-    renderWithFormik(<EmailAuthTextInput variant="mobile" />);
+    renderWithFormik(
+      <EmailAuthTextInput id="login-form-email-input" variant="mobile" />
+    );
 
     const input = screen.getByTestId('email-auth-text-input');
 
@@ -67,7 +69,7 @@ describe('[AUTH] EmailAuthTextInput', () => {
   });
 
   test('displays an error message when an invalid email is entered', async () => {
-    renderWithFormik(<EmailAuthTextInput />);
+    renderWithFormik(<EmailAuthTextInput id="login-form-email-input" />);
 
     const input = screen.getByTestId('email-auth-text-input');
 
@@ -82,7 +84,7 @@ describe('[AUTH] EmailAuthTextInput', () => {
   });
 
   test('does not display an error message when a valid email is entered', async () => {
-    renderWithFormik(<EmailAuthTextInput />);
+    renderWithFormik(<EmailAuthTextInput id="login-form-email-input" />);
 
     const input = screen.getByTestId('email-auth-text-input');
 
@@ -97,7 +99,9 @@ describe('[AUTH] EmailAuthTextInput', () => {
   });
 
   test('is accessible', async () => {
-    const { container } = renderWithFormik(<EmailAuthTextInput />);
+    const { container } = renderWithFormik(
+      <EmailAuthTextInput id="login-form-email-input" />
+    );
     const results = await axe(container);
 
     expect(results).toHaveNoViolations();

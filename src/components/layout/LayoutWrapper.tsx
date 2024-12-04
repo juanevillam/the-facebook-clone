@@ -22,7 +22,8 @@ export const LayoutWrapper = ({
             'navbar',
             'images',
             'icon-buttons',
-            'search-input'
+            'search-input',
+            'logos'
           )}
         >
           <Navbar />

@@ -22,7 +22,8 @@ export const PostModalWrapper = ({ post }: PostModalWrapperProps) => {
         'icon-buttons',
         'action-loader',
         'timestamp',
-        'video-player'
+        'video-player',
+        'logos'
       )}
     >
       <PostModal post={post} />

@@ -1,3 +1,5 @@
+'use client';
+
 import { useTransition } from 'react';
 
 import { Formik, Form } from 'formik';
@@ -53,7 +55,7 @@ export const SignUpModalForm = ({
   };
 
   return (
-    <div className="space-y-4 px-1">
+    <div className="px-1">
       <AuthSocial />
       <Formik
         initialValues={{
@@ -68,21 +70,31 @@ export const SignUpModalForm = ({
         <Form>
           <AuthTextInput
             disabled={isPending}
+            id="sign-up-modal-form-name-input"
             name="name"
             placeholder={t('form.fields.name')}
             skin="secondary"
             type="text"
           />
-          <EmailAuthTextInput disabled={isPending} skin="secondary" />
+          <EmailAuthTextInput
+            disabled={isPending}
+            id="sign-up-modal-form-email-input"
+            skin="secondary"
+          />
           <AuthTextInput
             disabled={isPending}
+            id="sign-up-modal-form-password-input"
             minLength={8}
             name="password"
-            skin="secondary"
             placeholder={t('form.fields.password')}
+            skin="secondary"
             type="password"
           />
-          <p className="mb-1 text-xs text-gray-700" id="gender-label">
+          <p
+            aria-hidden="true"
+            className="mb-1 text-xs text-gray-700"
+            id="gender-label"
+          >
             {t('form.fields.gender.label')}
           </p>
           <div

@@ -20,7 +20,7 @@ export default function AuthPage({ params: { locale } }: PageProps) {
       <NextIntlClientProvider
         messages={pick(
           messages,
-          'auth.login.form',
+          'auth.login',
           'auth.sign-up',
           'form',
           'images',

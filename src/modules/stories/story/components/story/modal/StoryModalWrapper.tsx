@@ -20,7 +20,8 @@ export const StoryModalWrapper = ({ story }: StoryModalWrapperProps) => {
         'toast-messages',
         'icon-buttons',
         'action-loader',
-        'timestamp'
+        'timestamp',
+        'logos'
       )}
     >
       <StoryModal story={story} />

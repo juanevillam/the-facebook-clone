@@ -1,5 +1,6 @@
 'use client';
 
+import classNames from 'classnames';
 import { Field, useField, useFormikContext } from 'formik';
 import { useTranslations } from 'next-intl';
 
@@ -7,34 +8,21 @@ import { CloseIcon } from '@/assets/icons';
 import { IconButton } from '@/components/buttons';
 import { AlertTriangleImage } from '@/components/images';
 
-export type AuthTextInputSkin = 'primary' | 'secondary';
+import { AuthTextInputProps } from './types';
 
-export type AuthTextInputVariant = 'desktop' | 'mobile';
-
-type AuthTextInputProps = {
-  datatestid?: 'email-auth-text-input';
-  disabled?: boolean;
-  minLength?: number;
-  name: string;
-  placeholder: string;
-  skin?: AuthTextInputSkin;
-  type: 'text' | 'email' | 'password';
-  variant?: AuthTextInputVariant;
-};
-
-export const AuthTextInput = (props: AuthTextInputProps) => {
-  const {
-    datatestid,
-    disabled = false,
-    minLength,
-    name,
-    placeholder,
-    skin = 'primary',
-    type,
-    variant = 'desktop',
-  } = props;
-
-  const [field, { error, touched }] = useField(props);
+export const AuthTextInput = ({
+  ariaDescribedBy,
+  datatestid,
+  disabled = false,
+  id,
+  minLength,
+  name,
+  placeholder,
+  skin = 'primary',
+  type,
+  variant = 'desktop',
+}: AuthTextInputProps) => {
+  const [field, { error, touched }] = useField(name);
   const { setFieldValue } = useFormikContext();
   const t = useTranslations();
 
@@ -44,10 +32,12 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
     <div className="mb-4 w-full">
       {variant === 'desktop' ? (
         <Field
-          autoComplete="on"
-          aria-describedby={`${name}-error`}
+          autoComplete={type === 'password' ? 'current-password' : 'on'}
+          aria-describedby={
+            error && touched ? `${id}-error` : ariaDescribedBy || undefined
+          }
           aria-invalid={error && touched ? 'true' : 'false'}
-          aria-label={placeholder}
+          aria-labelledby={`${id}-label`}
           className={`primary-transition w-full rounded-md border border-gray-200 px-4 py-3.5 placeholder-gray-500 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-100 ${
             skin === 'primary'
               ? 'bg-white hover:bg-gray-100'
@@ -59,6 +49,7 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
           }`}
           data-testid={datatestid}
           disabled={disabled}
+          id={id}
           minLength={minLength}
           placeholder={placeholder}
           type={type}
@@ -67,9 +58,10 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
       ) : (
         <div className={`relative h-12 w-full ${!error && 'mb-[22px]'}`}>
           <input
-            autoComplete="on"
-            aria-describedby={`${name}-error`}
+            autoComplete={type === 'password' ? 'new-password' : 'on'}
+            aria-describedby={error && touched ? `${id}-error` : undefined}
             aria-invalid={error && touched ? 'true' : 'false'}
+            aria-labelledby={`${id}-label`}
             aria-label={placeholder}
             className={`peer absolute left-0 top-0 z-10 h-[52px] w-full border-b-2 bg-transparent pl-3 pr-16 pt-2 outline-none focus:text-dark-100 ${
               error && touched
@@ -78,6 +70,7 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
             }`}
             data-testid={datatestid}
             disabled={disabled}
+            id={id}
             minLength={minLength}
             placeholder=" "
             type={type}
@@ -89,6 +82,8 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
                 ? 'peer-focus:text-error-100'
                 : 'peer-focus:text-primary-100'
             } ${field.value ? '-top-[0.1rem] text-xs font-medium' : 'top-4'}`}
+            htmlFor={id}
+            id={`${id}-label`}
           >
             {placeholder}
           </label>
@@ -109,7 +104,7 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
         <div
           aria-live="assertive"
           className="flex items-center space-x-1.5 px-1.5 py-1.5 md:space-x-1 md:py-0.5"
-          id={`${name}-error`}
+          id={`${id}-error`}
           role="alert"
         >
           <AlertTriangleImage size={16} />

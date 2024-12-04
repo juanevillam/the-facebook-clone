@@ -31,7 +31,8 @@ const ProtectedPage = ({ params: { locale } }: PageProps) => {
           'action-loader',
           'timestamp',
           'video-player',
-          'media-picker'
+          'media-picker',
+          'logos'
         )}
       >
         <CreatePostCard />

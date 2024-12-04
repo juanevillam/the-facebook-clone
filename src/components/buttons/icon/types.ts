@@ -10,6 +10,7 @@ type IconButtonAriaLabel =
   | 'close-post'
   | 'close-post-likes-menu'
   | 'close-settings-menu'
+  | 'close-sign-up-modal'
   | 'close-story'
   | 'close-story-player'
   | 'collapse-post'

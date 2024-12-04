@@ -25,12 +25,12 @@ export const AuthFooterLocaleSwitcherSelect = ({
   const onSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const nextLocale = event.target.value;
 
-    startTransition(() => {
+    startTransition(() =>
       // @ts-expect-error -- TypeScript will validate that only known `params`
       // are used in combination with a given `pathname`. Since the two will
       // always match for the current route, we can skip runtime checks.
-      router.replace({ pathname, params }, { locale: nextLocale });
-    });
+      router.replace({ pathname, params }, { locale: nextLocale })
+    );
   };
 
   return (
@@ -38,8 +38,9 @@ export const AuthFooterLocaleSwitcherSelect = ({
       className={`relative text-sm text-gray-500 ${isPending && 'transition-opacity [&:disabled]:opacity-30'}`}
       htmlFor="locale-select"
     >
-      <p className="sr-only">{label}</p>
+      <span className="sr-only">{label}</span>
       <select
+        aria-labelledby="locale-switcher-title"
         className="bg-transparent"
         defaultValue={defaultValue}
         disabled={isPending}
