@@ -44,9 +44,7 @@ export const resetPassword = async (
   values: resetPasswordFormValuesType,
   token: string
 ) => {
-  if (!token) {
-    return { message: 'missing-token', type: 'error' };
-  }
+  if (!token) return { message: 'missing-token', type: 'error' };
 
   const validatedFields = resetPasswordFormSchema.safeParse(values);
 

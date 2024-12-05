@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from 'react';
 
+import classNames from 'classnames';
+
 type MobileDialogProps = {
   className?: string;
   open: boolean;
@@ -33,9 +35,13 @@ export const MobileDialog = ({
     <div className="md:hidden">
       <div
         aria-hidden="true"
-        className={`fixed inset-0 z-40 h-full bg-overlay-100 transition-all duration-300 ${
-          open ? 'visible opacity-100' : 'invisible opacity-0'
-        }`}
+        className={classNames(
+          'fixed inset-0 z-40 h-full bg-overlay-100 transition-all duration-300',
+          {
+            'visible opacity-100': open,
+            'invisible opacity-0': !open,
+          }
+        )}
       />
       <div
         aria-labelledby={titleId}

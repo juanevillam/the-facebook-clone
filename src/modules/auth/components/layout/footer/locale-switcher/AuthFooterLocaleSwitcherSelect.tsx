@@ -2,6 +2,7 @@
 
 import { useTransition } from 'react';
 
+import classNames from 'classnames';
 import { useParams } from 'next/navigation';
 
 import { usePathname, useRouter } from '@/navigation';
@@ -35,7 +36,9 @@ export const AuthFooterLocaleSwitcherSelect = ({
 
   return (
     <label
-      className={`relative text-sm text-gray-500 ${isPending && 'transition-opacity [&:disabled]:opacity-30'}`}
+      className={classNames('relative text-sm text-gray-500', {
+        'transition-opacity [&:disabled]:opacity-30': isPending,
+      })}
       htmlFor="locale-select"
     >
       <span className="sr-only">{label}</span>

@@ -40,14 +40,15 @@ export const LoginForm = () => {
               showToast.success(t(`toast-messages.success.${data.message}`));
               return;
             }
+
             if (data.twoFactor) {
               setShowTwoFactor(true);
               return;
             }
+
             window.location.reload();
-          } else if (data.message) {
+          } else if (data.message)
             showToast.error(t(`toast-messages.error.${data.message}`));
-          }
         })
         .catch(() =>
           showToast.error(t('toast-messages.error.something-went-wrong'))

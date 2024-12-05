@@ -31,9 +31,13 @@ export const Navbar = () => {
       })}
     >
       <header
-        className={`card-bg primary-border primary-transition transform transition-transform md:transform-none md:border-b ${
-          showTopHeader ? '-translate-y-full' : 'translate-y-0'
-        }`}
+        className={classNames(
+          'card-bg primary-border primary-transition transform transition-transform md:transform-none md:border-b',
+          {
+            '-translate-y-full': showTopHeader,
+            'translate-y-0': !showTopHeader,
+          }
+        )}
       >
         <nav
           aria-label={t('navbar.main-navigation')}
@@ -55,9 +59,13 @@ export const Navbar = () => {
       </header>
       <nav
         aria-label={t('navbar.mobile-navigation')}
-        className={`card-bg primary-border flex-center transform border-b transition-transform md:hidden ${
-          showTopHeader ? '-translate-y-full' : 'translate-y-0'
-        }`}
+        className={classNames(
+          'card-bg primary-border flex-center transform border-b transition-transform md:hidden',
+          {
+            '-translate-y-full': showTopHeader,
+            'translate-y-0': !showTopHeader,
+          }
+        )}
       >
         <NavbarLinks />
       </nav>
