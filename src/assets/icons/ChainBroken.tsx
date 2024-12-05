@@ -1,7 +1,7 @@
 export const ChainBroken = () => (
   <svg
     aria-hidden="true"
-    className="mb-4 size-28"
+    className="mb-4 size-28 transition-transform duration-200 hover:scale-105"
     fill="currentColor"
     viewBox="0 0 112 112"
   >
@@ -12,7 +12,7 @@ export const ChainBroken = () => (
     />
     <path
       d="M20.09 92.53a11.77 11.77 0 011.28-16.6l23.37-20a11.77 11.77 0 0116.6 1.28 11.77 11.77 0 01-1.28 16.6l-6.38 5.47-6.31 5.4-10.68 9.13a11.77 11.77 0 01-16.6-1.28z"
-      className="stroke-[#90c3ff] dark:stroke-[#a4a7ab]"
+      className="stroke-[#c8cfd7] dark:stroke-[#a4a7ab]"
       strokeWidth="8"
       fill="none"
     />

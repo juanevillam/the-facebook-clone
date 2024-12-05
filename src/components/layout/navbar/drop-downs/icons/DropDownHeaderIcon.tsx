@@ -32,9 +32,12 @@ export const DropDownHeaderIcon = ({
       variant="small"
     >
       <IconButton
-        className={classNames('hover:bg-primary size-9', {
-          peer: tooltilp,
-        })}
+        className={classNames(
+          'hover:bg-primary size-9 transition-transform hover:scale-105',
+          {
+            peer: tooltilp,
+          }
+        )}
         icon={{
           ariaLabel: icon.ariaLabel,
           className: icon.className,

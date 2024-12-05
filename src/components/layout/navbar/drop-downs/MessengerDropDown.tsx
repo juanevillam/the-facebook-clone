@@ -86,7 +86,7 @@ export const MessengerDropDown = ({
       </div>
       <div className="border-primary w-full border-t pt-3 text-center">
         <Link
-          className="font-medium text-blue-400 hover:underline"
+          className="font-medium text-blue-400 transition-colors duration-200 hover:underline"
           href="/messenger"
           onClick={handleClose}
         >

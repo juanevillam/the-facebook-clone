@@ -45,7 +45,7 @@ export const ProfileDropDownDefaultStep = ({
         {t('description')}
       </h2>
       <Link
-        className="card flex-align-center hover:bg-primary space-x-2.5 rounded-lg p-2"
+        className="card flex-align-center hover:bg-primary space-x-2.5 rounded-lg p-2 transition-colors"
         href="/profile"
         onClick={handleClose}
       >
@@ -57,7 +57,7 @@ export const ProfileDropDownDefaultStep = ({
           <p className="text-secondary text-sm">@{currentUser?.username}</p>
         </div>
       </Link>
-      <hr className="md:border-primary my-1 border-transparent md:my-2" />
+      <hr className="md:border-primary my-1 border-transparent transition-colors md:my-2" />
       <section aria-labelledby="profile-dropdown-default-description">
         <div className="space-y-2 md:space-y-0">
           <ProfileDropDownDefaultStepItem

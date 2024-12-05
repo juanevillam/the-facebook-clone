@@ -11,7 +11,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     return (
       <button
         aria-label={t(icon.ariaLabel)}
-        className={`flex-center rounded-full p-2 ${className}`}
+        className={`flex-center rounded-full p-2 transition-all duration-150 hover:scale-105 hover:bg-opacity-80 focus:scale-95 ${className}`}
         onClick={onClick}
         ref={ref}
         type="button"

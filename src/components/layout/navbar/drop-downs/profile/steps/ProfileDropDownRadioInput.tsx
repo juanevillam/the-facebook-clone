@@ -19,7 +19,7 @@ export const ProfileDropDownRadioInput = ({
   const t = useTranslations('navbar.drop-downs.profile.steps.options');
 
   return (
-    <label className="hover:bg-primary flex-between text-primary cursor-pointer rounded-lg p-3 font-medium">
+    <label className="hover:bg-primary flex-between text-primary cursor-pointer rounded-lg p-3 font-medium transition-colors">
       {t(label)}
       <input
         aria-describedby={`${name}-option-description`}
@@ -32,10 +32,13 @@ export const ProfileDropDownRadioInput = ({
       />
       <span
         aria-checked={checked}
-        className={classNames('flex-center size-6 rounded-full border-2', {
-          'border-primary-100': checked,
-          'border-neutral-500': !checked,
-        })}
+        className={classNames(
+          'flex-center size-6 rounded-full border-2 transition-colors',
+          {
+            'border-primary-100': checked,
+            'border-neutral-500': !checked,
+          }
+        )}
       >
         {checked && <span className="size-3 rounded-full bg-primary-100" />}
       </span>

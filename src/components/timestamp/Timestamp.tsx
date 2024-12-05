@@ -59,7 +59,7 @@ export const Timestamp = ({ className, date }: TimestampProps) => {
     <div className="-mt-1">
       <Tooltip label={fullDateTime} position="-bottom-9 left-28">
         <time
-          className={`text-secondary peer text-xs md:cursor-pointer md:hover:underline ${className}`}
+          className={`text-secondary peer text-xs transition-colors duration-200 ease-in-out md:cursor-pointer md:hover:underline ${className}`}
           dateTime={date.toISOString()}
         >
           {renderTimestamp()}

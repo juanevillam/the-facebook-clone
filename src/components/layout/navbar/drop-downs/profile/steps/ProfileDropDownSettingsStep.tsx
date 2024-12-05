@@ -56,7 +56,7 @@ export const ProfileDropDownSettingsStep = ({
           </h1>
         </div>
         <div className="mb-2 flex space-x-2">
-          <div className="bg-primary h-max rounded-full p-2">
+          <div className="bg-primary hover:bg-secondary h-max rounded-full p-2 transition-colors">
             <GlobeIcon className="fill-primary size-6" />
           </div>
           <div>

@@ -107,7 +107,7 @@ export const VideoPlayer = ({
             {t('controls')}
           </h2>
           <IconButton
-            className="mr-1 size-9 hover:bg-neutral-700 hover:bg-opacity-50 md:mr-1.5"
+            className="mr-1 size-9 transition-transform duration-300 ease-in-out hover:scale-110 md:mr-1.5"
             icon={{
               ariaLabel: playing ? 'pause-video' : 'play-video',
               className: 'fill-white size-full',
@@ -165,7 +165,7 @@ export const VideoPlayer = ({
           </div>
           <div className="group">
             <IconButton
-              className="size-9 hover:bg-neutral-700 hover:bg-opacity-50"
+              className="size-9 transition-transform duration-300 ease-in-out hover:scale-110"
               icon={{
                 ariaLabel: muted ? 'unmute-video' : 'mute-video',
                 className: 'fill-white size-full',

@@ -30,7 +30,7 @@ export const SearchInput = ({
   return (
     <div
       className={classNames(
-        'flex-align-center bg-primary relative w-full rounded-full p-2.5 pr-12',
+        'flex-align-center bg-primary relative w-full rounded-full p-2.5 pr-12 transition-colors duration-200',
         {
           'md:py-2': variant === 'primary',
           'md:py-1.5': variant === 'secondary',
@@ -40,7 +40,7 @@ export const SearchInput = ({
       <SearchIcon aria-hidden="true" className="fill-secondary size-4" />
       <input
         aria-labelledby={id}
-        className="placeholder-primary text-primary ml-2 inline-flex w-full bg-transparent focus:outline-none"
+        className="placeholder-primary text-primary ml-2 inline-flex w-full bg-transparent transition-colors duration-200 focus:outline-none"
         id={id}
         onChange={onChange}
         placeholder={t(label)}
@@ -53,7 +53,7 @@ export const SearchInput = ({
       {value && (
         <IconButton
           className={classNames(
-            'hover:bg-secondary absolute right-0 top-0.5 z-10 md:top-0',
+            'hover:bg-secondary absolute right-0 top-0.5 z-10 transition-colors duration-200 md:top-0',
             {
               'size-10': variant === 'primary',
               'size-9': variant === 'secondary',
@@ -61,7 +61,8 @@ export const SearchInput = ({
           )}
           icon={{
             ariaLabel: 'clear-search',
-            className: 'stroke-2 secondary-stroke size-full',
+            className:
+              'stroke-2 secondary-stroke size-full transition-transform duration-150',
             Component: CloseIcon,
           }}
           onClick={handleClear}

@@ -29,9 +29,12 @@ export const NavbarDropDownIcon = ({
       <Tooltip label={t(`${label}.tooltip`)} position="-bottom-11">
         <button
           aria-label={t(`${label}.tooltip`)}
-          className={classNames('flex-center', {
-            peer: !isActive,
-          })}
+          className={classNames(
+            'flex-center transition-all duration-200 ease-in-out hover:scale-105 focus:scale-105',
+            {
+              peer: !isActive,
+            }
+          )}
           onClick={onClick}
         >
           {children}

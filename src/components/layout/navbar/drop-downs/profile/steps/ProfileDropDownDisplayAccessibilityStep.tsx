@@ -60,8 +60,8 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
           </h2>
         </div>
         <div className="mb-2 flex space-x-2">
-          <div className="bg-primary h-max rounded-full p-2">
-            <MoonIcon className="fill-primary size-6" />
+          <div className="bg-primary hover:bg-secondary h-max rounded-full p-2 transition-colors">
+            <MoonIcon className="fill-primary primary-stroke size-6" />
           </div>
           <div>
             <h2 className="text-primary text-lg font-semibold">
@@ -94,7 +94,7 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
           />
         </fieldset>
         <div className="mb-2 flex space-x-2">
-          <div className="bg-primary h-max rounded-full p-2">
+          <div className="bg-primary hover:bg-secondary h-max rounded-full p-2 transition-colors">
             <ArrowsPointingOutIcon className="fill-primary primary-stroke size-6" />
           </div>
           <div>

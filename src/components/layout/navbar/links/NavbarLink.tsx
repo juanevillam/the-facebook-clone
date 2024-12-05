@@ -27,7 +27,7 @@ export const NavbarLink = ({
       <Link
         aria-label={t(label)}
         className={classNames(
-          'flex-center peer h-14 md:h-12 md:w-max md:rounded-lg md:px-8 lg:px-10 xl:px-12',
+          'flex-center peer h-14 transition-colors duration-200 md:h-12 md:w-max md:rounded-lg md:px-8 lg:px-10 xl:px-12',
           {
             relative: isActive,
             'hover:bg-primary': !isActive,
@@ -38,7 +38,7 @@ export const NavbarLink = ({
         tabIndex={0}
       >
         <Icon
-          className={classNames({
+          className={classNames('transition-colors duration-200', {
             'size-[30px]': label === 'menu',
             'size-6': label !== 'menu',
             'fill-current text-primary-100': isActive,
@@ -49,7 +49,7 @@ export const NavbarLink = ({
           isActive={isActive}
         />
         {isActive && (
-          <div className="absolute -bottom-0.5 z-10 h-[3px] w-full rounded-sm bg-primary-100 md:-bottom-1" />
+          <div className="absolute -bottom-0.5 z-10 h-[3px] w-full rounded-sm bg-primary-100 transition-all duration-200 md:-bottom-1" />
         )}
       </Link>
     </Tooltip>
