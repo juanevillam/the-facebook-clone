@@ -100,7 +100,7 @@ export const VideoPlayer = ({
         />
         <div
           aria-labelledby="video-player-controls-title"
-          className="flex-center absolute bottom-0 z-10 w-full bg-neutral-900 bg-opacity-50 p-1 md:p-2"
+          className="flex-align-center absolute bottom-0 z-10 w-full bg-neutral-900 bg-opacity-50 p-1 md:p-2"
           role="group"
         >
           <h2 id="video-player-controls-title" className="sr-only">
@@ -115,7 +115,7 @@ export const VideoPlayer = ({
             }}
             onClick={togglePlayPause}
           />
-          <p className="primary-text-dark mr-4 w-20 text-center font-mono text-xs md:mr-6">
+          <p className="text-primary-dark mr-4 w-20 text-center font-mono text-xs md:mr-6">
             <strong>
               {formatSecondsToVideoTime((played / 100) * duration)}
             </strong>{' '}
@@ -133,7 +133,7 @@ export const VideoPlayer = ({
           <div className="group relative ml-2 text-center md:ml-3">
             <button
               aria-label={t('change-playback-rate')}
-              className="primary-transition primary-text-dark w-14 rounded-md py-1.5 font-bold hover:bg-neutral-700 hover:bg-opacity-50 md:w-16"
+              className="transition-primary text-primary-dark w-14 rounded-md py-1.5 font-bold hover:bg-neutral-700 hover:bg-opacity-50 md:w-16"
               onClick={togglePlaybackMenu}
               type="button"
             >
@@ -141,7 +141,7 @@ export const VideoPlayer = ({
             </button>
             {showPlaybackMenu && (
               <div
-                className="card-bg absolute -left-2 bottom-10 rounded-md p-2 shadow-lg"
+                className="bg-card absolute -left-2 bottom-10 rounded-md p-2 shadow-lg"
                 role="menu"
               >
                 {[0.5, 1, 1.5, 2].map((rate) => (
@@ -149,7 +149,7 @@ export const VideoPlayer = ({
                     key={rate}
                     aria-label={t('change-playback-rate-to', { rate })}
                     className={classNames(
-                      'primary-text hover:primary-bg primary-transition w-14 rounded-md py-1.5 md:w-16',
+                      'text-primary hover:bg-primary transition-primary w-14 rounded-md py-1.5 md:w-16',
                       {
                         'font-bold': rate === playbackRate,
                       }
@@ -175,7 +175,7 @@ export const VideoPlayer = ({
             />
             <Slider
               aria-label={t('volume')}
-              className="primary-transition absolute bottom-14 ml-0.5 hidden h-14 scale-90 text-white opacity-0 group-hover:scale-100 group-hover:opacity-100 md:block"
+              className="transition-primary absolute bottom-14 ml-0.5 hidden h-14 scale-90 text-white opacity-0 group-hover:scale-100 group-hover:opacity-100 md:block"
               max={1}
               min={0}
               onChange={handleVolumeChange}

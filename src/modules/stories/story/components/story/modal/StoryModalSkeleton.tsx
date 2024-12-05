@@ -19,7 +19,7 @@ export const StoryModalSkeleton = () => (
         <div className="relative mx-auto size-full overflow-hidden md:w-96 md:rounded-xl">
           <PostSkeletonHeader />
           <Skeleton
-            className="skeleton-placeholder absolute inset-0 h-full"
+            className="bg-skeleton-placeholder absolute inset-0 h-full"
             variant="rectangular"
           />
         </div>

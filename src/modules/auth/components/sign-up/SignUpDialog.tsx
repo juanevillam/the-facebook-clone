@@ -31,9 +31,9 @@ export const SignUpDialog = () => {
       translateFrom="x"
     >
       <div className="relative size-full bg-white">
-        <header className="flex-center space-x-1.5 border-b border-gray-300 p-1.5">
+        <header className="flex-align-center space-x-1.5 border-b border-gray-300 p-1.5">
           <IconButton
-            className="hover:secondary-bg-light size-10"
+            className="hover:bg-secondary-light size-10"
             icon={{
               ariaLabel: 'back-to-login',
               className: 'stroke-[2.5] primary-stroke-light size-full',
@@ -42,7 +42,7 @@ export const SignUpDialog = () => {
             onClick={closeStep}
           />
           <h1
-            className="primary-text-light text-lg"
+            className="text-primary-light text-lg"
             id="sign-up-dialog-title"
             aria-live="polite"
           >

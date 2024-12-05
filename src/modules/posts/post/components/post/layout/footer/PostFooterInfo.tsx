@@ -28,7 +28,7 @@ export const PostFooterInfo = ({
     <>
       <button
         aria-label={t('likes.open-likes')}
-        className="flex-center space-x-1.5"
+        className="flex-align-center space-x-1.5"
         onClick={openDesktopLikes && openDesktopLikes}
         type="button"
       >
@@ -37,8 +37,8 @@ export const PostFooterInfo = ({
             <ThumbUpImage className="size-4 md:size-5" />
             <p
               className={classNames('text-sm md:hover:underline', {
-                'secondary-text-dark md:secondary-text': isModal,
-                'secondary-text': !isModal,
+                'text-secondary-dark md:text-secondary': isModal,
+                'text-secondary': !isModal,
               })}
             >
               {liked && t('likes.you')}
@@ -62,8 +62,8 @@ export const PostFooterInfo = ({
         >
           <p
             className={classNames('text-sm md:hover:underline', {
-              'secondary-text-dark md:secondary-text': isModal,
-              'secondary-text': !isModal,
+              'text-secondary-dark md:text-secondary': isModal,
+              'text-secondary': !isModal,
             })}
           >
             {`${optimisticComments.length} `}

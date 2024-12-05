@@ -21,10 +21,10 @@ export const CreateStoryHeader = ({
   );
 
   return (
-    <div className="flex-center-justify-between primary-border border-b p-1.5">
-      <div className="flex-center space-x-1.5">
+    <div className="flex-between border-primary border-b p-1.5">
+      <div className="flex-align-center space-x-1.5">
         <IconButton
-          className="hover:primary-bg size-10"
+          className="hover:bg-primary size-10"
           icon={{
             ariaLabel: 'close-create-story',
             className: 'stroke-[2.5] primary-stroke size-full',
@@ -33,7 +33,7 @@ export const CreateStoryHeader = ({
           onClick={handleToggleOpenable}
         />
         <h1
-          className="primary-text text-lg md:font-semibold"
+          className="text-primary text-lg md:font-semibold"
           id="create-story-modal-title"
         >
           {t('title')}

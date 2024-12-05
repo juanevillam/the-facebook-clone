@@ -46,9 +46,9 @@ export const PostFooterActions = ({
   return (
     <div
       className={classNames(
-        'primary-border flex md:space-x-1 md:border-y md:px-4 md:py-2.5',
+        'border-primary flex md:space-x-1 md:border-y md:px-4 md:py-2.5',
         {
-          'primary-border-dark md:primary-border border-t': isModal,
+          'border-primary-dark md:border-primary border-t': isModal,
         }
       )}
     >
@@ -60,7 +60,7 @@ export const PostFooterActions = ({
         onClick={handleOptimisticLike}
       />
       <PostFooterActionsItem
-        className="only-mobile"
+        className="responsive-mobile-only"
         Icon={ChatBubbleOvalLeftIcon}
         isActive={mobileCommentsOpen}
         isModal={isModal}
@@ -68,7 +68,7 @@ export const PostFooterActions = ({
         onClick={openMobileComments}
       />
       <PostFooterActionsItem
-        className="only-desktop"
+        className="responsive-desktop-only"
         Icon={ChatBubbleOvalLeftIcon}
         isActive={desktopCommentsOpen}
         isModal={isModal}

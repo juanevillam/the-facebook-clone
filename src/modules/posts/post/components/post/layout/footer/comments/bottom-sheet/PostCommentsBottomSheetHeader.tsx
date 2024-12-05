@@ -24,14 +24,14 @@ export const PostCommentsBottomSheetHeader = ({
 
   return (
     optimisticLikes.length > 0 && (
-      <div className="flex-center justify-between p-2">
+      <div className="flex-align-center justify-between p-2">
         <Drawer.NestedRoot>
           <Drawer.Trigger
             aria-label={t('view-likes')}
-            className="flex-center-justify-center primary-transition hover:primary-bg space-x-1.5 rounded-full py-1 pl-2"
+            className="flex-center transition-primary hover:bg-primary space-x-1.5 rounded-full py-1 pl-2"
           >
             <ThumbUpImage className="size-5" />
-            <p className="primary-text text-lg font-medium">
+            <p className="text-primary text-lg font-medium">
               {liked && t('you')}
               {!liked && optimisticLikes.length}
               {liked &&
@@ -47,7 +47,7 @@ export const PostCommentsBottomSheetHeader = ({
         </Drawer.NestedRoot>
         <button
           aria-label={liked ? t('remove-like') : t('like-post')}
-          className="flex-center-justify-center primary-transition hover:primary-bg rounded-full p-1"
+          className="flex-center transition-primary hover:bg-primary rounded-full p-1"
           onClick={handleOptimisticLike}
           type="button"
         >

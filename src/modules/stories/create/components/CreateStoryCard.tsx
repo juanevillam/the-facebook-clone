@@ -42,16 +42,16 @@ export const CreateStoryCard = ({
       <article
         className={classNames({
           'card w-full md:p-2.5': variant === 'card',
-          'primary-bg md:card-bg primary-transition min-w-28 overflow-hidden rounded-xl md:min-w-32':
+          'bg-primary md:bg-card transition-primary min-w-28 overflow-hidden rounded-xl md:min-w-32':
             variant === 'list',
         })}
       >
         <button
           aria-label={t('title')}
           className={classNames(
-            'primary-transition group relative flex h-full w-full p-3 md:rounded-lg md:px-2 md:py-1.5',
+            'transition-primary group relative flex h-full w-full p-3 md:rounded-lg md:px-2 md:py-1.5',
             {
-              'hover:primary-bg space-x-2.5 md:space-x-3': variant === 'card',
+              'hover:bg-primary space-x-2.5 md:space-x-3': variant === 'card',
             }
           )}
           onClick={handleToggleOpenable}
@@ -59,21 +59,21 @@ export const CreateStoryCard = ({
         >
           {variant === 'list' && (
             <ProfilePic
-              customClassName="absolute top-0 left-0 object-cover w-full h-3/4 md:h-2/3 rounded-none primary-transition group-hover:scale-105"
+              customClassName="absolute top-0 left-0 object-cover w-full h-3/4 md:h-2/3 rounded-none transition-primary group-hover:scale-105"
               image={currentUser?.image as string}
               name={currentUser?.name as string}
             />
           )}
           <div
-            className={classNames('primary-transition', {
-              'primary-bg md:card-bg absolute bottom-8 left-1/2 -translate-x-1/2 transform rounded-full p-1 md:bottom-10':
+            className={classNames('transition-primary', {
+              'bg-primary md:bg-card absolute bottom-8 left-1/2 -translate-x-1/2 transform rounded-full p-1 md:bottom-10':
                 variant === 'list',
             })}
           >
             <PlusIcon
               aria-hidden="true"
               className={classNames(
-                'primary-transition rounded-full stroke-1',
+                'transition-primary rounded-full stroke-1',
                 {
                   'size-11 bg-primary-500 fill-primary-100 stroke-primary-100 p-3 md:size-12 dark:bg-primary-300':
                     variant === 'card',
@@ -86,7 +86,7 @@ export const CreateStoryCard = ({
           <div className="-mt-px text-justify">
             <h2
               className={classNames(
-                'primary-text primary-transition font-semibold md:text-lg',
+                'text-primary transition-primary font-semibold md:text-lg',
                 {
                   hidden: variant === 'list',
                 }
@@ -97,7 +97,7 @@ export const CreateStoryCard = ({
             </h2>
             <p
               className={classNames(
-                'primary-text primary-transition absolute bottom-3 left-1/2 w-full -translate-x-1/2 transform text-center text-xs font-semibold md:text-sm',
+                'text-primary transition-primary absolute bottom-3 left-1/2 w-full -translate-x-1/2 transform text-center text-xs font-semibold md:text-sm',
                 {
                   hidden: variant === 'card',
                 }
@@ -106,7 +106,7 @@ export const CreateStoryCard = ({
               {t('title-short')}
             </p>
             {variant === 'card' && (
-              <p className="tertiary-text primary-transition md:text-md text-sm">
+              <p className="text-tertiary transition-primary md:text-md text-sm">
                 {t('subtitle')}
               </p>
             )}

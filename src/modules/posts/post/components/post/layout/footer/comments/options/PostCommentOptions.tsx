@@ -29,10 +29,10 @@ export const PostCommentOptions = ({ commentId }: PostCommentOptionsProps) => {
     <Drawer.Root open={isBottomSheetOpen} onClose={closeBottomSheetAvailable}>
       <Drawer.Trigger asChild>
         <IconButton
-          className="hover:primary-bg -mt-1 size-9"
+          className="hover:bg-primary -mt-1 size-9"
           icon={{
             ariaLabel: 'open-comment-options-menu',
-            className: 'secondary-fill size-full',
+            className: 'fill-secondary size-full',
             Component: DotsHorizontalIcon,
           }}
           onClick={openBottomSheet}

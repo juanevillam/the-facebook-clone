@@ -34,35 +34,37 @@ export const ProfileDropDownSettingsStep = ({
 
   return (
     <div className="p-2.5 md:px-4 md:py-3">
-      <div className="card-bg primary-transition rounded-lg py-3 pl-2 pr-4 md:p-0">
-        <div className="flex-center mb-4 w-full space-x-2">
-          <DropDownHeaderIcon
-            leftPosition="-left-4"
-            icon={{
-              ariaLabel: 'close-settings-menu',
-              className: 'stroke-2 secondary-stroke size-full',
-              Component: ArrowLeftIcon,
-            }}
-            onClick={handleClose}
-            tooltilp={false}
-          />
+      <div className="bg-card transition-primary rounded-lg py-3 pl-2 pr-4 md:p-0">
+        <div className="flex-align-center mb-4 space-x-2">
+          <div>
+            <DropDownHeaderIcon
+              leftPosition="-left-4"
+              icon={{
+                ariaLabel: 'close-settings-menu',
+                className: 'stroke-2 secondary-stroke size-full',
+                Component: ArrowLeftIcon,
+              }}
+              onClick={handleClose}
+              tooltilp={false}
+            />
+          </div>
           <h1
-            className="primary-text truncate text-2xl font-bold"
+            className="text-primary truncate text-2xl font-bold"
             id="profile-dropdown-settings-title"
           >
             {t('title')}
           </h1>
         </div>
         <div className="mb-2 flex space-x-2">
-          <div className="primary-bg primary-transition h-max rounded-full p-2">
-            <GlobeIcon className="primary-fill size-6" />
+          <div className="bg-primary transition-primary h-max rounded-full p-2">
+            <GlobeIcon className="fill-primary size-6" />
           </div>
           <div>
-            <h1 className="primary-text text-lg font-semibold">
+            <h1 className="text-primary text-lg font-semibold">
               {t('language.title')}
             </h1>
             <p
-              className="secondary-text truncate text-sm"
+              className="text-secondary truncate text-sm"
               id="profile-dropdown-settings-description"
             >
               {t('language.description')}

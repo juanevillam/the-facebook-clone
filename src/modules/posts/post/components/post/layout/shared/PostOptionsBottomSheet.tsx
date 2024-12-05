@@ -94,9 +94,9 @@ export const PostOptionsBottomSheet = ({
 
   return (
     <Drawer.Portal>
-      <Drawer.Overlay className="bottom-sheet-overlay" onClick={onDismiss} />
-      <Drawer.Content className="bottom-sheet-content h-max">
-        <Drawer.Handle className="bottom-sheet-handle" />
+      <Drawer.Overlay className="sheet-overlay" onClick={onDismiss} />
+      <Drawer.Content className="sheet-content h-max">
+        <Drawer.Handle className="sheet-handle" />
         <Drawer.Title className="sr-only">
           {t('posts.post.options.bottom-sheet.title')}
         </Drawer.Title>
@@ -114,7 +114,7 @@ export const PostOptionsBottomSheet = ({
           />
           {!isPostPage && (
             <>
-              <hr className="primary-border my-1.5 border-t md:my-2" />
+              <hr className="border-primary my-1.5 border-t md:my-2" />
               <PostOptionsBottomSheetItem
                 IconComponent={EyeIcon}
                 name="view"
@@ -124,7 +124,7 @@ export const PostOptionsBottomSheet = ({
           )}
           {isPostMine && (
             <>
-              <hr className="primary-border my-1.5 border-t md:my-2" />
+              <hr className="border-primary my-1.5 border-t md:my-2" />
               <PostOptionsBottomSheetItem
                 IconComponent={TrashIcon}
                 name="delete"

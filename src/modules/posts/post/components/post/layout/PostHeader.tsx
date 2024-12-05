@@ -40,7 +40,7 @@ export const PostHeader = ({
           />
           <Timestamp
             className={classNames({
-              'secondary-text-dark md:secondary-text': isModal,
+              'text-secondary-dark md:text-secondary': isModal,
             })}
             date={createdAt}
           />

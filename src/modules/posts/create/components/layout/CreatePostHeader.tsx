@@ -23,11 +23,11 @@ export const CreatePostHeader = ({ icon }: CreatePostHeaderProps) => {
   );
 
   return (
-    <header className="flex-center-justify-between primary-border border-b p-1.5 md:justify-center md:p-4">
-      <div className="flex-center space-x-1.5">
+    <header className="flex-between border-primary border-b p-1.5 md:justify-center md:p-4">
+      <div className="flex-align-center space-x-1.5">
         <IconButton
           className={classNames(
-            'md:primary-bg hover:secondary-bg size-10 md:absolute md:size-9',
+            'md:bg-primary hover:bg-secondary size-10 md:absolute md:size-9',
             {
               'right-4': step === 'default',
               'left-4': step !== 'default',
@@ -42,7 +42,7 @@ export const CreatePostHeader = ({ icon }: CreatePostHeaderProps) => {
           onClick={icon.onClick}
         />
         <h1
-          className="primary-text text-lg md:text-xl md:font-semibold"
+          className="text-primary text-lg md:text-xl md:font-semibold"
           id="create-post-title"
         >
           {t(step)}

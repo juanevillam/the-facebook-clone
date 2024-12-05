@@ -6,7 +6,7 @@ export const PostSkeleton = () => (
   <div className="card pb-3 md:pb-6" role="listitem">
     <PostSkeletonHeader />
     <Skeleton
-      className="skeleton-bg"
+      className="bg-skeleton"
       variant="rectangular"
       height={384}
       width="100%"

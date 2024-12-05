@@ -44,7 +44,7 @@ export const ProfileDropDown = ({
       aria-describedby={`profile-dropdown-${step}-description`}
       aria-labelledby={`profile-dropdown-${step}-title`}
       className={classNames({
-        'card only-desktop-block absolute right-5 top-14 overflow-hidden shadow-lg transition-all duration-300 ease-in-out':
+        'card responsive-desktop-block absolute right-5 top-14 overflow-hidden shadow-lg transition-all duration-300 ease-in-out':
           variant === 'dropdown',
         'w-80': variant === 'dropdown' && step === 'default',
         'w-96': variant === 'dropdown' && step !== 'default',

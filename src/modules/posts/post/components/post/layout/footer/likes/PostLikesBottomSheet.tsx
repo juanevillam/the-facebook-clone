@@ -17,14 +17,14 @@ export const PostLikesBottomSheet = ({
 
   return (
     <Drawer.Portal>
-      <Drawer.Overlay className="bottom-sheet-overlay" />
-      <Drawer.Content className="bottom-sheet-content h-full md:h-[576px]">
+      <Drawer.Overlay className="sheet-overlay" />
+      <Drawer.Content className="sheet-content h-full md:h-[576px]">
         <Drawer.Title className="sr-only">{t('title')}</Drawer.Title>
         <Drawer.Description className="sr-only">
           {t('description')}
         </Drawer.Description>
         <div className="flex h-full flex-col">
-          <Drawer.Handle className="bottom-sheet-handle" />
+          <Drawer.Handle className="sheet-handle" />
           <PostLikesBottomSheetHeader />
           <PostLikesBottomSheetBody optimisticLikes={optimisticLikes} />
         </div>

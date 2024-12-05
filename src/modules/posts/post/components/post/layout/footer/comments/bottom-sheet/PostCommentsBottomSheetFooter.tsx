@@ -44,20 +44,20 @@ export const PostCommentsBottomSheetFooter = ({
     <form
       aria-label={t('posts.post.comments.bottom-sheet.form-aria-label')}
       className={classNames(
-        'primary-border flex-center w-full space-x-2 border-t p-2',
+        'border-primary flex-align-center w-full space-x-2 border-t p-2',
         {
           'md:border-none md:p-0': variant === 'post-footer',
         }
       )}
       onSubmit={handleOptimisticComment}
     >
-      <div className="flex-center primary-bg primary-border w-full rounded-full px-4 py-2.5">
+      <div className="flex-align-center bg-primary border-primary w-full rounded-full px-4 py-2.5">
         <label className="sr-only" htmlFor="post-comments-bottom-sheet-input">
           {t('posts.post.comments.bottom-sheet.title')}
         </label>
         <input
           aria-label={t('posts.post.comments.bottom-sheet.input-aria-label')}
-          className="primary-placeholder md:accent-placeholder primary-text md:accent-text primary-transition inline-flex w-full bg-transparent focus:outline-none"
+          className="placeholder-primary md:placeholder-accent text-primary md:text-accent transition-primary inline-flex w-full bg-transparent focus:outline-none"
           disabled={isPending}
           id="post-comments-bottom-sheet-input"
           onChange={handleComment}
@@ -69,7 +69,7 @@ export const PostCommentsBottomSheetFooter = ({
       {thoughts && (
         <button
           aria-label={t('posts.post.comments.bottom-sheet.send-aria-label')}
-          className="only-mobile flex-center-justify-center primary-transition hover:primary-bg rounded-full p-2"
+          className="responsive-mobile-only flex-center transition-primary hover:bg-primary rounded-full p-2"
           disabled={isPending || !thoughts.trim()}
           onClick={handleOptimisticComment}
           type="submit"

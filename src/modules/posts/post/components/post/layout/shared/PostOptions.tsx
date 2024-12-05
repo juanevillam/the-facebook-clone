@@ -42,13 +42,13 @@ export const PostOptions = ({
     <Drawer.Root open={bottomSheetOpen} onClose={closeBottomSheetAvailable}>
       <Drawer.Trigger asChild>
         <IconButton
-          className={classNames('hover:primary-bg -mt-1 size-9', {
+          className={classNames('hover:bg-primary -mt-1 size-9', {
             'size-10 bg-neutral-900/50 hover:bg-neutral-700/50':
               isModal && isMobile,
           })}
           icon={{
             ariaLabel: 'open-post-options-menu',
-            className: classNames('secondary-fill size-full', {
+            className: classNames('fill-secondary size-full', {
               '!fill-white': isModal && isMobile,
             }),
             Component: DotsHorizontalIcon,

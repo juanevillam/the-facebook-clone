@@ -27,11 +27,11 @@ export const PostFooterActionsItem = ({
       <button
         aria-label={t(label)}
         className={classNames(
-          'flex-center-justify-center primary-transition w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
+          'flex-center transition-primary w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
           {
             'hover:bg-neutral-700 hover:bg-opacity-50 md:hover:bg-gray-100 md:hover:bg-opacity-100 md:dark:hover:dark:bg-neutral-700':
               isModal,
-            'hover:primary-bg hover:bg-opacity-100': !isModal,
+            'hover:bg-primary hover:bg-opacity-100': !isModal,
           }
         )}
         onClick={onClick}
@@ -48,8 +48,8 @@ export const PostFooterActionsItem = ({
         <p
           className={classNames('text-sm md:font-medium', {
             'text-primary-100': isActive,
-            'primary-text md:accent-text': !isActive,
-            'primary-text-dark': isModal,
+            'text-primary md:text-accent': !isActive,
+            'text-primary-dark': isModal,
           })}
         >
           {t(label)}

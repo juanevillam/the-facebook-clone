@@ -45,19 +45,19 @@ export const ProfileDropDownDefaultStep = ({
         {t('description')}
       </h2>
       <Link
-        className="card flex-center primary-transition hover:primary-bg space-x-2.5 rounded-lg p-2"
+        className="card flex-align-center transition-primary hover:bg-primary space-x-2.5 rounded-lg p-2"
         href="/profile"
         onClick={handleClose}
       >
         <ProfilePic variant="large" />
         <div className="flex-1 overflow-hidden">
-          <h1 className="primary-text truncate text-lg font-semibold leading-snug">
+          <h1 className="text-primary truncate text-lg font-semibold leading-snug">
             {currentUser?.name}
           </h1>
-          <p className="secondary-text text-sm">@{currentUser?.username}</p>
+          <p className="text-secondary text-sm">@{currentUser?.username}</p>
         </div>
       </Link>
-      <hr className="md:primary-border my-1 border-transparent md:my-2" />
+      <hr className="md:border-primary my-1 border-transparent md:my-2" />
       <section aria-labelledby="profile-dropdown-default-description">
         <div className="space-y-2 md:space-y-0">
           <ProfileDropDownDefaultStepItem

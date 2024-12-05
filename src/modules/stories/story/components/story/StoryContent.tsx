@@ -39,10 +39,10 @@ export const StoryContent = ({
       {variant === 'page' && (
         <header
           aria-labelledby="story-page-title"
-          className="only-mobile card-bg primary-transition flex-center primary-border space-x-1.5 border-b p-1.5"
+          className="responsive-mobile-only bg-card transition-primary flex-align-center border-primary space-x-1.5 border-b p-1.5"
         >
           <IconButton
-            className="hover:primary-bg size-10"
+            className="hover:bg-primary size-10"
             icon={{
               ariaLabel: 'go-back-to-home',
               className: 'stroke-[2.5] primary-stroke size-full',
@@ -51,7 +51,7 @@ export const StoryContent = ({
             onClick={navigateToHome}
           />
           <h1
-            className="primary-text text-lg font-semibold"
+            className="text-primary text-lg font-semibold"
             id="story-page-title"
           >
             {user.name}
@@ -59,7 +59,7 @@ export const StoryContent = ({
         </header>
       )}
       {variant === 'modal' && (
-        <header className="only-desktop flex-center absolute top-2 z-20 space-x-4 px-2 md:top-3 md:px-4">
+        <header className="responsive-desktop-only flex-align-center absolute top-2 z-20 space-x-4 px-2 md:top-3 md:px-4">
           <IconButton
             className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
             icon={{

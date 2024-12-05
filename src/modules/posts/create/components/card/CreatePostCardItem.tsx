@@ -18,11 +18,11 @@ export const CreatePostCardItem = ({
       aria-label={t('detailed')}
       aria-pressed={active && !disabled}
       className={classNames(
-        'flex-center-justify-center primary-transition w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
+        'flex-center transition-primary w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
         {
-          'active-bg': active && !disabled,
+          'bg-active': active && !disabled,
           'cursor-not-allowed opacity-50': disabled,
-          'hover:primary-bg': !disabled,
+          'hover:bg-primary': !disabled,
         }
       )}
       disabled={disabled}
@@ -38,10 +38,12 @@ export const CreatePostCardItem = ({
         quality={100}
         width={72}
       />
-      <p className="only-desktop accent-text text-sm font-medium">
+      <p className="responsive-desktop-only text-accent text-sm font-medium">
         {t('detailed')}
       </p>
-      <p className="only-mobile primary-text text-sm">{t('short')}</p>
+      <p className="responsive-mobile-only text-primary text-sm">
+        {t('short')}
+      </p>
     </button>
   );
 };

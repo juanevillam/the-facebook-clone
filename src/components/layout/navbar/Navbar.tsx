@@ -27,12 +27,12 @@ export const Navbar = () => {
   return (
     <div
       className={classNames('sticky top-0 z-30', {
-        'only-desktop-block': isPostPage || isStoryPage,
+        'responsive-desktop-block': isPostPage || isStoryPage,
       })}
     >
       <header
         className={classNames(
-          'card-bg primary-border primary-transition transform transition-transform md:transform-none md:border-b',
+          'bg-card border-primary transition-primary transform transition-transform md:transform-none md:border-b',
           {
             '-translate-y-full': showTopHeader,
             'translate-y-0': !showTopHeader,
@@ -41,9 +41,9 @@ export const Navbar = () => {
       >
         <nav
           aria-label={t('navbar.main-navigation')}
-          className="flex-center-justify-between px-3 py-2 md:px-4 md:py-1"
+          className="flex-between px-3 py-2 md:px-4 md:py-1"
         >
-          <div className="flex-center">
+          <div className="flex-align-center">
             <Link aria-label={t('links.navigate-to-home-page')} href="/">
               <FacebookLogoMark className="hidden size-10 md:block" />
               <FacebookLogoType className="h-6 fill-primary-100 md:hidden dark:fill-white" />
@@ -52,7 +52,7 @@ export const Navbar = () => {
           <div className="mt-px hidden items-center space-x-2 md:flex">
             <NavbarLinks />
           </div>
-          <div className="flex-center space-x-2">
+          <div className="flex-align-center space-x-2">
             <NavbarDropDowns />
           </div>
         </nav>
@@ -60,7 +60,7 @@ export const Navbar = () => {
       <nav
         aria-label={t('navbar.mobile-navigation')}
         className={classNames(
-          'card-bg primary-border flex-center transform border-b transition-transform md:hidden',
+          'bg-card border-primary flex-align-center transform border-b transition-transform md:hidden',
           {
             '-translate-y-full': showTopHeader,
             'translate-y-0': !showTopHeader,

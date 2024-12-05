@@ -17,7 +17,7 @@ export const AuthRadioInput = (props: AuthRadioInputProps) => {
   return (
     <label
       className={classNames(
-        'primary-border-light-full flex-center-justify-between mb-4 w-full cursor-pointer rounded-md border px-4 py-3.5',
+        'border-primary-light-full flex-between mb-4 w-full cursor-pointer rounded-md border px-4 py-3.5',
         {
           'ring-2 ring-error-100': meta.touched && meta.error,
         }
@@ -36,7 +36,7 @@ export const AuthRadioInput = (props: AuthRadioInputProps) => {
       />
       <span
         className={classNames(
-          'flex-center-justify-center size-4 rounded-full border-2 transition',
+          'flex-center size-4 rounded-full border-2 transition',
           {
             'border-primary-100 bg-primary-100': field.checked,
             'border-gray-300': !field.checked,

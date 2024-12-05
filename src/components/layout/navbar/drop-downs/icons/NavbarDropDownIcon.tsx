@@ -29,7 +29,7 @@ export const NavbarDropDownIcon = ({
       <Tooltip label={t(`${label}.tooltip`)} position="-bottom-11">
         <button
           aria-label={t(`${label}.tooltip`)}
-          className={classNames('flex-center-justify-center', {
+          className={classNames('flex-center', {
             peer: !isActive,
           })}
           onClick={onClick}
@@ -44,7 +44,7 @@ export const NavbarDropDownIcon = ({
       <Tooltip label={t(`${label}.tooltip`)} position="-bottom-11">
         <IconButton
           className={classNames(
-            `flex-center-justify-center primary-transition size-10 rounded-full p-[10px] ${className}`,
+            `flex-center transition-primary size-10 rounded-full p-[10px] ${className}`,
             {
               'bg-primary-500 hover:bg-primary-600 dark:bg-primary-300 dark:hover:bg-primary-400':
                 isActive,

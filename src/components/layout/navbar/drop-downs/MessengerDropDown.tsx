@@ -39,14 +39,14 @@ export const MessengerDropDown = ({
     <div
       aria-describedby="messenger-dropdown-description"
       aria-labelledby="messenger-dropdown-title"
-      className="card only-desktop-block absolute right-5 top-14 w-96 px-4 py-3 shadow-lg"
+      className="card responsive-desktop-block absolute right-5 top-14 w-96 px-4 py-3 shadow-lg"
       ref={dropdownRef}
       role="dialog"
       tabIndex={-1}
     >
-      <div className="flex-center-justify-between mb-2 w-full">
+      <div className="flex-between mb-2 w-full">
         <h1
-          className="primary-text text-2xl font-bold"
+          className="text-primary text-2xl font-bold"
           id="messenger-dropdown-title"
         >
           {t('title')}
@@ -56,7 +56,7 @@ export const MessengerDropDown = ({
             leftPosition="-left-9"
             icon={{
               ariaLabel: 'see-all-in-messenger',
-              className: 'secondary-stroke secondary-fill size-full',
+              className: 'secondary-stroke fill-secondary size-full',
               Component: ArrowsPointingOutIcon,
             }}
           />
@@ -64,7 +64,7 @@ export const MessengerDropDown = ({
             leftPosition="-left-4"
             icon={{
               ariaLabel: 'compose-new-message',
-              className: 'secondary-fill size-full',
+              className: 'fill-secondary size-full',
               Component: PencilSquareIcon,
             }}
           />
@@ -78,13 +78,13 @@ export const MessengerDropDown = ({
         variant="secondary"
       />
       <div
-        className="flex-center-justify-center mb-3 h-60 flex-col space-y-4"
+        className="flex-center mb-3 h-60 flex-col space-y-4"
         id="messenger-dropdown-description"
       >
-        <ChatBubbleOvalLeftEllipsisIcon className="secondary-fill size-36" />
-        <h2 className="secondary-text text-xl font-medium">{t('subtitle')}</h2>
+        <ChatBubbleOvalLeftEllipsisIcon className="fill-secondary size-36" />
+        <h2 className="text-secondary text-xl font-medium">{t('subtitle')}</h2>
       </div>
-      <div className="primary-border w-full border-t pt-3 text-center">
+      <div className="border-primary w-full border-t pt-3 text-center">
         <Link
           className="font-medium text-blue-400 hover:underline"
           href="/messenger"

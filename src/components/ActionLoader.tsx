@@ -23,7 +23,7 @@ export const ActionLoader = ({
       role="dialog"
     >
       <MoonLoader className="mb-2" color="#F3F4F6" size={28} />
-      <h1 id="action-loader-title" className="primary-text-dark text-xl">
+      <h1 id="action-loader-title" className="text-primary-dark text-xl">
         {t(message)}
       </h1>
     </Backdrop>

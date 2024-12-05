@@ -29,8 +29,8 @@ export const PostUserInfo = ({
       <Link
         aria-label={t('links.visit-profile', { user: name })}
         className={classNames('font-semibold hover:underline', {
-          'primary-text-dark md:primary-text': isModal,
-          'primary-text': !isModal,
+          'text-primary-dark md:text-primary': isModal,
+          'text-primary': !isModal,
         })}
         href={`/${username}` as any}
       >
@@ -39,8 +39,8 @@ export const PostUserInfo = ({
       {(feeling || location) && (
         <span
           className={classNames({
-            'tertiary-text-dark md:tertiary-text': isModal,
-            'tertiary-text': !isModal,
+            'text-tertiary-dark md:text-tertiary': isModal,
+            'text-tertiary': !isModal,
           })}
         >
           &nbsp;{t('posts.user-info.is')}
@@ -53,8 +53,8 @@ export const PostUserInfo = ({
             feeling,
           })}
           className={classNames({
-            'tertiary-text-dark md:tertiary-text': isModal,
-            'tertiary-text': !isModal,
+            'text-tertiary-dark md:text-tertiary': isModal,
+            'text-tertiary': !isModal,
           })}
         >
           {hideFellingInfo && (
@@ -90,8 +90,8 @@ export const PostUserInfo = ({
             location,
           })}
         >
-          <span className="tertiary-text">&nbsp;{t('posts.user-info.in')}</span>
-          <span className="primary-text font-semibold">&nbsp;{location}</span>
+          <span className="text-tertiary">&nbsp;{t('posts.user-info.in')}</span>
+          <span className="text-primary font-semibold">&nbsp;{location}</span>
         </span>
       )}
     </p>

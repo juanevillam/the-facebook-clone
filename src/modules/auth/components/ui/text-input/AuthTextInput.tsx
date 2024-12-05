@@ -39,7 +39,7 @@ export const AuthTextInput = ({
           aria-invalid={error && touched ? 'true' : 'false'}
           aria-labelledby={`${id}-label`}
           className={classNames(
-            'primary-transition w-full rounded-md border border-gray-200 px-4 py-3.5 placeholder-gray-500 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-100',
+            'transition-primary w-full rounded-md border border-gray-200 px-4 py-3.5 placeholder-gray-500 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-100',
             {
               'bg-white hover:bg-gray-100': skin === 'primary',
               'bg-gray-100 hover:bg-gray-200': skin !== 'primary',

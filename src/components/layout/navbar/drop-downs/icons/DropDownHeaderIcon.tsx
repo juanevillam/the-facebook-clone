@@ -32,7 +32,7 @@ export const DropDownHeaderIcon = ({
       variant="small"
     >
       <IconButton
-        className={classNames('hover:primary-bg size-9', {
+        className={classNames('hover:bg-primary size-9', {
           peer: tooltilp,
         })}
         icon={{

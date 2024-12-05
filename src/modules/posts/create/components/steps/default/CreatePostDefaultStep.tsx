@@ -38,7 +38,7 @@ export const CreatePostDefaultStep = () => {
           </div>
         )}
         <CreatePostDefaultStepFooter />
-        <div className="only-desktop">
+        <div className="responsive-desktop-only">
           <CreatePostDefaultStepButton />
         </div>
       </div>

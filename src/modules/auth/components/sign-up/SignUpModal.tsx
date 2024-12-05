@@ -40,7 +40,7 @@ export const SignUpModal = () => {
           aria-modal="true"
           role="dialog"
         >
-          <div className="primary-border-light-full mb-4 flex justify-between border-b pb-3">
+          <div className="border-primary-light-full mb-4 flex justify-between border-b pb-3">
             <div>
               <h1 className="text-3xl font-semibold" id="sign-up-modal-title">
                 {t('title')}
@@ -50,7 +50,7 @@ export const SignUpModal = () => {
               </p>
             </div>
             <IconButton
-              className="primary-bg-light hover:secondary-bg-light -mr-1 size-9"
+              className="bg-primary-light hover:bg-secondary-light -mr-1 size-9"
               icon={{
                 ariaLabel: 'close-sign-up-modal',
                 className: 'stroke-2 secondary-stroke size-full',

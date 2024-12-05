@@ -22,7 +22,7 @@ export const CreatePostModal = ({
 
   return (
     <Modal
-      className="only-desktop"
+      className="responsive-desktop-only"
       closeAfterTransition
       onClose={handleToggleOpenable}
       open={isOpenableOpen}

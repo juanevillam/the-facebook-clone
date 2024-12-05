@@ -25,9 +25,9 @@ export const CreateStorySidebar = ({
   );
 
   return (
-    <aside className="card-bg flex flex-col justify-between shadow-lg md:min-w-64 lg:min-w-80 xl:min-w-96">
+    <aside className="bg-card flex flex-col justify-between shadow-lg md:min-w-64 lg:min-w-80 xl:min-w-96">
       <div>
-        <header className="primary-border flex-center w-full space-x-4 border-b px-5 py-4">
+        <header className="border-primary flex-align-center w-full space-x-4 border-b px-5 py-4">
           <IconButton
             className="size-10 bg-neutral-900/50 hover:bg-neutral-700/50"
             icon={{
@@ -39,23 +39,23 @@ export const CreateStorySidebar = ({
           />
           <FacebookLogoMark className="hidden size-10 md:block" />
         </header>
-        <section className="primary-border h-max w-full border-b px-5 py-8">
+        <section className="border-primary h-max w-full border-b px-5 py-8">
           <h1
             id="create-story-modal-title"
-            className="primary-text mb-6 text-2xl font-semibold"
+            className="text-primary mb-6 text-2xl font-semibold"
           >
             {t('title')}
           </h1>
-          <div className="flex-center space-x-2.5">
+          <div className="flex-align-center space-x-2.5">
             <ProfilePic variant="large" />
-            <h2 className="primary-text truncate text-lg font-semibold leading-snug">
+            <h2 className="text-primary truncate text-lg font-semibold leading-snug">
               {currentUser?.name}
             </h2>
           </div>
         </section>
       </div>
       {file && (
-        <footer className="primary-border border-t p-3">
+        <footer className="border-primary border-t p-3">
           <CreateStoryButton />
         </footer>
       )}

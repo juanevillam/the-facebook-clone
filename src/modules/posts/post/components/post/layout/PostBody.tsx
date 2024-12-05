@@ -64,7 +64,7 @@ export const PostBody = ({
     <>
       {thoughts && (
         <p
-          className={classNames('primary-text mb-2 pl-3', {
+          className={classNames('text-primary mb-2 pl-3', {
             'text-2xl': !media,
           })}
         >

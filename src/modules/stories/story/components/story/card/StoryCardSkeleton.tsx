@@ -6,7 +6,7 @@ export const StoryCardSkeleton = () => (
     role="listitem"
   >
     <Skeleton
-      className="skeleton-bg h-full"
+      className="bg-skeleton h-full"
       variant="rectangular"
       width="100%"
     />

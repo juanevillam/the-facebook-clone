@@ -50,9 +50,9 @@ export const PostCommentOptionsBottomSheet = ({
 
   return (
     <Drawer.Portal>
-      <Drawer.Overlay className="bottom-sheet-overlay" onClick={onDismiss} />
-      <Drawer.Content className="bottom-sheet-content h-max">
-        <Drawer.Handle className="bottom-sheet-handle" />
+      <Drawer.Overlay className="sheet-overlay" onClick={onDismiss} />
+      <Drawer.Content className="sheet-content h-max">
+        <Drawer.Handle className="sheet-handle" />
         <Drawer.Title className="sr-only">
           {t('posts.post.footer.comments.options.bottom-sheet.title')}
         </Drawer.Title>

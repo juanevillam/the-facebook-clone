@@ -8,7 +8,7 @@ export const SuspenseLoader = () => {
     <div
       aria-busy="true"
       aria-label={t('aria-label')}
-      className="flex-center-justify-center pt-[22px] md:w-5/12"
+      className="flex-center pt-[22px] md:w-5/12"
       role="status"
     >
       <BeatLoader color="#2C64F6" size={16} />

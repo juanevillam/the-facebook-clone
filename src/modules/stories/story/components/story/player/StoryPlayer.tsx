@@ -106,7 +106,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
       aria-live="polite"
       className="flex size-full justify-center"
     >
-      <div className="only-desktop w-60">
+      <div className="responsive-desktop-only w-60">
         {currentIndex !== 0 && (
           <button
             aria-label={t('stories.story-player.buttons.prev-story')}
@@ -114,7 +114,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
             onClick={handlePrev}
             type="button"
           >
-            <ChevronLeftIcon className="card-bg primary-transition primary-border secondary-stroke group-hover:secondary-bg size-12 rounded-full border-[0.8px] fill-none stroke-2 p-3 shadow-lg group-hover:translate-x-[-4px]" />
+            <ChevronLeftIcon className="bg-card transition-primary border-primary secondary-stroke group-hover:bg-secondary size-12 rounded-full border-[0.8px] fill-none stroke-2 p-3 shadow-lg group-hover:translate-x-[-4px]" />
           </button>
         )}
       </div>
@@ -147,8 +147,8 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
                 </div>
               ))}
             </div>
-            <div className="flex-center-justify-between">
-              <div className="flex-center space-x-2.5">
+            <div className="flex-between">
+              <div className="flex-align-center space-x-2.5">
                 <ProfilePic
                   image={user.image as string}
                   name={user.name as string}
@@ -167,7 +167,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
               </div>
               {onEnd && (
                 <IconButton
-                  className="only-mobile size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+                  className="responsive-mobile-only size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
                   icon={{
                     ariaLabel: 'close-story-player',
                     className: 'stroke-2 stroke-white size-full',
@@ -179,7 +179,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
             </div>
           </div>
           {currentIndex !== 0 && (
-            <div className="only-mobile absolute left-0 top-0 z-10 h-full w-1/2">
+            <div className="responsive-mobile-only absolute left-0 top-0 z-10 h-full w-1/2">
               <button
                 aria-label={t('stories.story-player.buttons.prev-story')}
                 className="size-full"
@@ -188,7 +188,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
               />
             </div>
           )}
-          <div className="only-mobile absolute right-0 top-0 z-10 h-full w-1/2">
+          <div className="responsive-mobile-only absolute right-0 top-0 z-10 h-full w-1/2">
             <button
               aria-label={t('stories.story-player.buttons.next-story')}
               className="size-full"
@@ -214,7 +214,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
           )}
         </section>
       )}
-      <div className="only-desktop w-60">
+      <div className="responsive-desktop-only w-60">
         {currentIndex !== items.length - 1 && (
           <button
             aria-label={t('stories.story-player.buttons.next-story')}
@@ -222,7 +222,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
             onClick={handleNext}
             type="button"
           >
-            <ChevronRightIcon className="card-bg primary-transition primary-border secondary-stroke group-hover:secondary-bg size-12 rounded-full border-[0.8px] fill-none stroke-2 p-3 shadow-lg group-hover:translate-x-[4px]" />
+            <ChevronRightIcon className="bg-card transition-primary border-primary secondary-stroke group-hover:bg-secondary size-12 rounded-full border-[0.8px] fill-none stroke-2 p-3 shadow-lg group-hover:translate-x-[4px]" />
           </button>
         )}
       </div>

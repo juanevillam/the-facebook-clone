@@ -8,7 +8,7 @@ type PostPageProps = {
 };
 
 export const PostPage = ({ post }: PostPageProps) => (
-  <div className="card-bg md:h-[calc(100vh-57px)]">
+  <div className="bg-card md:h-[calc(100vh-57px)]">
     <PostContent post={post} variant="page" />
   </div>
 );

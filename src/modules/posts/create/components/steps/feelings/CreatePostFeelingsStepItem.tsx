@@ -28,8 +28,8 @@ export const CreatePostFeelingsStepItem = ({
       handleSelect={handleSelect}
       isEven={isEven}
     >
-      <div className="flex-center space-x-2">
-        <div className="md:primary-bg md:primary-transition relative rounded-full md:p-2">
+      <div className="flex-align-center space-x-2">
+        <div className="md:bg-primary md:transition-primary relative rounded-full md:p-2">
           <Image
             alt={t(item)}
             className="size-8 md:size-5"
@@ -40,7 +40,7 @@ export const CreatePostFeelingsStepItem = ({
             width={168}
           />
         </div>
-        <span className="primary-text">{t(item)}</span>
+        <span className="text-primary">{t(item)}</span>
       </div>
     </CreatePostStepItem>
   );

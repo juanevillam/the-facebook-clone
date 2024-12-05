@@ -33,7 +33,7 @@ export const Button = ({
     aria-label={ariaLabel || (loading ? loadingLabel : label)}
     aria-live="polite"
     className={classNames(
-      'flex-center-justify-center primary-transition rounded-md px-3.5 text-white md:px-5',
+      'flex-center transition-primary rounded-md px-3.5 text-white md:px-5',
       {
         'w-full': fullWidth,
         'w-max': !fullWidth,
@@ -42,7 +42,7 @@ export const Button = ({
         'py-2.5 font-medium': size === 'sm',
         'py-3 text-base font-semibold': size === 'md',
         'py-3 text-lg font-semibold': size === 'lg',
-        'primary-border-light hover:primary-bg-light border py-3.5':
+        'border-primary-light hover:bg-primary-light border py-3.5':
           variant === 'auth',
         'bg-primary-100 hover:bg-primary-200 disabled:hover:bg-primary-100':
           variant === 'primary' || variant === 'tertiary',

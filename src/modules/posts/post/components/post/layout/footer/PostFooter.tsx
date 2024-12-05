@@ -110,10 +110,10 @@ export const PostFooter = ({
         <div className="md:px-4">
           <div
             className={classNames(
-              'only-mobile flex-center-justify-between primary-transition w-full px-3 py-2',
+              'responsive-mobile-only flex-between transition-primary w-full px-3 py-2',
               {
                 'hover:bg-neutral-700 hover:bg-opacity-50': isModal,
-                'hover:primary-bg': !isModal,
+                'hover:bg-primary': !isModal,
               }
             )}
             onClick={openMobileComments}
@@ -130,7 +130,7 @@ export const PostFooter = ({
               optimisticLikes={optimisticLikes}
             />
           </div>
-          <div className="only-desktop center-justify-between w-full px-0 py-3">
+          <div className="responsive-desktop-only align-between w-full px-0 py-3">
             <PostFooterInfo
               handleDesktopCommentsOpen={handleDesktopCommentsOpen}
               isModal={isModal}
@@ -157,7 +157,7 @@ export const PostFooter = ({
         <div
           aria-label={t('posts.post.footer.comments.open-comments')}
           className={classNames(
-            'only-desktop w-full border-l-4 border-primary-100',
+            'responsive-desktop-only w-full border-l-4 border-primary-100',
             {
               'h-72': optimisticComments.length === 0,
               'h-full overflow-y-auto': optimisticComments.length > 0,
@@ -170,10 +170,10 @@ export const PostFooter = ({
       <div
         className={classNames('md:px-4', {
           'w-full': isModal,
-          'primary-border border-t': desktopCommentsOpen,
+          'border-primary border-t': desktopCommentsOpen,
         })}
       >
-        <div className="only-desktop space-x-2 pb-2 pt-4">
+        <div className="responsive-desktop-only space-x-2 pb-2 pt-4">
           <ProfilePic />
           <PostCommentsBottomSheetFooter
             addOptimisticComment={addOptimisticComment}
@@ -182,7 +182,7 @@ export const PostFooter = ({
             variant="post-footer"
           />
         </div>
-        <p className="only-desktop secondary-text ml-16 pb-4 text-xs">
+        <p className="responsive-desktop-only text-secondary ml-16 pb-4 text-xs">
           {t('posts.post.footer.comments.press-enter-to-post')}
         </p>
       </div>

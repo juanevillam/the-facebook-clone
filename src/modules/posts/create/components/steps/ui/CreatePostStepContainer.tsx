@@ -27,7 +27,7 @@ export const CreatePostStepContainer = ({
 
   return (
     <>
-      <div className="primary-border border-b p-3 md:border-none">
+      <div className="border-primary border-b p-3 md:border-none">
         <SearchInput
           label={searchInput.label}
           handleClear={searchInput.handleClear}

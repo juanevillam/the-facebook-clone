@@ -96,10 +96,10 @@ export const PostContent = ({
   return (
     <>
       {variant === 'page' && (
-        <div className="card-bg only-mobile h-full min-h-screen">
-          <header className="flex-center primary-border space-x-1.5 border-b p-1.5">
+        <div className="bg-card responsive-mobile-only h-full min-h-screen">
+          <header className="flex-align-center border-primary space-x-1.5 border-b p-1.5">
             <IconButton
-              className="hover:primary-bg size-10"
+              className="hover:bg-primary size-10"
               icon={{
                 ariaLabel: 'go-back-to-home',
                 className: 'stroke-[2.5] primary-stroke size-full',
@@ -107,7 +107,7 @@ export const PostContent = ({
               }}
               onClick={navigateToHome}
             />
-            <h1 className="primary-text text-lg font-semibold">{user.name}</h1>
+            <h1 className="text-primary text-lg font-semibold">{user.name}</h1>
           </header>
           <PostHeader post={post} variant="page" />
           <PostBody post={post} />
@@ -117,13 +117,13 @@ export const PostContent = ({
       <div
         className={classNames('size-full', {
           flex: variant === 'modal',
-          'only-desktop': variant === 'page',
+          'responsive-desktop-only': variant === 'page',
         })}
       >
         <div className="relative flex-grow bg-black">
           <header
             className={classNames(
-              'flex-center absolute top-2 w-full px-2 md:top-3 md:w-full md:px-4',
+              'flex-align-center absolute top-2 w-full px-2 md:top-3 md:w-full md:px-4',
               {
                 'justify-between': variant === 'modal',
                 'justify-end': variant === 'page',
@@ -131,7 +131,7 @@ export const PostContent = ({
             )}
           >
             {variant === 'modal' && (
-              <div className="flex-center z-20 space-x-4">
+              <div className="flex-align-center z-20 space-x-4">
                 <IconButton
                   className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
                   icon={{
@@ -147,7 +147,7 @@ export const PostContent = ({
               </div>
             )}
             <IconButton
-              className="only-desktop z-20 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
+              className="responsive-desktop-only z-20 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
               icon={{
                 ariaLabel: expanded ? 'collapse-post' : 'expand-post',
                 className: 'stroke-white fill-white size-full',
@@ -158,7 +158,7 @@ export const PostContent = ({
               onClick={toggleExpand}
             />
             {variant === 'modal' && (
-              <div className="only-mobile z-20">
+              <div className="responsive-mobile-only z-20">
                 <PostOptions
                   isModal
                   postId={id}
@@ -172,7 +172,7 @@ export const PostContent = ({
         </div>
         <aside
           className={classNames(
-            'md:card-bg absolute bottom-0 flex w-full flex-col bg-neutral-900/50 md:static md:h-full md:bg-transparent',
+            'md:bg-card absolute bottom-0 flex w-full flex-col bg-neutral-900/50 md:static md:h-full md:bg-transparent',
             {
               'md:w-0': expanded,
               'md:w-96 md:min-w-96': !expanded,
@@ -182,7 +182,7 @@ export const PostContent = ({
         >
           <PostHeader post={post} variant={variant} />
           {thoughts && (
-            <p className="primary-text-dark md:primary-text mb-2 pl-3">
+            <p className="text-primary-dark md:text-primary mb-2 pl-3">
               {thoughts}
             </p>
           )}

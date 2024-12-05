@@ -32,7 +32,7 @@ export const CreatePostMediaStep = () => {
 
   return (
     <MediaPicker
-      className="md:primary-border md:m-3 md:h-96 md:rounded-lg md:border"
+      className="md:border-primary md:m-3 md:h-96 md:rounded-lg md:border"
       file={file}
       fileInputRef={fileInputRef}
       NoMediaComponent={

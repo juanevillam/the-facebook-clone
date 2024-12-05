@@ -27,16 +27,16 @@ export const PostComment = ({
     >
       <ProfilePic image={user?.image as string} name={user?.name as string} />
       <div>
-        <div className="flex-center space-x-2">
-          <div className="primary-bg mb-1 rounded-2xl px-3 py-2">
+        <div className="flex-align-center space-x-2">
+          <div className="bg-primary mb-1 rounded-2xl px-3 py-2">
             <Link
               aria-label={t('links.visit-profile', { user: user.name })}
-              className="primary-text font-semibold leading-tight hover:underline"
+              className="text-primary font-semibold leading-tight hover:underline"
               href={`/${user.username}` as any}
             >
               {user?.name}
             </Link>
-            <p className="primary-text">{thoughts}</p>
+            <p className="text-primary">{thoughts}</p>
           </div>
           {isCommentMine && (
             <div className="group-hover:block md:hidden">
@@ -49,7 +49,7 @@ export const PostComment = ({
             <Timestamp date={createdAt} />
           ) : (
             <div className="-mt-1">
-              <span className="secondary-text text-xs">
+              <span className="text-secondary text-xs">
                 {t('action-loader.posting')}...
               </span>
             </div>

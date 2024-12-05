@@ -20,10 +20,10 @@ export const CreatePostCheckInStepItem = ({
   return (
     <CreatePostStepItem active={active} handleSelect={handleSelect}>
       <div>
-        <h2 className="primary-text font-medium md:font-semibold">
+        <h2 className="text-primary font-medium md:font-semibold">
           {main_text}
         </h2>
-        <p className="secondary-text text-sm">{secondary_text}</p>
+        <p className="text-secondary text-sm">{secondary_text}</p>
       </div>
     </CreatePostStepItem>
   );

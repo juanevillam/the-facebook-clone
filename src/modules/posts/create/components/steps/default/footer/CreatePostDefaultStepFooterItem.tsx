@@ -39,13 +39,13 @@ export const CreatePostDefaultStepFooterItem = ({
         aria-disabled={disabled}
         aria-label={t(`${name}.detailed`)}
         className={classNames(
-          'flex-center primary-transition peer relative w-full justify-start p-3 md:size-9 md:justify-center md:rounded-full md:p-0',
+          'flex-align-center transition-primary peer relative w-full justify-start p-3 md:size-9 md:justify-center md:rounded-full md:p-0',
           {
-            'active-bg': active && !disabled,
+            'bg-active': active && !disabled,
             'cursor-not-allowed opacity-50': disabled,
-            'hover:primary-bg': !disabled,
+            'hover:bg-primary': !disabled,
             'justify-center': activeGif,
-            'primary-border border-t md:border-none': !activeGif,
+            'border-primary border-t md:border-none': !activeGif,
           }
         )}
         disabled={disabled}
@@ -62,9 +62,12 @@ export const CreatePostDefaultStepFooterItem = ({
           width={72}
         />
         <p
-          className={classNames('only-mobile primary-text ml-3 text-lg', {
-            hidden: activeGif,
-          })}
+          className={classNames(
+            'responsive-mobile-only text-primary ml-3 text-lg',
+            {
+              hidden: activeGif,
+            }
+          )}
         >
           {t(`${name}.detailed`)}
         </p>
