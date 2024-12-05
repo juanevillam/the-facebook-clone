@@ -385,6 +385,15 @@
         },
         "button": "Publicar"
       }
+    },
+    "loading": "Cargando historias",
+    "story-player": {
+      "title": "Viendo la historia de {user}",
+      "buttons": {
+        "prev-story": "Historia anterior",
+        "next-story": "Siguiente historia",
+        "close-story-player": "Cerrar reproductor de historias"
+      }
     }
   },
   "form": {
@@ -545,7 +554,10 @@
   },
   "logos": {
     "logotype": "Logotipo de Facebook",
-    "logomark": "Logomarca de Facebook",
-    "link-aria-label": "Navegar a la página de inicio"
+    "logomark": "Logomarca de Facebook"
+  },
+  "links": {
+    "navigate-to-home-page": "Navegar a la página de inicio",
+    "visit-profile": "Visita el perfil de {user}"
   }
 }

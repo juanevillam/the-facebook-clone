@@ -13,7 +13,7 @@ export const PostComment = ({
   thoughts,
   user,
 }: CommentExtended) => {
-  const t = useTranslations('action-loader');
+  const t = useTranslations();
   const currentUser = useCurrentUser();
   const isCommentMine = currentUser?.id === user?.id;
 
@@ -24,6 +24,7 @@ export const PostComment = ({
         <div className="flex-center space-x-2">
           <div className="primary-bg mb-1 rounded-2xl px-3 py-2">
             <Link
+              aria-label={t('links.visit-profile', { user: user.name })}
               className="primary-text font-semibold leading-tight hover:underline"
               href={`/${user.username}` as any}
             >
@@ -42,7 +43,9 @@ export const PostComment = ({
             <Timestamp date={createdAt} />
           ) : (
             <div className="-mt-1">
-              <span className="secondary-text text-xs">{t('posting')}...</span>
+              <span className="secondary-text text-xs">
+                {t('action-loader.posting')}...
+              </span>
             </div>
           )}
         </div>

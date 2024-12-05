@@ -23,7 +23,8 @@ export const LayoutWrapper = ({
             'images',
             'icon-buttons',
             'search-input',
-            'logos'
+            'logos',
+            'links'
           )}
         >
           <Navbar />

@@ -40,7 +40,7 @@ export const Navbar = () => {
           className="flex-center-justify-between px-3 py-2 md:px-4 md:py-1"
         >
           <div className="flex-center">
-            <Link aria-label={t('logos.link-aria-label')} href="/">
+            <Link aria-label={t('links.navigate-to-home-page')} href="/">
               <FacebookLogoMark className="hidden size-10 md:block" />
               <FacebookLogoType className="h-6 fill-primary-100 md:hidden dark:fill-white" />
             </Link>

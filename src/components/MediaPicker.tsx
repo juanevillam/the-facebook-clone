@@ -45,12 +45,12 @@ export const MediaPicker = ({
 
   return (
     <div
+      aria-busy={actionLoader?.show || undefined}
       aria-live="polite"
       className={classNames('relative h-full overflow-hidden', className)}
     >
       {file && (
         <IconButton
-          aria-label={t('media-picker.remove-media')}
           className="absolute right-2 top-2 z-20 size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
           icon={{
             ariaLabel: 'remove-media',

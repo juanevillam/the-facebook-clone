@@ -34,7 +34,7 @@ export const CreateStoryHeader = ({
         />
         <h1
           className="primary-text text-lg md:font-semibold"
-          id="create-story-title"
+          id="create-story-modal-title"
         >
           {t('title')}
         </h1>

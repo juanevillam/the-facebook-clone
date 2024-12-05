@@ -104,26 +104,24 @@ export const SignUpDialogForm = ({ nextStep, step }: SignUpDialogFormProps) => {
           </>
         )}
         {step === 4 && (
-          <>
-            <legend className="sr-only" id="gender-group-label">
+          <fieldset
+            aria-labelledby="gender-group-label"
+            className="flex space-x-3"
+          >
+            <legend className="sr-only hidden" id="gender-group-label">
               {t('form.fields.gender.label')}
             </legend>
-            <fieldset
-              aria-labelledby="gender-group-label"
-              className="flex space-x-3"
-            >
-              <AuthRadioInput
-                label={t('form.fields.gender.male')}
-                name="gender"
-                value="male"
-              />
-              <AuthRadioInput
-                label={t('form.fields.gender.female')}
-                name="gender"
-                value="female"
-              />
-            </fieldset>
-          </>
+            <AuthRadioInput
+              label={t('form.fields.gender.male')}
+              name="gender"
+              value="male"
+            />
+            <AuthRadioInput
+              label={t('form.fields.gender.female')}
+              name="gender"
+              value="female"
+            />
+          </fieldset>
         )}
         <Button
           fullWidth

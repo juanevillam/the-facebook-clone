@@ -1,5 +1,7 @@
 'use client';
 
+import { AriaRole } from 'react';
+
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 
@@ -13,10 +15,14 @@ import { CreateStoryModal } from './CreateStoryModal';
 import { toggleCreateStoryOpenable } from '../reducers/createStoryStoryReducer';
 
 type CreateStoryCardProps = {
+  role?: AriaRole;
   variant?: 'card' | 'list';
 };
 
-export const CreateStoryCard = ({ variant = 'card' }: CreateStoryCardProps) => {
+export const CreateStoryCard = ({
+  role,
+  variant = 'card',
+}: CreateStoryCardProps) => {
   const t = useTranslations('stories.create.card');
   const currentUser = useCurrentUser();
   const dispatch = useAppDispatch();
@@ -28,8 +34,12 @@ export const CreateStoryCard = ({ variant = 'card' }: CreateStoryCardProps) => {
     !posting && dispatch(toggleCreateStoryOpenable());
 
   return (
-    <div className="flex h-full">
-      <div
+    <section
+      aria-labelledby="create-story-card-title"
+      className="flex h-full"
+      role={role}
+    >
+      <article
         className={classNames({
           'card w-full md:p-2.5': variant === 'card',
           'primary-bg md:card-bg primary-transition min-w-28 overflow-hidden rounded-xl md:min-w-32':
@@ -37,6 +47,7 @@ export const CreateStoryCard = ({ variant = 'card' }: CreateStoryCardProps) => {
         })}
       >
         <button
+          aria-label={t('title')}
           className={classNames(
             'primary-transition group relative flex h-full w-full p-3 md:rounded-lg md:px-2 md:py-1.5',
             {
@@ -60,6 +71,7 @@ export const CreateStoryCard = ({ variant = 'card' }: CreateStoryCardProps) => {
             })}
           >
             <PlusIcon
+              aria-hidden="true"
               className={classNames(
                 'primary-transition rounded-full stroke-1',
                 {
@@ -72,17 +84,18 @@ export const CreateStoryCard = ({ variant = 'card' }: CreateStoryCardProps) => {
             />
           </div>
           <div className="-mt-px text-justify">
-            <h1
+            <h2
               className={classNames(
                 'primary-text primary-transition font-semibold md:text-lg',
                 {
                   hidden: variant === 'list',
                 }
               )}
+              id="create-story-card-title"
             >
               {t('title')}
-            </h1>
-            <h1
+            </h2>
+            <p
               className={classNames(
                 'primary-text primary-transition absolute bottom-3 left-1/2 w-full -translate-x-1/2 transform text-center text-xs font-semibold md:text-sm',
                 {
@@ -91,7 +104,7 @@ export const CreateStoryCard = ({ variant = 'card' }: CreateStoryCardProps) => {
               )}
             >
               {t('title-short')}
-            </h1>
+            </p>
             {variant === 'card' && (
               <p className="tertiary-text primary-transition md:text-md text-sm">
                 {t('subtitle')}
@@ -102,9 +115,9 @@ export const CreateStoryCard = ({ variant = 'card' }: CreateStoryCardProps) => {
             <div className="absolute inset-0 z-20 bg-black/15 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           )}
         </button>
-      </div>
+      </article>
       <CreateStoryModal handleToggleOpenable={handleToggleOpenable} />
       <CreateStoryDialog handleToggleOpenable={handleToggleOpenable} />
-    </div>
+    </section>
   );
 };

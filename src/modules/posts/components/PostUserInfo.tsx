@@ -22,11 +22,12 @@ export const PostUserInfo = ({
   name,
   username,
 }: PostUserInfoProps) => {
-  const t = useTranslations('posts');
+  const t = useTranslations();
 
   return (
     <p className="leading-tight">
       <Link
+        aria-label={t('links.visit-profile', { user: name })}
         className={classNames('font-semibold hover:underline', {
           'primary-text-dark md:primary-text': isModal,
           'primary-text': !isModal,
@@ -42,7 +43,7 @@ export const PostUserInfo = ({
             'tertiary-text': !isModal,
           })}
         >
-          &nbsp;{t('user-info.is')}
+          &nbsp;{t('posts.user-info.is')}
         </span>
       )}
       {feeling && (
@@ -53,11 +54,13 @@ export const PostUserInfo = ({
           })}
         >
           {hideFellingInfo && (
-            <span className="md:hidden">&nbsp;{t('user-info.feeling')}</span>
+            <span className="md:hidden">
+              &nbsp;{t('posts.user-info.feeling')}
+            </span>
           )}
           &nbsp;
           <Image
-            alt={t('user-info.feeling-icon-alt', { feeling })}
+            alt={t('posts.user-info.feeling-icon-alt', { feeling })}
             className="inline-block"
             height={18}
             loading="eager"
@@ -65,20 +68,20 @@ export const PostUserInfo = ({
             width={18}
           />
           <span className="hidden md:inline-block">
-            &nbsp;{t('user-info.feeling')}
+            &nbsp;{t('posts.user-info.feeling')}
           </span>
           <span
             className={classNames('md:inline-block', {
               hidden: hideFellingInfo,
             })}
           >
-            &nbsp;{t(`feelings.${feeling}`)}
+            &nbsp;{t(`posts.feelings.${feeling}`)}
           </span>
         </span>
       )}
       {location && (
         <span>
-          <span className="tertiary-text">&nbsp;{t('user-info.in')}</span>
+          <span className="tertiary-text">&nbsp;{t('posts.user-info.in')}</span>
           <span className="primary-text font-semibold">&nbsp;{location}</span>
         </span>
       )}

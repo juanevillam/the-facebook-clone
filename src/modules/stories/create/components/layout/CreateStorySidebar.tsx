@@ -25,9 +25,9 @@ export const CreateStorySidebar = ({
   );
 
   return (
-    <div className="card-bg flex flex-col justify-between shadow-lg md:min-w-64 lg:min-w-80 xl:min-w-96">
+    <aside className="card-bg flex flex-col justify-between shadow-lg md:min-w-64 lg:min-w-80 xl:min-w-96">
       <div>
-        <div className="primary-border flex-center w-full space-x-4 border-b px-5 py-4">
+        <header className="primary-border flex-center w-full space-x-4 border-b px-5 py-4">
           <IconButton
             className="size-10 bg-neutral-900/50 hover:bg-neutral-700/50"
             icon={{
@@ -38,24 +38,27 @@ export const CreateStorySidebar = ({
             onClick={handleToggleOpenable}
           />
           <FacebookLogoMark className="hidden size-10 md:block" />
-        </div>
-        <div className="primary-border h-max w-full border-b px-5 py-8">
-          <h1 className="primary-text mb-6 text-2xl font-semibold">
+        </header>
+        <section className="primary-border h-max w-full border-b px-5 py-8">
+          <h1
+            id="create-story-modal-title"
+            className="primary-text mb-6 text-2xl font-semibold"
+          >
             {t('title')}
           </h1>
           <div className="flex-center space-x-2.5">
             <ProfilePic variant="large" />
-            <h1 className="primary-text truncate text-lg font-semibold leading-snug">
+            <h2 className="primary-text truncate text-lg font-semibold leading-snug">
               {currentUser?.name}
-            </h1>
+            </h2>
           </div>
-        </div>
+        </section>
       </div>
       {file && (
-        <div className="primary-border border-t p-3">
+        <footer className="primary-border border-t p-3">
           <CreateStoryButton />
-        </div>
+        </footer>
       )}
-    </div>
+    </aside>
   );
 };

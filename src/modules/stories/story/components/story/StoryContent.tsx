@@ -24,7 +24,7 @@ export const StoryContent = ({
   variant,
 }: StoryContentProps) => {
   const { items, user } = story;
-  const t = useTranslations('logos');
+  const t = useTranslations();
   const router = useRouter();
 
   const navigateToHome = () => router.push('/');
@@ -37,7 +37,10 @@ export const StoryContent = ({
       })}
     >
       {variant === 'page' && (
-        <div className="only-mobile card-bg primary-transition flex-center primary-border space-x-1.5 border-b p-1.5">
+        <header
+          aria-labelledby="story-page-title"
+          className="only-mobile card-bg primary-transition flex-center primary-border space-x-1.5 border-b p-1.5"
+        >
           <IconButton
             className="hover:primary-bg size-10"
             icon={{
@@ -47,11 +50,16 @@ export const StoryContent = ({
             }}
             onClick={navigateToHome}
           />
-          <h1 className="primary-text text-lg font-semibold">{user.name}</h1>
-        </div>
+          <h1
+            className="primary-text text-lg font-semibold"
+            id="story-page-title"
+          >
+            {user.name}
+          </h1>
+        </header>
       )}
       {variant === 'modal' && (
-        <div className="only-desktop flex-center absolute top-2 z-20 space-x-4 px-2 md:top-3 md:px-4">
+        <header className="only-desktop flex-center absolute top-2 z-20 space-x-4 px-2 md:top-3 md:px-4">
           <IconButton
             className="size-10 bg-neutral-900 bg-opacity-50 hover:bg-neutral-700 hover:bg-opacity-50"
             icon={{
@@ -61,10 +69,10 @@ export const StoryContent = ({
             }}
             onClick={closeModal}
           />
-          <Link aria-label={t('link-aria-label')} href="/">
+          <Link aria-label={t('links.navigate-to-home-page')} href="/">
             <FacebookLogoMark className="size-10" />
           </Link>
-        </div>
+        </header>
       )}
       <StoryPlayer
         items={items}

@@ -32,7 +32,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
-  const t = useTranslations('images');
+  const t = useTranslations();
   const currentUser = useCurrentUser();
 
   const currentItem = items[currentIndex];
@@ -101,10 +101,15 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
   }, [currentItem.media, currentItem.mediaType]);
 
   return (
-    <div className="flex size-full justify-center">
+    <div
+      aria-label={t('stories.story-player.title', { user: user.name })}
+      aria-live="polite"
+      className="flex size-full justify-center"
+    >
       <div className="only-desktop w-60">
         {currentIndex !== 0 && (
           <button
+            aria-label={t('stories.story-player.buttons.prev-story')}
             className="group flex w-full items-center justify-end px-10"
             onClick={handlePrev}
             type="button"
@@ -114,7 +119,10 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
         )}
       </div>
       {currentItem && (
-        <div className="relative min-w-full overflow-hidden bg-black md:min-w-96 md:rounded-xl">
+        <section
+          aria-labelledby={`story-${currentIndex + 1}`}
+          className="relative min-w-full overflow-hidden bg-black md:min-w-96 md:rounded-xl"
+        >
           <div className="absolute top-0 z-20 w-full space-y-3 px-3 md:pt-1">
             <div className="absolute inset-0 -z-10 h-40 bg-gradient-to-b from-black/30 to-transparent" />
             <div className="flex w-full space-x-1.5">
@@ -145,7 +153,10 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
                   image={user.image as string}
                   name={user.name as string}
                 />
-                <Link href={`/${user.username}` as any}>
+                <Link
+                  aria-label={t('links.visit-profile', { user: user.name })}
+                  href={`/${user.username}` as any}
+                >
                   <h1 className="text-lg font-semibold text-white hover:underline">
                     {user.name}
                   </h1>
@@ -170,6 +181,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
           {currentIndex !== 0 && (
             <div className="only-mobile absolute left-0 top-0 z-10 h-full w-1/2">
               <button
+                aria-label={t('stories.story-player.buttons.prev-story')}
                 className="size-full"
                 onClick={handlePrev}
                 type="button"
@@ -177,11 +189,16 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
             </div>
           )}
           <div className="only-mobile absolute right-0 top-0 z-10 h-full w-1/2">
-            <button className="size-full" onClick={handleNext} type="button" />
+            <button
+              aria-label={t('stories.story-player.buttons.next-story')}
+              className="size-full"
+              onClick={handleNext}
+              type="button"
+            />
           </div>
           {isHorizontal !== null && (
             <Image
-              alt={t('story-item', {
+              alt={t('images.story-item', {
                 name: user.name,
                 index: currentIndex + 1,
               })}
@@ -195,11 +212,12 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
               src={currentItem.media}
             />
           )}
-        </div>
+        </section>
       )}
       <div className="only-desktop w-60">
         {currentIndex !== items.length - 1 && (
           <button
+            aria-label={t('stories.story-player.buttons.next-story')}
             className="group flex w-full items-center justify-start px-10"
             onClick={handleNext}
             type="button"

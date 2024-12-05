@@ -124,7 +124,7 @@ export const PostContent = ({
                   }}
                   onClick={closeModal}
                 />
-                <Link aria-label={t('logos.link-aria-label')} href="/">
+                <Link aria-label={t('links.navigate-to-home-page')} href="/">
                   <FacebookLogoMark className="hidden size-10 md:block" />
                 </Link>
               </div>

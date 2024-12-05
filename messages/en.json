@@ -384,6 +384,15 @@
         },
         "button": "Post"
       }
+    },
+    "loading": "Loading stories",
+    "story-player": {
+      "title": "Viewing story of {user}",
+      "buttons": {
+        "prev-story": "Previous story",
+        "next-story": "Next story",
+        "close-story-player": "Close story player"
+      }
     }
   },
   "form": {
@@ -417,7 +426,7 @@
     "user-image": "User-uploaded image",
     "user-gif": "User-uploaded GIF",
     "story": "{name}'s story",
-    "story-item": "{name}'s story item #{index}"
+    "story-item": "Story #{index} by {name}"
   },
   "toast-messages": {
     "error": {
@@ -542,7 +551,10 @@
   },
   "logos": {
     "logotype": "Facebook logotype",
-    "logomark": "Facebook logomark",
-    "link-aria-label": "Navigate to the home page"
+    "logomark": "Facebook logomark"
+  },
+  "links": {
+    "navigate-to-home-page": "Navigate to the home page",
+    "visit-profile": "Visit {user}'s profile"
   }
 }

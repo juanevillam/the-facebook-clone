@@ -16,12 +16,14 @@ export const StoryPageWrapper = ({ story }: StoryPageWrapperProps) => {
     <NextIntlClientProvider
       messages={pick(
         messages,
+        'stories.story-player',
         'images',
         'toast-messages',
         'icon-buttons',
         'action-loader',
         'timestamp',
-        'logos'
+        'logos',
+        'links'
       )}
     >
       <StoryPage story={story} />

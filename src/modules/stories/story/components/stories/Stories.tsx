@@ -7,12 +7,15 @@ export const Stories = async () => {
   const stories = await fetchStories();
 
   return stories.length > 0 ? (
-    <div className="card-bg flex h-56 space-x-2.5 overflow-x-auto px-3 py-2.5 md:h-52 md:space-x-3 md:bg-transparent md:p-0">
-      <CreateStoryCard variant="list" />
+    <section
+      className="card-bg flex h-56 space-x-2.5 overflow-x-auto px-3 py-2.5 md:h-52 md:space-x-3 md:bg-transparent md:p-0"
+      role="list"
+    >
+      <CreateStoryCard role="listitem" variant="list" />
       {stories.map((story) => (
         <StoryCard key={story.id} {...story} />
       ))}
-    </div>
+    </section>
   ) : (
     <CreateStoryCard />
   );

@@ -55,7 +55,7 @@ export const SignUpModalForm = ({
   };
 
   return (
-    <div className="px-1">
+    <div className="space-y-4 px-1">
       <AuthSocial />
       <Formik
         initialValues={{

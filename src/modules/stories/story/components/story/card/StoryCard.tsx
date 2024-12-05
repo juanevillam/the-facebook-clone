@@ -45,6 +45,7 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
         }
       )}
       href={`/stories/${id}` as any}
+      role="listitem"
     >
       <ProfilePic
         customClassName={classNames(

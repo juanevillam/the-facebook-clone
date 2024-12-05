@@ -102,6 +102,7 @@ describe('[AUTH] EmailAuthTextInput', () => {
     const { container } = renderWithFormik(
       <EmailAuthTextInput id="login-form-email-input" />
     );
+
     const results = await axe(container);
 
     expect(results).toHaveNoViolations();

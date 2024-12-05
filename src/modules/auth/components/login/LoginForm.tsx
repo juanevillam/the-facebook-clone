@@ -74,7 +74,7 @@ export const LoginForm = () => {
   }, [urlError, t]);
 
   return (
-    <>
+    <div className="space-y-4">
       <AuthSocial />
       <Formik
         initialValues={{
@@ -86,7 +86,7 @@ export const LoginForm = () => {
         validate={handleValidateForm}
       >
         <Form aria-labelledby="login-form-title">
-          <h1 className="sr-only" id="login-form-title">
+          <h1 className="sr-only hidden" id="login-form-title">
             {t('auth.login.title')}
           </h1>
           {showTwoFactor ? (
@@ -145,6 +145,6 @@ export const LoginForm = () => {
           </div>
         </Form>
       </Formik>
-    </>
+    </div>
   );
 };

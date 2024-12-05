@@ -21,7 +21,7 @@ export const AuthSocial = () => {
   const handleGithubSignIn = () => handleSignInSocial('github');
 
   return (
-    <div className="pb-4">
+    <div>
       <h2 className="sr-only" id="auth-social-title">
         {t('title')}
       </h2>

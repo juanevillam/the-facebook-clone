@@ -16,12 +16,14 @@ export const StoryModalWrapper = ({ story }: StoryModalWrapperProps) => {
     <NextIntlClientProvider
       messages={pick(
         messages,
+        'stories.story-player',
         'images',
         'toast-messages',
         'icon-buttons',
         'action-loader',
         'timestamp',
-        'logos'
+        'logos',
+        'links'
       )}
     >
       <StoryModal story={story} />

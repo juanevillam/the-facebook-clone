@@ -17,7 +17,7 @@ export const CreateStoryDialog = ({
   return (
     <MobileDialog
       open={isOpenableOpen}
-      titleId="create-story-title"
+      titleId="create-story-dialog-title"
       translateFrom="y"
     >
       <div className="flex h-full flex-col">

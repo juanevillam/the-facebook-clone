@@ -17,6 +17,7 @@ export const CreateStoryModal = ({
 
   return (
     <Modal
+      aria-labelledby="create-story-modal-title"
       className="only-desktop"
       closeAfterTransition
       onClose={handleToggleOpenable}

@@ -23,7 +23,8 @@ export const PostPageWrapper = ({ post }: PostPageWrapperProps) => {
         'action-loader',
         'timestamp',
         'video-player',
-        'logos'
+        'logos',
+        'links'
       )}
     >
       <PostPage post={post} />

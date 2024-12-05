@@ -23,7 +23,8 @@ export const PostModalWrapper = ({ post }: PostModalWrapperProps) => {
         'action-loader',
         'timestamp',
         'video-player',
-        'logos'
+        'logos',
+        'links'
       )}
     >
       <PostModal post={post} />
