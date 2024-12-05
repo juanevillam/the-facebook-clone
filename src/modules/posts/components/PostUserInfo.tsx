@@ -48,6 +48,10 @@ export const PostUserInfo = ({
       )}
       {feeling && (
         <span
+          aria-label={t('posts.user-info.feeling-aria', {
+            user: name,
+            feeling,
+          })}
           className={classNames({
             'tertiary-text-dark md:tertiary-text': isModal,
             'tertiary-text': !isModal,
@@ -80,7 +84,12 @@ export const PostUserInfo = ({
         </span>
       )}
       {location && (
-        <span>
+        <span
+          aria-label={t('posts.user-info.location-aria', {
+            user: name,
+            location,
+          })}
+        >
           <span className="tertiary-text">&nbsp;{t('posts.user-info.in')}</span>
           <span className="primary-text font-semibold">&nbsp;{location}</span>
         </span>

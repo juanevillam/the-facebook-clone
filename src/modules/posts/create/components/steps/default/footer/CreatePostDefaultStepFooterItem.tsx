@@ -37,6 +37,7 @@ export const CreatePostDefaultStepFooterItem = ({
     <Tooltip label={tooltipLabel} position="bottom-9">
       <button
         aria-disabled={disabled}
+        aria-label={t(`${name}.detailed`)}
         className={classNames(
           'flex-center primary-transition peer relative w-full justify-start p-3 md:size-9 md:justify-center md:rounded-full md:p-0',
           {

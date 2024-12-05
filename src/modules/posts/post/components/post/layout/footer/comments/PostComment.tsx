@@ -18,7 +18,13 @@ export const PostComment = ({
   const isCommentMine = currentUser?.id === user?.id;
 
   return (
-    <div className="group flex space-x-2">
+    <div
+      aria-label={t('posts.post.footer.comments.user-comment', {
+        user: user.name,
+      })}
+      className="group flex space-x-2"
+      role="article"
+    >
       <ProfilePic image={user?.image as string} name={user?.name as string} />
       <div>
         <div className="flex-center space-x-2">

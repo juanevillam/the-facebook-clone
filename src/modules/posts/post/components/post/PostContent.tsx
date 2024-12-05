@@ -37,7 +37,7 @@ export const PostContent = ({
     comments,
     createdAt,
     feeling,
-    id: postId,
+    id,
     likes,
     location,
     media,
@@ -51,15 +51,53 @@ export const PostContent = ({
   const t = useTranslations();
   const router = useRouter();
 
-  const handleExpand = () => setExpanded(!expanded);
+  const toggleExpand = () => setExpanded((prev) => !prev);
 
   const navigateToHome = () => router.push('/');
+
+  const renderMediaContent = () => {
+    switch (mediaType) {
+      case 'image':
+        return (
+          <Image
+            alt={t('images.user-image', {
+              user: user.name,
+            })}
+            className="size-full object-contain"
+            height={0}
+            priority
+            sizes="100vw"
+            src={media as string}
+            width={0}
+          />
+        );
+      case 'gif':
+        return (
+          <Image
+            alt={t('images.user-gif', {
+              user: user.name,
+            })}
+            className="size-full object-contain"
+            height={0}
+            priority
+            sizes="100vw"
+            src={media as string}
+            unoptimized
+            width={0}
+          />
+        );
+      case 'video':
+        return media && <VideoPlayer url={media} />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <>
       {variant === 'page' && (
         <div className="card-bg only-mobile h-full min-h-screen">
-          <div className="flex-center primary-border space-x-1.5 border-b p-1.5">
+          <header className="flex-center primary-border space-x-1.5 border-b p-1.5">
             <IconButton
               className="hover:primary-bg size-10"
               icon={{
@@ -70,31 +108,10 @@ export const PostContent = ({
               onClick={navigateToHome}
             />
             <h1 className="primary-text text-lg font-semibold">{user.name}</h1>
-          </div>
-          <PostHeader
-            createdAt={createdAt}
-            feeling={feeling as Feeling}
-            image={user.image as string}
-            location={location as string}
-            name={user.name as string}
-            postId={postId}
-            postSaves={savedBy}
-            postUserId={user.id}
-            username={user.username as string}
-            variant="page"
-          />
-          <PostBody
-            media={media as string}
-            mediaType={mediaType as string}
-            postId={postId}
-            thoughts={thoughts as string}
-          />
-          <PostFooter
-            postComments={comments}
-            postLikes={likes}
-            postId={postId}
-            variant={variant}
-          />
+          </header>
+          <PostHeader post={post} variant="page" />
+          <PostBody post={post} />
+          <PostFooter post={post} variant={variant} />
         </div>
       )}
       <div
@@ -104,7 +121,7 @@ export const PostContent = ({
         })}
       >
         <div className="relative flex-grow bg-black">
-          <div
+          <header
             className={classNames(
               'flex-center absolute top-2 w-full px-2 md:top-3 md:w-full md:px-4',
               {
@@ -138,45 +155,22 @@ export const PostContent = ({
                   ? ArrowsPointingInIcon
                   : ArrowsPointingOutIcon,
               }}
-              onClick={handleExpand}
+              onClick={toggleExpand}
             />
             {variant === 'modal' && (
               <div className="only-mobile z-20">
                 <PostOptions
                   isModal
-                  postId={post.id}
-                  postSaves={post.savedBy}
-                  postUserId={post.userId}
+                  postId={id}
+                  postSaves={savedBy}
+                  postUserId={user.id}
                 />
               </div>
             )}
-          </div>
-          {mediaType === 'image' && (
-            <Image
-              alt={t('images.user-image')}
-              className="size-full object-contain"
-              height={0}
-              priority
-              sizes="100vw"
-              src={media as string}
-              width={0}
-            />
-          )}
-          {mediaType === 'gif' && (
-            <Image
-              alt={t('images.user-gif')}
-              className="size-full object-contain"
-              height={0}
-              priority
-              sizes="100vw"
-              src={media as string}
-              unoptimized
-              width={0}
-            />
-          )}
-          {mediaType === 'video' && media && <VideoPlayer url={media} />}
+          </header>
+          {renderMediaContent()}
         </div>
-        <div
+        <aside
           className={classNames(
             'md:card-bg absolute bottom-0 flex w-full flex-col bg-neutral-900/50 md:static md:h-full md:bg-transparent',
             {
@@ -186,30 +180,14 @@ export const PostContent = ({
             }
           )}
         >
-          <PostHeader
-            createdAt={createdAt}
-            feeling={feeling as Feeling}
-            image={user.image as string}
-            location={location as string}
-            name={user.name as string}
-            postId={postId}
-            postSaves={savedBy}
-            postUserId={user.id}
-            username={user.username as string}
-            variant={variant}
-          />
+          <PostHeader post={post} variant={variant} />
           {thoughts && (
             <p className="primary-text-dark md:primary-text mb-2 pl-3">
               {thoughts}
             </p>
           )}
-          <PostFooter
-            postComments={comments}
-            postLikes={likes}
-            postId={post.id}
-            variant={variant}
-          />
-        </div>
+          <PostFooter post={post} variant={variant} />
+        </aside>
       </div>
     </>
   );

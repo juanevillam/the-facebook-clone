@@ -38,7 +38,7 @@ export const ProfilePic = ({
 
   return imagetoShow ? (
     <Image
-      alt={t('profile-pic', { name: nametoShow || 'user' })}
+      alt={t('profile-pic', { user: nametoShow || 'user' })}
       className={`rounded-full ${className} ${customClassName}`}
       height={size}
       loading="eager"

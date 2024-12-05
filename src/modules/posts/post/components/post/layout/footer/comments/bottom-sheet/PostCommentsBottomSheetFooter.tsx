@@ -34,10 +34,7 @@ export const PostCommentsBottomSheetFooter = ({
 
     setDesktopCommentsOpen && setDesktopCommentsOpen(true);
     setThoughts('');
-    startTransition(() => {
-      addOptimisticComment(thoughtsCopy);
-    });
-
+    startTransition(() => addOptimisticComment(thoughtsCopy));
     commentPost(postId, thoughtsCopy, currentUser?.id as string).catch(
       ({ message }) => showToast.error(t(`toast-messages.error.${message}`))
     );
@@ -45,6 +42,7 @@ export const PostCommentsBottomSheetFooter = ({
 
   return (
     <form
+      aria-label={t('posts.post.comments.bottom-sheet.form-aria-label')}
       className={classNames(
         'primary-border flex-center w-full space-x-2 border-t p-2',
         {
@@ -58,8 +56,9 @@ export const PostCommentsBottomSheetFooter = ({
           {t('posts.post.comments.bottom-sheet.title')}
         </label>
         <input
-          aria-label={t('posts.post.comments.bottom-sheet.title')}
+          aria-label={t('posts.post.comments.bottom-sheet.input-aria-label')}
           className="primary-placeholder md:accent-placeholder primary-text md:accent-text primary-transition inline-flex w-full bg-transparent focus:outline-none"
+          disabled={isPending}
           id="post-comments-bottom-sheet-input"
           onChange={handleComment}
           placeholder={`${t('posts.post.comments.bottom-sheet.title')}...`}
@@ -69,7 +68,9 @@ export const PostCommentsBottomSheetFooter = ({
       </div>
       {thoughts && (
         <button
+          aria-label={t('posts.post.comments.bottom-sheet.send-aria-label')}
           className="only-mobile flex-center-justify-center primary-transition hover:primary-bg rounded-full p-2"
+          disabled={isPending || !thoughts.trim()}
           onClick={handleOptimisticComment}
           type="submit"
         >

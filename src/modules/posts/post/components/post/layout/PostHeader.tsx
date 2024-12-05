@@ -1,37 +1,21 @@
-import { SavedPost } from '@prisma/client';
+import { SavedPost, User } from '@prisma/client';
 import classNames from 'classnames';
 
 import { ProfilePic, Timestamp } from '@/components';
 import { PostUserInfo } from '@/modules/posts/components';
 import { Feeling } from '@/modules/posts/create/types';
-import { PostVariant } from '@/modules/posts/post/types';
+import { PostExtended, PostVariant } from '@/modules/posts/post/types';
 
 import { PostOptions } from './shared';
 
 type PostHeaderProps = {
-  createdAt: Date;
-  feeling?: Feeling;
-  image?: string;
-  location?: string;
-  name: string;
-  postId: string;
-  postSaves: SavedPost[];
-  postUserId: string;
-  username: string;
+  post: PostExtended;
   variant?: PostVariant;
 };
 
 export const PostHeader = ({
-  createdAt,
-  feeling,
-  image,
-  location,
-  name,
-  postId,
-  postSaves,
-  postUserId,
-  username,
-  variant = 'page',
+  post: { createdAt, feeling, id, location, savedBy, user },
+  variant,
 }: PostHeaderProps) => {
   const isModal = variant === 'modal';
 
@@ -43,16 +27,16 @@ export const PostHeader = ({
             'hidden md:block': isModal,
           })}
         >
-          <ProfilePic image={image} name={name} />
+          <ProfilePic image={user.image as string} name={user.name as string} />
         </div>
         <div>
           <PostUserInfo
-            feeling={feeling}
+            feeling={feeling as Feeling}
             hideFellingInfo
             isModal={isModal}
-            location={location}
-            name={name}
-            username={username}
+            location={location as string}
+            name={user.name as string}
+            username={user.username as string}
           />
           <Timestamp
             className={classNames({
@@ -65,9 +49,9 @@ export const PostHeader = ({
       <div className={classNames({ 'hidden md:block': isModal })}>
         <PostOptions
           isModal={isModal}
-          postId={postId}
-          postSaves={postSaves}
-          postUserId={postUserId}
+          postId={id}
+          postSaves={savedBy}
+          postUserId={user.id}
         />
       </div>
     </div>

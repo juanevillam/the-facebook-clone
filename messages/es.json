@@ -120,7 +120,6 @@
   },
   "navbar": {
     "main-navigation": "Navegación principal",
-    "search": "Buscar",
     "mobile-navigation": "Navegación móvil",
     "links": {
       "home": "Inicio",
@@ -167,8 +166,8 @@
             }
           },
           "options": {
-            "off": "Desactivado",
             "on": "Activado",
+            "off": "Desactivado",
             "automatic": "Automático",
             "english": "Inglés",
             "spanish": "Español",
@@ -296,7 +295,9 @@
       "in": "en",
       "is": "está",
       "feeling": "sintiéndose",
-      "feeling-icon-alt": "Ícono de sentimiento ({feeling})"
+      "feeling-icon-alt": "Ícono de sentimiento ({feeling})",
+      "feeling-aria": "{user} está sintiéndose {feeling}",
+      "location-aria": "{user} está en {location}"
     },
     "post": {
       "options": {
@@ -331,7 +332,11 @@
           "and": "y",
           "person": "persona",
           "people": "personas",
-          "more": "más"
+          "more": "más",
+          "view-likes": "Ver likes",
+          "add-like": "Agregar me gusta",
+          "remove-like": "Remove me gusta",
+          "open-likes": "Abrir likes"
         },
         "comments": {
           "comment": "Comentario",
@@ -345,14 +350,19 @@
               "title": "Opciones del comentario",
               "description": "Aquí puedes eliminar un comentario si es tuyo."
             }
-          }
+          },
+          "user-comment": "Comentario de {user}",
+          "open-comments": "Abrir comentarios"
         }
       },
       "comments": {
         "bottom-sheet": {
           "title": "Escribe un comentario",
           "description": "Aquí puedes escribir un comentario en esta publicación agregando texto o un GIF.",
-          "no-comments-yet": "Aún no hay comentarios"
+          "no-comments-yet": "Aún no hay comentarios",
+          "form-aria-label": "Comentar en la publicación",
+          "input-aria-label": "Escribe tu comentario",
+          "send-aria-label": "Enviar comentario"
         }
       },
       "likes": {
@@ -361,7 +371,8 @@
           "description": "Aquí puedes ver quién reaccionó a esta publicación."
         }
       }
-    }
+    },
+    "loading": "Cargando publicaciones"
   },
   "stories": {
     "create": {
@@ -421,13 +432,13 @@
   "images": {
     "alert-triangle": "Ícono de alerta",
     "no-profile-pic": "Imagen de sin foto de perfil",
-    "profile-pic": "Foto de perfil de {name}",
+    "profile-pic": "Foto de perfil de {user}",
     "thumb-up": "Ícono de pulgar arriba",
-    "media-preview": "Vista previa del medio subido por el usuario",
-    "user-image": "Imagen subida por el usuario",
-    "user-gif": "GIF subido por el usuario",
-    "story": "Historia de {name}",
-    "story-item": "Historia #{index} de {name}"
+    "media-preview": "Vista previa de la multimedia subido por el usuario",
+    "user-image": "Imagen subida por {user}",
+    "user-gif": "GIF subido por {user}",
+    "story": "Historia de {user}",
+    "story-item": "Historia #{index} de {user}"
   },
   "toast-messages": {
     "error": {
@@ -541,13 +552,11 @@
     "volume": "Volumen"
   },
   "media-picker": {
-    "media-picker": {
-      "add-media": "Agregar multimedia",
-      "change-media": "Cambiar multimedia",
-      "remove-media": "Eliminar multimedia",
-      "file-input": "Subir un archivo",
-      "media-preview": "Vista previa de la multimedia seleccionada"
-    }
+    "add-media": "Agregar multimedia",
+    "change-media": "Cambiar multimedia",
+    "remove-media": "Eliminar multimedia",
+    "file-input": "Subir un archivo",
+    "media-preview": "Vista previa de la multimedia seleccionada"
   },
   "suspense-loader": {
     "aria-label": "Cargando contenido"

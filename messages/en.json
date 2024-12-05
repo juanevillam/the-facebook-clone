@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "The Facebook Clone • By {author}",
-    "description": "A clone of Facebook's website built with Next.js and Tailwind CSS"
+    "description": "A clone of Facebook’s website built with Next.js and Tailwind CSS"
   },
   "auth": {
     "header": {
@@ -31,7 +31,7 @@
     "sign-up": {
       "modal": {
         "title": "Create a new account",
-        "subtitle": "It's quick and easy."
+        "subtitle": "It’s quick and easy."
       },
       "form": {
         "button": {
@@ -43,16 +43,16 @@
         "0-step": {
           "description": "Create a new account",
           "title": "Join The Facebook Clone",
-          "subtitle": "We'll help you create a new account in a few easy steps."
+          "subtitle": "We’ll help you create a new account in a few easy steps."
         },
         "1-step": {
           "description": "Name",
-          "title": "What's your name?",
+          "title": "What’s your name?",
           "subtitle": "Enter the name you use in real life."
         },
         "2-step": {
           "description": "Email Address",
-          "title": "What's your email address?",
+          "title": "What’s your email address?",
           "subtitle": "Enter the email where you can be reached."
         },
         "3-step": {
@@ -62,7 +62,7 @@
         },
         "4-step": {
           "description": "Gender",
-          "title": "What's your gender?",
+          "title": "What’s your gender?",
           "subtitle": "You can change who sees this later."
         },
         "next": "Next"
@@ -99,7 +99,7 @@
     },
     "forgot-password": {
       "title": "Forgot password",
-      "description": "Enter your email address and we'll send you a link to reset your password.",
+      "description": "Enter your email address and we’ll send you a link to reset your password.",
       "form": {
         "primary-button": {
           "label": "Send link",
@@ -183,7 +183,7 @@
   "posts": {
     "create": {
       "layout": {
-        "thoughts": "What's on your mind?",
+        "thoughts": "What’s on your mind?",
         "header": {
           "steps": {
             "default": "Create post",
@@ -212,7 +212,7 @@
             "disabled-prod": "GIF picker is unavailable<br></br>in production"
           },
           "media": {
-            "disabled": "This can't be combined with what you've already<br></br>added to your post"
+            "disabled": "This can’t be combined with what you’ve already<br></br>added to your post"
           }
         }
       },
@@ -295,7 +295,9 @@
       "in": "in",
       "is": "is",
       "feeling": "feeling",
-      "feeling-icon-alt": "Feeling icon ({feeling})"
+      "feeling-icon-alt": "Feeling icon ({feeling})",
+      "feeling-aria": "{user} is feeling {feeling}",
+      "location-aria": "{user} is in {location}"
     },
     "post": {
       "options": {
@@ -316,7 +318,7 @@
         },
         "bottom-sheet": {
           "title": "Post options",
-          "description": "Here you can save a post or delete it if it's yours."
+          "description": "Here you can save a post or delete it if it’s yours."
         }
       },
       "footer": {
@@ -330,7 +332,11 @@
           "and": "and",
           "person": "person",
           "people": "people",
-          "more": "more"
+          "more": "more",
+          "view-likes": "View likes",
+          "add-like": "Add like",
+          "remove-like": "Remove like",
+          "open-likes": "Open likes"
         },
         "comments": {
           "comment": "Comment",
@@ -342,16 +348,21 @@
             },
             "bottom-sheet": {
               "title": "Comment options",
-              "description": "Here you can delete a comment if it's yours."
+              "description": "Here you can delete a comment if it’s yours."
             }
-          }
+          },
+          "user-comment": "{user}’s comment",
+          "open-comments": "Open comments"
         }
       },
       "comments": {
         "bottom-sheet": {
           "title": "Write a comment",
           "description": "Here you can write a comment in this post by adding text or a GIF.",
-          "no-comments-yet": "No comments yet"
+          "no-comments-yet": "No comments yet",
+          "form-aria-label": "Comment on the post",
+          "input-aria-label": "Write your comment",
+          "send-aria-label": "Send your comment"
         }
       },
       "likes": {
@@ -360,7 +371,8 @@
           "description": "Here you can see who reacted to this post."
         }
       }
-    }
+    },
+    "loading": "Loading posts"
   },
   "stories": {
     "create": {
@@ -420,13 +432,13 @@
   "images": {
     "alert-triangle": "Alert icon",
     "no-profile-pic": "No profile pic image",
-    "profile-pic": "{name}'s profile picture",
+    "profile-pic": "{user}’s profile picture",
     "thumb-up": "Thumb up icon",
     "media-preview": "User-uploaded media preview",
-    "user-image": "User-uploaded image",
-    "user-gif": "User-uploaded GIF",
-    "story": "{name}'s story",
-    "story-item": "Story #{index} by {name}"
+    "user-image": "{user}’s image",
+    "user-gif": "{user}’s GIF",
+    "story": "{user}’s story",
+    "story-item": "Story #{index} by {user}"
   },
   "toast-messages": {
     "error": {
@@ -555,6 +567,6 @@
   },
   "links": {
     "navigate-to-home-page": "Navigate to the home page",
-    "visit-profile": "Visit {user}'s profile"
+    "visit-profile": "Visit {user}’s profile"
   }
 }

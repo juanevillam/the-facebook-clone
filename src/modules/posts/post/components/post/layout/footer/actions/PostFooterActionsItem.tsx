@@ -25,6 +25,7 @@ export const PostFooterActionsItem = ({
   return (
     <div className={`w-full ${className}`}>
       <button
+        aria-label={t(label)}
         className={classNames(
           'flex-center-justify-center primary-transition w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
           {

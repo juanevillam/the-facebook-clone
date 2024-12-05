@@ -63,7 +63,7 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
       ) : isHorizontal !== null ? (
         <Image
           alt={t('story', {
-            name: user.name,
+            user: user.name,
           })}
           className={classNames('primary-transition group-hover:scale-105', {
             'object-contain': isHorizontal,

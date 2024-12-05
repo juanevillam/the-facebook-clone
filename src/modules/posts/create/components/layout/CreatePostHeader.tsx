@@ -23,7 +23,7 @@ export const CreatePostHeader = ({ icon }: CreatePostHeaderProps) => {
   );
 
   return (
-    <div className="flex-center-justify-between primary-border border-b p-1.5 md:justify-center md:p-4">
+    <header className="flex-center-justify-between primary-border border-b p-1.5 md:justify-center md:p-4">
       <div className="flex-center space-x-1.5">
         <IconButton
           className={classNames(
@@ -53,6 +53,6 @@ export const CreatePostHeader = ({ icon }: CreatePostHeaderProps) => {
           <CreatePostDefaultStepButton />
         </div>
       )}
-    </div>
+    </header>
   );
 };

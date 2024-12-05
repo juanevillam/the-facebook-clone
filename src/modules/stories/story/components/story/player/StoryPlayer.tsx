@@ -199,7 +199,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
           {isHorizontal !== null && (
             <Image
               alt={t('images.story-item', {
-                name: user.name,
+                user: user.name,
                 index: currentIndex + 1,
               })}
               className={classNames({

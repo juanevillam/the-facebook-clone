@@ -15,6 +15,8 @@ export const CreatePostCardItem = ({
   return (
     <button
       aria-disabled={disabled}
+      aria-label={t('detailed')}
+      aria-pressed={active && !disabled}
       className={classNames(
         'flex-center-justify-center primary-transition w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
         {

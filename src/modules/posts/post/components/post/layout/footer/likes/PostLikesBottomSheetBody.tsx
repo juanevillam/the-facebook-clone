@@ -14,7 +14,7 @@ export const PostLikesBottomSheetBody = ({
   const t = useTranslations('links');
 
   return (
-    <div className="overflow-y-auto">
+    <section className="overflow-y-auto">
       {optimisticLikes.map(({ user: { id, image, name, username } }) => (
         <Link
           key={id}
@@ -26,6 +26,6 @@ export const PostLikesBottomSheetBody = ({
           <h1 className="primary-text font-semibold leading-tight">{name}</h1>
         </Link>
       ))}
-    </div>
+    </section>
   );
 };

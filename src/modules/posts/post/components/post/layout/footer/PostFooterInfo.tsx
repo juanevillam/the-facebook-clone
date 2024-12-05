@@ -22,10 +22,12 @@ export const PostFooterInfo = ({
   optimisticLikes,
 }: PostFooterInfoProps) => {
   const t = useTranslations('posts.post.footer');
+  const liked = optimisticLikes.some(isMyLike);
 
   return (
     <>
       <button
+        aria-label={t('likes.open-likes')}
         className="flex-center space-x-1.5"
         onClick={openDesktopLikes && openDesktopLikes}
         type="button"
@@ -39,9 +41,9 @@ export const PostFooterInfo = ({
                 'secondary-text': !isModal,
               })}
             >
-              {optimisticLikes.some(isMyLike) && t('likes.you')}
-              {!optimisticLikes.some(isMyLike) && optimisticLikes.length}
-              {optimisticLikes.some(isMyLike) &&
+              {liked && t('likes.you')}
+              {!liked && optimisticLikes.length}
+              {liked &&
                 optimisticLikes.length > 1 &&
                 ` ${t('likes.and')} ${optimisticLikes.length - 1} ${
                   optimisticLikes.length > 2
@@ -53,7 +55,11 @@ export const PostFooterInfo = ({
         )}
       </button>
       {optimisticComments.length > 0 && (
-        <button onClick={handleDesktopCommentsOpen} type="button">
+        <button
+          aria-label={t('comments.open-comments')}
+          onClick={handleDesktopCommentsOpen}
+          type="button"
+        >
           <p
             className={classNames('text-sm md:hover:underline', {
               'secondary-text-dark md:secondary-text': isModal,

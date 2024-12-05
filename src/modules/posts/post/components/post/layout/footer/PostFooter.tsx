@@ -13,6 +13,7 @@ import { likePost } from '@/modules/posts/post/actions';
 import {
   CommentExtended,
   LikeExtended,
+  PostExtended,
   PostVariant,
 } from '@/modules/posts/post/types';
 
@@ -26,16 +27,12 @@ import { PostLikesBottomSheet } from './likes';
 import { PostFooterInfo } from './PostFooterInfo';
 
 type PostFooterProps = {
-  postComments: CommentExtended[];
-  postLikes: LikeExtended[];
-  postId: string;
+  post: PostExtended;
   variant: PostVariant;
 };
 
 export const PostFooter = ({
-  postComments,
-  postLikes,
-  postId,
+  post: { comments, id, likes },
   variant,
 }: PostFooterProps) => {
   const isModal = variant === 'modal';
@@ -48,16 +45,21 @@ export const PostFooter = ({
   const currentUser = useCurrentUser();
 
   const isMyLike = (like: LikeExtended) =>
-    like.userId === currentUser?.id && like.postId === postId;
+    like.userId === currentUser?.id && like.postId === id;
 
   const [optimisticLikes, addOptimisticLike] = useOptimistic<LikeExtended[]>(
-    postLikes,
+    likes,
     // @ts-ignore
     (likes: LikeExtended[], newLike: LikeExtended) =>
       likes.some(isMyLike)
         ? likes.filter((like) => like.userId !== currentUser?.id)
         : [
-            { ...newLike, postId, user: currentUser, userId: currentUser?.id },
+            {
+              ...newLike,
+              postId: id,
+              user: currentUser,
+              userId: currentUser?.id,
+            },
             ...likes,
           ]
   );
@@ -65,11 +67,11 @@ export const PostFooter = ({
   const [optimisticComments, addOptimisticComment] = useOptimistic<
     CommentExtended[]
   >(
-    postComments,
+    comments,
     // @ts-ignore
     (comments: CommentExtended[], newComment: CommentExtended) => [
       {
-        postId,
+        postId: id,
         thoughts: newComment,
         user: currentUser,
         userId: currentUser?.id,
@@ -91,11 +93,11 @@ export const PostFooter = ({
 
   const handleOptimisticLike = async () => {
     startTransition(() =>
-      addOptimisticLike({ postId, userId: currentUser?.id })
+      addOptimisticLike({ postId: id, userId: currentUser?.id })
     );
 
     try {
-      await likePost(postId, currentUser?.id as string);
+      await likePost(id, currentUser?.id as string);
     } catch (error) {
       error instanceof Error &&
         showToast.error(t(`toast-messages.error.${error.message}`));
@@ -149,10 +151,11 @@ export const PostFooter = ({
         mobileCommentsOpen={mobileCommentsOpen}
         openMobileComments={openMobileComments}
         optimisticLikes={optimisticLikes}
-        postId={postId}
+        postId={id}
       />
       {desktopCommentsOpen && (
         <div
+          aria-label={t('posts.post.footer.comments.open-comments')}
           className={classNames(
             'only-desktop w-full border-l-4 border-primary-100',
             {
@@ -174,7 +177,7 @@ export const PostFooter = ({
           <ProfilePic />
           <PostCommentsBottomSheetFooter
             addOptimisticComment={addOptimisticComment}
-            postId={postId}
+            postId={id}
             setDesktopCommentsOpen={setDesktopCommentsOpen}
             variant="post-footer"
           />
@@ -191,7 +194,7 @@ export const PostFooter = ({
           onDismiss={closeMobileComments}
           optimisticComments={optimisticComments}
           optimisticLikes={optimisticLikes}
-          postId={postId}
+          postId={id}
         />
       </Drawer.Root>
       <Drawer.Root open={desktopLikesOpen} onClose={closeDesktopLikes}>

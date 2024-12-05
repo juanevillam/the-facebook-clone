@@ -7,20 +7,58 @@ import { useTranslations } from 'next-intl';
 import { VideoPlayer } from '@/components';
 import { Link } from '@/navigation';
 
+import { PostExtended } from '../../../types';
+
 type PostBodyProps = {
-  media: string;
-  mediaType: string;
-  postId: string;
-  thoughts: string;
+  post: PostExtended;
 };
 
 export const PostBody = ({
-  media,
-  mediaType,
-  postId,
-  thoughts,
+  post: { id, media, mediaType, thoughts, user },
 }: PostBodyProps) => {
   const t = useTranslations('images');
+
+  const renderMediaContent = () => {
+    switch (mediaType) {
+      case 'image':
+        return (
+          <Link href={`/posts/${id}` as any}>
+            <Image
+              alt={t('user-image', {
+                user: user.name,
+              })}
+              className="max-h-[600px] w-full object-contain"
+              height={0}
+              priority
+              sizes="100vw"
+              src={media as string}
+              width={0}
+            />
+          </Link>
+        );
+      case 'gif':
+        return (
+          <Link href={`/posts/${id}` as any}>
+            <Image
+              alt={t('user-gif', {
+                user: user.name,
+              })}
+              className="max-h-[600px] w-full object-contain"
+              height={0}
+              priority
+              sizes="100vw"
+              src={media as string}
+              unoptimized
+              width={0}
+            />
+          </Link>
+        );
+      case 'video':
+        return media && <VideoPlayer showFullHeight={false} url={media} />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <>
@@ -33,40 +71,7 @@ export const PostBody = ({
           {thoughts}
         </p>
       )}
-      {media && (
-        <div className="bg-black">
-          {mediaType === 'image' && (
-            <Link href={`/posts/${postId}` as any}>
-              <Image
-                alt={t('user-image')}
-                className="max-h-[600px] w-full object-contain"
-                height={0}
-                priority
-                sizes="100vw"
-                src={media as string}
-                width={0}
-              />
-            </Link>
-          )}
-          {mediaType === 'gif' && (
-            <Link href={`/posts/${postId}` as any}>
-              <Image
-                alt={t('user-gif')}
-                className="max-h-[600px] w-full object-contain"
-                height={0}
-                priority
-                sizes="100vw"
-                src={media as string}
-                unoptimized
-                width={0}
-              />
-            </Link>
-          )}
-          {mediaType === 'video' && (
-            <VideoPlayer showFullHeight={false} url={media} />
-          )}
-        </div>
-      )}
+      {media && <div className="bg-black">{renderMediaContent()}</div>}
     </>
   );
 };
