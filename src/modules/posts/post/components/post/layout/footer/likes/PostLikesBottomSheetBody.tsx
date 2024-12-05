@@ -19,7 +19,7 @@ export const PostLikesBottomSheetBody = ({
         <Link
           key={id}
           aria-label={t('visit-profile', { user: name })}
-          className="border-primary transition-primary flex-align-center hover:bg-primary w-full space-x-2 border-b p-3"
+          className="border-primary flex-align-center hover:bg-primary w-full space-x-2 border-b p-3"
           href={`/${username}` as any}
         >
           <ProfilePic image={image as string} name={name as string} />

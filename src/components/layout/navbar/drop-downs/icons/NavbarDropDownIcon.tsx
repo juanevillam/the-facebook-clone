@@ -44,7 +44,7 @@ export const NavbarDropDownIcon = ({
       <Tooltip label={t(`${label}.tooltip`)} position="-bottom-11">
         <IconButton
           className={classNames(
-            `flex-center transition-primary size-10 rounded-full p-[10px] ${className}`,
+            `flex-center size-10 rounded-full p-[10px] ${className}`,
             {
               'bg-primary-500 hover:bg-primary-600 dark:bg-primary-300 dark:hover:bg-primary-400':
                 isActive,

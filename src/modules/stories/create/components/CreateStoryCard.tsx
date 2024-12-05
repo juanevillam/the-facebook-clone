@@ -42,14 +42,14 @@ export const CreateStoryCard = ({
       <article
         className={classNames({
           'card w-full md:p-2.5': variant === 'card',
-          'bg-primary md:bg-card transition-primary min-w-28 overflow-hidden rounded-xl md:min-w-32':
+          'bg-primary md:bg-card min-w-28 overflow-hidden rounded-xl md:min-w-32':
             variant === 'list',
         })}
       >
         <button
           aria-label={t('title')}
           className={classNames(
-            'transition-primary group relative flex h-full w-full p-3 md:rounded-lg md:px-2 md:py-1.5',
+            'group relative flex h-full w-full p-3 md:rounded-lg md:px-2 md:py-1.5',
             {
               'hover:bg-primary space-x-2.5 md:space-x-3': variant === 'card',
             }
@@ -59,45 +59,39 @@ export const CreateStoryCard = ({
         >
           {variant === 'list' && (
             <ProfilePic
-              customClassName="absolute top-0 left-0 object-cover w-full h-3/4 md:h-2/3 rounded-none transition-primary group-hover:scale-105"
+              customClassName="absolute top-0 left-0 object-cover w-full h-3/4 md:h-2/3 rounded-none  group-hover:scale-105"
               image={currentUser?.image as string}
               name={currentUser?.name as string}
             />
           )}
           <div
-            className={classNames('transition-primary', {
+            className={classNames('', {
               'bg-primary md:bg-card absolute bottom-8 left-1/2 -translate-x-1/2 transform rounded-full p-1 md:bottom-10':
                 variant === 'list',
             })}
           >
             <PlusIcon
               aria-hidden="true"
-              className={classNames(
-                'transition-primary rounded-full stroke-1',
-                {
-                  'size-11 bg-primary-500 fill-primary-100 stroke-primary-100 p-3 md:size-12 dark:bg-primary-300':
-                    variant === 'card',
-                  'mx-auto size-8 bg-primary-100 fill-white stroke-white p-2 md:size-10':
-                    variant === 'list',
-                }
-              )}
+              className={classNames('rounded-full stroke-1', {
+                'size-11 bg-primary-500 fill-primary-100 stroke-primary-100 p-3 md:size-12 dark:bg-primary-300':
+                  variant === 'card',
+                'mx-auto size-8 bg-primary-100 fill-white stroke-white p-2 md:size-10':
+                  variant === 'list',
+              })}
             />
           </div>
           <div className="-mt-px text-justify">
             <h2
-              className={classNames(
-                'text-primary transition-primary font-semibold md:text-lg',
-                {
-                  hidden: variant === 'list',
-                }
-              )}
+              className={classNames('text-primary font-semibold md:text-lg', {
+                hidden: variant === 'list',
+              })}
               id="create-story-card-title"
             >
               {t('title')}
             </h2>
             <p
               className={classNames(
-                'text-primary transition-primary absolute bottom-3 left-1/2 w-full -translate-x-1/2 transform text-center text-xs font-semibold md:text-sm',
+                'text-primary absolute bottom-3 left-1/2 w-full -translate-x-1/2 transform text-center text-xs font-semibold md:text-sm',
                 {
                   hidden: variant === 'card',
                 }
@@ -106,13 +100,13 @@ export const CreateStoryCard = ({
               {t('title-short')}
             </p>
             {variant === 'card' && (
-              <p className="text-tertiary transition-primary md:text-md text-sm">
+              <p className="text-tertiary md:text-md text-sm">
                 {t('subtitle')}
               </p>
             )}
           </div>
           {variant === 'list' && (
-            <div className="absolute inset-0 z-20 bg-black/15 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="absolute inset-0 z-20 bg-black/15 opacity-0 group-hover:opacity-100" />
           )}
         </button>
       </article>

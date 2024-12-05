@@ -27,7 +27,7 @@ export const NavbarLink = ({
       <Link
         aria-label={t(label)}
         className={classNames(
-          'flex-center transition-primary peer h-14 md:h-12 md:w-max md:rounded-lg md:px-8 lg:px-10 xl:px-12',
+          'flex-center peer h-14 md:h-12 md:w-max md:rounded-lg md:px-8 lg:px-10 xl:px-12',
           {
             relative: isActive,
             'hover:bg-primary': !isActive,

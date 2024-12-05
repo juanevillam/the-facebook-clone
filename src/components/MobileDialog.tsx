@@ -35,18 +35,15 @@ export const MobileDialog = ({
     <div className="md:hidden">
       <div
         aria-hidden="true"
-        className={classNames(
-          'fixed inset-0 z-40 h-full bg-overlay-100 transition-all duration-300',
-          {
-            'visible opacity-100': open,
-            'invisible opacity-0': !open,
-          }
-        )}
+        className={classNames('fixed inset-0 z-40 h-full bg-overlay-100', {
+          'visible opacity-100': open,
+          'invisible opacity-0': !open,
+        })}
       />
       <div
         aria-labelledby={titleId}
         aria-modal="true"
-        className={`card fixed inset-0 z-40 transition-transform duration-300 ${className} ${
+        className={`card fixed inset-0 z-40 ${className} ${
           open ? translateOpenClass : translateClass
         }`}
         ref={dialogRef}

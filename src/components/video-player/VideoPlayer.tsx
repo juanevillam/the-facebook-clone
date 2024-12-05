@@ -133,7 +133,7 @@ export const VideoPlayer = ({
           <div className="group relative ml-2 text-center md:ml-3">
             <button
               aria-label={t('change-playback-rate')}
-              className="transition-primary text-primary-dark w-14 rounded-md py-1.5 font-bold hover:bg-neutral-700 hover:bg-opacity-50 md:w-16"
+              className="text-primary-dark w-14 rounded-md py-1.5 font-bold hover:bg-neutral-700 hover:bg-opacity-50 md:w-16"
               onClick={togglePlaybackMenu}
               type="button"
             >
@@ -149,7 +149,7 @@ export const VideoPlayer = ({
                     key={rate}
                     aria-label={t('change-playback-rate-to', { rate })}
                     className={classNames(
-                      'text-primary hover:bg-primary transition-primary w-14 rounded-md py-1.5 md:w-16',
+                      'text-primary hover:bg-primary w-14 rounded-md py-1.5 md:w-16',
                       {
                         'font-bold': rate === playbackRate,
                       }
@@ -175,7 +175,7 @@ export const VideoPlayer = ({
             />
             <Slider
               aria-label={t('volume')}
-              className="transition-primary absolute bottom-14 ml-0.5 hidden h-14 scale-90 text-white opacity-0 group-hover:scale-100 group-hover:opacity-100 md:block"
+              className="absolute bottom-14 ml-0.5 hidden h-14 scale-90 text-white opacity-0 group-hover:scale-100 group-hover:opacity-100 md:block"
               max={1}
               min={0}
               onChange={handleVolumeChange}

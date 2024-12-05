@@ -32,7 +32,7 @@ export const Navbar = () => {
     >
       <header
         className={classNames(
-          'bg-card border-primary transition-primary transform transition-transform md:transform-none md:border-b',
+          'bg-card border-primary transform md:transform-none md:border-b',
           {
             '-translate-y-full': showTopHeader,
             'translate-y-0': !showTopHeader,
@@ -60,7 +60,7 @@ export const Navbar = () => {
       <nav
         aria-label={t('navbar.mobile-navigation')}
         className={classNames(
-          'bg-card border-primary flex-align-center transform border-b transition-transform md:hidden',
+          'bg-card border-primary flex-align-center transform border-b md:hidden',
           {
             '-translate-y-full': showTopHeader,
             'translate-y-0': !showTopHeader,

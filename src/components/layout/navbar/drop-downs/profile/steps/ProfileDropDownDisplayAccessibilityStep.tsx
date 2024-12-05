@@ -32,7 +32,7 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
 
   return (
     <div className="p-2.5 md:px-4 md:py-3">
-      <div className="bg-card transition-primary rounded-lg py-3 pl-2 pr-4 md:p-0">
+      <div className="bg-card rounded-lg py-3 pl-2 pr-4 md:p-0">
         <div className="flex-align-center mb-4 space-x-2">
           <div>
             <DropDownHeaderIcon
@@ -60,7 +60,7 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
           </h2>
         </div>
         <div className="mb-2 flex space-x-2">
-          <div className="bg-primary transition-primary h-max rounded-full p-2">
+          <div className="bg-primary h-max rounded-full p-2">
             <MoonIcon className="fill-primary size-6" />
           </div>
           <div>
@@ -94,7 +94,7 @@ export const ProfileDropDownDisplayAccessibilityStep = ({
           />
         </fieldset>
         <div className="mb-2 flex space-x-2">
-          <div className="bg-primary transition-primary h-max rounded-full p-2">
+          <div className="bg-primary h-max rounded-full p-2">
             <ArrowsPointingOutIcon className="fill-primary primary-stroke size-6" />
           </div>
           <div>

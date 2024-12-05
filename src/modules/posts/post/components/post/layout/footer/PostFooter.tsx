@@ -110,7 +110,7 @@ export const PostFooter = ({
         <div className="md:px-4">
           <div
             className={classNames(
-              'responsive-mobile-only flex-between transition-primary w-full px-3 py-2',
+              'responsive-mobile-only flex-between w-full px-3 py-2',
               {
                 'hover:bg-neutral-700 hover:bg-opacity-50': isModal,
                 'hover:bg-primary': !isModal,

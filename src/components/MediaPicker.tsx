@@ -64,7 +64,7 @@ export const MediaPicker = ({
         aria-label={
           file ? t('media-picker.change-media') : t('media-picker.add-media')
         }
-        className={classNames('transition-primary relative size-full', {
+        className={classNames('relative size-full', {
           'bg-black': file,
           'hover:bg-primary': !file,
         })}

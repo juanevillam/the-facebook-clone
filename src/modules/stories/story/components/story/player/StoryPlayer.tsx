@@ -114,7 +114,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
             onClick={handlePrev}
             type="button"
           >
-            <ChevronLeftIcon className="bg-card transition-primary border-primary secondary-stroke group-hover:bg-secondary size-12 rounded-full border-[0.8px] fill-none stroke-2 p-3 shadow-lg group-hover:translate-x-[-4px]" />
+            <ChevronLeftIcon className="bg-card border-primary secondary-stroke group-hover:bg-secondary size-12 rounded-full border-[0.8px] fill-none stroke-2 p-3 shadow-lg group-hover:translate-x-[-4px]" />
           </button>
         )}
       </div>
@@ -222,7 +222,7 @@ export const StoryPlayer = ({ items, onEnd, user }: StoryPlayerProps) => {
             onClick={handleNext}
             type="button"
           >
-            <ChevronRightIcon className="bg-card transition-primary border-primary secondary-stroke group-hover:bg-secondary size-12 rounded-full border-[0.8px] fill-none stroke-2 p-3 shadow-lg group-hover:translate-x-[4px]" />
+            <ChevronRightIcon className="bg-card border-primary secondary-stroke group-hover:bg-secondary size-12 rounded-full border-[0.8px] fill-none stroke-2 p-3 shadow-lg group-hover:translate-x-[4px]" />
           </button>
         )}
       </div>

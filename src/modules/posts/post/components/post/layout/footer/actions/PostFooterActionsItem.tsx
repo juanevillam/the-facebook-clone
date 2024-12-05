@@ -27,7 +27,7 @@ export const PostFooterActionsItem = ({
       <button
         aria-label={t(label)}
         className={classNames(
-          'flex-center transition-primary w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
+          'flex-center w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
           {
             'hover:bg-neutral-700 hover:bg-opacity-50 md:hover:bg-gray-100 md:hover:bg-opacity-100 md:dark:hover:dark:bg-neutral-700':
               isModal,

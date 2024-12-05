@@ -35,13 +35,10 @@ export const AuthRadioInput = (props: AuthRadioInputProps) => {
         {...field}
       />
       <span
-        className={classNames(
-          'flex-center size-4 rounded-full border-2 transition',
-          {
-            'border-primary-100 bg-primary-100': field.checked,
-            'border-gray-300': !field.checked,
-          }
-        )}
+        className={classNames('flex-center size-4 rounded-full border-2', {
+          'border-primary-100 bg-primary-100': field.checked,
+          'border-gray-300': !field.checked,
+        })}
       >
         {field.checked && <span className="size-2 rounded-full bg-white" />}
       </span>

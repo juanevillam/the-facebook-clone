@@ -13,7 +13,7 @@ export const LayoutWrapper = ({
   const messages = useMessages();
 
   return (
-    <main className="transition-primary h-full min-h-screen bg-gray-100 dark:bg-neutral-900">
+    <main className="h-full min-h-screen bg-gray-100 dark:bg-neutral-900">
       <div className="mx-auto max-w-screen-2xl">
         <NextIntlClientProvider
           locale={locale}

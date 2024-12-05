@@ -39,7 +39,7 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
   return (
     <Link
       className={classNames(
-        'transition-primary group relative h-full min-w-28 overflow-hidden rounded-xl bg-black md:min-w-32',
+        'group relative h-full min-w-28 overflow-hidden rounded-xl bg-black md:min-w-32',
         {
           'opacity-70': allViewed,
         }
@@ -49,7 +49,7 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
     >
       <ProfilePic
         customClassName={classNames(
-          'transition-primary absolute left-3 top-3 z-20 shadow-xl ring-[3px]',
+          ' absolute left-3 top-3 z-20 shadow-xl ring-[3px]',
           {
             'ring-primary-100': !allViewed,
             'ring-white dark:ring-neutral-800': allViewed,
@@ -65,7 +65,7 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
           alt={t('story', {
             user: user.name,
           })}
-          className={classNames('transition-primary group-hover:scale-105', {
+          className={classNames('group-hover:scale-105', {
             'object-contain': isHorizontal,
             'object-cover': !isHorizontal,
           })}
@@ -77,7 +77,7 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
       ) : (
         <Skeleton className="bg-skeleton size-full" variant="rectangular" />
       )}
-      <div className="absolute inset-0 z-20 bg-black/15 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="absolute inset-0 z-20 bg-black/15 opacity-0 group-hover:opacity-100" />
     </Link>
   );
 };

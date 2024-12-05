@@ -45,7 +45,7 @@ export const ProfileDropDownDefaultStep = ({
         {t('description')}
       </h2>
       <Link
-        className="card flex-align-center transition-primary hover:bg-primary space-x-2.5 rounded-lg p-2"
+        className="card flex-align-center hover:bg-primary space-x-2.5 rounded-lg p-2"
         href="/profile"
         onClick={handleClose}
       >

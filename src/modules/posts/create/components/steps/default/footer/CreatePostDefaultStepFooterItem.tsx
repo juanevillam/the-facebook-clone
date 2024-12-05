@@ -39,7 +39,7 @@ export const CreatePostDefaultStepFooterItem = ({
         aria-disabled={disabled}
         aria-label={t(`${name}.detailed`)}
         className={classNames(
-          'flex-align-center transition-primary peer relative w-full justify-start p-3 md:size-9 md:justify-center md:rounded-full md:p-0',
+          'flex-align-center peer relative w-full justify-start p-3 md:size-9 md:justify-center md:rounded-full md:p-0',
           {
             'bg-active': active && !disabled,
             'cursor-not-allowed opacity-50': disabled,

@@ -39,7 +39,7 @@ export const StoryContent = ({
       {variant === 'page' && (
         <header
           aria-labelledby="story-page-title"
-          className="responsive-mobile-only bg-card transition-primary flex-align-center border-primary space-x-1.5 border-b p-1.5"
+          className="responsive-mobile-only bg-card flex-align-center border-primary space-x-1.5 border-b p-1.5"
         >
           <IconButton
             className="hover:bg-primary size-10"

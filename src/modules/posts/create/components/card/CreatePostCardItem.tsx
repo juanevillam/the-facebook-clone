@@ -18,7 +18,7 @@ export const CreatePostCardItem = ({
       aria-label={t('detailed')}
       aria-pressed={active && !disabled}
       className={classNames(
-        'flex-center transition-primary w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
+        'flex-center w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
         {
           'bg-active': active && !disabled,
           'cursor-not-allowed opacity-50': disabled,

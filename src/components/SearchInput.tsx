@@ -30,7 +30,7 @@ export const SearchInput = ({
   return (
     <div
       className={classNames(
-        'flex-align-center bg-primary transition-primary relative w-full rounded-full p-2.5 pr-12',
+        'flex-align-center bg-primary relative w-full rounded-full p-2.5 pr-12',
         {
           'md:py-2': variant === 'primary',
           'md:py-1.5': variant === 'secondary',
@@ -40,7 +40,7 @@ export const SearchInput = ({
       <SearchIcon aria-hidden="true" className="fill-secondary size-4" />
       <input
         aria-labelledby={id}
-        className="placeholder-primary text-primary transition-primary ml-2 inline-flex w-full bg-transparent focus:outline-none"
+        className="placeholder-primary text-primary ml-2 inline-flex w-full bg-transparent focus:outline-none"
         id={id}
         onChange={onChange}
         placeholder={t(label)}

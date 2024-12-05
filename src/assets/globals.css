@@ -153,7 +153,7 @@
 
   /* Card Utilities */
   .card {
-    @apply bg-card transition-primary md:rounded-lg;
+    @apply bg-card md:rounded-lg;
   }
 
   /* Flexbox Utilities */
@@ -197,10 +197,5 @@
 
   .responsive-desktop-block {
     @apply hidden md:block;
-  }
-
-  /* Transition Utilities */
-  .transition-primary {
-    @apply transition duration-300;
   }
 }

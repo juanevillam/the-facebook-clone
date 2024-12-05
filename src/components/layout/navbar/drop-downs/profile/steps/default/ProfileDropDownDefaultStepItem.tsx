@@ -21,12 +21,12 @@ export const ProfileDropDownDefaultStepItem = ({
   return (
     <button
       aria-label={t(`${label}.title`)}
-      className="card hover:bg-primary transition-primary flex-between w-full rounded-lg p-2"
+      className="card hover:bg-primary flex-between w-full rounded-lg p-2"
       onClick={onClick}
       type="button"
     >
       <div className="flex-align-center space-x-2">
-        <div className="bg-primary transition-primary rounded-full p-2">
+        <div className="bg-primary rounded-full p-2">
           <Icon className="fill-primary size-6" />
         </div>
         <h1 className="text-primary font-semibold">{t(`${label}.title`)}</h1>
