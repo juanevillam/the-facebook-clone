@@ -30,19 +30,19 @@ export const SignUpDialog = () => {
       titleId="sign-up-dialog-title"
       translateFrom="x"
     >
-      <div className="relative size-full bg-white">
-        <header className="flex-align-center space-x-1.5 border-b border-gray-300 p-1.5">
+      <div className="bg-card relative size-full transition-colors duration-300">
+        <header className="flex-align-center border-primary space-x-1.5 border-b p-1.5">
           <IconButton
-            className="hover:bg-secondary-light size-10"
+            className="hover:bg-secondary size-10"
             icon={{
               ariaLabel: 'back-to-login',
-              className: 'stroke-[2.5] primary-stroke-light size-full',
+              className: 'stroke-[2.5] primary-stroke size-full',
               Component: ArrowLeftIcon,
             }}
             onClick={closeStep}
           />
           <h1
-            className="text-primary-light text-lg"
+            className="text-primary text-lg"
             id="sign-up-dialog-title"
             aria-live="polite"
           >
@@ -51,10 +51,10 @@ export const SignUpDialog = () => {
         </header>
         <main className="mx-auto mt-44 w-11/12 space-y-6">
           <section className="space-y-3 text-center">
-            <h2 className="text-2xl font-semibold">
+            <h2 className="text-primary text-2xl font-semibold">
               {t(`auth.sign-up.dialog.${step}-step.title`)}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-secondary">
               {t(`auth.sign-up.dialog.${step}-step.subtitle`)}
             </p>
           </section>

@@ -1,5 +1,7 @@
 'use client';
 
+import { useTransition } from 'react';
+
 import classNames from 'classnames';
 import { Field, useField, useFormikContext } from 'formik';
 import { useTranslations } from 'next-intl';
@@ -39,10 +41,10 @@ export const AuthTextInput = ({
           aria-invalid={error && touched ? 'true' : 'false'}
           aria-labelledby={`${id}-label`}
           className={classNames(
-            'w-full rounded-md border border-gray-200 px-4 py-3.5 placeholder-gray-500 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-100',
+            'border-primary placeholder-primary w-full rounded-md border px-4 py-3.5 transition-all duration-300 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-100',
             {
-              'bg-white hover:bg-gray-100': skin === 'primary',
-              'bg-gray-100 hover:bg-gray-200': skin !== 'primary',
+              'bg-card hover:bg-primary': skin === 'primary',
+              'bg-primary hover:bg-secondary': skin !== 'primary',
               'ring-2 ring-error-100 focus:ring-error-100 md:mb-1':
                 error && touched,
             }
@@ -68,11 +70,9 @@ export const AuthTextInput = ({
             aria-labelledby={`${id}-label`}
             aria-label={placeholder}
             className={classNames(
-              'peer absolute left-0 top-0 z-10 h-[52px] w-full border-b-2 bg-transparent pl-3 pr-16 pt-2 outline-none focus:text-dark-100',
+              'focus:text-primary peer absolute left-0 top-0 z-10 h-[52px] w-full border-b-2 border-gray-300 bg-transparent pl-3 pr-16 pt-2 outline-none transition-all duration-300 ease-in-out focus:border-b-primary-100 dark:border-neutral-700',
               {
                 'border-b-error-100 focus:border-b-error-100': error && touched,
-                'border-b-gray-200 focus:border-b-primary-100':
-                  !error && !touched,
               }
             )}
             data-testid={datatestid}
@@ -85,12 +85,11 @@ export const AuthTextInput = ({
           />
           <label
             className={classNames(
-              'pointer-events-none absolute z-10 px-2 text-gray-500 peer-focus:-top-[0.1rem] peer-focus:z-10 peer-focus:text-xs peer-focus:font-medium',
+              'text-secondary pointer-events-none absolute z-10 px-2 transition-all duration-300 ease-in-out peer-focus:-top-[0.1rem] peer-focus:z-10 peer-focus:text-xs peer-focus:font-medium peer-focus:text-primary-100',
               {
                 'peer-focus:text-error-100': error && touched,
-                'peer-focus:text-primary-100': !error && !touched,
                 '-top-[0.1rem] text-xs font-medium': field.value,
-                'top-4': !field.value,
+                'top-4 text-base': !field.value,
               }
             )}
             htmlFor={id}
@@ -100,10 +99,10 @@ export const AuthTextInput = ({
           </label>
           {field.value && (
             <IconButton
-              className="absolute right-2 top-2 z-10 size-10"
+              className="hover:bg-primary/10 absolute right-2 top-2 z-10 size-10 transition-all duration-200 hover:rounded-full"
               icon={{
                 ariaLabel: 'clear-value',
-                className: 'size-full stroke-[1.5] text-black',
+                className: 'size-full stroke-[1.5] text-primary',
                 Component: CloseIcon,
               }}
               onClick={handleClear}
@@ -114,7 +113,7 @@ export const AuthTextInput = ({
       {error && touched && (
         <div
           aria-live="assertive"
-          className="flex items-center space-x-1.5 px-1.5 py-1.5 md:space-x-1 md:py-0.5"
+          className="flex items-center space-x-1.5 px-1.5 py-1.5 opacity-100 transition-opacity duration-300 ease-in-out md:space-x-1 md:py-0.5"
           id={`${id}-error`}
           role="alert"
         >

@@ -17,7 +17,7 @@ export const AuthRadioInput = (props: AuthRadioInputProps) => {
   return (
     <label
       className={classNames(
-        'border-primary-light-full flex-between mb-4 w-full cursor-pointer rounded-md border px-4 py-3.5',
+        'border-primary flex-between mb-4 w-full cursor-pointer rounded-md border px-4 py-3.5',
         {
           'ring-2 ring-error-100': meta.touched && meta.error,
         }
@@ -35,13 +35,28 @@ export const AuthRadioInput = (props: AuthRadioInputProps) => {
         {...field}
       />
       <span
+        aria-checked={field.checked}
+        className={classNames(
+          'flex-center size-5 rounded-full border-2 transition-colors',
+          {
+            'border-primary-100': field.checked,
+            'border-neutral-500': !field.checked,
+          }
+        )}
+      >
+        {field.checked && (
+          <span className="size-2.5 rounded-full bg-primary-100" />
+        )}
+      </span>
+
+      {/*  <span
         className={classNames('flex-center size-4 rounded-full border-2', {
           'border-primary-100 bg-primary-100': field.checked,
-          'border-gray-300': !field.checked,
+          'border-primary': !field.checked,
         })}
       >
-        {field.checked && <span className="size-2 rounded-full bg-white" />}
-      </span>
+        {field.checked && <span className="bg-card size-2 rounded-full" />}
+      </span> */}
     </label>
   );
 };

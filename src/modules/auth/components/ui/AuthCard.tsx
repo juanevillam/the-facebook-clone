@@ -15,7 +15,7 @@ export const AuthCard = ({ info, showChildrenOn, children }: AuthCardProps) => {
   const t = useTranslations('auth.card');
 
   return (
-    <div className="p-4 md:w-5/12 md:rounded-lg md:bg-white md:shadow-lg">
+    <div className="bg-card p-4 md:w-5/12 md:rounded-lg md:shadow-lg">
       {info ? (
         <div
           className="flex flex-col items-center text-center"
@@ -28,12 +28,12 @@ export const AuthCard = ({ info, showChildrenOn, children }: AuthCardProps) => {
             </div>
           )}
           <h1
-            className="mb-1 text-2xl font-semibold text-gray-900"
+            className="text-primary mb-1 text-2xl font-semibold"
             id="auth-card-title"
           >
             {info.title}
           </h1>
-          <p className="mb-4 text-gray-600" id="auth-card-description">
+          <p className="text-secondary mb-4" id="auth-card-description">
             {info.description}
           </p>
           {showChildrenOn === 'bottom' && (

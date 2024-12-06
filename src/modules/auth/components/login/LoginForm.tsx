@@ -133,7 +133,7 @@ export const LoginForm = () => {
               navigateTo="auth/forgot-password"
             />
           </div>
-          <hr className="hidden w-full md:mb-4 md:block" />
+          <hr className="border-primary hidden w-full md:mb-4 md:block" />
           <div className="mx-auto w-max">
             <Button
               disabled={isPending}

@@ -41,9 +41,9 @@ export const AuthSocial = () => {
         />
       </div>
       <div className="flex-align-center py-1.5">
-        <div className="border-primary-light flex-grow border-t" />
-        <span className="mx-4 text-gray-500">{t('label')}</span>
-        <div className="border-primary-light flex-grow border-t" />
+        <div className="border-primary flex-grow border-t" />
+        <span className="text-tertiary mx-4">{t('label')}</span>
+        <div className="border-primary flex-grow border-t" />
       </div>
     </div>
   );

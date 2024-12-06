@@ -38,25 +38,19 @@ export const PostFooterActionsItem = ({
         type="button"
       >
         <Icon
-          className={classNames(
-            'size-5 stroke-[1.5] transition-all duration-200 md:size-6',
-            {
-              'fill-primary-100': isActive,
-              'primary-stroke md:accent-stroke fill-none': !isActive,
-              'primary-stroke-dark': !isActive && isModal,
-            }
-          )}
+          className={classNames('size-5 stroke-[1.5] md:size-6', {
+            'fill-primary-100': isActive,
+            'primary-stroke md:accent-stroke fill-none': !isActive,
+            'primary-stroke-dark': !isActive && isModal,
+          })}
           isActive={isActive}
         />
         <p
-          className={classNames(
-            'text-sm transition-colors duration-200 md:font-medium',
-            {
-              'text-primary-100': isActive,
-              'text-primary md:text-accent': !isActive,
-              'text-primary-dark': isModal,
-            }
-          )}
+          className={classNames('text-sm md:font-medium', {
+            'text-primary-100': isActive,
+            'text-primary md:text-accent': !isActive,
+            'text-primary-dark': isModal,
+          })}
         >
           {t(label)}
         </p>

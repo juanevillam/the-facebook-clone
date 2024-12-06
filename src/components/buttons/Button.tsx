@@ -42,8 +42,7 @@ export const Button = ({
         'py-2.5 font-medium': size === 'sm',
         'py-3 text-base font-semibold': size === 'md',
         'py-3 text-lg font-semibold': size === 'lg',
-        'border-primary-light hover:bg-primary-light border py-3.5':
-          variant === 'auth',
+        'border-primary hover:bg-primary border py-3.5': variant === 'auth',
         'bg-primary-100 hover:bg-primary-200 disabled:hover:bg-primary-100':
           variant === 'primary' || variant === 'tertiary',
         'bg-success-100 hover:bg-success-200 disabled:hover:bg-success-100':

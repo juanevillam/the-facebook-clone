@@ -92,7 +92,7 @@ export const SignUpModalForm = ({
           />
           <p
             aria-hidden="true"
-            className="mb-1 text-xs text-gray-700"
+            className="text-secondary mb-1 text-xs"
             id="gender-label"
           >
             {t('form.fields.gender.label')}
