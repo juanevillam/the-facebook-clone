@@ -33,7 +33,7 @@ export const CreateStoryHeader = ({
           onClick={handleToggleOpenable}
         />
         <h1
-          className="text-primary text-lg md:font-semibold"
+          className="text-primary text-lg transition-colors duration-300 md:font-semibold"
           id="create-story-modal-title"
         >
           {t('title')}

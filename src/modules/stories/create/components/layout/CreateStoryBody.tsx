@@ -36,7 +36,7 @@ export const CreateStoryBody = () => {
   return (
     <div
       className={classNames(
-        'relative flex size-full md:items-center md:justify-center md:bg-gray-100 md:dark:bg-neutral-900',
+        'relative flex size-full transition-colors duration-300 md:items-center md:justify-center md:bg-gray-100 md:dark:bg-neutral-900',
         {
           'md:p-6': file,
           'p-3 md:p-6': !file,
@@ -56,7 +56,7 @@ export const CreateStoryBody = () => {
         file={file}
         fileInputRef={fileInputRef}
         NoMediaComponent={
-          <div className="flex h-44 w-full flex-col items-center justify-center space-y-1 rounded-md bg-gradient-to-b from-green-400 to-blue-500 text-center font-medium text-white hover:opacity-85 md:h-96 md:w-64 md:space-y-2 md:rounded-xl md:from-green-400/95 md:to-blue-500/95 md:font-semibold">
+          <div className="flex h-44 w-full flex-col items-center justify-center space-y-1 rounded-md bg-gradient-to-b from-green-400 to-blue-500 text-center font-medium text-white transition-transform duration-200 hover:scale-105 hover:opacity-90 md:h-96 md:w-64 md:space-y-2 md:rounded-xl md:from-green-400/95 md:to-blue-500/95 md:font-semibold">
             <div className="mb-1 rounded-full bg-white p-2 shadow-md">
               <PhotoIcon className="text-primary-light size-7 md:size-6" />
             </div>

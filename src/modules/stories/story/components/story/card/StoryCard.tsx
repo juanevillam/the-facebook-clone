@@ -49,7 +49,7 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
     >
       <ProfilePic
         customClassName={classNames(
-          ' absolute left-3 top-3 z-20 shadow-xl ring-[3px]',
+          'absolute left-3 top-3 z-20 shadow-xl ring-[3px] transition-colors duration-200',
           {
             'ring-primary-100': !allViewed,
             'ring-white dark:ring-neutral-800': allViewed,
@@ -65,10 +65,13 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
           alt={t('story', {
             user: user.name,
           })}
-          className={classNames('group-hover:scale-105', {
-            'object-contain': isHorizontal,
-            'object-cover': !isHorizontal,
-          })}
+          className={classNames(
+            'transition-transform duration-300 group-hover:scale-105',
+            {
+              'object-contain': isHorizontal,
+              'object-cover': !isHorizontal,
+            }
+          )}
           fill
           sizes="100%"
           priority
@@ -77,7 +80,7 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
       ) : (
         <Skeleton className="bg-skeleton size-full" variant="rectangular" />
       )}
-      <div className="absolute inset-0 z-20 bg-black/15 opacity-0 group-hover:opacity-100" />
+      <div className="absolute inset-0 z-20 bg-black/15 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
     </Link>
   );
 };
