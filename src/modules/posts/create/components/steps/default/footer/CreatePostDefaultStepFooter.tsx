@@ -73,9 +73,12 @@ export const CreatePostDefaultStepFooter = () => {
         {t('posts.create.steps.default.footer')}
       </h1>
       <div
-        className={classNames('w-full md:flex md:w-max md:space-x-1', {
-          'divide-primary flex divide-x md:divide-none': activeGif,
-        })}
+        className={classNames(
+          'w-full transition-colors duration-200 md:flex md:w-max md:space-x-1',
+          {
+            'divide-primary flex divide-x md:divide-none': activeGif,
+          }
+        )}
       >
         {cardItems.map((item) => (
           <CreatePostDefaultStepFooterItem key={item.name} {...item} />

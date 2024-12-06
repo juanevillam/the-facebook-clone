@@ -32,7 +32,7 @@ export const CreatePostFeelingsStepItem = ({
         <div className="md:bg-primary md: relative rounded-full md:p-2">
           <Image
             alt={t(item)}
-            className="size-8 md:size-5"
+            className="size-8 transition-transform duration-200 hover:scale-105 md:size-5"
             height={168}
             loading="eager"
             src={`/images/feelings/${item}-icon.png`}
@@ -40,7 +40,9 @@ export const CreatePostFeelingsStepItem = ({
             width={168}
           />
         </div>
-        <span className="text-primary">{t(item)}</span>
+        <span className="text-primary transition-colors duration-200">
+          {t(item)}
+        </span>
       </div>
     </CreatePostStepItem>
   );

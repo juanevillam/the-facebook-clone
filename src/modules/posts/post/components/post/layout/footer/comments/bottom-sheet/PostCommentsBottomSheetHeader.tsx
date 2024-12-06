@@ -28,10 +28,10 @@ export const PostCommentsBottomSheetHeader = ({
         <Drawer.NestedRoot>
           <Drawer.Trigger
             aria-label={t('view-likes')}
-            className="flex-center hover:bg-primary space-x-1.5 rounded-full py-1 pl-2"
+            className="flex-center hover:bg-primary group space-x-1.5 rounded-full py-1 pl-2 transition-colors duration-200"
           >
-            <ThumbUpImage className="size-5" />
-            <p className="text-primary text-lg font-medium">
+            <ThumbUpImage className="size-5 transition-transform duration-200 ease-in-out group-hover:scale-110" />
+            <p className="text-primary text-lg font-medium transition-colors duration-200">
               {liked && t('you')}
               {!liked && optimisticLikes.length}
               {liked &&
@@ -40,20 +40,20 @@ export const PostCommentsBottomSheetHeader = ({
             </p>
             <ChevronRightIcon
               ariaHidden="true"
-              className="primary-stroke size-6 fill-none stroke-[1.5]"
+              className="primary-stroke size-6 fill-none stroke-[1.5] transition-transform duration-200 group-hover:translate-x-[1px]"
             />
           </Drawer.Trigger>
           <PostLikesBottomSheet optimisticLikes={optimisticLikes} />
         </Drawer.NestedRoot>
         <button
           aria-label={liked ? t('remove-like') : t('like-post')}
-          className="flex-center hover:bg-primary rounded-full p-1"
+          className="flex-center hover:bg-primary rounded-full p-1 transition-colors duration-200"
           onClick={handleOptimisticLike}
           type="button"
         >
           <HandThumbUpIcon
             className={classNames('size-7 stroke-[1.5]', {
-              'fill-primary-100': liked,
+              'scale-110 fill-primary-100': liked,
               'primary-stroke fill-none': !liked,
             })}
             isActive={liked}

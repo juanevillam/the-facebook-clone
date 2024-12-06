@@ -39,7 +39,7 @@ export const CreatePostDefaultStepFooterItem = ({
         aria-disabled={disabled}
         aria-label={t(`${name}.detailed`)}
         className={classNames(
-          'flex-align-center peer relative w-full justify-start p-3 md:size-9 md:justify-center md:rounded-full md:p-0',
+          'flex-align-center peer relative w-full justify-start p-3 transition-colors duration-200 md:size-9 md:justify-center md:rounded-full md:p-0',
           {
             'bg-active': active && !disabled,
             'cursor-not-allowed opacity-50': disabled,
@@ -54,7 +54,7 @@ export const CreatePostDefaultStepFooterItem = ({
       >
         <Image
           alt={t(`${name}.detailed`)}
-          className="size-6"
+          className="size-6 transition-transform duration-200 hover:scale-105"
           height={72}
           loading="eager"
           src={`/images/${name}-icon.png`}

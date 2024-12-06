@@ -27,7 +27,7 @@ export const PostFooterActionsItem = ({
       <button
         aria-label={t(label)}
         className={classNames(
-          'flex-center w-full space-x-2 px-4 py-2.5 md:rounded-lg md:px-3 md:py-2',
+          'flex-center w-full space-x-2 px-4 py-2.5 transition-colors duration-200 ease-out md:rounded-lg md:px-3 md:py-2',
           {
             'hover:bg-neutral-700 hover:bg-opacity-50 md:hover:bg-gray-100 md:hover:bg-opacity-100 md:dark:hover:dark:bg-neutral-700':
               isModal,
@@ -38,19 +38,25 @@ export const PostFooterActionsItem = ({
         type="button"
       >
         <Icon
-          className={classNames('size-5 stroke-[1.5] md:size-6', {
-            'fill-primary-100': isActive,
-            'primary-stroke md:accent-stroke fill-none': !isActive,
-            'primary-stroke-dark': !isActive && isModal,
-          })}
+          className={classNames(
+            'size-5 stroke-[1.5] transition-all duration-200 md:size-6',
+            {
+              'fill-primary-100': isActive,
+              'primary-stroke md:accent-stroke fill-none': !isActive,
+              'primary-stroke-dark': !isActive && isModal,
+            }
+          )}
           isActive={isActive}
         />
         <p
-          className={classNames('text-sm md:font-medium', {
-            'text-primary-100': isActive,
-            'text-primary md:text-accent': !isActive,
-            'text-primary-dark': isModal,
-          })}
+          className={classNames(
+            'text-sm transition-colors duration-200 md:font-medium',
+            {
+              'text-primary-100': isActive,
+              'text-primary md:text-accent': !isActive,
+              'text-primary-dark': isModal,
+            }
+          )}
         >
           {t(label)}
         </p>

@@ -18,14 +18,17 @@ export const PostCommentOptionsBottomSheetItem = ({
   return (
     <button
       aria-label={t(`${name}.label`)}
-      className="hover:bg-primary flex w-full flex-col items-start p-2 px-3 md:rounded-md md:px-2"
+      className="hover:bg-primary flex-align-center group w-full space-x-2 p-2 px-3 transition-colors duration-200 md:rounded-md md:px-2"
       onClick={onClick}
       type="button"
     >
-      <div className="flex-align-center space-x-2">
-        <IconComponent ariaHidden="true" className="fill-primary size-5" />
-        <span className="text-primary font-medium">{t(`${name}.label`)}</span>
-      </div>
+      <IconComponent
+        ariaHidden="true"
+        className="fill-primary size-5 transition-transform duration-200 ease-in-out group-hover:scale-110"
+      />
+      <span className="text-primary font-medium transition-colors duration-200">
+        {t(`${name}.label`)}
+      </span>
     </button>
   );
 };

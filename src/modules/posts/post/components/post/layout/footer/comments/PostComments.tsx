@@ -29,12 +29,12 @@ export const PostComments = ({ optimisticComments }: PostCommentsProps) => {
       ) : (
         <div
           aria-label={t('no-comments-yet')}
-          className="flex-center h-full flex-col space-y-4"
+          className="flex-center h-full flex-col space-y-4 transition-opacity duration-200 ease-in-out"
           role="region"
         >
           <ChatBubbleLeftRightIcon
             aria-hidden="true"
-            className="fill-secondary size-40"
+            className="fill-secondary size-40 transition-transform duration-200 ease-in-out hover:scale-105"
           />
           <p className="text-secondary text-xl">{t('no-comments-yet')}</p>
         </div>

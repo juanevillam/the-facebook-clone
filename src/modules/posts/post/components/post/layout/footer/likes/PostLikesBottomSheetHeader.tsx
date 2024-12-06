@@ -23,7 +23,7 @@ export const PostLikesBottomSheetHeader = () => {
         />
       </Drawer.Close>
       <h1
-        className="text-primary text-xl font-medium"
+        className="text-primary text-xl font-medium transition-colors duration-200"
         id="post-likes-bottom-sheet-title"
       >
         {t('title')}

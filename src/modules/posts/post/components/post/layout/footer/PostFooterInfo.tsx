@@ -28,7 +28,7 @@ export const PostFooterInfo = ({
     <>
       <button
         aria-label={t('likes.open-likes')}
-        className="flex-align-center space-x-1.5"
+        className="flex-align-center space-x-1.5 transition-transform duration-200 hover:scale-105 focus:scale-105"
         onClick={openDesktopLikes && openDesktopLikes}
         type="button"
       >
@@ -36,10 +36,13 @@ export const PostFooterInfo = ({
           <>
             <ThumbUpImage className="size-4 md:size-5" />
             <p
-              className={classNames('text-sm md:hover:underline', {
-                'text-secondary-dark md:text-secondary': isModal,
-                'text-secondary': !isModal,
-              })}
+              className={classNames(
+                'text-sm transition-colors duration-200 md:hover:underline',
+                {
+                  'text-secondary-dark md:text-secondary': isModal,
+                  'text-secondary': !isModal,
+                }
+              )}
             >
               {liked && t('likes.you')}
               {!liked && optimisticLikes.length}
@@ -57,14 +60,18 @@ export const PostFooterInfo = ({
       {optimisticComments.length > 0 && (
         <button
           aria-label={t('comments.open-comments')}
+          className="transition-transform duration-200 hover:scale-105 focus:scale-105"
           onClick={handleDesktopCommentsOpen}
           type="button"
         >
           <p
-            className={classNames('text-sm md:hover:underline', {
-              'text-secondary-dark md:text-secondary': isModal,
-              'text-secondary': !isModal,
-            })}
+            className={classNames(
+              'text-sm transition-colors duration-200 md:hover:underline',
+              {
+                'text-secondary-dark md:text-secondary': isModal,
+                'text-secondary': !isModal,
+              }
+            )}
           >
             {`${optimisticComments.length} `}
             {optimisticComments.length === 1

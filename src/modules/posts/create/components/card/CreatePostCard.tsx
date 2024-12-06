@@ -106,12 +106,12 @@ export const CreatePostCard = () => {
 
   return (
     <>
-      <div className="card">
+      <div className="card transition-all duration-300">
         <div className="flex-align-center space-x-2 p-3 md:px-4">
           <ProfilePic />
           <button
             aria-label={thoughts || t('posts.create.layout.thoughts')}
-            className="border-primary text-primary md:text-accent md:bg-primary hover:bg-secondary flex-grow overflow-hidden whitespace-nowrap rounded-full border px-4 py-2.5 text-start md:border-none md:px-3 md:py-2"
+            className="border-primary text-primary md:text-accent md:bg-primary hover:bg-secondary flex-grow overflow-hidden whitespace-nowrap rounded-full border px-4 py-2.5 text-start transition-colors duration-200 md:border-none md:px-3 md:py-2"
             onClick={handleToggleOpenable}
             type="button"
           >

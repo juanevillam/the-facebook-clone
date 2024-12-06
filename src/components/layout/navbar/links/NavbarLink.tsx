@@ -38,7 +38,7 @@ export const NavbarLink = ({
         tabIndex={0}
       >
         <Icon
-          className={classNames('transition-colors duration-200', {
+          className={classNames({
             'size-[30px]': label === 'menu',
             'size-6': label !== 'menu',
             'fill-current text-primary-100': isActive,

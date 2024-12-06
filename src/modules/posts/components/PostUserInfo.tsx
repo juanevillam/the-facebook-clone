@@ -28,17 +28,20 @@ export const PostUserInfo = ({
     <p className="leading-tight">
       <Link
         aria-label={t('links.visit-profile', { user: name })}
-        className={classNames('font-semibold hover:underline', {
-          'text-primary-dark md:text-primary': isModal,
-          'text-primary': !isModal,
-        })}
+        className={classNames(
+          'font-semibold transition-colors duration-200 hover:underline',
+          {
+            'text-primary-dark md:text-primary': isModal,
+            'text-primary': !isModal,
+          }
+        )}
         href={`/${username}` as any}
       >
         {name}
       </Link>
       {(feeling || location) && (
         <span
-          className={classNames({
+          className={classNames('transition-colors duration-200', {
             'text-tertiary-dark md:text-tertiary': isModal,
             'text-tertiary': !isModal,
           })}
@@ -65,7 +68,7 @@ export const PostUserInfo = ({
           &nbsp;
           <Image
             alt={t('posts.user-info.feeling-icon-alt', { feeling })}
-            className="inline-block"
+            className="inline-block transition-transform duration-300 ease-in-out hover:scale-105"
             height={18}
             loading="eager"
             src={`/images/feelings/${feeling}-icon.png`}
@@ -75,9 +78,10 @@ export const PostUserInfo = ({
             &nbsp;{t('posts.user-info.feeling')}
           </span>
           <span
-            className={classNames('md:inline-block', {
-              hidden: hideFellingInfo,
-            })}
+            className={classNames(
+              'transition-colors duration-300 md:inline-block',
+              { hidden: hideFellingInfo }
+            )}
           >
             &nbsp;{t(`posts.feelings.${feeling}`)}
           </span>

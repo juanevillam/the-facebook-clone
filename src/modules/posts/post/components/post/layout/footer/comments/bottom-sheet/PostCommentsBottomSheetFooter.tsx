@@ -57,7 +57,7 @@ export const PostCommentsBottomSheetFooter = ({
         </label>
         <input
           aria-label={t('posts.post.comments.bottom-sheet.input-aria-label')}
-          className="placeholder-primary md:placeholder-accent text-primary md:text-accent inline-flex w-full bg-transparent focus:outline-none"
+          className="placeholder-primary md:placeholder-accent text-primary md:text-accent inline-flex w-full bg-transparent transition-colors duration-200 focus:outline-none"
           disabled={isPending}
           id="post-comments-bottom-sheet-input"
           onChange={handleComment}
@@ -69,7 +69,7 @@ export const PostCommentsBottomSheetFooter = ({
       {thoughts && (
         <button
           aria-label={t('posts.post.comments.bottom-sheet.send-aria-label')}
-          className="responsive-mobile-only flex-center hover:bg-primary rounded-full p-2"
+          className="responsive-mobile-only flex-center hover:bg-primary rounded-full p-2 transition-transform duration-200 ease-in-out disabled:opacity-50 disabled:transition-opacity"
           disabled={isPending || !thoughts.trim()}
           onClick={handleOptimisticComment}
           type="submit"

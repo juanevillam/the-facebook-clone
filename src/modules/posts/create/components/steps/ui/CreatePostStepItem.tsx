@@ -19,7 +19,7 @@ export const CreatePostStepItem = ({
   <div
     aria-pressed={active}
     className={classNames(
-      'border-primary flex-between hover:bg-primary w-full space-x-2 border-b p-3 md:rounded-lg md:border-none md:py-2',
+      'border-primary flex-between hover:bg-primary w-full space-x-2 border-b p-3 transition-colors duration-200 md:rounded-lg md:border-none md:py-2',
       {
         'bg-active': active,
         'border-r': isEven,

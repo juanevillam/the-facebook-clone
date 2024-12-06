@@ -40,7 +40,7 @@ export const CreatePostGifsStepItem = ({
       )}
       <Image
         alt={gif.title}
-        className="size-full transform object-cover group-hover:scale-110"
+        className="size-full transform object-cover transition-transform duration-200 group-hover:scale-110"
         height={gif.height}
         src={gif.url}
         unoptimized
