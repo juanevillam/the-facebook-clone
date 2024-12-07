@@ -1,4 +1,4 @@
-export { CreatePostStepContainer } from './container/CreatePostStepContainer';
-export { CreatePostStepItem } from './item/CreatePostStepItem';
-export { CreatePostStepLoader } from './loader/CreatePostStepLoader';
-export { CreatePostStepMessage } from './message/CreatePostStepMessage';
+export { CreatePostStepContainer } from './CreatePostStepContainer';
+export { CreatePostStepItem } from './CreatePostStepItem';
+export { CreatePostStepLoader } from './CreatePostStepLoader';
+export { CreatePostStepMessage } from './CreatePostStepMessage';

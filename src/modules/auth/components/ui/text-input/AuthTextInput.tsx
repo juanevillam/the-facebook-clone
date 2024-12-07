@@ -1,40 +1,30 @@
 'use client';
 
+import { useTransition } from 'react';
+
+import classNames from 'classnames';
 import { Field, useField, useFormikContext } from 'formik';
 import { useTranslations } from 'next-intl';
 
-import { CloseIcon } from '@/assets/ui/icons';
+import { CloseIcon } from '@/assets/icons';
 import { IconButton } from '@/components/buttons';
 import { AlertTriangleImage } from '@/components/images';
 
-export type AuthTextInputSkin = 'primary' | 'secondary';
+import { AuthTextInputProps } from './types';
 
-export type AuthTextInputVariant = 'desktop' | 'mobile';
-
-type AuthTextInputProps = {
-  datatestid?: 'email-auth-text-input';
-  disabled?: boolean;
-  minLength?: number;
-  name: string;
-  placeholder: string;
-  skin?: AuthTextInputSkin;
-  type: 'text' | 'email' | 'password';
-  variant?: AuthTextInputVariant;
-};
-
-export const AuthTextInput = (props: AuthTextInputProps) => {
-  const {
-    datatestid,
-    disabled = false,
-    minLength,
-    name,
-    placeholder,
-    skin = 'primary',
-    type,
-    variant = 'desktop',
-  } = props;
-
-  const [field, { error, touched }] = useField(props);
+export const AuthTextInput = ({
+  ariaDescribedBy,
+  datatestid,
+  disabled = false,
+  id,
+  minLength,
+  name,
+  placeholder,
+  skin = 'primary',
+  type,
+  variant = 'desktop',
+}: AuthTextInputProps) => {
+  const [field, { error, touched }] = useField(name);
   const { setFieldValue } = useFormikContext();
   const t = useTranslations();
 
@@ -44,61 +34,76 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
     <div className="mb-4 w-full">
       {variant === 'desktop' ? (
         <Field
-          autoComplete="on"
-          aria-describedby={`${name}-error`}
+          autoComplete={type === 'password' ? 'current-password' : 'on'}
+          aria-describedby={
+            error && touched ? `${id}-error` : ariaDescribedBy || undefined
+          }
           aria-invalid={error && touched ? 'true' : 'false'}
-          aria-label={placeholder}
-          className={`primary-transition w-full rounded-md border border-gray-200 px-4 py-3.5 placeholder-gray-500 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-100 ${
-            skin === 'primary'
-              ? 'bg-white hover:bg-gray-100'
-              : 'bg-gray-100 hover:bg-gray-200'
-          } ${
-            error && touched
-              ? 'ring-2 ring-error-100 focus:ring-error-100 md:mb-1'
-              : ''
-          }`}
+          aria-labelledby={`${id}-label`}
+          className={classNames(
+            'border-primary placeholder-primary w-full rounded-md border px-4 py-3.5 transition-all duration-300 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-100',
+            {
+              'bg-card hover:bg-primary': skin === 'primary',
+              'bg-primary hover:bg-secondary': skin !== 'primary',
+              'ring-2 ring-error-100 focus:ring-error-100 md:mb-1':
+                error && touched,
+            }
+          )}
           data-testid={datatestid}
           disabled={disabled}
+          id={id}
           minLength={minLength}
           placeholder={placeholder}
           type={type}
           {...field}
         />
       ) : (
-        <div className={`relative h-12 w-full ${!error && 'mb-[22px]'}`}>
+        <div
+          className={classNames('relative h-12 w-full', {
+            'mb-[22px]': !error,
+          })}
+        >
           <input
-            autoComplete="on"
-            aria-describedby={`${name}-error`}
+            autoComplete={type === 'password' ? 'new-password' : 'on'}
+            aria-describedby={error && touched ? `${id}-error` : undefined}
             aria-invalid={error && touched ? 'true' : 'false'}
+            aria-labelledby={`${id}-label`}
             aria-label={placeholder}
-            className={`peer absolute left-0 top-0 z-10 h-[52px] w-full border-b-2 bg-transparent pl-3 pr-16 pt-2 outline-none focus:text-dark-100 ${
-              error && touched
-                ? 'border-b-error-100 focus:border-b-error-100'
-                : 'border-b-gray-200 focus:border-b-primary-100'
-            }`}
+            className={classNames(
+              'focus:text-primary peer absolute left-0 top-0 z-10 h-[52px] w-full border-b-2 border-gray-300 bg-transparent pl-3 pr-16 pt-2 outline-none transition-all duration-300 ease-in-out focus:border-b-primary-100 dark:border-neutral-700',
+              {
+                'border-b-error-100 focus:border-b-error-100': error && touched,
+              }
+            )}
             data-testid={datatestid}
             disabled={disabled}
+            id={id}
             minLength={minLength}
             placeholder=" "
             type={type}
             {...field}
           />
           <label
-            className={`pointer-events-none absolute z-10 px-2 text-gray-500 transition-all duration-300 peer-focus:-top-[0.1rem] peer-focus:z-10 peer-focus:text-xs peer-focus:font-medium ${
-              error && touched
-                ? 'peer-focus:text-error-100'
-                : 'peer-focus:text-primary-100'
-            } ${field.value ? '-top-[0.1rem] text-xs font-medium' : 'top-4'}`}
+            className={classNames(
+              'text-secondary pointer-events-none absolute z-10 px-2 transition-all duration-300 ease-in-out peer-focus:-top-[0.1rem] peer-focus:z-10 peer-focus:text-xs peer-focus:font-medium peer-focus:text-primary-100',
+              {
+                'peer-focus:text-error-100': error && touched,
+                '-top-[0.1rem] text-xs font-medium': field.value,
+                'top-4 text-base': !field.value,
+              }
+            )}
+            htmlFor={id}
+            id={`${id}-label`}
           >
             {placeholder}
           </label>
           {field.value && (
             <IconButton
-              className="absolute right-2 top-2 z-10 size-10"
+              className="hover:bg-primary/10 absolute right-2 top-2 z-10 size-10 transition-all duration-200 hover:rounded-full"
               icon={{
-                className: 'size-full stroke-[1.5] text-black',
+                ariaLabel: 'clear-value',
+                className: 'size-full stroke-[1.5] text-primary',
                 Component: CloseIcon,
-                name: 'close',
               }}
               onClick={handleClear}
             />
@@ -108,8 +113,8 @@ export const AuthTextInput = (props: AuthTextInputProps) => {
       {error && touched && (
         <div
           aria-live="assertive"
-          className="flex items-center space-x-1.5 px-1.5 py-1.5 md:space-x-1 md:py-0.5"
-          id={`${name}-error`}
+          className="flex items-center space-x-1.5 px-1.5 py-1.5 opacity-100 transition-opacity duration-300 ease-in-out md:space-x-1 md:py-0.5"
+          id={`${id}-error`}
           role="alert"
         >
           <AlertTriangleImage size={16} />

@@ -3,13 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import {
   MessengerIcon,
   NotificationsIcon,
-} from '@/assets/ui/icons/navbar/drop-downs';
-import { ProfilePic } from '@/components/profile-pic/ProfilePic';
+} from '@/assets/icons/navbar/drop-downs';
+import { ProfilePic } from '@/components/ProfilePic';
 import { usePathname, useRouter } from '@/navigation';
 
 import { NavbarDropDownIcon } from './icons';
-import { MessengerDropDown } from './messenger/MessengerDropDown';
-import { NotificationsDropDown } from './notifications/NotificationsDropDown';
+import { MessengerDropDown } from './MessengerDropDown';
+import { NotificationsDropDown } from './NotificationsDropDown';
 import { ProfileDropDown } from './profile/ProfileDropDown';
 
 export const NavbarDropDowns = () => {
@@ -67,8 +67,8 @@ export const NavbarDropDowns = () => {
   }, []);
 
   return (
-    <div className="flex-center space-x-2" ref={dropdownRef}>
-      <div className="only-mobile">
+    <div className="flex-align-center space-x-2" ref={dropdownRef}>
+      <div className="responsive-mobile-only">
         <NavbarDropDownIcon
           Icon={MessengerIcon}
           isActive={isOnMessengerPage}
@@ -76,7 +76,7 @@ export const NavbarDropDowns = () => {
           onClick={navigateToMessenger}
         />
       </div>
-      <div className="only-desktop">
+      <div className="responsive-desktop-only">
         <NavbarDropDownIcon
           Icon={MessengerIcon}
           isActive={openMessengerDropDown}
@@ -84,7 +84,7 @@ export const NavbarDropDowns = () => {
           onClick={handleMessengerDropDown}
         />
       </div>
-      <div className="only-mobile">
+      <div className="responsive-mobile-only">
         <NavbarDropDownIcon
           Icon={NotificationsIcon}
           isActive={isOnNotificationsPage}
@@ -92,7 +92,7 @@ export const NavbarDropDowns = () => {
           onClick={navigateToNotifications}
         />
       </div>
-      <div className="only-desktop">
+      <div className="responsive-desktop-only">
         <NavbarDropDownIcon
           Icon={NotificationsIcon}
           isActive={openNotificationsDropDown}
@@ -100,7 +100,7 @@ export const NavbarDropDowns = () => {
           onClick={handleNotificationsDropDown}
         />
       </div>
-      <div className="only-desktop">
+      <div className="responsive-desktop-only">
         <NavbarDropDownIcon
           isActive={openProfileDropDown}
           label="profile"

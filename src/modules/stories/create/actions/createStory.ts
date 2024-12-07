@@ -5,7 +5,7 @@ import { revalidatePath } from 'next/cache';
 
 import { Media } from '@/assets/types';
 import { auth } from '@/auth';
-import { db } from '@/lib/database';
+import { db } from '@/lib/database/prismaClient';
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,

@@ -12,19 +12,17 @@ import {
   PlayIcon,
   SpeakerWaveIcon,
   SpeakerXMarkIcon,
-} from '@/assets/ui/icons';
-import { formatSecondsToVideoTime } from '@/utils';
+} from '@/assets/icons';
 
 import { IconButton } from '../buttons';
+import { formatSecondsToVideoTime } from './helpers/formatSecondsToVideoTime';
 
 type VideoPlayerProps = {
-  showControls?: boolean;
   showFullHeight?: boolean;
   url: string;
 };
 
 export const VideoPlayer = ({
-  showControls = true,
   showFullHeight = true,
   url,
 }: VideoPlayerProps) => {
@@ -39,9 +37,9 @@ export const VideoPlayer = ({
   const [showPlaybackMenu, setShowPlaybackMenu] = useState(false);
   const t = useTranslations('video-player');
 
-  const togglePlayPause = () => setPlaying(!playing);
+  const togglePlayPause = () => setPlaying((prev) => !prev);
 
-  const toggleMute = () => setMuted(!muted);
+  const toggleMute = () => setMuted((prev) => !prev);
 
   const handleDuration = (duration: number) => setDuration(duration);
 
@@ -57,13 +55,6 @@ export const VideoPlayer = ({
     }
   };
 
-  const handleSeekEnd = (
-    event: React.SyntheticEvent | Event,
-    newValue: number | number[]
-  ) => setPlaying(true);
-
-  const handleSeekStart = () => setPlaying(false);
-
   const handleVolumeChange = (_: Event, newValue: number | number[]) => {
     const newVolume = typeof newValue === 'number' ? newValue : newValue[0];
 
@@ -71,7 +62,7 @@ export const VideoPlayer = ({
     setMuted(newVolume === 0);
   };
 
-  const togglePlaybackMenu = () => setShowPlaybackMenu(!showPlaybackMenu);
+  const togglePlaybackMenu = () => setShowPlaybackMenu((prev) => !prev);
 
   const changePlaybackRate = (rate: number) => {
     setPlaybackRate(rate);
@@ -102,97 +93,98 @@ export const VideoPlayer = ({
           volume={volume}
           width="100%"
         />
-        {showControls && (
-          <>
+        <button
+          className="absolute inset-0 z-10 cursor-pointer"
+          onClick={togglePlayPause}
+          type="button"
+        />
+        <div
+          aria-labelledby="video-player-controls-title"
+          className="flex-align-center absolute bottom-0 z-10 w-full bg-neutral-900 bg-opacity-50 p-1 md:p-2"
+          role="group"
+        >
+          <h2 id="video-player-controls-title" className="sr-only">
+            {t('controls')}
+          </h2>
+          <IconButton
+            className="mr-1 size-9 md:mr-1.5"
+            icon={{
+              ariaLabel: playing ? 'pause-video' : 'play-video',
+              className: 'fill-white size-full',
+              Component: playing ? PauseIcon : PlayIcon,
+            }}
+            onClick={togglePlayPause}
+          />
+          <p className="text-primary-dark mr-4 w-20 text-center font-mono text-xs md:mr-6">
+            <strong>
+              {formatSecondsToVideoTime((played / 100) * duration)}
+            </strong>{' '}
+            / {formatSecondsToVideoTime(duration)}
+          </p>
+          <Slider
+            aria-label={t('seek')}
+            className="mt-1 flex-1 text-white"
+            max={100}
+            min={0}
+            onChange={handleSeekChange}
+            step={0.1}
+            value={played}
+          />
+          <div className="group relative ml-2 text-center md:ml-3">
             <button
-              className="absolute inset-0 z-10 cursor-pointer"
-              onClick={togglePlayPause}
+              aria-label={t('change-playback-rate')}
+              className="text-primary-dark transition-bg w-14 rounded-md py-1.5 font-bold duration-300 ease-in-out hover:bg-neutral-700 hover:bg-opacity-50 md:w-16"
+              onClick={togglePlaybackMenu}
               type="button"
-            />
-            <div className="flex-center absolute bottom-0 z-10 w-full bg-neutral-900 bg-opacity-50 p-1 md:p-2">
-              <IconButton
-                className="mr-1 size-9 hover:bg-neutral-700 hover:bg-opacity-50 md:mr-1.5"
-                icon={{
-                  className: 'fill-white size-full',
-                  Component: playing ? PauseIcon : PlayIcon,
-                  name: playing ? 'pause' : 'play',
-                }}
-                onClick={togglePlayPause}
-              />
-              <p className="primary-text-dark mr-4 w-20 text-center font-mono text-xs md:mr-6">
-                <strong>
-                  {formatSecondsToVideoTime((played / 100) * duration)}
-                </strong>{' '}
-                / {formatSecondsToVideoTime(duration)}
-              </p>
-              <Slider
-                aria-label={t('seek')}
-                className="mt-1 flex-1 text-white"
-                max={100}
-                min={0}
-                onChange={handleSeekChange}
-                onChangeCommitted={handleSeekEnd}
-                onMouseDown={handleSeekStart}
-                step={0.1}
-                value={played}
-              />
-              <div className="group relative ml-2 text-center md:ml-3">
-                <button
-                  aria-label={t('change-playback-rate')}
-                  className="primary-transition primary-text-dark w-14 rounded-md py-1.5 font-bold hover:bg-neutral-700 hover:bg-opacity-50 md:w-16"
-                  onClick={togglePlaybackMenu}
-                  type="button"
-                >
-                  {playbackRate}x
-                </button>
-                {showPlaybackMenu && (
-                  <div
-                    className="card-bg absolute -left-2 bottom-10 rounded-md p-2 shadow-lg"
-                    role="menu"
+            >
+              {playbackRate}x
+            </button>
+            {showPlaybackMenu && (
+              <div
+                className="bg-card absolute -left-2 bottom-10 rounded-md p-2 shadow-lg"
+                role="menu"
+              >
+                {[0.5, 1, 1.5, 2].map((rate) => (
+                  <button
+                    key={rate}
+                    aria-label={t('change-playback-rate-to', { rate })}
+                    className={classNames(
+                      'text-primary hover:bg-primary w-14 rounded-md py-1.5 md:w-16',
+                      {
+                        'font-bold': rate === playbackRate,
+                      }
+                    )}
+                    onClick={() => changePlaybackRate(rate)}
+                    role="menuitem"
                   >
-                    {[0.5, 1, 1.5, 2].map((rate) => (
-                      <button
-                        key={rate}
-                        aria-label={t('change-playback-rate-to', { rate })}
-                        className={classNames(
-                          'primary-text hover:primary-bg primary-transition w-14 rounded-md py-1.5 md:w-16',
-                          {
-                            'font-bold': rate === playbackRate,
-                          }
-                        )}
-                        onClick={() => changePlaybackRate(rate)}
-                        role="menuitem"
-                      >
-                        {rate}x
-                      </button>
-                    ))}
-                  </div>
-                )}
+                    {rate}x
+                  </button>
+                ))}
               </div>
-              <div className="group">
-                <IconButton
-                  className="size-9 hover:bg-neutral-700 hover:bg-opacity-50"
-                  icon={{
-                    className: 'fill-white size-full',
-                    Component: muted ? SpeakerXMarkIcon : SpeakerWaveIcon,
-                    name: muted ? 'unmute' : 'mute',
-                  }}
-                  onClick={toggleMute}
-                />
-                <Slider
-                  aria-label={t('volume')}
-                  className="primary-transition absolute bottom-14 ml-0.5 hidden h-14 scale-90 text-white opacity-0 group-hover:scale-100 group-hover:opacity-100 md:block"
-                  max={1}
-                  min={0}
-                  onChange={handleVolumeChange}
-                  orientation="vertical"
-                  step={0.01}
-                  value={volume}
-                />
-              </div>
-            </div>
-          </>
-        )}
+            )}
+          </div>
+          <div className="group">
+            <IconButton
+              className="size-9 transition-transform duration-300 ease-in-out hover:scale-110"
+              icon={{
+                ariaLabel: muted ? 'unmute-video' : 'mute-video',
+                className: 'fill-white size-full',
+                Component: muted ? SpeakerXMarkIcon : SpeakerWaveIcon,
+              }}
+              onClick={toggleMute}
+            />
+            <Slider
+              aria-label={t('volume')}
+              className="absolute bottom-14 ml-0.5 hidden h-14 scale-90 text-white opacity-0 transition-all duration-300 ease-in-out group-hover:scale-100 group-hover:opacity-100 md:block"
+              max={1}
+              min={0}
+              onChange={handleVolumeChange}
+              orientation="vertical"
+              step={0.01}
+              value={volume}
+            />
+          </div>
+        </div>
       </div>
     )
   );

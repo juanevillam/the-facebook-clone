@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { GIF } from '../../assets/types';
+import { GIF } from '../../types';
 
 type CreatePostGifsStepState = {
   activeGif: GIF | null;

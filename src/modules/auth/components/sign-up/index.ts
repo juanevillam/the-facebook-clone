@@ -1,2 +1,2 @@
-export { SignUpDialog } from './dialog/SignUpDialog';
-export { SignUpModal } from './modal/SignUpModal';
+export { SignUpDialog } from './SignUpDialog';
+export { SignUpModal } from './SignUpModal';

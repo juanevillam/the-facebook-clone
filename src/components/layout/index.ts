@@ -1,1 +1,1 @@
-export { LayoutWrapper } from './wrapper/LayoutWrapper';
+export { LayoutWrapper } from './LayoutWrapper';

@@ -1,12 +1,12 @@
 import { useTranslations } from 'next-intl';
 
+import { FaceFrowIcon } from '@/assets/icons';
 import { InputEvent } from '@/assets/types';
-import { FaceFrowIcon } from '@/assets/ui/icons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { Feeling } from '@/modules/posts/create/assets/types';
+import { Feeling } from '@/modules/posts/create/types';
 
 import { CreatePostStepContainer, CreatePostStepMessage } from '../ui';
-import { CreatePostFeelingsStepItem } from './item/CreatePostFeelingsStepItem';
+import { CreatePostFeelingsStepItem } from './CreatePostFeelingsStepItem';
 import { setCreatePostStep } from '../../../reducers/createPostPostReducer';
 import {
   setCreatePostFeelingsStepActiveFeeling,

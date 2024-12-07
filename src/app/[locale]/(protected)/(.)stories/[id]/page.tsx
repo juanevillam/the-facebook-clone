@@ -1,19 +1,11 @@
 import { notFound } from 'next/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
+import { DynamicPageProps } from '@/assets/types';
 import { StoryModalWrapper } from '@/modules/stories/story/components/story/modal';
-import { fetchStory } from '@/modules/stories/story/data';
+import { fetchStory } from '@/modules/stories/story/services/storiesService';
 
-type StoryModalPageProps = {
-  params: {
-    id: string;
-    locale: string;
-  };
-};
-
-const StoryModalPage = async ({
-  params: { id, locale },
-}: StoryModalPageProps) => {
+const StoryModalPage = async ({ params: { id, locale } }: DynamicPageProps) => {
   unstable_setRequestLocale(locale);
 
   const story = await fetchStory(id);

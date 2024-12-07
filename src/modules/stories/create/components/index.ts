@@ -1,1 +1,1 @@
-export { CreateStoryCard } from './card/CreateStoryCard';
+export { CreateStoryCard } from './CreateStoryCard';

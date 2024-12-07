@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
 
 import { ProfilePic, VideoPlayer } from '@/components';
 import { useCurrentUser } from '@/hooks';
-import { StoryExtended } from '@/modules/posts/post/assets/types';
+import { StoryExtended } from '@/modules/posts/post/types';
 import { Link } from '@/navigation';
 
 export const StoryCard = ({ id, items, user }: StoryExtended) => {
@@ -39,16 +39,17 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
   return (
     <Link
       className={classNames(
-        'primary-transition group relative h-full min-w-28 overflow-hidden rounded-xl bg-black md:min-w-32',
+        'group relative h-full min-w-28 overflow-hidden rounded-xl bg-black md:min-w-32',
         {
           'opacity-70': allViewed,
         }
       )}
       href={`/stories/${id}` as any}
+      role="listitem"
     >
       <ProfilePic
         customClassName={classNames(
-          'primary-transition absolute left-3 top-3 z-20 shadow-xl ring-[3px]',
+          'absolute left-3 top-3 z-20 shadow-xl ring-[3px] transition-colors duration-200',
           {
             'ring-primary-100': !allViewed,
             'ring-white dark:ring-neutral-800': allViewed,
@@ -58,23 +59,26 @@ export const StoryCard = ({ id, items, user }: StoryExtended) => {
         name={user.name as string}
       />
       {latestItem.mediaType === 'video' ? (
-        <VideoPlayer showControls={false} url={latestItem.media} />
+        <VideoPlayer url={latestItem.media} />
       ) : isHorizontal !== null ? (
         <Image
           alt={t('story', {
-            name: user.name,
+            user: user.name,
           })}
-          className={classNames('primary-transition group-hover:scale-105', {
-            'object-contain': isHorizontal,
-            'object-cover': !isHorizontal,
-          })}
+          className={classNames(
+            'transition-transform duration-300 group-hover:scale-105',
+            {
+              'object-contain': isHorizontal,
+              'object-cover': !isHorizontal,
+            }
+          )}
           fill
           sizes="100%"
           priority
           src={latestItem.media}
         />
       ) : (
-        <Skeleton className="skeleton-bg size-full" variant="rectangular" />
+        <Skeleton className="bg-skeleton size-full" variant="rectangular" />
       )}
       <div className="absolute inset-0 z-20 bg-black/15 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
     </Link>

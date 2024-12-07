@@ -1,1 +1,1 @@
-export { VerifyEmailForm } from './form/VerifyEmailForm';
+export { VerifyEmailForm } from './VerifyEmailForm';

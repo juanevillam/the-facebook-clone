@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Background Utilities */
+  .bg-card {
+    @apply bg-white dark:bg-neutral-800;
+  }
+
+  .bg-active {
+    @apply bg-gray-200 dark:bg-neutral-900;
+  }
+
+  .bg-active-inverse {
+    @apply bg-neutral-900 dark:bg-gray-200;
+  }
+
+  .bg-primary {
+    @apply bg-gray-100 dark:bg-neutral-700;
+  }
+
+  .bg-secondary {
+    @apply bg-gray-200 dark:bg-neutral-600;
+  }
+
+  .bg-secondary-light {
+    @apply bg-gray-200;
+  }
+
+  .bg-skeleton {
+    @apply bg-neutral-300 dark:bg-neutral-600;
+  }
+
+  .bg-skeleton-placeholder {
+    @apply bg-neutral-200/50 dark:bg-neutral-700/50;
+  }
+
+  /* Border Utilities */
+  .border-primary {
+    @apply border-gray-300 md:border-gray-200 dark:border-neutral-700;
+  }
+
+  .border-primary-light {
+    @apply border-gray-200;
+  }
+
+  .border-primary-dark {
+    @apply border-neutral-700;
+  }
+
+  .border-primary-light-full {
+    @apply border-gray-200 md:border-gray-200;
+  }
+
+  /* Divide Utilities */
+  .divide-primary {
+    @apply divide-gray-300 md:divide-gray-200 dark:divide-neutral-700;
+  }
+
+  /* Fill Utilities */
+  .fill-primary {
+    @apply fill-neutral-900 dark:fill-gray-100;
+  }
+
+  .fill-secondary {
+    @apply fill-neutral-600 dark:fill-neutral-400;
+  }
+
+  /* Placeholder Utilities */
+  .placeholder-primary {
+    @apply placeholder-neutral-500 dark:placeholder-neutral-400;
+  }
+
+  .placeholder-accent {
+    @apply placeholder-neutral-600 dark:placeholder-neutral-300;
+  }
+
+  /* Stroke Utilities */
+  .accent-stroke {
+    @apply stroke-neutral-600 dark:stroke-neutral-300;
+  }
+
+  .primary-stroke {
+    @apply stroke-neutral-900 dark:stroke-gray-100;
+  }
+
+  .primary-stroke-light {
+    @apply stroke-neutral-900;
+  }
+
+  .primary-stroke-dark {
+    @apply stroke-gray-100;
+  }
+
+  .secondary-stroke {
+    @apply stroke-neutral-600 dark:stroke-neutral-400;
+  }
+
+  /* Text Utilities */
+  .text-accent {
+    @apply text-neutral-600 dark:text-neutral-300;
+  }
+
+  .text-primary {
+    @apply text-neutral-900 dark:text-gray-100;
+  }
+
+  .text-primary-light {
+    @apply text-neutral-900;
+  }
+
+  .text-primary-dark {
+    @apply text-gray-100;
+  }
+
+  .text-primary-inverse {
+    @apply text-gray-100 dark:text-neutral-900;
+  }
+
+  .text-secondary {
+    @apply text-neutral-600 dark:text-neutral-400;
+  }
+
+  .text-secondary-dark {
+    @apply text-neutral-400;
+  }
+
+  .text-tertiary {
+    @apply text-neutral-500 dark:text-neutral-400;
+  }
+
+  .text-tertiary-dark {
+    @apply text-neutral-400;
+  }
+
+  /* Bottom sheet Utilities */
+  .sheet-content {
+    @apply bg-card fixed bottom-0 left-0 right-0 z-40 rounded-t-2xl pt-3 md:mx-auto md:w-[432px];
+  }
+
+  .sheet-handle {
+    @apply bg-secondary mb-2;
+  }
+
+  .sheet-overlay {
+    @apply fixed inset-0 z-40 bg-overlay-100;
+  }
+
+  /* Card Utilities */
+  .card {
+    @apply bg-card md:rounded-lg;
+  }
+
+  /* Flexbox Utilities */
+  .flex-align-center {
+    @apply flex items-center;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+
+  .align-between {
+    @apply items-center justify-between;
+  }
+
+  /* Modal Utilities */
+  .create-post-modal-gif-size {
+    @apply max-h-96 md:max-h-72;
+  }
+
+  .create-post-modal-spacing-area {
+    @apply md:px-3 md:pb-3;
+  }
+
+  .modal-scrollable-area {
+    @apply h-full overflow-y-auto md:h-96;
+  }
+
+  /* Responsive Utilities */
+  .responsive-mobile-only {
+    @apply md:hidden;
+  }
+
+  .responsive-desktop-only {
+    @apply hidden md:flex;
+  }
+
+  .responsive-desktop-block {
+    @apply hidden md:block;
+  }
+}

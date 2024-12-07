@@ -13,8 +13,9 @@ import { likePost } from '@/modules/posts/post/actions';
 import {
   CommentExtended,
   LikeExtended,
-} from '@/modules/posts/post/assets/types';
-import { PostVariant } from '@/modules/posts/post/types';
+  PostExtended,
+  PostVariant,
+} from '@/modules/posts/post/types';
 
 import { PostFooterActions } from './actions/PostFooterActions';
 import {
@@ -22,20 +23,16 @@ import {
   PostCommentsBottomSheet,
   PostCommentsBottomSheetFooter,
 } from './comments';
-import { PostFooterInfo } from './info/PostFooterInfo';
 import { PostLikesBottomSheet } from './likes';
+import { PostFooterInfo } from './PostFooterInfo';
 
 type PostFooterProps = {
-  postComments: CommentExtended[];
-  postLikes: LikeExtended[];
-  postId: string;
+  post: PostExtended;
   variant: PostVariant;
 };
 
 export const PostFooter = ({
-  postComments,
-  postLikes,
-  postId,
+  post: { comments, id, likes },
   variant,
 }: PostFooterProps) => {
   const isModal = variant === 'modal';
@@ -48,16 +45,21 @@ export const PostFooter = ({
   const currentUser = useCurrentUser();
 
   const isMyLike = (like: LikeExtended) =>
-    like.userId === currentUser?.id && like.postId === postId;
+    like.userId === currentUser?.id && like.postId === id;
 
   const [optimisticLikes, addOptimisticLike] = useOptimistic<LikeExtended[]>(
-    postLikes,
+    likes,
     // @ts-ignore
     (likes: LikeExtended[], newLike: LikeExtended) =>
       likes.some(isMyLike)
         ? likes.filter((like) => like.userId !== currentUser?.id)
         : [
-            { ...newLike, postId, user: currentUser, userId: currentUser?.id },
+            {
+              ...newLike,
+              postId: id,
+              user: currentUser,
+              userId: currentUser?.id,
+            },
             ...likes,
           ]
   );
@@ -65,11 +67,11 @@ export const PostFooter = ({
   const [optimisticComments, addOptimisticComment] = useOptimistic<
     CommentExtended[]
   >(
-    postComments,
+    comments,
     // @ts-ignore
     (comments: CommentExtended[], newComment: CommentExtended) => [
       {
-        postId,
+        postId: id,
         thoughts: newComment,
         user: currentUser,
         userId: currentUser?.id,
@@ -91,11 +93,11 @@ export const PostFooter = ({
 
   const handleOptimisticLike = async () => {
     startTransition(() =>
-      addOptimisticLike({ postId, userId: currentUser?.id })
+      addOptimisticLike({ postId: id, userId: currentUser?.id })
     );
 
     try {
-      await likePost(postId, currentUser?.id as string);
+      await likePost(id, currentUser?.id as string);
     } catch (error) {
       error instanceof Error &&
         showToast.error(t(`toast-messages.error.${error.message}`));
@@ -108,10 +110,10 @@ export const PostFooter = ({
         <div className="md:px-4">
           <div
             className={classNames(
-              'only-mobile flex-center-justify-between primary-transition w-full px-3 py-2',
+              'responsive-mobile-only flex-between w-full px-3 py-2 transition-colors duration-200',
               {
                 'hover:bg-neutral-700 hover:bg-opacity-50': isModal,
-                'hover:primary-bg': !isModal,
+                'hover:bg-primary': !isModal,
               }
             )}
             onClick={openMobileComments}
@@ -128,7 +130,7 @@ export const PostFooter = ({
               optimisticLikes={optimisticLikes}
             />
           </div>
-          <div className="only-desktop center-justify-between w-full px-0 py-3">
+          <div className="responsive-desktop-only align-between w-full px-0 py-3">
             <PostFooterInfo
               handleDesktopCommentsOpen={handleDesktopCommentsOpen}
               isModal={isModal}
@@ -149,12 +151,13 @@ export const PostFooter = ({
         mobileCommentsOpen={mobileCommentsOpen}
         openMobileComments={openMobileComments}
         optimisticLikes={optimisticLikes}
-        postId={postId}
+        postId={id}
       />
       {desktopCommentsOpen && (
         <div
+          aria-label={t('posts.post.footer.comments.open-comments')}
           className={classNames(
-            'only-desktop w-full border-l-4 border-primary-100',
+            'responsive-desktop-only w-full border-l-4 border-primary-100',
             {
               'h-72': optimisticComments.length === 0,
               'h-full overflow-y-auto': optimisticComments.length > 0,
@@ -167,19 +170,19 @@ export const PostFooter = ({
       <div
         className={classNames('md:px-4', {
           'w-full': isModal,
-          'primary-border border-t': desktopCommentsOpen,
+          'border-primary border-t': desktopCommentsOpen,
         })}
       >
-        <div className="only-desktop space-x-2 pb-2 pt-4">
+        <div className="responsive-desktop-only space-x-2 pb-2 pt-4">
           <ProfilePic />
           <PostCommentsBottomSheetFooter
             addOptimisticComment={addOptimisticComment}
-            postId={postId}
+            postId={id}
             setDesktopCommentsOpen={setDesktopCommentsOpen}
             variant="post-footer"
           />
         </div>
-        <p className="only-desktop secondary-text ml-16 pb-4 text-xs">
+        <p className="responsive-desktop-only text-secondary ml-16 pb-4 text-xs">
           {t('posts.post.footer.comments.press-enter-to-post')}
         </p>
       </div>
@@ -191,7 +194,7 @@ export const PostFooter = ({
           onDismiss={closeMobileComments}
           optimisticComments={optimisticComments}
           optimisticLikes={optimisticLikes}
-          postId={postId}
+          postId={id}
         />
       </Drawer.Root>
       <Drawer.Root open={desktopLikesOpen} onClose={closeDesktopLikes}>

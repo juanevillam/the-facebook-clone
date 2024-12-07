@@ -1,1 +1,1 @@
-export { CreatePostHeader } from './header/CreatePostHeader';
+export { CreatePostHeader } from './CreatePostHeader';

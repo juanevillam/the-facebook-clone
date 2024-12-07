@@ -1,19 +1,11 @@
 import { notFound } from 'next/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
+import { DynamicPageProps } from '@/assets/types';
 import { PostModalWrapper } from '@/modules/posts/post/components/post/modal';
-import { fetchPost } from '@/modules/posts/post/data';
+import { fetchPost } from '@/modules/posts/post/services/postsService';
 
-type PostModalPageProps = {
-  params: {
-    id: string;
-    locale: string;
-  };
-};
-
-const PostModalPage = async ({
-  params: { id, locale },
-}: PostModalPageProps) => {
+const PostModalPage = async ({ params: { id, locale } }: DynamicPageProps) => {
   unstable_setRequestLocale(locale);
 
   const post = await fetchPost(id);

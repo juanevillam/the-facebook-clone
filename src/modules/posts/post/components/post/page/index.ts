@@ -1,1 +1,1 @@
-export { PostPageWrapper } from './wrapper/PostPageWrapper';
+export { PostPageWrapper } from './PostPageWrapper';

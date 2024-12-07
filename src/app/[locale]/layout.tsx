@@ -2,14 +2,14 @@ import { SessionProvider } from 'next-auth/react';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Toaster } from 'react-hot-toast';
 
+import { poppins } from '@/assets/fonts/poppins';
 import { LayoutProps } from '@/assets/types';
-import { poppins } from '@/assets/ui/fonts';
 import { auth } from '@/auth';
 import { NextThemeProvider } from '@/components';
 import { locales } from '@/i18n/config';
 import ReduxProvider from '@/lib/store/ReduxProvider';
 
-import '@/assets/ui/styles/globals.css';
+import '@/assets/globals.css';
 
 export const generateStaticParams = () => locales.map((locale) => ({ locale }));
 

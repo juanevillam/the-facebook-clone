@@ -3,17 +3,17 @@ import { useEffect, useRef, useTransition } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
 import { useTranslations } from 'next-intl';
 
+import { ExclamationCircleIcon, MapIcon } from '@/assets/icons';
 import { InputEvent } from '@/assets/types';
-import { ExclamationCircleIcon, MapIcon } from '@/assets/ui/icons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { Location } from '@/modules/posts/create/assets/types';
+import { Location } from '@/modules/posts/create/types';
 
 import {
   CreatePostStepContainer,
   CreatePostStepLoader,
   CreatePostStepMessage,
 } from '../ui';
-import { CreatePostCheckInStepItem } from './item/CreatePostCheckInStepItem';
+import { CreatePostCheckInStepItem } from './CreatePostCheckInStepItem';
 import { setCreatePostStep } from '../../../reducers/createPostPostReducer';
 import {
   setCreatePostCheckInStepActiveLocation,

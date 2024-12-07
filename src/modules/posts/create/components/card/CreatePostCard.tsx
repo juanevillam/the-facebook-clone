@@ -6,14 +6,10 @@ import { ProfilePic } from '@/components';
 import { IS_PRODUCTION } from '@/constants/environment';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 
-import { CreatePostCardItem } from './item/CreatePostCardItem';
-import { CardItem } from '../../assets/types';
 import {
   setCreatePostStep,
   toggleCreatePostOpenable,
 } from '../../reducers/createPostPostReducer';
-import { CreatePostDialog } from '../dialog/CreatePostDialog';
-import { CreatePostModal } from '../modal/CreatePostModal';
 import {
   CreatePostCheckInStep,
   CreatePostDefaultStep,
@@ -21,6 +17,10 @@ import {
   CreatePostGifsStep,
   CreatePostMediaStep,
 } from '../steps';
+import { CreatePostCardItem } from './CreatePostCardItem';
+import { CardItem } from '../../types';
+import { CreatePostDialog } from '../CreatePostDialog';
+import { CreatePostModal } from '../CreatePostModal';
 
 export const CreatePostCard = () => {
   const t = useTranslations();
@@ -106,28 +106,25 @@ export const CreatePostCard = () => {
 
   return (
     <>
-      <div className="card">
-        <div className="flex-center space-x-2 p-3 md:px-4">
+      <div className="card transition-all duration-300">
+        <div className="flex-align-center space-x-2 p-3 md:px-4">
           <ProfilePic />
           <button
             aria-label={thoughts || t('posts.create.layout.thoughts')}
-            className="primary-border primary-text md:accent-text md:primary-bg hover:secondary-bg flex-grow overflow-hidden whitespace-nowrap rounded-full border px-4 py-2.5 text-start md:border-none md:px-3 md:py-2"
+            className="border-primary text-primary md:text-accent md:bg-primary hover:bg-secondary flex-grow overflow-hidden whitespace-nowrap rounded-full border px-4 py-2.5 text-start transition-colors duration-200 md:border-none md:px-3 md:py-2"
             onClick={handleToggleOpenable}
             type="button"
           >
             {thoughts || t('posts.create.layout.thoughts')}
           </button>
         </div>
-        <div className="primary-border primary-divide primary-transition flex divide-x border-t md:mx-4 md:space-x-1 md:divide-x-0 md:py-2.5">
+        <div className="border-primary divide-primary flex divide-x border-t md:mx-4 md:space-x-1 md:divide-x-0 md:py-2.5">
           {cardItems.map((item) => (
             <CreatePostCardItem key={item.name} {...item} />
           ))}
         </div>
       </div>
-      <CreatePostDialog
-        handleStep={handleStep}
-        handleToggleOpenable={handleToggleOpenable}
-      >
+      <CreatePostDialog handleStep={handleStep}>
         {renderStep()}
       </CreatePostDialog>
       <CreatePostModal

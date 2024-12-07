@@ -1,1 +1,1 @@
-export { StoryPageWrapper } from './wrapper/StoryPageWrapper';
+export { StoryPageWrapper } from './StoryPageWrapper';

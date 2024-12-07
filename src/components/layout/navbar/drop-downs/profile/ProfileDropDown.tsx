@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 
 import classNames from 'classnames';
 
@@ -19,39 +19,39 @@ export const ProfileDropDown = ({
   const [step, setStep] = useState<ProfileDropDownStep>('default');
   const [height, setHeight] = useState('auto');
 
-  const steps = {
-    default: (
-      <ProfileDropDownDefaultStep
-        setOpenProfileDropDown={setOpenProfileDropDown}
-        setStep={setStep}
-      />
-    ),
-    settings: <ProfileDropDownSettingsStep setStep={setStep} />,
-    'display-accessibility': (
-      <ProfileDropDownDisplayAccessibilityStep setStep={setStep} />
-    ),
-  };
+  const steps = useMemo(
+    () => ({
+      default: (
+        <ProfileDropDownDefaultStep
+          setOpenProfileDropDown={setOpenProfileDropDown}
+          setStep={setStep}
+        />
+      ),
+      settings: <ProfileDropDownSettingsStep setStep={setStep} />,
+      'display-accessibility': (
+        <ProfileDropDownDisplayAccessibilityStep setStep={setStep} />
+      ),
+    }),
+    [setOpenProfileDropDown]
+  );
 
   useEffect(() => {
-    if (contentRef.current) {
-      const { scrollHeight } = contentRef.current;
-
-      setHeight(`${scrollHeight}px`);
-    }
+    contentRef.current && setHeight(`${contentRef.current.scrollHeight}px`);
   }, [step]);
 
   return (
     <div
+      aria-describedby={`profile-dropdown-${step}-description`}
+      aria-labelledby={`profile-dropdown-${step}-title`}
       className={classNames({
-        'card only-desktop-block absolute right-5 top-14 overflow-hidden shadow-lg transition-all duration-300 ease-in-out':
+        'card responsive-desktop-block absolute right-5 top-14 overflow-hidden shadow-lg transition-all duration-300':
           variant === 'dropdown',
         'w-80': variant === 'dropdown' && step === 'default',
         'w-96': variant === 'dropdown' && step !== 'default',
         'w-full': variant === 'page',
       })}
-      style={{
-        height,
-      }}
+      role="dialog"
+      style={{ height }}
     >
       <div ref={contentRef}>{steps[step]}</div>
     </div>

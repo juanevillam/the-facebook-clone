@@ -3,18 +3,18 @@ import { useRef, useState } from 'react';
 import axios from 'axios';
 import { useTranslations } from 'next-intl';
 
+import { ExclamationCircleIcon, GifIcon } from '@/assets/icons';
 import { InputEvent } from '@/assets/types';
-import { ExclamationCircleIcon, GifIcon } from '@/assets/ui/icons';
 import { Button } from '@/components/buttons';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { GIF, GIFUnparsed } from '@/modules/posts/create/assets/types';
+import { GIF, GIFUnparsed } from '@/modules/posts/create/types';
 
 import {
   CreatePostStepContainer,
   CreatePostStepLoader,
   CreatePostStepMessage,
 } from '../ui';
-import { CreatePostGifsStepItem } from './item/CreatePostGifsStepItem';
+import { CreatePostGifsStepItem } from './CreatePostGifsStepItem';
 import { setCreatePostStep } from '../../../reducers/createPostPostReducer';
 import {
   setCreatePostGifsStepActiveGif,
@@ -152,18 +152,19 @@ export const CreatePostGifsStep = () => {
             <GifsColumn index={0} />
             <GifsColumn index={1} />
           </div>
-          <Button
-            className="px-3 pb-3 md:px-4 md:pb-4"
-            disabled={loadingMore}
-            fullWidth
-            label={t('button.label')}
-            loading={loadingMore}
-            loadingLabel={t('button.loading-label')}
-            onClick={handleLoadMore}
-            size="sm"
-            type="button"
-            variant="primary"
-          />
+          <div className="px-3 pb-3 md:px-4 md:pb-4">
+            <Button
+              disabled={loadingMore}
+              fullWidth
+              label={t('button.label')}
+              loading={loadingMore}
+              loadingLabel={t('button.loading-label')}
+              onClick={handleLoadMore}
+              size="sm"
+              type="button"
+              variant="primary"
+            />
+          </div>
         </>
       )}
     </CreatePostStepContainer>

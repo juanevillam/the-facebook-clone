@@ -1,3 +1,3 @@
-export { AlertTriangleImage } from './alert-triangle/AlertTriangleImage';
-export { NoProfilePicImage } from './no-profile-pic/NoProfilePicImage';
-export { ThumbUpImage } from './thumb-up/ThumbUpImage';
+export { AlertTriangleImage } from './AlertTriangleImage';
+export { NoProfilePicImage } from './NoProfilePicImage';
+export { ThumbUpImage } from './ThumbUpImage';
