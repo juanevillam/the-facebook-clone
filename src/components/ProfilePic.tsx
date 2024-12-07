@@ -42,6 +42,7 @@ export const ProfilePic = ({
       className={`rounded-full ${className} ${customClassName}`}
       height={size}
       loading="eager"
+      priority
       src={imagetoShow}
       quality={100}
       width={size}
