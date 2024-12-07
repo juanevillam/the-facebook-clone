@@ -29,7 +29,7 @@ export const CreatePostFeelingsStepItem = ({
       isEven={isEven}
     >
       <div className="flex-align-center space-x-2">
-        <div className="md:bg-primary md: relative rounded-full md:p-2">
+        <div className="md:bg-primary relative rounded-full transition-colors duration-200 md:p-2">
           <Image
             alt={t(item)}
             className="size-8 transition-transform duration-200 hover:scale-105 md:size-5"

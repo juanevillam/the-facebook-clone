@@ -39,7 +39,7 @@ export const PostComment = ({
             <p className="text-primary">{thoughts}</p>
           </div>
           {isCommentMine && (
-            <div className="group-hover:block md:hidden">
+            <div className="opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100">
               <PostCommentOptions commentId={id} />
             </div>
           )}

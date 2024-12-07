@@ -107,7 +107,7 @@ export const VideoPlayer = ({
             {t('controls')}
           </h2>
           <IconButton
-            className="mr-1 size-9 transition-transform duration-300 ease-in-out hover:scale-110 md:mr-1.5"
+            className="mr-1 size-9 md:mr-1.5"
             icon={{
               ariaLabel: playing ? 'pause-video' : 'play-video',
               className: 'fill-white size-full',
@@ -133,7 +133,7 @@ export const VideoPlayer = ({
           <div className="group relative ml-2 text-center md:ml-3">
             <button
               aria-label={t('change-playback-rate')}
-              className="text-primary-dark w-14 rounded-md py-1.5 font-bold hover:bg-neutral-700 hover:bg-opacity-50 md:w-16"
+              className="text-primary-dark transition-bg w-14 rounded-md py-1.5 font-bold duration-300 ease-in-out hover:bg-neutral-700 hover:bg-opacity-50 md:w-16"
               onClick={togglePlaybackMenu}
               type="button"
             >
@@ -175,7 +175,7 @@ export const VideoPlayer = ({
             />
             <Slider
               aria-label={t('volume')}
-              className="absolute bottom-14 ml-0.5 hidden h-14 scale-90 text-white opacity-0 group-hover:scale-100 group-hover:opacity-100 md:block"
+              className="absolute bottom-14 ml-0.5 hidden h-14 scale-90 text-white opacity-0 transition-all duration-300 ease-in-out group-hover:scale-100 group-hover:opacity-100 md:block"
               max={1}
               min={0}
               onChange={handleVolumeChange}

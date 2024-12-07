@@ -18,7 +18,7 @@ export const PostCommentOptionsBottomSheetItem = ({
   return (
     <button
       aria-label={t(`${name}.label`)}
-      className="hover:bg-primary flex-align-center group w-full space-x-2 p-2 px-3 transition-colors duration-200 md:rounded-md md:px-2"
+      className="hover:bg-primary flex-align-center group w-full space-x-2 p-2 px-3 transition-colors duration-200 ease-in-out md:rounded-md md:px-2"
       onClick={onClick}
       type="button"
     >

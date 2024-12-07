@@ -15,7 +15,7 @@ export const PostComments = ({ optimisticComments }: PostCommentsProps) => {
   return (
     <section
       aria-labelledby="post-comments-title"
-      className="h-full w-full overflow-y-auto px-4 md:px-3 md:pb-10"
+      className="size-full overflow-y-auto px-4 md:px-3 md:pb-10"
     >
       <h1 className="sr-only" id="post-comments-title">
         {t('title')}

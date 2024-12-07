@@ -13,8 +13,8 @@ export const LayoutWrapper = ({
   const messages = useMessages();
 
   return (
-    <main className="h-full min-h-screen bg-gray-100 transition-colors duration-300 dark:bg-neutral-900">
-      <div className="mx-auto max-w-screen-2xl transition-all duration-300">
+    <main className="h-full min-h-screen bg-gray-100 transition-colors duration-300 ease-in-out dark:bg-neutral-900">
+      <div className="mx-auto max-w-screen-2xl transition-all duration-300 ease-in-out">
         <NextIntlClientProvider
           locale={locale}
           messages={pick(
